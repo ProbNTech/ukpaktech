@@ -6,6 +6,7 @@ import { Users, Scale, Eye } from "lucide-react";
 export function GovernanceBadges() {
   const shouldReduceMotion = useReducedMotion();
   const badges = [
+<<<<<<< Updated upstream
     {
       label: "Advisory Committee",
       icon: Users,
@@ -24,6 +25,11 @@ export function GovernanceBadges() {
       color: "#E11D48",
       bg: "border-[#E11D48]/30 bg-[#E11D48]/10",
     },
+=======
+    { label: "Committee", color: "border-[#00B140]/55 bg-[#00B140]/48" },
+    { label: "Ethics", color: "border-[#00B140]/55 bg-[#00B140]/48" },
+    { label: "Transparency", color: "border-[#1E40AF]/55 bg-[#1E40AF]/48" },
+>>>>>>> Stashed changes
   ];
 
   return (

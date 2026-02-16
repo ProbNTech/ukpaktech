@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "./Button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { siteConfig } from "@/config/site";
@@ -12,75 +11,76 @@ const navGroups = [
   {
     label: "About",
     items: [
-      { label: "About UPTECH", href: "/about" },
-      { label: "Leadership and Governance", href: "/leadership" },
-      { label: "Code of Conduct", href: "/code-of-conduct" },
+      { label: "About UPTECH", href: "/about", desc: "Our mission, vision and story" },
+      { label: "Leadership and Governance", href: "/leadership", desc: "Board, advisory and executive team" },
+      { label: "Code of Conduct", href: "/code-of-conduct", desc: "Ethics and accountability framework" },
     ],
   },
   {
     label: "Programs",
     items: [
-      { label: "AI and Tech Programs", href: "/programs/ai-tech-programs" },
-      { label: "Skill Development Center", href: "/programs/skill-development-center" },
-      { label: "Incubation and Collective Startups", href: "/programs/incubation-collective-startups" },
+      { label: "AI and Tech Programs", href: "/programs/ai-tech-programs", desc: "Cutting-edge technology initiatives" },
+      { label: "Skill Development Center", href: "/programs/skill-development-center", desc: "Workforce training and upskilling" },
+      { label: "Incubation and Collective Startups", href: "/programs/incubation-collective-startups", desc: "Startup support and acceleration" },
     ],
   },
   {
     label: "Initiatives",
     items: [
-      { label: "People AI Platform", href: "/initiatives/people-ai" },
-      { label: "TechMart Global", href: "/initiatives/techmart-global" },
-      { label: "Tech Excellence Awards", href: "/initiatives/tech-excellence-awards" },
+      { label: "People AI Platform", href: "/initiatives/people-ai", desc: "Human-centric AI support systems" },
+      { label: "TechMart Global", href: "/initiatives/techmart-global", desc: "Cross-border tech marketplace" },
+      { label: "Tech Excellence Awards", href: "/initiatives/tech-excellence-awards", desc: "Recognising outstanding contributions" },
     ],
   },
   {
     label: "Ecosystem",
     items: [
-      { label: "UK–Pakistan Technology Partnership", href: "/ecosystem/uk-pakistan-technology-partnership" },
-      { label: "Funding and Grants", href: "/ecosystem/funding-and-grants" },
-      { label: "Trade Delegations and Exhibitions", href: "/ecosystem/trade-delegations-and-exhibitions" },
+      { label: "UK–Pakistan Technology Partnership", href: "/ecosystem/uk-pakistan-technology-partnership", desc: "Bilateral tech corridor" },
+      { label: "Funding and Grants", href: "/ecosystem/funding-and-grants", desc: "Financial support programmes" },
+      { label: "Trade Delegations and Exhibitions", href: "/ecosystem/trade-delegations-and-exhibitions", desc: "Business missions and expos" },
     ],
   },
   {
     label: "Updates",
     items: [
-      { label: "Events and News", href: "/events" },
-      { label: "Careers", href: "/careers" },
+      { label: "Events and News", href: "/events", desc: "Latest engagements and highlights" },
+      { label: "Careers", href: "/careers", desc: "Join the UPTECH team" },
     ],
   },
 ];
+
+const HOVER_OPEN_DELAY = 80;
+const HOVER_CLOSE_DELAY = 250;
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const openTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const shouldReduceMotion = useReducedMotion();
-  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Improved hover-intent: longer delay + safe bridge area
-  const handleMouseEnter = (groupLabel: string) => {
-    if (hoverTimeoutRef.current) {
-      clearTimeout(hoverTimeoutRef.current);
-      hoverTimeoutRef.current = null;
-    }
-    setOpenDropdown(groupLabel);
-  };
+  const clearTimers = useCallback(() => {
+    if (openTimerRef.current) { clearTimeout(openTimerRef.current); openTimerRef.current = null; }
+    if (closeTimerRef.current) { clearTimeout(closeTimerRef.current); closeTimerRef.current = null; }
+  }, []);
 
-  const handleMouseLeave = (groupLabel: string) => {
-    // Increased delay to 300ms for better UX
-    hoverTimeoutRef.current = setTimeout(() => {
-      setOpenDropdown(null);
-    }, 300);
-  };
+  const handleEnter = useCallback((label: string) => {
+    clearTimers();
+    openTimerRef.current = setTimeout(() => setOpenDropdown(label), HOVER_OPEN_DELAY);
+  }, [clearTimers]);
+
+  const handleLeave = useCallback(() => {
+    clearTimers();
+    closeTimerRef.current = setTimeout(() => setOpenDropdown(null), HOVER_CLOSE_DELAY);
+  }, [clearTimers]);
 
   return (
     <>
@@ -90,38 +90,41 @@ export function Header() {
       >
         Skip to main content
       </a>
+      {/* Spacer so content doesn't hide behind fixed navbar */}
+      <div className="h-[72px]" />
+
       <header
         role="banner"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-[rgba(5,11,20,0.95)] backdrop-blur-xl border-b border-[rgba(234,242,255,0.15)] shadow-xl"
-            : "bg-[rgba(5,11,20,0.85)] backdrop-blur-md border-b border-[rgba(234,242,255,0.08)]"
+            ? "bg-white shadow-[0_2px_16px_rgba(0,0,0,0.06)] border-b border-gray-100"
+            : "bg-white/95 backdrop-blur-sm border-b border-gray-100/60"
         }`}
       >
         <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            <Link href="/" className="flex items-center gap-3 group relative z-10">
+          <div className="flex items-center justify-between h-[72px]">
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
               <Image
                 src="/image/main-logo/mainlogo.png"
                 alt="UPTECH Logo"
-                width={50}
-                height={50}
-                className="h-[40px] lg:h-[50px] w-auto object-contain"
+                width={44}
+                height={44}
+                className="h-[38px] lg:h-[44px] w-auto object-contain"
               />
-              <span className="font-heading font-bold text-xl text-[#EAF2FF]">UPTECH</span>
+              <span className="font-heading font-bold text-lg text-[#0B1220]">UPTECH</span>
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+            {/* Desktop nav */}
+            <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
               {navGroups.map((group) => (
                 <div
                   key={group.label}
                   className="relative"
-                  onMouseEnter={() => handleMouseEnter(group.label)}
-                  onMouseLeave={() => handleMouseLeave(group.label)}
-                  ref={(el) => {
-                    dropdownRefs.current[group.label] = el;
-                  }}
+                  onMouseEnter={() => handleEnter(group.label)}
+                  onMouseLeave={handleLeave}
                 >
+                  <button
                   <button
                     type="button"
                     aria-expanded={openDropdown === group.label}
@@ -133,41 +136,44 @@ export function Header() {
                     }}
                   >
                     {group.label}
-                    <ChevronDown className={`w-3.5 h-3.5 transition-all duration-300 ${
-                      openDropdown === group.label 
-                        ? "opacity-100 rotate-180 text-[#1E40AF]" 
-                        : "opacity-60 group-hover:opacity-100"
-                    }`} />
-                    <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#1E40AF] to-[#1E40AF]/60 group-hover:w-full transition-all duration-300 ease-out"></span>
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                        openDropdown === group.label ? "rotate-180" : ""
+                      }`}
+                    />
                   </button>
-                  
-                  {/* Extended safe hover bridge - prevents flicker */}
-                  <div className="absolute top-full left-0 right-0 h-4 pointer-events-none" />
-                  
+
+                  {/* Invisible bridge between trigger and dropdown */}
+                  {openDropdown === group.label && (
+                    <div className="absolute top-full left-0 right-0 h-3" />
+                  )}
+
                   <AnimatePresence>
                     {openDropdown === group.label && (
                       <motion.div
-                        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -12, scale: 0.98 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -12, scale: 0.98 }}
-                        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                        className="absolute top-full left-0 mt-4 w-72 bg-[rgba(5,11,20,0.98)] backdrop-blur-2xl rounded-2xl shadow-2xl border border-[rgba(234,242,255,0.15)] p-2 overflow-hidden"
-                        onMouseEnter={() => handleMouseEnter(group.label)}
-                        onMouseLeave={() => handleMouseLeave(group.label)}
-                        style={{ pointerEvents: "auto" }}
+                        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -4 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -4 }}
+                        transition={{ duration: 0.15, ease: "easeOut" }}
+                        className="absolute top-full left-0 mt-3 w-72 bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 py-2 z-50"
+                        onMouseEnter={() => handleEnter(group.label)}
+                        onMouseLeave={handleLeave}
                       >
-                        {/* Subtle gradient overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#1E40AF]/5 via-transparent to-transparent pointer-events-none" />
-                        
-                        {group.items.map((item, idx) => (
+                        <div className="px-3 pb-1.5 mb-1 border-b border-gray-50">
+                          <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">{group.label}</span>
+                        </div>
+                        {group.items.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="relative block px-4 py-2.5 text-[#EAF2FF]/90 hover:text-[#1E40AF] hover:bg-[rgba(45,91,255,0.1)] rounded-lg transition-all duration-200 text-sm font-medium group/item"
-                            style={{ transitionDelay: `${idx * 10}ms` }}
+                            className="block mx-1.5 px-3 py-2.5 rounded-lg hover:bg-[#1E40AF]/[0.04] transition-colors duration-150 group/item"
                           >
-                            <span className="relative z-10">{item.label}</span>
-                            <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#1E40AF]/0 via-[#1E40AF]/5 to-[#1E40AF]/0 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></span>
+                            <span className="block text-sm font-medium text-[#1F2937] group-hover/item:text-[#1E40AF] transition-colors">
+                              {item.label}
+                            </span>
+                            <span className="block text-xs text-gray-400 mt-0.5">
+                              {item.desc}
+                            </span>
                           </Link>
                         ))}
                       </motion.div>
@@ -175,186 +181,146 @@ export function Header() {
                   </AnimatePresence>
                 </div>
               ))}
-              <Link 
-                href="/membership" 
-                className="text-[#EAF2FF]/90 hover:text-[#1E40AF] transition-all duration-300 font-medium text-sm relative group py-2"
+
+              <Link
+                href="/membership"
+                className="px-3 py-2 rounded-lg text-sm font-medium text-[#374151] hover:text-[#1E40AF] hover:bg-gray-50 transition-colors duration-200"
               >
                 Membership
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#1E40AF] to-[#1E40AF]/60 group-hover:w-full transition-all duration-300 ease-out"></span>
               </Link>
             </nav>
 
-            <div className="hidden lg:flex items-center gap-6">
+            {/* Desktop right actions */}
+            <div className="hidden lg:flex items-center gap-3">
               <Link
                 href={siteConfig.portalUrl}
-                className="relative text-[#EAF2FF]/80 hover:text-[#1E40AF] transition-all duration-300 text-sm font-medium group px-3 py-2 rounded-lg hover:bg-[rgba(45,91,255,0.08)]"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-[#374151] hover:text-[#1E40AF] hover:bg-gray-50 transition-colors duration-200"
               >
-                <span className="relative z-10">Portal</span>
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#1E40AF] to-[#1E40AF]/60 group-hover:w-full transition-all duration-300 ease-out"></span>
+                Portal
               </Link>
               <Link
                 href="/membership"
-                className="relative inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-semibold text-white rounded-xl overflow-hidden group transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#1E40AF] focus:ring-offset-2 focus:ring-offset-[#050B14]"
-                style={{
-                  background: "linear-gradient(135deg, #1E40AF 0%, #1E3A8A 50%, #1E3A8A 100%)",
-                  boxShadow: "0 4px 20px rgba(45, 91, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
-                }}
+                className="px-5 py-2.5 rounded-lg bg-[#1E40AF] text-white text-sm font-semibold shadow-sm hover:bg-[#1730A0] hover:shadow-md hover:-translate-y-px active:translate-y-0 transition-all duration-200"
               >
-                {/* Shine effect */}
-                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
-                
-                {/* Hover glow */}
-                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-[#1E40AF] via-[#1E3A8A] to-[#1E40AF] blur-xl"></span>
-                
-                <span className="relative z-10 flex items-center gap-2">
-                  Become a Member
-                  <motion.span
-                    className="inline-block"
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    →
-                  </motion.span>
-                </span>
-                
-                {/* Hover shadow enhancement */}
-                <span 
-                  className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    boxShadow: "0 8px 32px rgba(45, 91, 255, 0.5), 0 0 0 1px rgba(45, 91, 255, 0.2)",
-                  }}
-                />
+                Become a Member →
               </Link>
             </div>
 
+            {/* Mobile toggle */}
             <button
-              className="lg:hidden p-2 text-[#EAF2FF] transition-colors duration-300"
+              className="lg:hidden p-2 rounded-lg text-[#374151] hover:bg-gray-100 transition-colors"
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               aria-label="Toggle menu"
             >
-              {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
-        
-        {/* Gradient accent line */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-[#1E40AF]/0 via-[#1E40AF]/30 via-[#00B140]/20 via-[#E11D48]/20 to-[#1E40AF]/0"></div>
       </header>
 
-      {/* Mobile Menu - Premium slide-over */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="lg:hidden fixed inset-0 bg-[#050B14]/80 backdrop-blur-sm z-40"
+              className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
               onClick={() => setIsMobileOpen(false)}
             />
-            
             <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: "100%" }}
+              initial={shouldReduceMotion ? { opacity: 1 } : { x: "100%" }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "100%" }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:hidden fixed inset-y-0 right-0 w-80 bg-[#050B14] backdrop-blur-2xl shadow-2xl z-50 overflow-y-auto border-l border-[rgba(234,242,255,0.15)]"
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:hidden fixed inset-y-0 right-0 w-[300px] bg-white z-50 overflow-y-auto shadow-xl border-l border-gray-100"
             >
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-8">
-                <Link href="/" className="flex items-center gap-3">
-                  <Image
-                    src="/image/main-logo/mainlogo.png"
-                    alt="UPTECH Logo"
-                    width={40}
-                    height={40}
-                    className="h-[40px] w-auto object-contain"
-                  />
-                  <span className="font-heading font-bold text-xl text-[#EAF2FF]">UPTECH</span>
-                </Link>
-                <button
-                  onClick={() => setIsMobileOpen(false)}
-                  className="p-2 text-[#EAF2FF]"
-                  aria-label="Close menu"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
+              <div className="p-5">
+                <div className="flex items-center justify-between mb-6">
+                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileOpen(false)}>
+                    <Image
+                      src="/image/main-logo/mainlogo.png"
+                      alt="UPTECH Logo"
+                      width={36}
+                      height={36}
+                      className="h-[36px] w-auto object-contain"
+                    />
+                    <span className="font-heading font-bold text-lg text-[#0B1220]">UPTECH</span>
+                  </Link>
+                  <button
+                    onClick={() => setIsMobileOpen(false)}
+                    className="p-1.5 rounded-lg text-gray-400 hover:bg-gray-100 transition-colors"
+                    aria-label="Close menu"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
 
-              <nav className="space-y-2">
-                {navGroups.map((group) => (
-                  <div key={group.label}>
-                    <button
-                      className="flex items-center justify-between w-full py-3 px-4 text-[#EAF2FF]/90 hover:text-[#1E40AF] hover:bg-[rgba(45,91,255,0.08)] rounded-lg transition-all duration-200 font-medium text-sm"
-                      onClick={() =>
-                        setOpenDropdown(openDropdown === group.label ? null : group.label)
-                      }
-                    >
-                      {group.label}
-                      <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-200 ${
-                          openDropdown === group.label ? "rotate-180 text-[#1E40AF]" : ""
-                        }`}
-                      />
-                    </button>
-                    <AnimatePresence>
-                      {openDropdown === group.label && (
-                        <motion.div
-                          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="pl-6 pr-4 space-y-1 overflow-hidden"
-                        >
-                          {group.items.map((item) => (
-                            <Link
-                              key={item.href}
-                              href={item.href}
-                              className="block py-2.5 px-4 text-[rgba(234,242,255,0.75)] hover:text-[#1E40AF] hover:bg-[rgba(45,91,255,0.1)] rounded-lg transition-all duration-200 text-sm"
-                              onClick={() => setIsMobileOpen(false)}
-                            >
-                              {item.label}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ))}
-                <Link
-                  href="/membership"
-                  className="block py-3 px-4 text-[#EAF2FF]/90 font-medium hover:text-[#1E40AF] hover:bg-[rgba(45,91,255,0.08)] rounded-lg transition-all duration-200 text-sm"
-                  onClick={() => setIsMobileOpen(false)}
-                >
-                  Membership
-                </Link>
-              </nav>
+                <nav className="space-y-0.5">
+                  {navGroups.map((group) => (
+                    <div key={group.label}>
+                      <button
+                        className="flex items-center justify-between w-full py-2.5 px-3 text-sm font-medium text-[#374151] hover:text-[#1E40AF] hover:bg-gray-50 rounded-lg transition-colors"
+                        onClick={() => setMobileExpanded(mobileExpanded === group.label ? null : group.label)}
+                      >
+                        {group.label}
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === group.label ? "rotate-180 text-[#1E40AF]" : "text-gray-400"}`} />
+                      </button>
+                      <AnimatePresence>
+                        {mobileExpanded === group.label && (
+                          <motion.div
+                            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="pl-4 pr-2 pb-1 space-y-0.5">
+                              {group.items.map((item) => (
+                                <Link
+                                  key={item.href}
+                                  href={item.href}
+                                  className="block py-2 px-3 text-sm text-gray-500 hover:text-[#1E40AF] hover:bg-[#1E40AF]/[0.04] rounded-lg transition-colors"
+                                  onClick={() => setIsMobileOpen(false)}
+                                >
+                                  {item.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
+                  <Link
+                    href="/membership"
+                    className="block py-2.5 px-3 text-sm font-medium text-[#374151] hover:text-[#1E40AF] hover:bg-gray-50 rounded-lg transition-colors"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    Membership
+                  </Link>
+                </nav>
 
-              <div className="mt-8 pt-6 border-t border-[rgba(234,242,255,0.1)] space-y-3">
-                <Link
-                  href={siteConfig.portalUrl}
-                  className="block text-center py-3 px-4 text-[#EAF2FF]/80 hover:text-[#1E40AF] hover:bg-[rgba(45,91,255,0.08)] rounded-lg transition-all duration-200 text-sm font-medium"
-                  onClick={() => setIsMobileOpen(false)}
-                >
-                  Portal
-                </Link>
-                <Link
-                  href="/membership"
-                  className="block w-full text-center py-3 px-6 text-sm font-semibold text-white rounded-xl transition-all duration-300 relative overflow-hidden group"
-                  style={{
-                    background: "linear-gradient(135deg, #1E40AF 0%, #1E3A8A 50%, #1E3A8A 100%)",
-                    boxShadow: "0 4px 20px rgba(45, 91, 255, 0.3)",
-                  }}
-                  onClick={() => setIsMobileOpen(false)}
-                >
-                  <span className="relative z-10">Become a Member</span>
-                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/20 to-transparent"></span>
-                </Link>
+                <div className="mt-6 pt-5 border-t border-gray-100 space-y-2.5">
+                  <Link
+                    href={siteConfig.portalUrl}
+                    className="block text-center py-2.5 px-4 text-sm font-medium text-[#374151] hover:text-[#1E40AF] border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    Portal
+                  </Link>
+                  <Link
+                    href="/membership"
+                    className="block text-center py-2.5 px-4 text-sm font-semibold text-white bg-[#1E40AF] rounded-lg hover:bg-[#1730A0] shadow-sm transition-colors"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    Become a Member →
+                  </Link>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
           </>
         )}
       </AnimatePresence>
