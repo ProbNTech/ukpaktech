@@ -125,7 +125,6 @@ export function Header() {
                   onMouseLeave={handleLeave}
                 >
                   <button
-                  <button
                     type="button"
                     aria-expanded={openDropdown === group.label}
                     aria-haspopup="true"
