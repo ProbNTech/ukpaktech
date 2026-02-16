@@ -2,12 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-<<<<<<< Updated upstream
-import { Button } from "./Button";
-import { AnimatedUnderline } from "./AnimatedUnderline";
-import { Shield, Globe2, Network, Sparkles } from "lucide-react";
-import { siteConfig } from "@/config/site";
-=======
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
@@ -21,7 +15,6 @@ const slides: { type: "image" | "video"; src: string; poster?: string }[] = [
 ];
 
 const INTERVAL = 5500;
->>>>>>> Stashed changes
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -114,24 +107,10 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2D5BFF]/40 bg-[#2D5BFF]/15 backdrop-blur-sm"
             >
-<<<<<<< Updated upstream
-              <Button href="/about" variant="primary" size="lg" showArrow>
-                Explore the Council
-              </Button>
-              <Button
-                href={siteConfig.portalUrl}
-                variant="glass"
-                size="lg"
-                showArrow
-              >
-                Access Portal
-              </Button>
-=======
               <span className="w-1.5 h-1.5 rounded-full bg-[#2D5BFF] animate-pulse" />
               <span className="text-xs font-semibold uppercase tracking-wider text-white/90">
                 Bilateral Technology Council
               </span>
->>>>>>> Stashed changes
             </motion.div>
 
             {/* Heading */}
