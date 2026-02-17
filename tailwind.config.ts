@@ -11,15 +11,14 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#1E40AF",
-          hover: "#1E3A8A",
+          DEFAULT: "#2563EB",
+          hover: "#1D4ED8",
           foreground: "#FFFFFF",
         },
         accent: {
-          "uk-red": "#E11D48",
-          "pakistan-green": "#00B140",
+          green: "#22C55E",
+          "green-hover": "#16A34A",
         },
-        "muted-text": "rgba(11,18,32,0.68)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
@@ -51,8 +50,6 @@ const config: Config = {
         "2xl": "var(--shadow-2xl)",
         "glow-primary": "var(--shadow-glow-primary)",
         "glow-hover": "var(--shadow-glow-hover)",
-        "glow-green": "0 0 24px rgba(0, 177, 64, 0.12)",
-        "glow-red": "0 0 24px rgba(225, 29, 72, 0.12)",
       },
     },
   },

@@ -411,7 +411,7 @@ function HowItWorksSteps() {
       title: "Collaborate & Grow",
       description: "Leverage cross-border networks and partnerships to expand impact.",
       icon: Network,
-      color: "#E11D48",
+      color: "#2563EB",
     },
   ];
 
@@ -570,10 +570,10 @@ function UseCaseCard({
       gradient: "from-[#00B140]/10 to-transparent",
     },
     red: {
-      bg: "bg-[#E11D48]/20",
-      text: "text-[#E11D48]",
-      border: "border-[#E11D48]/30",
-      gradient: "from-[#E11D48]/10 to-transparent",
+      bg: "bg-[#2563EB]/20",
+      text: "text-[#2563EB]",
+      border: "border-[#2563EB]/30",
+      gradient: "from-[#2563EB]/10 to-transparent",
     },
   };
 
@@ -900,7 +900,7 @@ function PeopleAIInsights() {
                   { label: "Adoption", value: sector.adoption, color: "#1E40AF" },
                   { label: "Response Time", value: sector.responseTime, color: "#00B140" },
                   { label: "Cost Efficiency", value: sector.costEfficiency, color: "#1E40AF" },
-                  { label: "Human Support", value: sector.humanSupport, color: "#E11D48" },
+                  { label: "Human Support", value: sector.humanSupport, color: "#2563EB" },
                 ].map((metric, idx) => (
                   <div key={idx} className="relative">
                     <div className="flex justify-between items-center mb-1">

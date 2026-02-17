@@ -516,14 +516,14 @@ function PremiumProgramCard({
       accent: "#00B140",
     },
     red: {
-      gradient: "from-[#E11D48] to-[#BE123C]",
-      bg: "bg-[#E11D48]/10",
-      border: "border-[#E11D48]/30",
-      iconBg: "bg-[#E11D48]/20",
-      iconColor: "text-[#E11D48]",
+      gradient: "from-[#2563EB] to-[#BE123C]",
+      bg: "bg-[#2563EB]/10",
+      border: "border-[#2563EB]/30",
+      iconBg: "bg-[#2563EB]/20",
+      iconColor: "text-[#2563EB]",
       glow: "shadow-[0_0_30px_rgba(225,29,72,0.3)]",
       hoverGlow: "group-hover:shadow-[0_0_30px_rgba(225,29,72,0.30)]",
-      accent: "#E11D48",
+      accent: "#2563EB",
     },
   };
 
@@ -816,7 +816,7 @@ function ProgramsBackground({ shouldReduceMotion }: { shouldReduceMotion: boolea
         }}
       />
       <motion.div
-        className="absolute bottom-1/4 left-1/2 w-[450px] h-[450px] bg-[#E11D48] rounded-full opacity-[0.05] blur-[130px]"
+        className="absolute bottom-1/4 left-1/2 w-[450px] h-[450px] bg-[#2563EB] rounded-full opacity-[0.05] blur-[130px]"
         animate={shouldReduceMotion ? {} : {
           x: [0, 20, -25, 0],
           y: [0, -20, 25, 0],
@@ -987,10 +987,10 @@ function HowItWorksTimeline({ shouldReduceMotion }: { shouldReduceMotion: boolea
       borderAccent: "border-[#00B140]/20",
     },
     red: {
-      gradient: "from-[#E11D48] to-[#BE123C]",
-      bg: "bg-[#E11D48]",
-      glow: "bg-[#E11D48]",
-      borderAccent: "border-[#E11D48]/20",
+      gradient: "from-[#2563EB] to-[#BE123C]",
+      bg: "bg-[#2563EB]",
+      glow: "bg-[#2563EB]",
+      borderAccent: "border-[#2563EB]/20",
     },
   };
 
@@ -998,7 +998,7 @@ function HowItWorksTimeline({ shouldReduceMotion }: { shouldReduceMotion: boolea
     <div className="relative mt-12">
       {/* Timeline line with all three colors */}
       <div className="absolute left-8 top-0 bottom-0 w-0.5 hidden md:block">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2D5BFF] via-[#00B140] via-[#E11D48] via-[#2D5BFF] to-[#00B140]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2D5BFF] via-[#00B140] via-[#2563EB] via-[#2D5BFF] to-[#00B140]" />
       </div>
       
       <div className="space-y-8">

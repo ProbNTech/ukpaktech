@@ -74,7 +74,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
             }}
           />
           <motion.div
-            className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-[#E11D48]/8 via-transparent to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
+            className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-[#2563EB]/8 via-transparent to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
             animate={{
               scale: [1, 1.1, 1],
               rotate: [0, 180, 360],
@@ -179,7 +179,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
               <motion.div
                 className="absolute inset-0 rounded-3xl opacity-50"
                 style={{
-                  background: "linear-gradient(135deg, #1E40AF, #00B140, #E11D48, #1E40AF)",
+                  background: "linear-gradient(135deg, #1E40AF, #00B140, #2563EB, #1E40AF)",
                   backgroundSize: "300% 300%",
                 }}
                 animate={{
@@ -192,11 +192,11 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 }}
               />
               <div className="absolute inset-[2px] bg-white rounded-3xl" />
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#1E40AF]/10 via-[#00B140]/10 to-[#E11D48]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#1E40AF]/10 via-[#00B140]/10 to-[#2563EB]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
               <div className="relative z-10">
                 <div className="flex items-start gap-6">
                   <motion.div
-                    className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1E40AF]/20 via-[#00B140]/20 to-[#E11D48]/20 border border-[#1E40AF]/40 flex items-center justify-center flex-shrink-0"
+                    className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1E40AF]/20 via-[#00B140]/20 to-[#2563EB]/20 border border-[#1E40AF]/40 flex items-center justify-center flex-shrink-0"
                     animate={{
                       boxShadow: [
                         "0 0 20px rgba(30, 64, 175, 0.3)",
@@ -274,7 +274,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
                   {[
                     { text: "Exclusive network of leading technology professionals", color: "#1E40AF" },
                     { text: "Strategic partnerships and collaboration opportunities", color: "#00B140" },
-                    { text: "Access to funding, resources, and market insights", color: "#E11D48" },
+                    { text: "Access to funding, resources, and market insights", color: "#2563EB" },
                     { text: "Platform for thought leadership and industry influence", color: "#1E40AF" },
                     { text: "Cross-border innovation and knowledge exchange", color: "#00B140" },
                   ].map((item, index) => (
@@ -378,7 +378,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
                       transition={{ duration: 0.5, delay: 0.3 }}
                     >
                       <motion.div
-                        className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#E11D48]/20 to-[#E11D48]/10 border border-[#E11D48]/30 flex items-center justify-center"
+                        className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2563EB]/20 to-[#2563EB]/10 border border-[#2563EB]/30 flex items-center justify-center"
                         animate={{
                           boxShadow: [
                             "0 0 15px rgba(225, 29, 72, 0.3)",
@@ -393,7 +393,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
                           ease: "easeInOut",
                         }}
                       >
-                        <TrendingUp className="w-6 h-6 text-[#E11D48]" />
+                        <TrendingUp className="w-6 h-6 text-[#2563EB]" />
                       </motion.div>
                       <div>
                         <h3 className="font-heading font-bold text-xl text-[#EAF2FF]">Growth Opportunities</h3>
@@ -427,7 +427,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
           }}
         />
         <motion.div
-          className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#E11D48]/8 via-transparent to-transparent rounded-full blur-3xl pointer-events-none"
+          className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#2563EB]/8 via-transparent to-transparent rounded-full blur-3xl pointer-events-none"
           animate={{
             scale: [1, 1.15, 1],
             x: [0, 30, 0],
@@ -455,10 +455,10 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 {[
                   { color: "#1E40AF" },
                   { color: "#00B140" },
-                  { color: "#E11D48" },
+                  { color: "#2563EB" },
                   { color: "#1E40AF" },
                   { color: "#00B140" },
-                  { color: "#E11D48" },
+                  { color: "#2563EB" },
                   { color: "#1E40AF" },
                   { color: "#00B140" },
                 ].map((item, index) => (
@@ -545,7 +545,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
             }}
           />
           <motion.div
-            className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-[#E11D48]/6 to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
+            className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-[#2563EB]/6 to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
             animate={{
               scale: [1, 1.1, 1],
               rotate: [0, 180, 360],
@@ -585,7 +585,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 title="Establish Thought Leadership"
                 description="Position your organization as a leader in the tech ecosystem."
                 index={2}
-                color="#E11D48"
+                color="#2563EB"
               />
               <BenefitCard
                 icon={Target}
@@ -642,10 +642,10 @@ export default function UKPakistanTechnologyPartnershipClient() {
               {[
                 { icon: Briefcase, title: "Executives", description: "C-suite leaders and senior management", color: "#1E40AF" },
                 { icon: Users, title: "CTOs", description: "Chief technology officers and tech leaders", color: "#00B140" },
-                { icon: Zap, title: "Founders", description: "Startup founders and entrepreneurs", color: "#E11D48" },
+                { icon: Zap, title: "Founders", description: "Startup founders and entrepreneurs", color: "#2563EB" },
                 { icon: TrendingUp, title: "Investors", description: "Venture capitalists and angel investors", color: "#1E40AF" },
                 { icon: Award, title: "Senior Tech Leaders", description: "Directors and senior technical professionals", color: "#00B140" },
-                { icon: Globe2, title: "Industry Experts", description: "Thought leaders and domain experts", color: "#E11D48" },
+                { icon: Globe2, title: "Industry Experts", description: "Thought leaders and domain experts", color: "#2563EB" },
                 { icon: Building2, title: "Enterprise Leaders", description: "Corporate innovation and strategy heads", color: "#1E40AF" },
                 { icon: HeartHandshake, title: "Partnership Directors", description: "Business development and partnership leaders", color: "#00B140" },
               ].map((attendee, index) => (
@@ -705,7 +705,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
       <Section variant="dark" className="relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#E11D48] rounded-full opacity-[0.15] blur-[250px]"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#2563EB] rounded-full opacity-[0.15] blur-[250px]"
             animate={shouldReduceMotion ? {} : {
               scale: [1, 1.2, 1],
               rotate: [0, 90, 0],
@@ -770,7 +770,7 @@ function OverviewCard({ icon: Icon, title, description, index, color = "blue" }:
   const colorMap = {
     blue: "#1E40AF",
     green: "#00B140",
-    red: "#E11D48",
+    red: "#2563EB",
   };
 
   const selectedColor = colorMap[color];

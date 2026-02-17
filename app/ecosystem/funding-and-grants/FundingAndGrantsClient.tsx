@@ -73,7 +73,7 @@ export default function FundingAndGrantsClient() {
             }}
           />
           <motion.div
-            className="absolute bottom-1/4 right-1/3 w-[450px] h-[450px] bg-[#E11D48] rounded-full opacity-[0.05] blur-[140px]"
+            className="absolute bottom-1/4 right-1/3 w-[450px] h-[450px] bg-[#2563EB] rounded-full opacity-[0.05] blur-[140px]"
             animate={shouldReduceMotion ? {} : {
               scale: [1, 1.15, 1],
               x: [0, 25, 0],
@@ -101,7 +101,7 @@ export default function FundingAndGrantsClient() {
                   <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#EAF2FF] relative inline-block">
                     Funding and Grants
                     <motion.div
-                      className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#E11D48] rounded-full"
+                      className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#2563EB] rounded-full"
                       initial={{ width: 0 }}
                       whileInView={{ width: "100%" }}
                       viewport={{ once: true }}
@@ -177,7 +177,7 @@ export default function FundingAndGrantsClient() {
             }}
           />
           <motion.div
-            className="absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-[#E11D48] rounded-full opacity-[0.03] blur-[130px]"
+            className="absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-[#2563EB] rounded-full opacity-[0.03] blur-[130px]"
             animate={shouldReduceMotion ? {} : {
               scale: [1, 1.2, 1],
               x: [0, 25, 0],
@@ -203,7 +203,7 @@ export default function FundingAndGrantsClient() {
               <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#0B1220] relative inline-block">
                 Available Funding Opportunities
                 <motion.div
-                  className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#E11D48] rounded-full"
+                  className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#2563EB] rounded-full"
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
                   viewport={{ once: true }}
@@ -289,7 +289,7 @@ export default function FundingAndGrantsClient() {
             }}
           />
           <motion.div
-            className="absolute top-1/2 right-1/3 w-[420px] h-[420px] bg-[#E11D48] rounded-full opacity-[0.05] blur-[150px]"
+            className="absolute top-1/2 right-1/3 w-[420px] h-[420px] bg-[#2563EB] rounded-full opacity-[0.05] blur-[150px]"
             animate={shouldReduceMotion ? {} : {
               scale: [1, 1.15, 1],
               x: [0, 30, 0],
@@ -317,7 +317,7 @@ export default function FundingAndGrantsClient() {
                   <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#EAF2FF] relative inline-block">
                     Eligibility Criteria
                     <motion.div
-                      className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#E11D48] rounded-full"
+                      className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#2563EB] rounded-full"
                       initial={{ width: 0 }}
                       whileInView={{ width: "100%" }}
                       viewport={{ once: true }}
@@ -350,7 +350,7 @@ export default function FundingAndGrantsClient() {
                         }}
                         transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
                       >
-                        <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" style={{ color: index % 3 === 0 ? "#2D5BFF" : index % 3 === 1 ? "#00B140" : "#E11D48" }} />
+                        <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" style={{ color: index % 3 === 0 ? "#2D5BFF" : index % 3 === 1 ? "#00B140" : "#2563EB" }} />
                       </motion.div>
                       <span className="text-[rgba(234,242,255,0.85)] leading-relaxed">{item}</span>
                     </motion.div>
@@ -457,7 +457,7 @@ export default function FundingAndGrantsClient() {
             }}
           />
           <motion.div
-            className="absolute top-1/4 right-1/3 w-[380px] h-[380px] bg-[#E11D48] rounded-full opacity-[0.03] blur-[120px]"
+            className="absolute top-1/4 right-1/3 w-[380px] h-[380px] bg-[#2563EB] rounded-full opacity-[0.03] blur-[120px]"
             animate={shouldReduceMotion ? {} : {
               scale: [1, 1.2, 1],
               x: [0, 20, 0],
@@ -483,7 +483,7 @@ export default function FundingAndGrantsClient() {
               <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#0B1220] relative inline-block">
                 Benefits of Our Funding Programs
                 <motion.div
-                  className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#E11D48] rounded-full"
+                  className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#2563EB] rounded-full"
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
                   viewport={{ once: true }}
@@ -529,7 +529,7 @@ export default function FundingAndGrantsClient() {
       <Section variant="dark" className="relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#E11D48] rounded-full opacity-[0.2] blur-[250px]"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#2563EB] rounded-full opacity-[0.2] blur-[250px]"
             animate={shouldReduceMotion ? {} : {
               scale: [1, 1.3, 1],
               rotate: [0, 180, 360],
@@ -567,7 +567,7 @@ export default function FundingAndGrantsClient() {
             }}
           />
           <motion.div
-            className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-[#E11D48] rounded-full opacity-[0.06] blur-[150px]"
+            className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-[#2563EB] rounded-full opacity-[0.06] blur-[150px]"
             animate={shouldReduceMotion ? {} : {
               scale: [1, 1.15, 1],
               x: [0, 30, 0],
@@ -634,7 +634,7 @@ function FundingCard({ icon: Icon, title, description, index }: { icon: any; tit
   const colors = [
     { bg: "#2D5BFF", border: "#2D5BFF", glow: "rgba(45, 91, 255, 0.3)" },
     { bg: "#00B140", border: "#00B140", glow: "rgba(0, 177, 64, 0.3)" },
-    { bg: "#E11D48", border: "#E11D48", glow: "rgba(225, 29, 72, 0.3)" },
+    { bg: "#2563EB", border: "#2563EB", glow: "rgba(225, 29, 72, 0.3)" },
   ];
   const color = colors[index % colors.length];
 
@@ -719,7 +719,7 @@ function OpportunityCard({ icon: Icon, title, description, index }: { icon: any;
   const colors = [
     { bg: "#2D5BFF", border: "#2D5BFF", glow: "rgba(45, 91, 255, 0.25)" },
     { bg: "#00B140", border: "#00B140", glow: "rgba(0, 177, 64, 0.25)" },
-    { bg: "#E11D48", border: "#E11D48", glow: "rgba(225, 29, 72, 0.25)" },
+    { bg: "#2563EB", border: "#2563EB", glow: "rgba(225, 29, 72, 0.25)" },
   ];
   const color = colors[index % colors.length];
 
@@ -802,7 +802,7 @@ function BenefitCard({ icon: Icon, title, description, index }: { icon: any; tit
   const colors = [
     { bg: "#2D5BFF", border: "#2D5BFF", glow: "rgba(45, 91, 255, 0.25)" },
     { bg: "#00B140", border: "#00B140", glow: "rgba(0, 177, 64, 0.25)" },
-    { bg: "#E11D48", border: "#E11D48", glow: "rgba(225, 29, 72, 0.25)" },
+    { bg: "#2563EB", border: "#2563EB", glow: "rgba(225, 29, 72, 0.25)" },
     { bg: "#2D5BFF", border: "#2D5BFF", glow: "rgba(45, 91, 255, 0.25)" },
   ];
   const color = colors[index % colors.length];

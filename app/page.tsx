@@ -7,18 +7,11 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { StatCard } from "@/components/StatCard";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Hero } from "@/components/Hero";
-import { Globe2, TrendingUp, Award, Shield, Network, Cpu } from "lucide-react";
-import { motion } from "framer-motion";
-import { siteConfig } from "@/config/site";
+import { WhoCanJoin } from "@/components/WhoCanJoin";
+import { Shield, Network, Cpu } from "lucide-react";
+import { ResourcesSection } from "@/components/ResourcesSection";
 
-// Dynamically import heavy below-fold components for code splitting
-const PillarGrid = dynamic(() => import("@/components/PillarGrid").then(m => ({ default: m.PillarGrid })));
-const InitiativeGrid = dynamic(() => import("@/components/InitiativeGrid").then(m => ({ default: m.InitiativeGrid })));
-const AudienceGrid = dynamic(() => import("@/components/AudienceGrid").then(m => ({ default: m.AudienceGrid })));
-const EventPreview = dynamic(() => import("@/components/EventPreview").then(m => ({ default: m.EventPreview })));
-const TrustCards = dynamic(() => import("@/components/TrustCards").then(m => ({ default: m.TrustCards })));
 const SponsorMarquee = dynamic(() => import("@/components/SponsorMarquee").then(m => ({ default: m.SponsorMarquee })));
-const EventGallery = dynamic(() => import("@/components/EventGallery").then(m => ({ default: m.EventGallery })));
 const GovernanceBadges = dynamic(() => import("@/components/GovernanceBadges").then(m => ({ default: m.GovernanceBadges })));
 const JoinUPTECHBackground = dynamic(() => import("@/components/JoinUPTECHBackground").then(m => ({ default: m.JoinUPTECHBackground })));
 const ImpactStats = dynamic(() => import("@/components/ImpactStats").then(m => ({ default: m.ImpactStats })));
@@ -29,19 +22,118 @@ export default function Home() {
       {/* Hero */}
       <Hero />
 
+      {/* Introduction */}
+      <section className="bg-white pt-20 pb-8 md:pt-24 md:pb-10">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="max-w-4xl">
+              <span className="text-sm font-semibold text-[#1F2937] mb-2 block">About the council</span>
+              <div className="flex items-center gap-6 mb-6">
+                <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#2563EB] shrink-0 leading-tight">
+                  Building a Bilateral Technology Bridge Between the UK and Pakistan
+                </h2>
+              </div>
+              <div className="h-[2px] w-full max-w-md bg-[#22C55E] mb-6" />
+              <p className="text-lg text-[#4B5563] leading-relaxed max-w-3xl">
+                The UK–Pakistan Tech Council is a bilateral technology platform established to strengthen innovation, digital trade, and institutional collaboration between the United Kingdom and Pakistan. The Council brings together technology companies, investors, policymakers, academic institutions, and enterprise leaders to accelerate cross-border growth and long-term strategic partnerships across both nations.
+              </p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Who Can Join */}
+      <WhoCanJoin />
+
+      {/* Upcoming Events & Initiatives */}
+      <section className="bg-white pt-10 pb-24">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            {/* Header — UKPropTech style */}
+            <div className="mb-10">
+              <span className="text-sm font-semibold text-[#1F2937] mb-2 block">
+                Attend an event
+              </span>
+              <div className="flex items-center gap-6 mb-6">
+                <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#2563EB] shrink-0">
+                  Upcoming events
+                </h2>
+                <div className="flex-1 h-[2px] bg-[#22C55E]" />
+              </div>
+              <p className="text-base text-[#4B5563] max-w-3xl leading-relaxed">
+                Explore high-impact forums, policy dialogues, investor roundtables, and technology showcases designed to accelerate UK–Pakistan collaboration.
+              </p>
+            </div>
+
+            {/* Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-14">
+              {[
+                {
+                  title: "UK–Pakistan Tech Innovation Summit",
+                  description:
+                    "A flagship forum bringing together founders, policymakers, and enterprise leaders to explore cross-border collaboration, digital trade, and strategic partnerships.",
+                  image: "/image/eventgallery/event-1.jpg",
+                },
+                {
+                  title: "Cross-Border Investment Dialogue",
+                  description:
+                    "Private roundtables connecting UK and Pakistani investors with high-growth technology companies to unlock funding, partnerships, and expansion opportunities.",
+                  image: "/image/eventgallery/event-2.jpg",
+                },
+                {
+                  title: "Digital Policy & Regulatory Forum",
+                  description:
+                    "Institutional discussions between regulators, advisors, and industry leaders focused on enabling innovation through transparent, future-ready policy frameworks.",
+                  image: "/image/eventgallery/event-3.jpg",
+                },
+                {
+                  title: "Corporate & SME Partnership Showcase",
+                  description:
+                    "A collaborative platform where enterprises, SMEs, and solution providers present technologies, explore procurement opportunities, and build long-term alliances.",
+                  image: "/image/eventgallery/event-4.jpg",
+                },
+              ].map((card) => (
+                <article key={card.title} className="group">
+                  {/* Image */}
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-5 bg-[#F0F4F8]">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="font-heading font-bold text-base text-[#1F2937] leading-snug mb-3 group-hover:text-[#2563EB] transition-colors duration-300">
+                    {card.title}
+                  </h3>
+
+                  {/* Bottom border */}
+                  <div className="h-[2px] w-full bg-[#22C55E]" />
+                </article>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+            <div className="text-center">
+              <Button href="/events" variant="primary" size="lg" showArrow>
+                Find out more
+              </Button>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Sponsor Marquee */}
-      <section className="relative bg-[#050B14] overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#050B14] via-[#050B14]/70 to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#050B14] via-[#050B14]/70 to-transparent pointer-events-none" />
+      <section className="relative bg-[#F8FAFC] overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/15 to-transparent" />
         <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#1E40AF]/40" />
-            <h3 className="text-center text-[rgba(234,242,255,0.5)] text-xs font-semibold uppercase tracking-[0.25em]">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-gray-300" />
+            <h3 className="text-center text-[#94A3B8] text-xs font-semibold uppercase tracking-[0.25em]">
               Trusted by Leading Organizations
             </h3>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#1E40AF]/40" />
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-gray-300" />
           </div>
           <SponsorMarquee />
         </div>
@@ -49,17 +141,23 @@ export default function Home() {
 
       {/* Impact Momentum */}
       <Section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02] pointer-events-none" />
-        <div className="absolute top-0 right-1/4 w-[520px] h-[520px] bg-gradient-to-br from-[#1E40AF]/8 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-[520px] h-[520px] bg-gradient-to-tr from-[#00B140]/8 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-[520px] h-[520px] bg-gradient-to-br from-[#2563EB]/5 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[520px] h-[520px] bg-gradient-to-tr from-[#22C55E]/5 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
         <div className="relative z-10">
           <AnimatedSection>
-            <div className="max-w-6xl mx-auto text-center">
-              <SectionHeader
-                title="Impact Momentum"
-                subtitle="A modern technology council engineered to scale collaboration, talent, and investment across the UK–Pakistan corridor."
-                align="center"
-              />
+            <div className="max-w-6xl mx-auto">
+              <div className="mb-12">
+                <span className="text-sm font-semibold text-[#1F2937] mb-2 block">Our impact</span>
+                <div className="flex items-center gap-6 mb-6">
+                  <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#2563EB] shrink-0">
+                    Impact Momentum
+                  </h2>
+                  <div className="flex-1 h-[2px] bg-[#22C55E]" />
+                </div>
+                <p className="text-lg text-[#4B5563] max-w-3xl leading-relaxed">
+                  A modern technology council engineered to scale collaboration, talent, and investment across the UK–Pakistan corridor.
+                </p>
+              </div>
               <div className="mt-12">
                 <ImpactStats />
               </div>
@@ -69,33 +167,38 @@ export default function Home() {
       </Section>
 
       {/* Council Snapshot */}
-      <Section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02] pointer-events-none" />
-        <div className="absolute top-0 left-1/4 w-[520px] h-[520px] bg-gradient-to-br from-[#1E40AF]/6 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[520px] h-[520px] bg-gradient-to-tr from-[#00B140]/6 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
+      <Section variant="alt" className="relative overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-[520px] h-[520px] bg-gradient-to-br from-[#2563EB]/4 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
         <div className="relative z-10">
           <AnimatedSection>
-            <div className="max-w-6xl mx-auto text-center">
-              <SectionHeader
-                title="Council Snapshot"
-                subtitle="A leadership-grade platform built for governance, innovation collaboration, and cross-border market access."
-                align="center"
-              />
+            <div className="max-w-6xl mx-auto">
+              <div className="mb-12">
+                <span className="text-sm font-semibold text-[#1F2937] mb-2 block">Governance overview</span>
+                <div className="flex items-center gap-6 mb-6">
+                  <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#2563EB] shrink-0">
+                    Council Snapshot
+                  </h2>
+                  <div className="flex-1 h-[2px] bg-[#22C55E]" />
+                </div>
+                <p className="text-lg text-[#4B5563] max-w-3xl leading-relaxed">
+                  A leadership-grade platform built for governance, innovation collaboration, and cross-border market access.
+                </p>
+              </div>
               <div className="grid md:grid-cols-3 gap-6 mt-12">
                 <StatCard
-                  icon={<Shield className="w-10 h-10 text-[#1E40AF]" />}
+                  icon={<Shield className="w-10 h-10 text-[#2563EB]" />}
                   title="Governance by Design"
                   description="Structured oversight, ethics, and accountability embedded into every initiative."
                   index={0}
                 />
                 <StatCard
-                  icon={<Network className="w-10 h-10 text-[#00B140]" />}
+                  icon={<Network className="w-10 h-10 text-[#22C55E]" />}
                   title="Bilateral Innovation Network"
                   description="Joint R&D, investment, and partnerships across the UK and Pakistan."
                   index={1}
                 />
                 <StatCard
-                  icon={<Cpu className="w-10 h-10 text-[#E11D48]" />}
+                  icon={<Cpu className="w-10 h-10 text-[#2563EB]" />}
                   title="Tech-Led Growth"
                   description="AI, digital trade, and transformation programs advancing industry leadership."
                   index={2}
@@ -109,357 +212,29 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Authority and Trust */}
-      <Section className="relative overflow-hidden">
-        {/* Premium background effects */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.015] pointer-events-none" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#E11D48]/5 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[#1E40AF]/5 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-to-r from-[#00B140]/3 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
-        
-        <div className="relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-            <AnimatedSection>
-              <div>
-                <SectionHeader
-                  title="Authority and Trust"
-                  align="left"
-                />
-                <p className="text-lg text-[rgba(11,18,32,0.68)] leading-relaxed mb-6">
-                  The UK–Pakistan Technology Council (UPTECH) is a bilateral initiative connecting governments, enterprises, investors, startups, and academia to drive technology-led growth.
-                </p>
-                <p className="text-[rgba(11,18,32,0.68)] leading-relaxed">
-                  Built by professionals, entrepreneurs, and technology leaders committed to ethical governance and long-term impact across both nations.
-                </p>
-              </div>
-            </AnimatedSection>
-            <AnimatedSection>
-              <TrustCards />
-            </AnimatedSection>
-          </div>
-        </div>
-      </Section>
-
-      {/* What We Do */}
-      <Section variant="dark">
-        <AnimatedSection>
-          <SectionHeader
-            title="What We Do"
-            subtitle="Five strategic pillars that power the UK–Pakistan technology corridor."
-            align="center"
-          />
-          <PillarGrid />
-        </AnimatedSection>
-      </Section>
-
-      {/* Flagship Initiatives */}
-      <Section className="relative overflow-hidden">
-        {/* Premium background effects with brand colors */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02] pointer-events-none" />
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-[#1E40AF]/8 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#00B140]/8 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#E11D48]/8 via-transparent to-transparent rounded-full blur-3xl pointer-events-none -translate-x-1/2" />
-        
-        {/* Animated gradient orbs */}
-        <motion.div
-          className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-[#1E40AF]/5 to-transparent rounded-full blur-3xl pointer-events-none"
-          animate={{
-            scale: [1, 1.2, 1],
-            x: [0, 30, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gradient-to-tr from-[#00B140]/5 to-transparent rounded-full blur-3xl pointer-events-none"
-          animate={{
-            scale: [1, 1.15, 1],
-            x: [0, -30, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-[#E11D48]/5 to-transparent rounded-full blur-3xl pointer-events-none -translate-x-1/2 -translate-y-1/2"
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        
-        <div className="relative z-10">
-          <AnimatedSection>
-            <SectionHeader
-              title="Flagship Initiatives"
-              subtitle="Leading programs driving innovation and collaboration between the UK and Pakistan."
-              align="left"
-            />
-            <InitiativeGrid />
-          </AnimatedSection>
-        </div>
-      </Section>
-
-      {/* Who It's For */}
-      <Section variant="dark" className="relative overflow-hidden">
-        {/* Premium background effects with brand colors */}
-        <div className="absolute inset-0 bg-tech-texture opacity-30 pointer-events-none" />
-        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-gradient-to-br from-[#1E40AF]/10 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#00B140]/10 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#E11D48]/10 via-transparent to-transparent rounded-full blur-3xl pointer-events-none -translate-x-1/2" />
-        
-        {/* Animated gradient orbs */}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#1E40AF]/8 to-transparent rounded-full blur-3xl pointer-events-none"
-          animate={{
-            scale: [1, 1.3, 1],
-            x: [0, 40, 0],
-            y: [0, -40, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-tr from-[#00B140]/8 to-transparent rounded-full blur-3xl pointer-events-none"
-          animate={{
-            scale: [1, 1.25, 1],
-            x: [0, -40, 0],
-            y: [0, 40, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-gradient-to-r from-[#E11D48]/8 to-transparent rounded-full blur-3xl pointer-events-none -translate-x-1/2 -translate-y-1/2"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        
-        {/* Subtle grid overlay */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
-        
-        <div className="relative z-10">
-          <AnimatedSection>
-            <SectionHeader
-              title="Who It's For"
-              subtitle="UPTECH serves diverse stakeholders across the technology ecosystem."
-              align="center"
-            />
-            <AudienceGrid />
-          </AnimatedSection>
-        </div>
-      </Section>
-
-      {/* Why UK–Pakistan */}
-      <Section className="relative overflow-hidden">
-        {/* Subtle background treatment */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02] pointer-events-none" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1E40AF]/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00B140]/5 rounded-full blur-3xl pointer-events-none" />
-        
-        <div className="relative z-10">
-          <AnimatedSection>
-            <div className="max-w-5xl mx-auto">
-              <SectionHeader
-                title="Why UK–Pakistan"
-                subtitle="The UK and Pakistan share a growing technology corridor driven by talent, innovation, and digital trade. UPTECH serves as a trusted bridge for collaboration and growth."
-                align="center"
-              />
-              <div className="grid md:grid-cols-3 gap-6 mt-12">
-                <StatCard
-                  icon={<Globe2 className="w-10 h-10 text-[#1E40AF]" />}
-                  title="Strong Diaspora"
-                  description="Strong Pakistani tech diaspora in the UK"
-                  index={0}
-                />
-                <StatCard
-                  icon={<TrendingUp className="w-10 h-10 text-[#00B140]" />}
-                  title="Rapid Growth"
-                  description="Rapid growth of Pakistan's IT exports"
-                  index={1}
-                />
-                <StatCard
-                  icon={<Award className="w-10 h-10 text-[#E11D48]" />}
-                  title="UK Leadership"
-                  description="UK leadership in AI and enterprise technology"
-                  index={2}
-                />
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </Section>
-
-      {/* Leadership and Governance Preview */}
-      <Section variant="dark" className="relative overflow-hidden">
-        {/* Premium background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/image/governance/governance-bg.jpg')",
-          }}
-        />
-        
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/55" />
-        
-        {/* Subtle radial gradient vignette */}
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-black/30" 
-          style={{
-            background: "radial-gradient(circle at center, transparent 0%, transparent 40%, rgba(0,0,0,0.3) 100%)",
-          }}
-        />
-        
-        {/* Slow moving glow animation */}
-        <div className="absolute inset-0 opacity-30 pointer-events-none glow-animation-container">
-          <div 
-            className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1E40AF]/20 rounded-full blur-3xl"
-            style={{
-              animation: "glow-move 20s ease-in-out infinite",
-            }}
-          />
-          <div 
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00B140]/20 rounded-full blur-3xl"
-            style={{
-              animation: "glow-move 25s ease-in-out infinite reverse",
-            }}
-          />
-        </div>
-        
-        {/* Content */}
-        <div className="relative z-10">
-          <AnimatedSection>
-            <div className="max-w-5xl mx-auto text-center">
-              <SectionHeader
-                title="Leadership and Governance"
-                subtitle="UPTECH operates under a defined governance structure ensuring transparency, ethics, and accountability."
-                align="center"
-              />
-              <div className="mb-10">
-                <GovernanceBadges />
-              </div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block"
-              >
-                <div className="[&_a]:rounded-full [&_a]:shadow-xl [&_a:hover]:shadow-2xl [&_a:hover]:-translate-y-1">
-                  <Button 
-                    href="/leadership" 
-                    variant="primary" 
-                    size="lg" 
-                    showArrow
-                  >
-                    View Leadership and Governance
-                  </Button>
-                </div>
-              </motion.div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </Section>
-
-      {/* Events and Activity Preview */}
-      <Section>
-        <AnimatedSection>
-          <SectionHeader
-            title="Events and Activity"
-            subtitle="Stay updated with UPTECH events, news, and activities across both nations."
-            align="left"
-          />
-          <EventPreview />
-          <div className="mt-12 text-center">
-            <Button href="/events" variant="primary" size="lg" showArrow>
-              View All Events
-            </Button>
-          </div>
-          <div className="mt-20 pt-16 border-t border-[rgba(11,18,32,0.06)]">
-            <SectionHeader
-              title="Event Gallery"
-              subtitle="Highlights from recent UK–Pakistan engagements."
-              align="left"
-            />
-            <EventGallery />
-          </div>
-        </AnimatedSection>
-      </Section>
+      {/* Resources */}
+      <ResourcesSection />
 
       {/* Membership Invitation */}
-      <Section variant="dark" className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-[#0F172A] text-white py-20 md:py-28 lg:py-32">
         <JoinUPTECHBackground />
-        <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            <SectionHeader
-              title="Join UPTECH"
-              subtitle="Join a trusted network shaping the future of UK–Pakistan technology collaboration."
-              align="center"
-            />
-            <Button href="/membership" variant="primary" size="lg" showArrow>
-              Become a Member
-            </Button>
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Portal Access Strip */}
-      <Section>
-        <AnimatedSection>
-          <div className="max-w-5xl mx-auto">
-            <div className="relative group overflow-hidden rounded-2xl">
-              {/* Animated gradient border */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#E11D48] p-[1px]">
-                <div className="w-full h-full rounded-2xl bg-white" />
+        <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="mb-5 flex justify-center">
+                <div className="h-1 w-14 rounded-full bg-gradient-to-r from-[#2563EB] to-[#22C55E]" />
               </div>
-
-              {/* Main content */}
-              <div className="relative bg-white rounded-2xl p-10 md:p-14 transition-all duration-500">
-                {/* Top gradient accent */}
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#E11D48]" />
-
-                <div className="relative z-10 text-center">
-                  <SectionHeader
-                    title="Member and Partner Portal"
-                    subtitle="Access programs, applications, events, and professional networks — all in one place."
-                    align="center"
-                  />
-                  <div className="mt-8">
-                    <Button href={siteConfig.portalUrl} variant="primary" size="lg" showArrow>
-                      Access Portal
-                    </Button>
-                  </div>
-                </div>
-              </div>
+              <h2 className="font-heading font-bold mb-5 text-white">Join UPTECH</h2>
+              <p className="text-lg leading-relaxed text-white/70 mx-auto max-w-2xl mb-12">
+                Join a trusted network shaping the future of UK–Pakistan technology collaboration.
+              </p>
+              <Button href="/membership" variant="primary" size="lg" showArrow>
+                Become a Member
+              </Button>
             </div>
-          </div>
-        </AnimatedSection>
-      </Section>
+          </AnimatedSection>
+        </div>
+      </section>
     </div>
   );
 }

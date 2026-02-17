@@ -59,7 +59,7 @@ export default function SkillDevelopmentCenterPage() {
               subtitle="UPTECH's Skill Development Center provides comprehensive training programs designed to build world-class tech capabilities across the UK and Pakistan."
               align="center"
             />
-            <div className="max-w-3xl mx-auto mt-8 text-center text-[rgba(11,18,32,0.68)] leading-relaxed space-y-4">
+            <div className="max-w-3xl mx-auto mt-8 text-center text-[#475569] leading-relaxed space-y-4">
               <p>
                 Our Skill Development Center offers industry-recognized certifications, specialized training, and personalized mentorship to empower individuals and organizations with cutting-edge technology skills.
               </p>
@@ -72,7 +72,7 @@ export default function SkillDevelopmentCenterPage() {
       </Section>
 
       {/* Programs Grid */}
-      <Section variant="dark" id="programs" className="relative overflow-hidden">
+      <Section  id="programs" className="relative overflow-hidden">
         <ProgramsBackground shouldReduceMotion={shouldReduceMotion} />
         <AnimatedSection>
           <div className="max-w-7xl mx-auto relative z-10">
@@ -162,7 +162,7 @@ export default function SkillDevelopmentCenterPage() {
       </Section>
 
       {/* Flagship Tracks */}
-      <Section variant="dark" id="tracks" className="relative overflow-hidden">
+      <Section  id="tracks" className="relative overflow-hidden">
         <ProgramsBackground shouldReduceMotion={shouldReduceMotion} />
         <AnimatedSection>
           <div className="max-w-7xl mx-auto relative z-10">
@@ -222,7 +222,7 @@ export default function SkillDevelopmentCenterPage() {
       </Section>
 
       {/* Mentors and Partners */}
-      <Section variant="dark" className="relative overflow-hidden">
+      <Section  className="relative overflow-hidden">
         <ProgramsBackground shouldReduceMotion={shouldReduceMotion} />
         <AnimatedSection>
           <div className="max-w-7xl mx-auto relative z-10">
@@ -251,7 +251,7 @@ export default function SkillDevelopmentCenterPage() {
       </Section>
 
       {/* Final CTA */}
-      <Section variant="dark" className="relative overflow-hidden">
+      <Section  className="relative overflow-hidden">
         <CTABackground shouldReduceMotion={shouldReduceMotion} />
         <AnimatedSection>
           <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -277,7 +277,7 @@ export default function SkillDevelopmentCenterPage() {
 
 function SkillDevHero({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
   return (
-    <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-[#050B14] pt-20">
+    <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-[#F8FAFC] pt-20">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-[#2D5BFF] rounded-full opacity-[0.15] blur-[200px]"
@@ -289,7 +289,7 @@ function SkillDevHero({ shouldReduceMotion }: { shouldReduceMotion: boolean | nu
           transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute top-1/2 right-1/3 w-[600px] h-[600px] bg-[#00B140] rounded-full opacity-[0.08] blur-[160px]"
+          className="absolute top-1/2 right-1/3 w-[600px] h-[600px] bg-[#22C55E] rounded-full opacity-[0.08] blur-[160px]"
           animate={shouldReduceMotion ? {} : {
             x: [0, -60, 50, 0],
             y: [0, 60, -40, 0],
@@ -298,7 +298,7 @@ function SkillDevHero({ shouldReduceMotion }: { shouldReduceMotion: boolean | nu
           transition={{ duration: 45, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-1/3 left-1/2 w-[550px] h-[550px] bg-[#E11D48] rounded-full opacity-[0.06] blur-[150px]"
+          className="absolute bottom-1/3 left-1/2 w-[550px] h-[550px] bg-[#2563EB] rounded-full opacity-[0.06] blur-[150px]"
           animate={shouldReduceMotion ? {} : {
             x: [0, 40, -50, 0],
             y: [0, -40, 50, 0],
@@ -314,7 +314,7 @@ function SkillDevHero({ shouldReduceMotion }: { shouldReduceMotion: boolean | nu
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-4xl mx-auto space-y-6"
         >
-          <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#EAF2FF]">
+          <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#0F172A]">
             <span className="relative inline-block">
               Skill Development Center
               <AnimatedUnderline />
@@ -349,8 +349,8 @@ function TrustStripItem({
   const Icon = item.icon;
   const colorConfig = {
     blue: "text-[#2D5BFF] bg-[#2D5BFF]/10",
-    green: "text-[#00B140] bg-[#00B140]/10",
-    red: "text-[#E11D48] bg-[#E11D48]/10",
+    green: "text-[#22C55E] bg-[#22C55E]/10",
+    red: "text-[#2563EB] bg-[#2563EB]/10",
   };
 
   return (
@@ -359,12 +359,12 @@ function TrustStripItem({
       initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
       animate={shouldReduceMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="flex flex-col items-center text-center p-4 bg-white rounded-xl border border-[rgba(11,18,32,0.10)]"
+      className="flex flex-col items-center text-center p-4 bg-white rounded-xl border border-gray-200"
     >
       <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-2 ${colorConfig[item.color]}`}>
         <Icon className="w-5 h-5" />
       </div>
-      <span className="text-sm font-medium text-[rgba(11,18,32,0.68)]">{item.label}</span>
+      <span className="text-sm font-medium text-[#475569]">{item.label}</span>
     </motion.div>
   );
 }
@@ -408,7 +408,7 @@ function DetailedProgramCard({
 
   const colorConfig = {
     blue: {
-      gradient: "from-[#2D5BFF] to-[#1E40AF]",
+      gradient: "from-[#2D5BFF] to-[#2563EB]",
       bg: "bg-[#2D5BFF]/10",
       border: "border-[#2D5BFF]/30",
       iconBg: "bg-[#2D5BFF]/20",
@@ -416,19 +416,19 @@ function DetailedProgramCard({
       glow: "shadow-[0_0_30px_rgba(45,91,255,0.3)]",
     },
     green: {
-      gradient: "from-[#00B140] to-[#008030]",
-      bg: "bg-[#00B140]/10",
-      border: "border-[#00B140]/30",
-      iconBg: "bg-[#00B140]/20",
-      iconColor: "text-[#00B140]",
+      gradient: "from-[#22C55E] to-[#16A34A]",
+      bg: "bg-[#22C55E]/10",
+      border: "border-[#22C55E]/30",
+      iconBg: "bg-[#22C55E]/20",
+      iconColor: "text-[#22C55E]",
       glow: "shadow-[0_0_30px_rgba(0,177,64,0.3)]",
     },
     red: {
-      gradient: "from-[#E11D48] to-[#BE123C]",
-      bg: "bg-[#E11D48]/10",
-      border: "border-[#E11D48]/30",
-      iconBg: "bg-[#E11D48]/20",
-      iconColor: "text-[#E11D48]",
+      gradient: "from-[#2563EB] to-[#BE123C]",
+      bg: "bg-[#2563EB]/10",
+      border: "border-[#2563EB]/30",
+      iconBg: "bg-[#2563EB]/20",
+      iconColor: "text-[#2563EB]",
       glow: "shadow-[0_0_30px_rgba(225,29,72,0.3)]",
     },
   };
@@ -466,10 +466,10 @@ function DetailedProgramCard({
           <Icon className="w-8 h-8" />
         </motion.div>
         <div className="relative z-10 flex-1">
-          <h3 className="font-heading font-bold text-xl mb-2 text-[#EAF2FF] group-hover:text-white transition-colors">
+          <h3 className="font-heading font-bold text-xl mb-2 text-[#0F172A] group-hover:text-white transition-colors">
             {title}
           </h3>
-          <p className="text-sm text-[rgba(234,242,255,0.75)] mb-6 leading-relaxed">
+          <p className="text-sm text-[#64748B] mb-6 leading-relaxed">
             {subtitle}
           </p>
           <div className="space-y-3">
@@ -486,7 +486,7 @@ function DetailedProgramCard({
                   animate={isHovered && !shouldReduceMotion ? { scale: [1, 1.5, 1] } : { scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 />
-                <span className="text-xs text-[rgba(234,242,255,0.7)]">{bullet}</span>
+                <span className="text-xs text-[#64748B]">{bullet}</span>
               </motion.div>
             ))}
           </div>
@@ -533,9 +533,9 @@ function LearningPathStepCard({
       className="relative"
     >
       <div
-        className="bg-white rounded-xl border-l-4 border border-[rgba(11,18,32,0.10)] hover:border-l-4 transition-all duration-300 p-6 h-full group"
+        className="bg-white rounded-xl border-l-4 border border-gray-200 hover:border-l-4 transition-all duration-300 p-6 h-full group"
         style={{
-          borderLeftColor: step.color === "blue" ? "#2D5BFF" : step.color === "green" ? "#00B140" : "#E11D48",
+          borderLeftColor: step.color === "blue" ? "#2D5BFF" : step.color === "green" ? "#22C55E" : "#2563EB",
         }}
       >
         <div className="flex items-center gap-4 mb-4">
@@ -547,22 +547,22 @@ function LearningPathStepCard({
             <Icon className="w-6 h-6 text-white" />
           </motion.div>
           <div>
-            <div className="text-xs font-semibold text-[rgba(11,18,32,0.5)] uppercase tracking-wider">
+            <div className="text-xs font-semibold text-[#64748B] uppercase tracking-wider">
               Step {index + 1}
             </div>
-            <h3 className="font-heading font-bold text-lg text-[#0B1220]">{step.title}</h3>
+            <h3 className="font-heading font-bold text-lg text-[#0F172A]">{step.title}</h3>
           </div>
         </div>
-        <p className="text-sm text-[rgba(11,18,32,0.68)] mb-4 leading-relaxed">{step.description}</p>
+        <p className="text-sm text-[#475569] mb-4 leading-relaxed">{step.description}</p>
         <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg ${config.bg}/10 border ${config.borderAccent}`}>
           <CheckCircle2
             className={`w-4 h-4 ${
-              step.color === "blue" ? "text-[#2D5BFF]" : step.color === "green" ? "text-[#00B140]" : "text-[#E11D48]"
+              step.color === "blue" ? "text-[#2D5BFF]" : step.color === "green" ? "text-[#22C55E]" : "text-[#2563EB]"
             }`}
           />
           <span
             className={`text-xs font-medium ${
-              step.color === "blue" ? "text-[#2D5BFF]" : step.color === "green" ? "text-[#00B140]" : "text-[#E11D48]"
+              step.color === "blue" ? "text-[#2D5BFF]" : step.color === "green" ? "text-[#22C55E]" : "text-[#2563EB]"
             }`}
           >
             {step.outcome}
@@ -611,22 +611,22 @@ function LearningPathTimeline({ shouldReduceMotion }: { shouldReduceMotion: bool
 
   const colorConfig = {
     blue: {
-      gradient: "from-[#2D5BFF] to-[#1E40AF]",
+      gradient: "from-[#2D5BFF] to-[#2563EB]",
       bg: "bg-[#2D5BFF]",
       glow: "bg-[#2D5BFF]",
       borderAccent: "border-[#2D5BFF]/20",
     },
     green: {
-      gradient: "from-[#00B140] to-[#008030]",
-      bg: "bg-[#00B140]",
-      glow: "bg-[#00B140]",
-      borderAccent: "border-[#00B140]/20",
+      gradient: "from-[#22C55E] to-[#16A34A]",
+      bg: "bg-[#22C55E]",
+      glow: "bg-[#22C55E]",
+      borderAccent: "border-[#22C55E]/20",
     },
     red: {
-      gradient: "from-[#E11D48] to-[#BE123C]",
-      bg: "bg-[#E11D48]",
-      glow: "bg-[#E11D48]",
-      borderAccent: "border-[#E11D48]/20",
+      gradient: "from-[#2563EB] to-[#BE123C]",
+      bg: "bg-[#2563EB]",
+      glow: "bg-[#2563EB]",
+      borderAccent: "border-[#2563EB]/20",
     },
   };
 
@@ -672,25 +672,25 @@ function TrackCard({
 
   const colorConfig = {
     blue: {
-      gradient: "from-[#2D5BFF] to-[#1E40AF]",
+      gradient: "from-[#2D5BFF] to-[#2563EB]",
       bg: "bg-[#2D5BFF]/10",
       border: "border-[#2D5BFF]/30",
       iconBg: "bg-[#2D5BFF]/20",
       iconColor: "text-[#2D5BFF]",
     },
     green: {
-      gradient: "from-[#00B140] to-[#008030]",
-      bg: "bg-[#00B140]/10",
-      border: "border-[#00B140]/30",
-      iconBg: "bg-[#00B140]/20",
-      iconColor: "text-[#00B140]",
+      gradient: "from-[#22C55E] to-[#16A34A]",
+      bg: "bg-[#22C55E]/10",
+      border: "border-[#22C55E]/30",
+      iconBg: "bg-[#22C55E]/20",
+      iconColor: "text-[#22C55E]",
     },
     red: {
-      gradient: "from-[#E11D48] to-[#BE123C]",
-      bg: "bg-[#E11D48]/10",
-      border: "border-[#E11D48]/30",
-      iconBg: "bg-[#E11D48]/20",
-      iconColor: "text-[#E11D48]",
+      gradient: "from-[#2563EB] to-[#BE123C]",
+      bg: "bg-[#2563EB]/10",
+      border: "border-[#2563EB]/30",
+      iconBg: "bg-[#2563EB]/20",
+      iconColor: "text-[#2563EB]",
     },
   };
 
@@ -721,28 +721,28 @@ function TrackCard({
           >
             <Icon className="w-8 h-8" />
           </motion.div>
-          <h3 className="font-heading font-bold text-2xl mb-4 text-[#EAF2FF] group-hover:text-white transition-colors">
+          <h3 className="font-heading font-bold text-2xl mb-4 text-[#0F172A] group-hover:text-white transition-colors">
             {title}
           </h3>
         </div>
         <div className="relative z-10 flex-1 space-y-4">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-sm text-[rgba(234,242,255,0.75)]">
+            <div className="flex items-center gap-2 text-sm text-[#64748B]">
               <Clock className="w-4 h-4" />
               <span>{duration}</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-[rgba(234,242,255,0.75)]">
+            <div className="flex items-center gap-2 text-sm text-[#64748B]">
               <TrendingUp className="w-4 h-4" />
               <span>{level}</span>
             </div>
-            <div className="flex items-center gap-2 text-sm text-[rgba(234,242,255,0.75)]">
+            <div className="flex items-center gap-2 text-sm text-[#64748B]">
               <BarChart3 className="w-4 h-4" />
               <span>{commitment}</span>
             </div>
           </div>
-          <div className="pt-4 border-t border-[rgba(234,242,255,0.1)]">
+          <div className="pt-4 border-t border-gray-200">
             <div className="text-xs font-semibold text-[rgba(234,242,255,0.6)] uppercase mb-2">What you build</div>
-            <p className="text-sm text-[rgba(234,242,255,0.75)] leading-relaxed">
+            <p className="text-sm text-[#64748B] leading-relaxed">
               {build}
             </p>
           </div>
@@ -814,14 +814,14 @@ function OutcomeMetricCard({
       initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
       animate={shouldReduceMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-white rounded-xl border border-[rgba(11,18,32,0.10)] p-6 text-center"
+      className="bg-white rounded-xl border border-gray-200 p-6 text-center"
     >
       <div className={`text-4xl font-bold mb-2 bg-gradient-to-br ${config.gradient} bg-clip-text text-transparent`}>
         {(reduceMotion || !isInView ? metric.value : count)}
         {metric.suffix}
         {metric.value2 ? `${metric.value2}` : ""}
       </div>
-      <p className="text-sm text-[rgba(11,18,32,0.68)]">{metric.label}</p>
+      <p className="text-sm text-[#475569]">{metric.label}</p>
     </motion.div>
   );
 }
@@ -835,9 +835,9 @@ function OutcomesMetrics({ shouldReduceMotion }: { shouldReduceMotion: boolean |
   ];
 
   const colorConfig = {
-    blue: { gradient: "from-[#2D5BFF] to-[#1E40AF]", text: "text-[#2D5BFF]" },
-    green: { gradient: "from-[#00B140] to-[#008030]", text: "text-[#00B140]" },
-    red: { gradient: "from-[#E11D48] to-[#BE123C]", text: "text-[#E11D48]" },
+    blue: { gradient: "from-[#2D5BFF] to-[#2563EB]", text: "text-[#2D5BFF]" },
+    green: { gradient: "from-[#22C55E] to-[#16A34A]", text: "text-[#22C55E]" },
+    red: { gradient: "from-[#2563EB] to-[#BE123C]", text: "text-[#2563EB]" },
   };
 
   return (
@@ -875,8 +875,8 @@ function MentorCard({
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const colorConfig = {
     blue: { bg: "bg-[#2D5BFF]/20", text: "text-[#2D5BFF]", border: "border-[#2D5BFF]/30" },
-    green: { bg: "bg-[#00B140]/20", text: "text-[#00B140]", border: "border-[#00B140]/30" },
-    red: { bg: "bg-[#E11D48]/20", text: "text-[#E11D48]", border: "border-[#E11D48]/30" },
+    green: { bg: "bg-[#22C55E]/20", text: "text-[#22C55E]", border: "border-[#22C55E]/30" },
+    red: { bg: "bg-[#2563EB]/20", text: "text-[#2563EB]", border: "border-[#2563EB]/30" },
   };
   const config = colorConfig[mentor.color];
 
@@ -887,7 +887,7 @@ function MentorCard({
       animate={shouldReduceMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
-      className={`p-6 rounded-xl border ${config.border} bg-[rgba(255,255,255,0.06)] backdrop-blur-sm hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300`}
+      className={`p-6 rounded-xl border ${config.border} bg-white backdrop-blur-sm hover:bg-[#F8FAFC] transition-all duration-300`}
     >
       <div className="flex items-center justify-between mb-4">
         <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${config.bg} ${config.text}`}>
@@ -895,8 +895,8 @@ function MentorCard({
         </div>
         <Linkedin className="w-5 h-5 text-[rgba(234,242,255,0.5)]" />
       </div>
-      <h4 className="font-heading font-semibold text-lg mb-1 text-[#EAF2FF]">{mentor.name}</h4>
-      <p className="text-xs text-[rgba(234,242,255,0.7)] mb-1">{mentor.role}</p>
+      <h4 className="font-heading font-semibold text-lg mb-1 text-[#0F172A]">{mentor.name}</h4>
+      <p className="text-xs text-[#64748B] mb-1">{mentor.role}</p>
       <p className="text-xs text-[rgba(234,242,255,0.5)]">{mentor.domain}</p>
     </motion.div>
   );
@@ -918,7 +918,7 @@ function PartnerLogoCard({
       initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.8 }}
       animate={shouldReduceMotion || isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="aspect-square bg-white/10 rounded-lg border border-[rgba(234,242,255,0.14)] flex items-center justify-center backdrop-blur-sm hover:bg-white/15 transition-all duration-300"
+      className="aspect-square bg-white/10 rounded-lg border border-gray-200 flex items-center justify-center backdrop-blur-sm hover:bg-white/15 transition-all duration-300"
     >
       <div className="w-16 h-16 bg-[rgba(234,242,255,0.1)] rounded" />
     </motion.div>
@@ -936,7 +936,7 @@ function MentorsPartners({ shouldReduceMotion }: { shouldReduceMotion: boolean |
   return (
     <div className="mt-12 space-y-16">
       <div>
-        <h3 className="font-heading font-semibold text-xl mb-8 text-center text-[#EAF2FF]">Expert Mentors</h3>
+        <h3 className="font-heading font-semibold text-xl mb-8 text-center text-[#0F172A]">Expert Mentors</h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {mentors.map((mentor, index) => (
             <MentorCard key={mentor.name} mentor={mentor} index={index} shouldReduceMotion={shouldReduceMotion} />
@@ -944,7 +944,7 @@ function MentorsPartners({ shouldReduceMotion }: { shouldReduceMotion: boolean |
         </div>
       </div>
       <div>
-        <h3 className="font-heading font-semibold text-xl mb-8 text-center text-[#EAF2FF]">Partner Organizations</h3>
+        <h3 className="font-heading font-semibold text-xl mb-8 text-center text-[#0F172A]">Partner Organizations</h3>
         <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6">
           {Array.from({ length: 6 }).map((_, index) => (
             <PartnerLogoCard key={index} index={index} shouldReduceMotion={shouldReduceMotion} />
@@ -982,15 +982,15 @@ function FAQItemCard({
       initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
       animate={shouldReduceMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="bg-white rounded-xl border border-[rgba(11,18,32,0.10)] overflow-hidden"
+      className="bg-white rounded-xl border border-gray-200 overflow-hidden"
     >
       <button
         onClick={onToggle}
         className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-[rgba(11,18,32,0.02)] transition-colors"
       >
-        <h3 className="font-heading font-semibold text-lg text-[#0B1220] pr-4">{faq.question}</h3>
+        <h3 className="font-heading font-semibold text-lg text-[#0F172A] pr-4">{faq.question}</h3>
         <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }} className="flex-shrink-0">
-          <ChevronDown className="w-5 h-5 text-[rgba(11,18,32,0.5)]" />
+          <ChevronDown className="w-5 h-5 text-[#64748B]" />
         </motion.div>
       </button>
       <motion.div
@@ -999,7 +999,7 @@ function FAQItemCard({
         transition={{ duration: 0.3 }}
         className="overflow-hidden"
       >
-        <div className="px-6 pb-4 text-[rgba(11,18,32,0.68)] leading-relaxed">{faq.answer}</div>
+        <div className="px-6 pb-4 text-[#475569] leading-relaxed">{faq.answer}</div>
       </motion.div>
     </motion.div>
   );
@@ -1070,7 +1070,7 @@ function ProgramsBackground({ shouldReduceMotion }: { shouldReduceMotion: boolea
         transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-[#00B140] rounded-full opacity-[0.06] blur-[140px]"
+        className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-[#22C55E] rounded-full opacity-[0.06] blur-[140px]"
         animate={shouldReduceMotion ? {} : {
           x: [0, -25, 20, 0],
           y: [0, 25, -20, 0],
@@ -1079,7 +1079,7 @@ function ProgramsBackground({ shouldReduceMotion }: { shouldReduceMotion: boolea
         transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-1/4 left-1/2 w-[450px] h-[450px] bg-[#E11D48] rounded-full opacity-[0.05] blur-[130px]"
+        className="absolute bottom-1/4 left-1/2 w-[450px] h-[450px] bg-[#2563EB] rounded-full opacity-[0.05] blur-[130px]"
         animate={shouldReduceMotion ? {} : {
           x: [0, 20, -25, 0],
           y: [0, -20, 25, 0],
@@ -1104,7 +1104,7 @@ function CTABackground({ shouldReduceMotion }: { shouldReduceMotion: boolean | n
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute top-1/2 right-1/4 w-[800px] h-[800px] bg-[#00B140] rounded-full opacity-[0.1] blur-[180px]"
+        className="absolute top-1/2 right-1/4 w-[800px] h-[800px] bg-[#22C55E] rounded-full opacity-[0.1] blur-[180px]"
         animate={shouldReduceMotion ? {} : {
           scale: [1, 1.4, 1],
           x: [0, -40, 0],
@@ -1113,7 +1113,7 @@ function CTABackground({ shouldReduceMotion }: { shouldReduceMotion: boolean | n
         transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-1/4 left-1/3 w-[700px] h-[700px] bg-[#E11D48] rounded-full opacity-[0.08] blur-[170px]"
+        className="absolute bottom-1/4 left-1/3 w-[700px] h-[700px] bg-[#2563EB] rounded-full opacity-[0.08] blur-[170px]"
         animate={shouldReduceMotion ? {} : {
           scale: [1, 1.35, 1],
           x: [0, 30, 0],

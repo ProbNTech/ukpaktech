@@ -81,8 +81,8 @@ export default function AboutPage() {
                 className="w-full h-full rounded-full blur-3xl"
                 style={{
                   background: `radial-gradient(circle, 
-                    rgba(30, 64, 175, 0.4) 0%, 
-                    rgba(0, 177, 64, 0.35) 25%, 
+                    rgba(37, 99, 235, 0.4) 0%, 
+                    rgba(34, 197, 94, 0.35) 25%, 
                     rgba(225, 29, 72, 0.3) 50%, 
                     transparent 80%
                   )`,
@@ -113,9 +113,9 @@ export default function AboutPage() {
                 className="w-full h-full rounded-full blur-2xl"
                 style={{
                   background: `radial-gradient(circle, 
-                    rgba(0, 177, 64, 0.35) 0%, 
+                    rgba(34, 197, 94, 0.35) 0%, 
                     rgba(225, 29, 72, 0.3) 30%, 
-                    rgba(30, 64, 175, 0.25) 60%, 
+                    rgba(37, 99, 235, 0.25) 60%, 
                     transparent 90%
                   )`,
                 }}
@@ -146,8 +146,8 @@ export default function AboutPage() {
                 style={{
                   background: `radial-gradient(circle, 
                     rgba(225, 29, 72, 0.3) 0%, 
-                    rgba(30, 64, 175, 0.25) 40%, 
-                    rgba(0, 177, 64, 0.2) 70%, 
+                    rgba(37, 99, 235, 0.25) 40%, 
+                    rgba(34, 197, 94, 0.2) 70%, 
                     transparent 100%
                   )`,
                 }}
@@ -162,10 +162,10 @@ export default function AboutPage() {
                 initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(30,64,175,0.15)] border border-[#1E40AF]/30 backdrop-blur-sm mx-auto mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2563EB]/15 border border-[#2563EB]/30 backdrop-blur-sm mx-auto mb-6"
               >
-                <Sparkles className="w-4 h-4 text-[#1E40AF]" />
-                <span className="text-sm font-medium text-[#EAF2FF]/90">About UPTECH</span>
+                <Sparkles className="w-4 h-4 text-[#2563EB]" />
+                <span className="text-sm font-medium text-[#0F172A]/90">About UPTECH</span>
               </motion.div>
               <span className="relative inline-block">
                 About UPTECH
@@ -179,7 +179,7 @@ export default function AboutPage() {
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="text-lg text-[rgba(234,242,255,0.75)] leading-relaxed max-w-2xl mx-auto"
+            className="text-lg text-[#475569] leading-relaxed max-w-2xl mx-auto"
           >
             A bilateral initiative connecting governments, enterprises, investors, startups, and academia to drive technology-led growth.
           </motion.p>
@@ -195,7 +195,7 @@ export default function AboutPage() {
       </section>
 
       {/* Who We Are Section */}
-      <Section variant="dark">
+      <Section>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <AnimatedSection>
             <div>
@@ -204,29 +204,29 @@ export default function AboutPage() {
                 subtitle="A strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan."
                 align="left"
               />
-              <p className="text-lg text-[rgba(234,242,255,0.75)] leading-relaxed mb-8">
+              <p className="text-lg text-[#475569] leading-relaxed mb-8">
                 The UK–Pakistan Technology Council (UPTECH) is a bilateral initiative connecting governments, enterprises, investors, startups, and academia to drive technology-led growth. Built by professionals, entrepreneurs, and technology leaders, UPTECH is committed to ethical governance and long-term impact across both nations.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-[#1E40AF] mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#2563EB] mt-2 flex-shrink-0"></div>
                   <div>
-                    <h4 className="font-semibold text-[#EAF2FF] mb-1">Governments</h4>
-                    <p className="text-[rgba(234,242,255,0.72)] text-sm">Facilitating policy alignment and bilateral technology cooperation.</p>
+                    <h4 className="font-semibold text-[#0F172A] mb-1">Governments</h4>
+                    <p className="text-[#475569] text-sm">Facilitating policy alignment and bilateral technology cooperation.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-[#00B140] mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#22C55E] mt-2 flex-shrink-0"></div>
                   <div>
-                    <h4 className="font-semibold text-[#EAF2FF] mb-1">Enterprises & Investors</h4>
-                    <p className="text-[rgba(234,242,255,0.72)] text-sm">Supporting cross-border trade, investment, and market access.</p>
+                    <h4 className="font-semibold text-[#0F172A] mb-1">Enterprises & Investors</h4>
+                    <p className="text-[#475569] text-sm">Supporting cross-border trade, investment, and market access.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-[#E11D48] mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#2563EB] mt-2 flex-shrink-0"></div>
                   <div>
-                    <h4 className="font-semibold text-[#EAF2FF] mb-1">Startups & Academia</h4>
-                    <p className="text-[rgba(234,242,255,0.72)] text-sm">Fostering innovation, talent development, and research collaboration.</p>
+                    <h4 className="font-semibold text-[#0F172A] mb-1">Startups & Academia</h4>
+                    <p className="text-[#475569] text-sm">Fostering innovation, talent development, and research collaboration.</p>
                   </div>
                 </div>
               </div>
@@ -247,7 +247,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Vision and Mission Section */}
-      <Section variant="dark">
+      <Section>
         <AnimatedSection>
           <div className="max-w-6xl mx-auto">
             <SectionHeader
@@ -264,43 +264,43 @@ export default function AboutPage() {
                 className="relative group"
               >
                 {/* Background accent shape */}
-                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-[#00B140]/20 rounded-full blur-2xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+                <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-[#22C55E]/20 rounded-full blur-2xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
                 
                 {/* Main card */}
-                <div className="relative bg-gradient-to-b from-[rgba(255,255,255,0.08)] to-[rgba(255,255,255,0.04)] backdrop-blur-xl rounded-3xl border border-[rgba(234,242,255,0.15)] p-8 lg:p-10 shadow-2xl overflow-hidden h-full transition-all duration-300 hover:border-[#00B140]/40 hover:shadow-[0_0_40px_rgba(0,177,64,0.2)] hover:-translate-y-1">
+                <div className="relative bg-white rounded-3xl border border-gray-200 p-8 lg:p-10 shadow-2xl overflow-hidden h-full transition-all duration-300 hover:border-[#22C55E]/40 hover:shadow-[0_0_40px_rgba(34,197,94,0.2)] hover:-translate-y-1">
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#00B140]/10 via-transparent to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#22C55E]/10 via-transparent to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
                   
                   {/* Content */}
                   <div className="relative z-10 flex flex-col h-full">
                     {/* Icon */}
                     <div className="flex justify-center mb-6">
                       <div className="relative">
-                        <div className="absolute inset-0 bg-[#00B140]/30 rounded-full blur-xl group-hover:blur-2xl group-hover:opacity-60 transition-all duration-300"></div>
-                        <Target className="relative w-16 h-16 text-[#00B140] group-hover:scale-110 transition-transform duration-300" strokeWidth={2.5} />
+                        <div className="absolute inset-0 bg-[#22C55E]/30 rounded-full blur-xl group-hover:blur-2xl group-hover:opacity-60 transition-all duration-300"></div>
+                        <Target className="relative w-16 h-16 text-[#22C55E] group-hover:scale-110 transition-transform duration-300" strokeWidth={2.5} />
                       </div>
                     </div>
                     
                     {/* Title */}
-                    <h3 className="font-heading font-bold text-3xl mb-6 text-center text-[#EAF2FF] uppercase tracking-tight">
+                    <h3 className="font-heading font-bold text-3xl mb-6 text-center text-[#0F172A] uppercase tracking-tight">
                       Mission
                     </h3>
                     
                     {/* Text content */}
-                    <p className="text-[rgba(234,242,255,0.75)] leading-relaxed text-center flex-grow mb-8">
+                    <p className="text-[#475569] leading-relaxed text-center flex-grow mb-8">
                       To strengthen technology, innovation, and digital trade by connecting governments, enterprises, investors, startups, and academia across both nations.
                     </p>
                     
                     {/* Curved identifier element */}
                     <div className="relative mt-auto">
-                      <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-12 bg-[#00B140] rounded-t-full flex items-center justify-center shadow-lg shadow-[#00B140]/30">
+                      <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-12 bg-[#22C55E] rounded-t-full flex items-center justify-center shadow-lg shadow-[#22C55E]/30">
                         <span className="text-white font-bold text-xl">01</span>
                       </div>
                     </div>
                   </div>
                   
                   {/* Bottom accent shape */}
-                  <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#00B140]/10 rounded-tl-full opacity-30"></div>
+                  <div className="absolute bottom-0 right-0 w-40 h-40 bg-[#22C55E]/10 rounded-tl-full opacity-30"></div>
                 </div>
               </motion.div>
 
@@ -313,43 +313,43 @@ export default function AboutPage() {
                 className="relative group"
               >
                 {/* Background accent shape */}
-                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-[#1E40AF]/20 rounded-full blur-2xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-[#2563EB]/20 rounded-full blur-2xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
                 
                 {/* Main card */}
-                <div className="relative bg-gradient-to-b from-[rgba(255,255,255,0.08)] to-[rgba(255,255,255,0.04)] backdrop-blur-xl rounded-3xl border border-[rgba(234,242,255,0.15)] p-8 lg:p-10 shadow-2xl overflow-hidden h-full transition-all duration-300 hover:border-[#1E40AF]/40 hover:shadow-[0_0_40px_rgba(30,64,175,0.2)] hover:-translate-y-1">
+                <div className="relative bg-white rounded-3xl border border-gray-200 p-8 lg:p-10 shadow-2xl overflow-hidden h-full transition-all duration-300 hover:border-[#2563EB]/40 hover:shadow-[0_0_40px_rgba(37,99,235,0.2)] hover:-translate-y-1">
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#1E40AF]/10 via-transparent to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#2563EB]/10 via-transparent to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
                   
                   {/* Content */}
                   <div className="relative z-10 flex flex-col h-full">
                     {/* Icon */}
                     <div className="flex justify-center mb-6">
                       <div className="relative">
-                        <div className="absolute inset-0 bg-[#1E40AF]/30 rounded-full blur-xl group-hover:blur-2xl group-hover:opacity-60 transition-all duration-300"></div>
-                        <Lightbulb className="relative w-16 h-16 text-[#1E40AF] group-hover:scale-110 transition-transform duration-300" strokeWidth={2.5} />
+                        <div className="absolute inset-0 bg-[#2563EB]/30 rounded-full blur-xl group-hover:blur-2xl group-hover:opacity-60 transition-all duration-300"></div>
+                        <Lightbulb className="relative w-16 h-16 text-[#2563EB] group-hover:scale-110 transition-transform duration-300" strokeWidth={2.5} />
                       </div>
                     </div>
                     
                     {/* Title */}
-                    <h3 className="font-heading font-bold text-3xl mb-6 text-center text-[#EAF2FF] uppercase tracking-tight">
+                    <h3 className="font-heading font-bold text-3xl mb-6 text-center text-[#0F172A] uppercase tracking-tight">
                       Vision
                     </h3>
                     
                     {/* Text content */}
-                    <p className="text-[rgba(234,242,255,0.75)] leading-relaxed text-center flex-grow mb-8">
+                    <p className="text-[#475569] leading-relaxed text-center flex-grow mb-8">
                       To become the leading bilateral technology platform driving innovation, collaboration, and sustainable growth between the UK and Pakistan.
                     </p>
                     
                     {/* Curved identifier element */}
                     <div className="relative mt-auto">
-                      <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-12 bg-[#1E40AF] rounded-t-full flex items-center justify-center shadow-lg shadow-[#1E40AF]/30">
+                      <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-12 bg-[#2563EB] rounded-t-full flex items-center justify-center shadow-lg shadow-[#2563EB]/30">
                         <span className="text-white font-bold text-xl">02</span>
                       </div>
                     </div>
                   </div>
                   
                   {/* Bottom accent shape */}
-                  <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#1E40AF]/10 rounded-tr-full opacity-30"></div>
+                  <div className="absolute bottom-0 left-0 w-40 h-40 bg-[#2563EB]/10 rounded-tr-full opacity-30"></div>
                 </div>
               </motion.div>
             </div>
@@ -358,7 +358,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Values Section */}
-      <Section variant="dark">
+      <Section>
         <div className="max-w-7xl mx-auto">
           {/* Central Title */}
           <motion.div
@@ -368,7 +368,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="font-heading font-bold text-4xl md:text-5xl text-[#EAF2FF] mb-4 uppercase tracking-tight">
+            <h2 className="font-heading font-bold text-4xl md:text-5xl text-[#0F172A] mb-4 uppercase tracking-tight">
               Our Values
             </h2>
           </motion.div>
@@ -379,10 +379,10 @@ export default function AboutPage() {
             <div className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none overflow-visible" style={{ height: '100%', minHeight: '500px' }}>
               <svg className="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="none">
                 {[
-                  { color: "#1E40AF", startX: 600, startY: 50, endX: 150, endY: 180 },
-                  { color: "#00B140", startX: 600, startY: 50, endX: 450, endY: 180 },
-                  { color: "#E11D48", startX: 600, startY: 50, endX: 750, endY: 180 },
-                  { color: "#1E40AF", startX: 600, startY: 50, endX: 1050, endY: 180 },
+                  { color: "#2563EB", startX: 600, startY: 50, endX: 150, endY: 180 },
+                  { color: "#22C55E", startX: 600, startY: 50, endX: 450, endY: 180 },
+                  { color: "#2563EB", startX: 600, startY: 50, endX: 750, endY: 180 },
+                  { color: "#2563EB", startX: 600, startY: 50, endX: 1050, endY: 180 },
                 ].map((line, index) => (
                   <motion.line
                     key={index}
@@ -409,33 +409,33 @@ export default function AboutPage() {
                   icon: Shield, 
                   title: "Ethical Governance", 
                   description: "Committed to transparency, integrity, and responsible technology practices across all initiatives.",
-                  gradient: "from-[#1E40AF] to-[#1E3A8A]",
-                  glowColor: "#1E40AF",
-                  dotColor: "#1E40AF"
+                  gradient: "from-[#2563EB] to-[#1D4ED8]",
+                  glowColor: "#2563EB",
+                  dotColor: "#2563EB"
                 },
                 { 
                   icon: Heart, 
                   title: "Long-term Impact", 
                   description: "Building sustainable partnerships and solutions that create lasting value for both nations.",
-                  gradient: "from-[#00B140] to-[#00A040]",
-                  glowColor: "#00B140",
-                  dotColor: "#00B140"
+                  gradient: "from-[#22C55E] to-[#16A34A]",
+                  glowColor: "#22C55E",
+                  dotColor: "#22C55E"
                 },
                 { 
                   icon: Globe2, 
                   title: "Bilateral Collaboration", 
                   description: "Fostering cross-border innovation and strengthening UK–Pakistan technology relationships.",
-                  gradient: "from-[#E11D48] to-[#C2183A]",
-                  glowColor: "#E11D48",
-                  dotColor: "#E11D48"
+                  gradient: "from-[#2563EB] to-[#C2183A]",
+                  glowColor: "#2563EB",
+                  dotColor: "#2563EB"
                 },
                 { 
                   icon: Lightbulb, 
                   title: "Innovation First", 
                   description: "Driving cutting-edge technology solutions and forward-thinking approaches to digital transformation.",
-                  gradient: "from-[#1E40AF] to-[#3B82F6]",
-                  glowColor: "#1E40AF",
-                  dotColor: "#1E40AF"
+                  gradient: "from-[#2563EB] to-[#3B82F6]",
+                  glowColor: "#2563EB",
+                  dotColor: "#2563EB"
                 },
               ].map((value, index) => {
                 const Icon = value.icon;
@@ -468,7 +468,7 @@ export default function AboutPage() {
                         />
                         {/* Circle border with gradient */}
                         <div className={`relative w-24 h-24 rounded-full border-2 border-transparent bg-gradient-to-br ${value.gradient} p-[2px]`}>
-                          <div className="w-full h-full rounded-full bg-[#050B14] flex items-center justify-center">
+                          <div className="w-full h-full rounded-full bg-[#F8FAFC] flex items-center justify-center">
                             <Icon 
                               className="w-12 h-12" 
                               style={{ color: value.glowColor }}
@@ -502,7 +502,7 @@ export default function AboutPage() {
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 1 + index * 0.15 }}
-                      className="font-heading font-bold text-xl mb-3 text-center text-[#EAF2FF] uppercase tracking-tight"
+                      className="font-heading font-bold text-xl mb-3 text-center text-[#0F172A] uppercase tracking-tight"
                     >
                       {value.title}
                     </motion.h3>
@@ -513,7 +513,7 @@ export default function AboutPage() {
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 1.2 + index * 0.15 }}
-                      className="text-[rgba(234,242,255,0.72)] text-sm leading-relaxed text-center"
+                      className="text-[#475569] text-sm leading-relaxed text-center"
                     >
                       {value.description}
                     </motion.p>
@@ -531,7 +531,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Governance / How We Operate Section */}
-      <Section variant="dark">
+      <Section>
         <AnimatedSection>
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -542,36 +542,36 @@ export default function AboutPage() {
               />
             </div>
             <div className="space-y-6">
-              <Card variant="dark">
+              <Card variant="alt">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#1E40AF]/20 border border-[#1E40AF]/30 flex items-center justify-center flex-shrink-0">
-                    <Gavel className="w-5 h-5 text-[#1E40AF]" />
+                  <div className="w-10 h-10 rounded-lg bg-[#2563EB]/20 border border-[#2563EB]/30 flex items-center justify-center flex-shrink-0">
+                    <Gavel className="w-5 h-5 text-[#2563EB]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#EAF2FF] mb-2">Governance Structure</h4>
-                    <p className="text-[rgba(234,242,255,0.72)] text-sm leading-relaxed">TBD</p>
+                    <h4 className="font-semibold text-[#0F172A] mb-2">Governance Structure</h4>
+                    <p className="text-[#475569] text-sm leading-relaxed">TBD</p>
                   </div>
                 </div>
               </Card>
-              <Card variant="dark">
+              <Card variant="alt">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#00B140]/20 border border-[#00B140]/30 flex items-center justify-center flex-shrink-0">
-                    <Building2 className="w-5 h-5 text-[#00B140]" />
+                  <div className="w-10 h-10 rounded-lg bg-[#22C55E]/20 border border-[#22C55E]/30 flex items-center justify-center flex-shrink-0">
+                    <Building2 className="w-5 h-5 text-[#22C55E]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#EAF2FF] mb-2">Organizational Framework</h4>
-                    <p className="text-[rgba(234,242,255,0.72)] text-sm leading-relaxed">TBD</p>
+                    <h4 className="font-semibold text-[#0F172A] mb-2">Organizational Framework</h4>
+                    <p className="text-[#475569] text-sm leading-relaxed">TBD</p>
                   </div>
                 </div>
               </Card>
-              <Card variant="dark">
+              <Card variant="alt">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#E11D48]/20 border border-[#E11D48]/30 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-[#E11D48]" />
+                  <div className="w-10 h-10 rounded-lg bg-[#2563EB]/20 border border-[#2563EB]/30 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-[#2563EB]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#EAF2FF] mb-2">Accountability & Transparency</h4>
-                    <p className="text-[rgba(234,242,255,0.72)] text-sm leading-relaxed">TBD</p>
+                    <h4 className="font-semibold text-[#0F172A] mb-2">Accountability & Transparency</h4>
+                    <p className="text-[#475569] text-sm leading-relaxed">TBD</p>
                   </div>
                 </div>
               </Card>
@@ -581,7 +581,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Featured Initiatives Section */}
-      <Section variant="dark">
+      <Section>
         <AnimatedSection>
           <SectionHeader
             title="Featured Initiatives"
@@ -590,21 +590,21 @@ export default function AboutPage() {
           />
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
-              { icon: Award, title: "Tech Excellence Awards", color: "#1E40AF" },
-              { icon: Network, title: "People AI Platform", color: "#00B140" },
-              { icon: Globe2, title: "TechMart Global", color: "#E11D48" },
+              { icon: Award, title: "Tech Excellence Awards", color: "#2563EB" },
+              { icon: Network, title: "People AI Platform", color: "#22C55E" },
+              { icon: Globe2, title: "TechMart Global", color: "#2563EB" },
             ].map((initiative, index) => {
               const Icon = initiative.icon;
-              const bgClass = initiative.color === "#1E40AF" ? "bg-[#1E40AF]/20 border-[#1E40AF]/30" : 
-                             initiative.color === "#00B140" ? "bg-[#00B140]/20 border-[#00B140]/30" : 
-                             "bg-[#E11D48]/20 border-[#E11D48]/30";
+              const bgClass = initiative.color === "#2563EB" ? "bg-[#2563EB]/20 border-[#2563EB]/30" : 
+                             initiative.color === "#22C55E" ? "bg-[#22C55E]/20 border-[#22C55E]/30" : 
+                             "bg-[#2563EB]/20 border-[#2563EB]/30";
               return (
-                <Card key={index} hover variant="dark" className="h-full">
+                <Card key={index} hover variant="alt" className="h-full">
                   <div className={`w-14 h-14 rounded-xl ${bgClass} flex items-center justify-center mb-6 border`}>
                     <Icon className={`w-7 h-7`} style={{ color: initiative.color }} />
                   </div>
-                  <h3 className="font-heading font-semibold text-xl mb-3 text-[#EAF2FF]">{initiative.title}</h3>
-                  <p className="text-[rgba(234,242,255,0.72)] leading-relaxed mb-4">TBD</p>
+                  <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A]">{initiative.title}</h3>
+                  <p className="text-[#475569] leading-relaxed mb-4">TBD</p>
                   <Button href="/initiatives" variant="glass" size="sm" className="w-full">
                     Learn More
                   </Button>

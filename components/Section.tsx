@@ -3,26 +3,18 @@ import { Container } from "./Container";
 
 interface SectionProps {
   children: ReactNode;
-  variant?: "light" | "dark";
+  variant?: "light" | "alt";
   className?: string;
   id?: string;
 }
 
 export function Section({ children, variant = "light", className = "", id }: SectionProps) {
-  const bgClass = variant === "dark" 
-    ? "bg-dark text-on-dark relative overflow-hidden section-transition" 
-    : "bg-light text-on-light section-transition";
-  
-  const textureClass = variant === "dark" ? "bg-tech-texture" : "";
-  
+  const bgClass = variant === "alt"
+    ? "bg-[#F8FAFC] text-[#0F172A] section-transition"
+    : "bg-white text-[#0F172A] section-transition";
+
   return (
-    <section id={id} className={`${bgClass} ${textureClass} ${className}`}>
-      {variant === "dark" && (
-        <>
-          <div className="absolute inset-0 bg-hero-glow opacity-30 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#061B2E]/20 pointer-events-none" />
-        </>
-      )}
+    <section id={id} className={`${bgClass} ${className}`}>
       <div className="relative z-10">
         <Container className="py-20 md:py-28 lg:py-32">{children}</Container>
       </div>

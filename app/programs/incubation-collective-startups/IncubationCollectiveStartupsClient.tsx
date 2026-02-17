@@ -68,7 +68,7 @@ export default function IncubationCollectiveStartupsClient() {
       </Section>
 
       {/* Section 2: Focus Areas */}
-      <Section variant="dark" className="relative overflow-hidden">
+      <Section  className="relative overflow-hidden">
         {/* Background glows */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-[#2D5BFF] rounded-full opacity-[0.08] blur-[180px]" />
@@ -146,7 +146,7 @@ export default function IncubationCollectiveStartupsClient() {
       </Section>
 
       {/* Section 4: Collective Startups */}
-      <Section variant="dark" className="relative overflow-hidden">
+      <Section  className="relative overflow-hidden">
         <AnimatedSection>
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -225,7 +225,7 @@ export default function IncubationCollectiveStartupsClient() {
       </Section>
 
       {/* Section 6: Support & Resources */}
-      <Section variant="dark" className="relative overflow-hidden">
+      <Section  className="relative overflow-hidden">
         <AnimatedSection>
           <div className="max-w-5xl mx-auto">
             <SectionHeader
@@ -256,11 +256,11 @@ export default function IncubationCollectiveStartupsClient() {
       </Section>
 
       {/* Section 8: Final CTA */}
-      <Section variant="dark" className="relative overflow-hidden">
+      <Section  className="relative overflow-hidden">
         {/* Enhanced background glows */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[#2D5BFF] rounded-full opacity-[0.15] blur-[200px]" />
-          <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[800px] h-[800px] bg-[#E11D48] rounded-full opacity-[0.1] blur-[180px]" />
+          <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[800px] h-[800px] bg-[#2563EB] rounded-full opacity-[0.1] blur-[180px]" />
           <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[600px] bg-[#00B140] rounded-full opacity-[0.08] blur-[150px]" />
         </div>
         <AnimatedSection>
@@ -301,7 +301,7 @@ function IncubationHero() {
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute top-1/2 right-1/3 w-[600px] h-[600px] bg-[#E11D48] rounded-full opacity-[0.08] blur-[160px]"
+          className="absolute top-1/2 right-1/3 w-[600px] h-[600px] bg-[#2563EB] rounded-full opacity-[0.08] blur-[160px]"
           animate={shouldReduceMotion ? {} : {
             scale: [1, 1.15, 1],
             opacity: [0.08, 0.12, 0.08],
@@ -357,7 +357,7 @@ function ProgramSnapshotCard() {
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#2D5BFF]/5 via-transparent to-[#00B140]/5 opacity-50" />
       {/* Top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#E11D48] rounded-t-2xl" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#2563EB] rounded-t-2xl" />
       
       <div className="relative z-10">
         <h3 className="font-heading font-bold text-xl mb-6 text-[#0B1220]">Program Snapshot</h3>
@@ -424,10 +424,10 @@ function FocusAreaCard({
       glow: "group-hover:shadow-[0_0_20px_rgba(0,177,64,0.3)]"
     },
     red: { 
-      bg: "bg-[#E11D48]/20", 
-      text: "text-[#E11D48]", 
-      border: "border-[#E11D48]/30",
-      gradient: "from-[#E11D48]/20 to-[#E11D48]/5",
+      bg: "bg-[#2563EB]/20", 
+      text: "text-[#2563EB]", 
+      border: "border-[#2563EB]/30",
+      gradient: "from-[#2563EB]/20 to-[#2563EB]/5",
       glow: "group-hover:shadow-[0_0_20px_rgba(225,29,72,0.3)]"
     },
   };
@@ -515,7 +515,7 @@ function IncubationTimeline() {
     <div ref={containerRef} className="relative space-y-8">
       {/* Vertical connector line with animation */}
       <motion.div
-        className="absolute left-8 top-16 bottom-16 w-0.5 bg-gradient-to-b from-[#2D5BFF]/30 via-[#00B140]/30 via-[#E11D48]/30 via-[#2D5BFF]/30 to-[#00B140]/30"
+        className="absolute left-8 top-16 bottom-16 w-0.5 bg-gradient-to-b from-[#2D5BFF]/30 via-[#00B140]/30 via-[#2563EB]/30 via-[#2D5BFF]/30 to-[#00B140]/30"
         initial={shouldReduceMotion ? { scaleY: 1 } : { scaleY: 0 }}
         animate={shouldReduceMotion || isInView ? { scaleY: 1 } : { scaleY: 0 }}
         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
@@ -538,10 +538,10 @@ function IncubationTimeline() {
             accent: "text-[#00B140]"
           },
           red: { 
-            gradient: "from-[#E11D48] to-[#BE123C]", 
-            bg: "bg-[#E11D48]", 
-            border: "border-[#E11D48]/30",
-            accent: "text-[#E11D48]"
+            gradient: "from-[#2563EB] to-[#BE123C]", 
+            bg: "bg-[#2563EB]", 
+            border: "border-[#2563EB]/30",
+            accent: "text-[#2563EB]"
           },
         };
         const config = colorConfig[step.color as keyof typeof colorConfig];
@@ -600,7 +600,7 @@ function CollectiveStartupVisual() {
     <div className="relative rounded-2xl bg-[rgba(255,255,255,0.06)] border border-[rgba(234,242,255,0.14)] p-8 backdrop-blur-sm overflow-hidden min-h-[450px]">
       {/* Background gradient glow */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-[#2D5BFF]/10 via-[#00B140]/5 to-[#E11D48]/10 opacity-50"
+        className="absolute inset-0 bg-gradient-to-br from-[#2D5BFF]/10 via-[#00B140]/5 to-[#2563EB]/10 opacity-50"
         animate={shouldReduceMotion ? {} : {
           opacity: [0.5, 0.6, 0.5],
         }}
@@ -609,7 +609,7 @@ function CollectiveStartupVisual() {
       
       {/* Animated gradient border */}
       <div className="absolute inset-0 rounded-2xl opacity-30">
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#E11D48] blur-sm" />
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#2563EB] blur-sm" />
       </div>
       <div className="absolute inset-[1px] rounded-2xl bg-[#050B14]" />
       
@@ -618,7 +618,7 @@ function CollectiveStartupVisual() {
           <linearGradient id="networkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#2D5BFF" stopOpacity="0.8" />
             <stop offset="50%" stopColor="#00B140" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#E11D48" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#2563EB" stopOpacity="0.4" />
           </linearGradient>
           <radialGradient id="nodeGlow">
             <stop offset="0%" stopColor="#2D5BFF" stopOpacity="1" />
@@ -650,7 +650,7 @@ function CollectiveStartupVisual() {
           { x: 100, y: 100, color: "#2D5BFF" },
           { x: 300, y: 100, color: "#00B140" },
           { x: 200, y: 150, color: "#2D5BFF" },
-          { x: 100, y: 300, color: "#E11D48" },
+          { x: 100, y: 300, color: "#2563EB" },
           { x: 300, y: 300, color: "#00B140" },
           { x: 200, y: 250, color: "#2D5BFF" },
         ].map((node, index) => (
@@ -737,11 +737,11 @@ function AudienceCard({
       accent: "text-[#00B140]"
     },
     red: { 
-      bg: "bg-[#E11D48]/20", 
-      text: "text-[#E11D48]", 
-      border: "border-[#E11D48]/30",
-      gradient: "from-[#E11D48]/10 to-transparent",
-      accent: "text-[#E11D48]"
+      bg: "bg-[#2563EB]/20", 
+      text: "text-[#2563EB]", 
+      border: "border-[#2563EB]/30",
+      gradient: "from-[#2563EB]/10 to-transparent",
+      accent: "text-[#2563EB]"
     },
   };
 
@@ -809,7 +809,7 @@ function SupportResourcesList() {
         const badgeColors = {
           "UK": "bg-[#2D5BFF]/15 text-[#2D5BFF] border-[#2D5BFF]/30",
           "Pakistan": "bg-[#00B140]/15 text-[#00B140] border-[#00B140]/30",
-          "Cross-border": "bg-[#E11D48]/15 text-[#E11D48] border-[#E11D48]/30",
+          "Cross-border": "bg-[#2563EB]/15 text-[#2563EB] border-[#2563EB]/30",
         };
 
         return (
@@ -868,10 +868,10 @@ function OutcomesStats() {
       border: "border-[#00B140]/20"
     },
     red: { 
-      gradient: "from-[#E11D48] to-[#BE123C]", 
-      text: "text-[#E11D48]",
-      bg: "bg-[#E11D48]/10",
-      border: "border-[#E11D48]/20"
+      gradient: "from-[#2563EB] to-[#BE123C]", 
+      text: "text-[#2563EB]",
+      bg: "bg-[#2563EB]/10",
+      border: "border-[#2563EB]/20"
     },
   };
 

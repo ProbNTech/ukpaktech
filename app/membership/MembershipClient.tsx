@@ -232,8 +232,8 @@ export default function MembershipClient() {
       />
 
       {/* Key Benefits */}
-      <Section variant="dark">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
+      <Section variant="alt">
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
         <AnimatedSection>
           <div className="max-w-7xl mx-auto">
             <SectionHeader
@@ -251,13 +251,13 @@ export default function MembershipClient() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
                 >
-                  <Card variant="dark" hover className="h-full">
+                  <Card variant="alt" hover className="h-full">
                     <div className="flex flex-col items-center text-center">
-                      <div className="w-16 h-16 rounded-2xl bg-[#1E40AF]/20 border border-[#1E40AF]/30 flex items-center justify-center mb-6">
-                        <benefit.icon className="w-8 h-8 text-[#1E40AF]" />
+                      <div className="w-16 h-16 rounded-2xl bg-[#2563EB]/20 border border-[#2563EB]/30 flex items-center justify-center mb-6">
+                        <benefit.icon className="w-8 h-8 text-[#2563EB]" />
                       </div>
-                      <h3 className="font-heading font-semibold text-xl mb-3 text-[#EAF2FF]">{benefit.title}</h3>
-                      <p className="text-sm text-[rgba(234,242,255,0.75)] leading-relaxed">{benefit.description}</p>
+                      <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A]">{benefit.title}</h3>
+                      <p className="text-sm text-[#475569] leading-relaxed">{benefit.description}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -265,12 +265,12 @@ export default function MembershipClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </Section>
 
       {/* Eligibility */}
       <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <AnimatedSection>
           <div className="max-w-4xl mx-auto">
             <SectionHeader
@@ -288,19 +288,19 @@ export default function MembershipClient() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex items-start gap-4"
                 >
-                  <CheckCircle2 className="w-6 h-6 text-[#1E40AF] flex-shrink-0 mt-0.5" />
-                  <span className="text-lg text-[rgba(11,18,32,0.68)] leading-relaxed">{point}</span>
+                  <CheckCircle2 className="w-6 h-6 text-[#2563EB] flex-shrink-0 mt-0.5" />
+                  <span className="text-lg text-[#475569] leading-relaxed">{point}</span>
                 </motion.div>
               ))}
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
       </Section>
 
       {/* Who Can Join */}
-      <Section variant="dark">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
+      <Section>
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
         <AnimatedSection>
           <div className="max-w-7xl mx-auto">
             <SectionHeader
@@ -318,13 +318,13 @@ export default function MembershipClient() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
                 >
-                  <Card variant="dark" hover className="h-full">
+                  <Card hover className="h-full">
                     <div className="flex flex-col items-center text-center">
-                      <div className="w-14 h-14 rounded-xl bg-[#1E40AF]/20 border border-[#1E40AF]/30 flex items-center justify-center mb-4">
-                        <item.icon className="w-7 h-7 text-[#1E40AF]" />
+                      <div className="w-14 h-14 rounded-xl bg-[#2563EB]/20 border border-[#2563EB]/30 flex items-center justify-center mb-4">
+                        <item.icon className="w-7 h-7 text-[#2563EB]" />
                       </div>
-                      <h3 className="font-heading font-semibold text-lg mb-2 text-[#EAF2FF]">{item.title}</h3>
-                      <p className="text-sm text-[rgba(234,242,255,0.75)] leading-relaxed">{item.description}</p>
+                      <h3 className="font-heading font-semibold text-lg mb-2 text-[#0F172A]">{item.title}</h3>
+                      <p className="text-sm text-[#475569] leading-relaxed">{item.description}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -332,12 +332,12 @@ export default function MembershipClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </Section>
 
       {/* Membership Categories */}
       <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <AnimatedSection>
           <div className="max-w-7xl mx-auto">
             <SectionHeader
@@ -356,12 +356,12 @@ export default function MembershipClient() {
                   whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
                 >
                   <Card hover className="h-full">
-                    <h3 className="font-heading font-bold text-xl mb-2 text-[#0B1220]">{category.title}</h3>
-                    <p className="text-sm text-[rgba(11,18,32,0.68)] mb-4 leading-relaxed">{category.description}</p>
+                    <h3 className="font-heading font-bold text-xl mb-2 text-[#0F172A]">{category.title}</h3>
+                    <p className="text-sm text-[#475569] mb-4 leading-relaxed">{category.description}</p>
                     <ul className="space-y-2">
                       {category.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-[rgba(11,18,32,0.68)]">
-                          <CheckCircle2 className="w-4 h-4 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                        <li key={idx} className="flex items-start gap-2 text-sm text-[#475569]">
+                          <CheckCircle2 className="w-4 h-4 text-[#2563EB] flex-shrink-0 mt-0.5" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -372,12 +372,12 @@ export default function MembershipClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
       </Section>
 
       {/* Membership Plans */}
-      <Section variant="dark">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
+      <Section>
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
         <AnimatedSection>
           <div className="max-w-7xl mx-auto">
             <SectionHeader
@@ -395,18 +395,18 @@ export default function MembershipClient() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
                 >
-                  <Card variant="dark" hover className="h-full flex flex-col">
+                  <Card hover className="h-full flex flex-col">
                     <div className="mb-6">
-                      <h3 className="font-heading font-bold text-xl mb-2 text-[#EAF2FF]">{plan.name}</h3>
+                      <h3 className="font-heading font-bold text-xl mb-2 text-[#0F172A]">{plan.name}</h3>
                       <div className="flex items-baseline gap-2 mb-2">
-                        <span className="text-3xl font-heading font-bold text-[#1E40AF]">{plan.price}</span>
-                        <span className="text-sm text-[rgba(234,242,255,0.6)]">/{plan.period}</span>
+                        <span className="text-3xl font-heading font-bold text-[#2563EB]">{plan.price}</span>
+                        <span className="text-sm text-[#64748B]">/{plan.period}</span>
                       </div>
                     </div>
                     <ul className="space-y-3 flex-1 mb-6">
                       {plan.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-[rgba(234,242,255,0.85)]">
-                          <CheckCircle2 className="w-4 h-4 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+                        <li key={idx} className="flex items-start gap-2 text-sm text-[#0F172A]">
+                          <CheckCircle2 className="w-4 h-4 text-[#2563EB] flex-shrink-0 mt-0.5" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -420,12 +420,12 @@ export default function MembershipClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </Section>
 
       {/* Procedure */}
       <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <AnimatedSection>
           <div className="max-w-7xl mx-auto">
             <SectionHeader
@@ -444,21 +444,21 @@ export default function MembershipClient() {
                   whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
                 >
                   <Card hover className="h-full text-center">
-                    <div className="text-4xl font-heading font-bold text-[#1E40AF] mb-4">{step.step}</div>
-                    <h3 className="font-heading font-semibold text-xl mb-3 text-[#0B1220]">{step.title}</h3>
-                    <p className="text-sm text-[rgba(11,18,32,0.68)] leading-relaxed">{step.description}</p>
+                    <div className="text-4xl font-heading font-bold text-[#2563EB] mb-4">{step.step}</div>
+                    <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A]">{step.title}</h3>
+                    <p className="text-sm text-[#475569] leading-relaxed">{step.description}</p>
                   </Card>
                 </motion.div>
               ))}
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
       </Section>
 
       {/* Full Benefits List */}
-      <Section variant="dark">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
+      <Section>
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
         <AnimatedSection>
           <div className="max-w-7xl mx-auto">
             <SectionHeader
@@ -475,13 +475,13 @@ export default function MembershipClient() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card variant="dark" className="h-full">
-                    <h3 className="font-heading font-bold text-xl mb-6 text-[#EAF2FF]">{group.title}</h3>
+                  <Card className="h-full">
+                    <h3 className="font-heading font-bold text-xl mb-6 text-[#0F172A]">{group.title}</h3>
                     <ul className="space-y-3">
                       {group.items.map((item, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-[rgba(234,242,255,0.85)] leading-relaxed">{item}</span>
+                          <CheckCircle2 className="w-5 h-5 text-[#2563EB] flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-[#0F172A] leading-relaxed">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -491,12 +491,12 @@ export default function MembershipClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </Section>
 
       {/* Get in Touch / Apply CTA */}
       <Section className="relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <AnimatedSection>
           <div className="max-w-4xl mx-auto text-center py-20">
             <motion.h2
@@ -504,7 +504,7 @@ export default function MembershipClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-[#0B1220]"
+              className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-[#0F172A]"
             >
               Ready to Join UPTECH?
             </motion.h2>
@@ -513,7 +513,7 @@ export default function MembershipClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-[rgba(11,18,32,0.68)] mb-10 leading-relaxed"
+              className="text-xl text-[#475569] mb-10 leading-relaxed"
             >
               Apply for membership today and become part of a trusted network shaping the future of UK–Pakistan technology collaboration.
             </motion.p>
@@ -533,7 +533,7 @@ export default function MembershipClient() {
             </motion.div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
       </Section>
     </div>
   );

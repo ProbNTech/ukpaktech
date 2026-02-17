@@ -1,113 +1,101 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { ArrowRight, Play, Pause } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 
-const slides: { type: "image" | "video"; src: string; poster?: string }[] = [
-  { type: "image", src: "/image/home/heroimg.jpeg" },
-  { type: "image", src: "/image/eventgallery/event-1.jpg" },
-  { type: "image", src: "/image/eventgallery/event-2.jpg" },
-  { type: "video", src: "/image/home/banner_video_720.mp4", poster: "/image/home/heroimg.jpeg" },
-  { type: "image", src: "/image/eventgallery/event-3.jpg" },
+const videos = [
+  "/image/home/hero_video.mp4",
+  "/image/home/hero_video1.mp4",
+  "/image/home/hero_video2.mp4",
 ];
-
-const INTERVAL = 5500;
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
-  const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(1);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  const go = useCallback(
-    (next: number, dir: number) => {
-      setDirection(dir);
-      setCurrent(next);
+  const setVideoRef = useCallback(
+    (index: number) => (el: HTMLVideoElement | null) => {
+      videoRefs.current[index] = el;
     },
     []
   );
 
-  const next = useCallback(() => {
-    go((current + 1) % slides.length, 1);
-  }, [current, go]);
-
-  const prev = useCallback(() => {
-    go((current - 1 + slides.length) % slides.length, -1);
-  }, [current, go]);
+  const handleVideoEnded = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % videos.length);
+  }, []);
 
   useEffect(() => {
-    timerRef.current = setTimeout(next, INTERVAL);
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    };
-  }, [current, next]);
+    const activeVideo = videoRefs.current[currentIndex];
+    if (!activeVideo) return;
 
-  const variants = shouldReduceMotion
-    ? { enter: { opacity: 1 }, center: { opacity: 1 }, exit: { opacity: 1 } }
-    : {
-        enter: (d: number) => ({ x: d > 0 ? "100%" : "-100%", opacity: 0 }),
-        center: { x: 0, opacity: 1 },
-        exit: (d: number) => ({ x: d > 0 ? "-50%" : "50%", opacity: 0 }),
-      };
+    activeVideo.currentTime = 0;
+
+    if (isPlaying) {
+      activeVideo.play().catch(() => {});
+    }
+
+    videoRefs.current.forEach((v, i) => {
+      if (v && i !== currentIndex) {
+        v.pause();
+        v.currentTime = 0;
+      }
+    });
+  }, [currentIndex, isPlaying]);
+
+  const togglePlayPause = useCallback(() => {
+    setIsPlaying((prev) => {
+      const next = !prev;
+      const activeVideo = videoRefs.current[currentIndex];
+      if (activeVideo) {
+        if (next) {
+          activeVideo.play().catch(() => {});
+        } else {
+          activeVideo.pause();
+        }
+      }
+      return next;
+    });
+  }, [currentIndex]);
 
   return (
-    <section className="relative w-full h-[58vh] min-h-[420px] max-h-[720px] overflow-hidden bg-white pt-0">
-      {/* Slides */}
-      <AnimatePresence initial={false} custom={direction} mode="popLayout">
-        <motion.div
-          key={current}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.6, ease: [0.42, 0, 0.58, 1] }}
-          className="absolute inset-0"
+    <section className="relative w-full h-[75vh] lg:h-[85vh] -mt-[72px] overflow-hidden bg-gray-900">
+      {/* Stacked background videos */}
+      {videos.map((src, index) => (
+        <video
+          key={src}
+          ref={setVideoRef(index)}
+          autoPlay={index === 0}
+          muted
+          playsInline
+          preload="auto"
+          onEnded={index === currentIndex ? handleVideoEnded : undefined}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+            index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
         >
-          {slides[current].type === "image" ? (
-            <Image
-              src={slides[current].src}
-              alt="Hero slide"
-              fill
-              priority={current === 0}
-              className="object-cover"
-              sizes="100vw"
-            />
-          ) : (
-            <video
-              key={slides[current].src}
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster={slides[current].poster}
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src={slides[current].src} type="video/mp4" />
-            </video>
-          )}
-        </motion.div>
-      </AnimatePresence>
+          <source src={src} type="video/mp4" />
+        </video>
+      ))}
 
-      {/* Left gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0B1220]/80 via-[#0B1220]/45 to-transparent z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1220]/40 via-transparent to-transparent z-[1]" />
+      {/* Dark gradient overlay */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/60 via-black/40 to-black/20 pointer-events-none" />
 
-      {/* Content */}
-      <div className="relative z-10 flex items-center h-full">
-        <div className="mx-auto max-w-[1280px] w-full px-4 sm:px-6 lg:px-8">
+      {/* Content wrapper */}
+      <div className="relative z-20 flex items-center h-[75vh] lg:h-[85vh] pt-24 pb-16">
+        <div className="mx-auto max-w-[1280px] w-full px-6 lg:px-12">
           <div className="max-w-2xl space-y-5">
             {/* Small label */}
             <motion.div
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2D5BFF]/40 bg-[#2D5BFF]/15 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2D5BFF] animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse" />
               <span className="text-xs font-semibold uppercase tracking-wider text-white/90">
                 Bilateral Technology Council
               </span>
@@ -121,7 +109,7 @@ export function Hero() {
               className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] text-white"
             >
               UK–Pakistan{" "}
-              <span className="text-[#2D5BFF]">Tech Council</span>
+              <span className="text-[#60A5FA]">Tech Council</span>
             </motion.h1>
 
             {/* Subheading */}
@@ -153,14 +141,14 @@ export function Hero() {
             >
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#2D5BFF] text-white font-semibold text-sm shadow-md hover:bg-[#1E40AF] transition-colors duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#2563EB] text-white font-semibold text-sm shadow-md hover:bg-[#1D4ED8] transition-colors duration-300"
               >
                 Explore the Council
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/events"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-[#00B140] text-[#00B140] font-semibold text-sm hover:bg-[#00B140]/10 transition-colors duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-[#22C55E] text-white font-semibold text-sm bg-[#22C55E]/20 hover:bg-[#22C55E] transition-colors duration-300"
               >
                 View Events
                 <ArrowRight className="w-4 h-4" />
@@ -170,40 +158,33 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Navigation arrows */}
+      {/* Pause/Play toggle button */}
       <button
-        onClick={prev}
-        aria-label="Previous slide"
-        className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/25 transition-colors"
+        onClick={togglePlayPause}
+        aria-label={isPlaying ? "Pause video" : "Play video"}
+        className="absolute bottom-6 right-6 z-30 w-11 h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
       >
-        <ChevronLeft className="w-5 h-5" />
-      </button>
-      <button
-        onClick={next}
-        aria-label="Next slide"
-        className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/25 transition-colors"
-      >
-        <ChevronRight className="w-5 h-5" />
+        {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
       </button>
 
-      {/* Dot indicators */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-        {slides.map((_, i) => (
+      {/* Video indicator dots */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+        {videos.map((_, index) => (
           <button
-            key={i}
-            onClick={() => go(i, i > current ? 1 : -1)}
-            aria-label={`Go to slide ${i + 1}`}
-            className={`rounded-full transition-all duration-300 ${
-              i === current
-                ? "w-8 h-2.5 bg-[#2D5BFF]"
-                : "w-2.5 h-2.5 bg-white/40 hover:bg-white/60"
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            aria-label={`Switch to video ${index + 1}`}
+            className={`w-2 h-2 rounded-full transition-all duration-500 ${
+              index === currentIndex
+                ? "bg-[#22C55E] w-6"
+                : "bg-[#22C55E]/40 hover:bg-[#22C55E]/60"
             }`}
           />
         ))}
       </div>
 
-      {/* Bottom accent line */}
-      <div className="absolute bottom-0 left-0 right-0 h-[3px] z-20 bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#E11D48]" />
+      {/* Bottom accent line — only place red is used */}
+      <div className="absolute bottom-0 left-0 right-0 h-[3px] z-30 bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#E11D48]" />
     </section>
   );
 }

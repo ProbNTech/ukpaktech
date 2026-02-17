@@ -143,7 +143,7 @@ export default function TechMartGlobalClient() {
                 icon={Briefcase}
                 title="Investors and Partners"
                 description="Investment firms, strategic partners, and institutions interested in connecting with high-potential technology companies."
-                accentColor="#E11D48"
+                accentColor="#2563EB"
                 index={3}
               />
             </div>
@@ -496,7 +496,7 @@ function MarketplaceVisual() {
               cx={node.x}
               cy={node.y}
               r="12"
-              fill={i % 3 === 0 ? "#2D5BFF" : i % 3 === 1 ? "#00B140" : "#E11D48"}
+              fill={i % 3 === 0 ? "#2D5BFF" : i % 3 === 1 ? "#00B140" : "#2563EB"}
               opacity="0.2"
               initial={shouldReduceMotion ? { scale: 1 } : { scale: 0 }}
               animate={shouldReduceMotion || isInView ? { scale: [1, 1.3, 1] } : { scale: 0 }}
@@ -507,7 +507,7 @@ function MarketplaceVisual() {
               cx={node.x}
               cy={node.y}
               r="6"
-              fill={i % 3 === 0 ? "#2D5BFF" : i % 3 === 1 ? "#00B140" : "#E11D48"}
+              fill={i % 3 === 0 ? "#2D5BFF" : i % 3 === 1 ? "#00B140" : "#2563EB"}
               filter="url(#glow)"
               initial={shouldReduceMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
               animate={shouldReduceMotion || isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
@@ -697,7 +697,7 @@ function UKMarketPathway() {
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className="relative bg-gradient-to-br from-[#F6F8FC] to-white rounded-2xl border-2 border-[rgba(11,18,32,0.10)] p-8 shadow-lg"
     >
-      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#E11D48]/10 to-transparent rounded-tr-2xl" />
+      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#2563EB]/10 to-transparent rounded-tr-2xl" />
       <h3 className="font-heading font-bold text-lg mb-6 text-[#0B1220]">UK Entry Pathway</h3>
       <div className="space-y-6">
         {steps.map((step, index) => {

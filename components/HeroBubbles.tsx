@@ -29,7 +29,7 @@ export function HeroBubbles() {
   }));
 
   // Color array for bubbles
-  const bubbleColors = ["#1E40AF", "#00B140", "#E11D48"];
+  const bubbleColors = ["#2563EB", "#22C55E"];
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">

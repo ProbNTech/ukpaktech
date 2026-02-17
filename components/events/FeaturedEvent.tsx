@@ -28,12 +28,12 @@ export function FeaturedEvent({ event }: FeaturedEventProps) {
       transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
       className="mb-16"
     >
-      <div className="relative rounded-2xl border border-[rgba(234,242,255,0.15)] bg-[rgba(255,255,255,0.06)] backdrop-blur-sm overflow-hidden shadow-xl hover:shadow-2xl hover:border-[rgba(234,242,255,0.25)] transition-all duration-500 group">
+      <div className="relative rounded-2xl border border-gray-100 bg-white overflow-hidden shadow-xl hover:shadow-2xl hover:border-gray-200 transition-all duration-500 group">
         {/* Blue gradient edge */}
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#1E40AF] via-[#00B140] to-[#E11D48] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#2563EB] to-[#22C55E] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Glass border effect */}
-        <div className="absolute inset-0 rounded-2xl border border-[rgba(234,242,255,0.1)] pointer-events-none" />
+        <div className="absolute inset-0 rounded-2xl border border-gray-100 pointer-events-none" />
 
         <div className="grid md:grid-cols-2 gap-0">
           {/* Text content */}
@@ -45,32 +45,32 @@ export function FeaturedEvent({ event }: FeaturedEventProps) {
                   Featured Event
                 </span>
               </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1E40AF]/20 border border-[#1E40AF]/30">
-                <Calendar className="w-3.5 h-3.5 text-[#1E40AF]" />
-                <span className="text-xs font-semibold text-[#1E40AF]">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2563EB]/20 border border-[#2563EB]/30">
+                <Calendar className="w-3.5 h-3.5 text-[#2563EB]" />
+                <span className="text-xs font-semibold text-[#2563EB]">
                   {event.date}
                 </span>
               </div>
             </div>
 
             {/* Title */}
-            <h2 className="font-heading font-bold text-2xl md:text-3xl mb-4 text-[#EAF2FF] group-hover:text-[#1E40AF] transition-colors duration-300">
+            <h2 className="font-heading font-bold text-2xl md:text-3xl mb-4 text-[#0F172A] group-hover:text-[#2563EB] transition-colors duration-300">
               {event.title}
             </h2>
 
             {/* Summary */}
-            <p className="text-base text-[rgba(234,242,255,0.85)] mb-6 leading-relaxed">
+            <p className="text-base text-[#475569] mb-6 leading-relaxed">
               {event.summary}
             </p>
 
             {/* Location */}
-            <div className="flex items-start gap-2 text-sm text-[rgba(234,242,255,0.75)] mb-6">
-              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#1E40AF]" />
+            <div className="flex items-start gap-2 text-sm text-[#475569] mb-6">
+              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#2563EB]" />
               <span>{event.location}</span>
             </div>
 
             {/* CTA */}
-            <div className="flex items-center gap-2 text-sm font-semibold text-[#1E40AF] group-hover:gap-3 transition-all duration-300">
+            <div className="flex items-center gap-2 text-sm font-semibold text-[#2563EB] group-hover:gap-3 transition-all duration-300">
               <span>Learn more</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </div>
@@ -88,10 +88,10 @@ export function FeaturedEvent({ event }: FeaturedEventProps) {
                 onError={() => setImageError(true)}
               />
             ) : (
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#1E40AF]/20 to-[#00B140]/15">
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#2563EB]/20 to-[#22C55E]/15">
                 <div className="text-center">
-                  <Calendar className="w-12 h-12 text-[#1E40AF]/50 mx-auto mb-2" />
-                  <span className="text-sm font-medium text-[rgba(234,242,255,0.6)]">
+                  <Calendar className="w-12 h-12 text-[#2563EB]/50 mx-auto mb-2" />
+                  <span className="text-sm font-medium text-[#475569]">
                     Event Image
                   </span>
                 </div>
@@ -99,13 +99,13 @@ export function FeaturedEvent({ event }: FeaturedEventProps) {
             )}
 
             {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050B14]/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#F8FAFC]/60 via-transparent to-transparent" />
           </div>
         </div>
 
         {/* Subtle glow on hover */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-100/5 to-transparent" />
         </div>
       </div>
     </motion.div>

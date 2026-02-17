@@ -7,10 +7,10 @@ export function EventHero() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#050B14] pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F8FAFC] pt-20">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-[900px] h-[900px] bg-[#1E40AF] rounded-full opacity-[0.12] blur-[200px]"
+          className="absolute top-1/4 left-1/4 w-[900px] h-[900px] bg-[#2563EB] rounded-full opacity-[0.12] blur-[200px]"
           animate={shouldReduceMotion ? {} : {
             x: [0, 50, -40, 0],
             y: [0, -50, 40, 0],
@@ -23,7 +23,7 @@ export function EventHero() {
           }}
         />
         <motion.div
-          className="absolute top-1/2 right-1/3 w-[700px] h-[700px] bg-[#00B140] rounded-full opacity-[0.08] blur-[160px]"
+          className="absolute top-1/2 right-1/3 w-[700px] h-[700px] bg-[#22C55E] rounded-full opacity-[0.08] blur-[160px]"
           animate={shouldReduceMotion ? {} : {
             x: [0, -60, 50, 0],
             y: [0, 60, -40, 0],
@@ -36,7 +36,7 @@ export function EventHero() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/3 left-1/2 w-[650px] h-[650px] bg-[#E11D48] rounded-full opacity-[0.08] blur-[150px]"
+          className="absolute bottom-1/3 left-1/2 w-[650px] h-[650px] bg-[#2563EB] rounded-full opacity-[0.06] blur-[150px]"
           animate={shouldReduceMotion ? {} : {
             x: [0, 40, -50, 0],
             y: [0, -40, 50, 0],
@@ -62,7 +62,7 @@ export function EventHero() {
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="font-heading font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-[#EAF2FF] relative"
+              className="font-heading font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-[#0F172A] relative"
             >
               <span className="relative inline-block">
                 Events & Engagements
@@ -74,7 +74,7 @@ export function EventHero() {
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="text-xl md:text-2xl text-[rgba(234,242,255,0.85)] font-medium leading-relaxed tracking-tight"
+              className="text-xl md:text-2xl text-[#475569] font-medium leading-relaxed tracking-tight"
             >
               Stay updated with UPTECH events, news, and activities.
             </motion.p>
@@ -98,7 +98,7 @@ export function EventHero() {
                     delay: 0.9 + index * 0.1,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="px-4 py-1.5 rounded-full bg-[rgba(255,255,255,0.08)] backdrop-blur-sm border border-[rgba(234,242,255,0.15)] text-sm font-medium text-[rgba(234,242,255,0.9)]"
+                  className="px-4 py-1.5 rounded-full bg-white backdrop-blur-sm border border-gray-100 text-sm font-medium text-[#0F172A]"
                 >
                   {chip}
                 </motion.div>

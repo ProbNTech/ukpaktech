@@ -12,10 +12,9 @@ const stats = [
     suffix: "+",
     description: "Enterprises, startups, and public sector allies driving the mission.",
     icon: Users,
-    color: "#1E40AF",
-    iconBg: "bg-[#1E40AF]/10 border-[#1E40AF]/20",
-    iconColor: "text-[#1E40AF]",
-    gradient: "from-[#1E40AF] to-[#1E3A8A]",
+    color: "#2563EB",
+    iconBg: "bg-[#2563EB]/10 border-[#2563EB]/20",
+    iconColor: "text-[#2563EB]",
   },
   {
     label: "Innovation Programs",
@@ -23,10 +22,9 @@ const stats = [
     suffix: "+",
     description: "Active initiatives across AI, trade, and digital transformation.",
     icon: Sparkles,
-    color: "#00B140",
-    iconBg: "bg-[#00B140]/10 border-[#00B140]/20",
-    iconColor: "text-[#00B140]",
-    gradient: "from-[#00B140] to-[#009935]",
+    color: "#22C55E",
+    iconBg: "bg-[#22C55E]/10 border-[#22C55E]/20",
+    iconColor: "text-[#22C55E]",
   },
   {
     label: "Cross-Border Ventures",
@@ -34,10 +32,9 @@ const stats = [
     suffix: "+",
     description: "Investment and partnership pipelines between the UK and Pakistan.",
     icon: Globe2,
-    color: "#E11D48",
-    iconBg: "bg-[#E11D48]/10 border-[#E11D48]/20",
-    iconColor: "text-[#E11D48]",
-    gradient: "from-[#E11D48] to-[#BE123C]",
+    color: "#2563EB",
+    iconBg: "bg-[#2563EB]/10 border-[#2563EB]/20",
+    iconColor: "text-[#2563EB]",
   },
   {
     label: "Export Growth Lift",
@@ -45,10 +42,9 @@ const stats = [
     suffix: "%",
     description: "Momentum in digital trade outcomes accelerated by UPTECH.",
     icon: TrendingUp,
-    color: "#1E40AF",
-    iconBg: "bg-[#1E40AF]/10 border-[#1E40AF]/20",
-    iconColor: "text-[#1E40AF]",
-    gradient: "from-[#1E40AF] to-[#1E3A8A]",
+    color: "#22C55E",
+    iconBg: "bg-[#22C55E]/10 border-[#22C55E]/20",
+    iconColor: "text-[#22C55E]",
   },
 ];
 
@@ -67,29 +63,18 @@ export function ImpactStats() {
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={shouldReduceMotion ? {} : { opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{
-              duration: 0.6,
-              delay: index * 0.12,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+            transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
             whileHover={shouldReduceMotion ? {} : { y: -6, scale: 1.02 }}
             className="relative group"
           >
-            <div className="relative h-full rounded-2xl border border-[rgba(11,18,32,0.08)] bg-white p-7 shadow-sm transition-all duration-500 group-hover:shadow-xl overflow-hidden"
-              style={{ borderColor: undefined }}
-            >
-              {/* Top accent bar */}
+            <div className="relative h-full rounded-2xl border border-gray-100 bg-white p-7 shadow-md transition-all duration-500 group-hover:shadow-lg overflow-hidden">
               <div
                 className="absolute inset-x-0 top-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{ background: `linear-gradient(90deg, transparent, ${stat.color}, transparent)` }}
               />
-
-              {/* Icon */}
               <div className={`w-14 h-14 rounded-xl ${stat.iconBg} border flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500`}>
                 <Icon className={`h-6 w-6 ${stat.iconColor}`} />
               </div>
-
-              {/* Number with gradient */}
               <div className="relative z-10 space-y-2">
                 <div
                   className="text-5xl font-bold bg-clip-text text-transparent"
@@ -103,16 +88,9 @@ export function ImpactStats() {
                     "0"
                   )}
                 </div>
-                <div className="text-sm font-semibold uppercase tracking-[0.15em] text-[#0B1220]/80">
-                  {stat.label}
-                </div>
+                <div className="text-sm font-semibold uppercase tracking-[0.15em] text-[#1F2937]/80">{stat.label}</div>
               </div>
-
-              <p className="relative z-10 mt-4 text-sm leading-relaxed text-[rgba(11,18,32,0.6)]">
-                {stat.description}
-              </p>
-
-              {/* Bottom gradient line */}
+              <p className="relative z-10 mt-4 text-sm leading-relaxed text-[#4B5563]">{stat.description}</p>
               <div
                 className="absolute inset-x-0 bottom-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{ background: `linear-gradient(90deg, transparent, ${stat.color}66, transparent)` }}
@@ -124,4 +102,3 @@ export function ImpactStats() {
     </div>
   );
 }
-

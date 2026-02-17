@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { siteConfig } from "@/config/site";
 
 const navGroups = [
   {
@@ -82,28 +81,35 @@ export function Header() {
     closeTimerRef.current = setTimeout(() => setOpenDropdown(null), HOVER_CLOSE_DELAY);
   }, [clearTimers]);
 
+  const navLink = isScrolled
+    ? "text-gray-800 hover:text-[#2563EB]"
+    : "text-white hover:text-white/80";
+
+  const navLinkActive = isScrolled
+    ? "text-[#2563EB] bg-[#2563EB]/[0.06]"
+    : "text-white bg-white/15";
+
   return (
     <>
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-[#1E40AF] focus:text-white focus:rounded-md focus:outline-none"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-[#2563EB] focus:text-white focus:rounded-md focus:outline-none"
       >
         Skip to main content
       </a>
-      {/* Spacer so content doesn't hide behind fixed navbar */}
+
       <div className="h-[72px]" />
 
       <header
         role="banner"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-white shadow-[0_2px_16px_rgba(0,0,0,0.06)] border-b border-gray-100"
-            : "bg-white/95 backdrop-blur-sm border-b border-gray-100/60"
+            ? "bg-white/95 backdrop-blur-xl shadow-md border-b border-gray-200/60"
+            : "bg-transparent"
         }`}
       >
         <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[72px]">
-            {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
               <Image
                 src="/image/main-logo/mainlogo.png"
@@ -111,12 +117,14 @@ export function Header() {
                 width={44}
                 height={44}
                 className="h-[38px] lg:h-[44px] w-auto object-contain"
+                priority
               />
-              <span className="font-heading font-bold text-lg text-[#0B1220]">UPTECH</span>
+              <span className={`font-heading font-bold text-lg transition-colors duration-500 ${isScrolled ? "text-[#0F172A]" : "text-white"}`}>
+                UPTECH
+              </span>
             </Link>
 
-            {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+            <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
               {navGroups.map((group) => (
                 <div
                   key={group.label}
@@ -128,86 +136,65 @@ export function Header() {
                     type="button"
                     aria-expanded={openDropdown === group.label}
                     aria-haspopup="true"
-                    className="flex items-center gap-1.5 text-[#EAF2FF]/90 hover:text-[#1E40AF] transition-all duration-300 font-medium text-sm relative group py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1E40AF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1220] rounded"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                    }}
+                    className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                      openDropdown === group.label ? navLinkActive : navLink
+                    }`}
                   >
                     {group.label}
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                        openDropdown === group.label ? "rotate-180" : ""
-                      }`}
-                    />
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === group.label ? "rotate-180" : ""}`} />
                   </button>
 
-                  {/* Invisible bridge between trigger and dropdown */}
                   {openDropdown === group.label && (
-                    <div className="absolute top-full left-0 right-0 h-3" />
+                    <div className="absolute top-full left-0 right-0 h-5" />
                   )}
 
                   <AnimatePresence>
                     {openDropdown === group.label && (
                       <motion.div
-                        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -4 }}
+                        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -8 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -4 }}
-                        transition={{ duration: 0.15, ease: "easeOut" }}
-                        className="absolute top-full left-0 mt-3 w-72 bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 py-2 z-50"
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                        className="absolute top-full left-0 mt-5 w-80 bg-white rounded-xl shadow-xl border border-gray-100 p-5 z-50"
                         onMouseEnter={() => handleEnter(group.label)}
                         onMouseLeave={handleLeave}
                       >
-                        <div className="px-3 pb-1.5 mb-1 border-b border-gray-50">
-                          <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">{group.label}</span>
+                        <div className="pb-3 mb-2 border-b border-gray-100">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">{group.label}</span>
                         </div>
-                        {group.items.map((item) => (
-                          <Link
-                            key={item.href}
-                            href={item.href}
-                            className="block mx-1.5 px-3 py-2.5 rounded-lg hover:bg-[#1E40AF]/[0.04] transition-colors duration-150 group/item"
-                          >
-                            <span className="block text-sm font-medium text-[#1F2937] group-hover/item:text-[#1E40AF] transition-colors">
-                              {item.label}
-                            </span>
-                            <span className="block text-xs text-gray-400 mt-0.5">
-                              {item.desc}
-                            </span>
-                          </Link>
-                        ))}
+                        <div className="space-y-1">
+                          {group.items.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              className="block px-3.5 py-3 -mx-1 rounded-lg hover:bg-gray-100 transition-colors duration-150 group/item"
+                            >
+                              <span className="block text-sm font-medium text-gray-800 group-hover/item:text-[#2563EB] transition-colors">{item.label}</span>
+                              <span className="block text-xs text-gray-400 mt-1 leading-relaxed">{item.desc}</span>
+                            </Link>
+                          ))}
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
               ))}
-
-              <Link
-                href="/membership"
-                className="px-3 py-2 rounded-lg text-sm font-medium text-[#374151] hover:text-[#1E40AF] hover:bg-gray-50 transition-colors duration-200"
-              >
+              <Link href="/membership" className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${navLink}`}>
                 Membership
               </Link>
             </nav>
 
-            {/* Desktop right actions */}
-            <div className="hidden lg:flex items-center gap-3">
-              <Link
-                href={siteConfig.portalUrl}
-                className="px-4 py-2 rounded-lg text-sm font-medium text-[#374151] hover:text-[#1E40AF] hover:bg-gray-50 transition-colors duration-200"
-              >
-                Portal
-              </Link>
+            <div className="hidden lg:flex items-center">
               <Link
                 href="/membership"
-                className="px-5 py-2.5 rounded-lg bg-[#1E40AF] text-white text-sm font-semibold shadow-sm hover:bg-[#1730A0] hover:shadow-md hover:-translate-y-px active:translate-y-0 transition-all duration-200"
+                className="px-5 py-2.5 rounded-lg bg-[#2563EB] text-white text-sm font-semibold shadow-sm hover:bg-[#1D4ED8] hover:shadow-md hover:-translate-y-px active:translate-y-0 transition-all duration-200"
               >
                 Become a Member →
               </Link>
             </div>
 
-            {/* Mobile toggle */}
             <button
-              className="lg:hidden p-2 rounded-lg text-[#374151] hover:bg-gray-100 transition-colors"
+              className={`lg:hidden p-2 rounded-lg transition-colors ${isScrolled ? "text-gray-800 hover:bg-gray-100" : "text-white hover:bg-white/15"}`}
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               aria-label="Toggle menu"
             >
@@ -217,7 +204,6 @@ export function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileOpen && (
           <>
@@ -239,20 +225,10 @@ export function Header() {
               <div className="p-5">
                 <div className="flex items-center justify-between mb-6">
                   <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileOpen(false)}>
-                    <Image
-                      src="/image/main-logo/mainlogo.png"
-                      alt="UPTECH Logo"
-                      width={36}
-                      height={36}
-                      className="h-[36px] w-auto object-contain"
-                    />
-                    <span className="font-heading font-bold text-lg text-[#0B1220]">UPTECH</span>
+                    <Image src="/image/main-logo/mainlogo.png" alt="UPTECH Logo" width={36} height={36} className="h-[36px] w-auto object-contain" />
+                    <span className="font-heading font-bold text-lg text-[#0F172A]">UPTECH</span>
                   </Link>
-                  <button
-                    onClick={() => setIsMobileOpen(false)}
-                    className="p-1.5 rounded-lg text-gray-400 hover:bg-gray-100 transition-colors"
-                    aria-label="Close menu"
-                  >
+                  <button onClick={() => setIsMobileOpen(false)} className="p-1.5 rounded-lg text-gray-400 hover:bg-gray-100 transition-colors" aria-label="Close menu">
                     <X className="w-5 h-5" />
                   </button>
                 </div>
@@ -261,11 +237,11 @@ export function Header() {
                   {navGroups.map((group) => (
                     <div key={group.label}>
                       <button
-                        className="flex items-center justify-between w-full py-2.5 px-3 text-sm font-medium text-[#374151] hover:text-[#1E40AF] hover:bg-gray-50 rounded-lg transition-colors"
+                        className="flex items-center justify-between w-full py-2.5 px-3 text-sm font-medium text-gray-700 hover:text-[#2563EB] hover:bg-gray-50 rounded-lg transition-colors"
                         onClick={() => setMobileExpanded(mobileExpanded === group.label ? null : group.label)}
                       >
                         {group.label}
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === group.label ? "rotate-180 text-[#1E40AF]" : "text-gray-400"}`} />
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === group.label ? "rotate-180 text-[#2563EB]" : "text-gray-400"}`} />
                       </button>
                       <AnimatePresence>
                         {mobileExpanded === group.label && (
@@ -278,12 +254,7 @@ export function Header() {
                           >
                             <div className="pl-4 pr-2 pb-1 space-y-0.5">
                               {group.items.map((item) => (
-                                <Link
-                                  key={item.href}
-                                  href={item.href}
-                                  className="block py-2 px-3 text-sm text-gray-500 hover:text-[#1E40AF] hover:bg-[#1E40AF]/[0.04] rounded-lg transition-colors"
-                                  onClick={() => setIsMobileOpen(false)}
-                                >
+                                <Link key={item.href} href={item.href} className="block py-2 px-3 text-sm text-gray-500 hover:text-[#2563EB] hover:bg-gray-50 rounded-lg transition-colors" onClick={() => setIsMobileOpen(false)}>
                                   {item.label}
                                 </Link>
                               ))}
@@ -293,28 +264,13 @@ export function Header() {
                       </AnimatePresence>
                     </div>
                   ))}
-                  <Link
-                    href="/membership"
-                    className="block py-2.5 px-3 text-sm font-medium text-[#374151] hover:text-[#1E40AF] hover:bg-gray-50 rounded-lg transition-colors"
-                    onClick={() => setIsMobileOpen(false)}
-                  >
+                  <Link href="/membership" className="block py-2.5 px-3 text-sm font-medium text-gray-700 hover:text-[#2563EB] hover:bg-gray-50 rounded-lg transition-colors" onClick={() => setIsMobileOpen(false)}>
                     Membership
                   </Link>
                 </nav>
 
-                <div className="mt-6 pt-5 border-t border-gray-100 space-y-2.5">
-                  <Link
-                    href={siteConfig.portalUrl}
-                    className="block text-center py-2.5 px-4 text-sm font-medium text-[#374151] hover:text-[#1E40AF] border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
-                    onClick={() => setIsMobileOpen(false)}
-                  >
-                    Portal
-                  </Link>
-                  <Link
-                    href="/membership"
-                    className="block text-center py-2.5 px-4 text-sm font-semibold text-white bg-[#1E40AF] rounded-lg hover:bg-[#1730A0] shadow-sm transition-colors"
-                    onClick={() => setIsMobileOpen(false)}
-                  >
+                <div className="mt-6 pt-5 border-t border-gray-100">
+                  <Link href="/membership" className="block text-center py-2.5 px-4 text-sm font-semibold text-white bg-[#2563EB] rounded-lg hover:bg-[#1D4ED8] shadow-sm transition-colors" onClick={() => setIsMobileOpen(false)}>
                     Become a Member →
                   </Link>
                 </div>

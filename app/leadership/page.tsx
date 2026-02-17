@@ -63,20 +63,20 @@ export default function LeadershipPage() {
             { 
               icon: Shield, 
               text: "Ethical Governance", 
-              color: "border-[#1E40AF]/40 bg-[#1E40AF]/15",
-              iconColor: "text-[#1E40AF]",
+              color: "border-[#2563EB]/40 bg-[#2563EB]/15",
+              iconColor: "text-[#2563EB]",
             },
             { 
               icon: Eye, 
               text: "Transparency", 
-              color: "border-[#00B140]/50 bg-[#00B140]/20",
-              iconColor: "text-[#00B140]",
+              color: "border-[#22C55E]/50 bg-[#22C55E]/20",
+              iconColor: "text-[#22C55E]",
             },
             { 
               icon: FileText, 
               text: "Accountability", 
-              color: "border-[#E11D48]/50 bg-[#E11D48]/20",
-              iconColor: "text-[#E11D48]",
+              color: "border-[#2563EB]/50 bg-[#2563EB]/20",
+              iconColor: "text-[#2563EB]",
             },
           ].map((chip, index) => {
             const Icon = chip.icon;
@@ -93,7 +93,7 @@ export default function LeadershipPage() {
                 className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full border ${chip.color} backdrop-blur-sm`}
               >
                 <Icon className={`w-4 h-4 ${chip.iconColor}`} />
-                <span className="text-sm font-medium text-[#EAF2FF]/90">{chip.text}</span>
+                <span className="text-sm font-medium text-[#0F172A]/90">{chip.text}</span>
               </motion.div>
             );
           })}
@@ -224,10 +224,10 @@ function PremiumGovernanceCard({
     >
       <div
         onClick={onClick}
-        className="group h-full cursor-pointer relative bg-white rounded-2xl border border-[rgba(11,18,32,0.08)] p-8 overflow-hidden transition-all duration-300 hover:border-[#2D5BFF]/40 hover:shadow-[0_8px_24px_rgba(45,91,255,0.12)]"
+        className="group h-full cursor-pointer relative bg-white rounded-2xl border border-gray-200 p-8 overflow-hidden transition-all duration-300 hover:border-[#2563EB]/40 hover:shadow-[0_8px_24px_rgba(37,99,235,0.12)]"
       >
         {/* Top Accent Gradient Line */}
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#2D5BFF] opacity-60 group-hover:opacity-100 transition-opacity" />
+        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2D5BFF] via-[#22C55E] to-[#2D5BFF] opacity-60 group-hover:opacity-100 transition-opacity" />
 
         {/* Background Texture */}
         <div
@@ -255,14 +255,14 @@ function PremiumGovernanceCard({
 
           {/* Title and Chips */}
           <div className="mb-4">
-            <h3 className="font-heading font-semibold text-2xl mb-3 text-[#0B1220] group-hover:text-[#2D5BFF] transition-colors duration-300">
+            <h3 className="font-heading font-semibold text-2xl mb-3 text-[#0F172A] group-hover:text-[#2563EB] transition-colors duration-300">
               {title}
             </h3>
             <div className="flex flex-wrap gap-2">
               {chips.map((chip, chipIndex) => (
                 <span
                   key={chipIndex}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#2D5BFF]/8 text-[#2D5BFF] border border-[#2D5BFF]/20"
+                  className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#2563EB]/8 text-[#2563EB] border border-[#2563EB]/20"
                 >
                   {chip}
                 </span>
@@ -271,7 +271,7 @@ function PremiumGovernanceCard({
           </div>
 
           {/* Description */}
-          <p className="text-[rgba(11,18,32,0.68)] leading-relaxed mb-6 text-[15px]">
+          <p className="text-[#475569] leading-relaxed mb-6 text-[15px]">
             {description}
           </p>
 
@@ -342,8 +342,8 @@ function PremiumIcon({
         >
           <defs>
             <linearGradient id={`gradient-${type}`} x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#2D5BFF" stopOpacity="1" />
-              <stop offset="100%" stopColor="#00B140" stopOpacity="0.8" />
+              <stop offset="0%" stopColor="#2563EB" stopOpacity="1" />
+              <stop offset="100%" stopColor="#22C55E" stopOpacity="0.8" />
             </linearGradient>
             <filter id={`glow-${type}`}>
               <feGaussianBlur stdDeviation="2" result="coloredBlur" />
@@ -382,7 +382,7 @@ function PremiumIcon({
         </svg>
         {/* Subtle glow behind icon */}
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#2D5BFF]/20 rounded-full blur-xl -z-0"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#2563EB]/20 rounded-full blur-xl -z-0"
           animate={
             shouldReduceMotion
               ? {}
@@ -409,9 +409,9 @@ function PremiumLearnMoreLink({
   shouldReduceMotion: boolean | null;
 }) {
   return (
-    <div className="pt-6 border-t border-[rgba(11,18,32,0.08)] group-hover:border-[#2D5BFF]/20 transition-colors">
+    <div className="pt-6 border-t border-gray-200 group-hover:border-[#2563EB]/20 transition-colors">
       <motion.div
-        className="inline-flex items-center gap-2 text-sm font-semibold text-[#2D5BFF] group-hover:gap-3 transition-all"
+        className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] group-hover:gap-3 transition-all"
         whileHover={shouldReduceMotion ? {} : { x: 2 }}
       >
         <span>Learn more</span>
@@ -443,7 +443,7 @@ function GovernanceStructureSection({ shouldReduceMotion }: { shouldReduceMotion
 
   return (
     <section id="governance-structure" className="scroll-mt-24">
-      <Section variant="dark">
+      <Section variant="alt">
         <div className="max-w-7xl mx-auto">
           <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Text Content - Left on desktop, top on mobile */}
@@ -453,16 +453,16 @@ function GovernanceStructureSection({ shouldReduceMotion }: { shouldReduceMotion
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="order-2 lg:order-1"
             >
-              <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#EAF2FF]">
+              <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#0F172A]">
                 Governance Structure
               </h2>
-              <p className="text-lg text-[rgba(234,242,255,0.85)] leading-relaxed mb-8">
+              <p className="text-lg text-[#475569] leading-relaxed mb-8">
                 A comprehensive framework ensuring accountability, transparency, and ethical decision-making across all UPTECH operations.
               </p>
 
               {/* Key Responsibilities */}
-              <div className="p-6 rounded-2xl bg-[rgba(255,255,255,0.06)] border border-[rgba(234,242,255,0.14)] backdrop-blur-sm">
-                <h4 className="font-heading font-semibold text-lg mb-4 text-[#EAF2FF]">Key Responsibilities</h4>
+              <div className="p-6 rounded-2xl bg-white border border-gray-200">
+                <h4 className="font-heading font-semibold text-lg mb-4 text-[#0F172A]">Key Responsibilities</h4>
                 <ul className="space-y-3">
                   {[
                     "Establish and maintain ethical standards",
@@ -479,8 +479,8 @@ function GovernanceStructureSection({ shouldReduceMotion }: { shouldReduceMotion
                       transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
                       className="flex items-start gap-3"
                     >
-                      <CheckCircle2 className="w-5 h-5 text-[#00B140] mt-0.5 flex-shrink-0" />
-                      <span className="text-[rgba(234,242,255,0.85)] text-[15px]">{item}</span>
+                      <CheckCircle2 className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" />
+                      <span className="text-[#475569] text-[15px]">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -496,21 +496,21 @@ function GovernanceStructureSection({ shouldReduceMotion }: { shouldReduceMotion
             >
               {/* Brand glow ring behind image with enhanced red */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-br from-[#1E40AF]/20 via-[#00B140]/12 to-[#E11D48]/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-br from-[#2563EB]/20 via-[#22C55E]/12 to-[#2563EB]/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               
               {/* Subtle corner glows with red accents */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#1E40AF]/15 to-transparent rounded-bl-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#00B140]/8 to-transparent rounded-tr-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
-              <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-br from-[#E11D48]/12 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <div className="absolute bottom-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-[#E11D48]/10 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#2563EB]/15 to-transparent rounded-bl-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#22C55E]/8 to-transparent rounded-tr-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-br from-[#2563EB]/12 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute bottom-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-[#2563EB]/10 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none" />
               
               {/* Image - no border, enlarged */}
               <motion.div
                 whileHover={shouldReduceMotion ? {} : { scale: 1.04 }}
                 className="relative z-10 w-full max-h-[550px]"
                 style={{
-                  filter: 'drop-shadow(0 8px 24px rgba(30,64,175,0.25)) drop-shadow(0 4px 12px rgba(225,29,72,0.15))',
+                  filter: 'drop-shadow(0 8px 24px rgba(37,99,235,0.25)) drop-shadow(0 4px 12px rgba(225,29,72,0.15))',
                 }}
               >
                 <Image
@@ -549,21 +549,21 @@ function BoardOfDirectorsSection({ shouldReduceMotion }: { shouldReduceMotion: b
             >
               {/* Brand glow ring behind image with enhanced red */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-br from-[#1E40AF]/15 via-[#00B140]/10 to-[#E11D48]/12 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-br from-[#2563EB]/15 via-[#22C55E]/10 to-[#2563EB]/12 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               
               {/* Subtle corner glows with red accents */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#1E40AF]/12 to-transparent rounded-bl-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#00B140]/6 to-transparent rounded-tr-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
-              <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-br from-[#E11D48]/10 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <div className="absolute bottom-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-[#E11D48]/8 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#2563EB]/12 to-transparent rounded-bl-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#22C55E]/6 to-transparent rounded-tr-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-br from-[#2563EB]/10 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute bottom-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-[#2563EB]/8 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none" />
               
               {/* Image - no border, enlarged */}
               <motion.div
                 whileHover={shouldReduceMotion ? {} : { scale: 1.04 }}
                 className="relative z-10 w-full max-h-[550px]"
                 style={{
-                  filter: 'drop-shadow(0 8px 24px rgba(30,64,175,0.2)) drop-shadow(0 4px 12px rgba(225,29,72,0.12))',
+                  filter: 'drop-shadow(0 8px 24px rgba(37,99,235,0.2)) drop-shadow(0 4px 12px rgba(225,29,72,0.12))',
                 }}
               >
                 <Image
@@ -584,16 +584,16 @@ function BoardOfDirectorsSection({ shouldReduceMotion }: { shouldReduceMotion: b
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="order-2 lg:order-2"
             >
-              <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#0B1220]">
+              <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#0F172A]">
                 Board of Directors
               </h2>
-              <p className="text-lg text-[rgba(11,18,32,0.68)] leading-relaxed mb-8">
+              <p className="text-lg text-[#475569] leading-relaxed mb-8">
                 Strategic oversight and governance at the highest level, ensuring UPTECH&apos;s mission and values guide all decisions.
               </p>
 
               {/* Key Responsibilities */}
-              <div className="p-6 rounded-2xl bg-white border border-[rgba(11,18,32,0.10)] shadow-sm">
-                <h4 className="font-heading font-semibold text-lg mb-4 text-[#0B1220]">Key Responsibilities</h4>
+              <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+                <h4 className="font-heading font-semibold text-lg mb-4 text-[#0F172A]">Key Responsibilities</h4>
                 <ul className="space-y-3">
                   {[
                     "Approve strategic plans and major initiatives",
@@ -610,8 +610,8 @@ function BoardOfDirectorsSection({ shouldReduceMotion }: { shouldReduceMotion: b
                       transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
                       className="flex items-start gap-3"
                     >
-                      <CheckCircle2 className="w-5 h-5 text-[#00B140] mt-0.5 flex-shrink-0" />
-                      <span className="text-[rgba(11,18,32,0.68)] text-[15px]">{item}</span>
+                      <CheckCircle2 className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" />
+                      <span className="text-[#475569] text-[15px]">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -631,7 +631,7 @@ function AdvisoryCouncilSection({ shouldReduceMotion }: { shouldReduceMotion: bo
 
   return (
     <section id="advisory-council" className="scroll-mt-24">
-      <Section variant="dark">
+      <Section variant="alt">
         <div className="max-w-7xl mx-auto">
           <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Text Content - Left on desktop, top on mobile */}
@@ -641,16 +641,16 @@ function AdvisoryCouncilSection({ shouldReduceMotion }: { shouldReduceMotion: bo
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="order-2 lg:order-1"
             >
-              <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#EAF2FF]">
+              <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#0F172A]">
                 Advisory Council
               </h2>
-              <p className="text-lg text-[rgba(234,242,255,0.85)] leading-relaxed mb-8">
+              <p className="text-lg text-[#475569] leading-relaxed mb-8">
                 Expert guidance and strategic counsel from distinguished leaders across technology, business, and policy.
               </p>
 
               {/* Key Responsibilities */}
-              <div className="p-6 rounded-2xl bg-[rgba(255,255,255,0.06)] border border-[rgba(234,242,255,0.14)] backdrop-blur-sm">
-                <h4 className="font-heading font-semibold text-lg mb-4 text-[#EAF2FF]">Key Responsibilities</h4>
+              <div className="p-6 rounded-2xl bg-white border border-gray-200">
+                <h4 className="font-heading font-semibold text-lg mb-4 text-[#0F172A]">Key Responsibilities</h4>
                 <ul className="space-y-3">
                   {[
                     "Provide expert guidance on technology trends",
@@ -667,8 +667,8 @@ function AdvisoryCouncilSection({ shouldReduceMotion }: { shouldReduceMotion: bo
                       transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
                       className="flex items-start gap-3"
                     >
-                      <CheckCircle2 className="w-5 h-5 text-[#00B140] mt-0.5 flex-shrink-0" />
-                      <span className="text-[rgba(234,242,255,0.85)] text-[15px]">{item}</span>
+                      <CheckCircle2 className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" />
+                      <span className="text-[#475569] text-[15px]">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -684,21 +684,21 @@ function AdvisoryCouncilSection({ shouldReduceMotion }: { shouldReduceMotion: bo
             >
               {/* Brand glow ring behind image with enhanced red */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-br from-[#1E40AF]/20 via-[#00B140]/12 to-[#E11D48]/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-br from-[#2563EB]/20 via-[#22C55E]/12 to-[#2563EB]/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               
               {/* Subtle corner glows with red accents */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#1E40AF]/15 to-transparent rounded-bl-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#00B140]/8 to-transparent rounded-tr-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
-              <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-br from-[#E11D48]/12 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <div className="absolute bottom-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-[#E11D48]/10 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#2563EB]/15 to-transparent rounded-bl-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#22C55E]/8 to-transparent rounded-tr-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-br from-[#2563EB]/12 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute bottom-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-[#2563EB]/10 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none" />
               
               {/* Image - no border, enlarged */}
               <motion.div
                 whileHover={shouldReduceMotion ? {} : { scale: 1.04 }}
                 className="relative z-10 w-full max-h-[550px]"
                 style={{
-                  filter: 'drop-shadow(0 8px 24px rgba(30,64,175,0.25)) drop-shadow(0 4px 12px rgba(225,29,72,0.15))',
+                  filter: 'drop-shadow(0 8px 24px rgba(37,99,235,0.25)) drop-shadow(0 4px 12px rgba(225,29,72,0.15))',
                 }}
               >
                 <Image
@@ -737,21 +737,21 @@ function ExecutiveLeadershipSection({ shouldReduceMotion }: { shouldReduceMotion
             >
               {/* Brand glow ring behind image with enhanced red */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-br from-[#1E40AF]/15 via-[#00B140]/10 to-[#E11D48]/12 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-br from-[#2563EB]/15 via-[#22C55E]/10 to-[#2563EB]/12 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               
               {/* Subtle corner glows with red accents */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#1E40AF]/12 to-transparent rounded-bl-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#00B140]/6 to-transparent rounded-tr-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
-              <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-br from-[#E11D48]/10 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              <div className="absolute bottom-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-[#E11D48]/8 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#2563EB]/12 to-transparent rounded-bl-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[#22C55E]/6 to-transparent rounded-tr-full opacity-60 group-hover:opacity-80 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-br from-[#2563EB]/10 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute bottom-1/4 left-1/4 w-16 h-16 bg-gradient-to-br from-[#2563EB]/8 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none" />
               
               {/* Image - no border, enlarged */}
               <motion.div
                 whileHover={shouldReduceMotion ? {} : { scale: 1.04 }}
                 className="relative z-10 w-full max-h-[550px]"
                 style={{
-                  filter: 'drop-shadow(0 8px 24px rgba(30,64,175,0.2)) drop-shadow(0 4px 12px rgba(225,29,72,0.12))',
+                  filter: 'drop-shadow(0 8px 24px rgba(37,99,235,0.2)) drop-shadow(0 4px 12px rgba(225,29,72,0.12))',
                 }}
               >
                 <Image
@@ -772,16 +772,16 @@ function ExecutiveLeadershipSection({ shouldReduceMotion }: { shouldReduceMotion
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="order-2 lg:order-2"
             >
-              <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#0B1220]">
+              <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#0F172A]">
                 Executive Leadership
               </h2>
-              <p className="text-lg text-[rgba(11,18,32,0.68)] leading-relaxed mb-8">
+              <p className="text-lg text-[#475569] leading-relaxed mb-8">
                 Day-to-day operations and strategic execution of UPTECH&apos;s programs, initiatives, and member services.
               </p>
 
               {/* Key Responsibilities */}
-              <div className="p-6 rounded-2xl bg-white border border-[rgba(11,18,32,0.10)] shadow-sm">
-                <h4 className="font-heading font-semibold text-lg mb-4 text-[#0B1220]">Key Responsibilities</h4>
+              <div className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+                <h4 className="font-heading font-semibold text-lg mb-4 text-[#0F172A]">Key Responsibilities</h4>
                 <ul className="space-y-3">
                   {[
                     "Execute strategic plans and initiatives",
@@ -798,8 +798,8 @@ function ExecutiveLeadershipSection({ shouldReduceMotion }: { shouldReduceMotion
                       transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
                       className="flex items-start gap-3"
                     >
-                      <CheckCircle2 className="w-5 h-5 text-[#00B140] mt-0.5 flex-shrink-0" />
-                      <span className="text-[rgba(11,18,32,0.68)] text-[15px]">{item}</span>
+                      <CheckCircle2 className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" />
+                      <span className="text-[#475569] text-[15px]">{item}</span>
                     </motion.li>
                   ))}
                 </ul>

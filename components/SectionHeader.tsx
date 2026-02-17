@@ -23,12 +23,12 @@ export function SectionHeader({
     <div className={`mb-12 md:mb-16 ${alignClass} ${className}`}>
       {accent && (
         <div className={`mb-5 flex ${align === "center" ? "justify-center" : ""}`}>
-          <div className="h-1 w-14 rounded-full bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#E11D48]" />
+          <div className="h-1 w-14 rounded-full bg-gradient-to-r from-[#2563EB] to-[#22C55E]" />
         </div>
       )}
-      <h2 className="font-heading font-bold mb-5">{title}</h2>
+      <h2 className="font-heading font-bold mb-5 text-[#2563EB]">{title}</h2>
       {subtitle && (
-        <p className={`text-lg leading-relaxed opacity-70 ${align === "center" ? "mx-auto" : ""} max-w-2xl`}>
+        <p className={`text-lg leading-relaxed text-[#4B5563] ${align === "center" ? "mx-auto" : ""} max-w-2xl`}>
           {subtitle}
         </p>
       )}

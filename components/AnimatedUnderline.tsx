@@ -5,9 +5,8 @@ import { useReducedMotion } from "framer-motion";
 
 // Brand colors
 const BRAND_COLORS = {
-  blue: "#1E40AF",
-  green: "#00B140",
-  red: "#E11D48",
+  blue: "#2563EB",
+  green: "#22C55E",
 };
 
 interface AnimatedUnderlineProps {
@@ -45,7 +44,7 @@ export function AnimatedUnderline({
       <motion.div
         className="h-full w-full"
         style={{
-          background: `linear-gradient(90deg, ${BRAND_COLORS.blue}, ${BRAND_COLORS.green}, ${BRAND_COLORS.red}, ${BRAND_COLORS.blue})`,
+          background: `linear-gradient(90deg, ${BRAND_COLORS.blue}, ${BRAND_COLORS.green}, ${BRAND_COLORS.blue})`,
           backgroundSize: "200% 100%",
         }}
         animate={

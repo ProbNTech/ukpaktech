@@ -46,7 +46,7 @@ export default function AITechProgramsPage() {
               subtitle="UPTECH&apos;s AI and Tech Programs bridge the UK and Pakistan through cutting-edge AI services, collective company models, and innovative startup ecosystems that empower the next generation of tech leaders."
                   align="left"
                 />
-                <div className="space-y-4 text-[rgba(11,18,32,0.68)] leading-relaxed">
+                <div className="space-y-4 text-[#475569] leading-relaxed">
                   <p>
                     Our AI and Tech Programs are designed to accelerate technology adoption, build world-class AI capabilities, and create sustainable pathways for innovation across both nations through collective business models and collaborative startup ecosystems.
                   </p>
@@ -64,7 +64,7 @@ export default function AITechProgramsPage() {
       </Section>
 
       {/* Program Blocks - Premium Core Section */}
-      <Section variant="dark" className="relative overflow-hidden" id="programs">
+      <Section variant="alt" className="relative overflow-hidden" id="programs">
         {/* Animated Background Glows */}
         <ProgramsBackground shouldReduceMotion={shouldReduceMotion} />
         
@@ -175,7 +175,7 @@ export default function AITechProgramsPage() {
       </Section>
 
       {/* Call to Action */}
-      <Section variant="dark" className="relative overflow-hidden">
+      <Section variant="alt" className="relative overflow-hidden">
         <CTABackground shouldReduceMotion={shouldReduceMotion} />
         <AnimatedSection>
           <div className="max-w-4xl mx-auto text-center relative z-10">
@@ -202,7 +202,7 @@ export default function AITechProgramsPage() {
 // Hero Component
 function AITechHero({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
   return (
-    <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-[#050B14] pt-20">
+    <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-[#F8FAFC] pt-20">
       {/* Animated Background */}
       <HeroBackground shouldReduceMotion={shouldReduceMotion} />
 
@@ -215,13 +215,13 @@ function AITechHero({ shouldReduceMotion }: { shouldReduceMotion: boolean | null
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-6"
           >
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#EAF2FF]">
+            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#0F172A]">
               <span className="relative inline-block">
                 AI and Tech Programs
                 <AnimatedUnderline />
               </span>
             </h1>
-            <p className="text-xl text-[rgba(234,242,255,0.85)] leading-relaxed">
+            <p className="text-xl text-[#475569] leading-relaxed">
               Driving AI innovation and tech leadership between the UK and Pakistan through comprehensive training, certifications, and collaborative startup models.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -276,7 +276,7 @@ function HeroBackground({ shouldReduceMotion }: { shouldReduceMotion: boolean | 
         }}
       />
       <motion.div
-        className="absolute top-1/2 right-1/3 w-[600px] h-[600px] bg-[#00B140] rounded-full opacity-[0.08] blur-[160px]"
+        className="absolute top-1/2 right-1/3 w-[600px] h-[600px] bg-[#22C55E] rounded-full opacity-[0.08] blur-[160px]"
         animate={shouldReduceMotion ? {} : {
           x: [0, -60, 50, 0],
           y: [0, 60, -40, 0],
@@ -288,7 +288,7 @@ function HeroBackground({ shouldReduceMotion }: { shouldReduceMotion: boolean | 
           ease: "easeInOut",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050B14]/60 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#F8FAFC]/60 pointer-events-none" />
     </div>
   );
 }
@@ -296,13 +296,13 @@ function HeroBackground({ shouldReduceMotion }: { shouldReduceMotion: boolean | 
 // AI Network Visual Panel
 function AINetworkVisual({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
   return (
-    <div className="relative rounded-2xl bg-[rgba(255,255,255,0.06)] border border-[rgba(234,242,255,0.14)] p-8 backdrop-blur-sm overflow-hidden h-[500px]">
+    <div className="relative rounded-2xl bg-white border border-gray-200 p-8 backdrop-blur-sm overflow-hidden h-[500px]">
       {/* Animated gradient border */}
       <motion.div
         className="absolute inset-0 rounded-2xl"
         style={{
           background: shouldReduceMotion
-            ? "linear-gradient(90deg, #2D5BFF, #00B140, #2D5BFF)"
+            ? "linear-gradient(90deg, #2D5BFF, #22C55E, #2D5BFF)"
             : undefined,
         }}
         animate={
@@ -310,10 +310,10 @@ function AINetworkVisual({ shouldReduceMotion }: { shouldReduceMotion: boolean |
             ? {}
             : {
                 background: [
-                  "linear-gradient(90deg, #2D5BFF, #00B140, #2D5BFF)",
-                  "linear-gradient(180deg, #2D5BFF, #00B140, #2D5BFF)",
-                  "linear-gradient(270deg, #2D5BFF, #00B140, #2D5BFF)",
-                  "linear-gradient(360deg, #2D5BFF, #00B140, #2D5BFF)",
+                  "linear-gradient(90deg, #2D5BFF, #22C55E, #2D5BFF)",
+                  "linear-gradient(180deg, #2D5BFF, #22C55E, #2D5BFF)",
+                  "linear-gradient(270deg, #2D5BFF, #22C55E, #2D5BFF)",
+                  "linear-gradient(360deg, #2D5BFF, #22C55E, #2D5BFF)",
                 ],
               }
         }
@@ -323,7 +323,7 @@ function AINetworkVisual({ shouldReduceMotion }: { shouldReduceMotion: boolean |
           ease: "linear",
         }}
       />
-      <div className="absolute inset-[2px] rounded-2xl bg-[#050B14]" />
+      <div className="absolute inset-[2px] rounded-2xl bg-[#F8FAFC]" />
 
       <div className="relative z-10 h-full flex items-center justify-center">
         {/* AI Network Nodes */}
@@ -331,11 +331,11 @@ function AINetworkVisual({ shouldReduceMotion }: { shouldReduceMotion: boolean |
           <defs>
             <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#2D5BFF" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#00B140" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#22C55E" stopOpacity="0.6" />
             </linearGradient>
             <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#2D5BFF" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#00B140" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#22C55E" stopOpacity="0.4" />
             </linearGradient>
           </defs>
           
@@ -434,9 +434,9 @@ function AINetworkVisual({ shouldReduceMotion }: { shouldReduceMotion: boolean |
 // Intro Visual Panel
 function IntroVisualPanel({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
   return (
-    <div className="relative rounded-2xl bg-gradient-to-br from-[#2D5BFF]/10 to-[#00B140]/10 border border-[rgba(45,91,255,0.2)] p-8 backdrop-blur-sm overflow-hidden h-[400px]">
+    <div className="relative rounded-2xl bg-gradient-to-br from-[#2D5BFF]/10 to-[#22C55E]/10 border border-[rgba(45,91,255,0.2)] p-8 backdrop-blur-sm overflow-hidden h-[400px]">
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-[#2D5BFF]/20 via-[#00B140]/15 to-[#2D5BFF]/10"
+        className="absolute inset-0 bg-gradient-to-br from-[#2D5BFF]/20 via-[#22C55E]/15 to-[#2D5BFF]/10"
         animate={
           shouldReduceMotion
             ? {}
@@ -464,8 +464,8 @@ function IntroVisualPanel({ shouldReduceMotion }: { shouldReduceMotion: boolean 
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center"
         >
-          <h3 className="font-heading font-semibold text-xl text-[#0B1220] mb-2">Innovation Hub</h3>
-          <p className="text-sm text-[rgba(11,18,32,0.68)]">Connecting talent and technology</p>
+          <h3 className="font-heading font-semibold text-xl text-[#0F172A] mb-2">Innovation Hub</h3>
+          <p className="text-sm text-[#475569]">Connecting talent and technology</p>
         </motion.div>
       </div>
     </div>
@@ -496,7 +496,7 @@ function PremiumProgramCard({
 
   const colorConfig = {
     blue: {
-      gradient: "from-[#2D5BFF] to-[#1E40AF]",
+      gradient: "from-[#2D5BFF] to-[#2563EB]",
       bg: "bg-[#2D5BFF]/10",
       border: "border-[#2D5BFF]/30",
       iconBg: "bg-[#2D5BFF]/20",
@@ -505,22 +505,22 @@ function PremiumProgramCard({
       accent: "#2D5BFF",
     },
     green: {
-      gradient: "from-[#00B140] to-[#008030]",
-      bg: "bg-[#00B140]/10",
-      border: "border-[#00B140]/30",
-      iconBg: "bg-[#00B140]/20",
-      iconColor: "text-[#00B140]",
+      gradient: "from-[#22C55E] to-[#16A34A]",
+      bg: "bg-[#22C55E]/10",
+      border: "border-[#22C55E]/30",
+      iconBg: "bg-[#22C55E]/20",
+      iconColor: "text-[#22C55E]",
       glow: "shadow-[0_0_30px_rgba(0,177,64,0.3)]",
-      accent: "#00B140",
+      accent: "#22C55E",
     },
     red: {
-      gradient: "from-[#E11D48] to-[#BE123C]",
-      bg: "bg-[#E11D48]/10",
-      border: "border-[#E11D48]/30",
-      iconBg: "bg-[#E11D48]/20",
-      iconColor: "text-[#E11D48]",
+      gradient: "from-[#2563EB] to-[#BE123C]",
+      bg: "bg-[#2563EB]/10",
+      border: "border-[#2563EB]/30",
+      iconBg: "bg-[#2563EB]/20",
+      iconColor: "text-[#2563EB]",
       glow: "shadow-[0_0_30px_rgba(225,29,72,0.3)]",
-      accent: "#E11D48",
+      accent: "#2563EB",
     },
   };
 
@@ -572,10 +572,10 @@ function PremiumProgramCard({
 
         {/* Content */}
         <div className="relative z-10 flex-1">
-          <h3 className="font-heading font-bold text-xl mb-3 text-[#EAF2FF] group-hover:text-white transition-colors">
+          <h3 className="font-heading font-bold text-xl mb-3 text-[#0F172A] group-hover:text-[#2563EB] transition-colors">
             {title}
           </h3>
-          <p className="text-sm text-[rgba(234,242,255,0.75)] mb-6 leading-relaxed">
+          <p className="text-sm text-[#475569] mb-6 leading-relaxed">
             {description}
           </p>
           
@@ -594,7 +594,7 @@ function PremiumProgramCard({
                   animate={isHovered && !shouldReduceMotion ? { scale: [1, 1.5, 1] } : { scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 />
-                <span className="text-xs text-[rgba(234,242,255,0.7)]">{feature}</span>
+                <span className="text-xs text-[#64748B]">{feature}</span>
               </motion.div>
             ))}
           </div>
@@ -798,7 +798,7 @@ function ProgramsBackground({ shouldReduceMotion }: { shouldReduceMotion: boolea
         }}
       />
       <motion.div
-        className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-[#00B140] rounded-full opacity-[0.06] blur-[140px]"
+        className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-[#22C55E] rounded-full opacity-[0.06] blur-[140px]"
         animate={shouldReduceMotion ? {} : {
           x: [0, -25, 20, 0],
           y: [0, 25, -20, 0],
@@ -811,7 +811,7 @@ function ProgramsBackground({ shouldReduceMotion }: { shouldReduceMotion: boolea
         }}
       />
       <motion.div
-        className="absolute bottom-1/4 left-1/2 w-[450px] h-[450px] bg-[#E11D48] rounded-full opacity-[0.05] blur-[130px]"
+        className="absolute bottom-1/4 left-1/2 w-[450px] h-[450px] bg-[#2563EB] rounded-full opacity-[0.05] blur-[130px]"
         animate={shouldReduceMotion ? {} : {
           x: [0, 20, -25, 0],
           y: [0, -20, 25, 0],
@@ -909,18 +909,18 @@ function HowItWorksStep({
       {/* Content */}
       <div className="flex-1 pt-2">
         <motion.div
-          className={`bg-white rounded-xl border-l-4 ${config.borderAccent} border border-[rgba(11,18,32,0.10)] p-6 shadow-sm hover:shadow-lg transition-all duration-300 group`}
+          className={`bg-white rounded-xl border-l-4 ${config.borderAccent} border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300 group`}
           whileHover={shouldReduceMotion ? {} : { x: 4 }}
         >
           <div className="flex items-start gap-3 mb-3">
-            <h3 className="font-heading font-semibold text-xl text-[#0B1220] flex-1">{step.title}</h3>
+            <h3 className="font-heading font-semibold text-xl text-[#0F172A] flex-1">{step.title}</h3>
             <motion.div
               className={`w-2 h-2 rounded-full ${config.bg} opacity-60`}
               animate={shouldReduceMotion ? {} : { scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
               transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
             />
           </div>
-          <p className="text-[rgba(11,18,32,0.68)] leading-relaxed">{step.description}</p>
+          <p className="text-[#475569] leading-relaxed">{step.description}</p>
 
           {/* Subtle gradient accent on hover */}
           <motion.div
@@ -970,22 +970,22 @@ function HowItWorksTimeline({ shouldReduceMotion }: { shouldReduceMotion: boolea
 
   const colorConfig = {
     blue: {
-      gradient: "from-[#2D5BFF] to-[#1E40AF]",
-      bg: "bg-[#2D5BFF]",
-      glow: "bg-[#2D5BFF]",
-      borderAccent: "border-[#2D5BFF]/20",
+      gradient: "from-[#2563EB] to-[#1D4ED8]",
+      bg: "bg-[#2563EB]",
+      glow: "bg-[#2563EB]",
+      borderAccent: "border-[#2563EB]/20",
     },
     green: {
-      gradient: "from-[#00B140] to-[#008030]",
-      bg: "bg-[#00B140]",
-      glow: "bg-[#00B140]",
-      borderAccent: "border-[#00B140]/20",
+      gradient: "from-[#22C55E] to-[#16A34A]",
+      bg: "bg-[#22C55E]",
+      glow: "bg-[#22C55E]",
+      borderAccent: "border-[#22C55E]/20",
     },
     red: {
-      gradient: "from-[#E11D48] to-[#BE123C]",
-      bg: "bg-[#E11D48]",
-      glow: "bg-[#E11D48]",
-      borderAccent: "border-[#E11D48]/20",
+      gradient: "from-[#2563EB] to-[#BE123C]",
+      bg: "bg-[#2563EB]",
+      glow: "bg-[#2563EB]",
+      borderAccent: "border-[#2563EB]/20",
     },
   };
 
@@ -993,7 +993,7 @@ function HowItWorksTimeline({ shouldReduceMotion }: { shouldReduceMotion: boolea
     <div className="relative mt-12">
       {/* Timeline line with all three colors */}
       <div className="absolute left-8 top-0 bottom-0 w-0.5 hidden md:block">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2D5BFF] via-[#00B140] via-[#E11D48] via-[#2D5BFF] to-[#00B140]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2563EB] via-[#22C55E] via-[#2563EB] via-[#2563EB] to-[#22C55E]" />
       </div>
       
       <div className="space-y-8">
@@ -1029,7 +1029,7 @@ function CTABackground({ shouldReduceMotion }: { shouldReduceMotion: boolean | n
         }}
       />
       <motion.div
-        className="absolute top-1/2 right-1/4 w-[800px] h-[800px] bg-[#00B140] rounded-full opacity-[0.1] blur-[180px]"
+        className="absolute top-1/2 right-1/4 w-[800px] h-[800px] bg-[#22C55E] rounded-full opacity-[0.1] blur-[180px]"
         animate={shouldReduceMotion ? {} : {
           scale: [1, 1.4, 1],
           x: [0, -40, 0],

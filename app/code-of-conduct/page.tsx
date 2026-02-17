@@ -64,7 +64,7 @@ export default function CodeOfConductPage() {
             <aside className="hidden lg:block">
               <div className="sticky top-24">
                 <nav className="space-y-2">
-                  <div className="text-sm font-semibold text-[rgba(11,18,32,0.68)] mb-4 uppercase tracking-wider">
+                  <div className="text-sm font-semibold text-[#475569] mb-4 uppercase tracking-wider">
                     On this page
                   </div>
                   {sections.map((section) => (
@@ -74,7 +74,7 @@ export default function CodeOfConductPage() {
                       className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
                         activeSection === section.id
                           ? "bg-[#2D5BFF]/10 text-[#2D5BFF] border-l-2 border-[#2D5BFF]"
-                          : "text-[rgba(11,18,32,0.68)] hover:bg-[rgba(11,18,32,0.05)]"
+                          : "text-[#475569] hover:bg-gray-100"
                       }`}
                       whileHover={shouldReduceMotion ? {} : { x: 4 }}
                       transition={{ duration: 0.2 }}
@@ -90,7 +90,7 @@ export default function CodeOfConductPage() {
             <div className="lg:hidden mb-8">
               <button
                 onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
-                className="w-full px-4 py-3 rounded-lg bg-white border border-[rgba(11,18,32,0.10)] text-left font-medium text-[#0B1220] flex items-center justify-between"
+                className="w-full px-4 py-3 rounded-lg bg-white border border-[rgba(15,23,42,0.10)] text-left font-medium text-[#0F172A] flex items-center justify-between"
               >
                 <span>Contents</span>
                 <motion.span
@@ -105,7 +105,7 @@ export default function CodeOfConductPage() {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="mt-2 space-y-1 bg-white border border-[rgba(11,18,32,0.10)] rounded-lg p-2"
+                  className="mt-2 space-y-1 bg-white border border-[rgba(15,23,42,0.10)] rounded-lg p-2"
                 >
                   {sections.map((section) => (
                     <button
@@ -114,7 +114,7 @@ export default function CodeOfConductPage() {
                       className={`w-full text-left px-4 py-2 rounded-lg text-sm ${
                         activeSection === section.id
                           ? "bg-[#2D5BFF]/10 text-[#2D5BFF]"
-                          : "text-[rgba(11,18,32,0.68)]"
+                          : "text-[rgba(15,23,42,0.68)]"
                       }`}
                     >
                       {section.label}
@@ -140,7 +140,7 @@ export default function CodeOfConductPage() {
 
               {/* Summary Section */}
               <ContentCard id="summary" title="Summary">
-                <p className="text-lg text-[rgba(11,18,32,0.68)] leading-relaxed">
+                <p className="text-lg text-[rgba(15,23,42,0.68)] leading-relaxed">
                   UPTECH is committed to maintaining the highest standards of ethical conduct, transparency, and accountability in all our activities.
                 </p>
               </ContentCard>
@@ -188,7 +188,7 @@ export default function CodeOfConductPage() {
 
               {/* Member Responsibilities */}
               <ContentCard id="responsibilities" title="Member Responsibilities">
-                <p className="text-[rgba(11,18,32,0.68)] mb-6">
+                <p className="text-[rgba(15,23,42,0.68)] mb-6">
                   Detailed member responsibilities and guidelines will be available soon.
                 </p>
                 <div className="space-y-4">
@@ -224,7 +224,7 @@ export default function CodeOfConductPage() {
 // Hero Component
 function CodeOfConductHero({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
   return (
-    <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-[#050B14] pt-20">
+    <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-[#F8FAFC] pt-20">
       {/* Animated Background */}
       <HeroBackground shouldReduceMotion={shouldReduceMotion} />
 
@@ -237,13 +237,13 @@ function CodeOfConductHero({ shouldReduceMotion }: { shouldReduceMotion: boolean
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-6"
           >
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#EAF2FF]">
+            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#0F172A]">
               <span className="relative inline-block">
                 Code of Conduct
                 <AnimatedUnderline />
               </span>
             </h1>
-            <p className="text-xl text-[rgba(234,242,255,0.85)] leading-relaxed">
+            <p className="text-xl text-[rgba(15,23,42,0.85)] leading-relaxed">
               UPTECH is committed to maintaining the highest standards of ethical conduct, transparency, and accountability in all our activities.
             </p>
           </motion.div>
@@ -290,7 +290,7 @@ function HeroBackground({ shouldReduceMotion }: { shouldReduceMotion: boolean | 
         }}
       />
       <motion.div
-        className="absolute top-1/2 right-1/3 w-[600px] h-[600px] bg-[#00B140] rounded-full opacity-[0.08] blur-[160px]"
+        className="absolute top-1/2 right-1/3 w-[600px] h-[600px] bg-[#22C55E] rounded-full opacity-[0.08] blur-[160px]"
         animate={shouldReduceMotion ? {} : {
           x: [0, -60, 50, 0],
           y: [0, 60, -40, 0],
@@ -303,7 +303,7 @@ function HeroBackground({ shouldReduceMotion }: { shouldReduceMotion: boolean | 
         }}
       />
       <motion.div
-        className="absolute bottom-1/3 left-1/2 w-[550px] h-[550px] bg-[#E11D48] rounded-full opacity-[0.06] blur-[150px]"
+        className="absolute bottom-1/3 left-1/2 w-[550px] h-[550px] bg-[#2563EB] rounded-full opacity-[0.06] blur-[150px]"
         animate={shouldReduceMotion ? {} : {
           x: [0, 40, -50, 0],
           y: [0, -40, 50, 0],
@@ -315,7 +315,7 @@ function HeroBackground({ shouldReduceMotion }: { shouldReduceMotion: boolean | 
           ease: "easeInOut",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050B14]/60 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#F8FAFC]/60 pointer-events-none" />
     </div>
   );
 }
@@ -323,13 +323,13 @@ function HeroBackground({ shouldReduceMotion }: { shouldReduceMotion: boolean | 
 // Governance Visual Panel
 function GovernanceVisualPanel({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
   return (
-    <div className="relative rounded-2xl bg-[rgba(255,255,255,0.06)] border border-[rgba(234,242,255,0.14)] p-8 backdrop-blur-sm overflow-hidden">
+    <div className="relative rounded-2xl bg-[rgba(255,255,255,0.06)] border border-[rgba(15,23,42,0.14)] p-8 backdrop-blur-sm overflow-hidden">
       {/* Animated gradient border */}
       <motion.div
         className="absolute inset-0 rounded-2xl"
         style={{
           background: shouldReduceMotion
-            ? "linear-gradient(90deg, #2D5BFF, #00B140, #E11D48, #2D5BFF)"
+            ? "linear-gradient(90deg, #2D5BFF, #22C55E, #2563EB, #2D5BFF)"
             : undefined,
         }}
         animate={
@@ -337,10 +337,10 @@ function GovernanceVisualPanel({ shouldReduceMotion }: { shouldReduceMotion: boo
             ? {}
             : {
                 background: [
-                  "linear-gradient(90deg, #2D5BFF, #00B140, #E11D48, #2D5BFF)",
-                  "linear-gradient(180deg, #2D5BFF, #00B140, #E11D48, #2D5BFF)",
-                  "linear-gradient(270deg, #2D5BFF, #00B140, #E11D48, #2D5BFF)",
-                  "linear-gradient(360deg, #2D5BFF, #00B140, #E11D48, #2D5BFF)",
+                  "linear-gradient(90deg, #2D5BFF, #22C55E, #2563EB, #2D5BFF)",
+                  "linear-gradient(180deg, #2D5BFF, #22C55E, #2563EB, #2D5BFF)",
+                  "linear-gradient(270deg, #2D5BFF, #22C55E, #2563EB, #2D5BFF)",
+                  "linear-gradient(360deg, #2D5BFF, #22C55E, #2563EB, #2D5BFF)",
                 ],
               }
         }
@@ -350,7 +350,7 @@ function GovernanceVisualPanel({ shouldReduceMotion }: { shouldReduceMotion: boo
           ease: "linear",
         }}
       />
-      <div className="absolute inset-[2px] rounded-2xl bg-[#050B14]" />
+      <div className="absolute inset-[2px] rounded-2xl bg-[#F8FAFC]" />
 
       <div className="relative z-10">
         {/* Principles Chips */}
@@ -368,12 +368,12 @@ function GovernanceVisualPanel({ shouldReduceMotion }: { shouldReduceMotion: boo
               className={`p-3 rounded-lg border ${
                 chip.color === "blue"
                   ? "border-[#2D5BFF]/40 bg-[#2D5BFF]/15"
-                  : "border-[#00B140]/40 bg-[#00B140]/15"
+                  : "border-[#22C55E]/40 bg-[#22C55E]/15"
               } text-center`}
             >
               <div
                 className={`text-xs font-semibold ${
-                  chip.color === "blue" ? "text-[#2D5BFF]" : "text-[#00B140]"
+                  chip.color === "blue" ? "text-[#2D5BFF]" : "text-[#22C55E]"
                 }`}
               >
                 {chip.label}
@@ -415,7 +415,7 @@ function GovernanceVisualPanel({ shouldReduceMotion }: { shouldReduceMotion: boo
           <defs>
             <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#2D5BFF" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#00B140" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#22C55E" stopOpacity="0.4" />
             </linearGradient>
           </defs>
           {[
@@ -468,11 +468,11 @@ function ContentCard({
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="scroll-mt-24"
     >
-      <div className="bg-white rounded-2xl border border-[rgba(11,18,32,0.10)] p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+      <div className="bg-white rounded-2xl border border-[rgba(15,23,42,0.10)] p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
         {/* Top gradient divider */}
-        <div className="h-[2px] bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#E11D48] mb-6 rounded-full" />
+        <div className="h-[2px] bg-gradient-to-r from-[#2D5BFF] via-[#22C55E] to-[#2563EB] mb-6 rounded-full" />
         
-        <h2 className="font-heading font-bold text-3xl mb-6 text-[#0B1220]">{title}</h2>
+        <h2 className="font-heading font-bold text-3xl mb-6 text-[#0F172A]">{title}</h2>
         {children}
       </div>
     </motion.div>
@@ -503,19 +503,19 @@ function PrincipleCard({
       animate={shouldReduceMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
-      className="p-6 rounded-xl border border-[rgba(11,18,32,0.10)] bg-white hover:border-[#2D5BFF]/40 hover:shadow-[0_4px_12px_rgba(45,91,255,0.1)] transition-all duration-300"
+      className="p-6 rounded-xl border border-[rgba(15,23,42,0.10)] bg-white hover:border-[#2D5BFF]/40 hover:shadow-[0_4px_12px_rgba(45,91,255,0.1)] transition-all duration-300"
     >
       <div
         className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
           color === "blue"
             ? "bg-[#2D5BFF]/10 text-[#2D5BFF]"
-            : "bg-[#00B140]/10 text-[#00B140]"
+            : "bg-[#22C55E]/10 text-[#22C55E]"
         }`}
       >
         <Icon className="w-6 h-6" />
       </div>
-      <h3 className="font-heading font-semibold text-lg mb-2 text-[#0B1220]">{title}</h3>
-      <p className="text-sm text-[rgba(11,18,32,0.68)]">{description}</p>
+      <h3 className="font-heading font-semibold text-lg mb-2 text-[#0F172A]">{title}</h3>
+      <p className="text-sm text-[rgba(15,23,42,0.68)]">{description}</p>
     </motion.div>
   );
 }
@@ -539,8 +539,8 @@ function ResponsibilityItem({
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       className="flex items-start gap-3"
     >
-      <CheckCircle2 className="w-5 h-5 text-[#00B140] mt-0.5 flex-shrink-0" />
-      <span className="text-[rgba(11,18,32,0.68)] leading-relaxed">{text}</span>
+      <CheckCircle2 className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" />
+      <span className="text-[rgba(15,23,42,0.68)] leading-relaxed">{text}</span>
     </motion.div>
   );
 }
@@ -559,30 +559,30 @@ function ReportingEnforcementCallout({ shouldReduceMotion }: { shouldReduceMotio
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="scroll-mt-24"
     >
-      <div className="bg-gradient-to-br from-[#E11D48]/5 to-[#E11D48]/10 rounded-2xl border-2 border-[#E11D48]/30 p-8 shadow-lg">
+      <div className="bg-gradient-to-br from-[#2563EB]/5 to-[#2563EB]/10 rounded-2xl border-2 border-[#2563EB]/30 p-8 shadow-lg">
         <div className="flex items-start gap-4">
-          <div className="p-3 rounded-xl bg-[#E11D48]/20 border border-[#E11D48]/40 flex-shrink-0">
-            <AlertTriangle className="w-6 h-6 text-[#E11D48]" />
+          <div className="p-3 rounded-xl bg-[#2563EB]/20 border border-[#2563EB]/40 flex-shrink-0">
+            <AlertTriangle className="w-6 h-6 text-[#2563EB]" />
           </div>
           <div className="flex-1">
-            <h2 className="font-heading font-bold text-2xl mb-4 text-[#0B1220] flex items-center gap-2">
+            <h2 className="font-heading font-bold text-2xl mb-4 text-[#0F172A] flex items-center gap-2">
               Reporting & Enforcement
             </h2>
-            <div className="space-y-4 text-[rgba(11,18,32,0.68)]">
+            <div className="space-y-4 text-[rgba(15,23,42,0.68)]">
               <p>
                 UPTECH takes violations of this code of conduct seriously. Members are encouraged to report any concerns or violations through appropriate channels.
               </p>
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
-                  <Gavel className="w-5 h-5 text-[#E11D48] mt-0.5 flex-shrink-0" />
+                  <Gavel className="w-5 h-5 text-[#2563EB] mt-0.5 flex-shrink-0" />
                   <span>All reports will be reviewed by the governance committee</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Scale className="w-5 h-5 text-[#E11D48] mt-0.5 flex-shrink-0" />
+                  <Scale className="w-5 h-5 text-[#2563EB] mt-0.5 flex-shrink-0" />
                   <span>Fair and transparent investigation process</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Shield className="w-5 h-5 text-[#E11D48] mt-0.5 flex-shrink-0" />
+                  <Shield className="w-5 h-5 text-[#2563EB] mt-0.5 flex-shrink-0" />
                   <span>Zero tolerance for violations of ethical standards</span>
                 </div>
               </div>

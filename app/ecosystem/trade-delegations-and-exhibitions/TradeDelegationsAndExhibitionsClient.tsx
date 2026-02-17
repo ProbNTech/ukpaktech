@@ -28,7 +28,7 @@ import {
 const BRAND_COLORS = {
   blue: "#1E40AF",
   green: "#00B140",
-  red: "#E11D48",
+  red: "#2563EB",
 };
 
 export default function TradeDelegationsAndExhibitionsClient() {
@@ -78,7 +78,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
             }}
           />
           <motion.div
-            className="absolute top-1/2 right-1/3 w-80 h-80 bg-gradient-to-bl from-[#E11D48]/6 to-transparent rounded-full blur-3xl"
+            className="absolute top-1/2 right-1/3 w-80 h-80 bg-gradient-to-bl from-[#2563EB]/6 to-transparent rounded-full blur-3xl"
             animate={{
               scale: [1, 1.25, 1],
               x: [0, 20, 0],
@@ -256,7 +256,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
             }}
           />
           <motion.div
-            className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-[#E11D48]/5 to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
+            className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-[#2563EB]/5 to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
             animate={{
               scale: [1, 1.3, 1],
               rotate: [0, 180, 360],
@@ -397,7 +397,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
       <Section variant="dark" className="relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#E11D48] rounded-full opacity-[0.15] blur-[250px]"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#2563EB] rounded-full opacity-[0.15] blur-[250px]"
             animate={shouldReduceMotion ? {} : {
               scale: [1, 1.2, 1],
               rotate: [0, 90, 0],
