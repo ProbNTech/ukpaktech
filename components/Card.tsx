@@ -4,12 +4,17 @@ interface CardProps {
   children: ReactNode;
   className?: string;
   hover?: boolean;
-  variant?: "light" | "dark";
+  variant?: "light" | "dark" | "alt";
 }
 
-export function Card({ children, className = "", hover = false }: CardProps) {
+export function Card({ children, className = "", hover = false, variant = "light" }: CardProps) {
   const baseStyles = "rounded-2xl border p-7 transition-all duration-500 relative overflow-hidden group/card";
-  const variantStyles = "bg-white border-gray-100 text-[#0F172A] shadow-md";
+  const variantMap = {
+    light: "bg-white border-gray-100 text-[#0F172A] shadow-md",
+    dark: "bg-[#0B1F3A] border-white/10 text-white shadow-md",
+    alt: "bg-gray-50 border-gray-200 text-[#0F172A] shadow-sm",
+  };
+  const variantStyles = variantMap[variant];
   const hoverClass = hover
     ? "hover:-translate-y-1.5 hover:shadow-lg hover:border-[#2563EB]/20 cursor-pointer"
     : "";

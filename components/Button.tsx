@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "glass";
   href?: string;
   children: ReactNode;
   showArrow?: boolean;
@@ -31,6 +31,7 @@ export function Button({
     primary: "bg-[#2563EB] text-white hover:bg-[#1D4ED8] shadow-md hover:shadow-lg hover:-translate-y-0.5",
     secondary: "border-2 border-[#22C55E] text-[#16A34A] hover:bg-[#22C55E] hover:text-white hover:shadow-md hover:-translate-y-0.5",
     ghost: "text-[#2563EB] hover:bg-[#2563EB]/10 hover:-translate-y-0.5",
+    glass: "bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white/20 hover:shadow-lg hover:-translate-y-0.5",
   };
 
   const classNameWithoutRounded = className.replace(/\brounded-[\w-]+\b/g, '').trim();

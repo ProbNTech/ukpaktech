@@ -101,12 +101,12 @@ export function Footer() {
                     </Link>
                   </h3>
                   <h3 className="font-heading font-semibold text-white text-sm mb-5">
-                    <Link href="/updates" className="hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1">
+                    <Link href="/events" className="hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1">
                       Updates &amp; Insights <ChevronRight className="w-3 h-3" />
                     </Link>
                   </h3>
                   <h3 className="font-heading font-semibold text-white text-sm mb-5">
-                    <Link href="/ecosystem" className="hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1">
+                    <Link href="/membership" className="hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1">
                       Membership Directory <ChevronRight className="w-3 h-3" />
                     </Link>
                   </h3>

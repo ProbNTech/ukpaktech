@@ -24,7 +24,9 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card>
               <h3 className="font-heading font-semibold text-xl mb-3">Email</h3>
-              <p className="text-muted-text">info@uptech.example.com</p>
+              <p className="text-muted-text">
+                <a href="mailto:info@uptechcouncil.org" className="hover:text-[#2563EB] transition-colors">info@uptechcouncil.org</a>
+              </p>
             </Card>
             <Card>
               <h3 className="font-heading font-semibold text-xl mb-3">Locations</h3>

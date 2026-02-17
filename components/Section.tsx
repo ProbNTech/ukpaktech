@@ -3,15 +3,18 @@ import { Container } from "./Container";
 
 interface SectionProps {
   children: ReactNode;
-  variant?: "light" | "alt";
+  variant?: "light" | "alt" | "dark";
   className?: string;
   id?: string;
 }
 
 export function Section({ children, variant = "light", className = "", id }: SectionProps) {
-  const bgClass = variant === "alt"
-    ? "bg-[#F8FAFC] text-[#0F172A] section-transition"
-    : "bg-white text-[#0F172A] section-transition";
+  const variantMap = {
+    light: "bg-white text-[#0F172A] section-transition",
+    alt: "bg-[#F8FAFC] text-[#0F172A] section-transition",
+    dark: "bg-[#0B1F3A] text-white section-transition",
+  };
+  const bgClass = variantMap[variant];
 
   return (
     <section id={id} className={`${bgClass} ${className}`}>
