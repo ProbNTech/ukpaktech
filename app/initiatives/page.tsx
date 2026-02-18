@@ -1,4 +1,6 @@
 import { Section } from "@/components/Section";
+import { PageHero } from "@/components/PageHero";
+import { SectionHeader } from "@/components/SectionHeader";
 import { InitiativeGrid } from "@/components/InitiativeGrid";
 import type { Metadata } from "next";
 
@@ -9,19 +11,15 @@ export const metadata: Metadata = {
 
 export default function InitiativesPage() {
   return (
-    <div className="pt-20">
+    <div>
+      <PageHero
+        title="Initiatives"
+        subtitle="UPTECH's flagship initiatives driving innovation and collaboration between the UK and Pakistan."
+      />
       <Section>
-        <div className="max-w-6xl mx-auto">
-          <h1 className="font-heading font-bold text-4xl md:text-5xl mb-6">Initiatives</h1>
-          <p className="text-lg text-muted-text mb-12">
-            UPTECH&apos;s flagship initiatives driving innovation and collaboration between the UK and Pakistan.
-          </p>
-          <InitiativeGrid />
-        </div>
+        <SectionHeader label="Our work" title="All Initiatives" />
+        <InitiativeGrid />
       </Section>
     </div>
   );
 }
-
-
-

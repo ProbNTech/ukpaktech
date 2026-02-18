@@ -4,7 +4,6 @@ import { Section } from "@/components/Section";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
-import { AnimatedUnderline } from "@/components/AnimatedUnderline";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
@@ -34,9 +33,9 @@ export default function PeopleAIClient() {
       {/* Hero Section */}
       <PageHero
         title={
-          <span className="relative inline-block">
+          
             People AI Platform
-            <AnimatedUnderline />
+
           </span>
         }
         subtitle="Empowering people and organizations through human-centric AI support systems that integrate technology with professional services."
@@ -44,15 +43,14 @@ export default function PeopleAIClient() {
 
       {/* Vision Section */}
       <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <SectionHeader
                   title="Empowering People Through AI"
                   subtitle="A human-centric platform that bridges technology and professional services to enable workforce transformation."
-                  align="left"
+                 
                 />
                 <div className="space-y-5 text-[rgba(11,18,32,0.68)] leading-relaxed mt-8 text-base">
                   <p>
@@ -69,7 +67,6 @@ export default function PeopleAIClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
       </Section>
 
       {/* Data-Driven Insights Section */}
@@ -79,11 +76,11 @@ export default function PeopleAIClient() {
           <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#00B140] rounded-full opacity-[0.04] blur-[150px]" />
         </div>
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <SectionHeader
               title="Platform Impact & Insights"
               subtitle="Illustrative metrics demonstrating the transformative power of AI across key sectors."
-              align="center"
+             
             />
             <div className="mt-4 mb-8">
               <p className="text-center text-xs text-[rgba(234,242,255,0.5)] uppercase tracking-wider">
@@ -97,17 +94,16 @@ export default function PeopleAIClient() {
 
       {/* Platform Capabilities */}
       <Section variant="dark" className="relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-[#1E40AF] rounded-full opacity-[0.08] blur-[180px]" />
           <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#00B140] rounded-full opacity-[0.06] blur-[150px]" />
         </div>
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <SectionHeader
               title="Platform Capabilities"
               subtitle="Comprehensive AI-powered tools and services designed to transform how people work, learn, and collaborate."
-              align="center"
+             
             />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               <CapabilityCard
@@ -149,36 +145,32 @@ export default function PeopleAIClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* How It Works */}
       <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-5xl mx-auto">
+          
             <SectionHeader
               title="How It Works"
               subtitle="A simple, structured approach to integrating AI into your organization and workflows."
-              align="center"
+             
             />
             <div className="mt-12">
               <HowItWorksSteps />
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
       </Section>
 
       {/* Impact & Use Cases */}
       <Section variant="dark" className="relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <SectionHeader
               title="Impact & Use Cases"
               subtitle="Real-world applications driving transformation across industries and sectors."
-              align="center"
+             
             />
             <div className="grid md:grid-cols-2 gap-8 mt-12">
               <UseCaseCard
@@ -212,12 +204,10 @@ export default function PeopleAIClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* Call To Action */}
       <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-[#1E40AF] via-[#00B140] to-[#1E40AF] rounded-full opacity-[0.1] blur-[200px]"
@@ -229,11 +219,11 @@ export default function PeopleAIClient() {
           />
         </div>
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
+          
             <SectionHeader
               title="Join the People AI Platform"
               subtitle="Be part of a transformative movement that's reshaping how people and organizations work with AI."
-              align="center"
+             
             />
             <div className="mt-10">
               <Button href="/membership" variant="primary" size="lg" showArrow>

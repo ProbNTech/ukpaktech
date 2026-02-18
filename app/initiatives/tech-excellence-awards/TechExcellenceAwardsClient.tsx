@@ -4,7 +4,6 @@ import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { AnimatedUnderline } from "@/components/AnimatedUnderline";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -35,9 +34,9 @@ export default function TechExcellenceAwardsClient() {
       {/* Premium Hero */}
       <PageHero
         title={
-          <span className="relative inline-block">
+          
             UK–Pakistan Tech Excellence Awards
-            <AnimatedUnderline />
+
           </span>
         }
         subtitle="Celebrating Innovation, Partnership and Digital Leadership across Two Nations"
@@ -67,15 +66,14 @@ export default function TechExcellenceAwardsClient() {
 
       {/* About the Awards */}
       <Section variant="dark">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <SectionHeader
                   title="About the Awards"
                   subtitle="Recognizing exceptional contributions to technology innovation and cross-border collaboration."
-                  align="left"
+                 
                 />
                 <div className="space-y-5 text-[rgba(234,242,255,0.85)] leading-relaxed text-base">
                   <p>
@@ -109,18 +107,16 @@ export default function TechExcellenceAwardsClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* Award Categories */}
       <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <SectionHeader
               title="Award Categories"
               subtitle="Recognizing excellence across diverse dimensions of technology innovation and leadership."
-              align="center"
+             
             />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {categories.map((category, index) => (
@@ -129,36 +125,32 @@ export default function TechExcellenceAwardsClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/20 to-transparent" />
       </Section>
 
       {/* Nomination Process */}
       <Section variant="dark">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <SectionHeader
               title="Nomination Process"
               subtitle="A transparent, structured process designed to identify and celebrate true excellence."
-              align="center"
+             
             />
             <NominationStepper />
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* Judging and Evaluation */}
       <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <div className="grid lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
                 <SectionHeader
                   title="Judging and Evaluation"
                   subtitle="Transparent, merit-based scoring by an independent jury of senior experts."
-                  align="left"
+                 
                 />
                 <div className="space-y-5 text-[rgba(11,18,32,0.68)] leading-relaxed text-base">
                   <p>
@@ -199,33 +191,29 @@ export default function TechExcellenceAwardsClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/20 to-transparent" />
       </Section>
 
       {/* Past Moments / Event Atmosphere */}
       <Section variant="dark">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <SectionHeader
               title="Past Moments"
               subtitle="A night of recognition with leaders, founders, and innovators across both nations."
-              align="center"
+             
             />
             <EventGallery />
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* Nominate CTA Section */}
       <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/20 to-transparent" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#2D5BFF] rounded-full opacity-[0.08] blur-[200px]" />
         </div>
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
+          
             <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 text-[#0B1220]">
               Nominate the innovators shaping the UK–Pakistan tech corridor
             </h2>
@@ -255,18 +243,16 @@ export default function TechExcellenceAwardsClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/20 to-transparent" />
       </Section>
 
       {/* FAQ */}
       <Section variant="dark">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto">
+          
             <SectionHeader
               title="Frequently Asked Questions"
               subtitle="Common questions about the UK–Pakistan Tech Excellence Awards."
-              align="center"
+             
             />
             <div className="space-y-4 mt-12">
               {faqs.map((faq, index) => (

@@ -5,7 +5,6 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { AnimatedUnderline } from "@/components/AnimatedUnderline";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -39,9 +38,9 @@ export default function TradeDelegationsAndExhibitionsClient() {
       {/* Hero Section */}
       <PageHero
         title={
-          <span className="relative inline-block">
+          
             Trade Delegations and Exhibitions
-            <AnimatedUnderline />
+
           </span>
         }
         subtitle="Facilitating cross-border trade delegations and technology exhibitions to strengthen UK–Pakistan partnerships."
@@ -91,15 +90,14 @@ export default function TradeDelegationsAndExhibitionsClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <SectionHeader
                   title="Trade Delegations and Exhibitions"
                   subtitle="Facilitating cross-border trade delegations and technology exhibitions to strengthen UK–Pakistan technology partnerships."
-                  align="left"
+                 
                 />
                 <div className="space-y-5 text-[rgba(234,242,255,0.85)] leading-relaxed mt-8 text-base">
                   <p>
@@ -136,7 +134,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* What We Offer */}
@@ -168,13 +165,12 @@ export default function TradeDelegationsAndExhibitionsClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <SectionHeader
               title="What We Offer"
               subtitle="Comprehensive support for trade delegations and technology exhibitions."
-              align="center"
+             
             />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               <OfferCard
@@ -222,7 +218,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
       </Section>
 
       {/* Benefits Section */}
@@ -268,15 +263,14 @@ export default function TradeDelegationsAndExhibitionsClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <div className="grid lg:grid-cols-2 gap-12">
               <div>
                 <SectionHeader
                   title="Benefits of Participating"
                   subtitle="Why join our trade delegations and exhibitions."
-                  align="left"
+                 
                 />
                 <div className="mt-8 space-y-4">
                   {[
@@ -390,7 +384,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* CTA Section */}
@@ -409,9 +402,8 @@ export default function TradeDelegationsAndExhibitionsClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center relative z-10 py-20">
+          
             <motion.h2
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -446,7 +438,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
             </motion.div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
     </div>
   );

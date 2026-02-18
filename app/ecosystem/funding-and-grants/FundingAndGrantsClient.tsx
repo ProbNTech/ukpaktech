@@ -5,7 +5,6 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { AnimatedUnderline } from "@/components/AnimatedUnderline";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
@@ -33,9 +32,9 @@ export default function FundingAndGrantsClient() {
       {/* Hero Section */}
       <PageHero
         title={
-          <span className="relative inline-block">
+          
             Funding and Grants
-            <AnimatedUnderline />
+
           </span>
         }
         subtitle="Access funding opportunities to drive technology innovation and cross-border collaboration."
@@ -87,9 +86,8 @@ export default function FundingAndGrantsClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
@@ -144,7 +142,6 @@ export default function FundingAndGrantsClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* Funding Opportunities */}
@@ -190,9 +187,8 @@ export default function FundingAndGrantsClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <motion.div
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -254,7 +250,6 @@ export default function FundingAndGrantsClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
       </Section>
 
       {/* Eligibility Criteria */}
@@ -303,9 +298,8 @@ export default function FundingAndGrantsClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <div className="grid lg:grid-cols-2 gap-12">
               <motion.div
                 initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
@@ -424,7 +418,6 @@ export default function FundingAndGrantsClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* Benefits Section */}
@@ -470,9 +463,8 @@ export default function FundingAndGrantsClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <motion.div
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -522,7 +514,6 @@ export default function FundingAndGrantsClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
       </Section>
 
       {/* CTA Section */}
@@ -580,9 +571,8 @@ export default function FundingAndGrantsClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center relative z-10 py-20">
+          
             <motion.h2
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -617,7 +607,6 @@ export default function FundingAndGrantsClient() {
             </motion.div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
     </div>
   );

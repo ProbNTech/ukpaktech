@@ -5,7 +5,6 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { AnimatedUnderline } from "@/components/AnimatedUnderline";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -35,9 +34,9 @@ export default function UKPakistanTechnologyPartnershipClient() {
       {/* Hero Section */}
       <PageHero
         title={
-          <span className="relative inline-block">
+          
             UK Pakistan Technology Partnership
-            <AnimatedUnderline />
+
           </span>
         }
         subtitle="Strengthening bilateral technology collaboration between the United Kingdom and Pakistan."
@@ -86,15 +85,14 @@ export default function UKPakistanTechnologyPartnershipClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <SectionHeader
                   title="Partnership Overview"
                   subtitle="Connecting governments, enterprises, investors, startups, and academia to drive technology-led growth."
-                  align="left"
+                 
                 />
                 <div className="space-y-5 text-[rgba(234,242,255,0.85)] leading-relaxed mt-8 text-base">
                   <p>
@@ -131,7 +129,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* Our Recognition Program */}
@@ -164,9 +161,8 @@ export default function UKPakistanTechnologyPartnershipClient() {
             ease: "easeInOut",
           }}
         />
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <motion.div
               className="relative bg-white rounded-3xl p-8 md:p-12 overflow-hidden"
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
@@ -226,7 +222,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
             </motion.div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
       </Section>
 
       {/* Why UK Pakistan Tech Council */}
@@ -260,15 +255,14 @@ export default function UKPakistanTechnologyPartnershipClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <SectionHeader
                   title="Why UK Pakistan Tech Council"
                   subtitle="An invite-only community of UK-based Pakistan tech leaders, founders, investors, and executives."
-                  align="left"
+                 
                 />
                 <div className="mt-8 space-y-4">
                   {[
@@ -406,7 +400,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* Our Partners Make Us Stronger */}
@@ -439,13 +432,12 @@ export default function UKPakistanTechnologyPartnershipClient() {
             ease: "easeInOut",
           }}
         />
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <SectionHeader
               title="Our Partners Make Us Stronger"
               subtitle="Collaborating with leading organizations to drive innovation and strengthen the UK–Pakistan tech corridor."
-              align="center"
+             
             />
             <div className="mt-12">
               <p className="text-center text-lg text-[rgba(11,18,32,0.68)] leading-relaxed max-w-3xl mx-auto mb-12">
@@ -511,7 +503,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
       </Section>
 
       {/* Why Partner With Us */}
@@ -557,13 +548,12 @@ export default function UKPakistanTechnologyPartnershipClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <SectionHeader
               title="Why Partner With Us"
               subtitle="Unlock opportunities to connect, grow, and lead in the UK–Pakistan technology ecosystem."
-              align="center"
+             
             />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
               <BenefitCard
@@ -597,7 +587,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* Typical Attendees */}
@@ -630,13 +619,12 @@ export default function UKPakistanTechnologyPartnershipClient() {
             ease: "easeInOut",
           }}
         />
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <SectionHeader
               title="Typical Attendees"
               subtitle="Join a community of distinguished technology leaders and innovators."
-              align="center"
+             
             />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
               {[
@@ -698,7 +686,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1E40AF]/20 to-transparent" />
       </Section>
 
       {/* Final CTA */}
@@ -717,9 +704,8 @@ export default function UKPakistanTechnologyPartnershipClient() {
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center relative z-10 py-20">
+          
             <motion.h2
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -754,7 +740,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
             </motion.div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
     </div>
   );

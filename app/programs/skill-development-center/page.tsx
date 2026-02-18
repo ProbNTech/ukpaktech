@@ -4,7 +4,6 @@ import { Section } from "@/components/Section";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
-import { AnimatedUnderline } from "@/components/AnimatedUnderline";
 import { motion, useReducedMotion, useInView } from "framer-motion";
 import { 
   GraduationCap,
@@ -44,7 +43,7 @@ export default function SkillDevelopmentCenterPage() {
       {/* Trust Strip */}
       <Section className="py-12">
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <TrustStrip shouldReduceMotion={shouldReduceMotion} />
           </div>
         </AnimatedSection>
@@ -53,13 +52,13 @@ export default function SkillDevelopmentCenterPage() {
       {/* Intro Section */}
       <Section>
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <SectionHeader
               title="Building World-Class Tech Capabilities"
               subtitle="UPTECH's Skill Development Center provides comprehensive training programs designed to build world-class tech capabilities across the UK and Pakistan."
-              align="center"
+             
             />
-            <div className="max-w-3xl mx-auto mt-8 text-center text-[#475569] leading-relaxed space-y-4">
+            
               <p>
                 Our Skill Development Center offers industry-recognized certifications, specialized training, and personalized mentorship to empower individuals and organizations with cutting-edge technology skills.
               </p>
@@ -75,11 +74,11 @@ export default function SkillDevelopmentCenterPage() {
       <Section  id="programs" className="relative overflow-hidden">
         <ProgramsBackground shouldReduceMotion={shouldReduceMotion} />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <SectionHeader
               title="Our Training Programs"
               subtitle="Comprehensive skill development initiatives designed to accelerate your tech career."
-              align="center"
+             
             />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
               <DetailedProgramCard
@@ -150,11 +149,11 @@ export default function SkillDevelopmentCenterPage() {
       {/* Learning Path Timeline */}
       <Section id="pathway">
         <AnimatedSection>
-          <div className="max-w-5xl mx-auto">
+          
             <SectionHeader
               title="Your Learning Pathway"
               subtitle="A structured journey from assessment to career launch."
-              align="center"
+             
             />
             <LearningPathTimeline shouldReduceMotion={shouldReduceMotion} />
           </div>
@@ -165,11 +164,11 @@ export default function SkillDevelopmentCenterPage() {
       <Section  id="tracks" className="relative overflow-hidden">
         <ProgramsBackground shouldReduceMotion={shouldReduceMotion} />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <SectionHeader
               title="Flagship Training Tracks"
               subtitle="Intensive programs designed to build expertise in high-demand tech domains."
-              align="center"
+             
             />
             <div className="grid md:grid-cols-3 gap-8 mt-16">
               <TrackCard
@@ -210,11 +209,11 @@ export default function SkillDevelopmentCenterPage() {
       {/* Outcomes and Metrics */}
       <Section>
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <SectionHeader
               title="Program Outcomes"
               subtitle="Measurable results that accelerate your career growth."
-              align="center"
+             
             />
             <OutcomesMetrics shouldReduceMotion={shouldReduceMotion} />
           </div>
@@ -225,11 +224,11 @@ export default function SkillDevelopmentCenterPage() {
       <Section  className="relative overflow-hidden">
         <ProgramsBackground shouldReduceMotion={shouldReduceMotion} />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <SectionHeader
               title="Our Mentors and Partners"
               subtitle="Learn from industry leaders and collaborate with leading organizations."
-              align="center"
+             
             />
             <MentorsPartners shouldReduceMotion={shouldReduceMotion} />
           </div>
@@ -239,11 +238,11 @@ export default function SkillDevelopmentCenterPage() {
       {/* FAQ */}
       <Section id="faq">
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto">
+          
             <SectionHeader
               title="Frequently Asked Questions"
               subtitle="Everything you need to know about our programs."
-              align="center"
+             
             />
             <FAQSection shouldReduceMotion={shouldReduceMotion} />
           </div>
@@ -254,11 +253,11 @@ export default function SkillDevelopmentCenterPage() {
       <Section  className="relative overflow-hidden">
         <CTABackground shouldReduceMotion={shouldReduceMotion} />
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
+          
             <SectionHeader
               title="Ready to Transform Your Career?"
               subtitle="Join UPTECH's Skill Development Center and unlock your potential in the tech industry. Start your journey today with world-class training and mentorship."
-              align="center"
+             
             />
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Button href="/membership" variant="primary" size="lg" showArrow>
@@ -315,9 +314,9 @@ function SkillDevHero({ shouldReduceMotion }: { shouldReduceMotion: boolean | nu
           className="text-center max-w-4xl mx-auto space-y-6"
         >
           <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#0F172A]">
-            <span className="relative inline-block">
+            
               Skill Development Center
-              <AnimatedUnderline />
+  
             </span>
           </h1>
           <p className="text-xl text-[rgba(234,242,255,0.85)] leading-relaxed">

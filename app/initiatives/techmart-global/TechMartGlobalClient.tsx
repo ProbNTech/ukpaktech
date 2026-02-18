@@ -4,7 +4,6 @@ import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { AnimatedUnderline } from "@/components/AnimatedUnderline";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -32,9 +31,9 @@ export default function TechMartGlobalClient() {
       {/* Hero Section */}
       <PageHero
         title={
-          <span className="relative inline-block">
+          
             TechMart Global
-            <AnimatedUnderline />
+
           </span>
         }
         subtitle="A global B2B technology marketplace and collaboration platform connecting Pakistani tech companies with UK and international buyers, partners, investors, and institutions."
@@ -68,9 +67,8 @@ export default function TechMartGlobalClient() {
 
       {/* What is TechMart Global */}
       <Section variant="dark">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-block px-3 py-1 rounded-full bg-[#2D5BFF]/10 border border-[#2D5BFF]/20 text-[#2D5BFF] text-xs font-semibold uppercase tracking-wider mb-4">
@@ -79,7 +77,7 @@ export default function TechMartGlobalClient() {
                 <SectionHeader
                   title="What is TechMart Global"
                   subtitle="A strategic platform designed to bridge technology ecosystems and facilitate meaningful business connections."
-                  align="left"
+                 
                 />
                 <div className="space-y-5 text-[rgba(234,242,255,0.85)] leading-relaxed text-base">
                   <p>
@@ -104,18 +102,16 @@ export default function TechMartGlobalClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* Who TechMart Global Is For */}
       <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <SectionHeader
               title="Who TechMart Global Is For"
               subtitle="Designed to serve diverse stakeholders across the technology ecosystem."
-              align="center"
+             
             />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <AudienceCard
@@ -149,18 +145,16 @@ export default function TechMartGlobalClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/20 to-transparent" />
       </Section>
 
       {/* What TechMart Global Enables */}
       <Section variant="dark">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <SectionHeader
               title="What TechMart Global Enables"
               subtitle="Key capabilities and opportunities facilitated through the platform."
-              align="center"
+             
             />
             <div className="grid md:grid-cols-2 gap-6 mt-12">
               <FeatureBlock
@@ -194,20 +188,18 @@ export default function TechMartGlobalClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* UK Market Access Focus */}
       <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <SectionHeader
                   title="UK Market Access Focus"
                   subtitle="Supporting Pakistani technology companies in entering and succeeding in the UK market."
-                  align="left"
+                 
                 />
                 <div className="space-y-5 text-[rgba(11,18,32,0.68)] leading-relaxed text-base">
                   <p>
@@ -224,36 +216,32 @@ export default function TechMartGlobalClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/20 to-transparent" />
       </Section>
 
       {/* How TechMart Global Works */}
       <Section variant="dark">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <SectionHeader
               title="How TechMart Global Works"
               subtitle="A structured process designed to facilitate meaningful connections and successful outcomes."
-              align="center"
+             
             />
             <HowItWorksSteps />
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
       </Section>
 
       {/* Alignment With UK–Pakistan Tech Council */}
       <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/20 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <SectionHeader
               title="Alignment With UK–Pakistan Tech Council"
               subtitle="TechMart Global as a strategic initiative supporting council objectives and ecosystem development."
-              align="center"
+             
             />
-            <div className="max-w-3xl mx-auto space-y-8">
+            
               <div className="flex flex-wrap gap-3 justify-center">
                 <div className="px-4 py-2 rounded-full bg-[#2D5BFF]/10 border border-[#2D5BFF]/20 text-[#2D5BFF] text-sm font-semibold flex items-center gap-2">
                   <Shield className="w-4 h-4" />
@@ -292,21 +280,19 @@ export default function TechMartGlobalClient() {
             </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/20 to-transparent" />
       </Section>
 
       {/* Call to Action */}
       <Section variant="dark">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(234,242,255,0.1)] to-transparent" />
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#2D5BFF] rounded-full opacity-[0.08] blur-[200px]" />
         </div>
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
+          
             <SectionHeader
               title="Join TechMart Global"
               subtitle="Connect with the global technology marketplace and unlock new opportunities for growth and collaboration."
-              align="center"
+             
             />
             <div className="mt-10 flex flex-col items-center gap-4">
               <motion.div

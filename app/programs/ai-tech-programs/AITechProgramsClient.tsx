@@ -4,7 +4,7 @@ import { Section } from "@/components/Section";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
-import { AnimatedUnderline } from "@/components/AnimatedUnderline";
+import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, useInView } from "framer-motion";
 import { 
   Brain, 
@@ -31,20 +31,22 @@ export default function AITechProgramsPage() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="pt-0">
+    <div>
       {/* Hero Section */}
-      <AITechHero shouldReduceMotion={shouldReduceMotion} />
+      <PageHero
+        title="AI and Tech Programs"
+        subtitle="Driving AI innovation and tech leadership between the UK and Pakistan through comprehensive training, certifications, and collaborative startup models."
+      />
 
       {/* Intro Narrative */}
       <Section>
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[1fr_400px] gap-12 items-center">
               <div>
                 <SectionHeader
                   title="Driving AI Innovation and Tech Leadership"
               subtitle="UPTECH&apos;s AI and Tech Programs bridge the UK and Pakistan through cutting-edge AI services, collective company models, and innovative startup ecosystems that empower the next generation of tech leaders."
-                  align="left"
+                 
                 />
                 <div className="space-y-4 text-[#475569] leading-relaxed">
                   <p>
@@ -69,11 +71,11 @@ export default function AITechProgramsPage() {
         <ProgramsBackground shouldReduceMotion={shouldReduceMotion} />
         
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
+          
             <SectionHeader
               title="Our Programs"
               subtitle="Comprehensive initiatives designed to accelerate AI and technology adoption across the UK–Pakistan corridor."
-              align="center"
+             
             />
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
@@ -163,11 +165,11 @@ export default function AITechProgramsPage() {
       {/* How It Works Timeline */}
       <Section>
         <AnimatedSection>
-          <div className="max-w-5xl mx-auto">
+          
             <SectionHeader
               title="How It Works"
               subtitle="A step-by-step journey from concept to successful AI and tech venture."
-              align="center"
+             
             />
             <HowItWorksTimeline shouldReduceMotion={shouldReduceMotion} />
           </div>
@@ -178,11 +180,11 @@ export default function AITechProgramsPage() {
       <Section variant="alt" className="relative overflow-hidden">
         <CTABackground shouldReduceMotion={shouldReduceMotion} />
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
+          
             <SectionHeader
               title="Ready to Transform Your Tech Career?"
               subtitle="Join UPTECH&apos;s AI and Tech Programs and become part of a global network driving innovation between the UK and Pakistan."
-              align="center"
+             
             />
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Button href="/membership" variant="primary" size="lg" showArrow>
@@ -216,9 +218,9 @@ function AITechHero({ shouldReduceMotion }: { shouldReduceMotion: boolean | null
             className="space-y-6"
           >
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#0F172A]">
-              <span className="relative inline-block">
+              
                 AI and Tech Programs
-                <AnimatedUnderline />
+    
               </span>
             </h1>
             <p className="text-xl text-[#475569] leading-relaxed">
