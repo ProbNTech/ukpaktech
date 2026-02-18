@@ -2,8 +2,9 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Play, Pause } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+
 
 const videos = [
   "/image/home/hero_video.mp4",
@@ -12,7 +13,6 @@ const videos = [
 ];
 
 export function Hero() {
-  const shouldReduceMotion = useReducedMotion();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -62,7 +62,7 @@ export function Hero() {
   }, [currentIndex]);
 
   return (
-    <section className="relative w-full h-[75vh] lg:h-[85vh] -mt-[72px] overflow-hidden bg-gray-900">
+    <section className="relative w-full h-screen -mt-[72px] overflow-hidden bg-[#0B0F1A]">
       {/* Stacked background videos */}
       {videos.map((src, index) => (
         <video
@@ -81,80 +81,68 @@ export function Hero() {
         </video>
       ))}
 
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/60 via-black/40 to-black/20 pointer-events-none" />
+      {/* Overlay — dark on left ~65%, fades to transparent right — matches ukproptech pattern */}
+      <div
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.72) 40%, rgba(0,0,0,0.45) 65%, rgba(0,0,0,0.0) 100%)",
+        }}
+      />
 
-      {/* Content wrapper */}
-      <div className="relative z-20 flex items-center h-[75vh] lg:h-[85vh] pt-24 pb-16">
+      {/* Content wrapper — bottom-anchored like ukproptech */}
+      <div className="relative z-20 flex items-end h-screen pb-16 pt-[72px]">
         <div className="w-full px-8 sm:px-12 lg:px-16 xl:px-20">
-          <div className="max-w-2xl space-y-5">
-            {/* Small label */}
-            <motion.div
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-white/90">
-                Bilateral Technology Council
-              </span>
-            </motion.div>
 
-            {/* Heading */}
-            <motion.h1
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] text-white"
-            >
-              UK–Pakistan{" "}
-              <span className="text-[#60A5FA]">Tech Council</span>
-            </motion.h1>
+          {/* Small label */}
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#2563EB] mb-3">
+            UPTECH
+          </p>
 
-            {/* Subheading */}
-            <motion.p
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="text-lg sm:text-xl text-white/90 font-medium leading-relaxed"
-            >
-              Driving technology collaboration between the United Kingdom and Pakistan.
-            </motion.p>
+          {/* Headline */}
+          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.08] text-white mb-7 max-w-[720px]">
+            Driving bilateral technology collaboration between the UK and Pakistan
+          </h1>
 
-            {/* Description */}
-            <motion.p
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.45 }}
-              className="text-sm sm:text-base text-white/70 leading-relaxed max-w-xl"
+          {/* Buttons — rounded-full pill + plain underlined link */}
+          <div className="flex flex-wrap items-center gap-6 mb-10">
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#2563EB] text-white font-bold text-sm hover:bg-[#1D4ED8] transition-colors duration-200"
             >
-              A strategic platform strengthening innovation, digital trade, and institutional partnerships across both nations.
-            </motion.p>
-
-            {/* Buttons */}
-            <motion.div
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.55 }}
-              className="flex flex-wrap gap-3 pt-2"
+              Explore our work
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/membership"
+              className="inline-flex items-center gap-2 text-white font-semibold text-sm underline underline-offset-4 hover:text-white/75 transition-colors duration-200"
             >
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#2563EB] text-white font-semibold text-sm shadow-md hover:bg-[#1D4ED8] transition-colors duration-300"
-              >
-                Explore the Council
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/events"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-[#22C55E] text-white font-semibold text-sm bg-[#22C55E]/20 hover:bg-[#22C55E] transition-colors duration-300"
-              >
-                View Events
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
+              Discover our membership
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
+
+          {/* Green separator line — ukproptech signature */}
+          <div className="w-full h-px bg-[#22C55E] mb-6" />
+
+          {/* Partner logos row */}
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/60 mb-4">
+            Trusted by leading organisations
+          </p>
+          <div className="flex items-center gap-8 flex-wrap">
+            {["/image/sponsor-logos/1.png", "/image/sponsor-logos/2.png", "/image/sponsor-logos/3.png"].map((src, i) => (
+              <div key={i} className="relative h-8 w-24 opacity-70 hover:opacity-100 transition-opacity duration-200">
+                <Image
+                  src={src}
+                  alt={`Partner ${i + 1}`}
+                  fill
+                  className="object-contain object-left"
+                  sizes="96px"
+                />
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
 
@@ -174,16 +162,16 @@ export function Hero() {
             key={index}
             onClick={() => setCurrentIndex(index)}
             aria-label={`Switch to video ${index + 1}`}
-            className={`w-2 h-2 rounded-full transition-all duration-500 ${
+            className={`h-2 rounded-full transition-all duration-500 ${
               index === currentIndex
                 ? "bg-[#22C55E] w-6"
-                : "bg-[#22C55E]/40 hover:bg-[#22C55E]/60"
+                : "bg-white/40 w-2 hover:bg-white/60"
             }`}
           />
         ))}
       </div>
 
-      {/* Bottom accent line — only place red is used */}
+      {/* Bottom accent line */}
       <div className="absolute bottom-0 left-0 right-0 h-[3px] z-30 bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#E11D48]" />
     </section>
   );
