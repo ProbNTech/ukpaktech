@@ -31,12 +31,7 @@ export default function FundingAndGrantsClient() {
     <div className="pt-0">
       {/* Hero Section */}
       <PageHero
-        title={
-          
-            Funding and Grants
-
-          </span>
-        }
+        title="Funding and Grants"
         subtitle="Access funding opportunities to drive technology innovation and cross-border collaboration."
       />
 
@@ -140,7 +135,6 @@ export default function FundingAndGrantsClient() {
                 />
               </div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -248,7 +242,6 @@ export default function FundingAndGrantsClient() {
                 index={5}
               />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -416,7 +409,6 @@ export default function FundingAndGrantsClient() {
                 </motion.div>
               </motion.div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -512,7 +504,6 @@ export default function FundingAndGrantsClient() {
                 index={3}
               />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -605,7 +596,6 @@ export default function FundingAndGrantsClient() {
                 Contact Us
               </Button>
             </motion.div>
-          </div>
         </AnimatedSection>
       </Section>
     </div>

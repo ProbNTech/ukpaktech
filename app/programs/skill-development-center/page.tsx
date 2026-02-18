@@ -4,6 +4,7 @@ import { Section } from "@/components/Section";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
+import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, useInView } from "framer-motion";
 import { 
   GraduationCap,
@@ -36,36 +37,34 @@ export default function SkillDevelopmentCenterPage() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="pt-0">
+    <div>
       {/* Hero Section */}
-      <SkillDevHero shouldReduceMotion={shouldReduceMotion} />
+      <PageHero
+        title="Skill Development Center"
+        subtitle="Comprehensive training programs designed to build world-class tech capabilities and accelerate your career."
+      />
 
       {/* Trust Strip */}
-      <Section className="py-12">
+      <Section variant="alt" className="py-12">
         <AnimatedSection>
-          
-            <TrustStrip shouldReduceMotion={shouldReduceMotion} />
-          </div>
+          <TrustStrip shouldReduceMotion={shouldReduceMotion} />
         </AnimatedSection>
       </Section>
 
       {/* Intro Section */}
       <Section>
         <AnimatedSection>
-          
-            <SectionHeader
-              title="Building World-Class Tech Capabilities"
-              subtitle="UPTECH's Skill Development Center provides comprehensive training programs designed to build world-class tech capabilities across the UK and Pakistan."
-             
-            />
-            
-              <p>
-                Our Skill Development Center offers industry-recognized certifications, specialized training, and personalized mentorship to empower individuals and organizations with cutting-edge technology skills.
-              </p>
-              <p>
-                Through strategic partnerships with leading tech companies and educational institutions, we deliver programs that bridge the skills gap and create pathways for career advancement.
-              </p>
-            </div>
+          <SectionHeader
+            title="Building World-Class Tech Capabilities"
+            subtitle="UPTECH's Skill Development Center provides comprehensive training programs designed to build world-class tech capabilities across the UK and Pakistan."
+          />
+          <div className="space-y-4 text-[#3D4152] leading-relaxed">
+            <p>
+              Our Skill Development Center offers industry-recognized certifications, specialized training, and personalized mentorship to empower individuals and organizations with cutting-edge technology skills.
+            </p>
+            <p>
+              Through strategic partnerships with leading tech companies and educational institutions, we deliver programs that bridge the skills gap and create pathways for career advancement.
+            </p>
           </div>
         </AnimatedSection>
       </Section>
@@ -142,7 +141,6 @@ export default function SkillDevelopmentCenterPage() {
                 shouldReduceMotion={shouldReduceMotion}
               />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -156,7 +154,6 @@ export default function SkillDevelopmentCenterPage() {
              
             />
             <LearningPathTimeline shouldReduceMotion={shouldReduceMotion} />
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -202,7 +199,6 @@ export default function SkillDevelopmentCenterPage() {
                 shouldReduceMotion={shouldReduceMotion}
               />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -216,7 +212,6 @@ export default function SkillDevelopmentCenterPage() {
              
             />
             <OutcomesMetrics shouldReduceMotion={shouldReduceMotion} />
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -231,7 +226,6 @@ export default function SkillDevelopmentCenterPage() {
              
             />
             <MentorsPartners shouldReduceMotion={shouldReduceMotion} />
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -245,7 +239,6 @@ export default function SkillDevelopmentCenterPage() {
              
             />
             <FAQSection shouldReduceMotion={shouldReduceMotion} />
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -267,66 +260,12 @@ export default function SkillDevelopmentCenterPage() {
                 Partner with UPTECH
               </Button>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
     </div>
   );
 }
 
-function SkillDevHero({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
-  return (
-    <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-[#F8FAFC] pt-20">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-[#2D5BFF] rounded-full opacity-[0.15] blur-[200px]"
-          animate={shouldReduceMotion ? {} : {
-            x: [0, 50, -40, 0],
-            y: [0, -50, 40, 0],
-            scale: [1, 1.2, 0.9, 1],
-          }}
-          transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute top-1/2 right-1/3 w-[600px] h-[600px] bg-[#22C55E] rounded-full opacity-[0.08] blur-[160px]"
-          animate={shouldReduceMotion ? {} : {
-            x: [0, -60, 50, 0],
-            y: [0, 60, -40, 0],
-            scale: [1, 1.25, 0.85, 1],
-          }}
-          transition={{ duration: 45, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-1/3 left-1/2 w-[550px] h-[550px] bg-[#2563EB] rounded-full opacity-[0.06] blur-[150px]"
-          animate={shouldReduceMotion ? {} : {
-            x: [0, 40, -50, 0],
-            y: [0, -40, 50, 0],
-            scale: [1, 1.15, 0.9, 1],
-          }}
-          transition={{ duration: 42, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
-      <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
-        <motion.div
-          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center max-w-4xl mx-auto space-y-6"
-        >
-          <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#0F172A]">
-            
-              Skill Development Center
-  
-            </span>
-          </h1>
-          <p className="text-xl text-[rgba(234,242,255,0.85)] leading-relaxed">
-            Comprehensive training programs designed to build world-class tech capabilities and accelerate your career.
-          </p>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
 
 type TrustStripItemType = {
   icon: React.ComponentType<{ className?: string }>;

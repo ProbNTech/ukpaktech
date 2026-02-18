@@ -33,12 +33,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
     <div className="pt-0">
       {/* Hero Section */}
       <PageHero
-        title={
-          
-            UK Pakistan Technology Partnership
-
-          </span>
-        }
+        title="UK Pakistan Technology Partnership"
         subtitle="Strengthening bilateral technology collaboration between the United Kingdom and Pakistan."
       />
 
@@ -127,7 +122,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 />
               </div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -220,7 +214,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 </div>
               </div>
             </motion.div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -398,7 +391,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 </motion.div>
               </div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -501,7 +493,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 ))}
               </div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -585,7 +576,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 color="#1E40AF"
               />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -684,7 +674,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 </motion.div>
               ))}
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -738,7 +727,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 Contact Us
               </Button>
             </motion.div>
-          </div>
         </AnimatedSection>
       </Section>
     </div>

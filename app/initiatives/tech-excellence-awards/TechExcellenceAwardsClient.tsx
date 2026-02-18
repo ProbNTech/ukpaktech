@@ -33,12 +33,7 @@ export default function TechExcellenceAwardsClient() {
     <div className="pt-0">
       {/* Premium Hero */}
       <PageHero
-        title={
-          
-            UK–Pakistan Tech Excellence Awards
-
-          </span>
-        }
+        title="UK–Pakistan Tech Excellence Awards"
         subtitle="Celebrating Innovation, Partnership and Digital Leadership across Two Nations"
       >
         <motion.p
@@ -105,7 +100,6 @@ export default function TechExcellenceAwardsClient() {
                 />
               </div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -123,7 +117,6 @@ export default function TechExcellenceAwardsClient() {
                 <CategoryCard key={index} category={category} index={index} />
               ))}
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -137,7 +130,6 @@ export default function TechExcellenceAwardsClient() {
              
             />
             <NominationStepper />
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -189,7 +181,6 @@ export default function TechExcellenceAwardsClient() {
                 </div>
               </div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -203,7 +194,6 @@ export default function TechExcellenceAwardsClient() {
              
             />
             <EventGallery />
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -241,7 +231,6 @@ export default function TechExcellenceAwardsClient() {
                 </Button>
               </motion.div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -259,7 +248,6 @@ export default function TechExcellenceAwardsClient() {
                 <FAQItem key={index} question={faq.question} answer={faq.answer} index={index} />
               ))}
             </div>
-          </div>
         </AnimatedSection>
       </Section>
     </div>

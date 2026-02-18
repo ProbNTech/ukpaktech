@@ -30,12 +30,7 @@ export default function TechMartGlobalClient() {
     <div className="pt-0">
       {/* Hero Section */}
       <PageHero
-        title={
-          
-            TechMart Global
-
-          </span>
-        }
+        title="TechMart Global"
         subtitle="A global B2B technology marketplace and collaboration platform connecting Pakistani tech companies with UK and international buyers, partners, investors, and institutions."
       >
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -100,7 +95,6 @@ export default function TechMartGlobalClient() {
                 <MarketplaceVisual />
               </div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -143,7 +137,6 @@ export default function TechMartGlobalClient() {
                 index={3}
               />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -186,7 +179,6 @@ export default function TechMartGlobalClient() {
                 index={3}
               />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -214,7 +206,6 @@ export default function TechMartGlobalClient() {
                 <UKMarketPathway />
               </div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -228,7 +219,6 @@ export default function TechMartGlobalClient() {
              
             />
             <HowItWorksSteps />
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -277,8 +267,6 @@ export default function TechMartGlobalClient() {
                   By aligning with the UK–Pakistan Tech Council, TechMart Global provides participants with access to a trusted ecosystem, policy insights, regulatory guidance, and strategic connections that extend beyond simple transactional matchmaking. The platform serves as a cornerstone of the council&apos;s efforts to build a sustainable, mutually beneficial technology partnership between the UK and Pakistan.
                 </p>
               </div>
-            </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -312,7 +300,6 @@ export default function TechMartGlobalClient() {
                 <ArrowRight className="w-3 h-3" />
               </a>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
     </div>

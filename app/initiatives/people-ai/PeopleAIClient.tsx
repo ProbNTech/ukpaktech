@@ -32,12 +32,7 @@ export default function PeopleAIClient() {
     <div className="pt-0">
       {/* Hero Section */}
       <PageHero
-        title={
-          
-            People AI Platform
-
-          </span>
-        }
+        title="People AI Platform"
         subtitle="Empowering people and organizations through human-centric AI support systems that integrate technology with professional services."
       />
 
@@ -65,7 +60,6 @@ export default function PeopleAIClient() {
                 <HeroKPIPanel />
               </div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -88,7 +82,6 @@ export default function PeopleAIClient() {
               </p>
             </div>
             <PeopleAIInsights />
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -143,7 +136,6 @@ export default function PeopleAIClient() {
                 index={5}
               />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -159,7 +151,6 @@ export default function PeopleAIClient() {
             <div className="mt-12">
               <HowItWorksSteps />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -202,7 +193,6 @@ export default function PeopleAIClient() {
                 index={3}
               />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -230,7 +220,6 @@ export default function PeopleAIClient() {
                 Get Started
               </Button>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
     </div>

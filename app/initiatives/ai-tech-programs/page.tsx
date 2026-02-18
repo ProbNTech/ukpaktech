@@ -44,7 +44,6 @@ export default function AITechProgramsPage() {
                 <SectionHeader
                   title="Driving AI Innovation and Tech Leadership"
                   subtitle="UPTECH&apos;s AI and Tech Programs bridge the UK and Pakistan through cutting-edge AI services, collective company models, and innovative startup ecosystems that empower the next generation of tech leaders."
-                  align="left"
                 />
                 <div className="space-y-4 text-[rgba(11,18,32,0.68)] leading-relaxed">
                   <p>
@@ -73,7 +72,6 @@ export default function AITechProgramsPage() {
             <SectionHeader
               title="Our Programs"
               subtitle="Comprehensive initiatives designed to accelerate AI and technology adoption across the UK–Pakistan corridor."
-              align="center"
             />
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
@@ -167,7 +165,6 @@ export default function AITechProgramsPage() {
             <SectionHeader
               title="How It Works"
               subtitle="A step-by-step journey from concept to successful AI and tech venture."
-              align="center"
             />
             <HowItWorksTimeline shouldReduceMotion={shouldReduceMotion} />
           </div>
@@ -182,7 +179,6 @@ export default function AITechProgramsPage() {
             <SectionHeader
               title="Ready to Transform Your Tech Career?"
               subtitle="Join UPTECH&apos;s AI and Tech Programs and become part of a global network driving innovation between the UK and Pakistan."
-              align="center"
             />
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Button href="/membership" variant="primary" size="lg" showArrow>

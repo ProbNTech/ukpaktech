@@ -44,7 +44,6 @@ export default function LeadershipPage() {
       <PageHero
         title="Leadership &amp; Governance"
         subtitle="UPTECH operates under a defined governance structure ensuring transparency, ethics, and accountability across all initiatives."
-        align="left"
       >
         <div className="flex flex-wrap gap-4 mt-2">
           {[

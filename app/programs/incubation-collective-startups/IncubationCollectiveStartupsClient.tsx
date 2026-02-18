@@ -4,7 +4,7 @@ import { Section } from "@/components/Section";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
-import { AnimatedUnderline } from "@/components/AnimatedUnderline";
+import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { 
@@ -33,98 +33,52 @@ import {
 
 export default function IncubationCollectiveStartupsClient() {
   return (
-    <div className="pt-0">
+    <div>
       {/* Hero Section */}
-      <IncubationHero />
+      <PageHero
+        title="Incubation and Collective Startups"
+        subtitle="Nurturing the next generation of tech startups and innovators through collaborative models and comprehensive support."
+      />
 
       {/* Section 1: Intro / Purpose */}
       <Section>
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-[1fr_420px] gap-12 items-start">
-              <div className="max-w-3xl">
-                <SectionHeader
-                  title="Nurturing Innovation and Collaboration"
-                  subtitle="UPTECH's Incubation Center provides a comprehensive ecosystem for startups to grow, scale, and succeed through collective models and collaborative structures."
-                  align="left"
-                />
-                <div className="space-y-5 text-[rgba(11,18,32,0.68)] leading-relaxed mt-8 text-base">
-                  <p>
-                    Our Incubation Center offers mentorship, resources, funding connections, and a collaborative environment where innovation thrives. Through our collective startup model, entrepreneurs can leverage shared infrastructure, expertise, and networks.
-                  </p>
-                  <p>
-                    We accelerate the journey from idea to market-ready product, connecting UK and Pakistani entrepreneurs with global opportunities.
-                  </p>
-                </div>
-                {/* Subtle divider line */}
-                <div className="mt-8 h-[1px] bg-gradient-to-r from-transparent via-[#2D5BFF]/30 to-transparent" />
+          <div className="grid lg:grid-cols-[1fr_420px] gap-12 items-start">
+            <div>
+              <SectionHeader
+                title="Nurturing Innovation and Collaboration"
+                subtitle="UPTECH's Incubation Center provides a comprehensive ecosystem for startups to grow, scale, and succeed through collective models and collaborative structures."
+              />
+              <div className="space-y-5 text-[#3D4152] leading-relaxed text-base">
+                <p>
+                  Our Incubation Center offers mentorship, resources, funding connections, and a collaborative environment where innovation thrives. Through our collective startup model, entrepreneurs can leverage shared infrastructure, expertise, and networks.
+                </p>
+                <p>
+                  We accelerate the journey from idea to market-ready product, connecting UK and Pakistani entrepreneurs with global opportunities.
+                </p>
               </div>
-              <div className="relative lg:sticky lg:top-24">
-                <ProgramSnapshotCard />
-              </div>
+            </div>
+            <div className="relative lg:sticky lg:top-24">
+              <ProgramSnapshotCard />
             </div>
           </div>
         </AnimatedSection>
       </Section>
 
       {/* Section 2: Focus Areas */}
-      <Section  className="relative overflow-hidden">
-        {/* Background glows */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-[#2D5BFF] rounded-full opacity-[0.08] blur-[180px]" />
-          <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#00B140] rounded-full opacity-[0.06] blur-[150px]" />
-        </div>
+      <Section variant="alt">
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto relative z-10">
-            <SectionHeader
-              title="What We Incubate"
-              subtitle="Specialized support for high-impact tech sectors driving innovation across the UK and Pakistan."
-              align="center"
-            />
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            <FocusAreaCard
-              icon={Brain}
-              title="AI & Data Products"
-              description="Building intelligent solutions that transform industries through data-driven innovation."
-              color="blue"
-              index={0}
-            />
-            <FocusAreaCard
-              icon={CreditCard}
-              title="FinTech & Digital Payments"
-              description="Revolutionizing financial services with secure, scalable payment technologies."
-              color="green"
-              index={1}
-            />
-            <FocusAreaCard
-              icon={Heart}
-              title="HealthTech & MedTech"
-              description="Advancing healthcare delivery through cutting-edge medical technologies and digital health solutions."
-              color="red"
-              index={2}
-            />
-            <FocusAreaCard
-              icon={Cloud}
-              title="Cloud, SaaS & Enterprise Software"
-              description="Delivering scalable software solutions that power modern businesses and enterprises."
-              color="blue"
-              index={3}
-            />
-            <FocusAreaCard
-              icon={Shield}
-              title="Cybersecurity & Digital Infrastructure"
-              description="Protecting digital assets and building resilient infrastructure for the modern economy."
-              color="green"
-              index={4}
-            />
-            <FocusAreaCard
-              icon={GraduationCap}
-              title="EdTech & Future Skills"
-              description="Transforming education and workforce development through innovative learning platforms."
-              color="red"
-              index={5}
-            />
-            </div>
+          <SectionHeader
+            title="What We Incubate"
+            subtitle="Specialized support for high-impact tech sectors driving innovation across the UK and Pakistan."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            <FocusAreaCard icon={Brain} title="AI & Data Products" description="Building intelligent solutions that transform industries through data-driven innovation." color="blue" index={0} />
+            <FocusAreaCard icon={CreditCard} title="FinTech & Digital Payments" description="Revolutionizing financial services with secure, scalable payment technologies." color="green" index={1} />
+            <FocusAreaCard icon={Heart} title="HealthTech & MedTech" description="Advancing healthcare delivery through cutting-edge medical technologies and digital health solutions." color="red" index={2} />
+            <FocusAreaCard icon={Cloud} title="Cloud, SaaS & Enterprise Software" description="Delivering scalable software solutions that power modern businesses and enterprises." color="blue" index={3} />
+            <FocusAreaCard icon={Shield} title="Cybersecurity & Digital Infrastructure" description="Protecting digital assets and building resilient infrastructure for the modern economy." color="green" index={4} />
+            <FocusAreaCard icon={GraduationCap} title="EdTech & Future Skills" description="Transforming education and workforce development through innovative learning platforms." color="red" index={5} />
           </div>
         </AnimatedSection>
       </Section>
@@ -132,42 +86,36 @@ export default function IncubationCollectiveStartupsClient() {
       {/* Section 3: Incubation Model */}
       <Section>
         <AnimatedSection>
-          <div className="max-w-5xl mx-auto">
-            <SectionHeader
-              title="Our Incubation Model"
-              subtitle="A structured pathway from concept to market-ready venture with comprehensive support at every stage."
-              align="center"
-            />
-            <div className="mt-12">
-              <IncubationTimeline />
-            </div>
+          <SectionHeader
+            title="Our Incubation Model"
+            subtitle="A structured pathway from concept to market-ready venture with comprehensive support at every stage."
+          />
+          <div className="mt-12">
+            <IncubationTimeline />
           </div>
         </AnimatedSection>
       </Section>
 
       {/* Section 4: Collective Startups */}
-      <Section  className="relative overflow-hidden">
+      <Section variant="alt">
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <SectionHeader
-                  title="The Collective Startup Approach"
-                  subtitle="A revolutionary model that transforms how startups collaborate, share resources, and scale together."
-                  align="left"
-                />
-                <div className="space-y-4 text-[rgba(234,242,255,0.75)] leading-relaxed mt-6">
-                  <p>
-                    Our collective startup model emphasizes collaboration over competition, enabling entrepreneurs to pool resources, share infrastructure, and reduce individual risk while amplifying collective success.
-                  </p>
-                  <p>
-                    By combining expertise, networks, and market access, collective startups can tackle larger opportunities, enter new markets faster, and build sustainable ventures that benefit from sector-driven solutions and cross-border partnerships.
-                  </p>
-                </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <SectionHeader
+                title="The Collective Startup Approach"
+                subtitle="A revolutionary model that transforms how startups collaborate, share resources, and scale together."
+              />
+              <div className="space-y-4 text-[#3D4152] leading-relaxed mt-6">
+                <p>
+                  Our collective startup model emphasizes collaboration over competition, enabling entrepreneurs to pool resources, share infrastructure, and reduce individual risk while amplifying collective success.
+                </p>
+                <p>
+                  By combining expertise, networks, and market access, collective startups can tackle larger opportunities, enter new markets faster, and build sustainable ventures that benefit from sector-driven solutions and cross-border partnerships.
+                </p>
               </div>
-              <div className="relative">
-                <CollectiveStartupVisual />
-              </div>
+            </div>
+            <div className="relative">
+              <CollectiveStartupVisual />
             </div>
           </div>
         </AnimatedSection>
@@ -176,11 +124,11 @@ export default function IncubationCollectiveStartupsClient() {
       {/* Section 5: Who It's For */}
       <Section>
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <SectionHeader
               title="Who Should Join"
               subtitle="Our programs are designed for founders, startups, and partners at different stages of growth."
-              align="center"
+             
             />
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               <AudienceCard
@@ -220,38 +168,35 @@ export default function IncubationCollectiveStartupsClient() {
                 index={2}
               />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
       {/* Section 6: Support & Resources */}
       <Section  className="relative overflow-hidden">
         <AnimatedSection>
-          <div className="max-w-5xl mx-auto">
+          
             <SectionHeader
               title="What Participants Receive"
               subtitle="Comprehensive resources and support designed to accelerate your startup journey."
-              align="center"
+             
             />
             <SupportResourcesList />
-          </div>
         </AnimatedSection>
       </Section>
 
       {/* Section 7: Outcomes & Impact */}
       <Section>
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
+          
             <SectionHeader
               title="Outcomes That Matter"
               subtitle="Measurable impact that demonstrates the value of our incubation and collective startup programs."
-              align="center"
+             
             />
             <OutcomesStats />
             <p className="text-center text-sm text-[rgba(11,18,32,0.5)] mt-6">
               Metrics shown are indicative and updated as programs scale.
             </p>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -264,11 +209,11 @@ export default function IncubationCollectiveStartupsClient() {
           <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[600px] bg-[#00B140] rounded-full opacity-[0.08] blur-[150px]" />
         </div>
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
+          
           <SectionHeader
             title="Build, Scale, and Expand With UPTECH"
             subtitle="Join our incubation program and become part of a collaborative ecosystem driving innovation across the UK and Pakistan."
-            align="center"
+           
           />
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <Button href="/membership" variant="primary" size="lg" showArrow>
@@ -278,67 +223,12 @@ export default function IncubationCollectiveStartupsClient() {
               Partner With Us
             </Button>
           </div>
-          </div>
         </AnimatedSection>
       </Section>
     </div>
   );
 }
 
-function IncubationHero() {
-  const shouldReduceMotion = useReducedMotion();
-  
-  return (
-    <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-[#050B14] pt-20">
-      {/* Enhanced Background with Multiple Glows */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-[#2D5BFF] rounded-full opacity-[0.15] blur-[200px]"
-          animate={shouldReduceMotion ? {} : {
-            scale: [1, 1.1, 1],
-            opacity: [0.15, 0.18, 0.15],
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute top-1/2 right-1/3 w-[600px] h-[600px] bg-[#2563EB] rounded-full opacity-[0.08] blur-[160px]"
-          animate={shouldReduceMotion ? {} : {
-            scale: [1, 1.15, 1],
-            opacity: [0.08, 0.12, 0.08],
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        />
-        <motion.div
-          className="absolute bottom-1/3 left-1/2 w-[550px] h-[550px] bg-[#00B140] rounded-full opacity-[0.06] blur-[150px]"
-          animate={shouldReduceMotion ? {} : {
-            scale: [1, 1.12, 1],
-            opacity: [0.06, 0.09, 0.06],
-          }}
-          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050B14]/60 pointer-events-none" />
-      </div>
-      <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
-        <motion.div
-          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center max-w-4xl mx-auto space-y-6"
-        >
-          <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#EAF2FF]">
-            <span className="relative inline-block">
-              Incubation and Collective Startups
-              <AnimatedUnderline />
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-[rgba(234,242,255,0.85)] leading-relaxed">
-            Nurturing the next generation of tech startups and innovators through collaborative models and comprehensive support.
-          </p>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
 
 function ProgramSnapshotCard() {
   const shouldReduceMotion = useReducedMotion();

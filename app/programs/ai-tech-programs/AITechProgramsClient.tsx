@@ -41,25 +41,23 @@ export default function AITechProgramsPage() {
       {/* Intro Narrative */}
       <Section>
         <AnimatedSection>
-            <div className="grid lg:grid-cols-[1fr_400px] gap-12 items-center">
-              <div>
-                <SectionHeader
-                  title="Driving AI Innovation and Tech Leadership"
-              subtitle="UPTECH&apos;s AI and Tech Programs bridge the UK and Pakistan through cutting-edge AI services, collective company models, and innovative startup ecosystems that empower the next generation of tech leaders."
-                 
-                />
-                <div className="space-y-4 text-[#475569] leading-relaxed">
-                  <p>
-                    Our AI and Tech Programs are designed to accelerate technology adoption, build world-class AI capabilities, and create sustainable pathways for innovation across both nations through collective business models and collaborative startup ecosystems.
-                  </p>
-                  <p>
-                    Through strategic partnerships, shared resources, and innovative collective structures, we&apos;re building a future where UK and Pakistani tech talent drives global AI innovation and technology leadership.
-                  </p>
-                </div>
+          <div className="grid lg:grid-cols-[1fr_400px] gap-12 items-center">
+            <div>
+              <SectionHeader
+                title="Driving AI Innovation and Tech Leadership"
+                subtitle="UPTECH's AI and Tech Programs bridge the UK and Pakistan through cutting-edge AI services, collective company models, and innovative startup ecosystems that empower the next generation of tech leaders."
+              />
+              <div className="space-y-4 text-[#3D4152] leading-relaxed">
+                <p>
+                  Our AI and Tech Programs are designed to accelerate technology adoption, build world-class AI capabilities, and create sustainable pathways for innovation across both nations through collective business models and collaborative startup ecosystems.
+                </p>
+                <p>
+                  Through strategic partnerships, shared resources, and innovative collective structures, we're building a future where UK and Pakistani tech talent drives global AI innovation and technology leadership.
+                </p>
               </div>
-              <div className="relative">
-                <IntroVisualPanel shouldReduceMotion={shouldReduceMotion} />
-              </div>
+            </div>
+            <div className="relative">
+              <IntroVisualPanel shouldReduceMotion={shouldReduceMotion} />
             </div>
           </div>
         </AnimatedSection>
@@ -158,277 +156,37 @@ export default function AITechProgramsPage() {
                 shouldReduceMotion={shouldReduceMotion}
               />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
       {/* How It Works Timeline */}
       <Section>
         <AnimatedSection>
-          
-            <SectionHeader
-              title="How It Works"
-              subtitle="A step-by-step journey from concept to successful AI and tech venture."
-             
-            />
-            <HowItWorksTimeline shouldReduceMotion={shouldReduceMotion} />
-          </div>
+          <SectionHeader
+            title="How It Works"
+            subtitle="A step-by-step journey from concept to successful AI and tech venture."
+          />
+          <HowItWorksTimeline shouldReduceMotion={shouldReduceMotion} />
         </AnimatedSection>
       </Section>
 
       {/* Call to Action */}
-      <Section variant="alt" className="relative overflow-hidden">
-        <CTABackground shouldReduceMotion={shouldReduceMotion} />
+      <Section variant="dark">
         <AnimatedSection>
-          
-            <SectionHeader
-              title="Ready to Transform Your Tech Career?"
-              subtitle="Join UPTECH&apos;s AI and Tech Programs and become part of a global network driving innovation between the UK and Pakistan."
-             
-            />
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button href="/membership" variant="primary" size="lg" showArrow>
-                Become a Member
-              </Button>
-              <Button href={siteConfig.portalUrl} variant="glass" size="lg" showArrow>
-                Access Portal
-              </Button>
-            </div>
+          <SectionHeader
+            title="Ready to Transform Your Tech Career?"
+            subtitle="Join UPTECH's AI and Tech Programs and become part of a global network driving innovation between the UK and Pakistan."
+          />
+          <div className="flex flex-wrap gap-4 mt-8">
+            <Button href="/membership" variant="primary" size="lg" showArrow>
+              Become a Member
+            </Button>
+            <Button href={siteConfig.portalUrl} variant="glass" size="lg" showArrow>
+              Access Portal
+            </Button>
           </div>
         </AnimatedSection>
       </Section>
-    </div>
-  );
-}
-
-// Hero Component
-function AITechHero({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
-  return (
-    <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-[#F8FAFC] pt-20">
-      {/* Animated Background */}
-      <HeroBackground shouldReduceMotion={shouldReduceMotion} />
-
-      <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Title and CTAs */}
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-6"
-          >
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#0F172A]">
-              
-                AI and Tech Programs
-    
-              </span>
-            </h1>
-            <p className="text-xl text-[#475569] leading-relaxed">
-              Driving AI innovation and tech leadership between the UK and Pakistan through comprehensive training, certifications, and collaborative startup models.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button href="#programs" variant="primary" size="lg" showArrow>
-                Explore Programs
-              </Button>
-              <Button href="/membership" variant="glass" size="lg" showArrow>
-                Become a Member
-              </Button>
-            </div>
-          </motion.div>
-
-          {/* Right: AI Network Visual */}
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
-          >
-            <AINetworkVisual shouldReduceMotion={shouldReduceMotion} />
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// Hero Background Animation
-function HeroBackground({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Subtle noise texture */}
-      <div
-        className="absolute inset-0 opacity-[0.015] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
-      />
-      
-      {/* Radial glows */}
-      <motion.div
-        className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-[#2D5BFF] rounded-full opacity-[0.15] blur-[200px]"
-        animate={shouldReduceMotion ? {} : {
-          x: [0, 50, -40, 0],
-          y: [0, -50, 40, 0],
-          scale: [1, 1.2, 0.9, 1],
-        }}
-        transition={{
-          duration: 40,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute top-1/2 right-1/3 w-[600px] h-[600px] bg-[#22C55E] rounded-full opacity-[0.08] blur-[160px]"
-        animate={shouldReduceMotion ? {} : {
-          x: [0, -60, 50, 0],
-          y: [0, 60, -40, 0],
-          scale: [1, 1.25, 0.85, 1],
-        }}
-        transition={{
-          duration: 45,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#F8FAFC]/60 pointer-events-none" />
-    </div>
-  );
-}
-
-// AI Network Visual Panel
-function AINetworkVisual({ shouldReduceMotion }: { shouldReduceMotion: boolean | null }) {
-  return (
-    <div className="relative rounded-2xl bg-white border border-gray-200 p-8 backdrop-blur-sm overflow-hidden h-[500px]">
-      {/* Animated gradient border */}
-      <motion.div
-        className="absolute inset-0 rounded-2xl"
-        style={{
-          background: shouldReduceMotion
-            ? "linear-gradient(90deg, #2D5BFF, #22C55E, #2D5BFF)"
-            : undefined,
-        }}
-        animate={
-          shouldReduceMotion
-            ? {}
-            : {
-                background: [
-                  "linear-gradient(90deg, #2D5BFF, #22C55E, #2D5BFF)",
-                  "linear-gradient(180deg, #2D5BFF, #22C55E, #2D5BFF)",
-                  "linear-gradient(270deg, #2D5BFF, #22C55E, #2D5BFF)",
-                  "linear-gradient(360deg, #2D5BFF, #22C55E, #2D5BFF)",
-                ],
-              }
-        }
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
-      <div className="absolute inset-[2px] rounded-2xl bg-[#F8FAFC]" />
-
-      <div className="relative z-10 h-full flex items-center justify-center">
-        {/* AI Network Nodes */}
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
-          <defs>
-            <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#2D5BFF" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#22C55E" stopOpacity="0.6" />
-            </linearGradient>
-            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#2D5BFF" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#22C55E" stopOpacity="0.4" />
-            </linearGradient>
-          </defs>
-          
-          {/* Network connections */}
-          {[
-            { x1: 100, y1: 100, x2: 200, y2: 150 },
-            { x1: 300, y1: 100, x2: 200, y2: 150 },
-            { x1: 200, y1: 150, x2: 200, y2: 250 },
-            { x1: 100, y1: 300, x2: 200, y2: 250 },
-            { x1: 300, y1: 300, x2: 200, y2: 250 },
-            { x1: 150, y1: 200, x2: 200, y2: 150 },
-            { x1: 250, y1: 200, x2: 200, y2: 150 },
-            { x1: 200, y1: 150, x2: 150, y2: 250 },
-            { x1: 200, y1: 150, x2: 250, y2: 250 },
-          ].map((line, index) => (
-            <motion.line
-              key={index}
-              x1={line.x1}
-              y1={line.y1}
-              x2={line.x2}
-              y2={line.y2}
-              stroke="url(#lineGradient)"
-              strokeWidth="2"
-              strokeLinecap="round"
-              initial={shouldReduceMotion ? { pathLength: 1, opacity: 0.3 } : { pathLength: 0, opacity: 0 }}
-              animate={shouldReduceMotion ? {} : { pathLength: 1, opacity: 0.3 }}
-              transition={{ duration: 1.5, delay: 0.5 + index * 0.1, repeat: Infinity, repeatDelay: 3 }}
-            />
-          ))}
-
-          {/* Network nodes */}
-          {[
-            { x: 100, y: 100 },
-            { x: 300, y: 100 },
-            { x: 200, y: 150 },
-            { x: 150, y: 200 },
-            { x: 250, y: 200 },
-            { x: 200, y: 250 },
-            { x: 100, y: 300 },
-            { x: 300, y: 300 },
-          ].map((node, index) => (
-            <g key={index}>
-              <motion.circle
-                cx={node.x}
-                cy={node.y}
-                r="8"
-                fill="url(#nodeGradient)"
-                initial={shouldReduceMotion ? { scale: 1 } : { scale: 0 }}
-                animate={shouldReduceMotion ? {} : { scale: [1, 1.3, 1] }}
-                transition={{ duration: 0.6, delay: 0.8 + index * 0.1, repeat: Infinity, repeatDelay: 2 }}
-              />
-              <motion.circle
-                cx={node.x}
-                cy={node.y}
-                r="12"
-                fill="url(#nodeGradient)"
-                fillOpacity="0.2"
-                initial={shouldReduceMotion ? { scale: 1 } : { scale: 0 }}
-                animate={shouldReduceMotion ? {} : { scale: [1, 1.5, 1], opacity: [0.2, 0.4, 0.2] }}
-                transition={{ duration: 2, delay: 1 + index * 0.1, repeat: Infinity }}
-              />
-            </g>
-          ))}
-        </svg>
-
-        {/* Center Brain Icon */}
-        <motion.div
-          initial={shouldReduceMotion ? { scale: 1 } : { scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.6, delay: 1.2, type: "spring", stiffness: 200 }}
-          className="relative z-20"
-        >
-          <Brain className="w-20 h-20 text-[#2D5BFF]" />
-          <motion.div
-            className="absolute inset-0 bg-[#2D5BFF] rounded-full blur-xl opacity-30"
-            animate={
-              shouldReduceMotion
-                ? {}
-                : {
-                    scale: [1, 1.3, 1],
-                    opacity: [0.3, 0.6, 0.3],
-                  }
-            }
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </motion.div>
-      </div>
     </div>
   );
 }

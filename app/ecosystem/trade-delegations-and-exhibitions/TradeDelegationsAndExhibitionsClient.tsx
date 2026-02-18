@@ -37,12 +37,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
     <div className="pt-0">
       {/* Hero Section */}
       <PageHero
-        title={
-          
-            Trade Delegations and Exhibitions
-
-          </span>
-        }
+        title="Trade Delegations and Exhibitions"
         subtitle="Facilitating cross-border trade delegations and technology exhibitions to strengthen UK–Pakistan partnerships."
       />
 
@@ -132,7 +127,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
                 />
               </div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -216,7 +210,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
                 brandColor={BRAND_COLORS.red}
               />
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -382,7 +375,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
                 </motion.div>
               </div>
             </div>
-          </div>
         </AnimatedSection>
       </Section>
 
@@ -436,7 +428,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
                 Contact Us
               </Button>
             </motion.div>
-          </div>
         </AnimatedSection>
       </Section>
     </div>

@@ -14,7 +14,6 @@ export default function AboutPage() {
       <PageHero
         title="About UPTECH"
         subtitle="Strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan."
-        align="left"
       >
         <div className="flex flex-wrap gap-4 mt-2">
           <Button href="/membership" variant="glass" showArrow>Become a Member</Button>
