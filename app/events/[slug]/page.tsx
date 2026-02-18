@@ -166,10 +166,10 @@ function useCountdown(targetDate: string) {
 function CountdownBlock({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tabular-nums leading-none">
+      <span className="text-3xl sm:text-4xl font-bold text-white tabular-nums leading-none">
         {String(value).padStart(2, "0")}
       </span>
-      <span className="text-xs sm:text-sm text-white/70 uppercase tracking-wider mt-2 font-medium">
+      <span className="text-xs text-white/60 uppercase tracking-wider mt-2 font-semibold">
         {label}
       </span>
     </div>
@@ -197,12 +197,29 @@ function SocialShare() {
             key={s.label}
             href={s.href}
             aria-label={`Share on ${s.label}`}
-            className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#4B5563] hover:text-[#2563EB] hover:border-[#2563EB] hover:bg-[#2563EB]/5 transition-all duration-300"
+            className="w-9 h-9 border border-[#D8D5CF] flex items-center justify-center text-[#3D4152] hover:text-[#2563EB] hover:border-[#2563EB] transition-colors duration-200"
           >
             <Icon className="w-4 h-4" />
           </a>
         );
       })}
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Section heading — inline pattern                                   */
+/* ------------------------------------------------------------------ */
+function InlineHeading({ label, title }: { label: string; title: string }) {
+  return (
+    <div className="mb-8">
+      <p className="text-xs font-bold uppercase tracking-widest text-[#2563EB] mb-2">{label}</p>
+      <div className="flex items-center gap-5 mb-0">
+        <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1C1F2E] shrink-0 whitespace-nowrap">
+          {title}
+        </h2>
+        <div className="flex-1 h-px bg-[#1C1F2E]/25 min-w-0" />
+      </div>
     </div>
   );
 }
@@ -219,12 +236,12 @@ export default function EventDetailPage() {
 
   if (!event) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="min-h-screen flex items-center justify-center bg-[#EEECEA]">
         <div className="text-center">
-          <h1 className="font-heading font-bold text-3xl text-[#2563EB] mb-4">
+          <h1 className="font-heading font-bold text-3xl text-[#1C1F2E] mb-4">
             Event Not Found
           </h1>
-          <p className="text-[#4B5563] mb-8" style={{ color: "#4B5563" }}>
+          <p className="text-[#3D4152] mb-8">
             The event you are looking for does not exist or has been moved.
           </p>
           <Button href="/events" variant="primary" showArrow>
@@ -243,23 +260,12 @@ export default function EventDetailPage() {
   });
 
   return (
-    <div className="bg-white min-h-screen">
+    <div>
       {/* ============================================================ */}
       {/*  EVENT HERO                                                    */}
       {/* ============================================================ */}
-      <section className="relative bg-[#2563EB] overflow-hidden">
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%)",
-            }}
-          />
-        </div>
-
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 pt-28 pb-16 lg:pt-32 lg:pb-20">
+      <section className="relative bg-[#1C1F2E] overflow-hidden -mt-[72px]">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 pt-[120px] pb-16">
           {/* Breadcrumb */}
           <motion.nav
             initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
@@ -267,7 +273,7 @@ export default function EventDetailPage() {
             transition={{ duration: 0.4 }}
             className="mb-8"
           >
-            <ol className="flex items-center gap-2 text-sm text-white/70">
+            <ol className="flex items-center gap-2 text-sm text-white/60">
               <li>
                 <Link href="/" className="hover:text-white transition-colors">
                   Home
@@ -280,7 +286,7 @@ export default function EventDetailPage() {
                 </Link>
               </li>
               <ChevronRight className="w-3.5 h-3.5" />
-              <li className="text-white font-medium truncate max-w-[260px]">
+              <li className="text-white/90 font-medium truncate max-w-[260px]">
                 {event.title}
               </li>
             </ol>
@@ -291,17 +297,19 @@ export default function EventDetailPage() {
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight max-w-3xl mb-10"
+            className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[3rem] leading-[1.08] text-white max-w-3xl mb-5"
           >
             {event.title}
           </motion.h1>
+
+          <div className="w-full h-px bg-white/20 mb-8" />
 
           {/* Countdown */}
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
-            className="inline-flex items-center gap-6 sm:gap-8 bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-5 border border-white/15"
+            className="inline-flex items-center gap-6 sm:gap-8 border border-white/20 px-8 py-5"
           >
             <CountdownBlock value={timeLeft.days} label="Days" />
             <div className="w-px h-10 bg-white/20" />
@@ -312,19 +320,16 @@ export default function EventDetailPage() {
             <CountdownBlock value={timeLeft.seconds} label="Seconds" />
           </motion.div>
         </div>
-
-        {/* Hero bottom accent — matching Hero section */}
-        <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#E11D48]" />
       </section>
 
       {/* ============================================================ */}
       {/*  MAIN CONTENT                                                  */}
       {/* ============================================================ */}
-      <section className="py-16 lg:py-20">
+      <section className="bg-[#EEECEA] py-16 lg:py-20">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-14">
             {/* LEFT — Social share (sticky on desktop) */}
-            <div className="lg:w-16 shrink-0">
+            <div className="lg:w-12 shrink-0">
               <div className="lg:sticky lg:top-28">
                 <SocialShare />
               </div>
@@ -334,50 +339,34 @@ export default function EventDetailPage() {
             <div className="flex-1 min-w-0">
               {/* Event Summary Card */}
               <AnimatedSection>
-                <div className="bg-[#F8FAFC] rounded-2xl p-6 sm:p-8 mb-12 border border-gray-100 shadow-sm">
+                <div className="bg-white border border-[#D8D5CF] p-6 sm:p-8 mb-12">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="flex items-start gap-3">
                       <Calendar className="w-5 h-5 text-[#2563EB] mt-0.5 shrink-0" />
                       <div>
-                        <span className="text-xs uppercase tracking-wider text-[#94A3B8] font-semibold block mb-1">
-                          Date
-                        </span>
-                        <span className="text-[#1F2937] font-medium text-sm">
-                          {formattedDate}
-                        </span>
+                        <span className="text-xs uppercase tracking-wider text-[#7A7E8F] font-semibold block mb-1">Date</span>
+                        <span className="text-[#1C1F2E] font-medium text-sm">{formattedDate}</span>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Clock className="w-5 h-5 text-[#2563EB] mt-0.5 shrink-0" />
                       <div>
-                        <span className="text-xs uppercase tracking-wider text-[#94A3B8] font-semibold block mb-1">
-                          Time
-                        </span>
-                        <span className="text-[#1F2937] font-medium text-sm">
-                          {event.time}
-                        </span>
+                        <span className="text-xs uppercase tracking-wider text-[#7A7E8F] font-semibold block mb-1">Time</span>
+                        <span className="text-[#1C1F2E] font-medium text-sm">{event.time}</span>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-[#2563EB] mt-0.5 shrink-0" />
                       <div>
-                        <span className="text-xs uppercase tracking-wider text-[#94A3B8] font-semibold block mb-1">
-                          Location
-                        </span>
-                        <span className="text-[#1F2937] font-medium text-sm">
-                          {event.location}
-                        </span>
+                        <span className="text-xs uppercase tracking-wider text-[#7A7E8F] font-semibold block mb-1">Location</span>
+                        <span className="text-[#1C1F2E] font-medium text-sm">{event.location}</span>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <Tag className="w-5 h-5 text-[#2563EB] mt-0.5 shrink-0" />
                       <div>
-                        <span className="text-xs uppercase tracking-wider text-[#94A3B8] font-semibold block mb-1">
-                          Price
-                        </span>
-                        <span className="text-[#1F2937] font-medium text-sm">
-                          {event.price}
-                        </span>
+                        <span className="text-xs uppercase tracking-wider text-[#7A7E8F] font-semibold block mb-1">Price</span>
+                        <span className="text-[#1C1F2E] font-medium text-sm">{event.price}</span>
                       </div>
                     </div>
                   </div>
@@ -386,7 +375,7 @@ export default function EventDetailPage() {
 
               {/* Event Image */}
               <AnimatedSection className="mb-12">
-                <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-md">
+                <div className="relative aspect-[16/9] overflow-hidden bg-[#D8D5CF]">
                   <Image
                     src={event.image}
                     alt={event.title}
@@ -400,23 +389,13 @@ export default function EventDetailPage() {
 
               {/* Description */}
               <AnimatedSection className="mb-16">
-                <div className="mb-8">
-                  <span className="text-sm font-semibold text-[#1F2937] mb-2 block">
-                    Overview
-                  </span>
-                  <div className="flex items-center gap-6 mb-6">
-                    <h2 className="font-heading font-bold text-2xl sm:text-3xl text-[#2563EB] shrink-0">
-                      About This Event
-                    </h2>
-                    <div className="flex-1 h-[2px] bg-[#22C55E]" />
-                  </div>
-                </div>
-                <div className="prose prose-lg max-w-none">
-                  <p style={{ color: "#4B5563" }} className="text-base leading-relaxed mb-4">
+                <InlineHeading label="Overview" title="About This Event" />
+                <div className="space-y-4">
+                  <p className="text-base leading-relaxed text-[#3D4152]">
                     {event.summary}
                   </p>
                   {event.description.split("\n\n").map((para, i) => (
-                    <p key={i} style={{ color: "#4B5563" }} className="text-base leading-relaxed mb-4">
+                    <p key={i} className="text-base leading-relaxed text-[#3D4152]">
                       {para}
                     </p>
                   ))}
@@ -425,22 +404,12 @@ export default function EventDetailPage() {
 
               {/* Agenda */}
               <AnimatedSection className="mb-16">
-                <div className="mb-8">
-                  <span className="text-sm font-semibold text-[#1F2937] mb-2 block">
-                    Schedule
-                  </span>
-                  <div className="flex items-center gap-6 mb-6">
-                    <h2 className="font-heading font-bold text-2xl sm:text-3xl text-[#2563EB] shrink-0">
-                      Event Agenda
-                    </h2>
-                    <div className="flex-1 h-[2px] bg-[#22C55E]" />
-                  </div>
-                </div>
-                <div className="space-y-0">
+                <InlineHeading label="Schedule" title="Event Agenda" />
+                <div className="bg-white border border-[#D8D5CF]">
                   {event.agenda.map((item, index) => (
                     <div
                       key={index}
-                      className="flex gap-4 sm:gap-6 py-4 border-b border-gray-100 last:border-b-0 group hover:bg-[#F8FAFC] -mx-4 px-4 rounded-lg transition-colors duration-200"
+                      className="flex gap-4 sm:gap-6 px-6 py-4 border-b border-[#D8D5CF] last:border-b-0 hover:bg-[#EEECEA] transition-colors duration-200"
                     >
                       <div className="shrink-0 w-36 sm:w-44">
                         <span className="text-sm font-semibold text-[#2563EB]">
@@ -449,7 +418,7 @@ export default function EventDetailPage() {
                       </div>
                       <div className="flex items-center gap-3 min-w-0">
                         <CheckCircle2 className="w-4 h-4 text-[#22C55E] shrink-0" />
-                        <span className="text-[#1F2937] font-medium text-sm sm:text-base">
+                        <span className="text-[#1C1F2E] font-medium text-sm sm:text-base">
                           {item.title}
                         </span>
                       </div>
@@ -460,21 +429,11 @@ export default function EventDetailPage() {
 
               {/* Speakers */}
               <AnimatedSection className="mb-16">
-                <div className="mb-8">
-                  <span className="text-sm font-semibold text-[#1F2937] mb-2 block">
-                    Featured
-                  </span>
-                  <div className="flex items-center gap-6 mb-6">
-                    <h2 className="font-heading font-bold text-2xl sm:text-3xl text-[#2563EB] shrink-0">
-                      Speakers
-                    </h2>
-                    <div className="flex-1 h-[2px] bg-[#22C55E]" />
-                  </div>
-                </div>
+                <InlineHeading label="Featured" title="Speakers" />
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
                   {event.speakers.map((speaker) => (
                     <div key={speaker.name} className="text-center group">
-                      <div className="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-100 group-hover:border-[#2563EB] transition-colors duration-300 shadow-sm">
+                      <div className="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4 overflow-hidden bg-[#D8D5CF]">
                         <Image
                           src={speaker.image}
                           alt={speaker.name}
@@ -483,10 +442,10 @@ export default function EventDetailPage() {
                           sizes="112px"
                         />
                       </div>
-                      <h4 className="font-heading font-semibold text-sm text-[#1F2937] mb-1">
+                      <h4 className="font-heading font-semibold text-sm text-[#1C1F2E] mb-1 group-hover:text-[#2563EB] transition-colors duration-200">
                         {speaker.name}
                       </h4>
-                      <p style={{ color: "#4B5563" }} className="text-xs leading-snug">
+                      <p className="text-xs leading-snug text-[#3D4152]">
                         {speaker.title}
                       </p>
                     </div>
@@ -496,19 +455,20 @@ export default function EventDetailPage() {
 
               {/* CTA */}
               <AnimatedSection>
-                <div className="bg-[#F8FAFC] rounded-2xl p-8 sm:p-12 text-center border border-gray-100">
-                  <Users className="w-10 h-10 text-[#2563EB] mx-auto mb-4" />
-                  <h3 className="font-heading font-bold text-xl sm:text-2xl text-[#1F2937] mb-3">
+                <div className="bg-[#1C1F2E] p-8 sm:p-12">
+                  <Users className="w-8 h-8 text-[#22C55E] mb-5" />
+                  <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-3">
                     Interested in Attending?
                   </h3>
-                  <p style={{ color: "#4B5563" }} className="text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                  <div className="h-px bg-white/20 mb-5" />
+                  <p className="text-base text-white/70 max-w-xl mb-8 leading-relaxed">
                     Register your interest below and our team will be in touch with confirmation details, agenda updates, and delegate information.
                   </p>
-                  <div className="flex flex-wrap justify-center gap-4">
+                  <div className="flex flex-wrap gap-4">
                     <Button variant="primary" size="lg" showArrow>
                       Register Interest
                     </Button>
-                    <Button href="/events" variant="secondary" size="lg">
+                    <Button href="/events" variant="glass" size="lg">
                       View All Events
                     </Button>
                   </div>

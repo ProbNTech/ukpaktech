@@ -15,80 +15,65 @@ export function PageHero({
   title,
   subtitle,
   children,
-  align = "center",
+  align = "left",
   className = "",
 }: PageHeroProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section
-      className={`relative min-h-[60vh] flex items-center overflow-hidden bg-[#F8FAFC] pt-20 ${className}`}
-    >
-      {/* Subtle background gradient accents */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#2563EB] rounded-full opacity-[0.04] blur-[150px]" />
-        <div className="absolute top-1/2 right-1/3 w-[500px] h-[500px] bg-[#22C55E] rounded-full opacity-[0.03] blur-[120px]" />
-        <div className="absolute bottom-1/3 left-1/2 w-[400px] h-[400px] bg-[#2563EB] rounded-full opacity-[0.03] blur-[100px]" />
-      </div>
-
+    <section className={`relative bg-[#1C1F2E] overflow-hidden -mt-[72px] ${className}`}>
       {/* Content */}
-      <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
-        <div
-          className={`flex flex-col ${
-            align === "center" ? "items-center text-center" : "items-start text-left"
-          } max-w-4xl ${align === "center" ? "mx-auto" : ""}`}
+      <div
+        className={`relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-[120px] pb-16 flex flex-col ${
+          align === "center" ? "items-center text-center" : "items-start text-left"
+        }`}
+      >
+        {/* Label slot rendered via children if passed before title — handled by callers */}
+
+        <motion.div
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className={`max-w-4xl ${align === "center" ? "mx-auto" : ""}`}
         >
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-10 w-full"
-          >
-            {typeof title === "string" ? (
-              <motion.h1
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="font-heading font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-[#0F172A]"
-              >
-                {title}
-              </motion.h1>
-            ) : (
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="font-heading font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-[#0F172A]"
-              >
-                {title}
-              </motion.div>
-            )}
+          {typeof title === "string" ? (
+            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.08] text-white mb-5">
+              {title}
+            </h1>
+          ) : (
+            <div className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.08] text-white mb-5">
+              {title}
+            </div>
+          )}
 
-            {subtitle && (
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              >
-                {typeof subtitle === "string" ? (
-                  <p className="text-xl md:text-2xl text-[#475569] font-medium leading-relaxed tracking-tight">{subtitle}</p>
-                ) : (
-                  subtitle
-                )}
-              </motion.div>
-            )}
+          {/* Horizontal rule — editorial signature */}
+          <div className="w-full h-px bg-white/20 mb-5" />
 
-            {children && (
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              >
-                {children}
-              </motion.div>
-            )}
-          </motion.div>
-        </div>
+          {subtitle && (
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {typeof subtitle === "string" ? (
+                <p className="text-lg text-white/70 leading-relaxed max-w-2xl">{subtitle}</p>
+              ) : (
+                subtitle
+              )}
+            </motion.div>
+          )}
+
+          {children && (
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6"
+            >
+              {children}
+            </motion.div>
+          )}
+        </motion.div>
       </div>
     </section>
   );

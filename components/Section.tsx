@@ -10,17 +10,15 @@ interface SectionProps {
 
 export function Section({ children, variant = "light", className = "", id }: SectionProps) {
   const variantMap = {
-    light: "bg-white text-[#0F172A] section-transition",
-    alt: "bg-[#F8FAFC] text-[#0F172A] section-transition",
-    dark: "bg-[#0B1F3A] text-white section-transition",
+    light: "bg-[#EEECEA] text-[#1C1F2E]",
+    alt: "bg-[#E8E6E3] text-[#1C1F2E]",
+    dark: "bg-[#1C1F2E] text-white",
   };
   const bgClass = variantMap[variant];
 
   return (
     <section id={id} className={`${bgClass} ${className}`}>
-      <div className="relative z-10">
-        <Container className="py-20 md:py-28 lg:py-32">{children}</Container>
-      </div>
+      <Container className="py-16 lg:py-20">{children}</Container>
     </section>
   );
 }

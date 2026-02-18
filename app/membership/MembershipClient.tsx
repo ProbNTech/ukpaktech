@@ -5,7 +5,6 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Card } from "@/components/Card";
 import { Button } from "@/components/Button";
-import { AnimatedUnderline } from "@/components/AnimatedUnderline";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import {
@@ -17,12 +16,7 @@ import {
   GraduationCap,
   Briefcase,
   CheckCircle2,
-  ArrowRight,
-  Mail,
-  FileText,
   Target,
-  Globe2,
-  HeartHandshake,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
@@ -219,321 +213,269 @@ export default function MembershipClient() {
   ];
 
   return (
-    <div className="pt-0">
-      {/* Hero Section */}
+    <div>
+      {/* Hero */}
       <PageHero
-        title={
-          <span className="relative inline-block">
-            Become a Member
-            <AnimatedUnderline />
-          </span>
-        }
+        title="Become a Member"
         subtitle="Join a trusted network shaping the future of UK–Pakistan technology collaboration."
       />
 
       {/* Key Benefits */}
       <Section variant="alt">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
-            <SectionHeader
-              title="Key Benefits"
-              subtitle="Unlock opportunities to connect, grow, and lead in the UK–Pakistan technology ecosystem"
-              align="center"
-            />
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-              {keyBenefits.map((benefit, index) => (
+          <SectionHeader
+            label="Why join"
+            title="Key Benefits"
+            subtitle="Unlock opportunities to connect, grow, and lead in the UK–Pakistan technology ecosystem."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {keyBenefits.map((benefit, index) => {
+              const Icon = benefit.icon;
+              return (
                 <motion.div
                   key={index}
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
                 >
-                  <Card variant="alt" hover className="h-full">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-16 h-16 rounded-2xl bg-[#2563EB]/20 border border-[#2563EB]/30 flex items-center justify-center mb-6">
-                        <benefit.icon className="w-8 h-8 text-[#2563EB]" />
-                      </div>
-                      <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A]">{benefit.title}</h3>
-                      <p className="text-sm text-[#475569] leading-relaxed">{benefit.description}</p>
-                    </div>
+                  <Card variant="light" className="h-full">
+                    <Icon className="w-7 h-7 text-[#2563EB] mb-5" />
+                    <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2">{benefit.title}</h3>
+                    <div className="h-px bg-[#D8D5CF] mb-3" />
+                    <p className="text-sm text-[#3D4152] leading-relaxed">{benefit.description}</p>
                   </Card>
                 </motion.div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </Section>
 
       {/* Eligibility */}
-      <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
+      <Section variant="light">
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto">
-            <SectionHeader
-              title="Eligibility"
-              subtitle="Who can become a UPTECH member"
-              align="center"
-            />
-            <div className="grid md:grid-cols-2 gap-4 mt-8">
-              {eligibilityPoints.map((point, index) => (
-                <motion.div
-                  key={index}
-                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start gap-4"
-                >
-                  <CheckCircle2 className="w-6 h-6 text-[#2563EB] flex-shrink-0 mt-0.5" />
-                  <span className="text-lg text-[#475569] leading-relaxed">{point}</span>
-                </motion.div>
-              ))}
-            </div>
+          <SectionHeader
+            label="Criteria"
+            title="Eligibility"
+            subtitle="Who can become a UPTECH member."
+          />
+          <div className="grid md:grid-cols-2 gap-4">
+            {eligibilityPoints.map((point, index) => (
+              <motion.div
+                key={index}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex items-start gap-4 bg-white border border-[#D8D5CF] p-5"
+              >
+                <CheckCircle2 className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                <span className="text-base text-[#3D4152] leading-relaxed">{point}</span>
+              </motion.div>
+            ))}
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
       </Section>
 
       {/* Who Can Join */}
-      <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+      <Section variant="alt">
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
-            <SectionHeader
-              title="Who Can Join"
-              subtitle="Membership is open to a diverse range of stakeholders"
-              align="center"
-            />
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-              {whoCanJoin.map((item, index) => (
+          <SectionHeader
+            label="Open to"
+            title="Who Can Join"
+            subtitle="Membership is open to a diverse range of stakeholders."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whoCanJoin.map((item, index) => {
+              const Icon = item.icon;
+              return (
                 <motion.div
                   key={index}
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
                 >
-                  <Card hover className="h-full">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-14 h-14 rounded-xl bg-[#2563EB]/20 border border-[#2563EB]/30 flex items-center justify-center mb-4">
-                        <item.icon className="w-7 h-7 text-[#2563EB]" />
-                      </div>
-                      <h3 className="font-heading font-semibold text-lg mb-2 text-[#0F172A]">{item.title}</h3>
-                      <p className="text-sm text-[#475569] leading-relaxed">{item.description}</p>
-                    </div>
+                  <Card variant="light" className="h-full">
+                    <Icon className="w-7 h-7 text-[#2563EB] mb-5" />
+                    <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2">{item.title}</h3>
+                    <div className="h-px bg-[#D8D5CF] mb-3" />
+                    <p className="text-sm text-[#3D4152] leading-relaxed">{item.description}</p>
                   </Card>
                 </motion.div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </Section>
 
       {/* Membership Categories */}
-      <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
+      <Section variant="light">
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
-            <SectionHeader
-              title="Membership Categories"
-              subtitle="Choose the membership type that best fits your needs"
-              align="center"
-            />
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-              {membershipCategories.map((category, index) => (
-                <motion.div
-                  key={index}
-                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
-                >
-                  <Card hover className="h-full">
-                    <h3 className="font-heading font-bold text-xl mb-2 text-[#0F172A]">{category.title}</h3>
-                    <p className="text-sm text-[#475569] mb-4 leading-relaxed">{category.description}</p>
-                    <ul className="space-y-2">
-                      {category.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-[#475569]">
-                          <CheckCircle2 className="w-4 h-4 text-[#2563EB] flex-shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+          <SectionHeader
+            label="Types"
+            title="Membership Categories"
+            subtitle="Choose the membership type that best fits your needs."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {membershipCategories.map((category, index) => (
+              <motion.div
+                key={index}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="h-full">
+                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2">{category.title}</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-3" />
+                  <p className="text-sm text-[#3D4152] mb-4 leading-relaxed">{category.description}</p>
+                  <ul className="space-y-2">
+                    {category.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-[#3D4152]">
+                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
       </Section>
 
       {/* Membership Plans */}
-      <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+      <Section variant="alt">
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
-            <SectionHeader
-              title="Membership Plans"
-              subtitle="Comprehensive membership options designed for different needs"
-              align="center"
-            />
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-              {membershipPlans.map((plan, index) => (
-                <motion.div
-                  key={index}
-                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
-                >
-                  <Card hover className="h-full flex flex-col">
-                    <div className="mb-6">
-                      <h3 className="font-heading font-bold text-xl mb-2 text-[#0F172A]">{plan.name}</h3>
-                      <div className="flex items-baseline gap-2 mb-2">
-                        <span className="text-3xl font-heading font-bold text-[#2563EB]">{plan.price}</span>
-                        <span className="text-sm text-[#64748B]">/{plan.period}</span>
-                      </div>
-                    </div>
-                    <ul className="space-y-3 flex-1 mb-6">
-                      {plan.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-[#0F172A]">
-                          <CheckCircle2 className="w-4 h-4 text-[#2563EB] flex-shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button variant="glass" size="md" className="w-full mt-auto">
-                      Apply Now
-                    </Button>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+          <SectionHeader
+            label="Plans"
+            title="Membership Plans"
+            subtitle="Comprehensive membership options designed for different needs."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {membershipPlans.map((plan, index) => (
+              <motion.div
+                key={index}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card variant="light" className="h-full flex flex-col">
+                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-1">{plan.name}</h3>
+                  <div className="flex items-baseline gap-1 mb-2">
+                    <span className="text-2xl font-heading font-bold text-[#2563EB]">{plan.price}</span>
+                    <span className="text-xs text-[#7A7E8F]">/{plan.period}</span>
+                  </div>
+                  <div className="h-px bg-[#D8D5CF] mb-4" />
+                  <ul className="space-y-3 flex-1 mb-6">
+                    {plan.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-[#3D4152]">
+                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button variant="primary" size="md" className="w-full mt-auto">
+                    Apply Now
+                  </Button>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </Section>
 
       {/* Procedure */}
-      <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
+      <Section variant="light">
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
-            <SectionHeader
-              title="Membership Procedure"
-              subtitle="A straightforward process to join UPTECH"
-              align="center"
-            />
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-              {procedureSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
-                >
-                  <Card hover className="h-full text-center">
-                    <div className="text-4xl font-heading font-bold text-[#2563EB] mb-4">{step.step}</div>
-                    <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A]">{step.title}</h3>
-                    <p className="text-sm text-[#475569] leading-relaxed">{step.description}</p>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+          <SectionHeader
+            label="Process"
+            title="Membership Procedure"
+            subtitle="A straightforward process to join UPTECH."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {procedureSteps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="h-full">
+                  <p className="text-3xl font-heading font-bold text-[#2563EB] mb-4">{step.step}</p>
+                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2">{step.title}</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-3" />
+                  <p className="text-sm text-[#3D4152] leading-relaxed">{step.description}</p>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
       </Section>
 
       {/* Full Benefits List */}
-      <Section>
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+      <Section variant="alt">
         <AnimatedSection>
-          <div className="max-w-7xl mx-auto">
-            <SectionHeader
-              title="Complete Benefits Overview"
-              subtitle="Comprehensive benefits available to all UPTECH members"
-              align="center"
-            />
-            <div className="grid md:grid-cols-2 gap-8 mt-12">
-              {benefitsGroups.map((group, index) => (
-                <motion.div
-                  key={index}
-                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <Card className="h-full">
-                    <h3 className="font-heading font-bold text-xl mb-6 text-[#0F172A]">{group.title}</h3>
-                    <ul className="space-y-3">
-                      {group.items.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-[#2563EB] flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-[#0F172A] leading-relaxed">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+          <SectionHeader
+            label="Benefits"
+            title="Complete Benefits Overview"
+            subtitle="Comprehensive benefits available to all UPTECH members."
+          />
+          <div className="grid md:grid-cols-2 gap-6">
+            {benefitsGroups.map((group, index) => (
+              <motion.div
+                key={index}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card variant="light" className="h-full">
+                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-4">{group.title}</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-4" />
+                  <ul className="space-y-3">
+                    {group.items.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-[#3D4152] leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </Section>
 
-      {/* Get in Touch / Apply CTA */}
-      <Section className="relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
+      {/* CTA */}
+      <Section variant="dark">
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto text-center py-20">
-            <motion.h2
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-[#0F172A]"
-            >
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#22C55E] mb-4">
+              Apply today
+            </p>
+            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-none text-white mb-5">
               Ready to Join UPTECH?
-            </motion.h2>
-            <motion.p
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-[#475569] mb-10 leading-relaxed"
-            >
+            </h2>
+            <div className="h-px bg-white/20 mb-6" />
+            <p className="text-lg text-white/70 leading-relaxed mb-10 max-w-xl">
               Apply for membership today and become part of a trusted network shaping the future of UK–Pakistan technology collaboration.
-            </motion.p>
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
+            </p>
+            <div className="flex flex-wrap gap-4">
               <Button href={siteConfig.portalUrl} variant="primary" size="lg" showArrow>
                 Apply for Membership
               </Button>
-              <Button href="/contact" variant="secondary" size="lg" showArrow>
+              <Button href="/contact" variant="glass" size="lg">
                 Get in Touch
               </Button>
-            </motion.div>
+            </div>
           </div>
         </AnimatedSection>
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
       </Section>
     </div>
   );
