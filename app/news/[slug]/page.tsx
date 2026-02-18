@@ -53,7 +53,7 @@ export default async function ArticleDetailPage({ params }: Props) {
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-end z-10">
-          <div className="mx-auto max-w-[1280px] w-full px-4 sm:px-6 lg:px-8 pb-12 pt-28">
+          <div className="w-full px-8 sm:px-12 lg:px-16 xl:px-20 pb-12 pt-28">
             {/* Breadcrumb */}
             <nav className="mb-5">
               <ol className="flex items-center flex-wrap gap-1.5 text-sm text-white/60">
@@ -92,7 +92,7 @@ export default async function ArticleDetailPage({ params }: Props) {
 
       {/* ── Article body ─────────────────────────────────────────── */}
       <section className="py-16 lg:py-20">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
             {/* Main content */}
             <article className="flex-1 min-w-0">
@@ -182,7 +182,7 @@ export default async function ArticleDetailPage({ params }: Props) {
       {/* ── Related articles ─────────────────────────────────────── */}
       {related.length > 0 && (
         <section className="bg-[#F8FAFC] py-16 lg:py-20">
-          <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+          <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
             <div className="mb-10">
               <span className="text-sm font-semibold text-[#1F2937] mb-2 block">
                 Continue reading

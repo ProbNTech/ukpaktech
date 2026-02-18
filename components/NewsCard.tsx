@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, Tag } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export interface NewsCardProps {
@@ -15,76 +15,57 @@ export interface NewsCardProps {
   index?: number;
 }
 
+/**
+ * Editorial news card — flat style matching ukproptech.com pattern:
+ * image → date (muted) → bold title → category tags → thin rule at bottom
+ * No card borders, no box shadows, no rounded corners on the card itself.
+ */
 export function NewsCard({ slug, title, category, date, image, excerpt, index = 0 }: NewsCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5, delay: index * 0.07 }}
+      transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
     >
       <Link
         href={`/news/${slug}`}
-        className="group flex flex-col h-full rounded-2xl bg-white border border-gray-100 hover:border-[#2563EB]/20 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+        className="group flex flex-col h-full"
       >
-        {/* Top gradient bar */}
-        <div className="h-[2px] bg-gradient-to-r from-[#2563EB] to-[#22C55E]" />
-
-        {/* Image */}
-        <div className="relative aspect-[16/9] overflow-hidden bg-[#F0F4F8]">
+        {/* Image — 16:9, slight zoom on hover */}
+        <div className="relative aspect-[16/9] overflow-hidden bg-[#D8D5CF] mb-5">
           <Image
             src={image}
             alt={title}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
-          {/* Category badge — top-left */}
-          <div className="absolute top-3 left-3 z-10">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm">
-              <Tag className="w-3 h-3 text-[#22C55E]" />
-              <span className="text-xs font-bold text-[#1F2937] tracking-wide uppercase">
-                {category}
-              </span>
-            </span>
-          </div>
         </div>
 
-        {/* Content */}
-        <div className="flex flex-col flex-1 p-6">
-          {/* Title */}
-          <h3 className="font-heading font-bold text-lg text-[#1F2937] leading-snug mb-3 line-clamp-2 group-hover:text-[#2563EB] transition-colors duration-300">
-            {title}
-          </h3>
+        {/* Date */}
+        <p className="text-sm text-[#7A7E8F] mb-2">{date}</p>
 
-          {/* Excerpt */}
-          <p className="text-sm text-[#4B5563] leading-relaxed line-clamp-3 mb-5 flex-1">
-            {excerpt}
-          </p>
+        {/* Title */}
+        <h3 className="font-heading font-bold text-[1.05rem] leading-snug text-[#1C1F2E] mb-3 line-clamp-3 group-hover:text-[#2563EB] transition-colors duration-200">
+          {title}
+        </h3>
 
-          {/* Footer row: date + read more */}
-          <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-            <div className="flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-[#94A3B8]" />
-              <span className="text-xs text-[#94A3B8]">{date}</span>
-            </div>
-            <span className="text-xs font-semibold text-[#2563EB] group-hover:gap-2 flex items-center gap-1 transition-all duration-300">
-              Read more
-              <svg
-                className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-300"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2.5}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </span>
-          </div>
+        {/* Excerpt — shown on hover/always, 2 lines */}
+        <p className="text-sm text-[#3D4152] leading-relaxed line-clamp-2 mb-4 flex-1">
+          {excerpt}
+        </p>
+
+        {/* Category tag — orange-red style matching reference */}
+        <div className="flex flex-wrap items-center gap-2 mb-4">
+          <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#2563EB] group-hover:text-[#1D4ED8] transition-colors duration-200">
+            <ChevronRight className="w-3 h-3" />
+            {category}
+          </span>
         </div>
 
-        {/* Bottom green bar */}
-        <div className="h-[2px] bg-[#22C55E] mt-auto" />
+        {/* Bottom rule — thin dark line, the signature editorial element */}
+        <div className="h-px w-full bg-[#1C1F2E]/20 group-hover:bg-[#2563EB]/60 transition-colors duration-300" />
       </Link>
     </motion.div>
   );

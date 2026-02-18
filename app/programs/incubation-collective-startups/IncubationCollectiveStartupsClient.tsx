@@ -318,7 +318,7 @@ function IncubationHero() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050B14]/60 pointer-events-none" />
       </div>
-      <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 w-full py-24 lg:py-32">
+      <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
         <motion.div
           initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

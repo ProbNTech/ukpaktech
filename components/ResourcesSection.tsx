@@ -29,7 +29,7 @@ export function ResourcesSection() {
 
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+      <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
         {/* Header with divider line */}
         <motion.div
           initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}

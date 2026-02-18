@@ -68,7 +68,7 @@ export default function EventsPage() {
         {/* Dark overlay — will sit over future background image */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 pointer-events-none z-[1]" />
 
-        <div className="relative z-10 mx-auto max-w-[1280px] w-full px-4 sm:px-6 lg:px-8 pt-36 pb-14 lg:pt-40 lg:pb-16">
+        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-36 pb-14 lg:pt-40 lg:pb-16">
           {/* Breadcrumb */}
           <motion.nav
             initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
@@ -135,7 +135,7 @@ export default function EventsPage() {
       {/*  OVERVIEW SECTION                                              */}
       {/* ============================================================ */}
       <section className="bg-white py-16 lg:py-20">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             {/* Heading with green line — full width */}
             <div className="flex items-center gap-6 mb-10">
@@ -228,7 +228,7 @@ export default function EventsPage() {
       {/*  EVENTS & HIGHLIGHTS                                          */}
       {/* ============================================================ */}
       <section className="bg-[#F8FAFC] py-20 lg:py-24">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             {/* Heading — homepage style */}
             <div className="mb-12">
@@ -270,7 +270,7 @@ export default function EventsPage() {
       {/*  NEWS & UPDATES                                               */}
       {/* ============================================================ */}
       <section className="bg-white py-20 lg:py-24">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             {/* Heading — homepage style */}
             <div className="mb-12">

@@ -259,7 +259,7 @@ export default function EventDetailPage() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-20">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 pt-28 pb-16 lg:pt-32 lg:pb-20">
           {/* Breadcrumb */}
           <motion.nav
             initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
@@ -321,7 +321,7 @@ export default function EventDetailPage() {
       {/*  MAIN CONTENT                                                  */}
       {/* ============================================================ */}
       <section className="py-16 lg:py-20">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-14">
             {/* LEFT — Social share (sticky on desktop) */}
             <div className="lg:w-16 shrink-0">

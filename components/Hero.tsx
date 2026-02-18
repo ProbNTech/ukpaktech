@@ -86,7 +86,7 @@ export function Hero() {
 
       {/* Content wrapper */}
       <div className="relative z-20 flex items-center h-[75vh] lg:h-[85vh] pt-24 pb-16">
-        <div className="mx-auto max-w-[1280px] w-full px-6 lg:px-12">
+        <div className="w-full px-8 sm:px-12 lg:px-16 xl:px-20">
           <div className="max-w-2xl space-y-5">
             {/* Small label */}
             <motion.div

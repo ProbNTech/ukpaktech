@@ -32,7 +32,7 @@ export function PageHero({
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 w-full py-24 lg:py-32">
+      <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
         <div
           className={`flex flex-col ${
             align === "center" ? "items-center text-center" : "items-start text-left"

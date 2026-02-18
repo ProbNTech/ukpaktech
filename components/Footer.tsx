@@ -27,7 +27,7 @@ export function Footer() {
 
         {/* Footer Content */}
         <div className="relative z-10">
-          <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 pt-16 pb-10">
+          <div className="px-8 sm:px-12 lg:px-16 xl:px-20 pt-16 pb-10">
             {/* Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-14">
               {/* Column 1: Logo + Description + Socials */}

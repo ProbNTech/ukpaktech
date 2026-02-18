@@ -108,7 +108,7 @@ export function Header() {
             : "bg-transparent"
         }`}
       >
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <div className="flex items-center justify-between h-[72px]">
             <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
               <Image

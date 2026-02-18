@@ -19,13 +19,20 @@ const config: Config = {
           green: "#22C55E",
           "green-hover": "#16A34A",
         },
+        /* Editorial palette tokens */
+        editorial: {
+          bg: "#EEECEA",
+          "bg-alt": "#E8E6E3",
+          rule: "#C5C2BE",
+          dark: "#1C1F2E",
+        },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         heading: ["var(--font-manrope)", "system-ui", "sans-serif"],
       },
       maxWidth: {
-        content: "1280px",
+        content: "1200px",
         container: "var(--container-width)",
       },
       borderRadius: {
@@ -35,6 +42,7 @@ const config: Config = {
         xl: "var(--radius-xl)",
         "2xl": "var(--radius-2xl)",
         card: "var(--radius-card)",
+        pill: "var(--radius-pill)",
         full: "9999px",
       },
       spacing: {

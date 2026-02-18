@@ -13,7 +13,7 @@ export function EventsCTA() {
       </div>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
 
-      <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20">
         <div className="max-w-3xl mx-auto text-center">
           <motion.span
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 12 }}
