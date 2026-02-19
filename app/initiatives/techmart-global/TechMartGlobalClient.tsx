@@ -1,766 +1,247 @@
 "use client";
 
 import { Section } from "@/components/Section";
-import { SectionHeader } from "@/components/SectionHeader";
-import { Button } from "@/components/Button";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { Button } from "@/components/Button";
+import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
-import { motion, useReducedMotion, useInView } from "framer-motion";
-import { useRef } from "react";
-import {
-  Building2,
-  Users,
-  Briefcase,
-  TrendingUp,
-  Search,
-  HeartHandshake,
-  Shield,
-  CheckCircle2,
-  Globe,
-  ArrowRight,
-  Network,
-  Target,
-  Zap,
-  FileCheck,
-  Rocket,
-} from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+
+const audiences = [
+  {
+    title: "Tech Startups",
+    description: "Early-stage technology companies seeking market access, partnerships, and growth opportunities in international markets.",
+  },
+  {
+    title: "Scale-ups and SMEs",
+    description: "Growing technology businesses ready to expand their reach and establish strategic relationships with global buyers and partners.",
+  },
+  {
+    title: "Enterprises and Buyers",
+    description: "Organisations looking to discover, evaluate, and engage with qualified technology vendors and service providers.",
+  },
+  {
+    title: "Investors and Partners",
+    description: "Investment firms, strategic partners, and institutions interested in connecting with high-potential technology companies.",
+  },
+];
+
+const features = [
+  { title: "Cross-border B2B Matchmaking", tag: "Intelligent Matching", description: "Curated introductions connect Pakistani tech companies with relevant UK and international buyers based on capabilities, needs, and strategic fit." },
+  { title: "Market Access and Discovery", tag: "Market Discovery", description: "Comprehensive company profiles, service catalogs, and capability showcases enable buyers to discover and evaluate technology solutions efficiently." },
+  { title: "Strategic Partnerships", tag: "Partnerships", description: "Facilitation of joint ventures, technology licensing, co-development agreements, and long-term strategic alliances between companies." },
+  { title: "Trade, Procurement, and Outsourcing", tag: "Global Trade", description: "Direct access to procurement opportunities, outsourcing projects, and trade facilitation services that streamline cross-border transactions." },
+];
+
+const howItWorks = [
+  { number: "01", title: "Discover", description: "Browse company profiles, service catalogues, and capability showcases to identify potential partners, vendors, or buyers.", outcome: "Identified opportunities" },
+  { number: "02", title: "Connect", description: "Initiate contact through the platform&apos;s communication tools or request introductions to relevant participants.", outcome: "Verified introductions" },
+  { number: "03", title: "Validate", description: "Engage in due diligence, capability assessments, and preliminary discussions to ensure mutual fit before proceeding.", outcome: "Confirmed alignment" },
+  { number: "04", title: "Scale", description: "Execute agreements, launch partnerships, and leverage platform resources to scale relationships and achieve long-term objectives.", outcome: "Partnership launched" },
+];
+
+const ukPathway = [
+  "UK market entry strategy and guidance",
+  "Compliance and regulatory navigation support",
+  "Introductions to UK-based buyers and partners",
+  "Access to UK industry associations and networks",
+  "Credibility building with UK institutions",
+];
+
+const alignment = [
+  { label: "Transparency", description: "Clear and fair processes with full visibility." },
+  { label: "Verification", description: "All participants are verified for quality assurance." },
+  { label: "Fair Process", description: "Merit-based matching and dispute resolution." },
+];
 
 export default function TechMartGlobalClient() {
   return (
-    <div className="pt-0">
-      {/* Hero Section */}
+    <div>
       <PageHero
         title="TechMart Global"
         subtitle="A global B2B technology marketplace and collaboration platform connecting Pakistani tech companies with UK and international buyers, partners, investors, and institutions."
-      >
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Button variant="primary" size="lg" className="bg-gradient-to-r from-[#2D5BFF] to-[#1E3A8A]">
-              Get Started
-            </Button>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Button variant="glass" size="lg">
-              Learn More
-            </Button>
-          </motion.div>
-        </div>
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-          <TrustChip label="B2B Marketplace" />
-          <TrustChip label="UK–Pakistan Corridor" />
-          <TrustChip label="Verified Connections" />
-        </div>
-      </PageHero>
+      />
 
       {/* What is TechMart Global */}
-      <Section variant="dark">
+      <Section variant="light">
         <AnimatedSection>
-          
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-block px-3 py-1 rounded-full bg-[#2D5BFF]/10 border border-[#2D5BFF]/20 text-[#2D5BFF] text-xs font-semibold uppercase tracking-wider mb-4">
-                  Initiative
-                </div>
-                <SectionHeader
-                  title="What is TechMart Global"
-                  subtitle="A strategic platform designed to bridge technology ecosystems and facilitate meaningful business connections."
-                 
-                />
-                <div className="space-y-5 text-[rgba(234,242,255,0.85)] leading-relaxed text-base">
-                  <p>
-                    TechMart Global is a comprehensive B2B technology marketplace powered by the UK–Pakistan Tech Council. The platform serves as a{" "}
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#2D5BFF]/10 border border-[#2D5BFF]/20 text-[#2D5BFF] text-sm font-medium">
-                      trusted intermediary
-                    </span>
-                    , enabling Pakistani technology companies to showcase their capabilities, products, and services to a global audience.
-                  </p>
-                  <p>
-                    Through{" "}
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#00B140]/10 border border-[#00B140]/20 text-[#00B140] text-sm font-medium">
-                      structured matchmaking
-                    </span>
-                    , transparent processes, and strategic support, TechMart Global facilitates cross-border partnerships, procurement opportunities, and long-term business relationships that drive innovation and economic growth.
-                  </p>
-                </div>
-              </div>
-              <div className="relative">
-                <MarketplaceVisual />
-              </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl leading-snug mb-6">
+                TechMart Global is a comprehensive B2B technology marketplace powered by the UK–Pakistan Tech Council, enabling Pakistani technology companies to showcase their capabilities to a global audience.
+              </p>
+              <p className="text-[#3D4152] text-base leading-relaxed mb-5">
+                Through structured matchmaking, transparent processes, and strategic support, TechMart Global facilitates cross-border partnerships, procurement opportunities, and long-term business relationships that drive innovation and economic growth.
+              </p>
+              <p className="text-[#3D4152] text-base leading-relaxed">
+                The platform serves as a trusted intermediary, ensuring that every connection made is verified, purposeful, and built on a foundation of accountability.
+              </p>
             </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Who TechMart Global Is For */}
-      <Section>
-        <AnimatedSection>
-          
-            <SectionHeader
-              title="Who TechMart Global Is For"
-              subtitle="Designed to serve diverse stakeholders across the technology ecosystem."
-             
-            />
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <AudienceCard
-                icon={Rocket}
-                title="Tech Startups"
-                description="Early-stage technology companies seeking market access, partnerships, and growth opportunities in international markets."
-                accentColor="#2D5BFF"
-                index={0}
-              />
-              <AudienceCard
-                icon={TrendingUp}
-                title="Scale-ups and SMEs"
-                description="Growing technology businesses ready to expand their reach and establish strategic relationships with global buyers and partners."
-                accentColor="#00B140"
-                index={1}
-              />
-              <AudienceCard
-                icon={Building2}
-                title="Enterprises and Buyers"
-                description="Organizations looking to discover, evaluate, and engage with qualified technology vendors and service providers."
-                accentColor="#2D5BFF"
-                index={2}
-              />
-              <AudienceCard
-                icon={Briefcase}
-                title="Investors and Partners"
-                description="Investment firms, strategic partners, and institutions interested in connecting with high-potential technology companies."
-                accentColor="#2563EB"
-                index={3}
-              />
+            <div className="bg-white border border-[#D8D5CF] p-8">
+              <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-5">Platform Snapshot</h3>
+              <div className="h-px bg-[#1C1F2E]/15 mb-5" />
+              <ul className="space-y-3">
+                {["B2B Marketplace", "UK–Pakistan Corridor", "Verified Connections", "Structured Matchmaking"].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* What TechMart Global Enables */}
-      <Section variant="dark">
-        <AnimatedSection>
-          
-            <SectionHeader
-              title="What TechMart Global Enables"
-              subtitle="Key capabilities and opportunities facilitated through the platform."
-             
-            />
-            <div className="grid md:grid-cols-2 gap-6 mt-12">
-              <FeatureBlock
-                icon={Network}
-                title="Cross-border B2B Matchmaking"
-                description="Intelligent matching algorithms and curated introductions connect Pakistani tech companies with relevant UK and international buyers based on capabilities, needs, and strategic fit."
-                tag="Intelligent Matching"
-                index={0}
-              />
-              <FeatureBlock
-                icon={Search}
-                title="Market Access and Discovery"
-                description="Comprehensive company profiles, service catalogs, and capability showcases enable buyers to discover and evaluate technology solutions efficiently."
-                tag="Market Discovery"
-                index={1}
-              />
-              <FeatureBlock
-                icon={HeartHandshake}
-                title="Strategic Partnerships"
-                description="Facilitation of joint ventures, technology licensing, co-development agreements, and long-term strategic alliances between companies."
-                tag="Partnerships"
-                index={2}
-              />
-              <FeatureBlock
-                icon={Globe}
-                title="Trade, Procurement, and Outsourcing"
-                description="Direct access to procurement opportunities, outsourcing projects, and trade facilitation services that streamline cross-border transactions."
-                tag="Global Trade"
-                index={3}
-              />
-            </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* UK Market Access Focus */}
-      <Section>
-        <AnimatedSection>
-          
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <SectionHeader
-                  title="UK Market Access Focus"
-                  subtitle="Supporting Pakistani technology companies in entering and succeeding in the UK market."
-                 
-                />
-                <div className="space-y-5 text-[rgba(11,18,32,0.68)] leading-relaxed text-base">
-                  <p>
-                    TechMart Global places particular emphasis on facilitating entry into the UK market, recognizing its strategic importance as a gateway to broader international opportunities. The platform provides structured support for companies navigating UK market requirements, compliance standards, and business practices.
-                  </p>
-                  <p>
-                    Through partnerships with UK-based organizations, industry associations, and regulatory bodies, TechMart Global helps Pakistani tech companies understand market dynamics, establish credibility, and build relationships with UK buyers, partners, and institutions.
-                  </p>
-                </div>
-              </div>
-              <div className="relative">
-                <UKMarketPathway />
-              </div>
-            </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* How TechMart Global Works */}
-      <Section variant="dark">
-        <AnimatedSection>
-          
-            <SectionHeader
-              title="How TechMart Global Works"
-              subtitle="A structured process designed to facilitate meaningful connections and successful outcomes."
-             
-            />
-            <HowItWorksSteps />
-        </AnimatedSection>
-      </Section>
-
-      {/* Alignment With UK–Pakistan Tech Council */}
-      <Section>
-        <AnimatedSection>
-          
-            <SectionHeader
-              title="Alignment With UK–Pakistan Tech Council"
-              subtitle="TechMart Global as a strategic initiative supporting council objectives and ecosystem development."
-             
-            />
-            
-              <div className="flex flex-wrap gap-3 justify-center">
-                <div className="px-4 py-2 rounded-full bg-[#2D5BFF]/10 border border-[#2D5BFF]/20 text-[#2D5BFF] text-sm font-semibold flex items-center gap-2">
-                  <Shield className="w-4 h-4" />
-                  Transparency
-                </div>
-                <div className="px-4 py-2 rounded-full bg-[#00B140]/10 border border-[#00B140]/20 text-[#00B140] text-sm font-semibold flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4" />
-                  Verification
-                </div>
-                <div className="px-4 py-2 rounded-full bg-[#2D5BFF]/10 border border-[#2D5BFF]/20 text-[#2D5BFF] text-sm font-semibold flex items-center gap-2">
-                  <FileCheck className="w-4 h-4" />
-                  Fair Process
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-[#2D5BFF]/10 to-[#00B140]/5 border border-[#2D5BFF]/20 rounded-2xl p-8">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-[#2D5BFF]/20 text-[#2D5BFF] flex items-center justify-center">
-                    <Shield className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-lg mb-2 text-[#0B1220]">Official Initiative</h3>
-                    <p className="text-[rgba(11,18,32,0.68)] leading-relaxed">
-                      TechMart Global is an official initiative of the UK–Pakistan Tech Council, designed to advance the council&apos;s mission of fostering collaboration, innovation, and economic growth between the UK and Pakistan technology sectors.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-5 text-[rgba(11,18,32,0.68)] leading-relaxed text-base">
-                <p>
-                  The platform operates with a commitment to transparency, credibility, and ethical business practices. All participants benefit from the council&apos;s governance framework, which ensures fair processes, dispute resolution mechanisms, and ongoing support throughout the engagement lifecycle.
-                </p>
-                <p>
-                  By aligning with the UK–Pakistan Tech Council, TechMart Global provides participants with access to a trusted ecosystem, policy insights, regulatory guidance, and strategic connections that extend beyond simple transactional matchmaking. The platform serves as a cornerstone of the council&apos;s efforts to build a sustainable, mutually beneficial technology partnership between the UK and Pakistan.
-                </p>
-              </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Call to Action */}
-      <Section variant="dark">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#2D5BFF] rounded-full opacity-[0.08] blur-[200px]" />
-        </div>
-        <AnimatedSection>
-          
-            <SectionHeader
-              title="Join TechMart Global"
-              subtitle="Connect with the global technology marketplace and unlock new opportunities for growth and collaboration."
-             
-            />
-            <div className="mt-10 flex flex-col items-center gap-4">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Button variant="primary" size="lg" className="relative">
-                  Get Started
-                </Button>
-              </motion.div>
-              <a
-                href="/membership"
-                className="text-[rgba(234,242,255,0.75)] hover:text-[#EAF2FF] text-sm font-medium transition-colors flex items-center gap-1"
-              >
-                Learn more about Membership
-                <ArrowRight className="w-3 h-3" />
-              </a>
-            </div>
-        </AnimatedSection>
-      </Section>
-    </div>
-  );
-}
-
-
-// Trust Chip Component
-function TrustChip({ label }: { label: string }) {
-  return (
-    <div className="px-4 py-2 rounded-full bg-[rgba(255,255,255,0.08)] backdrop-blur-sm border border-[rgba(234,242,255,0.15)] text-[rgba(234,242,255,0.85)] text-sm font-medium">
-      {label}
-    </div>
-  );
-}
-
-// Marketplace Visual Component - Premium Animated Network
-function MarketplaceVisual() {
-  const shouldReduceMotion = useReducedMotion();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  // Network nodes configuration
-  const centralNode = { x: 200, y: 200 };
-  const outerNodes = Array.from({ length: 12 }, (_, i) => {
-    const angle = (i * 360) / 12;
-    const radius = 140;
-    return {
-      x: centralNode.x + radius * Math.cos((angle * Math.PI) / 180),
-      y: centralNode.y + radius * Math.sin((angle * Math.PI) / 180),
-      angle,
-    };
-  });
-
-  // Secondary connections between outer nodes
-  const secondaryConnections = [
-    [0, 2], [1, 3], [2, 5], [3, 6], [4, 7], [5, 8],
-    [6, 9], [7, 10], [8, 11], [9, 0], [10, 1], [11, 4]
-  ];
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.95 }}
-      animate={shouldReduceMotion || isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className="relative rounded-2xl bg-gradient-to-br from-[rgba(255,255,255,0.08)] to-[rgba(255,255,255,0.04)] backdrop-blur-xl border border-[rgba(234,242,255,0.15)] p-12 overflow-hidden min-h-[500px] group"
-    >
-      {/* Animated background gradient */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-[#2D5BFF]/15 via-transparent to-[#00B140]/10"
-        animate={shouldReduceMotion ? {} : {
-          backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
-        }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-      />
-
-      {/* Floating orbs */}
-      {!shouldReduceMotion && (
-        <>
-          <motion.div
-            className="absolute top-1/4 right-1/4 w-32 h-32 bg-[#2D5BFF] rounded-full blur-2xl opacity-20"
-            animate={{
-              x: [0, 30, -20, 0],
-              y: [0, -30, 20, 0],
-              scale: [1, 1.2, 0.9, 1],
-            }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute bottom-1/4 left-1/4 w-24 h-24 bg-[#00B140] rounded-full blur-xl opacity-15"
-            animate={{
-              x: [0, -25, 15, 0],
-              y: [0, 25, -15, 0],
-              scale: [1, 1.3, 0.8, 1],
-            }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          />
-        </>
-      )}
-
-      {/* Network SVG */}
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <linearGradient id="networkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#2D5BFF" stopOpacity="0.4" />
-            <stop offset="50%" stopColor="#00B140" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#2D5BFF" stopOpacity="0.4" />
-          </linearGradient>
-          <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#2D5BFF" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#00B140" stopOpacity="0.15" />
-          </linearGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-            <feMerge>
-              <feMergeNode in="coloredBlur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-
-        {/* Secondary connections between outer nodes */}
-        {secondaryConnections.map(([start, end], idx) => {
-          const startNode = outerNodes[start];
-          const endNode = outerNodes[end];
-          return (
-            <motion.line
-              key={`secondary-${idx}`}
-              x1={startNode.x}
-              y1={startNode.y}
-              x2={endNode.x}
-              y2={endNode.y}
-              stroke="url(#secondaryGradient)"
-              strokeWidth="0.5"
-              strokeDasharray="2,2"
-              initial={shouldReduceMotion ? { pathLength: 1, opacity: 0.3 } : { pathLength: 0, opacity: 0 }}
-              animate={shouldReduceMotion || isInView ? { pathLength: 1, opacity: 0.3 } : { pathLength: 0, opacity: 0 }}
-              transition={{ duration: 1, delay: idx * 0.05 + 0.5, ease: [0.22, 1, 0.36, 1] }}
-            />
-          );
-        })}
-
-        {/* Primary connections from center to outer nodes */}
-        {outerNodes.map((node, i) => (
-          <g key={`primary-${i}`}>
-            <motion.line
-              x1={centralNode.x}
-              y1={centralNode.y}
-              x2={node.x}
-              y2={node.y}
-              stroke="url(#networkGradient)"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              initial={shouldReduceMotion ? { pathLength: 1, opacity: 0.5 } : { pathLength: 0, opacity: 0 }}
-              animate={shouldReduceMotion || isInView ? { pathLength: 1, opacity: 0.5 } : { pathLength: 0, opacity: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.08 + 0.3, ease: [0.22, 1, 0.36, 1] }}
-            />
-            {/* Animated pulse along connection */}
-            {!shouldReduceMotion && (
-              <motion.circle
-                r="2"
-                fill="#00B140"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: [0, 1, 0],
-                  cx: [centralNode.x, node.x],
-                  cy: [centralNode.y, node.y],
-                }}
-                transition={{
-                  duration: 2,
-                  delay: i * 0.15 + 1,
-                  repeat: Infinity,
-                  repeatDelay: 3,
-                  ease: "easeInOut",
-                }}
-              />
-            )}
-          </g>
-        ))}
-
-        {/* Outer nodes */}
-        {outerNodes.map((node, i) => (
-          <g key={`node-${i}`}>
-            {/* Outer glow */}
-            <motion.circle
-              cx={node.x}
-              cy={node.y}
-              r="12"
-              fill={i % 3 === 0 ? "#2D5BFF" : i % 3 === 1 ? "#00B140" : "#2563EB"}
-              opacity="0.2"
-              initial={shouldReduceMotion ? { scale: 1 } : { scale: 0 }}
-              animate={shouldReduceMotion || isInView ? { scale: [1, 1.3, 1] } : { scale: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.1 + 0.5, repeat: Infinity, repeatDelay: 4 }}
-            />
-            {/* Node */}
-            <motion.circle
-              cx={node.x}
-              cy={node.y}
-              r="6"
-              fill={i % 3 === 0 ? "#2D5BFF" : i % 3 === 1 ? "#00B140" : "#2563EB"}
-              filter="url(#glow)"
-              initial={shouldReduceMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-              animate={shouldReduceMotion || isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            />
-          </g>
-        ))}
-
-        {/* Central hub node */}
-        <g>
-          {/* Outer rings */}
-          <motion.circle
-            cx={centralNode.x}
-            cy={centralNode.y}
-            r="20"
-            fill="none"
-            stroke="#2D5BFF"
-            strokeWidth="1"
-            opacity="0.3"
-            initial={shouldReduceMotion ? { scale: 1 } : { scale: 0 }}
-            animate={shouldReduceMotion || isInView ? { scale: [1, 1.5, 1] } : { scale: 0 }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.circle
-            cx={centralNode.x}
-            cy={centralNode.y}
-            r="16"
-            fill="none"
-            stroke="#00B140"
-            strokeWidth="1"
-            opacity="0.3"
-            initial={shouldReduceMotion ? { scale: 1 } : { scale: 0 }}
-            animate={shouldReduceMotion || isInView ? { scale: [1, 1.4, 1] } : { scale: 0 }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-          />
-          {/* Central node */}
-          <motion.circle
-            cx={centralNode.x}
-            cy={centralNode.y}
-            r="14"
-            fill="url(#networkGradient)"
-            filter="url(#glow)"
-            initial={shouldReduceMotion ? { opacity: 0.8 } : { opacity: 0, scale: 0 }}
-            animate={shouldReduceMotion || isInView ? { opacity: [0.8, 1, 0.8], scale: 1 } : { opacity: 0, scale: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, repeat: Infinity, repeatDelay: 0 }}
-          />
-        </g>
-      </svg>
-
-      {/* Content overlay */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full min-h-[400px]">
-        <motion.div
-          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-          animate={shouldReduceMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center"
-        >
-          <motion.div
-            whileHover={shouldReduceMotion ? {} : { scale: 1.1, rotate: 5 }}
-            transition={{ duration: 0.3 }}
-            className="mb-6"
-          >
-            <div className="relative inline-block">
-              <Network className="w-20 h-20 text-[#2D5BFF] opacity-90" />
-              <motion.div
-                className="absolute inset-0 bg-[#2D5BFF] rounded-full blur-xl opacity-30"
-                animate={shouldReduceMotion ? {} : { scale: [1, 1.3, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              />
-            </div>
-          </motion.div>
-          <h3 className="font-heading font-bold text-lg mb-2 text-[#EAF2FF]">Global Marketplace Network</h3>
-          <p className="text-sm text-[rgba(234,242,255,0.6)]">Connecting businesses across borders</p>
-        </motion.div>
-      </div>
-    </motion.div>
-  );
-}
-
-// Audience Card Component
-function AudienceCard({
-  icon: Icon,
-  title,
-  description,
-  accentColor,
-  index,
-}: {
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  description: string;
-  accentColor: string;
-  index: number;
-}) {
-  const shouldReduceMotion = useReducedMotion();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-      animate={shouldReduceMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={shouldReduceMotion ? {} : { y: -4, transition: { duration: 0.3 } }}
-      className="group relative bg-[#F6F8FC] rounded-xl border-2 border-[rgba(11,18,32,0.10)] p-6 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden"
-    >
-      <div
-        className="absolute top-0 left-0 right-0 h-1 rounded-t-xl"
-        style={{ backgroundColor: accentColor }}
-      />
-      <div className="relative z-10">
-        <div
-          className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
-          style={{ backgroundColor: `${accentColor}15`, color: accentColor }}
-        >
-          <Icon className="w-6 h-6" />
-        </div>
-        <h3 className="font-heading font-bold text-lg mb-3 text-[#0B1220]">{title}</h3>
-        <p className="text-sm text-[rgba(11,18,32,0.68)] leading-relaxed">{description}</p>
-      </div>
-    </motion.div>
-  );
-}
-
-// Feature Block Component
-function FeatureBlock({
-  icon: Icon,
-  title,
-  description,
-  tag,
-  index,
-}: {
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  description: string;
-  tag: string;
-  index: number;
-}) {
-  const shouldReduceMotion = useReducedMotion();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-      animate={shouldReduceMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={shouldReduceMotion ? {} : { y: -4, borderColor: "rgba(234,242,255,0.3)", transition: { duration: 0.3 } }}
-      className="group relative bg-[rgba(255,255,255,0.06)] backdrop-blur-sm rounded-xl border border-[rgba(234,242,255,0.14)] p-6 hover:bg-[rgba(255,255,255,0.1)] transition-all duration-300"
-    >
-      <div className="flex items-start gap-4">
-        <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-[#2D5BFF]/20 text-[#2D5BFF] flex items-center justify-center">
-          <Icon className="w-6 h-6" />
-        </div>
-        <div className="flex-1">
-          <div className="flex items-center gap-2 mb-2">
-            <h3 className="font-heading font-bold text-lg text-[#EAF2FF]">{title}</h3>
-            <span className="px-2 py-0.5 rounded-md bg-[#2D5BFF]/10 border border-[#2D5BFF]/20 text-[#2D5BFF] text-xs font-medium">
-              {tag}
-            </span>
           </div>
-          <p className="text-sm text-[rgba(234,242,255,0.75)] leading-relaxed">{description}</p>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
+        </AnimatedSection>
+      </Section>
 
-// UK Market Pathway Component
-function UKMarketPathway() {
-  const shouldReduceMotion = useReducedMotion();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  const steps = [
-    { label: "Market Entry", icon: Target },
-    { label: "Compliance", icon: Shield },
-    { label: "Partnership", icon: HeartHandshake },
-  ];
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.95 }}
-      animate={shouldReduceMotion || isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className="relative bg-gradient-to-br from-[#F6F8FC] to-white rounded-2xl border-2 border-[rgba(11,18,32,0.10)] p-8 shadow-lg"
-    >
-      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#2563EB]/10 to-transparent rounded-tr-2xl" />
-      <h3 className="font-heading font-bold text-lg mb-6 text-[#0B1220]">UK Entry Pathway</h3>
-      <div className="space-y-6">
-        {steps.map((step, index) => {
-          const Icon = step.icon;
-          return (
-            <motion.div
-              key={index}
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -20 }}
-              animate={shouldReduceMotion || isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="flex items-center gap-4"
-            >
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#2D5BFF]/10 text-[#2D5BFF] flex items-center justify-center">
-                <Icon className="w-5 h-5" />
+      {/* Who It&apos;s For */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Who It&apos;s For"
+            title="Who TechMart Global Serves"
+            subtitle="Designed to serve diverse stakeholders across the technology ecosystem."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {audiences.map((audience) => (
+              <div key={audience.title} className="bg-white border border-[#D8D5CF] p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{audience.title}</h3>
+                <div className="h-px bg-[#1C1F2E]/15 mb-3" />
+                <p className="text-[#3D4152] text-sm leading-relaxed">{audience.description}</p>
               </div>
-              <div className="text-sm font-semibold text-[#0B1220]">{step.label}</div>
-            </motion.div>
-          );
-        })}
-      </div>
-      <div className="mt-6 pt-6 border-t border-[rgba(11,18,32,0.10)]">
-        <p className="text-xs text-[rgba(11,18,32,0.5)] italic">Structured support for UK market requirements</p>
-      </div>
-    </motion.div>
-  );
-}
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
 
-// How It Works Steps Component
-function HowItWorksSteps() {
-  const shouldReduceMotion = useReducedMotion();
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
-
-  const steps = [
-    { number: 1, title: "Discover", description: "Browse company profiles, service catalogs, and capability showcases to identify potential partners, vendors, or buyers that match your needs.", icon: Search },
-    { number: 2, title: "Connect", description: "Initiate contact through the platform's communication tools, request introductions, or respond to opportunities posted by other members.", icon: Network },
-    { number: 3, title: "Validate", description: "Engage in due diligence, capability assessments, and preliminary discussions to ensure alignment and mutual fit before proceeding.", icon: FileCheck },
-    { number: 4, title: "Scale", description: "Execute agreements, launch partnerships, and leverage platform resources to scale relationships and achieve long-term business objectives.", icon: Rocket },
-  ];
-
-  return (
-    <div ref={containerRef} className="relative mt-12">
-      {/* Connecting Line (Desktop Only) */}
-      <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 -translate-y-1/2 z-0">
-        <motion.div
-          className="h-full bg-gradient-to-r from-[#2D5BFF] via-[#00B140] to-[#2D5BFF] opacity-20"
-          initial={shouldReduceMotion ? { scaleX: 1 } : { scaleX: 0 }}
-          animate={shouldReduceMotion || isInView ? { scaleX: 1 } : { scaleX: 0 }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          style={{ transformOrigin: "left" }}
-        />
-      </div>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-        {steps.map((step, index) => {
-          const Icon = step.icon;
-          return (
-            <motion.div
-              key={index}
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
-              animate={shouldReduceMotion || isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
-              transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={shouldReduceMotion ? {} : { y: -8, scale: 1.02, transition: { duration: 0.3 } }}
-              className="group relative bg-[rgba(255,255,255,0.06)] backdrop-blur-sm rounded-2xl border border-[rgba(234,242,255,0.14)] p-6 hover:bg-[rgba(255,255,255,0.1)] hover:border-[rgba(234,242,255,0.25)] transition-all duration-500 overflow-hidden"
-            >
-              <div
-                className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
-                style={{ backgroundColor: index % 2 === 0 ? "#2D5BFF" : "#00B140" }}
-              />
-              <motion.div
-                className="relative mb-6"
-                whileHover={shouldReduceMotion ? {} : { scale: 1.1, transition: { duration: 0.3 } }}
-              >
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg bg-gradient-to-br from-[#2D5BFF] to-[#1E3A8A]">
-                  {step.number}
+      {/* What It Enables */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Capabilities"
+            title="What TechMart Global Enables"
+            subtitle="Key capabilities and opportunities facilitated through the platform."
+          />
+          <div className="grid md:grid-cols-2 gap-6">
+            {features.map((feature) => (
+              <div key={feature.title} className="bg-white border border-[#D8D5CF] p-6 hover:border-[#2563EB]/40 transition-colors duration-300 flex gap-4">
+                <div className="flex-1">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base flex-1 pr-3">{feature.title}</h3>
+                    <span className="text-xs font-semibold text-[#2563EB] bg-[#2563EB]/10 px-2 py-0.5 flex-shrink-0">{feature.tag}</span>
+                  </div>
+                  <div className="h-px bg-[#1C1F2E]/15 mb-3" />
+                  <p className="text-[#3D4152] text-sm leading-relaxed">{feature.description}</p>
                 </div>
-                <motion.div
-                  className="absolute inset-0 rounded-xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"
-                  style={{ backgroundColor: "#2D5BFF" }}
-                />
-              </motion.div>
-              <div className="w-10 h-10 rounded-lg bg-[#2D5BFF]/20 text-[#2D5BFF] flex items-center justify-center mb-4">
-                <Icon className="w-5 h-5" />
               </div>
-              <h3 className="font-heading font-bold text-lg mb-3 text-[#EAF2FF]">{step.title}</h3>
-              <p className="text-sm text-[rgba(234,242,255,0.75)] leading-relaxed">{step.description}</p>
-            </motion.div>
-          );
-        })}
-      </div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* UK Market Access */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <SectionHeader
+                label="UK Market"
+                title="UK Market Access Focus"
+                subtitle="Supporting Pakistani technology companies in entering and succeeding in the UK market."
+              />
+              <p className="text-[#3D4152] text-base leading-relaxed mb-5">
+                TechMart Global places particular emphasis on facilitating entry into the UK market, recognising its strategic importance as a gateway to broader international opportunities.
+              </p>
+              <p className="text-[#3D4152] text-base leading-relaxed">
+                Through partnerships with UK-based organisations, industry associations, and regulatory bodies, TechMart Global helps Pakistani tech companies understand market dynamics and build relationships with UK buyers.
+              </p>
+            </div>
+            <div className="bg-white border border-[#D8D5CF] p-8">
+              <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-5">UK Entry Pathway</h3>
+              <div className="h-px bg-[#1C1F2E]/15 mb-5" />
+              <ul className="space-y-3">
+                {ukPathway.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* How It Works */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Process"
+            title="How TechMart Global Works"
+            subtitle="A structured process designed to facilitate meaningful connections and successful outcomes."
+          />
+          <div className="grid md:grid-cols-4 gap-8">
+            {howItWorks.map((step) => (
+              <div key={step.number} className="border-t-2 border-[#2563EB] pt-5">
+                <span className="text-xs font-bold text-[#2563EB] tabular-nums block mb-2">{step.number}</span>
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{step.title}</h3>
+                <p className="text-[#3D4152] text-sm leading-relaxed mb-3">{step.description}</p>
+                <span className="text-xs font-semibold text-[#2563EB]">→ {step.outcome}</span>
+              </div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* Council Alignment */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Official Initiative"
+            title="Alignment With UPTECH"
+            subtitle="TechMart Global as a strategic initiative supporting council objectives and ecosystem development."
+          />
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div>
+              <p className="text-[#3D4152] text-base leading-relaxed mb-5">
+                TechMart Global is an official initiative of the UK–Pakistan Tech Council, designed to advance the council&apos;s mission of fostering collaboration, innovation, and economic growth between the UK and Pakistan technology sectors.
+              </p>
+              <p className="text-[#3D4152] text-base leading-relaxed">
+                The platform operates with a commitment to transparency, credibility, and ethical business practices. All participants benefit from the council&apos;s governance framework, which ensures fair processes, dispute resolution mechanisms, and ongoing support.
+              </p>
+            </div>
+            <div className="space-y-0">
+              {alignment.map((item) => (
+                <div key={item.label} className="flex items-start gap-4 py-4 border-b border-[#1C1F2E]/10 last:border-b-0">
+                  <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                  <div>
+                    <span className="font-heading font-bold text-[#1C1F2E] text-sm">{item.label}</span>
+                    <p className="text-[#3D4152] text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* CTA */}
+      <Section variant="dark">
+        <AnimatedSection>
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-4">Join the Platform</p>
+            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+              Join TechMart Global
+            </h2>
+            <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+              Connect with the global technology marketplace and unlock new opportunities for growth and cross-border collaboration.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/membership" variant="primary" size="lg" showArrow>Get Started</Button>
+              <Button href="/membership" variant="glass" size="lg" showArrow>Learn About Membership</Button>
+            </div>
+          </div>
+        </AnimatedSection>
+      </Section>
     </div>
   );
 }
