@@ -5,6 +5,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
+import Image from "next/image";
 import { CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -39,10 +40,19 @@ const outcomes = [
 ];
 
 const mentors = [
-  { name: "Dr. Sarah Ahmed", role: "AI Research Lead", domain: "Machine Learning" },
-  { name: "James Mitchell", role: "Cloud Architect", domain: "Cloud Infrastructure" },
-  { name: "Ayesha Khan", role: "Data Science Director", domain: "Data Analytics" },
-  { name: "David Thompson", role: "Cybersecurity Expert", domain: "Security" },
+  { name: "Dr. Sarah Ahmed", role: "AI Research Lead", domain: "Machine Learning", image: "/image/eventgallery/event-1.jpg" },
+  { name: "James Mitchell", role: "Cloud Architect", domain: "Cloud Infrastructure", image: "/image/eventgallery/event-2.jpg" },
+  { name: "Ayesha Khan", role: "Data Science Director", domain: "Data Analytics", image: "/image/eventgallery/event-3.jpg" },
+  { name: "David Thompson", role: "Cybersecurity Expert", domain: "Security", image: "/image/eventgallery/event-4.jpg" },
+];
+
+const partnerLogos = [
+  "/image/sponsor-logos/1.png",
+  "/image/sponsor-logos/2.png",
+  "/image/sponsor-logos/3.png",
+  "/image/sponsor-logos/4.png",
+  "/image/sponsor-logos/5.png",
+  "/image/sponsor-logos/6.png",
 ];
 
 const faqs = [
@@ -208,7 +218,9 @@ export default function SkillDevelopmentCenterPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {mentors.map((mentor) => (
               <div key={mentor.name} className="bg-white border border-[#D8D5CF] p-5 hover:border-[#2563EB]/40 transition-colors duration-300">
-                <div className="w-10 h-10 rounded-full bg-[#D8D5CF] mb-4" />
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mb-4 border border-[#D8D5CF]">
+                  <Image src={mentor.image} alt={mentor.name} fill className="object-cover" sizes="48px" />
+                </div>
                 <h4 className="font-heading font-bold text-[#1C1F2E] text-sm mb-1">{mentor.name}</h4>
                 <p className="text-[#3D4152] text-xs mb-0.5">{mentor.role}</p>
                 <p className="text-[#7A7E8F] text-xs">{mentor.domain}</p>
@@ -218,9 +230,11 @@ export default function SkillDevelopmentCenterPage() {
           <div>
             <p className="font-heading font-bold text-[#1C1F2E] text-sm uppercase tracking-wide mb-5">Partner Organisations</p>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="aspect-square bg-white border border-[#D8D5CF] flex items-center justify-center">
-                  <div className="w-10 h-10 bg-[#D8D5CF] rounded" />
+              {partnerLogos.map((logo, i) => (
+                <div key={logo} className="aspect-square bg-white border border-[#D8D5CF] flex items-center justify-center p-3">
+                  <div className="relative w-full h-full">
+                    <Image src={logo} alt={`Partner logo ${i + 1}`} fill className="object-contain" sizes="120px" />
+                  </div>
                 </div>
               ))}
             </div>

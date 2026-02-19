@@ -11,14 +11,14 @@ const events = [
     date: "20–24 January 2025",
     location: "Davos, Switzerland",
     summary: "High-level sideline summit during WEF week focusing on bilateral trade and investment.",
-    image: "/image/events/pakistan-business-summit-davos-2025.jpg",
+    image: "/image/events/Pakistan-Business-Summit-Davos-2025.jpg",
   },
   {
     title: "UK–Pakistan Business Summit 2025",
     date: "21 November 2025",
     location: "The Cumberland Hotel, London, United Kingdom",
     summary: "Flagship bilateral business summit fostering cross-sector collaborations and policy discussions.",
-    image: "/image/events/uk-pakistan-business-summit-2025.jpg",
+    image: "/image/events/UK-Pakistan-Business-Summit-2025.jpg",
   },
   {
     title: "DHA Peshawar UK Road Show 2025",

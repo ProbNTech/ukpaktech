@@ -5,6 +5,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 
 const pillars = [
@@ -43,6 +44,15 @@ const attendees = [
   "Thought leaders and domain experts",
   "Corporate innovation and strategy heads",
   "Business development and partnership directors",
+];
+
+const partnerLogos = [
+  "/image/sponsor-logos/7.png",
+  "/image/sponsor-logos/8.png",
+  "/image/sponsor-logos/9.png",
+  "/image/sponsor-logos/10.png",
+  "/image/sponsor-logos/11.png",
+  "/image/sponsor-logos/12.png",
 ];
 
 export default function UKPakistanTechnologyPartnershipClient() {
@@ -196,9 +206,11 @@ export default function UKPakistanTechnologyPartnershipClient() {
             Our strategic partnerships with governments, enterprises, investors, and academic institutions enable us to create meaningful impact and drive sustainable growth across both nations.
           </p>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="aspect-square bg-white border border-[#D8D5CF] flex items-center justify-center">
-                <div className="w-10 h-10 bg-[#D8D5CF] rounded" />
+            {partnerLogos.map((logo, i) => (
+              <div key={logo} className="aspect-square bg-white border border-[#D8D5CF] flex items-center justify-center p-3">
+                <div className="relative w-full h-full">
+                  <Image src={logo} alt={`Partner logo ${i + 1}`} fill className="object-contain" sizes="120px" />
+                </div>
               </div>
             ))}
           </div>
