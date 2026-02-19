@@ -63,6 +63,11 @@
     --space-section: 5rem;
     --space-section-lg: 6rem;
     --space-section-xl: 7rem;
+
+    /* ─── Vintage Editorial Navbar ─── */
+    --editorial-ink: #0A0A0A;
+    --editorial-crimson: #C41E3A;
+    --editorial-nav-rule: #1C1F2E;
   }
 
   * {

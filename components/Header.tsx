@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 const navGroups = [
@@ -48,232 +47,341 @@ const navGroups = [
   },
 ];
 
-const HOVER_OPEN_DELAY = 80;
-const HOVER_CLOSE_DELAY = 250;
+const HOVER_OPEN_DELAY = 60;
+const HOVER_CLOSE_DELAY = 220;
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMegaOpen, setIsMegaOpen] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const openTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const shouldReduceMotion = useReducedMotion();
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const clearTimers = useCallback(() => {
     if (openTimerRef.current) { clearTimeout(openTimerRef.current); openTimerRef.current = null; }
     if (closeTimerRef.current) { clearTimeout(closeTimerRef.current); closeTimerRef.current = null; }
   }, []);
 
-  const handleEnter = useCallback((label: string) => {
+  const handleNavEnter = useCallback(() => {
     clearTimers();
-    openTimerRef.current = setTimeout(() => setOpenDropdown(label), HOVER_OPEN_DELAY);
+    openTimerRef.current = setTimeout(() => setIsMegaOpen(true), HOVER_OPEN_DELAY);
   }, [clearTimers]);
 
-  const handleLeave = useCallback(() => {
+  const handleNavLeave = useCallback(() => {
     clearTimers();
-    closeTimerRef.current = setTimeout(() => setOpenDropdown(null), HOVER_CLOSE_DELAY);
+    closeTimerRef.current = setTimeout(() => setIsMegaOpen(false), HOVER_CLOSE_DELAY);
   }, [clearTimers]);
-
-  const navLink = isScrolled
-    ? "text-gray-800 hover:text-[#2563EB]"
-    : "text-white hover:text-white/80";
-
-  const navLinkActive = isScrolled
-    ? "text-[#2563EB] bg-[#2563EB]/[0.06]"
-    : "text-white bg-white/15";
 
   return (
     <>
+      {/* Accessibility skip link */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-[#2563EB] focus:text-white focus:rounded-md focus:outline-none"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:px-4 focus:py-2 focus:bg-[#0A0A0A] focus:text-white focus:outline-none"
       >
         Skip to main content
       </a>
 
-      <div className="h-[72px]" />
+      {/* Spacer for fixed header */}
+      <div className="h-[64px]" />
 
       <header
         role="banner"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-xl shadow-md border-b border-gray-200/60"
-            : "bg-transparent"
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 bg-white border-b-2 border-[#0A0A0A]"
       >
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <div className="flex items-center justify-between h-[72px]">
-            <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
+        {/* ── Masthead row ─────────────────────────────────────────── */}
+        <div className="px-6 sm:px-10 lg:px-14 xl:px-16">
+          <div className="flex items-center justify-between h-[64px]">
+
+            {/* Masthead / Logo */}
+            <Link
+              href="/"
+              className="flex items-center gap-3 flex-shrink-0 group"
+              aria-label="UPTECH — Home"
+            >
               <Image
                 src="/image/main-logo/mainlogo.png"
                 alt="UPTECH Logo"
-                width={44}
-                height={44}
-                className="h-[38px] lg:h-[44px] w-auto object-contain"
+                width={36}
+                height={36}
+                className="h-[34px] w-auto object-contain"
                 priority
               />
-              <span className={`font-heading font-bold text-lg transition-colors duration-500 ${isScrolled ? "text-[#0F172A]" : "text-white"}`}>
+              <span className="font-heading font-bold text-[15px] uppercase tracking-[0.18em] text-[#0A0A0A] leading-none">
                 UPTECH
+              </span>
+              {/* Thin masthead rule — decorative */}
+              <span className="hidden sm:block w-px h-5 bg-[#D8D5D0] mx-1" aria-hidden />
+              <span className="hidden sm:block font-sans text-[10px] uppercase tracking-[0.14em] text-[#6B6B6B] leading-tight max-w-[120px]">
+                UK–Pakistan Tech Council
               </span>
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
+            {/* Desktop Navigation */}
+            <nav
+              className="hidden lg:flex items-center gap-0"
+              aria-label="Main navigation"
+              onMouseEnter={handleNavEnter}
+              onMouseLeave={handleNavLeave}
+            >
               {navGroups.map((group) => (
-                <div
+                <button
                   key={group.label}
-                  className="relative"
-                  onMouseEnter={() => handleEnter(group.label)}
-                  onMouseLeave={handleLeave}
+                  type="button"
+                  aria-expanded={isMegaOpen}
+                  aria-haspopup="true"
+                  className={`
+                    relative px-4 h-[64px] flex items-center
+                    font-sans text-[11px] uppercase tracking-[0.12em] font-medium text-[#0A0A0A]
+                    transition-colors duration-150
+                    after:absolute after:bottom-0 after:left-4 after:right-4 after:h-[2px] after:bg-[#0A0A0A]
+                    after:transition-opacity after:duration-150
+                    ${isMegaOpen ? "after:opacity-100" : "after:opacity-0 hover:after:opacity-30"}
+                  `}
                 >
-                  <button
-                    type="button"
-                    aria-expanded={openDropdown === group.label}
-                    aria-haspopup="true"
-                    className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                      openDropdown === group.label ? navLinkActive : navLink
-                    }`}
-                  >
-                    {group.label}
-                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openDropdown === group.label ? "rotate-180" : ""}`} />
-                  </button>
-
-                  {openDropdown === group.label && (
-                    <div className="absolute top-full left-0 right-0 h-5" />
-                  )}
-
-                  <AnimatePresence>
-                    {openDropdown === group.label && (
-                      <motion.div
-                        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -8 }}
-                        transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                        className="absolute top-full left-0 mt-5 w-80 bg-white rounded-xl shadow-xl border border-gray-100 p-5 z-50"
-                        onMouseEnter={() => handleEnter(group.label)}
-                        onMouseLeave={handleLeave}
-                      >
-                        <div className="pb-3 mb-2 border-b border-gray-100">
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">{group.label}</span>
-                        </div>
-                        <div className="space-y-1">
-                          {group.items.map((item) => (
-                            <Link
-                              key={item.href}
-                              href={item.href}
-                              className="block px-3.5 py-3 -mx-1 rounded-lg hover:bg-gray-100 transition-colors duration-150 group/item"
-                            >
-                              <span className="block text-sm font-medium text-gray-800 group-hover/item:text-[#2563EB] transition-colors">{item.label}</span>
-                              <span className="block text-xs text-gray-400 mt-1 leading-relaxed">{item.desc}</span>
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                  {group.label}
+                </button>
               ))}
-              <Link href="/membership" className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${navLink}`}>
+              <Link
+                href="/membership"
+                className="
+                  relative px-4 h-[64px] flex items-center
+                  font-sans text-[11px] uppercase tracking-[0.12em] font-medium text-[#0A0A0A]
+                  after:absolute after:bottom-0 after:left-4 after:right-4 after:h-[2px] after:bg-[#0A0A0A]
+                  after:opacity-0 hover:after:opacity-30 after:transition-opacity after:duration-150
+                "
+              >
                 Membership
               </Link>
             </nav>
 
+            {/* Desktop CTA */}
             <div className="hidden lg:flex items-center">
               <Link
                 href="/membership"
-                className="px-5 py-2.5 rounded-lg bg-[#2563EB] text-white text-sm font-semibold shadow-sm hover:bg-[#1D4ED8] hover:shadow-md hover:-translate-y-px active:translate-y-0 transition-all duration-200"
+                className="
+                  px-5 py-2 bg-[#C41E3A] text-white
+                  font-heading font-bold text-[10px] uppercase tracking-[0.14em]
+                  border border-[#C41E3A]
+                  hover:bg-white hover:text-[#C41E3A]
+                  transition-colors duration-200
+                "
               >
-                Become a Member →
+                Become a Member
               </Link>
             </div>
 
+            {/* Mobile hamburger */}
             <button
-              className={`lg:hidden p-2 rounded-lg transition-colors ${isScrolled ? "text-gray-800 hover:bg-gray-100" : "text-white hover:bg-white/15"}`}
+              className="lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] text-[#0A0A0A]"
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               aria-label="Toggle menu"
+              aria-expanded={isMobileOpen}
             >
-              {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              <span
+                className={`block w-6 h-[1.5px] bg-[#0A0A0A] transition-all duration-200 origin-center ${
+                  isMobileOpen ? "rotate-45 translate-y-[6.5px]" : ""
+                }`}
+              />
+              <span
+                className={`block w-6 h-[1.5px] bg-[#0A0A0A] transition-all duration-200 ${
+                  isMobileOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`block w-6 h-[1.5px] bg-[#0A0A0A] transition-all duration-200 origin-center ${
+                  isMobileOpen ? "-rotate-45 -translate-y-[6.5px]" : ""
+                }`}
+              />
             </button>
           </div>
         </div>
+
+        {/* ── Full-width mega dropdown (newspaper bar) ─────────────── */}
+        <AnimatePresence>
+          {isMegaOpen && (
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -6 }}
+              transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+              className="hidden lg:block border-t border-[#D8D5D0] bg-white"
+              onMouseEnter={handleNavEnter}
+              onMouseLeave={handleNavLeave}
+            >
+              <div className="px-6 sm:px-10 lg:px-14 xl:px-16 py-8">
+                {/* Column-label rule */}
+                <div className="grid grid-cols-5 gap-0 mb-5">
+                  {navGroups.map((group, i) => (
+                    <div
+                      key={group.label}
+                      className={`${i > 0 ? "border-l border-[#D8D5D0] pl-8" : ""} pr-8`}
+                    >
+                      {/* Column heading — newspaper section label */}
+                      <p className="font-heading font-bold text-[9px] uppercase tracking-[0.18em] text-[#6B6B6B] mb-3 pb-2 border-b border-[#1C1F2E]">
+                        {group.label}
+                      </p>
+                      {/* Items */}
+                      <ul className="space-y-0">
+                        {group.items.map((item) => (
+                          <li key={item.href}>
+                            <Link
+                              href={item.href}
+                              onClick={() => setIsMegaOpen(false)}
+                              className="group/item block py-2.5 border-b border-[#E4E1DC] last:border-0"
+                            >
+                              <span className="block font-sans text-[12px] font-medium text-[#0A0A0A] group-hover/item:text-[#C41E3A] transition-colors duration-150 leading-snug">
+                                {item.label}
+                              </span>
+                              <span className="block font-sans text-[10px] text-[#6B6B6B] mt-0.5 leading-relaxed">
+                                {item.desc}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+                {/* Bottom rule with membership CTA */}
+                <div className="border-t border-[#D8D5D0] pt-4 flex items-center justify-between">
+                  <span className="font-sans text-[10px] uppercase tracking-[0.12em] text-[#6B6B6B]">
+                    UK–Pakistan Tech Council · Est. 2024
+                  </span>
+                  <Link
+                    href="/membership"
+                    onClick={() => setIsMegaOpen(false)}
+                    className="font-sans text-[10px] uppercase tracking-[0.12em] text-[#C41E3A] border-b border-[#C41E3A] hover:text-[#0A0A0A] hover:border-[#0A0A0A] transition-colors duration-150 pb-px"
+                  >
+                    Become a Member →
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
+      {/* ── Mobile navigation panel ──────────────────────────────── */}
       <AnimatePresence>
         {isMobileOpen && (
           <>
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+              className="lg:hidden fixed inset-0 bg-black/30 z-40"
               onClick={() => setIsMobileOpen(false)}
             />
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { x: "100%" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:hidden fixed inset-y-0 right-0 w-[300px] bg-white z-50 overflow-y-auto shadow-xl border-l border-gray-100"
-            >
-              <div className="p-5">
-                <div className="flex items-center justify-between mb-6">
-                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileOpen(false)}>
-                    <Image src="/image/main-logo/mainlogo.png" alt="UPTECH Logo" width={36} height={36} className="h-[36px] w-auto object-contain" />
-                    <span className="font-heading font-bold text-lg text-[#0F172A]">UPTECH</span>
-                  </Link>
-                  <button onClick={() => setIsMobileOpen(false)} className="p-1.5 rounded-lg text-gray-400 hover:bg-gray-100 transition-colors" aria-label="Close menu">
-                    <X className="w-5 h-5" />
-                  </button>
-                </div>
 
-                <nav className="space-y-0.5">
-                  {navGroups.map((group) => (
-                    <div key={group.label}>
-                      <button
-                        className="flex items-center justify-between w-full py-2.5 px-3 text-sm font-medium text-gray-700 hover:text-[#2563EB] hover:bg-gray-50 rounded-lg transition-colors"
-                        onClick={() => setMobileExpanded(mobileExpanded === group.label ? null : group.label)}
-                      >
+            {/* Slide-in panel from left */}
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 0 } : { x: "-100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={shouldReduceMotion ? { opacity: 0 } : { x: "-100%" }}
+              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:hidden fixed inset-y-0 left-0 w-[300px] bg-white z-50 overflow-y-auto border-r-2 border-[#0A0A0A] flex flex-col"
+            >
+              {/* Panel masthead */}
+              <div className="px-6 py-5 border-b-2 border-[#0A0A0A] flex items-center justify-between flex-shrink-0">
+                <Link
+                  href="/"
+                  className="flex items-center gap-2.5"
+                  onClick={() => setIsMobileOpen(false)}
+                >
+                  <Image
+                    src="/image/main-logo/mainlogo.png"
+                    alt="UPTECH Logo"
+                    width={30}
+                    height={30}
+                    className="h-[28px] w-auto object-contain"
+                  />
+                  <span className="font-heading font-bold text-[13px] uppercase tracking-[0.18em] text-[#0A0A0A]">
+                    UPTECH
+                  </span>
+                </Link>
+                <button
+                  onClick={() => setIsMobileOpen(false)}
+                  aria-label="Close menu"
+                  className="flex flex-col justify-center items-center w-7 h-7"
+                >
+                  <span className="block w-5 h-[1.5px] bg-[#0A0A0A] rotate-45 translate-y-[0.75px]" />
+                  <span className="block w-5 h-[1.5px] bg-[#0A0A0A] -rotate-45 -translate-y-[0.75px]" />
+                </button>
+              </div>
+
+              {/* Navigation sections */}
+              <nav className="flex-1 overflow-y-auto" aria-label="Mobile navigation">
+                {navGroups.map((group) => (
+                  <div key={group.label} className="border-b border-[#D8D5D0]">
+                    <button
+                      className="w-full px-6 py-4 flex items-center justify-between text-left"
+                      onClick={() => setMobileExpanded(mobileExpanded === group.label ? null : group.label)}
+                      aria-expanded={mobileExpanded === group.label}
+                    >
+                      <span className="font-heading font-bold text-[10px] uppercase tracking-[0.16em] text-[#0A0A0A]">
                         {group.label}
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileExpanded === group.label ? "rotate-180 text-[#2563EB]" : "text-gray-400"}`} />
-                      </button>
-                      <AnimatePresence>
-                        {mobileExpanded === group.label && (
-                          <motion.div
-                            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="overflow-hidden"
-                          >
-                            <div className="pl-4 pr-2 pb-1 space-y-0.5">
-                              {group.items.map((item) => (
-                                <Link key={item.href} href={item.href} className="block py-2 px-3 text-sm text-gray-500 hover:text-[#2563EB] hover:bg-gray-50 rounded-lg transition-colors" onClick={() => setIsMobileOpen(false)}>
+                      </span>
+                      <span
+                        className={`block w-3 h-3 border-r border-b border-[#0A0A0A] transition-transform duration-200 ${
+                          mobileExpanded === group.label ? "-rotate-135 translate-y-1" : "rotate-45"
+                        }`}
+                        aria-hidden
+                      />
+                    </button>
+
+                    <AnimatePresence>
+                      {mobileExpanded === group.label && (
+                        <motion.div
+                          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, height: 0 }}
+                          transition={{ duration: 0.18 }}
+                          className="overflow-hidden"
+                        >
+                          <ul className="px-6 pb-4 space-y-0">
+                            {group.items.map((item) => (
+                              <li key={item.href} className="border-t border-[#E4E1DC] first:border-0">
+                                <Link
+                                  href={item.href}
+                                  onClick={() => setIsMobileOpen(false)}
+                                  className="block py-3 font-sans text-[12px] text-[#3D4152] hover:text-[#C41E3A] transition-colors duration-150"
+                                >
                                   {item.label}
                                 </Link>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ))}
-                  <Link href="/membership" className="block py-2.5 px-3 text-sm font-medium text-gray-700 hover:text-[#2563EB] hover:bg-gray-50 rounded-lg transition-colors" onClick={() => setIsMobileOpen(false)}>
+                              </li>
+                            ))}
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+
+                {/* Membership link */}
+                <div className="border-b border-[#D8D5D0]">
+                  <Link
+                    href="/membership"
+                    onClick={() => setIsMobileOpen(false)}
+                    className="block px-6 py-4 font-heading font-bold text-[10px] uppercase tracking-[0.16em] text-[#0A0A0A] hover:text-[#C41E3A] transition-colors duration-150"
+                  >
                     Membership
                   </Link>
-                </nav>
-
-                <div className="mt-6 pt-5 border-t border-gray-100">
-                  <Link href="/membership" className="block text-center py-2.5 px-4 text-sm font-semibold text-white bg-[#2563EB] rounded-lg hover:bg-[#1D4ED8] shadow-sm transition-colors" onClick={() => setIsMobileOpen(false)}>
-                    Become a Member →
-                  </Link>
                 </div>
+              </nav>
+
+              {/* CTA at bottom */}
+              <div className="flex-shrink-0 p-6 border-t-2 border-[#0A0A0A]">
+                <Link
+                  href="/membership"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="block text-center py-3 px-4 bg-[#C41E3A] text-white font-heading font-bold text-[10px] uppercase tracking-[0.14em] hover:bg-[#0A0A0A] transition-colors duration-200"
+                >
+                  Become a Member
+                </Link>
               </div>
             </motion.div>
           </>
