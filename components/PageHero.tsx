@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
 interface PageHeroProps {
@@ -9,6 +10,8 @@ interface PageHeroProps {
   children?: ReactNode;
   align?: "center" | "left";
   className?: string;
+  /** Path to a background image (from /public). When omitted, falls back to solid dark background. */
+  image?: string;
 }
 
 export function PageHero({
@@ -17,19 +20,48 @@ export function PageHero({
   children,
   align = "left",
   className = "",
+  image,
 }: PageHeroProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className={`relative bg-[#1C1F2E] overflow-hidden -mt-[72px] ${className}`}>
+    <section className={`relative overflow-hidden -mt-[72px] ${!image ? "bg-[#1C1F2E]" : ""} ${className}`}>
+      {/* ── Background image + overlay ─────────────────────────────── */}
+      {image && (
+        <>
+          <Image
+            src={image}
+            alt=""
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          {/* Dark overlay — left heavier, fading slightly right, matching the UKPropTech reference */}
+          <div
+            className="absolute inset-0 z-[1]"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(10,14,30,0.82) 0%, rgba(10,14,30,0.70) 50%, rgba(10,14,30,0.58) 100%)",
+            }}
+          />
+          {/* Subtle bottom vignette so the page content below blends cleanly */}
+          <div
+            className="absolute bottom-0 inset-x-0 h-24 z-[1]"
+            style={{
+              background:
+                "linear-gradient(to bottom, transparent, rgba(10,14,30,0.45))",
+            }}
+          />
+        </>
+      )}
+
       {/* Content */}
       <div
         className={`relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-[120px] pb-16 flex flex-col ${
           align === "center" ? "items-center text-center" : "items-start text-left"
         }`}
       >
-        {/* Label slot rendered via children if passed before title — handled by callers */}
-
         <motion.div
           initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

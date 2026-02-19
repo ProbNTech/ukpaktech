@@ -13,6 +13,7 @@ export default function PrivacyPage() {
       <PageHero
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your personal information."
+        image="/image/london-images/4.jpg"
       />
       <Section>
         <div className="max-w-3xl">

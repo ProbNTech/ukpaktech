@@ -70,6 +70,7 @@ export default function SkillDevelopmentCenterPage() {
       <PageHero
         title="Skill Development Center"
         subtitle="Comprehensive training programs designed to build world-class tech capabilities and accelerate your career."
+        image="/image/london-images/13.jpg"
       />
 
       {/* Trust Strip */}

@@ -144,6 +144,7 @@ export default function CareersClient() {
       <PageHero
         title="Careers at UPTECH"
         subtitle="Join the UPTECH team and help shape the future of UK–Pakistan technology collaboration."
+        image="/image/london-images/5.jpg"
       />
 
       {/* Why Work With UPTECH */}

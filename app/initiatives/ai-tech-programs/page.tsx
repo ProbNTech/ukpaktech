@@ -54,6 +54,7 @@ export default function AITechProgramsPage() {
       <PageHero
         title="AI and Tech Programs"
         subtitle="Driving AI innovation and tech leadership between the UK and Pakistan through comprehensive training, certifications, and collaborative startup models."
+        image="/image/london-images/11.jpg"
       />
 
       {/* Intro */}

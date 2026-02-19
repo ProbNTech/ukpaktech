@@ -13,6 +13,7 @@ export default function TermsPage() {
       <PageHero
         title="Terms of Service"
         subtitle="The terms and conditions governing your use of UPTECH's services and platform."
+        image="/image/london-images/3.jpg"
       />
       <Section>
         <div className="max-w-3xl">

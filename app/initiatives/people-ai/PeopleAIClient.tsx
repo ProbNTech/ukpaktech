@@ -43,6 +43,7 @@ export default function PeopleAIClient() {
       <PageHero
         title="People AI Platform"
         subtitle="Empowering people and organisations through human-centric AI support systems that integrate technology with professional services."
+        image="/image/london-images/8.jpg"
       />
 
       {/* Intro */}

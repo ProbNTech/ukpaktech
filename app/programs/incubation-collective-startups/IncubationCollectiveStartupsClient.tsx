@@ -64,6 +64,7 @@ export default function IncubationCollectiveStartupsClient() {
       <PageHero
         title="Incubation and Collective Startups"
         subtitle="Nurturing the next generation of tech startups and innovators through collaborative models and comprehensive support."
+        image="/image/london-images/14.jpg"
       />
 
       {/* Intro */}

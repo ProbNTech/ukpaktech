@@ -66,7 +66,28 @@ export default function EventsPage() {
       {/* ============================================================ */}
       {/*  HERO                                                         */}
       {/* ============================================================ */}
-      <section className="relative bg-[#1C1F2E] overflow-hidden -mt-[72px]">
+      <section className="relative overflow-hidden -mt-[72px]">
+        {/* Background image */}
+        <Image
+          src="/image/london-images/7.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        {/* Overlay */}
+        <div
+          className="absolute inset-0 z-[1]"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(10,14,30,0.82) 0%, rgba(10,14,30,0.70) 50%, rgba(10,14,30,0.58) 100%)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 inset-x-0 h-24 z-[1]"
+          style={{ background: "linear-gradient(to bottom, transparent, rgba(10,14,30,0.45))" }}
+        />
         <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-[120px] pb-16">
           {/* Breadcrumb */}
           <motion.nav

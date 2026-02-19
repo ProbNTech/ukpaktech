@@ -19,6 +19,7 @@ export default function ContactPage() {
       <PageHero
         title="Contact"
         subtitle="Get in touch with the UK–Pakistan Tech Council. Reach out for partnerships, membership enquiries, or general questions."
+        image="/image/london-images/3.jpg"
       />
       <Section>
         <SectionHeader label="Reach us" title="Get in Touch" />
