@@ -6,7 +6,6 @@ import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { CheckCircle2 } from "lucide-react";
-import { siteConfig } from "@/config/site";
 
 const programs = [
   {
@@ -55,7 +54,12 @@ export default function AITechProgramsPage() {
       <PageHero
         title="AI and Tech Programs"
         subtitle="Driving AI innovation and tech leadership between the UK and Pakistan through comprehensive training, certifications, and collaborative startup models."
-      />
+      >
+        <div className="flex flex-wrap gap-4 mt-2">
+          <Button href="/membership" variant="glass" showArrow>Become a Member</Button>
+          <Button href="/initiatives" variant="ghost" showArrow>Explore Initiatives</Button>
+        </div>
+      </PageHero>
 
       {/* Intro */}
       <Section variant="light">
@@ -124,20 +128,21 @@ export default function AITechProgramsPage() {
         </AnimatedSection>
       </Section>
 
-      {/* CTA */}
-      <Section variant="dark">
+      {/* Next Steps */}
+      <Section variant="alt">
         <AnimatedSection>
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-4">Join UPTECH</p>
-            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-              Ready to Transform Your Tech Career?
-            </h2>
-            <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-              Join UPTECH&apos;s AI and Tech Programs and become part of a global network driving innovation between the UK and Pakistan.
+          <SectionHeader
+            label="Get involved"
+            title="Next Steps"
+            subtitle="Join the programme and start building with UPTECH across the UK–Pakistan technology corridor."
+          />
+          <div className="bg-white border border-[#D8D5CF] p-8 lg:p-10">
+            <p className="text-[#3D4152] leading-relaxed mb-6 max-w-3xl">
+              Whether you are an entrepreneur, student, or technology professional, our programmes provide structured pathways to training, collaboration, and market access.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>Become a Member</Button>
-              <Button href={siteConfig.portalUrl} variant="glass" size="lg" showArrow>Access Portal</Button>
+              <Button href="/membership" variant="secondary" showArrow>Become a Member</Button>
+              <Button href="/initiatives" variant="ghost" showArrow>Explore Initiatives</Button>
             </div>
           </div>
         </AnimatedSection>
