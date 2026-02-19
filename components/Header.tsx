@@ -244,7 +244,7 @@ export function Header() {
                 <Link
                   href="/"
                   onMouseEnter={handleLeave}
-                  className={`relative h-full px-4 flex items-center font-sans text-[11px] uppercase tracking-[0.12em] font-medium transition-colors duration-150 ${isScrolled ? "text-[#3D3D3D] hover:text-[#0A0A0A]" : "text-white/80 hover:text-white"}`}
+                  className={`relative h-full px-4 flex items-center font-sans text-[13px] uppercase tracking-[0.12em] font-semibold transition-colors duration-150 ${isScrolled ? "text-[#3D3D3D] hover:text-[#0A0A0A]" : "text-white/80 hover:text-white"}`}
                 >
                   Home
                 </Link>
@@ -261,7 +261,7 @@ export function Header() {
                       onMouseEnter={() => handleGroupEnter(group.label)}
                       className={`
                         relative h-full px-4 flex items-center gap-1.5
-                        font-sans text-[11px] uppercase tracking-[0.12em] font-medium
+                        font-sans text-[13px] uppercase tracking-[0.12em] font-semibold
                         transition-colors duration-150 cursor-default select-none
                         ${isActive
                           ? "text-[#C41E3A]"
