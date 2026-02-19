@@ -122,10 +122,26 @@ export default function Home() {
             {/* Horizontal scrollable cards — 4 columns on desktop */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               {[
-                { title: "Technology Companies", image: "/image/Initiatives/ai-tech-programs.jpg" },
-                { title: "Investors & VCs", image: "/image/Initiatives/techmart-global.jpg" },
-                { title: "Academic & Research", image: "/image/Initiatives/people-ai-platform.jpg" },
-                { title: "Individual Professionals", image: "/image/Initiatives/uk-pakistan-tech-excellence-awards.jpg" },
+                {
+                  // Tech startup team in a modern open-plan office
+                  title: "Technology Companies",
+                  image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=85&fit=crop&auto=format",
+                },
+                {
+                  // Professional business handshake / investor meeting
+                  title: "Investors & VCs",
+                  image: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&q=85&fit=crop&auto=format",
+                },
+                {
+                  // Grand university library — academic research setting
+                  title: "Academic & Research",
+                  image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=85&fit=crop&auto=format",
+                },
+                {
+                  // Confident professional woman — individual industry leader
+                  title: "Individual Professionals",
+                  image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=85&fit=crop&auto=format",
+                },
               ].map((item) => (
                 <Link key={item.title} href="/membership" className="group flex flex-col">
                   <div className="relative aspect-[4/3] overflow-hidden bg-[#D8D5CF] mb-3">
