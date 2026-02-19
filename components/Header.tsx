@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
@@ -144,12 +144,20 @@ const HOVER_CLOSE_DELAY = 180;
    Header component
 ───────────────────────────────────────────────────────────────── */
 export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const openTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const clearTimers = useCallback(() => {
     if (openTimerRef.current) { clearTimeout(openTimerRef.current); openTimerRef.current = null; }
@@ -190,16 +198,17 @@ export function Header() {
       <div className="h-[68px]" />
 
       {/* ═══════════════════════════════════════════════════════════
-          HEADER SHELL — fixed, always white, masthead rule at bottom
+          HEADER SHELL — transparent at top, white + border on scroll
       ══════════════════════════════════════════════════════════════ */}
       <header
         role="banner"
-        className="fixed top-0 left-0 right-0 z-50 bg-white"
-        /* Mouse leaves the entire header element → start close timer */
+        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+          isScrolled ? "bg-white" : "bg-transparent"
+        }`}
         onMouseLeave={handleLeave}
       >
         {/* ── Top masthead bar ───────────────────────────────────── */}
-        <div className="border-b-[2px] border-[#0A0A0A]">
+        <div className={`transition-colors duration-300 ${isScrolled ? "border-b-[2px] border-[#0A0A0A]" : "border-b-0"}`}>
           <div className="px-6 sm:px-10 lg:px-14 xl:px-18">
             <div className="flex items-center justify-between h-[68px]">
 
@@ -217,11 +226,11 @@ export function Header() {
                   className="h-[36px] w-auto object-contain"
                   priority
                 />
-                <span className="font-heading font-bold text-[16px] uppercase tracking-[0.2em] text-[#0A0A0A] leading-none">
+                <span className={`font-heading font-bold text-[16px] uppercase tracking-[0.2em] leading-none transition-colors duration-300 ${isScrolled ? "text-[#0A0A0A]" : "text-white"}`}>
                   UPTECH
                 </span>
-                <span className="hidden xl:block w-px h-5 bg-[#D8D5D0] mx-2" aria-hidden="true" />
-                <span className="hidden xl:block font-sans text-[10px] uppercase tracking-[0.13em] text-[#6B6B6B] leading-tight max-w-[108px]">
+                <span className="hidden xl:block w-px h-5 bg-white/30 mx-2" aria-hidden="true" />
+                <span className={`hidden xl:block font-sans text-[10px] uppercase tracking-[0.13em] leading-tight max-w-[108px] transition-colors duration-300 ${isScrolled ? "text-[#6B6B6B]" : "text-white/70"}`}>
                   UK–Pakistan Tech Council
                 </span>
               </Link>
@@ -235,7 +244,7 @@ export function Header() {
                 <Link
                   href="/"
                   onMouseEnter={handleLeave}
-                  className="relative h-full px-4 flex items-center font-sans text-[11px] uppercase tracking-[0.12em] font-medium text-[#3D3D3D] hover:text-[#0A0A0A] transition-colors duration-150"
+                  className={`relative h-full px-4 flex items-center font-sans text-[11px] uppercase tracking-[0.12em] font-medium transition-colors duration-150 ${isScrolled ? "text-[#3D3D3D] hover:text-[#0A0A0A]" : "text-white/80 hover:text-white"}`}
                 >
                   Home
                 </Link>
@@ -256,7 +265,9 @@ export function Header() {
                         transition-colors duration-150 cursor-default select-none
                         ${isActive
                           ? "text-[#C41E3A]"
-                          : "text-[#3D3D3D] hover:text-[#0A0A0A]"}
+                          : isScrolled
+                            ? "text-[#3D3D3D] hover:text-[#0A0A0A]"
+                            : "text-white/80 hover:text-white"}
                       `}
                     >
                       {group.label}
@@ -275,17 +286,16 @@ export function Header() {
 
               {/* ── Desktop CTA ──────────────────────────────────── */}
               <div className="hidden lg:flex items-center gap-3">
-                {/* Primary CTA — flat, sharp corners */}
                 <Link
                   href="/membership"
                   onMouseEnter={handleLeave}
-                  className="
-                    px-5 py-2 bg-[#0A0A0A] text-white
-                    font-heading font-bold text-[10px] uppercase tracking-[0.14em]
-                    border border-[#0A0A0A]
-                    hover:bg-[#C41E3A] hover:border-[#C41E3A]
-                    transition-colors duration-200
-                  "
+                  className={`
+                    px-5 py-2 font-heading font-bold text-[10px] uppercase tracking-[0.14em]
+                    border transition-colors duration-200
+                    ${isScrolled
+                      ? "bg-[#0A0A0A] text-white border-[#0A0A0A] hover:bg-[#C41E3A] hover:border-[#C41E3A]"
+                      : "bg-white text-[#0A0A0A] border-white hover:bg-[#C41E3A] hover:text-white hover:border-[#C41E3A]"}
+                  `}
                 >
                   Become a Member
                 </Link>
@@ -298,9 +308,9 @@ export function Header() {
                 aria-label="Open menu"
                 aria-expanded={isMobileOpen}
               >
-                <span className="block w-6 h-[1.5px] bg-[#0A0A0A]" />
-                <span className="block w-6 h-[1.5px] bg-[#0A0A0A]" />
-                <span className="block w-4 h-[1.5px] bg-[#0A0A0A] self-start" />
+                <span className={`block w-6 h-[1.5px] transition-colors duration-300 ${isScrolled ? "bg-[#0A0A0A]" : "bg-white"}`} />
+                <span className={`block w-6 h-[1.5px] transition-colors duration-300 ${isScrolled ? "bg-[#0A0A0A]" : "bg-white"}`} />
+                <span className={`block w-4 h-[1.5px] self-start transition-colors duration-300 ${isScrolled ? "bg-[#0A0A0A]" : "bg-white"}`} />
               </button>
             </div>
           </div>
