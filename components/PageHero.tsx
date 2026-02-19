@@ -25,7 +25,7 @@ export function PageHero({
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className={`relative overflow-hidden -mt-[72px] ${!image ? "bg-[#1C1F2E]" : ""} ${className}`}>
+    <section className={`relative overflow-hidden -mt-[72px] min-h-[340px] ${!image ? "bg-[#1C1F2E]" : ""} ${className}`}>
       {/* ── Background image + overlay ─────────────────────────────── */}
       {image && (
         <>

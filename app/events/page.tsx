@@ -66,7 +66,7 @@ export default function EventsPage() {
       {/* ============================================================ */}
       {/*  HERO                                                         */}
       {/* ============================================================ */}
-      <section className="relative overflow-hidden -mt-[72px]">
+      <section className="relative overflow-hidden -mt-[72px] min-h-[340px]">
         {/* Background image */}
         <Image
           src="/image/london-images/7.jpg"
