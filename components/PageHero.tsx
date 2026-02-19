@@ -25,7 +25,7 @@ export function PageHero({
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className={`relative overflow-hidden -mt-[72px] min-h-[340px] ${!image ? "bg-[#1C1F2E]" : ""} ${className}`}>
+    <section className={`relative overflow-hidden -mt-[72px] min-h-[480px] ${!image ? "bg-[#1C1F2E]" : ""} ${className}`}>
       {/* ── Background image + overlay ─────────────────────────────── */}
       {image && (
         <>
@@ -34,7 +34,7 @@ export function PageHero({
             alt=""
             fill
             priority
-            className="object-cover object-center"
+            className="object-fit object-center"
             sizes="100vw"
           />
           {/* Dark overlay — left heavier, fading slightly right, matching the UKPropTech reference */}

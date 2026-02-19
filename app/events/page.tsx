@@ -66,14 +66,14 @@ export default function EventsPage() {
       {/* ============================================================ */}
       {/*  HERO                                                         */}
       {/* ============================================================ */}
-      <section className="relative overflow-hidden -mt-[72px] min-h-[340px]">
+      <section className="relative overflow-hidden -mt-[72px] min-h-[480px]">
         {/* Background image */}
         <Image
           src="/image/london-images/7.jpg"
           alt=""
           fill
           priority
-          className="object-cover object-center"
+          className="object-fit object-center"
           sizes="100vw"
         />
         {/* Overlay */}
