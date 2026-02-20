@@ -25,7 +25,7 @@ export function PageHero({
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className={`relative overflow-hidden -mt-[72px] min-h-[480px] ${!image ? "bg-[#1C1F2E]" : ""} ${className}`}>
+    <section className={`relative overflow-hidden min-h-[480px] ${!image ? "bg-[#1C1F2E]" : ""} ${className}`}>
       {/* ── Background image + overlay ─────────────────────────────── */}
       {image && (
         <>
@@ -58,7 +58,7 @@ export function PageHero({
 
       {/* Content */}
       <div
-        className={`relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-[120px] pb-16 flex flex-col ${
+        className={`relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-[160px] pb-16 flex flex-col ${
           align === "center" ? "items-center text-center" : "items-start text-left"
         }`}
       >

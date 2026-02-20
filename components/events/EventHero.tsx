@@ -7,7 +7,7 @@ export function EventHero() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F8FAFC] pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F8FAFC] pt-[140px]">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute top-1/4 left-1/4 w-[900px] h-[900px] bg-[#2563EB] rounded-full opacity-[0.12] blur-[200px]"

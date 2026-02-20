@@ -97,7 +97,7 @@ export function Hero() {
       />
 
       {/* Content wrapper — vertically centered like reference */}
-      <div className="relative z-20 flex items-center h-screen px-8 sm:px-12 lg:px-16 xl:px-20 pt-24">
+      <div className="relative z-20 flex items-center h-screen px-8 sm:px-12 lg:px-16 xl:px-20 pt-40">
         <div className="w-full max-w-[55%]">
 
           {/* Small label */}
