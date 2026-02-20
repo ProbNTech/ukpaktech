@@ -81,11 +81,18 @@ export function Hero() {
         </video>
       ))}
 
-      {/* Overlay — smooth dissolve from dark left to clear right */}
+      {/* Overlay — left-to-right gradient */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
-          background: "linear-gradient(to right, rgba(20,35,50,0.92) 0%, rgba(20,35,50,0.80) 30%, rgba(20,35,50,0.50) 55%, rgba(20,35,50,0.18) 78%, rgba(20,35,50,0.00) 100%)",
+          background: "linear-gradient(to right, rgba(10,18,30,0.97) 0%, rgba(10,18,30,0.88) 30%, rgba(10,18,30,0.60) 55%, rgba(10,18,30,0.22) 78%, rgba(10,18,30,0.00) 100%)",
+        }}
+      />
+      {/* Overlay — top darkness for header readability */}
+      <div
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background: "linear-gradient(to bottom, rgba(5,10,20,0.75) 0%, rgba(5,10,20,0.40) 18%, rgba(5,10,20,0.00) 38%)",
         }}
       />
 

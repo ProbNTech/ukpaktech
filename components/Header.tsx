@@ -208,7 +208,7 @@ export function Header() {
         {/* ── Top masthead bar ───────────────────────────────────── */}
         <div className={`transition-colors duration-300 ${isScrolled ? "border-b-[2px] border-[#0A0A0A]" : "border-b-0"}`}>
           <div className="px-6 sm:px-10 lg:px-14 xl:px-18">
-            <div className="flex items-center justify-between h-[100px]">
+            <div className="flex items-center justify-between h-[124px]">
 
               {/* Wordmark */}
               <Link
@@ -221,7 +221,7 @@ export function Header() {
                   alt="UPTECH Council logo"
                   width={100}
                   height={100}
-                  className="h-[100px] w-auto object-contain"
+                  className="h-[100px] w-auto object-contain my-[12px]"
                   priority
                 />
                 <span className={`font-heading font-bold text-[16px] uppercase tracking-[0.2em] leading-none transition-colors duration-300 ${isScrolled ? "text-[#0A0A0A]" : "text-white"}`}>
@@ -290,8 +290,8 @@ export function Header() {
                   href="/membership"
                   onMouseEnter={handleLeave}
                   className="
-                    px-7 py-2.5 rounded-full
-                    font-heading font-bold text-[13px] uppercase tracking-[0.12em]
+                    px-8 py-3.5 rounded-full
+                    font-heading font-bold text-[15px] uppercase tracking-[0.12em]
                     bg-[#C41E3A] text-white border-2 border-[#C41E3A]
                     hover:bg-[#A01830] hover:border-[#A01830]
                     transition-colors duration-200 whitespace-nowrap
