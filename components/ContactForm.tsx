@@ -41,7 +41,7 @@ export function ContactForm() {
   };
 
   const inputBase =
-    "w-full bg-[#EEECEA] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#7A7E8F] text-sm px-4 py-3 rounded-none outline-none transition-all duration-200 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15";
+    "w-full bg-[#EEECEA] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#7A7E8F] text-sm px-4 py-3 rounded-none transition-all duration-200 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 focus:bg-white";
 
   if (state === "success") {
     return (
