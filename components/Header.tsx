@@ -34,6 +34,11 @@ const navGroups = [
         href: "/code-of-conduct",
         desc: "The ethics, accountability standards and community guidelines every member upholds.",
       },
+      {
+        label: "Get in Touch",
+        href: "/contact",
+        desc: "Reach out for partnerships, membership enquiries, or general questions.",
+      },
     ],
   },
   {
@@ -573,6 +578,7 @@ export function Header() {
                     Membership
                   </Link>
                 </div>
+
               </nav>
 
               {/* Drawer CTA */}
