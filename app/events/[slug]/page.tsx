@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, ExternalLink, Users, CheckCircle2 } from "lucide-react";
+import { ExternalLink, Users, CheckCircle2 } from "lucide-react";
 
 function CalendarIcon({ size = 20 }: { size?: number }) {
   return (
@@ -175,7 +175,7 @@ export default async function EventDetailPage({
               <AnimatedSection>
                 <div className="bg-white border border-[#D8D5CF] p-6 sm:p-8 mb-12">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-center gap-4">
                       <CalendarIcon size={26} />
                       <div>
                         <span className="text-[10px] uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Date</span>
@@ -183,7 +183,7 @@ export default async function EventDetailPage({
                       </div>
                     </div>
                     {event.time && (
-                      <div className="flex items-start gap-4">
+                      <div className="flex items-center gap-4">
                         <ClockIcon size={26} />
                         <div>
                           <span className="text-[10px] uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Time</span>
@@ -191,7 +191,7 @@ export default async function EventDetailPage({
                         </div>
                       </div>
                     )}
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-center gap-4">
                       <LocationIcon size={26} />
                       <div>
                         <span className="text-[10px] uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Location</span>
@@ -199,7 +199,7 @@ export default async function EventDetailPage({
                       </div>
                     </div>
                     {event.price && (
-                      <div className="flex items-start gap-4">
+                      <div className="flex items-center gap-4">
                         <PriceIcon size={26} />
                         <div>
                           <span className="text-[10px] uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Price</span>
