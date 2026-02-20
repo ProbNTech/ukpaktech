@@ -62,7 +62,7 @@ export function Hero() {
   }, [currentIndex]);
 
   return (
-    <section className="relative w-full h-screen -mt-[72px] overflow-hidden bg-[#0B0F1A]">
+    <section className="relative w-full h-screen overflow-hidden bg-[#0B0F1A]">
       {/* Stacked background videos */}
       {videos.map((src, index) => (
         <video
@@ -90,7 +90,7 @@ export function Hero() {
       />
 
       {/* Content wrapper — vertically centered like reference */}
-      <div className="relative z-20 flex items-center h-screen px-8 sm:px-12 lg:px-16 xl:px-20">
+      <div className="relative z-20 flex items-center h-screen px-8 sm:px-12 lg:px-16 xl:px-20 pt-24">
         <div className="w-full max-w-[55%]">
 
           {/* Small label */}

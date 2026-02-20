@@ -194,8 +194,6 @@ export function Header() {
         Skip to main content
       </a>
 
-      {/* Spacer so fixed header doesn't overlap page content */}
-      <div className="h-[68px]" />
 
       {/* ═══════════════════════════════════════════════════════════
           HEADER SHELL — transparent at top, white + border on scroll
@@ -210,7 +208,7 @@ export function Header() {
         {/* ── Top masthead bar ───────────────────────────────────── */}
         <div className={`transition-colors duration-300 ${isScrolled ? "border-b-[2px] border-[#0A0A0A]" : "border-b-0"}`}>
           <div className="px-6 sm:px-10 lg:px-14 xl:px-18">
-            <div className="flex items-center justify-between h-[68px]">
+            <div className="flex items-center justify-between h-[100px]">
 
               {/* Wordmark */}
               <Link
@@ -223,7 +221,7 @@ export function Header() {
                   alt="UPTECH Council logo"
                   width={100}
                   height={100}
-                  className="h-[48px] w-auto object-contain"
+                  className="h-[100px] w-auto object-contain"
                   priority
                 />
                 <span className={`font-heading font-bold text-[16px] uppercase tracking-[0.2em] leading-none transition-colors duration-300 ${isScrolled ? "text-[#0A0A0A]" : "text-white"}`}>
