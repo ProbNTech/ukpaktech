@@ -128,11 +128,11 @@ const navGroups = [
         href: "/events",
         desc: "Conferences, roundtables, webinars and press coverage from across the UPTECH community.",
       },
-      {
-        label: "Careers at UPTECH",
-        href: "/careers",
-        desc: "Open positions, internship opportunities and ways to contribute to our growing organisation.",
-      },
+      // {
+      //   label: "Careers at UPTECH",
+      //   href: "/careers",
+      //   desc: "Open positions, internship opportunities and ways to contribute to our growing organisation.",
+      // },
     ],
   },
 ];
