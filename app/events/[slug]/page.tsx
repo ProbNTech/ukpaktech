@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink, Users, CheckCircle2 } from "lucide-react";
+import { Users, CheckCircle2 } from "lucide-react";
 
 function CalendarIcon({ size = 20 }: { size?: number }) {
   return (
@@ -208,19 +208,14 @@ export default async function EventDetailPage({
                       </div>
                     )}
                   </div>
-                  {event.officialLink && (
-                    <div className="mt-6 pt-6 border-t border-[#D8D5CF]">
-                      <a
-                        href={event.officialLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Book Now
-                      </a>
-                    </div>
-                  )}
+                  <div className="mt-6 pt-6 border-t border-[#D8D5CF]">
+                    <Link
+                      href="/membership"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
+                    >
+                      Book Now
+                    </Link>
+                  </div>
                 </div>
               </AnimatedSection>
 
@@ -317,21 +312,12 @@ export default async function EventDetailPage({
                     Register your interest below and our team will be in touch with confirmation details, agenda updates, and delegate information.
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    {event.officialLink ? (
-                      <a
-                        href={event.officialLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#2563EB] text-white font-semibold text-sm hover:bg-[#1d4ed8] transition-colors duration-200"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Visit Official Website
-                      </a>
-                    ) : (
-                      <Button variant="primary" size="lg" showArrow>
-                        Register Interest
-                      </Button>
-                    )}
+                    <Link
+                      href="/membership"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
+                    >
+                      Book Now
+                    </Link>
                     <Button href="/events" variant="glass" size="lg">
                       View All Events
                     </Button>
