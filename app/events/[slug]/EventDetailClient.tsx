@@ -67,8 +67,8 @@ export function EventDetailClient({ title, dateISO, category, tag, status }: Eve
   const isUpcoming = status === "upcoming" && timeLeft !== null;
 
   return (
-    <section className="relative bg-[#1C1F2E] overflow-hidden -mt-[72px]">
-      <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 pt-[120px] pb-16">
+    <section className="relative bg-[#1C1F2E] overflow-hidden">
+      <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 pt-[160px] pb-16">
         {/* Breadcrumb */}
         <motion.nav
           initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}

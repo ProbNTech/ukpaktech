@@ -50,7 +50,7 @@ export function EventHero() {
         />
       </div>
 
-      <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
+      <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-[160px] pb-24">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <motion.div
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 50 }}
