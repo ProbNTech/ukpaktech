@@ -31,6 +31,27 @@ const config: Config = {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         heading: ["var(--font-manrope)", "system-ui", "sans-serif"],
       },
+      fontSize: {
+        // ─── Header / Navigation ───────────────────────────────────
+        "nav-label":  ["10px", { lineHeight: "1", letterSpacing: "0.13em" }],   // taglines, CTA buttons, micro-labels
+        "nav-item":   ["15px", { lineHeight: "1.2", letterSpacing: "0.12em" }], // top-bar nav links (Home, About…)
+        "nav-cta":    ["11px", { lineHeight: "1", letterSpacing: "0.14em" }],   // "Become a Member" button text
+
+        // ─── Mega-panel dropdown ───────────────────────────────────
+        "panel-eyebrow":  ["9px",  { lineHeight: "1", letterSpacing: "0.2em" }],  // "Who we are", "Section index"
+        "panel-title":    ["26px", { lineHeight: "1.15", letterSpacing: "-0.01em" }], // Left-col section title
+        "panel-item":     ["14px", { lineHeight: "1.3", letterSpacing: "0" }],    // Centre-col item label
+        "panel-desc":     ["12px", { lineHeight: "1.7", letterSpacing: "0" }],    // Centre-col item description
+        "panel-quote":    ["18px", { lineHeight: "1.3", letterSpacing: "-0.01em" }], // Right-col pull-quote
+        "panel-body":     ["12px", { lineHeight: "1.7", letterSpacing: "0" }],    // Right-col body copy
+        "panel-index":    ["10px", { lineHeight: "1", letterSpacing: "0" }],      // "01", "02" index numbers
+
+        // ─── Mobile drawer ─────────────────────────────────────────
+        "mobile-group":   ["13px", { lineHeight: "1.2", letterSpacing: "0.16em" }], // Group accordion labels
+        "mobile-item":    ["14px", { lineHeight: "1.3", letterSpacing: "0" }],    // Sub-item labels
+        "mobile-desc":    ["12px", { lineHeight: "1.6", letterSpacing: "0" }],    // Sub-item descriptions
+        "mobile-cta":     ["11px", { lineHeight: "1", letterSpacing: "0.14em" }], // Drawer CTA buttons
+      },
       maxWidth: {
         content: "1200px",
         container: "var(--container-width)",

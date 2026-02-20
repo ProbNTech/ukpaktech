@@ -221,16 +221,17 @@ export function Header() {
                 <Image
                   src="/image/main-logo/mainlogo.png"
                   alt="UPTECH Council logo"
-                  width={38}
-                  height={38}
-                  className="h-[36px] w-auto object-contain"
+                  width={100}
+                  height={100}
+                  className="h-[48px] w-auto object-contain"
                   priority
                 />
                 <span className={`font-heading font-bold text-[16px] uppercase tracking-[0.2em] leading-none transition-colors duration-300 ${isScrolled ? "text-[#0A0A0A]" : "text-white"}`}>
                   UPTECH
                 </span>
                 <span className="hidden xl:block w-px h-5 bg-white/30 mx-2" aria-hidden="true" />
-                <span className={`hidden xl:block font-sans text-[10px] uppercase tracking-[0.13em] leading-tight max-w-[108px] transition-colors duration-300 ${isScrolled ? "text-[#6B6B6B]" : "text-white/70"}`}>
+                {/* nav-label token → 10px / tracking-[0.13em] */}
+                <span className={`hidden xl:block font-sans text-nav-label uppercase leading-tight max-w-[108px] transition-colors duration-300 ${isScrolled ? "text-[#6B6B6B]" : "text-white/70"}`}>
                   UK–Pakistan Tech Council
                 </span>
               </Link>
@@ -241,10 +242,11 @@ export function Header() {
                 aria-label="Main navigation"
               >
                 {/* Home — plain link, no dropdown */}
+                {/* nav-item token → 15px / tracking-[0.12em] */}
                 <Link
                   href="/"
                   onMouseEnter={handleLeave}
-                  className={`relative h-full px-4 flex items-center font-sans text-[13px] uppercase tracking-[0.12em] font-semibold transition-colors duration-150 ${isScrolled ? "text-[#3D3D3D] hover:text-[#0A0A0A]" : "text-white/80 hover:text-white"}`}
+                  className={`relative h-full px-4 flex items-center font-sans text-nav-item uppercase font-semibold transition-colors duration-150 ${isScrolled ? "text-[#3D3D3D] hover:text-[#0A0A0A]" : "text-white/80 hover:text-white"}`}
                 >
                   Home
                 </Link>
@@ -257,11 +259,10 @@ export function Header() {
                       type="button"
                       aria-expanded={isActive}
                       aria-haspopup="true"
-                      /* Enter: schedule open; mouse stays on button → re-enter cancels close */
                       onMouseEnter={() => handleGroupEnter(group.label)}
                       className={`
                         relative h-full px-4 flex items-center gap-1.5
-                        font-sans text-[13px] uppercase tracking-[0.12em] font-semibold
+                        font-sans text-nav-item uppercase font-semibold
                         transition-colors duration-150 cursor-default select-none
                         ${isActive
                           ? "text-[#C41E3A]"
@@ -286,11 +287,12 @@ export function Header() {
 
               {/* ── Desktop CTA ──────────────────────────────────── */}
               <div className="hidden lg:flex items-center gap-3">
+                {/* nav-cta token → 11px / tracking-[0.14em] */}
                 <Link
                   href="/membership"
                   onMouseEnter={handleLeave}
                   className={`
-                    px-5 py-2 font-heading font-bold text-[10px] uppercase tracking-[0.14em]
+                    px-5 py-2 font-heading font-bold text-nav-cta uppercase
                     border transition-colors duration-200
                     ${isScrolled
                       ? "bg-[#0A0A0A] text-white border-[#0A0A0A] hover:bg-[#C41E3A] hover:border-[#C41E3A]"
@@ -329,7 +331,6 @@ export function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15 }}
-              /* Mouse enters the panel → keep it open */
               onMouseEnter={() => handlePanelEnter(activeGroup.label)}
               className="hidden lg:block border-b-[2px] border-[#0A0A0A] bg-white"
             >
@@ -339,16 +340,18 @@ export function Header() {
                   {/* ── LEFT: Section identity ──────────────────── */}
                   <div className="py-10 pr-10 flex flex-col justify-between">
                     <div>
-                      <p className="font-sans text-[9px] uppercase tracking-[0.2em] text-[#C41E3A] mb-3">
+                      {/* panel-eyebrow token → 9px / tracking-[0.2em] */}
+                      <p className="font-sans text-panel-eyebrow uppercase text-[#C41E3A] mb-3">
                         {activeGroup.tagline}
                       </p>
-                      <h2 className="font-heading font-bold text-[26px] leading-[1.15] tracking-[-0.01em] text-[#0A0A0A]">
+                      {/* panel-title token → 26px / leading-[1.15] */}
+                      <h2 className="font-heading font-bold text-panel-title text-[#0A0A0A]">
                         {activeGroup.label}
                       </h2>
-                      {/* Short ruled rule below title */}
                       <span className="block w-8 h-[2px] bg-[#C41E3A] mt-4" />
                     </div>
-                    <p className="font-sans text-[11px] leading-relaxed text-[#6B6B6B] mt-6">
+                    {/* panel-desc token → 12px / leading-[1.7] */}
+                    <p className="font-sans text-panel-desc text-[#6B6B6B] mt-6">
                       Navigate with the links to the right, or{" "}
                       <Link
                         href={activeGroup.editorial.cta.href}
@@ -363,7 +366,8 @@ export function Header() {
 
                   {/* ── CENTRE: Items list ──────────────────────── */}
                   <div className="py-10 px-10">
-                    <p className="font-sans text-[9px] uppercase tracking-[0.2em] text-[#6B6B6B] mb-4 pb-3 border-b border-[#E4E1DC]">
+                    {/* panel-eyebrow token → 9px / tracking-[0.2em] */}
+                    <p className="font-sans text-panel-eyebrow uppercase text-[#6B6B6B] mb-4 pb-3 border-b border-[#E4E1DC]">
                       Section index
                     </p>
                     <ul className="space-y-0">
@@ -379,20 +383,22 @@ export function Header() {
                               transition-colors duration-150
                             "
                           >
-                            {/* Issue number — editorial detail */}
-                            <span className="font-sans text-[10px] text-[#C5C2BE] tabular-nums mt-0.5 flex-shrink-0 w-4">
+                            {/* panel-index token → 10px */}
+                            <span className="font-sans text-panel-index text-[#C5C2BE] tabular-nums mt-0.5 flex-shrink-0 w-4">
                               {String(i + 1).padStart(2, "0")}
                             </span>
                             <div className="flex-1 min-w-0">
-                              <span className="block font-heading font-semibold text-[13px] text-[#0A0A0A] group-hover/item:text-[#C41E3A] transition-colors duration-150 leading-snug mb-1">
+                              {/* panel-item token → 14px */}
+                              <span className="block font-heading font-semibold text-panel-item text-[#0A0A0A] group-hover/item:text-[#C41E3A] transition-colors duration-150 leading-snug mb-1">
                                 {item.label}
                               </span>
-                              <span className="block font-sans text-[11px] text-[#6B6B6B] leading-relaxed">
+                              {/* panel-desc token → 12px / leading-[1.7] */}
+                              <span className="block font-sans text-panel-desc text-[#6B6B6B]">
                                 {item.desc}
                               </span>
                             </div>
-                            {/* Arrow — appears on hover */}
-                            <span className="flex-shrink-0 font-sans text-[11px] text-[#C41E3A] opacity-0 group-hover/item:opacity-100 transition-opacity duration-150 mt-0.5">
+                            {/* panel-desc token → 12px */}
+                            <span className="flex-shrink-0 font-sans text-panel-desc text-[#C41E3A] opacity-0 group-hover/item:opacity-100 transition-opacity duration-150 mt-0.5">
                               →
                             </span>
                           </Link>
@@ -403,27 +409,29 @@ export function Header() {
 
                   {/* ── RIGHT: Editorial feature panel ─────────── */}
                   <div className="py-10 pl-10 flex flex-col justify-between">
-                    {/* Pull-quote block */}
                     <div>
-                      <p className="font-sans text-[9px] uppercase tracking-[0.2em] text-[#6B6B6B] mb-4">
+                      {/* panel-eyebrow token → 9px / tracking-[0.2em] */}
+                      <p className="font-sans text-panel-eyebrow uppercase text-[#6B6B6B] mb-4">
                         From the council
                       </p>
-                      <blockquote className="font-heading font-bold text-[18px] leading-[1.3] tracking-[-0.01em] text-[#0A0A0A] whitespace-pre-line">
+                      {/* panel-quote token → 18px / leading-[1.3] */}
+                      <blockquote className="font-heading font-bold text-panel-quote text-[#0A0A0A] whitespace-pre-line">
                         {activeGroup.editorial.headline}
                       </blockquote>
                       <span className="block w-6 h-[1.5px] bg-[#E4E1DC] mt-5 mb-5" />
-                      <p className="font-sans text-[11px] leading-[1.7] text-[#6B6B6B]">
+                      {/* panel-body token → 12px / leading-[1.7] */}
+                      <p className="font-sans text-panel-body text-[#6B6B6B]">
                         {activeGroup.editorial.body}
                       </p>
                     </div>
 
-                    {/* Inline CTA */}
+                    {/* nav-label token → 10px / tracking-[0.13em] */}
                     <Link
                       href={activeGroup.editorial.cta.href}
                       onClick={() => setOpenGroup(null)}
                       className="
                         inline-flex items-center gap-2 mt-8
-                        font-sans text-[10px] uppercase tracking-[0.14em] font-medium
+                        font-sans text-nav-label uppercase font-medium
                         text-[#0A0A0A] border-b border-[#0A0A0A] pb-px
                         hover:text-[#C41E3A] hover:border-[#C41E3A]
                         transition-colors duration-150 self-start
@@ -473,8 +481,8 @@ export function Header() {
                   <Image
                     src="/image/main-logo/mainlogo.png"
                     alt="UPTECH Logo"
-                    width={30}
-                    height={30}
+                    width={100}
+                    height={100}
                     className="h-[28px] w-auto object-contain"
                   />
                   <span className="font-heading font-bold text-[13px] uppercase tracking-[0.18em] text-[#0A0A0A]">
@@ -509,7 +517,8 @@ export function Header() {
                         onClick={() => setMobileExpanded(isExp ? null : group.label)}
                         aria-expanded={isExp}
                       >
-                        <span className="font-heading font-bold text-[11px] uppercase tracking-[0.16em] text-[#0A0A0A]">
+                        {/* mobile-group token → 13px / tracking-[0.16em] */}
+                        <span className="font-heading font-bold text-mobile-group uppercase text-[#0A0A0A]">
                           {group.label}
                         </span>
                         {/* CSS chevron */}
@@ -537,10 +546,12 @@ export function Header() {
                                   onClick={() => setIsMobileOpen(false)}
                                   className="block px-8 py-3.5"
                                 >
-                                  <span className="block font-sans text-[12px] font-medium text-[#0A0A0A] hover:text-[#C41E3A] transition-colors duration-150 mb-0.5">
+                                  {/* mobile-item token → 14px */}
+                                  <span className="block font-sans text-mobile-item font-medium text-[#0A0A0A] hover:text-[#C41E3A] transition-colors duration-150 mb-0.5">
                                     {item.label}
                                   </span>
-                                  <span className="block font-sans text-[11px] text-[#6B6B6B] leading-relaxed">
+                                  {/* mobile-desc token → 12px / leading-[1.6] */}
+                                  <span className="block font-sans text-mobile-desc text-[#6B6B6B]">
                                     {item.desc}
                                   </span>
                                 </Link>
@@ -558,7 +569,7 @@ export function Header() {
                   <Link
                     href="/membership"
                     onClick={() => setIsMobileOpen(false)}
-                    className="block px-6 py-4 font-heading font-bold text-[11px] uppercase tracking-[0.16em] text-[#0A0A0A] hover:text-[#C41E3A] transition-colors duration-150"
+                    className="block px-6 py-4 font-heading font-bold text-mobile-group uppercase text-[#0A0A0A] hover:text-[#C41E3A] transition-colors duration-150"
                   >
                     Membership
                   </Link>
@@ -567,17 +578,18 @@ export function Header() {
 
               {/* Drawer CTA */}
               <div className="flex-shrink-0 p-6 border-t-2 border-[#0A0A0A] space-y-3">
+                {/* mobile-cta token → 11px / tracking-[0.14em] */}
                 <Link
                   href="/membership"
                   onClick={() => setIsMobileOpen(false)}
-                  className="block text-center py-3 px-4 bg-[#0A0A0A] text-white font-heading font-bold text-[10px] uppercase tracking-[0.14em] hover:bg-[#C41E3A] transition-colors duration-200"
+                  className="block text-center py-3 px-4 bg-[#0A0A0A] text-white font-heading font-bold text-mobile-cta uppercase hover:bg-[#C41E3A] transition-colors duration-200"
                 >
                   Become a Member
                 </Link>
                 <Link
                   href="/membership"
                   onClick={() => setIsMobileOpen(false)}
-                  className="block text-center py-2.5 px-4 border border-[#D8D5D0] font-sans text-[10px] uppercase tracking-[0.12em] text-[#6B6B6B] hover:border-[#0A0A0A] hover:text-[#0A0A0A] transition-colors duration-200"
+                  className="block text-center py-2.5 px-4 border border-[#D8D5D0] font-sans text-mobile-cta uppercase text-[#6B6B6B] hover:border-[#0A0A0A] hover:text-[#0A0A0A] transition-colors duration-200"
                 >
                   Member Portal
                 </Link>
