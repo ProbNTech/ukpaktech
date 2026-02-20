@@ -81,13 +81,46 @@ export function Hero() {
         </video>
       ))}
 
-      {/* Overlay — left-to-right gradient */}
-      <div
-        className="absolute inset-0 z-10 pointer-events-none"
-        style={{
-          background: "linear-gradient(to right, rgba(10,18,30,0.97) 0%, rgba(10,18,30,0.88) 30%, rgba(10,18,30,0.60) 55%, rgba(10,18,30,0.22) 78%, rgba(10,18,30,0.00) 100%)",
-        }}
-      />
+      {/* SVG Overlay — dark panel with circular cutout + teal crescent */}
+      <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 508 264.583"
+          preserveAspectRatio="xMinYMin slice"
+          className="w-full h-full"
+        >
+          {/* Dark rectangle with circular hole */}
+          <path
+            d="
+              M -760 -445 L -760 710 L 1268 710 L 1268 -445 Z
+              M 170.357 -442.635
+              A 425.831 425.831 0 0 1 547.289 -19.654
+              A 425.831 425.831 0 0 1 121.457  406.176
+              A 425.831 425.831 0 0 1 -25.480  379.762
+              A 425.831 425.831 0 0 0  23.562  382.893
+              A 425.831 425.831 0 0 0 449.395  -42.938
+              A 425.831 425.831 0 0 0 170.357 -442.635 Z
+            "
+            fill="#000000"
+            fillOpacity="0.37"
+            style={{ mixBlendMode: "multiply" }}
+          />
+          {/* Teal crescent accent — spreads left to cover full width */}
+          <path
+            d="
+              M 170.357 -442.635
+              A 425.831 425.831 0 0 1 449.395  -42.938
+              A 425.831 425.831 0 0 1  23.562  382.893
+              A 425.831 425.831 0 0 1 -25.480  379.762
+              L -760 710
+              L -760 -445
+              Z
+            "
+            fill="#2a9d8f"
+            fillOpacity="0.8"
+          />
+        </svg>
+      </div>
       {/* Overlay — top darkness for header readability */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
