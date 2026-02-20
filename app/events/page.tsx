@@ -81,11 +81,10 @@ export default function EventsPage() {
     return e.category === activeFilter;
   });
 
-  // Sort: upcoming by date asc, past by date desc, mixed by dateISO
-  const sortedEvents = [...filteredEvents].sort((a, b) => {
-    if (activeFilter === "Past") return b.dateISO.localeCompare(a.dateISO);
-    return a.dateISO.localeCompare(b.dateISO);
-  });
+  // Sort: newest (highest dateISO) first in all views
+  const sortedEvents = [...filteredEvents].sort((a, b) =>
+    b.dateISO.localeCompare(a.dateISO)
+  );
 
   const gridEvents = sortedEvents.map((e) => ({
     slug: e.slug,
