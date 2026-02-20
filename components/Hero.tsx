@@ -81,7 +81,7 @@ export function Hero() {
         </video>
       ))}
 
-      {/* SVG Overlay — dark panel with circular cutout + teal crescent */}
+      {/* SVG Overlay — dark glassy panel with circular cutout */}
       <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -89,35 +89,39 @@ export function Hero() {
           preserveAspectRatio="xMinYMin slice"
           className="w-full h-full"
         >
-          {/* Dark rectangle with circular hole */}
+          <defs>
+            <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stopColor="#0d1b2e" stopOpacity="0.65" />
+              <stop offset="60%"  stopColor="#0f2035" stopOpacity="0.52" />
+              <stop offset="100%" stopColor="#112240" stopOpacity="0.28" />
+            </linearGradient>
+          </defs>
+          {/* Dark glassy rectangle with circular hole */}
           <path
             d="
               M -760 -445 L -760 710 L 1268 710 L 1268 -445 Z
-              M 170.357 -442.635
-              A 425.831 425.831 0 0 1 547.289 -19.654
-              A 425.831 425.831 0 0 1 121.457  406.176
-              A 425.831 425.831 0 0 1 -25.480  379.762
-              A 425.831 425.831 0 0 0  23.562  382.893
-              A 425.831 425.831 0 0 0 449.395  -42.938
-              A 425.831 425.831 0 0 0 170.357 -442.635 Z
+              M 205.357 -442.635
+              A 425.831 425.831 0 0 1 582.289 -19.654
+              A 425.831 425.831 0 0 1 156.457  406.176
+              A 425.831 425.831 0 0 1   9.520  379.762
+              A 425.831 425.831 0 0 0  58.562  382.893
+              A 425.831 425.831 0 0 0 484.395  -42.938
+              A 425.831 425.831 0 0 0 205.357 -442.635 Z
             "
-            fill="#000000"
-            fillOpacity="0.37"
-            style={{ mixBlendMode: "multiply" }}
+            fill="url(#glassGrad)"
           />
-          {/* Teal crescent accent — spreads left to cover full width */}
+          {/* Dark navy crescent — glassy, spreads left to cover full width */}
           <path
             d="
-              M 170.357 -442.635
-              A 425.831 425.831 0 0 1 449.395  -42.938
-              A 425.831 425.831 0 0 1  23.562  382.893
-              A 425.831 425.831 0 0 1 -25.480  379.762
+              M 205.357 -442.635
+              A 425.831 425.831 0 0 1 484.395  -42.938
+              A 425.831 425.831 0 0 1  58.562  382.893
+              A 425.831 425.831 0 0 1   9.520  379.762
               L -760 710
               L -760 -445
               Z
             "
-            fill="#2a9d8f"
-            fillOpacity="0.8"
+            fill="url(#glassGrad)"
           />
         </svg>
       </div>
