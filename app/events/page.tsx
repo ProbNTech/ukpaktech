@@ -70,14 +70,22 @@ const FILTER_TABS: FilterTab[] = ["All", "Upcoming", "Past", "London", "Pakistan
 /* ------------------------------------------------------------------ */
 /*  Events listing page                                                 */
 /* ------------------------------------------------------------------ */
+// Derive live status from dateISO so filters stay accurate regardless of
+// how the data field was set. An event is "upcoming" if its date is today or later.
+function isUpcoming(dateISO: string): boolean {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return new Date(dateISO) >= today;
+}
+
 export default function EventsPage() {
   const shouldReduceMotion = useReducedMotion();
   const [activeFilter, setActiveFilter] = useState<FilterTab>("All");
 
   const filteredEvents = events.filter((e) => {
     if (activeFilter === "All") return true;
-    if (activeFilter === "Upcoming") return e.status === "upcoming";
-    if (activeFilter === "Past") return e.status === "past";
+    if (activeFilter === "Upcoming") return isUpcoming(e.dateISO);
+    if (activeFilter === "Past") return !isUpcoming(e.dateISO);
     return e.category === activeFilter;
   });
 
@@ -169,7 +177,7 @@ export default function EventsPage() {
             className="flex flex-wrap gap-3"
           >
             {[
-              { label: `${events.filter((e) => e.status === "upcoming").length} Upcoming` },
+              { label: `${events.filter((e) => isUpcoming(e.dateISO)).length} Upcoming` },
               { label: `${events.filter((e) => e.category === "London").length} London Events` },
               { label: `${events.filter((e) => e.category === "Pakistan").length} Pakistan Events` },
               { label: `${events.filter((e) => e.category === "UPTECH").length} UPTECH Events` },
@@ -293,10 +301,10 @@ export default function EventsPage() {
                   <span className="ml-2 opacity-60">{events.length}</span>
                 )}
                 {tab === "Upcoming" && (
-                  <span className="ml-2 opacity-60">{events.filter((e) => e.status === "upcoming").length}</span>
+                  <span className="ml-2 opacity-60">{events.filter((e) => isUpcoming(e.dateISO)).length}</span>
                 )}
                 {tab === "Past" && (
-                  <span className="ml-2 opacity-60">{events.filter((e) => e.status === "past").length}</span>
+                  <span className="ml-2 opacity-60">{events.filter((e) => !isUpcoming(e.dateISO)).length}</span>
                 )}
                 {tab === "London" && (
                   <span className="ml-2 opacity-60">{events.filter((e) => e.category === "London").length}</span>
