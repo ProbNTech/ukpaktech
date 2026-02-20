@@ -174,57 +174,53 @@ export default async function EventDetailPage({
               {/* Event Summary Card */}
               <AnimatedSection>
                 <div className="bg-white border border-[#D8D5CF] p-6 sm:p-8 mb-12">
-                  {/* Summary / excerpt */}
-                  <p className="text-base leading-relaxed text-[#3D4152] font-medium pb-6 mb-6 border-b border-[#D8D5CF]">
-                    {event.excerpt}
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div className="flex items-start gap-3">
-                      <CalendarIcon size={20} />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="flex items-start gap-4">
+                      <CalendarIcon size={26} />
                       <div>
-                        <span className="text-xs uppercase tracking-wider text-[#7A7E8F] font-semibold block mb-1">Date</span>
-                        <span className="text-[#1C1F2E] font-medium text-sm">{formattedDate}</span>
+                        <span className="text-[10px] uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Date</span>
+                        <span className="text-[#1C1F2E] font-bold text-base leading-snug">{formattedDate}</span>
                       </div>
                     </div>
                     {event.time && (
-                      <div className="flex items-start gap-3">
-                        <ClockIcon size={20} />
+                      <div className="flex items-start gap-4">
+                        <ClockIcon size={26} />
                         <div>
-                          <span className="text-xs uppercase tracking-wider text-[#7A7E8F] font-semibold block mb-1">Time</span>
-                          <span className="text-[#1C1F2E] font-medium text-sm">{event.time}</span>
+                          <span className="text-[10px] uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Time</span>
+                          <span className="text-[#1C1F2E] font-bold text-base leading-snug">{event.time}</span>
                         </div>
                       </div>
                     )}
-                    <div className="flex items-start gap-3">
-                      <LocationIcon size={20} />
+                    <div className="flex items-start gap-4">
+                      <LocationIcon size={26} />
                       <div>
-                        <span className="text-xs uppercase tracking-wider text-[#7A7E8F] font-semibold block mb-1">Location</span>
-                        <span className="text-[#1C1F2E] font-medium text-sm">{event.location}</span>
+                        <span className="text-[10px] uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Location</span>
+                        <span className="text-[#1C1F2E] font-bold text-base leading-snug">{event.location}</span>
                       </div>
                     </div>
                     {event.price && (
-                      <div className="flex items-start gap-3">
-                        <PriceIcon size={20} />
+                      <div className="flex items-start gap-4">
+                        <PriceIcon size={26} />
                         <div>
-                          <span className="text-xs uppercase tracking-wider text-[#7A7E8F] font-semibold block mb-1">Price</span>
-                          <span className="text-[#1C1F2E] font-medium text-sm">{event.price}</span>
+                          <span className="text-[10px] uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Price</span>
+                          <span className="text-[#1C1F2E] font-bold text-base leading-snug">{event.price}</span>
                         </div>
                       </div>
                     )}
-                    {event.officialLink && (
-                      <div className="sm:col-span-2 pt-2 border-t border-[#D8D5CF]">
-                        <a
-                          href={event.officialLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] hover:underline"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          Visit Official Website
-                        </a>
-                      </div>
-                    )}
                   </div>
+                  {event.officialLink && (
+                    <div className="mt-6 pt-6 border-t border-[#D8D5CF]">
+                      <a
+                        href={event.officialLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        Book Now
+                      </a>
+                    </div>
+                  )}
                 </div>
               </AnimatedSection>
 
