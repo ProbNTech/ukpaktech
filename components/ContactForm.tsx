@@ -178,7 +178,7 @@ export function ContactForm() {
       </div>
 
       {/* Footer row */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-t-0 border-[#D8D5CF] bg-white px-6 py-5">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-[#D8D5CF] bg-white px-6 py-5">
         <p className="text-[11px] text-[#7A7E8F] leading-relaxed max-w-xs">
           We respond to all enquiries within 2–3 business days.
         </p>
