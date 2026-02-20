@@ -287,17 +287,17 @@ export function Header() {
 
               {/* ── Desktop CTA ──────────────────────────────────── */}
               <div className="hidden lg:flex items-center gap-3">
-                {/* nav-cta token → 11px / tracking-[0.14em] */}
+                {/* Always crimson pill — high visibility on both transparent and white header */}
                 <Link
                   href="/membership"
                   onMouseEnter={handleLeave}
-                  className={`
-                    px-5 py-2 font-heading font-bold text-nav-cta uppercase
-                    border transition-colors duration-200
-                    ${isScrolled
-                      ? "bg-[#0A0A0A] text-white border-[#0A0A0A] hover:bg-[#C41E3A] hover:border-[#C41E3A]"
-                      : "bg-white text-[#0A0A0A] border-white hover:bg-[#C41E3A] hover:text-white hover:border-[#C41E3A]"}
-                  `}
+                  className="
+                    px-7 py-2.5 rounded-full
+                    font-heading font-bold text-[13px] uppercase tracking-[0.12em]
+                    bg-[#C41E3A] text-white border-2 border-[#C41E3A]
+                    hover:bg-[#A01830] hover:border-[#A01830]
+                    transition-colors duration-200 whitespace-nowrap
+                  "
                 >
                   Become a Member
                 </Link>

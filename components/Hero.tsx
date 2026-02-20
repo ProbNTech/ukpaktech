@@ -81,12 +81,12 @@ export function Hero() {
         </video>
       ))}
 
-      {/* Overlay — dark on left ~65%, fades to transparent right — matches ukproptech pattern */}
+      {/* Overlay — dark navy base + left-to-right fade, matching reference image */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to right, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.72) 40%, rgba(0,0,0,0.45) 65%, rgba(0,0,0,0.0) 100%)",
+            "linear-gradient(to right, rgba(8,16,36,0.92) 0%, rgba(8,16,36,0.85) 45%, rgba(8,16,36,0.50) 70%, rgba(8,16,36,0.10) 100%)",
         }}
       />
 
@@ -95,12 +95,12 @@ export function Hero() {
         <div className="w-full px-8 sm:px-12 lg:px-16 xl:px-20">
 
           {/* Small label */}
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#2563EB] mb-3">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#2563EB] mb-4">
             UPTECH
           </p>
 
           {/* Headline */}
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.08] text-white mb-7 max-w-[720px]">
+          <h1 className="font-heading font-extrabold text-5xl sm:text-6xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.05] text-white mb-8 max-w-[800px]">
             Driving bilateral technology collaboration between the UK and Pakistan
           </h1>
 
@@ -108,17 +108,17 @@ export function Hero() {
           <div className="flex flex-wrap items-center gap-6 mb-10">
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#2563EB] text-white font-bold text-sm hover:bg-[#1D4ED8] transition-colors duration-200"
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#C41E3A] text-white font-bold text-base hover:bg-[#A01830] transition-colors duration-200"
             >
               Explore our work
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
               href="/membership"
-              className="inline-flex items-center gap-2 text-white font-semibold text-sm underline underline-offset-4 hover:text-white/75 transition-colors duration-200"
+              className="inline-flex items-center gap-2.5 text-white font-semibold text-base underline underline-offset-4 hover:text-white/75 transition-colors duration-200"
             >
               Discover our membership
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
 
