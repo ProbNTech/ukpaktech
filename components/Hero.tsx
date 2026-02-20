@@ -81,30 +81,32 @@ export function Hero() {
         </video>
       ))}
 
-      {/* Overlay — dark navy base + left-to-right fade, matching reference image */}
+      {/* Overlay — smooth dissolve from dark left to clear right */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
-          background:
-            "linear-gradient(to right, rgba(8,16,36,0.92) 0%, rgba(8,16,36,0.85) 45%, rgba(8,16,36,0.50) 70%, rgba(8,16,36,0.10) 100%)",
+          background: "linear-gradient(to right, rgba(20,35,50,0.92) 0%, rgba(20,35,50,0.80) 30%, rgba(20,35,50,0.50) 55%, rgba(20,35,50,0.18) 78%, rgba(20,35,50,0.00) 100%)",
         }}
       />
 
-      {/* Content wrapper — bottom-anchored like ukproptech */}
-      <div className="relative z-20 flex items-end h-screen pb-16 pt-[72px]">
-        <div className="w-full px-8 sm:px-12 lg:px-16 xl:px-20">
+      {/* Content wrapper — vertically centered like reference */}
+      <div className="relative z-20 flex items-center h-screen px-8 sm:px-12 lg:px-16 xl:px-20">
+        <div className="w-full max-w-[55%]">
 
           {/* Small label */}
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#2563EB] mb-4">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#C41E3A] mb-4">
             UPTECH
           </p>
 
-          {/* Headline */}
-          <h1 className="font-heading font-extrabold text-5xl sm:text-6xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.05] text-white mb-8 max-w-[800px]">
+          {/* Headline — scaled down so it fits ~2 lines comfortably */}
+          <h1
+            className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-7"
+            style={{ lineHeight: 1.25 }}
+          >
             Driving bilateral technology collaboration between the UK and Pakistan
           </h1>
 
-          {/* Buttons — rounded-full pill + plain underlined link */}
+          {/* Buttons */}
           <div className="flex flex-wrap items-center gap-6 mb-10">
             <Link
               href="/about"
@@ -122,22 +124,22 @@ export function Hero() {
             </Link>
           </div>
 
-          {/* Green separator line — ukproptech signature */}
-          <div className="w-full h-px bg-[#22C55E] mb-6" />
+          {/* Gold/yellow separator line — ukproptech signature */}
+          <div className="w-full h-px bg-[#F59E0B] mb-6" />
 
           {/* Partner logos row */}
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/60 mb-4">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-white/80 mb-5">
             Trusted by leading organisations
           </p>
-          <div className="flex items-center gap-8 flex-wrap">
+          <div className="flex items-center gap-10 flex-wrap">
             {["/image/sponsor-logos/1.png", "/image/sponsor-logos/2.png", "/image/sponsor-logos/3.png"].map((src, i) => (
-              <div key={i} className="relative h-8 w-24 opacity-70 hover:opacity-100 transition-opacity duration-200">
+              <div key={i} className="relative h-14 w-36 opacity-80 hover:opacity-100 transition-opacity duration-200">
                 <Image
                   src={src}
                   alt={`Partner ${i + 1}`}
                   fill
                   className="object-contain object-left"
-                  sizes="96px"
+                  sizes="144px"
                 />
               </div>
             ))}
