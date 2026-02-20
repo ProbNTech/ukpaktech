@@ -90,13 +90,12 @@ export function Hero() {
           className="w-full h-full"
         >
           <defs>
-            <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%"   stopColor="#0d1b2e" stopOpacity="0.65" />
-              <stop offset="60%"  stopColor="#0f2035" stopOpacity="0.52" />
-              <stop offset="100%" stopColor="#112240" stopOpacity="0.28" />
-            </linearGradient>
+            {/* Feathered edge filter for the crescent */}
+            <filter id="crescentBlur" x="-10%" y="-10%" width="120%" height="120%">
+              <feGaussianBlur stdDeviation="6" />
+            </filter>
           </defs>
-          {/* Dark glassy rectangle with circular hole */}
+          {/* Dark teal-grey veil — flat fill + multiply blend like UKPropTech */}
           <path
             d="
               M -760 -445 L -760 710 L 1268 710 L 1268 -445 Z
@@ -108,9 +107,9 @@ export function Hero() {
               A 425.831 425.831 0 0 0 484.395  -42.938
               A 425.831 425.831 0 0 0 205.357 -442.635 Z
             "
-            fill="url(#glassGrad)"
+            style={{ fill: "#1a2e35", fillOpacity: 0.78, mixBlendMode: "multiply" }}
           />
-          {/* Dark navy crescent — glassy, spreads left to cover full width */}
+          {/* Teal crescent accent — softened edge via blur filter */}
           <path
             d="
               M 205.357 -442.635
@@ -121,7 +120,8 @@ export function Hero() {
               L -760 -445
               Z
             "
-            fill="url(#glassGrad)"
+            filter="url(#crescentBlur)"
+            style={{ fill: "#2a8c8c", fillOpacity: 0.2, mixBlendMode: "normal" }}
           />
         </svg>
       </div>
