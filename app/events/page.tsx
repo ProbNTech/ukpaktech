@@ -2,17 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Section } from "@/components/Section";
 import { motion, useReducedMotion } from "framer-motion";
 import { EventGrid } from "@/components/events/EventGrid";
-import { featuredEvents } from "@/data/featured-events";
 import { NewsUpdates } from "@/components/events/NewsUpdates";
 import { EventsCTA } from "@/components/events/EventsCTA";
 import { ChevronRight, Mail } from "lucide-react";
+import { events } from "@/data/events";
 
+/* ------------------------------------------------------------------ */
+/*  News items (hardcoded — move to data/news.ts when ready)           */
+/* ------------------------------------------------------------------ */
 const newsItems = [
   {
     title: "UPTECH Announces New Partnership Initiative",
@@ -58,8 +61,41 @@ const newsItems = [
   },
 ];
 
+/* ------------------------------------------------------------------ */
+/*  Filter tabs                                                         */
+/* ------------------------------------------------------------------ */
+type FilterTab = "All" | "Upcoming" | "Past" | "London" | "Pakistan" | "UPTECH";
+const FILTER_TABS: FilterTab[] = ["All", "Upcoming", "Past", "London", "Pakistan", "UPTECH"];
+
+/* ------------------------------------------------------------------ */
+/*  Events listing page                                                 */
+/* ------------------------------------------------------------------ */
 export default function EventsPage() {
   const shouldReduceMotion = useReducedMotion();
+  const [activeFilter, setActiveFilter] = useState<FilterTab>("All");
+
+  const filteredEvents = events.filter((e) => {
+    if (activeFilter === "All") return true;
+    if (activeFilter === "Upcoming") return e.status === "upcoming";
+    if (activeFilter === "Past") return e.status === "past";
+    return e.category === activeFilter;
+  });
+
+  // Sort: upcoming by date asc, past by date desc, mixed by dateISO
+  const sortedEvents = [...filteredEvents].sort((a, b) => {
+    if (activeFilter === "Past") return b.dateISO.localeCompare(a.dateISO);
+    return a.dateISO.localeCompare(b.dateISO);
+  });
+
+  const gridEvents = sortedEvents.map((e) => ({
+    slug: e.slug,
+    title: e.title,
+    date: e.date,
+    image: e.image,
+    summary: e.excerpt,
+    location: e.location,
+    tag: e.tag,
+  }));
 
   return (
     <div>
@@ -67,7 +103,6 @@ export default function EventsPage() {
       {/*  HERO                                                         */}
       {/* ============================================================ */}
       <section className="relative overflow-hidden -mt-[72px] min-h-[480px]">
-        {/* Background image */}
         <Image
           src="/image/london-images/7.jpg"
           alt=""
@@ -76,7 +111,6 @@ export default function EventsPage() {
           className="object-fit object-center"
           sizes="100vw"
         />
-        {/* Overlay */}
         <div
           className="absolute inset-0 z-[1]"
           style={{
@@ -119,29 +153,33 @@ export default function EventsPage() {
 
           <div className="w-full h-px bg-white/20 mb-5" />
 
-          {/* Subtitle */}
           <motion.p
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
             className="text-lg text-white/70 max-w-2xl leading-relaxed mb-7"
           >
-            Stay updated with UPTECH events, news, and activities connecting the UK and Pakistan technology sectors.
+            UPTECH events, key London and Pakistan tech summits, and bilateral engagements connecting both nations&apos; technology ecosystems.
           </motion.p>
 
-          {/* Tag chips */}
+          {/* Stats chips */}
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.35 }}
             className="flex flex-wrap gap-3"
           >
-            {["Summits", "Dialogues", "Webinars", "Showcases"].map((chip) => (
+            {[
+              { label: `${events.filter((e) => e.status === "upcoming").length} Upcoming` },
+              { label: `${events.filter((e) => e.category === "London").length} London Events` },
+              { label: `${events.filter((e) => e.category === "Pakistan").length} Pakistan Events` },
+              { label: `${events.filter((e) => e.category === "UPTECH").length} UPTECH Events` },
+            ].map((chip) => (
               <span
-                key={chip}
+                key={chip.label}
                 className="inline-flex items-center px-4 py-1.5 border border-white/30 text-white/80 text-xs font-semibold uppercase tracking-wide"
               >
-                {chip}
+                {chip.label}
               </span>
             ))}
           </motion.div>
@@ -156,12 +194,11 @@ export default function EventsPage() {
           <SectionHeader label="Our programme" title="Overview" />
 
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
-            {/* Left — Text */}
             <div className="flex-1 min-w-0 space-y-6">
               <p className="text-base leading-relaxed text-[#3D4152]">
-                Our events run under the UK–Pakistan Tech Council&apos;s flagship programmes, creating opportunities for networking, knowledge-sharing, and cross-border collaboration. From{" "}
-                <strong className="text-[#1C1F2E]">intimate roundtables to large-scale summits</strong>, our programme is designed to help technology professionals, investors, and policymakers connect, learn, and drive digital transformation across both nations. With{" "}
-                <strong className="text-[#1C1F2E]">a growing calendar of events annually</strong>, UPTECH members stay at the forefront of UK–Pakistan technology innovation.
+                Our events calendar spans the full UK–Pakistan technology corridor — from{" "}
+                <strong className="text-[#1C1F2E]">UPTECH flagship summits and dialogues</strong> to major{" "}
+                <strong className="text-[#1C1F2E]">London and Pakistan technology events</strong> where our members and partners make their mark. With a growing calendar of engagements annually, UPTECH members stay at the forefront of UK–Pakistan technology innovation.
               </p>
 
               <div>
@@ -175,24 +212,24 @@ export default function EventsPage() {
 
               <div>
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">
-                  Investor Dialogues &amp; Roundtables
+                  London Tech Calendar
                 </h3>
                 <p className="text-sm leading-relaxed text-[#3D4152]">
-                  Invitation-only gatherings connecting UK and Pakistani investors with high-growth technology companies. These structured sessions facilitate meaningful deal flow and long-term partnerships.
+                  From London Tech Week and SXSW London to the AI Summit and DTX, we track and attend the most significant technology events in the UK capital — connecting Pakistani companies and diaspora professionals to the heart of European tech.
                 </p>
               </div>
 
               <div>
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">
-                  Webinars &amp; Digital Events
+                  Pakistan Events Calendar
                 </h3>
                 <p className="text-sm leading-relaxed text-[#3D4152]">
-                  Regular online sessions featuring industry experts, policy briefings, and market intelligence updates. Open to all members and selected partners.
+                  ITCN Asia, ASOCIO Digital Summit, and the HBL P@SHA ICT Awards represent Pakistan&apos;s most significant technology events. UPTECH helps UK companies engage meaningfully with Pakistan&apos;s domestic technology ecosystem through these premier platforms.
                 </p>
               </div>
             </div>
 
-            {/* Right — Contact card */}
+            {/* Contact card */}
             <div className="lg:w-72 shrink-0">
               <div className="bg-white border border-[#D8D5CF] p-6">
                 <div className="flex items-start gap-5">
@@ -230,7 +267,7 @@ export default function EventsPage() {
       </Section>
 
       {/* ============================================================ */}
-      {/*  EVENTS & HIGHLIGHTS                                          */}
+      {/*  EVENTS GRID WITH FILTERS                                     */}
       {/* ============================================================ */}
       <Section variant="alt">
         <AnimatedSection>
@@ -240,16 +277,48 @@ export default function EventsPage() {
             subtitle="Key engagements, summits, and activities from the UK–Pakistan corridor."
           />
 
-          <EventGrid
-            hideBadge
-            events={featuredEvents.map(({ title, date, image, shortDescription, location }) => ({
-              title,
-              date,
-              image,
-              summary: shortDescription,
-              location: location ?? "",
-            }))}
-          />
+          {/* Filter tabs */}
+          <div className="flex flex-wrap gap-2 mb-10">
+            {FILTER_TABS.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveFilter(tab)}
+                className={`px-4 py-2 text-xs font-bold uppercase tracking-wide border transition-colors duration-200 ${
+                  activeFilter === tab
+                    ? "bg-[#1C1F2E] text-white border-[#1C1F2E]"
+                    : "bg-white text-[#3D4152] border-[#D8D5CF] hover:border-[#2563EB] hover:text-[#2563EB]"
+                }`}
+              >
+                {tab}
+                {tab === "All" && (
+                  <span className="ml-2 opacity-60">{events.length}</span>
+                )}
+                {tab === "Upcoming" && (
+                  <span className="ml-2 opacity-60">{events.filter((e) => e.status === "upcoming").length}</span>
+                )}
+                {tab === "Past" && (
+                  <span className="ml-2 opacity-60">{events.filter((e) => e.status === "past").length}</span>
+                )}
+                {tab === "London" && (
+                  <span className="ml-2 opacity-60">{events.filter((e) => e.category === "London").length}</span>
+                )}
+                {tab === "Pakistan" && (
+                  <span className="ml-2 opacity-60">{events.filter((e) => e.category === "Pakistan").length}</span>
+                )}
+                {tab === "UPTECH" && (
+                  <span className="ml-2 opacity-60">{events.filter((e) => e.category === "UPTECH").length}</span>
+                )}
+              </button>
+            ))}
+          </div>
+
+          {gridEvents.length > 0 ? (
+            <EventGrid hideBadge={false} events={gridEvents} />
+          ) : (
+            <div className="text-center py-16 text-[#3D4152]">
+              <p className="text-base">No events found for this filter.</p>
+            </div>
+          )}
         </AnimatedSection>
       </Section>
 
@@ -263,7 +332,6 @@ export default function EventsPage() {
             title="News &amp; Updates"
             subtitle="Stay informed with the latest news, announcements, and insights from UPTECH."
           />
-
           <NewsUpdates items={newsItems} />
         </AnimatedSection>
       </Section>
