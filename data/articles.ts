@@ -12,6 +12,219 @@ export interface Article {
 }
 
 export const articles: Article[] = [
+  /* ── Pakistan IT News — February 2026 ── */
+  {
+    slug: "islamabad-ai-declaration-2026",
+    title: "Pakistan Adopts the Islamabad AI Declaration",
+    category: "Policy",
+    date: "20 February 2026",
+    author: "UPTECH Editorial Team",
+    authorRole: "UK–Pakistan Tech Council",
+    image: "/image/news/Adoption_of_the_Islamabad_AI_Declaration.webp",
+    excerpt:
+      "Pakistan's Ministry of IT and Telecommunication formally adopted the Islamabad AI Declaration, establishing a national framework for responsible AI governance and cross-border digital cooperation.",
+    body: [
+      "Pakistan's Ministry of Information Technology and Telecommunication (MoITT), led by Federal Minister Shaza Fatima Khawaja, formally adopted the Islamabad AI Declaration on 20 February 2026. The declaration establishes Pakistan's official position on responsible artificial intelligence development, governance, and international cooperation — setting out principles for algorithmic transparency, data sovereignty, and inclusive access to AI-driven public services.",
+      "The declaration also commits Pakistan to active participation in multilateral AI governance forums and bilateral AI policy dialogues with partner nations. For the UK–Pakistan technology partnership, the adoption of a formal AI declaration by Pakistan creates a shared policy vocabulary that significantly simplifies discussions on joint AI programmes, data-sharing agreements, and AI-focused investment frameworks.",
+      "UPTECH views the Islamabad AI Declaration as a foundational document for the next phase of bilateral technology cooperation. UK technology companies and research institutions with AI programmes targeting the Pakistani public sector now have a clear policy anchor for their engagement strategies. The Council will publish a briefing paper on the declaration's implications for UK–Pakistan AI collaboration.",
+    ],
+    relatedSlugs: [
+      "pakistan-1-billion-ai-investment-2026",
+      "pakistan-national-super-app-2026",
+      "uk-national-ai-strategy-1-6-billion-2026",
+    ],
+  },
+  {
+    slug: "pakistan-1-billion-ai-investment-2026",
+    title: "Pakistan Secures USD 1 Billion AI Investment Commitment",
+    category: "Investment",
+    date: "12 February 2026",
+    author: "UPTECH Editorial Team",
+    authorRole: "UK–Pakistan Tech Council",
+    image: "/image/news/USD_1_Billion_AI_Investment_Commitment.webp",
+    excerpt:
+      "Pakistan has secured a landmark USD 1 billion commitment to artificial intelligence infrastructure and development, marking the largest single AI investment pledge in the country's history.",
+    body: [
+      "Pakistan has secured a USD 1 billion commitment dedicated to artificial intelligence infrastructure, talent development, and enterprise AI deployment — the largest single AI investment pledge in the country's history. The commitment, announced in February 2026, brings together international technology investors, multilateral development finance institutions, and domestic capital to fund a coordinated national AI scale-up programme.",
+      "The investment will be deployed across AI computing infrastructure, university AI research centres, enterprise AI adoption programmes for the banking and telecommunications sectors, and a national AI startup accelerator. Federal Minister Shaza Fatima Khawaja described the commitment as a pivotal moment for Pakistan's ambition to be a top-five AI services economy by 2030.",
+      "For the UK–Pakistan technology partnership, the USD 1 billion AI investment creates substantial commercial opportunities for UK technology companies with AI infrastructure, consulting, and training capabilities. UPTECH is working to identify the most relevant procurement and partnership pathways within the investment programme for UK member companies, and will host a dedicated briefing session for interested members.",
+    ],
+    relatedSlugs: [
+      "islamabad-ai-declaration-2026",
+      "pakistan-national-super-app-2026",
+      "uk-national-ai-strategy-1-6-billion-2026",
+    ],
+  },
+  {
+    slug: "pakistan-dco-chairmanship-2026",
+    title: "Pakistan Assumes Presidency of the Digital Cooperation Organisation",
+    category: "Leadership",
+    date: "5 February 2026",
+    author: "UPTECH Editorial Team",
+    authorRole: "UK–Pakistan Tech Council",
+    image: "/image/news/Pakistan_Presidency_of_the_DCO.webp",
+    excerpt:
+      "Pakistan has assumed the Chairmanship of the Digital Cooperation Organisation (DCO), taking on a pivotal leadership role in shaping global digital policy and cross-border technology cooperation.",
+    body: [
+      "Pakistan formally assumed the Chairmanship of the Digital Cooperation Organisation (DCO) in February 2026, taking on the rotating presidency of the inter-governmental body whose 16 member states collectively represent over 800 million people and some of the world's fastest-growing digital economies. The DCO focuses on advancing the digital economy, promoting inclusive digital policies, and facilitating cross-border digital trade and cooperation.",
+      "Pakistan's Chairmanship, overseen by Federal Minister Shaza Fatima Khawaja, will advance a programme centred on AI governance, digital financial inclusion, digital skills development, and frameworks for responsible cross-border data flows. The Chairmanship gives Pakistan significant influence over the multilateral digital policy agenda for the duration of its term.",
+      "For UK technology companies engaged in digital governance, regulatory technology, and public sector digitalisation, Pakistan's DCO Chairmanship creates valuable access opportunities. UPTECH will leverage Pakistan's elevated multilateral standing to facilitate introductions for UK members into DCO-aligned programmes and to advance the bilateral technology partnership agenda within international digital cooperation frameworks.",
+    ],
+    relatedSlugs: [
+      "islamabad-ai-declaration-2026",
+      "pakistan-1-billion-ai-investment-2026",
+      "pakistan-freelancer-earnings-milestone-2026",
+    ],
+  },
+  {
+    slug: "pakistan-national-super-app-2026",
+    title: "Pakistan's National 'Super App' for Government Services Advances Toward Launch",
+    category: "Technology",
+    date: "15 February 2026",
+    author: "UPTECH Editorial Team",
+    authorRole: "UK–Pakistan Tech Council",
+    image: "/image/news/Launch_of_the_National_Super_App.webp",
+    excerpt:
+      "Pakistan's ambitious National Super App — consolidating government services, document verification, and digital identity into a single platform — has cleared final development milestones and is advancing toward a nationwide launch.",
+    body: [
+      "Pakistan's National Super App — an ambitious unified platform designed to consolidate government services, digital document verification, and biometric identity functions into a single citizen-facing application — has advanced through final development and testing milestones, moving toward a phased nationwide launch. The initiative, championed by Federal Minister Shaza Fatima Khawaja, represents Pakistan's most significant single investment in citizen-facing digital government infrastructure.",
+      "The Super App integrates identity verification, document issuance, payment of government fees, social protection benefit access, and real-time status tracking across multiple government departments. The biometric verification layer addresses Pakistan's longstanding challenge of document fraud, while the consolidated service architecture dramatically reduces the number of interactions citizens must have with different government offices.",
+      "The Super App's technology architecture draws on international govtech expertise and creates specific partnership opportunities for UK technology companies specialising in digital identity, biometric systems, citizen experience design, and government cloud infrastructure. UPTECH is monitoring the procurement pipeline closely and will provide members with early intelligence on partnership and contracting opportunities within the Super App ecosystem.",
+    ],
+    relatedSlugs: [
+      "islamabad-ai-declaration-2026",
+      "pakistan-1-billion-ai-investment-2026",
+      "pakistan-dco-chairmanship-2026",
+    ],
+  },
+  {
+    slug: "pakistan-freelancer-earnings-milestone-2026",
+    title: "Pakistani Freelancers Cross $500 Million Earnings Milestone in H1 FY26",
+    category: "Industry",
+    date: "22 February 2026",
+    author: "UPTECH Editorial Team",
+    authorRole: "UK–Pakistan Tech Council",
+    image: "/image/news/Record_Freelancer_Earnings.webp",
+    excerpt:
+      "Pakistan's digital freelancing sector has crossed the $500 million earnings threshold in the first half of FY2026, marking a record milestone that underscores the country's growing position as a global technology talent hub.",
+    body: [
+      "Pakistani freelancers earned more than $500 million in the first half of fiscal year 2025–26, crossing a major milestone that reflects the remarkable depth and global demand for Pakistan's technology talent. The figure, reported by the State Bank of Pakistan and cited by Federal Minister Shaza Fatima Khawaja as evidence of the sector's momentum, represents a significant increase over the same period in the prior year and positions Pakistan as one of the world's top five freelancing nations by earnings.",
+      "The milestone is driven by growth in software development, AI and data services, digital design, and content creation — sectors where Pakistani professionals are increasingly competitive at the global price-quality intersection. The government's investment in digital skills infrastructure, including the DigiSkills programme, has contributed to a broadening of the freelancer base beyond major urban centres into secondary cities and rural areas.",
+      "For UK technology companies, Pakistan's freelancing talent ecosystem represents both an immediate human resources opportunity and a longer-term signal about the country's readiness for more structured technology partnership. UPTECH works with member companies seeking to engage Pakistani technology talent through formal employment, contracting, and nearshoring arrangements, providing guidance on compliance, payments, and talent identification.",
+    ],
+    relatedSlugs: [
+      "pakistan-1-billion-ai-investment-2026",
+      "pakistan-dco-chairmanship-2026",
+      "islamabad-ai-declaration-2026",
+    ],
+  },
+  /* ── United Kingdom IT News — Early 2026 ── */
+  {
+    slug: "uk-national-ai-strategy-1-6-billion-2026",
+    title: "UKRI Launches £1.6 Billion National AI Strategy with Bold Investment Commitments",
+    category: "Policy",
+    date: "19 February 2026",
+    author: "UPTECH Editorial Team",
+    authorRole: "UK–Pakistan Tech Council",
+    image: "/image/news/National_AI_Strategy.webp",
+    excerpt:
+      "UK Research and Innovation (UKRI) has unveiled a £1.6 billion AI strategy targeting areas where the UK can establish global leadership — from healthcare AI to climate technology and advanced manufacturing.",
+    body: [
+      "UK Research and Innovation (UKRI) has unveiled a landmark £1.6 billion national artificial intelligence strategy that identifies specific sectors and technologies where the United Kingdom is positioned to achieve global leadership. The strategy, announced in February 2026, moves beyond broad AI investment rhetoric to make focused bets on healthcare AI, climate and clean energy technology, advanced manufacturing, and AI safety research — areas where existing UK research strengths and industrial base create sustainable competitive advantage.",
+      "The strategy establishes new AI Frontier Institutes co-locating academic researchers with industry partners, expands the UK's compute infrastructure through national AI supercomputing investments, and creates dedicated international collaboration frameworks — with partner countries including Canada, the United States, and India — for joint AI research and standards development.",
+      "For the UK–Pakistan technology partnership, the UKRI AI strategy creates opportunities for Pakistani AI researchers and companies to engage with UK AI programmes through the strategy's international collaboration framework. UPTECH is exploring whether Pakistan can be positioned as a formal partner nation within specific UKRI AI programmes, leveraging Pakistan's AI Declaration and the bilateral technology partnership agenda to create structured research and commercial linkages.",
+    ],
+    relatedSlugs: [
+      "islamabad-ai-declaration-2026",
+      "pakistan-1-billion-ai-investment-2026",
+      "uk-national-data-library-launch-2026",
+    ],
+  },
+  {
+    slug: "uk-48-hour-takedown-law-abusive-images-2026",
+    title: "UK Introduces 48-Hour Takedown Law for Abusive Online Images",
+    category: "Regulation",
+    date: "19 February 2026",
+    author: "UPTECH Editorial Team",
+    authorRole: "UK–Pakistan Tech Council",
+    image: "/image/news/New_Hour_Takedown.webp",
+    excerpt:
+      "The UK Government has introduced legislation requiring online platforms to remove intimate or abusive images within 48 hours of notification, establishing one of the world's most stringent digital content enforcement regimes.",
+    body: [
+      "The UK Government has introduced legislation mandating that online platforms remove intimate or abusive images — including AI-generated deepfake content — within 48 hours of receiving a notification from the affected individual or an authorised reporting body. The law, introduced by the Department for Science, Innovation and Technology (DSIT), establishes one of the most robust digital content enforcement frameworks globally and carries significant financial penalties for platforms that fail to comply.",
+      "The legislation extends existing online safety obligations and reflects the UK's increasingly assertive posture on platform regulation. Technology companies operating in the UK must implement compliant detection and removal workflows within the timeframes specified, with independent auditing requirements for platforms above defined user thresholds. The law also introduces a right of appeal and mandatory transparency reporting on removal rates.",
+      "For the UK–Pakistan technology partnership, the UK's continued legislative activity on online safety and platform regulation creates demand for specialised compliance technology. Pakistani companies with expertise in content moderation, AI-assisted detection, and platform compliance tooling may find the UK regulatory environment a compelling market opportunity. UPTECH can facilitate introductions between Pakistani RegTech and content safety companies and UK platform operators navigating new compliance obligations.",
+    ],
+    relatedSlugs: [
+      "uk-national-ai-strategy-1-6-billion-2026",
+      "uk-cyber-security-lock-the-door-campaign-2026",
+      "uk-national-data-library-launch-2026",
+    ],
+  },
+  {
+    slug: "uk-national-data-library-launch-2026",
+    title: "UK Government Launches National Data Library 'Kickstarter' Programme",
+    category: "Technology",
+    date: "26 January 2026",
+    author: "UPTECH Editorial Team",
+    authorRole: "UK–Pakistan Tech Council",
+    image: "/image/news/National_Data_Library.webp",
+    excerpt:
+      "The UK Government has launched the first phase of its National Data Library — a flagship initiative to make public sector data safely accessible for research, innovation, and AI development at national scale.",
+    body: [
+      "The UK Government has launched the 'Kickstarter' phase of its National Data Library — a flagship initiative to create a governed, interoperable infrastructure for safe access to public sector data for research, innovation, and AI development. The programme, overseen by the Government Digital Service (GDS) and DSIT, will initially focus on NHS health data, transport data, and environmental data, establishing the technical standards and governance frameworks that will underpin broader data sharing across government.",
+      "The National Data Library is designed to address one of the most significant barriers to AI research and development in the UK: access to high-quality, representative real-world datasets at scale. By creating a trusted mechanism for researchers, technology companies, and startups to access public sector data under appropriate safeguards, the programme aims to accelerate AI development in sectors where UK institutions hold globally significant datasets.",
+      "For the UK–Pakistan technology partnership, the National Data Library creates a model that Pakistan's own data governance agenda is actively considering adapting. UPTECH sees an opportunity to facilitate bilateral dialogue between UK and Pakistani data governance specialists, positioning UK expertise in data infrastructure and governance as a direct input into Pakistan's National AI strategy. UK data technology companies will also find commercial opportunities in the library's implementation supply chain.",
+    ],
+    relatedSlugs: [
+      "uk-national-ai-strategy-1-6-billion-2026",
+      "barnsley-uk-first-tech-town-2026",
+      "uk-cyber-security-lock-the-door-campaign-2026",
+    ],
+  },
+  {
+    slug: "barnsley-uk-first-tech-town-2026",
+    title: "Barnsley Named the UK's First Official 'Tech Town' with Focus on AI",
+    category: "Innovation",
+    date: "3 February 2026",
+    author: "UPTECH Editorial Team",
+    authorRole: "UK–Pakistan Tech Council",
+    image: "/image/news/Barnsley_Named_UK.webp",
+    excerpt:
+      "Barnsley has been designated the United Kingdom's first official 'Tech Town', launching an ambitious programme to transform the South Yorkshire town into a hub for AI adoption, digital skills, and technology business growth.",
+    body: [
+      "Barnsley has been officially designated the United Kingdom's first 'Tech Town' — a new government-backed designation that recognises and funds places demonstrating exceptional ambition and commitment to technology-led economic transformation. The designation, awarded by DSIT under the UK Government's levelling-up technology agenda, comes with dedicated funding, national policy support, and a programme of connectivity and digital skills investment designed to position Barnsley as a model for AI and technology adoption outside traditional metropolitan tech centres.",
+      "The Tech Town programme in Barnsley will focus on three pillars: broadband and 5G infrastructure reaching 100% coverage across the town's business parks and residential areas, a comprehensive AI readiness programme for local SMEs delivered through the Barnsley Digital Media Centre, and a schools technology programme introducing AI literacy from primary through to further education. The designation also brings preferential access to UKRI innovation funding and to the UK Government's AI adoption advisory service.",
+      "Barnsley's designation as a Tech Town carries significance for the UK–Pakistan technology partnership. It demonstrates the UK Government's commitment to distributing technology-led growth beyond London — creating partner opportunities for Pakistani technology companies targeting UK regional markets. UPTECH will explore whether Barnsley's technology programme creates specific openings for Pakistani tech firms and diaspora professionals seeking to establish a UK presence outside London.",
+    ],
+    relatedSlugs: [
+      "uk-national-ai-strategy-1-6-billion-2026",
+      "uk-national-data-library-launch-2026",
+      "uk-cyber-security-lock-the-door-campaign-2026",
+    ],
+  },
+  {
+    slug: "uk-cyber-security-lock-the-door-campaign-2026",
+    title: "UK Government Launches 'Lock the Door' National Cyber Security Campaign",
+    category: "Cybersecurity",
+    date: "17 February 2026",
+    author: "UPTECH Editorial Team",
+    authorRole: "UK–Pakistan Tech Council",
+    image: "/image/news/Cyber_Security.webp",
+    excerpt:
+      "The UK Government has launched a major public cyber security awareness campaign encouraging individuals and businesses to adopt basic but critical protective measures against the growing threat of cyber attacks.",
+    body: [
+      "The UK Government, through the National Cyber Security Centre (NCSC) and DSIT, has launched 'Lock the Door' — a national cyber security awareness campaign urging UK individuals and businesses to adopt fundamental protective measures against the accelerating frequency and sophistication of cyber attacks. The campaign targets the most exploitable vulnerabilities in the UK's cyber security posture: weak passwords, unpatched software, lack of multi-factor authentication, and low employee awareness of phishing and social engineering techniques.",
+      "The campaign marks a shift in government communications toward more direct, action-oriented messaging, drawing on behavioural science research to maximise adoption of protective behaviours. 'Lock the Door' is accompanied by a refreshed NCSC guidance library, a free small business cyber security assessment tool, and a national schools programme on cyber safety. The campaign has the explicit backing of the Cabinet Office and is being delivered through a significant media buy across digital, broadcast, and outdoor channels.",
+      "The cyber security landscape is directly relevant to the UK–Pakistan technology partnership. Pakistan faces significant cyber security challenges in its public sector and critical infrastructure, creating demand for UK expertise in cyber resilience, incident response, and security operations. UPTECH sees the UK's heightened national focus on cyber security as an opportunity to position UK cyber security companies as preferred partners for Pakistan's own national cyber security improvement programmes, and will explore co-ordinated engagement opportunities with Pakistan's National Cyber Security Authority.",
+    ],
+    relatedSlugs: [
+      "uk-national-ai-strategy-1-6-billion-2026",
+      "uk-48-hour-takedown-law-abusive-images-2026",
+      "uk-national-data-library-launch-2026",
+    ],
+  },
+  /* ── Earlier UPTECH articles ── */
   {
     slug: "uk-pakistan-bilateral-tech-investment-deal",
     title: "UK and Pakistan Sign Landmark £200M Bilateral Technology Investment Agreement",

@@ -34,7 +34,7 @@ export function PageHero({
             alt=""
             fill
             priority
-            className="object-fit object-center"
+            className="object-cover object-center"
             sizes="100vw"
           />
           {/* Dark overlay — left heavier, fading slightly right, matching the UKPropTech reference */}

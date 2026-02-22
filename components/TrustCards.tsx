@@ -28,7 +28,7 @@ export function TrustCards() {
             whileHover={{ y: -6, scale: 1.02 }}
             className="group relative"
           >
-            <div className="relative h-full bg-white rounded-2xl border border-gray-100 p-6 shadow-md hover:shadow-lg hover:border-[#2563EB]/20 transition-all duration-500 overflow-hidden">
+            <div className="relative h-full bg-white rounded border border-gray-100 p-6 shadow-md hover:shadow-lg hover:border-[#2563EB]/20 transition-all duration-500 overflow-hidden">
               <div
                 className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 border group-hover:scale-110 transition-transform duration-500"
                 style={{ backgroundColor: `${item.color}10`, borderColor: `${item.color}20` }}

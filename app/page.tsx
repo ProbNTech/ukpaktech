@@ -22,11 +22,11 @@ const ImpactStats = dynamic(() =>
   import("@/components/ImpactStats").then((m) => ({ default: m.ImpactStats }))
 );
 
-/* Top 3 articles for the homepage news grid */
-const homepageArticles = articles.slice(0, 3);
+/* Top 6 articles for the homepage news grid — 2 rows × 3 columns */
+const homepageArticles = articles.slice(0, 6);
 
-/* Top 4 events — matching ukproptech 4-column layout */
-const homepageEvents = featuredEvents.slice(0, 4);
+/* 12 events — 3 rows × 4 columns on the homepage */
+const homepageEvents = featuredEvents.slice(0, 12);
 
 /* ─── Shared section header: label + large title + full-width rule ─── */
 function SectionHeader({
@@ -123,24 +123,20 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               {[
                 {
-                  // Tech startup team in a modern open-plan office
-                  title: "Technology Companies",
-                  image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=85&fit=crop&auto=format",
+                  title: "IT Companies",
+                  image: "/image/Who%20can%20join/IT_Companies.webp",
                 },
                 {
-                  // Professional business handshake / investor meeting
                   title: "Investors & VCs",
-                  image: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&q=85&fit=crop&auto=format",
+                  image: "/image/Who%20can%20join/Investors_VCs.webp",
                 },
                 {
-                  // Grand university library — academic research setting
                   title: "Academic & Research",
-                  image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=85&fit=crop&auto=format",
+                  image: "/image/Who%20can%20join/Academic_Research.webp",
                 },
                 {
-                  // Confident professional woman — individual industry leader
                   title: "Individual Professionals",
-                  image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=85&fit=crop&auto=format",
+                  image: "/image/Who%20can%20join/Individual_Professionals.webp",
                 },
               ].map((item) => (
                 <Link key={item.title} href="/membership" className="group flex flex-col">
@@ -182,15 +178,30 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 mb-10">
               {homepageEvents.map((event) => (
                 <Link key={event.id} href="/events" className="group flex flex-col">
-                  {/* Image */}
-                  <div className="relative aspect-[4/3] overflow-hidden bg-[#D8D5CF] mb-4">
-                    <Image
-                      src={event.image}
-                      alt={event.title}
-                      fill
-                      className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    />
+                  {/* Image / placeholder */}
+                  <div className="aspect-[4/3] bg-[#1C1F2E] mb-4 relative overflow-hidden flex items-center justify-center">
+                    {event.image ? (
+                      <Image
+                        src={event.image}
+                        alt={event.title}
+                        fill
+                        className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                    ) : (
+                      <>
+                        <div
+                          className="absolute inset-0 opacity-10"
+                          style={{
+                            backgroundImage: "repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)",
+                            backgroundSize: "12px 12px",
+                          }}
+                        />
+                        <span className="relative text-white/25 text-[10px] font-semibold uppercase tracking-widest">
+                          {event.tag}
+                        </span>
+                      </>
+                    )}
                   </div>
                   {/* Title */}
                   <h3 className="font-heading font-bold text-[#1C1F2E] text-sm sm:text-base leading-snug mb-4 line-clamp-3 group-hover:text-[#2563EB] transition-colors duration-200">

@@ -39,7 +39,7 @@ export function EventPreview() {
 
         return (
           <Link key={index} href="/events" className="group block">
-            <div className="relative h-full rounded-2xl border border-gray-100 bg-white overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
+            <div className="relative h-full rounded border border-gray-100 bg-white overflow-hidden shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
               <div className="aspect-video bg-[#F8FAFC] relative overflow-hidden">
                 {!imageFailed && (
                   <Image

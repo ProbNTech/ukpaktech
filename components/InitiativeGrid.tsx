@@ -86,7 +86,7 @@ function InitiativeCard({ initiative, index, isInView }: { initiative: typeof in
       className="group relative"
       style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
     >
-      <div className="relative h-full bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-md hover:shadow-xl hover:border-[#2563EB]/20 transition-all duration-500">
+      <div className="relative h-full bg-white rounded border border-gray-100 overflow-hidden shadow-md hover:shadow-xl hover:border-[#2563EB]/20 transition-all duration-500">
         <motion.div
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
           className="relative"

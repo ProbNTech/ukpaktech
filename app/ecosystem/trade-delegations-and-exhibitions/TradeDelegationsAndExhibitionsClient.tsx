@@ -43,7 +43,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
       <PageHero
         title="Trade Delegations and Exhibitions"
         subtitle="Facilitating cross-border trade delegations and technology exhibitions to strengthen UK–Pakistan partnerships."
-        image="/image/london-images/2.jpg"
+        image="/image/Trade%20Delegations%20and%20Exhibitions/banner1.webp"
       />
 
       {/* Intro */}

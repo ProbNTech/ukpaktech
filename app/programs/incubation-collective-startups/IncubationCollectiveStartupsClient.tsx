@@ -64,7 +64,7 @@ export default function IncubationCollectiveStartupsClient() {
       <PageHero
         title="Incubation and Collective Startups"
         subtitle="Nurturing the next generation of tech startups and innovators through collaborative models and comprehensive support."
-        image="/image/london-images/2.jpg"
+        image="/image/Incubation%20and%20Collective%20Startups/banner1.webp"
       />
 
       {/* Intro */}
@@ -82,7 +82,7 @@ export default function IncubationCollectiveStartupsClient() {
                 We accelerate the journey from idea to market-ready product, connecting UK and Pakistani entrepreneurs with global opportunities.
               </p>
             </div>
-            <div className="bg-white border border-[#D8D5CF] p-8">
+            <div className="bg-white border border-[#D8D5CF] rounded p-8">
               <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-5">Program Snapshot</h3>
               <div className="h-px bg-[#1C1F2E]/15 mb-5" />
               <ul className="space-y-3">
@@ -108,7 +108,7 @@ export default function IncubationCollectiveStartupsClient() {
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {focusAreas.map((area) => (
-              <div key={area.title} className="bg-white border border-[#D8D5CF] p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
+              <div key={area.title} className="bg-white border border-[#D8D5CF] rounded p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
                 <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{area.title}</h3>
                 <div className="h-px bg-[#1C1F2E]/15 mb-3" />
                 <p className="text-[#3D4152] text-sm leading-relaxed">{area.description}</p>
@@ -176,7 +176,7 @@ export default function IncubationCollectiveStartupsClient() {
           />
           <div className="grid md:grid-cols-3 gap-6">
             {audiences.map((audience) => (
-              <div key={audience.title} className="bg-white border border-[#D8D5CF] p-6 hover:border-[#2563EB]/40 transition-colors duration-300 flex flex-col">
+              <div key={audience.title} className="bg-white border border-[#D8D5CF] rounded p-6 hover:border-[#2563EB]/40 transition-colors duration-300 flex flex-col">
                 <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{audience.title}</h3>
                 <div className="h-px bg-[#1C1F2E]/15 mb-4" />
                 <p className="text-[#3D4152] text-sm leading-relaxed mb-5 flex-1">{audience.description}</p>

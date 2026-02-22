@@ -44,7 +44,7 @@ export default function LeadershipPage() {
       <PageHero
         title="Leadership &amp; Governance"
         subtitle="UPTECH operates under a defined governance structure ensuring transparency, ethics, and accountability across all initiatives."
-        image="/image/london-images/4.jpg"
+        image="/image/Leadership%20Governance/Leadership%20_banner.webp"
       >
         <div className="flex flex-wrap gap-4 mt-2">
           {[
@@ -74,7 +74,7 @@ export default function LeadershipPage() {
               <button
                 key={card.id}
                 onClick={() => scrollToSection(card.id)}
-                className="text-left bg-white border border-[#D8D5CF] p-7 hover:border-[#2563EB]/40 transition-colors duration-200 group"
+                className="text-left bg-white border border-[#D8D5CF] rounded p-7 hover:border-[#2563EB]/40 transition-colors duration-200 group"
               >
                 <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{card.title}</h3>
                 <p className="text-[#3D4152] text-sm leading-relaxed mb-4">{card.desc}</p>
@@ -91,25 +91,25 @@ export default function LeadershipPage() {
 
       <GovernanceSection id="governance-structure" variant="alt" title="Governance Structure"
         desc="A comprehensive framework ensuring accountability, transparency, and ethical decision-making across all UPTECH operations."
-        image="/image/leadership/Governance Structure.jpg" imageAlt="UPTECH Governance Structure" imageLeft={false}
+        image="/image/Leadership%20Governance/Governance_Structure.webp" imageAlt="UPTECH Governance Structure" imageLeft={false}
         responsibilities={["Establish and maintain ethical standards","Oversee strategic direction and planning","Ensure legal and regulatory compliance","Provide transparent reporting","Manage conflicts of interest","Facilitate stakeholder engagement"]}
         shouldReduceMotion={shouldReduceMotion}
       />
       <GovernanceSection id="board-of-directors" variant="light" title="Board of Directors"
         desc="Strategic oversight and governance at the highest level, ensuring UPTECH's mission and values guide all decisions."
-        image="/image/leadership/Board of Directors.jpg" imageAlt="UPTECH Board of Directors" imageLeft={true}
+        image="/image/Leadership%20Governance/Board_Directors.webp" imageAlt="UPTECH Board of Directors" imageLeft={true}
         responsibilities={["Approve strategic plans and major initiatives","Oversee financial management and resources","Appoint and evaluate executive leadership","Ensure compliance with governance policies","Review and approve annual reports","Provide strategic guidance on partnerships"]}
         shouldReduceMotion={shouldReduceMotion}
       />
       <GovernanceSection id="advisory-council" variant="alt" title="Advisory Council"
         desc="Expert guidance and strategic counsel from distinguished leaders across technology, business, and policy."
-        image="/image/leadership/Advisory Council.jpg" imageAlt="UPTECH Advisory Council" imageLeft={false}
+        image="/image/Leadership%20Governance/Advisory_Council.webp" imageAlt="UPTECH Advisory Council" imageLeft={false}
         responsibilities={["Provide expert guidance on technology trends","Offer strategic counsel on program development","Facilitate connections with key stakeholders","Review and provide feedback on initiatives","Serve as ambassadors for UPTECH's mission","Contribute to thought leadership"]}
         shouldReduceMotion={shouldReduceMotion}
       />
       <GovernanceSection id="executive-leadership" variant="light" title="Executive Leadership"
         desc="Day-to-day operations and strategic execution of UPTECH's programs, initiatives, and member services."
-        image="/image/leadership/Executive Leadership.jpg" imageAlt="UPTECH Executive Leadership" imageLeft={true}
+        image="/image/Leadership%20Governance/Executive_Leadership.webp" imageAlt="UPTECH Executive Leadership" imageLeft={true}
         responsibilities={["Execute strategic plans and initiatives","Manage day-to-day operations and delivery","Build and maintain stakeholder partnerships","Oversee financial management and resources","Provide regular reporting to the Board","Ensure compliance with policies and procedures"]}
         shouldReduceMotion={shouldReduceMotion}
       />
@@ -137,7 +137,7 @@ function GovernanceSection({
       <h2 className="font-heading font-extrabold text-3xl text-[#1C1F2E] mb-2 leading-tight">{title}</h2>
       <div className="h-px bg-[#1C1F2E]/20 mb-5" />
       <p className="text-[#3D4152] leading-relaxed mb-7">{desc}</p>
-      <div className="bg-white border border-[#D8D5CF] p-6">
+      <div className="bg-white border border-[#D8D5CF] rounded p-6">
         <h4 className="font-heading font-bold text-sm text-[#1C1F2E] uppercase tracking-wide mb-4">Key Responsibilities</h4>
         <ul className="space-y-3">
           {responsibilities.map((item, i) => (
@@ -156,9 +156,9 @@ function GovernanceSection({
       initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
       animate={shouldReduceMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
       transition={{ duration: 0.5, delay: 0.1 }}
-      className="relative aspect-[4/3] overflow-hidden bg-[#D8D5CF]"
+      className="relative aspect-[4/3] overflow-hidden"
     >
-      <Image src={image} alt={imageAlt} fill className="object-contain" sizes="(max-width: 1024px) 100vw, 50vw" />
+      <Image src={image} alt={imageAlt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
     </motion.div>
   );
 

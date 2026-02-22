@@ -33,14 +33,24 @@ export function NewsCard({ slug, title, category, date, image, excerpt, index = 
         className="group flex flex-col h-full"
       >
         {/* Image — 16:9, slight zoom on hover */}
-        <div className="relative aspect-[16/9] overflow-hidden bg-[#D8D5CF] mb-5">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
+        <div className="relative aspect-[16/9] overflow-hidden bg-[#1C1F2E] mb-5 flex items-center justify-center">
+          {image ? (
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          ) : (
+            <div
+              className="absolute inset-0 opacity-10"
+              style={{
+                backgroundImage: "repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)",
+                backgroundSize: "12px 12px",
+              }}
+            />
+          )}
         </div>
 
         {/* Date */}

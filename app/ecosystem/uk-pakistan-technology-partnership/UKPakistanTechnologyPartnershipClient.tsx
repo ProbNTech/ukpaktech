@@ -61,7 +61,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
       <PageHero
         title="UK–Pakistan Technology Partnership"
         subtitle="Strengthening bilateral technology collaboration between the United Kingdom and Pakistan."
-        image="/image/london-images/15.jpg"
+        image="/image/UK%E2%80%93Pakistan%20Technology%20Partnership/banner2.webp"
       />
 
       {/* Intro */}
@@ -79,7 +79,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 This partnership facilitates cross-border cooperation, knowledge exchange, and joint initiatives that drive sustainable growth in both nations&apos; technology ecosystems.
               </p>
             </div>
-            <div className="bg-white border border-[#D8D5CF] p-8">
+            <div className="bg-white border border-[#D8D5CF] rounded p-8">
               <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-5">Partnership Pillars</h3>
               <div className="h-px bg-[#1C1F2E]/15 mb-5" />
               <ul className="space-y-3">
@@ -105,7 +105,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
           />
           <div className="grid md:grid-cols-3 gap-6">
             {pillars.map((pillar) => (
-              <div key={pillar.title} className="bg-white border border-[#D8D5CF] p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
+              <div key={pillar.title} className="bg-white border border-[#D8D5CF] rounded p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
                 <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{pillar.title}</h3>
                 <div className="h-px bg-[#1C1F2E]/15 mb-3" />
                 <p className="text-[#3D4152] text-sm leading-relaxed">{pillar.description}</p>
@@ -147,7 +147,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit) => (
-              <div key={benefit.title} className="bg-white border border-[#D8D5CF] p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
+              <div key={benefit.title} className="bg-white border border-[#D8D5CF] rounded p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
                 <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{benefit.title}</h3>
                 <div className="h-px bg-[#1C1F2E]/15 mb-3" />
                 <p className="text-[#3D4152] text-sm leading-relaxed">{benefit.description}</p>
@@ -208,7 +208,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
           </p>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
             {partnerLogos.map((logo, i) => (
-              <div key={logo} className="aspect-square bg-white border border-[#D8D5CF] flex items-center justify-center p-3">
+              <div key={logo} className="aspect-square bg-white border border-[#D8D5CF] rounded flex items-center justify-center p-3">
                 <div className="relative w-full h-full">
                   <Image src={logo} alt={`Partner logo ${i + 1}`} fill className="object-contain" sizes="120px" />
                 </div>

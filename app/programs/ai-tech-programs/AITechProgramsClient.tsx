@@ -54,7 +54,7 @@ export default function AITechProgramsPage() {
       <PageHero
         title="AI and Tech Programs"
         subtitle="Driving AI innovation and tech leadership between the UK and Pakistan through comprehensive training, certifications, and collaborative startup models."
-        image="/image/london-images/12.jpg"
+        image="/image/Ai%20and%20program/banner1.webp"
       >
         <div className="flex flex-wrap gap-4 mt-2">
           <Button href="/membership" variant="glass" showArrow>Become a Member</Button>
@@ -89,7 +89,7 @@ export default function AITechProgramsPage() {
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programs.map((program) => (
-              <div key={program.title} className="bg-white border border-[#D8D5CF] p-6 flex flex-col hover:border-[#2563EB]/40 transition-colors duration-300">
+              <div key={program.title} className="bg-white border border-[#D8D5CF] rounded p-6 flex flex-col hover:border-[#2563EB]/40 transition-colors duration-300">
                 <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{program.title}</h3>
                 <div className="h-px bg-[#1C1F2E]/15 mb-4" />
                 <p className="text-[#3D4152] text-sm leading-relaxed mb-4 flex-1">{program.description}</p>
@@ -137,7 +137,7 @@ export default function AITechProgramsPage() {
             title="Next Steps"
             subtitle="Join the programme and start building with UPTECH across the UK–Pakistan technology corridor."
           />
-          <div className="bg-white border border-[#D8D5CF] p-8 lg:p-10">
+          <div className="bg-white border border-[#D8D5CF] rounded p-8 lg:p-10">
             <p className="text-[#3D4152] leading-relaxed mb-6 max-w-3xl">
               Whether you are an entrepreneur, student, or technology professional, our programmes provide structured pathways to training, collaboration, and market access.
             </p>

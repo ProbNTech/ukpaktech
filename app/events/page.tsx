@@ -8,58 +8,14 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Section } from "@/components/Section";
 import { motion, useReducedMotion } from "framer-motion";
 import { EventGrid } from "@/components/events/EventGrid";
-import { NewsUpdates } from "@/components/events/NewsUpdates";
+import { NewsCard } from "@/components/NewsCard";
 import { EventsCTA } from "@/components/events/EventsCTA";
 import { ChevronRight, Mail } from "lucide-react";
 import { events } from "@/data/events";
+import { articles } from "@/data/articles";
 
-/* ------------------------------------------------------------------ */
-/*  News items (hardcoded — move to data/news.ts when ready)           */
-/* ------------------------------------------------------------------ */
-const newsItems = [
-  {
-    title: "UPTECH Announces New Partnership Initiative",
-    date: "12 January 2025",
-    category: "Partnership",
-    summary:
-      "UPTECH launches new strategic partnership program to strengthen UK–Pakistan technology collaboration.",
-  },
-  {
-    title: "Tech Excellence Awards 2025 Nominations Open",
-    date: "5 January 2025",
-    category: "Awards",
-    summary:
-      "Nominations are now open for the annual Tech Excellence Awards recognizing outstanding contributions.",
-  },
-  {
-    title: "New Member Portal Launched",
-    date: "20 December 2024",
-    category: "Platform",
-    summary:
-      "Enhanced member portal with new features for networking, resources, and collaboration opportunities.",
-  },
-  {
-    title: "Quarterly Newsletter: Q4 2024 Highlights",
-    date: "15 December 2024",
-    category: "News",
-    summary:
-      "Review of key achievements, events, and initiatives from the fourth quarter of 2024.",
-  },
-  {
-    title: "Upcoming Webinar: AI in Cross-Border Innovation",
-    date: "8 December 2024",
-    category: "Webinar",
-    summary:
-      "Join industry experts for an insightful discussion on AI's role in UK–Pakistan technology innovation.",
-  },
-  {
-    title: "Cross-Border Trade Strategy Report Released",
-    date: "1 December 2024",
-    category: "Report",
-    summary:
-      "Comprehensive report on cross-border trade strategies for technology companies operating between the UK and Pakistan.",
-  },
-];
+/* First 10 articles for the news section */
+const newsArticles = articles.slice(0, 10);
 
 /* ------------------------------------------------------------------ */
 /*  Filter tabs                                                         */
@@ -111,11 +67,11 @@ export default function EventsPage() {
       {/* ============================================================ */}
       <section className="relative overflow-hidden min-h-[480px]">
         <Image
-          src="/image/london-images/7.jpg"
+          src="/image/Events%20%26%20Engagements/banner1.webp"
           alt=""
           fill
           priority
-          className="object-fit object-center"
+          className="object-cover object-center"
           sizes="100vw"
         />
         <div
@@ -339,7 +295,20 @@ export default function EventsPage() {
             title="News &amp; Updates"
             subtitle="Stay informed with the latest news, announcements, and insights from UPTECH."
           />
-          <NewsUpdates items={newsItems} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            {newsArticles.map((article, i) => (
+              <NewsCard
+                key={article.slug}
+                slug={article.slug}
+                title={article.title}
+                category={article.category}
+                date={article.date}
+                image={article.image}
+                excerpt={article.excerpt}
+                index={i}
+              />
+            ))}
+          </div>
         </AnimatedSection>
       </Section>
 

@@ -9,92 +9,96 @@ export interface FeaturedEventItem {
 }
 
 export const featuredEvents: FeaturedEventItem[] = [
+  /* ── Pakistan Events ── */
   {
-    id: "fe-1",
-    title: "Pakistan Business Summit @ Davos 2025",
-    date: "20–24 January 2025",
+    id: "pk-1",
+    title: "NextGen Digital Summit 2026",
+    date: "February 25–26, 2026",
     shortDescription:
-      "High-level sideline summit during the World Economic Forum week in Davos, focusing on bilateral trade, investment, and Pakistan's economic transformation and strategic partnerships.",
-    image: "/image/eventgallery/event-1.jpg",
-    location: "Davos, Switzerland",
+      "Organized with regulatory support to define Pakistan's roadmap for 5G readiness, smart cities, and digital governance.",
+    image: "/image/Events%20%26%20Engagements/nextgen.webp",
+    location: "Karachi, Pakistan",
     tag: "Summit",
   },
   {
-    id: "fe-2",
-    title: "UK–Pakistan Business Summit 2025",
-    date: "21–22 November 2025",
+    id: "pk-4",
+    title: "28th ITCN Asia Karachi 2026",
+    date: "September 22–24, 2026",
     shortDescription:
-      "Flagship bilateral business summit in London with plenary sessions, sector panels, and B2B meetings. Focus on technology, manufacturing, energy, and services.",
-    image: "/image/eventgallery/event-2.jpg",
-    location: "London, United Kingdom",
-    tag: "Summit",
-  },
-  {
-    id: "fe-3",
-    title: "DHA Peshawar UK Road Show 2025",
-    date: "4–10 May 2025",
-    shortDescription:
-      "Diaspora investment roadshow connecting UK-based investors with development opportunities across London, Birmingham, Manchester, and Slough.",
-    image: "/image/eventgallery/event-3.jpg",
-    location: "London, Birmingham, Manchester, Slough",
-    tag: "Delegation",
-  },
-  {
-    id: "fe-4",
-    title: "Global Business Leadership Forum",
-    date: "2025",
-    shortDescription:
-      "Bringing together global business leaders for dialogue on UK–Pakistan technology and trade, showcasing investment opportunities and sustainable growth.",
-    image: "/image/eventgallery/event-4.jpg",
-    tag: "Featured",
-  },
-  {
-    id: "fe-5",
-    title: "Inspiring Pakistan at Davos Pavilion",
-    date: "20–24 January 2025",
-    shortDescription:
-      "Pakistan Pavilion at the World Economic Forum highlighting the nation's strengths, resilience, and investment opportunities to international leaders and entrepreneurs.",
-    image: "/image/events/Pakistan-Business-Summit-Davos-2025.jpg",
-    location: "Davos, Switzerland",
-    tag: "Summit",
-  },
-  {
-    id: "fe-6",
-    title: "Single Country Expo 2025",
-    date: "April 2025",
-    shortDescription:
-      "Month-long expo at Pakistan House Manchester facilitating meetings between Pakistani businesses and UK distributors, organised with the Pak-UK Business Council.",
-    image: "/image/past-events/1ev.jpg",
-    location: "Pakistan House, Manchester, United Kingdom",
+      "Held under the patronage of the SIFC and MoITT, featuring the Global CISO Summit and AI Beyond Borders conferences.",
+    image: "/image/Events%20%26%20Engagements/ITCN.webp",
+    location: "Expo Centre Karachi",
     tag: "Expo",
   },
   {
-    id: "fe-7",
-    title: "UK–Pakistan Tech & Export Strategies Webinar",
-    date: "15 January 2025",
+    id: "pk-5",
+    title: "ASOCIO Digital Summit 2026",
+    date: "November 2026",
     shortDescription:
-      "Export and marketing strategies for the UK market: webinar for Pakistani businesses on entering and scaling in the UK technology and trade landscape.",
-    image: "/image/past-events/2ev.jpg",
-    tag: "Webinar",
+      "Pakistan hosts this premier regional inter-governmental summit for the first time, bringing technology leadership from 24 member countries.",
+    image: "/image/Events%20%26%20Engagements/ASOCIO.webp",
+    location: "Islamabad / Lahore, Pakistan",
+    tag: "Summit",
   },
   {
-    id: "fe-8",
-    title: "UK–Pakistan Technology Partnership Conference",
-    date: "2024",
+    id: "pk-6",
+    title: "IDEAS 2026 – Cyber & Emerging Tech Track",
+    date: "November 24–27, 2026",
     shortDescription:
-      "Conference strengthening technology partnerships and innovation ties between the UK and Pakistan, with sessions on digital trade and startup ecosystems.",
-    image: "/image/past-events/4ev.jpg",
-    location: "United Kingdom",
+      "Organized by the Ministry of Defence Production with a dedicated 'Cyber & Emerging Tech' pavilion covering AI, quantum computing, and cybersecurity.",
+    image: "/image/Events%20%26%20Engagements/IDEAS2026.webp",
+    location: "Karachi Expo Centre",
+    tag: "Conference",
+  },
+  /* ── UK Events ── */
+  {
+    id: "uk-1",
+    title: "Innovation 2026",
+    date: "March 24–25, 2026",
+    shortDescription:
+      "Co-hosted by the Cabinet Office and DSIT, focusing on AI-driven transformation of public services and digital governance.",
+    image: "/image/Events%20%26%20Engagements/innovation_2026.webp",
+    location: "ExCeL London",
     tag: "Conference",
   },
   {
-    id: "fe-9",
-    title: "Leaders in Islamabad – UK Pakistan Dialogue",
-    date: "2024",
+    id: "uk-2",
+    title: "The GovTech Summit 2026",
+    date: "April 16, 2026",
     shortDescription:
-      "High-level dialogue in Islamabad bringing together UK and Pakistani leaders to advance bilateral technology, trade, and investment collaboration.",
-    image: "/image/past-events/5ev.jpg",
-    location: "Islamabad, Pakistan",
-    tag: "Dialogue",
+      "Connects senior government innovators with technology pioneers to reform public service procurement and accelerate digital transformation.",
+    image: "/image/Events%20%26%20Engagements/govtech.webp",
+    location: "Westminster, London",
+    tag: "Summit",
+  },
+  {
+    id: "uk-3",
+    title: "Building the Smarter State 2026",
+    date: "May 13, 2026",
+    shortDescription:
+      "techUK's flagship conference for public sector DDaT leaders, backed by the Central Government and focused on AI-driven public service delivery.",
+    image: "/image/Events%20%26%20Engagements/Building_smater_state.webp",
+    location: "London",
+    tag: "Conference",
+  },
+  {
+    id: "uk-4",
+    title: "Government Transformation Summit 2026",
+    date: "June 25, 2026",
+    shortDescription:
+      "Unites 200+ senior government leaders in data and digital delivery to reimagine the modern state through responsible AI and technology.",
+    image: "/image/Events%20%26%20Engagements/gov_transformation_summit_2026.webp",
+    location: "Westminster, London",
+    tag: "Summit",
+  },
+  {
+    id: "uk-5",
+    title: "DigiGov Expo 2026",
+    date: "September 23–24, 2026",
+    shortDescription:
+      "Developed with DSIT and GDS, featuring an international 'Government Village' showcasing digital projects and strategies for digital public services.",
+    image: "/image/Events%20%26%20Engagements/DigiGovExpo.webp",
+    location: "ExCeL London",
+    tag: "Expo",
   },
 ];

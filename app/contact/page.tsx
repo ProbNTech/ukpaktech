@@ -20,7 +20,7 @@ export default function ContactPage() {
       <PageHero
         title="Contact"
         subtitle="Get in touch with the UK–Pakistan Tech Council. Reach out for partnerships, membership enquiries, or general questions."
-        image="/image/london-images/3.jpg"
+        image="/image/contact/banner3.webp"
       />
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16">
@@ -46,7 +46,7 @@ export default function ContactPage() {
           </div>
 
           {/* Right panel — form with white background */}
-          <div className="bg-white border border-[#D8D5CF] p-10 lg:p-12">
+          <div className="bg-white border border-[#D8D5CF] rounded p-10 lg:p-12">
             <SectionHeader label="Write to us" title="Send a Message" />
             <div className="mt-8">
               <ContactForm />

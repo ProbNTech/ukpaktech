@@ -14,7 +14,7 @@ export default function AboutPage() {
       <PageHero
         title="About UPTECH"
         subtitle="Strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan."
-        image="/image/london-images/14.jpg"
+        image="/image/about%20page/about_banner.webp"
       >
         <div className="flex flex-wrap gap-4 mt-2">
           <Button href="/membership" variant="glass" showArrow>Become a Member</Button>
@@ -53,8 +53,8 @@ export default function AboutPage() {
           <AnimatedSection>
             <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#D8D5CF]">
               <Image
-                src="/image/about/about1.jpg"
-                alt="UK–Pakistan digital collaboration"
+                src="/image/about%20page/About_Council.webp"
+                alt="About the Council"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 50vw, 100vw"
@@ -70,7 +70,7 @@ export default function AboutPage() {
           <SectionHeader label="Our purpose" title="Vision &amp; Mission" />
           <div className="grid md:grid-cols-2 gap-8">
             {/* Mission */}
-            <div className="bg-white border border-[#D8D5CF] p-8">
+            <div className="bg-white border border-[#D8D5CF] rounded p-8">
               <Target className="w-8 h-8 text-[#22C55E] mb-5" strokeWidth={1.5} />
               <h3 className="font-heading font-bold text-xl text-[#1C1F2E] uppercase tracking-tight mb-4">Mission</h3>
               <div className="h-px bg-[#1C1F2E]/15 mb-4" />
@@ -79,7 +79,7 @@ export default function AboutPage() {
               </p>
             </div>
             {/* Vision */}
-            <div className="bg-white border border-[#D8D5CF] p-8">
+            <div className="bg-white border border-[#D8D5CF] rounded p-8">
               <Lightbulb className="w-8 h-8 text-[#2563EB] mb-5" strokeWidth={1.5} />
               <h3 className="font-heading font-bold text-xl text-[#1C1F2E] uppercase tracking-tight mb-4">Vision</h3>
               <div className="h-px bg-[#1C1F2E]/15 mb-4" />
@@ -104,7 +104,7 @@ export default function AboutPage() {
             ].map((value) => {
               const Icon = value.icon;
               return (
-                <div key={value.title} className="bg-white border border-[#D8D5CF] p-6 group hover:border-[#2563EB]/40 transition-colors duration-300">
+                <div key={value.title} className="bg-white border border-[#D8D5CF] rounded p-6 group hover:border-[#2563EB]/40 transition-colors duration-300">
                   <Icon className="w-6 h-6 mb-4" style={{ color: value.color }} strokeWidth={1.5} />
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-3">{value.title}</h3>
                   <div className="h-px bg-[#1C1F2E]/15 mb-3" />
@@ -133,7 +133,7 @@ export default function AboutPage() {
               ].map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="bg-white border border-[#D8D5CF] p-6 flex items-start gap-4">
+                  <div key={item.title} className="bg-white border border-[#D8D5CF] rounded p-6 flex items-start gap-4">
                     <Icon className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: item.color }} strokeWidth={1.5} />
                     <div>
                       <h4 className="font-semibold text-[#1C1F2E] text-sm mb-1">{item.title}</h4>
@@ -159,7 +159,7 @@ export default function AboutPage() {
             ].map((initiative) => {
               const Icon = initiative.icon;
               return (
-                <div key={initiative.title} className="bg-white border border-[#D8D5CF] p-7 group hover:border-[#2563EB]/40 transition-colors duration-300 flex flex-col">
+                <div key={initiative.title} className="bg-white border border-[#D8D5CF] rounded p-7 group hover:border-[#2563EB]/40 transition-colors duration-300 flex flex-col">
                   <Icon className="w-6 h-6 mb-5" style={{ color: initiative.color }} strokeWidth={1.5} />
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{initiative.title}</h3>
                   <div className="h-px bg-[#1C1F2E]/15 mb-4" />

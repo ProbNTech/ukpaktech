@@ -41,11 +41,11 @@ export function ContactForm() {
   };
 
   const inputBase =
-    "w-full bg-[#EEECEA] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#7A7E8F] text-sm px-4 py-3 rounded-none transition-all duration-200 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 focus:bg-white";
+    "w-full bg-[#EEECEA] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#7A7E8F] text-sm px-4 py-3 rounded transition-all duration-200 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 focus:bg-white";
 
   if (state === "success") {
     return (
-      <div className="border border-[#D8D5CF] bg-white p-10 text-center">
+      <div className="border border-[#D8D5CF] bg-white rounded p-10 text-center">
         <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#22C55E]/10 mb-5">
           <svg
             className="w-6 h-6 text-[#22C55E]"

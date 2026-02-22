@@ -225,9 +225,9 @@ export function Header() {
                 <Image
                   src="/image/main-logo/mainlogo.png"
                   alt="UPTECH Council logo"
-                  width={100}
-                  height={100}
-                  className="h-[100px] w-auto object-contain my-[12px]"
+                  width={64}
+                  height={64}
+                  className="h-[64px] w-auto object-contain"
                   priority
                 />
                 <span className={`font-heading font-bold text-[16px] uppercase tracking-[0.2em] leading-none transition-colors duration-300 ${isScrolled ? "text-[#0A0A0A]" : "text-white"}`}>

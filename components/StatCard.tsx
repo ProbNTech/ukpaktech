@@ -23,7 +23,7 @@ export function StatCard({ icon, title, description, className = "", index = 0 }
       whileHover={shouldReduceMotion ? {} : { y: -4, scale: 1.02 }}
       className={`relative ${className}`}
     >
-      <div className="relative h-full rounded-2xl border border-gray-100 bg-white p-8 shadow-md transition-all duration-500 group hover:shadow-lg hover:border-[#2563EB]/20 overflow-hidden">
+      <div className="relative h-full rounded border border-gray-100 bg-white p-8 shadow-md transition-all duration-500 group hover:shadow-lg hover:border-[#2563EB]/20 overflow-hidden">
         {icon && (
           <div className="relative z-10 mb-6 flex justify-center">
             <div className="relative w-20 h-20 rounded-full bg-[#F8FAFC] border border-gray-100 shadow-sm flex items-center justify-center group-hover:border-[#2563EB]/25 group-hover:shadow-md transition-all duration-500">

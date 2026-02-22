@@ -49,7 +49,7 @@ export default function FundingAndGrantsClient() {
       <PageHero
         title="Funding and Grants"
         subtitle="Access funding opportunities to drive technology innovation and cross-border collaboration between the UK and Pakistan."
-        image="/image/london-images/1.jpg"
+        image="/image/Funding%20and%20Grants/banner1.webp"
       />
 
       {/* Intro */}

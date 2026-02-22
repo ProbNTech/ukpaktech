@@ -28,12 +28,12 @@ export function FeaturedEvent({ event }: FeaturedEventProps) {
       transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
       className="mb-16"
     >
-      <div className="relative rounded-2xl border border-gray-100 bg-white overflow-hidden shadow-xl hover:shadow-2xl hover:border-gray-200 transition-all duration-500 group">
+      <div className="relative rounded border border-gray-100 bg-white overflow-hidden shadow-xl hover:shadow-2xl hover:border-gray-200 transition-all duration-500 group">
         {/* Blue gradient edge */}
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#2563EB] to-[#22C55E] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Glass border effect */}
-        <div className="absolute inset-0 rounded-2xl border border-gray-100 pointer-events-none" />
+        <div className="absolute inset-0 rounded border border-gray-100 pointer-events-none" />
 
         <div className="grid md:grid-cols-2 gap-0">
           {/* Text content */}

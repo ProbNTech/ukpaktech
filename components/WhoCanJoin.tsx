@@ -193,7 +193,7 @@ export function WhoCanJoin() {
                 transition={{ duration: 0.5, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
                 className="snap-start shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group"
               >
-                <div className="relative h-full bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl hover:-translate-y-1.5 hover:border-[#2563EB]/20 transition-all duration-300 overflow-hidden">
+                <div className="relative h-full bg-white rounded border border-gray-100 shadow-lg hover:shadow-xl hover:-translate-y-1.5 hover:border-[#2563EB]/20 transition-all duration-300 overflow-hidden">
                   {/* Image */}
                   <div className="relative h-48 w-full overflow-hidden bg-[#F8FAFC]">
                     {!imgErrors[index] ? (

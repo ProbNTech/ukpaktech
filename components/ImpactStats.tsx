@@ -56,7 +56,7 @@ export function ImpactStats() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-white border border-[#D8D5CF] p-7 flex flex-col group hover:border-[#2563EB]/40 transition-colors duration-300"
+            className="bg-white border border-[#D8D5CF] rounded p-7 flex flex-col group hover:border-[#2563EB]/40 transition-colors duration-300"
           >
             <Icon className="h-5 w-5 mb-5" style={{ color: stat.color }} />
             <div

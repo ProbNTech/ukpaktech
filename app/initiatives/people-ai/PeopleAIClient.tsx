@@ -43,7 +43,7 @@ export default function PeopleAIClient() {
       <PageHero
         title="People AI Platform"
         subtitle="Empowering people and organisations through human-centric AI support systems that integrate technology with professional services."
-        image="/image/london-images/8.jpg"
+        image="/image/People%20AI%20Platform/banner1.webp"
       />
 
       {/* Intro */}
@@ -73,7 +73,7 @@ export default function PeopleAIClient() {
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {capabilities.map((cap) => (
-              <div key={cap.title} className="bg-white border border-[#D8D5CF] p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
+              <div key={cap.title} className="bg-white border border-[#D8D5CF] rounded p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
                 <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{cap.title}</h3>
                 <div className="h-px bg-[#1C1F2E]/15 mb-3" />
                 <p className="text-[#3D4152] text-sm leading-relaxed">{cap.description}</p>
@@ -114,7 +114,7 @@ export default function PeopleAIClient() {
           />
           <div className="grid md:grid-cols-2 gap-6">
             {useCases.map((useCase) => (
-              <div key={useCase.title} className="bg-white border border-[#D8D5CF] p-6 hover:border-[#2563EB]/40 transition-colors duration-300 flex gap-4">
+              <div key={useCase.title} className="bg-white border border-[#D8D5CF] rounded p-6 hover:border-[#2563EB]/40 transition-colors duration-300 flex gap-4">
                 <CheckCircle2 className="w-5 h-5 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
                 <div>
                   <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1">{useCase.title}</h3>

@@ -8,7 +8,7 @@ interface CardProps {
 }
 
 export function Card({ children, className = "", hover = false, variant = "light" }: CardProps) {
-  const baseStyles = "rounded-none border p-7 transition-all duration-300 relative";
+  const baseStyles = "rounded border p-7 transition-all duration-300 relative";
   const variantMap = {
     light: "bg-white border-[#D8D5CF] text-[#1C1F2E]",
     dark: "bg-[#1C1F2E] border-transparent text-white",
