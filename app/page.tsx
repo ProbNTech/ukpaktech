@@ -32,7 +32,7 @@ const homepageEvents = featuredEvents.slice(0, 9);
 /* ─── Shared section header: label + large title + full-width rule ─── */
 const bannerThemes = {
   blue: { bg: "linear-gradient(135deg, #1a2b5e 0%, #0f1a3a 100%)", accent: "#3b82f6", accentTo: "#1a2b5e", label: "#60a5fa" },
-  red: { bg: "linear-gradient(135deg, #8b1a1a 0%, #5c1010 100%)", accent: "#ef4444", accentTo: "#8b1a1a", label: "#fca5a5" },
+  red: { bg: "linear-gradient(135deg, #C41E3A 0%, #8b1525 100%)", accent: "#E74C5E", accentTo: "#C41E3A", label: "#F9A8B4" },
   green: { bg: "linear-gradient(135deg, #0d6b3a 0%, #064e2b 100%)", accent: "#22c55e", accentTo: "#0d6b3a", label: "#86efac" },
 };
 

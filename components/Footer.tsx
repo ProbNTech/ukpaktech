@@ -21,8 +21,6 @@ export function Footer() {
             sizes="100vw"
             quality={80}
           />
-          {/* Subtle overlay */}
-          <div className="absolute inset-0 bg-[#0B1F3A]/40" />
         </div>
 
         {/* Footer Content */}
@@ -40,11 +38,11 @@ export function Footer() {
                     height={50}
                     className="h-[50px] w-auto object-contain group-hover:scale-105 transition-transform duration-300"
                   />
-                  <span className="font-heading font-bold text-xl text-white">
+                  <span className="font-heading font-bold text-2xl text-white">
                     UPTECH
                   </span>
                 </Link>
-                <p className="text-white/80 mb-7 max-w-sm leading-relaxed text-base">
+                <p className="text-white mb-7 max-w-sm leading-relaxed text-lg">
                   A strategic platform strengthening technology, innovation, and
                   digital trade between the United Kingdom and Pakistan.
                 </p>
@@ -72,22 +70,22 @@ export function Footer() {
               {/* Column 2: Quick Links */}
               <div className="lg:col-span-4 grid grid-cols-2 gap-8">
                 <div>
-                  <h3 className="font-heading font-semibold text-white text-base mb-5">
+                  <h3 className="font-heading font-semibold text-white text-lg mb-5">
                     <Link href="/about" className="hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1">
                       About <ChevronRight className="w-3 h-3" />
                     </Link>
                   </h3>
-                  <h3 className="font-heading font-semibold text-white text-base mb-5">
+                  <h3 className="font-heading font-semibold text-white text-lg mb-5">
                     <Link href="/events" className="hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1">
                       Events <ChevronRight className="w-3 h-3" />
                     </Link>
                   </h3>
-                  <h3 className="font-heading font-semibold text-white text-base mb-5">
+                  <h3 className="font-heading font-semibold text-white text-lg mb-5">
                     <Link href="/membership" className="hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1">
                       Membership <ChevronRight className="w-3 h-3" />
                     </Link>
                   </h3>
-                  <h3 className="font-heading font-semibold text-white text-base mb-5">
+                  <h3 className="font-heading font-semibold text-white text-lg mb-5">
                     <Link href="/contact" className="hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1">
                       Contact <ChevronRight className="w-3 h-3" />
                     </Link>
@@ -95,17 +93,17 @@ export function Footer() {
                 </div>
 
                 <div>
-                  <h3 className="font-heading font-semibold text-white text-base mb-5">
+                  <h3 className="font-heading font-semibold text-white text-lg mb-5">
                     <Link href="/membership" className="hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1">
                       Register <ChevronRight className="w-3 h-3" />
                     </Link>
                   </h3>
-                  <h3 className="font-heading font-semibold text-white text-base mb-5">
+                  <h3 className="font-heading font-semibold text-white text-lg mb-5">
                     <Link href="/events" className="hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1">
                       Updates &amp; Insights <ChevronRight className="w-3 h-3" />
                     </Link>
                   </h3>
-                  <h3 className="font-heading font-semibold text-white text-base mb-5">
+                  <h3 className="font-heading font-semibold text-white text-lg mb-5">
                     <Link href="/membership" className="hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1">
                       Membership Directory <ChevronRight className="w-3 h-3" />
                     </Link>
@@ -115,12 +113,12 @@ export function Footer() {
 
               {/* Column 3: Contact + Governance */}
               <div className="lg:col-span-4">
-                <h3 className="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-5">
+                <h3 className="font-heading font-semibold text-white text-lg uppercase tracking-wider mb-5">
                   Contact us
                 </h3>
-                <div className="space-y-3 text-white/80 text-base leading-relaxed">
+                <div className="space-y-3 text-white text-lg leading-relaxed">
                   <p>
-                    <span className="text-white/80 font-medium">Email:</span>{" "}
+                    <span className="text-white font-medium">Email:</span>{" "}
                     <a
                       href="mailto:info@uptechcouncil.org"
                       className="hover:text-[#22C55E] transition-colors duration-300"
@@ -129,9 +127,9 @@ export function Footer() {
                     </a>
                   </p>
                   <div>
-                    <p className="text-white/80">UK–Pakistan Tech Council</p>
-                    <p className="text-white/80">London, United Kingdom</p>
-                    <p className="text-white/80">Islamabad, Pakistan</p>
+                    <p className="text-white">UK–Pakistan Tech Council</p>
+                    <p className="text-white">London, United Kingdom</p>
+                    <p className="text-white">Islamabad, Pakistan</p>
                   </div>
                 </div>
               </div>
@@ -139,7 +137,7 @@ export function Footer() {
 
             {/* Bottom Bar */}
             <div className="border-t border-white pt-7">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-base text-white">
                 <p style={{ color: "#FFFFFF" }}>
                   Copyright &copy; {new Date().getFullYear()} UK&ndash;Pakistan
                   Tech Council. All rights reserved.

@@ -226,7 +226,7 @@ export function Header() {
                 priority
               />
               <span className="hidden sm:inline font-heading font-black text-[28px] sm:text-[34px] lg:text-[42px] xl:text-[48px] tracking-[0.01em] leading-none text-[#0F172A] uppercase">
-                UK–PAKISTAN TECH COUNCIL <span className="text-[#1a2b5e]">(UPTECH)</span>
+                UK–PAKISTAN TECH COUNCIL <span className="text-[#C41E3A]">(UPTECH)</span>
               </span>
             </Link>
 
