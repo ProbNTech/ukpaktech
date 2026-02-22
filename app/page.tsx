@@ -336,7 +336,7 @@ export default function Home() {
           <AnimatedSection>
             <SectionHeader
               label="Watch & learn"
-              title="Event Highlights"
+              title="Recent Event Highlights"
               body="Key moments from recent bilateral summits, innovation forums, and technology dialogues shaping the UK–Pakistan digital corridor."
               color="red"
             />
