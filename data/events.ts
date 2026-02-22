@@ -186,7 +186,7 @@ export const events: Event[] = [
     dateISO: "2026-05-13",
     location: "London",
     image: "/image/Events%20%26%20Engagements/Building_smater_state.webp",
-    officialLink: "https://www.techuk.org/what-we-deliver/events/building-the-smarter-state-2026-delivering-world-leading-public-services.html",
+    officialLink: "https://www.techuk.org/what-we-deliver/flagship-and-sponsored-events/building-the-smarter-state-2026.html",
     excerpt:
       "techUK's flagship conference for public sector DDaT leaders, backed by the Central Government and focused on AI-driven public service delivery.",
     body: [

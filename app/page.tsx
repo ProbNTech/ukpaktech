@@ -22,11 +22,11 @@ const ImpactStats = dynamic(() =>
   import("@/components/ImpactStats").then((m) => ({ default: m.ImpactStats }))
 );
 
-/* Top 6 articles for the homepage news grid — 2 rows × 3 columns */
-const homepageArticles = articles.slice(0, 6);
+/* Top 15 articles for the homepage news grid — 5 rows × 3 columns */
+const homepageArticles = articles.slice(0, 15);
 
-/* 12 events — 3 rows × 4 columns on the homepage */
-const homepageEvents = featuredEvents.slice(0, 12);
+/* 9 events — 3 rows × 3 columns on the homepage */
+const homepageEvents = featuredEvents.slice(0, 9);
 
 /* ─── Shared section header: label + large title + full-width rule ─── */
 function SectionHeader({
@@ -87,7 +87,7 @@ export default function Home() {
             {/* Large editorial intro text — spans most of the width */}
             <div className="max-w-4xl mb-8">
               <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl leading-snug mb-6">
-                The UK–Pakistan Tech Council is a bilateral technology platform established in 2024.
+                The UK–Pakistan Tech Council is a bilateral technology platform established in 2026.
               </p>
               <p className="text-[#3D4152] text-base sm:text-lg leading-relaxed mb-6">
                 UPTECH bridges the United Kingdom and Pakistan through structured programmes of investment facilitation, policy dialogue, innovation partnership, and cross-border trade. The Council brings together technology companies, venture capital, government bodies, academic institutions, and enterprise leaders to drive long-term bilateral growth.
@@ -174,41 +174,59 @@ export default function Home() {
               body="Our upcoming events span bilateral summits, investor dialogues, webinars, and trade delegations. All events are open to UPTECH members and selected guests."
             />
 
-            {/* 4-column event grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 mb-10">
+            {/* 3-column event card grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-10">
               {homepageEvents.map((event) => (
-                <Link key={event.id} href="/events" className="group flex flex-col">
-                  {/* Image / placeholder */}
-                  <div className="aspect-[4/3] bg-[#1C1F2E] mb-4 relative overflow-hidden flex items-center justify-center">
+                <Link key={event.id} href="/events" className="group flex flex-col bg-white border border-[#D8D5CF] rounded overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                  {/* Image */}
+                  <div className="aspect-[16/9] bg-[#1C1F2E] relative overflow-hidden">
                     {event.image ? (
                       <Image
                         src={event.image}
                         alt={event.title}
                         fill
                         className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     ) : (
-                      <>
-                        <div
-                          className="absolute inset-0 opacity-10"
-                          style={{
-                            backgroundImage: "repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)",
-                            backgroundSize: "12px 12px",
-                          }}
-                        />
-                        <span className="relative text-white/25 text-[10px] font-semibold uppercase tracking-widest">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-white/25 text-[10px] font-semibold uppercase tracking-widest">
                           {event.tag}
                         </span>
-                      </>
+                      </div>
                     )}
+                    {/* Tag badge */}
+                    <span className="absolute top-3 left-3 px-3 py-1 bg-[#1C1F2E]/80 backdrop-blur-sm text-white text-xs font-semibold rounded-full">
+                      {event.tag}
+                    </span>
                   </div>
-                  {/* Title */}
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-sm sm:text-base leading-snug mb-4 line-clamp-3 group-hover:text-[#2563EB] transition-colors duration-200">
-                    {event.title}
-                  </h3>
-                  {/* Thin dark underline */}
-                  <div className="h-px w-full bg-[#1C1F2E]/20 group-hover:bg-[#2563EB]/50 transition-colors duration-300 mt-auto" />
+                  {/* Card body */}
+                  <div className="flex flex-col flex-1 p-5">
+                    {/* Date & location */}
+                    <div className="flex items-center gap-2 text-xs text-[#7A7E8F] mb-3">
+                      <time className="font-medium">{event.date}</time>
+                      {event.location && (
+                        <>
+                          <span className="w-1 h-1 rounded-full bg-[#7A7E8F]" />
+                          <span>{event.location}</span>
+                        </>
+                      )}
+                    </div>
+                    {/* Title */}
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base leading-snug mb-3 line-clamp-2 group-hover:text-[#2563EB] transition-colors duration-200">
+                      {event.title}
+                    </h3>
+                    {/* Description */}
+                    <p className="text-[#3D4152] text-sm leading-relaxed line-clamp-3 mb-4">
+                      {event.shortDescription}
+                    </p>
+                    {/* Learn more link */}
+                    <div className="mt-auto pt-3 border-t border-[#D8D5CF]">
+                      <span className="text-sm font-semibold text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 inline-flex items-center gap-1">
+                        Learn more <ChevronRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </div>
                 </Link>
               ))}
             </div>

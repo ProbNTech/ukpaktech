@@ -209,12 +209,23 @@ export default async function EventDetailPage({
                     )}
                   </div>
                   <div className="mt-6 pt-6 border-t border-[#D8D5CF]">
-                    <Link
-                      href="/membership"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
-                    >
-                      Book Now
-                    </Link>
+                    {event.officialLink ? (
+                      <a
+                        href={event.officialLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
+                      >
+                        Visit Official Site
+                      </a>
+                    ) : (
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
+                      >
+                        Register Interest
+                      </Link>
+                    )}
                   </div>
                 </div>
               </AnimatedSection>
@@ -309,15 +320,26 @@ export default async function EventDetailPage({
                   </h3>
                   <div className="h-px bg-white/20 mb-5" />
                   <p className="text-base text-white/70 max-w-xl mb-8 leading-relaxed">
-                    Register your interest below and our team will be in touch with confirmation details, agenda updates, and delegate information.
+                    Visit the official event page for registration details, agenda updates, and delegate information.
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    <Link
-                      href="/membership"
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
-                    >
-                      Book Now
-                    </Link>
+                    {event.officialLink ? (
+                      <a
+                        href={event.officialLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
+                      >
+                        Visit Official Site
+                      </a>
+                    ) : (
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
+                      >
+                        Register Interest
+                      </Link>
+                    )}
                     <Button href="/events" variant="glass" size="lg">
                       View All Events
                     </Button>
