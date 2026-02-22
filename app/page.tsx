@@ -86,15 +86,15 @@ export default function Home() {
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               {/* Left — text content */}
-              <div>
+              <div className="max-w-xl">
                 <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">About the Council</p>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-[2.2rem] leading-snug mb-6">
+                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-[2.2rem] leading-[1.3] mb-6">
                   The UK–Pakistan Tech Council is a bilateral technology platform established in 2026.
                 </h2>
-                <p className="text-[#3D4152] text-base sm:text-lg leading-relaxed mb-5">
+                <p className="text-[#3D4152] text-base sm:text-lg leading-[1.75] mb-5">
                   UPTECH bridges the United Kingdom and Pakistan through structured programmes of investment facilitation, policy dialogue, innovation partnership, and cross-border trade. The Council brings together technology companies, venture capital, government bodies, academic institutions, and enterprise leaders to drive long-term bilateral growth.
                 </p>
-                <p className="text-[#3D4152] text-base sm:text-lg leading-relaxed mb-8">
+                <p className="text-[#3D4152] text-base sm:text-lg leading-[1.75] mb-8">
                   From flagship summits to regulatory frameworks, from AI innovation hubs to seed investment programmes — our work creates the institutional infrastructure that bilateral tech collaboration requires.
                 </p>
                 <PillButton href="/about">About Us</PillButton>
