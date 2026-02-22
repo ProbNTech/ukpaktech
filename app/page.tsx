@@ -130,7 +130,7 @@ function HomeEventsSection() {
             label="Attend an event"
             title="Upcoming events"
             body="Our upcoming events span bilateral summits, investor dialogues, webinars, and trade delegations. All events are open to UPTECH members and selected guests."
-            color="green"
+            color="blue"
           />
 
           {/* Filter tabs */}
@@ -334,6 +334,68 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
+           EVENT HIGHLIGHTS — YouTube video embeds
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "rgba(238,236,234,0.55)" }}>
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+          <AnimatedSection>
+            <SectionHeader
+              label="Watch & learn"
+              title="Event Highlights"
+              body="Key moments from recent bilateral summits, innovation forums, and technology dialogues shaping the UK–Pakistan digital corridor."
+              color="red"
+            />
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+              {[
+                {
+                  id: "K49VP4KJ2vk",
+                  title: "Pakistan Pushes AI & Digital Collaboration at London Event",
+                  description: "Pakistan's delegation outlines its vision for AI-driven partnerships and digital cooperation at a landmark London gathering.",
+                },
+                {
+                  id: "CyE9Mde6d_E",
+                  title: "Pakistan Business Summit 2026 | Davos, Switzerland",
+                  description: "Global leaders convene in Davos to explore trade, investment, and technology opportunities with Pakistan's emerging digital economy.",
+                },
+                {
+                  id: "_mvsgeqZMbk",
+                  title: "Indus AI Week Sparks Pakistan's Journey to a Digital Future",
+                  description: "A look inside Indus AI Week — Pakistan's flagship artificial intelligence conference driving national digital transformation.",
+                },
+                {
+                  id: "pXI-qz33PoA",
+                  title: "UK–Pakistan Business Summit 2025",
+                  description: "Highlights from the UK–Pakistan Business Summit bringing together entrepreneurs, policymakers, and investors from both nations.",
+                },
+              ].map((video) => (
+                <div key={video.id} className="bg-white rounded overflow-hidden border border-[#D8D5CF]">
+                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+                    <iframe
+                      className="absolute inset-0 w-full h-full"
+                      src={`https://www.youtube.com/embed/${video.id}`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base sm:text-lg leading-snug mb-2">
+                      {video.title}
+                    </h3>
+                    <p className="text-[#3D4152] text-sm leading-relaxed">
+                      {video.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════
            RESOURCES / NEWS & INSIGHTS — 3 column editorial cards
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "rgba(232,230,227,0.55)" }}>
@@ -343,7 +405,7 @@ export default function Home() {
               label="Stay informed"
               title="News &amp; Insights"
               body="Investment deals, policy developments, innovation spotlights, and bilateral progress — what's shaping the UK–Pakistan technology corridor."
-              color="red"
+              color="green"
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-10">
@@ -395,7 +457,7 @@ export default function Home() {
               label="Our impact"
               title="Impact Momentum"
               body="A modern technology council engineered to scale collaboration, talent, and investment across the UK–Pakistan corridor."
-              color="blue"
+              color="red"
             />
             <ImpactStats />
           </AnimatedSection>
