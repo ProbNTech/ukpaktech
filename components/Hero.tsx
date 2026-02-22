@@ -12,10 +12,22 @@ const videos = [
   "/image/home/hero_video2.mp4",
 ];
 
+/** Breakpoint (px) at or below which we treat as mobile/tablet — no video */
+const MOBILE_BREAKPOINT = 1024;
+
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  /* Detect mobile/tablet on mount & resize */
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const setVideoRef = useCallback(
     (index: number) => (el: HTMLVideoElement | null) => {
@@ -29,6 +41,8 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
+    if (isMobile) return;
+
     const activeVideo = videoRefs.current[currentIndex];
     if (!activeVideo) return;
 
@@ -44,7 +58,7 @@ export function Hero() {
         v.currentTime = 0;
       }
     });
-  }, [currentIndex, isPlaying]);
+  }, [currentIndex, isPlaying, isMobile]);
 
   const togglePlayPause = useCallback(() => {
     setIsPlaying((prev) => {
@@ -63,68 +77,80 @@ export function Hero() {
 
   return (
     <section className="relative w-full h-screen overflow-hidden bg-[#0B0F1A]">
-      {/* Stacked background videos */}
-      {videos.map((src, index) => (
-        <video
-          key={src}
-          ref={setVideoRef(index)}
-          autoPlay={index === 0}
-          muted
-          playsInline
-          preload="auto"
-          onEnded={index === currentIndex ? handleVideoEnded : undefined}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
-            index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
-        >
-          <source src={src} type="video/mp4" />
-        </video>
-      ))}
+      {/* Background videos — desktop only */}
+      {!isMobile &&
+        videos.map((src, index) => (
+          <video
+            key={src}
+            ref={setVideoRef(index)}
+            autoPlay={index === 0}
+            muted
+            playsInline
+            preload="auto"
+            onEnded={index === currentIndex ? handleVideoEnded : undefined}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+              index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          >
+            <source src={src} type="video/mp4" />
+          </video>
+        ))}
 
-      {/* SVG Overlay — dark glassy panel with circular cutout */}
-      <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 508 264.583"
-          preserveAspectRatio="xMinYMin slice"
-          className="w-full h-full"
-        >
-          <defs>
-            {/* Feathered edge filter for the crescent */}
-            <filter id="crescentBlur" x="-10%" y="-10%" width="120%" height="120%">
-              <feGaussianBlur stdDeviation="6" />
-            </filter>
-          </defs>
-          {/* Dark teal-grey veil — flat fill + multiply blend like UKPropTech */}
-          <path
-            d="
-              M -760 -445 L -760 710 L 1268 710 L 1268 -445 Z
-              M 205.357 -442.635
-              A 425.831 425.831 0 0 1 582.289 -19.654
-              A 425.831 425.831 0 0 1 156.457  406.176
-              A 425.831 425.831 0 0 1   9.520  379.762
-              A 425.831 425.831 0 0 0  58.562  382.893
-              A 425.831 425.831 0 0 0 484.395  -42.938
-              A 425.831 425.831 0 0 0 205.357 -442.635 Z
-            "
-            style={{ fill: "#1a2e35", fillOpacity: 0.78, mixBlendMode: "multiply" }}
-          />
-          {/* Teal crescent accent — softened edge via blur filter */}
-          <path
-            d="
-              M 205.357 -442.635
-              A 425.831 425.831 0 0 1 484.395  -42.938
-              A 425.831 425.831 0 0 1  58.562  382.893
-              A 425.831 425.831 0 0 1   9.520  379.762
-              L -760 710
-              L -760 -445
-              Z
-            "
-            filter="url(#crescentBlur)"
-            style={{ fill: "#2a8c8c", fillOpacity: 0.2, mixBlendMode: "normal" }}
-          />
-        </svg>
-      </div>
+      {/* Mobile/tablet background gradient fallback */}
+      {isMobile && (
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            background:
+              "linear-gradient(135deg, #0B0F1A 0%, #1a2e35 50%, #0B0F1A 100%)",
+          }}
+        />
+      )}
+
+      {/* SVG Overlay — desktop only (too complex for portrait mobile) */}
+      {!isMobile && (
+        <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 508 264.583"
+            preserveAspectRatio="xMinYMin slice"
+            className="w-full h-full"
+          >
+            <defs>
+              <filter id="crescentBlur" x="-10%" y="-10%" width="120%" height="120%">
+                <feGaussianBlur stdDeviation="6" />
+              </filter>
+            </defs>
+            <path
+              d="
+                M -760 -445 L -760 710 L 1268 710 L 1268 -445 Z
+                M 205.357 -442.635
+                A 425.831 425.831 0 0 1 582.289 -19.654
+                A 425.831 425.831 0 0 1 156.457  406.176
+                A 425.831 425.831 0 0 1   9.520  379.762
+                A 425.831 425.831 0 0 0  58.562  382.893
+                A 425.831 425.831 0 0 0 484.395  -42.938
+                A 425.831 425.831 0 0 0 205.357 -442.635 Z
+              "
+              style={{ fill: "#1a2e35", fillOpacity: 0.78, mixBlendMode: "multiply" }}
+            />
+            <path
+              d="
+                M 205.357 -442.635
+                A 425.831 425.831 0 0 1 484.395  -42.938
+                A 425.831 425.831 0 0 1  58.562  382.893
+                A 425.831 425.831 0 0 1   9.520  379.762
+                L -760 710
+                L -760 -445
+                Z
+              "
+              filter="url(#crescentBlur)"
+              style={{ fill: "#2a8c8c", fillOpacity: 0.2, mixBlendMode: "normal" }}
+            />
+          </svg>
+        </div>
+      )}
+
       {/* Overlay — top darkness for header readability */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
@@ -133,57 +159,57 @@ export function Hero() {
         }}
       />
 
-      {/* Content wrapper — vertically centered like reference */}
-      <div className="relative z-20 flex items-center h-screen px-8 sm:px-12 lg:px-16 xl:px-20 pt-40">
-        <div className="w-full max-w-[55%]">
+      {/* Content wrapper */}
+      <div className="relative z-20 flex items-center h-screen px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-28 sm:pt-32 lg:pt-40">
+        <div className="w-full max-w-full lg:max-w-[55%]">
 
           {/* Small label */}
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#C41E3A] mb-4">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#C41E3A] mb-3 sm:mb-4">
             UPTECH
           </p>
 
-          {/* Headline — scaled down so it fits ~2 lines comfortably */}
+          {/* Headline */}
           <h1
-            className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-7"
+            className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-5 sm:mb-7"
             style={{ lineHeight: 1.25 }}
           >
             Driving bilateral technology collaboration between the UK and Pakistan
           </h1>
 
           {/* Buttons */}
-          <div className="flex flex-wrap items-center gap-6 mb-10">
+          <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-6 mb-8 sm:mb-10">
             <Link
               href="/about"
-              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#C41E3A] text-white font-bold text-base hover:bg-[#A01830] transition-colors duration-200"
+              className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#C41E3A] text-white font-bold text-sm sm:text-base hover:bg-[#A01830] transition-colors duration-200"
             >
               Explore our work
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
               href="/membership"
-              className="inline-flex items-center gap-2.5 text-white font-semibold text-base underline underline-offset-4 hover:text-white/75 transition-colors duration-200"
+              className="inline-flex items-center gap-2.5 text-white font-semibold text-sm sm:text-base underline underline-offset-4 hover:text-white/75 transition-colors duration-200"
             >
               Discover our membership
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
 
-          {/* Gold/yellow separator line — ukproptech signature */}
-          <div className="w-full h-px bg-[#F59E0B] mb-6" />
+          {/* Gold/yellow separator line */}
+          <div className="w-full h-px bg-[#F59E0B] mb-4 sm:mb-6" />
 
           {/* Partner logos row */}
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-white/80 mb-5">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-white/80 mb-4 sm:mb-5">
             Trusted by leading organisations
           </p>
-          <div className="flex items-center gap-10 flex-wrap">
+          <div className="flex items-center gap-6 sm:gap-8 lg:gap-10 flex-wrap">
             {["/image/sponsor-logos/1.png", "/image/sponsor-logos/2.png", "/image/sponsor-logos/3.png"].map((src, i) => (
-              <div key={i} className="relative h-14 w-36 opacity-80 hover:opacity-100 transition-opacity duration-200">
+              <div key={i} className="relative h-10 w-24 sm:h-12 sm:w-32 lg:h-14 lg:w-36 opacity-80 hover:opacity-100 transition-opacity duration-200">
                 <Image
                   src={src}
                   alt={`Partner ${i + 1}`}
                   fill
                   className="object-contain object-left"
-                  sizes="144px"
+                  sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 144px"
                 />
               </div>
             ))}
@@ -192,30 +218,34 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Pause/Play toggle button */}
-      <button
-        onClick={togglePlayPause}
-        aria-label={isPlaying ? "Pause video" : "Play video"}
-        className="absolute bottom-6 right-6 z-30 w-11 h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
-      >
-        {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
-      </button>
+      {/* Pause/Play toggle button — desktop only */}
+      {!isMobile && (
+        <button
+          onClick={togglePlayPause}
+          aria-label={isPlaying ? "Pause video" : "Play video"}
+          className="absolute bottom-6 right-6 z-30 w-11 h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+        >
+          {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
+        </button>
+      )}
 
-      {/* Video indicator dots */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
-        {videos.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            aria-label={`Switch to video ${index + 1}`}
-            className={`h-2 rounded-full transition-all duration-500 ${
-              index === currentIndex
-                ? "bg-[#22C55E] w-6"
-                : "bg-white/40 w-2 hover:bg-white/60"
-            }`}
-          />
-        ))}
-      </div>
+      {/* Video indicator dots — desktop only */}
+      {!isMobile && (
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+          {videos.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              aria-label={`Switch to video ${index + 1}`}
+              className={`h-2 rounded-full transition-all duration-500 ${
+                index === currentIndex
+                  ? "bg-[#22C55E] w-6"
+                  : "bg-white/40 w-2 hover:bg-white/60"
+              }`}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Bottom accent line */}
       <div className="absolute bottom-0 left-0 right-0 h-[3px] z-30 bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#E11D48]" />
