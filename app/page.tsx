@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Hero } from "@/components/Hero";
-import { StaticConstellationBG } from "@/components/StaticConstellationBG";
 import { NewsCard } from "@/components/NewsCard";
 import { ChevronRight } from "lucide-react";
 import { articles } from "@/data/articles";
@@ -123,7 +122,7 @@ function HomeEventsSection() {
   });
 
   return (
-    <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "rgba(238,236,234,0.55)" }}>
+    <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "#EEECEA" }}>
       <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
         <AnimatedSection>
           <SectionHeader
@@ -222,17 +221,13 @@ export default function Home() {
       {/* ──────────────────────────────────────────────────────────── */}
       <Hero />
 
-      {/* Static constellation background — homepage content only */}
-      <div className="relative">
-        <StaticConstellationBG />
-
       {/* ════════════════════════════════════════════════════════════
            ABOUT THE COUNCIL
            Background: warm off-white (body bg)
            Layout: full-width text paragraph + About Us button
            Matches ukproptech.com "intro" section structure exactly
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "rgba(238,236,234,0.55)" }}>
+      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -274,7 +269,7 @@ export default function Home() {
            WHO CAN JOIN — horizontal scroll of member types
            Matches the ukproptech "Who can join?" horizontal card row
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-14 lg:py-18" style={{ backgroundColor: "rgba(232,230,227,0.55)" }}>
+      <section className="relative z-[1] py-14 lg:py-18" style={{ backgroundColor: "#E8E6E3" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             {/* Section header with red banner */}
@@ -336,7 +331,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            EVENT HIGHLIGHTS — YouTube video embeds
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "rgba(238,236,234,0.55)" }}>
+      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -398,7 +393,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            RESOURCES / NEWS & INSIGHTS — 3 column editorial cards
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "rgba(232,230,227,0.55)" }}>
+      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "#E8E6E3" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -438,7 +433,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            PARTNER / MEMBER LOGOS — slim marquee strip
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] border-t border-[#1C1F2E]/10 py-12" style={{ backgroundColor: "rgba(238,236,234,0.55)" }}>
+      <section className="relative z-[1] border-t border-[#1C1F2E]/10 py-12" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-[#7A7E8F] mb-8">
             Trusted by Leading Organisations
@@ -450,7 +445,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            IMPACT NUMBERS — 4 stat cards on white bg
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "rgba(238,236,234,0.55)" }}>
+      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -463,8 +458,6 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
-
-      </div>{/* end static constellation wrapper */}
 
       {/* ════════════════════════════════════════════════════════════
            JOIN CTA — dark section with animated background
