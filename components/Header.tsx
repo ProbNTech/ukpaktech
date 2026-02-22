@@ -200,19 +200,16 @@ export function Header() {
       </a>
 
       {/* ═══════════════════════════════════════════════════════════
-          HEADER — dark futuristic single bar
+          HEADER — white two-tier professional layout
       ══════════════════════════════════════════════════════════════ */}
       <header
         role="banner"
-        className="sticky top-0 z-50 bg-[#0F1629]"
+        className="sticky top-0 z-50 bg-white border-b border-gray-200"
         onMouseLeave={handleLeave}
       >
-        {/* ── Top accent line ──────────────────────────────────── */}
-        <div className="h-[2px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#E11D48]" />
-
-        {/* ── Main bar ─────────────────────────────────────────── */}
+        {/* ── Tier 1: Brand bar ──────────────────────────────── */}
         <div className="px-5 sm:px-8 lg:px-12 xl:px-16">
-          <div className="flex items-center justify-between h-[70px]">
+          <div className="flex items-center justify-between h-[58px]">
 
             {/* ── Left: Logo + name ────────────────────────────── */}
             <Link
@@ -225,30 +222,58 @@ export function Header() {
                 alt="UPTECH Council logo"
                 width={48}
                 height={48}
-                className="h-[42px] w-auto object-contain"
+                className="h-[40px] w-auto object-contain"
                 priority
               />
-              <div className="hidden sm:flex flex-col">
-                <span className="font-heading font-bold text-[16px] lg:text-[18px] tracking-[0.02em] leading-tight text-white">
-                  UK–Pakistan Tech Council
-                </span>
-                <span className="font-sans text-[9px] uppercase tracking-[0.35em] text-[#22C55E] font-semibold mt-0.5">
-                  UPTECH
-                </span>
-              </div>
+              <span className="hidden sm:inline font-heading font-bold text-[15px] lg:text-[17px] tracking-[0.01em] leading-tight text-[#0F172A]">
+                UK–Pakistan Tech Council <span className="text-[#1E3A5F]">(UPTECH)</span>
+              </span>
             </Link>
 
-            {/* ── Center: Navigation ───────────────────────────── */}
+            {/* ── Right: Contact + CTA ────────────────────────── */}
+            <div className="hidden lg:flex items-center gap-5">
+              <Link
+                href="/contact"
+                className="text-[12px] font-medium text-[#475569] hover:text-[#1E3A5F] transition-colors uppercase tracking-[0.08em]"
+              >
+                Contact
+              </Link>
+              <Link
+                href="/membership"
+                onMouseEnter={handleLeave}
+                className="px-5 py-2 font-heading font-bold text-[11px] uppercase tracking-[0.12em] bg-[#1E3A5F] text-white hover:bg-[#162D4A] transition-colors duration-200 whitespace-nowrap rounded"
+              >
+                Become a Member
+              </Link>
+            </div>
+
+            {/* ── Mobile hamburger ─────────────────────────────── */}
+            <button
+              className="lg:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px]"
+              onClick={() => setIsMobileOpen(true)}
+              aria-label="Open menu"
+              aria-expanded={isMobileOpen}
+            >
+              <span className="block w-6 h-[1.5px] bg-[#0F172A]" />
+              <span className="block w-6 h-[1.5px] bg-[#0F172A]" />
+              <span className="block w-4 h-[1.5px] self-start bg-[#0F172A]" />
+            </button>
+          </div>
+        </div>
+
+        {/* ── Tier 2: Navigation bar ─────────────────────────── */}
+        <div className="hidden lg:block border-t border-gray-100">
+          <div className="px-5 sm:px-8 lg:px-12 xl:px-16">
             <nav
-              className="hidden lg:flex items-center h-full"
+              className="flex items-center h-[42px]"
               aria-label="Main navigation"
             >
               <Link
                 href="/"
                 onMouseEnter={handleLeave}
-                className="relative h-full px-4 xl:px-5 flex items-center font-sans text-[12px] uppercase font-semibold tracking-[0.1em] text-white/70 hover:text-white transition-colors duration-150"
+                className="relative h-full px-4 xl:px-5 flex items-center font-sans text-[13px] font-semibold tracking-[0.02em] text-[#1E3A5F] hover:text-[#0F172A] transition-colors duration-150"
               >
-                Home
+                HOME
               </Link>
 
               {navGroups.map((group) => {
@@ -262,14 +287,14 @@ export function Header() {
                     onMouseEnter={() => handleGroupEnter(group.label)}
                     className={`
                       relative h-full px-4 xl:px-5 flex items-center gap-1
-                      font-sans text-[12px] uppercase font-semibold tracking-[0.1em]
+                      font-sans text-[13px] font-semibold tracking-[0.02em]
                       transition-colors duration-150 cursor-default select-none
                       ${isActive
-                        ? "text-[#22C55E]"
-                        : "text-white/70 hover:text-white"}
+                        ? "text-[#0F172A]"
+                        : "text-[#1E3A5F] hover:text-[#0F172A]"}
                     `}
                   >
-                    {group.label}
+                    {group.label.toUpperCase()}
                     <svg
                       className={`w-2.5 h-2.5 transition-transform duration-200 ${isActive ? "rotate-180" : ""}`}
                       fill="none"
@@ -281,7 +306,7 @@ export function Header() {
                     </svg>
                     <span
                       className={`
-                        absolute bottom-0 left-3 right-3 h-[2px] bg-[#22C55E]
+                        absolute bottom-0 left-3 right-3 h-[2px] bg-[#1E3A5F]
                         transition-opacity duration-150
                         ${isActive ? "opacity-100" : "opacity-0"}
                       `}
@@ -290,40 +315,8 @@ export function Header() {
                 );
               })}
             </nav>
-
-            {/* ── Right: CTA ──────────────────────────────────── */}
-            <div className="hidden lg:flex items-center gap-4">
-              <Link
-                href="/contact"
-                className="text-[11px] font-medium text-white/50 hover:text-white transition-colors uppercase tracking-[0.1em]"
-              >
-                Contact
-              </Link>
-              <Link
-                href="/membership"
-                onMouseEnter={handleLeave}
-                className="px-5 py-2 font-heading font-bold text-[11px] uppercase tracking-[0.12em] bg-[#E11D48] text-white hover:bg-[#BE123C] transition-colors duration-200 whitespace-nowrap rounded-sm"
-              >
-                Become a Member
-              </Link>
-            </div>
-
-            {/* ── Mobile hamburger ─────────────────────────────── */}
-            <button
-              className="lg:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px]"
-              onClick={() => setIsMobileOpen(true)}
-              aria-label="Open menu"
-              aria-expanded={isMobileOpen}
-            >
-              <span className="block w-6 h-[1.5px] bg-white" />
-              <span className="block w-6 h-[1.5px] bg-white" />
-              <span className="block w-4 h-[1.5px] self-start bg-white" />
-            </button>
           </div>
         </div>
-
-        {/* ── Bottom glow line ─────────────────────────────────── */}
-        <div className="h-px bg-gradient-to-r from-transparent via-[#2563EB]/40 to-transparent" />
 
         {/* ═══════════════════════════════════════════════════════════
             MEGA PANEL — three-column editorial dropdown
@@ -579,7 +572,7 @@ export function Header() {
                 <Link
                   href="/membership"
                   onClick={() => setIsMobileOpen(false)}
-                  className="block text-center py-3 px-4 bg-[#0A0A0A] text-white font-heading font-bold text-mobile-cta uppercase hover:bg-[#C41E3A] transition-colors duration-200"
+                  className="block text-center py-3 px-4 bg-[#1E3A5F] text-white font-heading font-bold text-mobile-cta uppercase hover:bg-[#162D4A] transition-colors duration-200 rounded"
                 >
                   Become a Member
                 </Link>
