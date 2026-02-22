@@ -130,7 +130,7 @@ function HomeEventsSection() {
             label="Attend an event"
             title="Upcoming events"
             body="Our upcoming events span bilateral summits, investor dialogues, webinars, and trade delegations. All events are open to UPTECH members and selected guests."
-            color="red"
+            color="green"
           />
 
           {/* Filter tabs */}
@@ -334,13 +334,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-           ATTEND AN EVENT — filtered event cards
-      ═══════════════════════════════════════════════════════════ */}
-      <HomeEventsSection />
-
-      {/* ════════════════════════════════════════════════════════════
            RESOURCES / NEWS & INSIGHTS — 3 column editorial cards
-           Exact ukproptech "Resources" pattern: date → title → tags → rule
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "rgba(232,230,227,0.55)" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -349,7 +343,7 @@ export default function Home() {
               label="Stay informed"
               title="News &amp; Insights"
               body="Investment deals, policy developments, innovation spotlights, and bilateral progress — what's shaping the UK–Pakistan technology corridor."
-              color="green"
+              color="red"
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-10">
@@ -373,6 +367,11 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* ════════════════════════════════════════════════════════════
+           ATTEND AN EVENT — filtered event cards
+      ═══════════════════════════════════════════════════════════ */}
+      <HomeEventsSection />
 
       {/* ════════════════════════════════════════════════════════════
            PARTNER / MEMBER LOGOS — slim marquee strip
