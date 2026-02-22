@@ -88,7 +88,7 @@ export function Hero() {
   const slide = slides[currentIndex];
 
   return (
-    <section className="relative w-full min-h-0 lg:h-screen overflow-hidden bg-[#0B0F1A]">
+    <section className="relative z-[2] w-full min-h-0 lg:h-screen overflow-hidden bg-[#0B0F1A]">
       {/* Background videos */}
       {slides.map((s, index) => (
         <video

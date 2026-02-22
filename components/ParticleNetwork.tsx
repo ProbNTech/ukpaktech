@@ -53,7 +53,7 @@ function getParticleCount(width: number): number {
 }
 
 function createParticle(canvasW: number, canvasH: number): Particle {
-  const isRed = Math.random() < 0.2; // 20% red, 80% blue
+  const isRed = Math.random() < 0.2;
   const shades = isRed ? RED_SHADES : BLUE_SHADES;
   const shade = shades[Math.floor(Math.random() * shades.length)];
   const radius = 1.5 + Math.random() * 2.5;
@@ -70,7 +70,7 @@ function createParticle(canvasW: number, canvasH: number): Particle {
     radius,
     color: shade,
     glowColor: shade,
-    opacity: isRed ? 0.35 + Math.random() * 0.35 : 0.2 + Math.random() * 0.35,
+    opacity: isRed ? 0.4 + Math.random() * 0.35 : 0.25 + Math.random() * 0.35,
     isRed,
   };
 }
@@ -82,7 +82,6 @@ export function ParticleNetwork() {
   const rafRef = useRef<number>(0);
   const dimensionsRef = useRef({ w: 0, h: 0 });
 
-  /* ── Initialise particles for current canvas size ──────────── */
   const initParticles = useCallback((w: number, h: number) => {
     const count = getParticleCount(w);
     const particles: Particle[] = [];
@@ -93,25 +92,24 @@ export function ParticleNetwork() {
     dimensionsRef.current = { w, h };
   }, []);
 
-  /* ── Resize handler — updates canvas resolution & particles ─ */
   const handleResize = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const dpr = window.devicePixelRatio || 1;
-    const rect = canvas.getBoundingClientRect();
-    const w = rect.width;
-    const h = rect.height;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
 
     canvas.width = w * dpr;
     canvas.height = h * dpr;
+    canvas.style.width = w + "px";
+    canvas.style.height = h + "px";
 
     const ctx = canvas.getContext("2d");
     if (ctx) {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
-    // Rescale existing particles or re-initialise
     const oldW = dimensionsRef.current.w;
     const oldH = dimensionsRef.current.h;
 
@@ -123,7 +121,6 @@ export function ParticleNetwork() {
       const targetCount = getParticleCount(w);
       const particles = particlesRef.current;
 
-      // Scale existing particle positions
       for (const p of particles) {
         p.x *= scaleX;
         p.y *= scaleY;
@@ -131,7 +128,6 @@ export function ParticleNetwork() {
         p.originY *= scaleY;
       }
 
-      // Add or remove particles to match target count
       while (particles.length < targetCount) {
         particles.push(createParticle(w, h));
       }
@@ -143,7 +139,6 @@ export function ParticleNetwork() {
     }
   }, [initParticles]);
 
-  /* ── Main animation loop ───────────────────────────────────── */
   const animate = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -155,12 +150,10 @@ export function ParticleNetwork() {
     const particles = particlesRef.current;
     const mouse = mouseRef.current;
 
-    // Clear canvas
     ctx.clearRect(0, 0, w, h);
 
     /* ── Update physics ──────────────────────────────────────── */
     for (const p of particles) {
-      // Mouse repulsion (Coulomb-like inverse-square)
       if (mouse.active) {
         const dx = p.x - mouse.x;
         const dy = p.y - mouse.y;
@@ -168,7 +161,7 @@ export function ParticleNetwork() {
         const dist = Math.sqrt(distSq);
 
         if (dist < REPULSION_RADIUS && dist > 1) {
-          const force = REPULSION_STRENGTH / (distSq);
+          const force = REPULSION_STRENGTH / distSq;
           const nx = dx / dist;
           const ny = dy / dist;
           p.vx += nx * force;
@@ -176,19 +169,15 @@ export function ParticleNetwork() {
         }
       }
 
-      // Gentle return to origin
       p.vx += (p.originX - p.x) * RETURN_STRENGTH;
       p.vy += (p.originY - p.y) * RETURN_STRENGTH;
 
-      // Apply friction
       p.vx *= FRICTION;
       p.vy *= FRICTION;
 
-      // Move
       p.x += p.vx;
       p.y += p.vy;
 
-      // Soft boundary wrap (keep particles on screen)
       if (p.x < -20) { p.x = w + 20; p.originX = p.x; }
       if (p.x > w + 20) { p.x = -20; p.originX = p.x; }
       if (p.y < -20) { p.y = h + 20; p.originY = p.y; }
@@ -205,15 +194,14 @@ export function ParticleNetwork() {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < CONNECTION_DISTANCE) {
-          const opacity = (1 - dist / CONNECTION_DISTANCE) * 0.18;
-          // Use the brighter particle's color for the line
+          const opacity = (1 - dist / CONNECTION_DISTANCE) * 0.22;
           const lineColor = a.isRed || b.isRed ? "196, 30, 58" : "26, 43, 94";
 
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
           ctx.strokeStyle = `rgba(${lineColor}, ${opacity})`;
-          ctx.lineWidth = 0.6;
+          ctx.lineWidth = 0.8;
           ctx.stroke();
         }
       }
@@ -223,8 +211,8 @@ export function ParticleNetwork() {
     for (const p of particles) {
       // Outer glow
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius * 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${p.glowColor}, ${p.opacity * 0.15})`;
+      ctx.arc(p.x, p.y, p.radius * 3, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${p.glowColor}, ${p.opacity * 0.12})`;
       ctx.fill();
 
       // Core dot
@@ -240,7 +228,7 @@ export function ParticleNetwork() {
         mouse.x, mouse.y, 0,
         mouse.x, mouse.y, REPULSION_RADIUS * 0.6
       );
-      gradient.addColorStop(0, "rgba(26, 43, 94, 0.04)");
+      gradient.addColorStop(0, "rgba(26, 43, 94, 0.06)");
       gradient.addColorStop(1, "rgba(26, 43, 94, 0)");
       ctx.beginPath();
       ctx.arc(mouse.x, mouse.y, REPULSION_RADIUS * 0.6, 0, Math.PI * 2);
@@ -251,39 +239,53 @@ export function ParticleNetwork() {
     rafRef.current = requestAnimationFrame(animate);
   }, []);
 
-  /* ── Setup & teardown ──────────────────────────────────────── */
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     handleResize();
 
-    // Pointer events (unified mouse + touch)
-    const onPointerMove = (e: PointerEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseRef.current.x = e.clientX - rect.left;
-      mouseRef.current.y = e.clientY - rect.top;
+    // Listen on window so mouse works even when content is above canvas
+    const onMouseMove = (e: MouseEvent) => {
+      mouseRef.current.x = e.clientX;
+      mouseRef.current.y = e.clientY;
       mouseRef.current.active = true;
     };
 
-    const onPointerLeave = () => {
+    const onMouseLeave = () => {
       mouseRef.current.active = false;
       mouseRef.current.x = -9999;
       mouseRef.current.y = -9999;
     };
 
-    // Start animation
+    const onTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        mouseRef.current.x = e.touches[0].clientX;
+        mouseRef.current.y = e.touches[0].clientY;
+        mouseRef.current.active = true;
+      }
+    };
+
+    const onTouchEnd = () => {
+      mouseRef.current.active = false;
+      mouseRef.current.x = -9999;
+      mouseRef.current.y = -9999;
+    };
+
     rafRef.current = requestAnimationFrame(animate);
 
-    // Event listeners
-    canvas.addEventListener("pointermove", onPointerMove, { passive: true });
-    canvas.addEventListener("pointerleave", onPointerLeave);
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
+    document.addEventListener("mouseleave", onMouseLeave);
+    window.addEventListener("touchmove", onTouchMove, { passive: true });
+    window.addEventListener("touchend", onTouchEnd);
     window.addEventListener("resize", handleResize);
 
     return () => {
       cancelAnimationFrame(rafRef.current);
-      canvas.removeEventListener("pointermove", onPointerMove);
-      canvas.removeEventListener("pointerleave", onPointerLeave);
+      window.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseleave", onMouseLeave);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
       window.removeEventListener("resize", handleResize);
     };
   }, [animate, handleResize]);
@@ -291,7 +293,7 @@ export function ParticleNetwork() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full pointer-events-auto"
+      className="fixed inset-0 pointer-events-none"
       style={{ zIndex: 1 }}
       aria-hidden="true"
     />

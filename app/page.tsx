@@ -219,7 +219,7 @@ function HomeEventsSection() {
 
 export default function Home() {
   return (
-    <div className="bg-[#EEECEA]">
+    <div>
       {/* Interactive particle constellation background */}
       <ParticleNetwork />
 
