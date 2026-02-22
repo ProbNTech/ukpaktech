@@ -225,7 +225,7 @@ export function Header() {
                 className="h-[68px] w-auto object-contain"
                 priority
               />
-              <span className="hidden sm:inline font-heading font-black text-[28px] sm:text-[34px] lg:text-[42px] xl:text-[48px] tracking-[0.01em] leading-none text-[#0F172A] uppercase">
+              <span className="hidden sm:inline font-heading font-black text-[28px] sm:text-[34px] lg:text-[42px] xl:text-[48px] tracking-[0.01em] leading-none text-[#1a2b5e] uppercase">
                 UK–PAKISTAN TECH COUNCIL <span className="text-[#C41E3A]">(UPTECH)</span>
               </span>
             </Link>
