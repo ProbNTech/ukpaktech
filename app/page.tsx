@@ -104,7 +104,7 @@ export default function Home() {
               <div className="relative">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
                   <Image
-                    src="/image/about page/About_Council.webp"
+                    src="/image/home/about_section.jpg"
                     alt="UK–Pakistan Tech Council"
                     fill
                     className="object-cover"

@@ -200,101 +200,63 @@ export function Header() {
       </a>
 
       {/* ═══════════════════════════════════════════════════════════
-          HEADER — always white, separate from hero, sticky on scroll
+          HEADER — two-tier: brand strip + navigation bar
       ══════════════════════════════════════════════════════════════ */}
       <header
         role="banner"
         className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
-          isScrolled ? "shadow-[0_2px_16px_rgba(0,0,0,0.08)]" : ""
+          isScrolled ? "shadow-[0_4px_20px_rgba(0,0,0,0.06)]" : ""
         }`}
         onMouseLeave={handleLeave}
       >
         {/* ── Top accent line — gradient brand bar ──────────────── */}
         <div className="h-[3px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
 
-        {/* ── Main nav bar ─────────────────────────────────────── */}
-        <div className="border-b border-[#E4E1DC]">
+        {/* ── Tier 1: Brand identity strip ─────────────────────── */}
+        <div className="border-b border-[#E8E6E3] bg-[#FAFAF9]">
           <div className="px-6 sm:px-10 lg:px-14 xl:px-18">
-            <div className="flex items-center justify-between h-[80px]">
-
-              {/* Wordmark */}
+            <div className="flex items-center justify-between h-[56px]">
+              {/* Logo + Full site name */}
               <Link
                 href="/"
-                className="flex items-center gap-3 flex-shrink-0 group"
+                className="flex items-center gap-3.5 flex-shrink-0 group"
                 aria-label="UPTECH — Home"
               >
                 <Image
                   src="/image/main-logo/mainlogo.png"
                   alt="UPTECH Council logo"
-                  width={52}
-                  height={52}
-                  className="h-[52px] w-auto object-contain"
+                  width={40}
+                  height={40}
+                  className="h-[40px] w-auto object-contain"
                   priority
                 />
-                <span className="font-heading font-bold text-[16px] uppercase tracking-[0.2em] leading-none text-[#0A0A0A]">
-                  UPTECH
-                </span>
-                <span className="hidden xl:block w-px h-5 bg-[#D8D5CF] mx-2" aria-hidden="true" />
-                <span className="hidden xl:block font-sans text-[13px] uppercase tracking-[0.08em] leading-tight max-w-[140px] text-[#6B6B6B]">
-                  UK–Pakistan Tech Council
-                </span>
+                <div className="flex flex-col">
+                  <span className="font-heading font-extrabold text-[15px] sm:text-[17px] tracking-[0.04em] leading-none text-[#0A0A0A]">
+                    UK–Pakistan Tech Council
+                  </span>
+                  <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#2563EB] font-semibold mt-0.5">
+                    UPTECH
+                  </span>
+                </div>
               </Link>
 
-              {/* ── Desktop nav ──────────────────────────────────── */}
-              <nav
-                className="hidden lg:flex items-center h-full"
-                aria-label="Main navigation"
-              >
+              {/* Right side — contact + CTA on desktop, hamburger on mobile */}
+              <div className="hidden lg:flex items-center gap-5">
                 <Link
-                  href="/"
-                  onMouseEnter={handleLeave}
-                  className="relative h-full px-4 flex items-center font-sans text-[14px] uppercase font-semibold tracking-[0.06em] text-[#3D3D3D] hover:text-[#0A0A0A] transition-colors duration-150"
+                  href="/contact"
+                  className="text-[12px] font-medium text-[#6B6B6B] hover:text-[#0A0A0A] transition-colors duration-150 uppercase tracking-[0.08em]"
                 >
-                  Home
+                  Contact
                 </Link>
-
-                {navGroups.map((group) => {
-                  const isActive = openGroup === group.label;
-                  return (
-                    <button
-                      key={group.label}
-                      type="button"
-                      aria-expanded={isActive}
-                      aria-haspopup="true"
-                      onMouseEnter={() => handleGroupEnter(group.label)}
-                      className={`
-                        relative h-full px-4 flex items-center gap-1.5
-                        font-sans text-[14px] uppercase font-semibold tracking-[0.06em]
-                        transition-colors duration-150 cursor-default select-none
-                        ${isActive
-                          ? "text-[#C41E3A]"
-                          : "text-[#3D3D3D] hover:text-[#0A0A0A]"}
-                      `}
-                    >
-                      {group.label}
-                      {/* Crimson underline rule when active */}
-                      <span
-                        className={`
-                          absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#C41E3A]
-                          transition-opacity duration-150
-                          ${isActive ? "opacity-100" : "opacity-0"}
-                        `}
-                      />
-                    </button>
-                  );
-                })}
-              </nav>
-
-              {/* ── Desktop CTA ──────────────────────────────────── */}
-              <div className="hidden lg:flex items-center gap-3">
+                <span className="w-px h-4 bg-[#D8D5CF]" />
                 <Link
                   href="/membership"
                   onMouseEnter={handleLeave}
                   className="
-                    px-7 py-2.5 rounded-full
-                    font-heading font-bold text-[13px] uppercase tracking-[0.1em]
-                    bg-[#C41E3A] text-white border-2 border-[#C41E3A]
-                    hover:bg-[#A01830] hover:border-[#A01830]
+                    px-6 py-2 rounded-full
+                    font-heading font-bold text-[12px] uppercase tracking-[0.1em]
+                    bg-[#C41E3A] text-white
+                    hover:bg-[#A01830]
                     transition-colors duration-200 whitespace-nowrap
                   "
                 >
@@ -313,6 +275,67 @@ export function Header() {
                 <span className="block w-6 h-[1.5px] bg-[#0A0A0A]" />
                 <span className="block w-4 h-[1.5px] self-start bg-[#0A0A0A]" />
               </button>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Tier 2: Navigation bar ───────────────────────────── */}
+        <div className="hidden lg:block border-b border-[#E4E1DC] bg-white">
+          <div className="px-6 sm:px-10 lg:px-14 xl:px-18">
+            <div className="flex items-center h-[48px]">
+              <nav
+                className="flex items-center h-full gap-1"
+                aria-label="Main navigation"
+              >
+                <Link
+                  href="/"
+                  onMouseEnter={handleLeave}
+                  className="relative h-full px-4 flex items-center font-sans text-[13px] uppercase font-semibold tracking-[0.08em] text-[#3D3D3D] hover:text-[#0A0A0A] transition-colors duration-150"
+                >
+                  Home
+                </Link>
+
+                {navGroups.map((group) => {
+                  const isActive = openGroup === group.label;
+                  return (
+                    <button
+                      key={group.label}
+                      type="button"
+                      aria-expanded={isActive}
+                      aria-haspopup="true"
+                      onMouseEnter={() => handleGroupEnter(group.label)}
+                      className={`
+                        relative h-full px-4 flex items-center gap-1.5
+                        font-sans text-[13px] uppercase font-semibold tracking-[0.08em]
+                        transition-colors duration-150 cursor-default select-none
+                        ${isActive
+                          ? "text-[#C41E3A]"
+                          : "text-[#3D3D3D] hover:text-[#0A0A0A]"}
+                      `}
+                    >
+                      {group.label}
+                      {/* Small chevron indicator */}
+                      <svg
+                        className={`w-3 h-3 transition-transform duration-150 ${isActive ? "rotate-180 text-[#C41E3A]" : "text-[#9CA3AF]"}`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                      {/* Active underline */}
+                      <span
+                        className={`
+                          absolute bottom-0 left-2 right-2 h-[2.5px] bg-[#C41E3A] rounded-full
+                          transition-opacity duration-150
+                          ${isActive ? "opacity-100" : "opacity-0"}
+                        `}
+                      />
+                    </button>
+                  );
+                })}
+              </nav>
             </div>
           </div>
         </div>
