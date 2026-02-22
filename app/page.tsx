@@ -433,7 +433,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            PARTNER / MEMBER LOGOS — slim marquee strip
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-14" style={{ background: "linear-gradient(135deg, #0f1a3a 0%, #1a2b5e 100%)" }}>
+      <section className="relative z-[1] py-14" style={{ background: "linear-gradient(135deg, #15803d 0%, #22C55E 100%)" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <h2 className="text-center text-lg sm:text-xl font-bold uppercase tracking-[0.2em] text-white/80 mb-10">
             Trusted by Leading Organisations
