@@ -568,17 +568,6 @@ export function Header() {
                   );
                 })}
 
-                {/* Membership flat link */}
-                <div className="border-b border-[#D8D5D0]">
-                  <Link
-                    href="/membership"
-                    onClick={() => setIsMobileOpen(false)}
-                    className="block px-6 py-4 font-heading font-bold text-mobile-group uppercase text-[#0A0A0A] hover:text-[#C41E3A] transition-colors duration-150"
-                  >
-                    Membership
-                  </Link>
-                </div>
-
               </nav>
 
               {/* Drawer CTA */}
@@ -590,13 +579,6 @@ export function Header() {
                   className="block text-center py-3 px-4 bg-[#0A0A0A] text-white font-heading font-bold text-mobile-cta uppercase hover:bg-[#C41E3A] transition-colors duration-200"
                 >
                   Become a Member
-                </Link>
-                <Link
-                  href="/membership"
-                  onClick={() => setIsMobileOpen(false)}
-                  className="block text-center py-2.5 px-4 border border-[#D8D5D0] font-sans text-mobile-cta uppercase text-[#6B6B6B] hover:border-[#0A0A0A] hover:text-[#0A0A0A] transition-colors duration-200"
-                >
-                  Member Portal
                 </Link>
               </div>
             </motion.div>
