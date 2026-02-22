@@ -76,7 +76,7 @@ export function Hero() {
   }, [currentIndex]);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-[#0B0F1A]">
+    <section className="relative w-full min-h-0 lg:h-screen overflow-hidden bg-[#0B0F1A]">
       {/* Background videos — desktop only */}
       {!isMobile &&
         videos.map((src, index) => (
@@ -96,14 +96,15 @@ export function Hero() {
           </video>
         ))}
 
-      {/* Mobile/tablet background gradient fallback */}
+      {/* Mobile/tablet background image fallback */}
       {isMobile && (
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            background:
-              "linear-gradient(135deg, #0B0F1A 0%, #1a2e35 50%, #0B0F1A 100%)",
-          }}
+        <Image
+          src="/image/london-images/5.jpg"
+          alt="Hero background"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
       )}
 
@@ -160,7 +161,7 @@ export function Hero() {
       />
 
       {/* Content wrapper */}
-      <div className="relative z-20 flex items-center h-screen px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-28 sm:pt-32 lg:pt-40">
+      <div className="relative z-20 flex items-center lg:h-screen px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-28 sm:pt-32 lg:pt-40 pb-14 lg:pb-0">
         <div className="w-full max-w-full lg:max-w-[55%]">
 
           {/* Small label */}
