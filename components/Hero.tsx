@@ -127,25 +127,6 @@ export function Hero() {
           </div>
 
           {/* Gold/yellow separator line */}
-          <div className="w-full h-px bg-[#F59E0B] mb-4 sm:mb-6" />
-
-          {/* Partner logos row */}
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-white/80 mb-4 sm:mb-5">
-            Trusted by leading organisations
-          </p>
-          <div className="flex items-center gap-4 sm:gap-8 lg:gap-10 flex-wrap">
-            {["/image/sponsor-logos/1.png", "/image/sponsor-logos/2.png", "/image/sponsor-logos/3.png"].map((src, i) => (
-              <div key={i} className="relative h-8 w-20 sm:h-12 sm:w-32 lg:h-14 lg:w-36 opacity-80 hover:opacity-100 transition-opacity duration-200">
-                <Image
-                  src={src}
-                  alt={`Partner ${i + 1}`}
-                  fill
-                  className="object-contain object-left"
-                  sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 144px"
-                />
-              </div>
-            ))}
-          </div>
 
         </div>
       </div>
