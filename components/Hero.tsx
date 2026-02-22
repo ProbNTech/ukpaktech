@@ -159,7 +159,7 @@ export function Hero() {
       />
 
       {/* Content wrapper */}
-      <div className="relative z-20 flex items-center lg:h-screen px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-28 sm:pt-32 lg:pt-40 pb-14 lg:pb-0">
+      <div className="relative z-20 flex items-center lg:h-screen px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-36 sm:pt-40 lg:pt-40 pb-14 lg:pb-0">
         <div className="w-full max-w-full lg:max-w-[55%]">
 
           {/* Small label */}
@@ -200,9 +200,9 @@ export function Hero() {
           <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-white/80 mb-4 sm:mb-5">
             Trusted by leading organisations
           </p>
-          <div className="flex items-center gap-6 sm:gap-8 lg:gap-10 flex-wrap">
+          <div className="flex items-center gap-4 sm:gap-8 lg:gap-10 flex-wrap">
             {["/image/sponsor-logos/1.png", "/image/sponsor-logos/2.png", "/image/sponsor-logos/3.png"].map((src, i) => (
-              <div key={i} className="relative h-10 w-24 sm:h-12 sm:w-32 lg:h-14 lg:w-36 opacity-80 hover:opacity-100 transition-opacity duration-200">
+              <div key={i} className="relative h-8 w-20 sm:h-12 sm:w-32 lg:h-14 lg:w-36 opacity-80 hover:opacity-100 transition-opacity duration-200">
                 <Image
                   src={src}
                   alt={`Partner ${i + 1}`}
