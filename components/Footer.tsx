@@ -120,10 +120,10 @@ export function Footer() {
                   <p>
                     <span className="text-white font-medium">Email:</span>{" "}
                     <a
-                      href="mailto:info@uptechcouncil.org"
-                      className="hover:text-[#22C55E] transition-colors duration-300"
+                      href="mailto:info@ukpaktech.org.uk"
+                      className="text-[#C41E3A] font-bold hover:text-[#E74C5E] transition-colors duration-300"
                     >
-                      info@uptechcouncil.org
+                      info@ukpaktech.org.uk
                     </a>
                   </p>
                   <div>
