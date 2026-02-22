@@ -38,12 +38,12 @@ const RED_SHADES = [
 ];
 
 /* ── Tuning constants ────────────────────────────────────────── */
-const CONNECTION_DISTANCE = 160;
-const REPULSION_RADIUS = 180;
-const REPULSION_STRENGTH = 8000;
-const RETURN_STRENGTH = 0.008;
+const CONNECTION_DISTANCE = 180;
+const REPULSION_RADIUS = 200;
+const REPULSION_STRENGTH = 10000;
+const RETURN_STRENGTH = 0.006;
 const FRICTION = 0.97;
-const BASE_SPEED = 0.3;
+const BASE_SPEED = 0.4;
 
 function getParticleCount(width: number): number {
   if (width > 1400) return 130;
@@ -56,7 +56,7 @@ function createParticle(canvasW: number, canvasH: number): Particle {
   const isRed = Math.random() < 0.2;
   const shades = isRed ? RED_SHADES : BLUE_SHADES;
   const shade = shades[Math.floor(Math.random() * shades.length)];
-  const radius = 1.5 + Math.random() * 2.5;
+  const radius = 2 + Math.random() * 3;
   const x = Math.random() * canvasW;
   const y = Math.random() * canvasH;
 
@@ -70,7 +70,7 @@ function createParticle(canvasW: number, canvasH: number): Particle {
     radius,
     color: shade,
     glowColor: shade,
-    opacity: isRed ? 0.4 + Math.random() * 0.35 : 0.25 + Math.random() * 0.35,
+    opacity: isRed ? 0.7 + Math.random() * 0.3 : 0.5 + Math.random() * 0.4,
     isRed,
   };
 }
@@ -194,14 +194,14 @@ export function ParticleNetwork() {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < CONNECTION_DISTANCE) {
-          const opacity = (1 - dist / CONNECTION_DISTANCE) * 0.22;
+          const opacity = (1 - dist / CONNECTION_DISTANCE) * 0.5;
           const lineColor = a.isRed || b.isRed ? "196, 30, 58" : "26, 43, 94";
 
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
           ctx.strokeStyle = `rgba(${lineColor}, ${opacity})`;
-          ctx.lineWidth = 0.8;
+          ctx.lineWidth = 1.2;
           ctx.stroke();
         }
       }
@@ -212,7 +212,7 @@ export function ParticleNetwork() {
       // Outer glow
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius * 3, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${p.glowColor}, ${p.opacity * 0.12})`;
+      ctx.fillStyle = `rgba(${p.glowColor}, ${p.opacity * 0.3})`;
       ctx.fill();
 
       // Core dot
