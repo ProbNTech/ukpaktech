@@ -433,9 +433,9 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            PARTNER / MEMBER LOGOS — slim marquee strip
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] border-t border-[#1C1F2E]/10 py-12" style={{ backgroundColor: "#EEECEA" }}>
+      <section className="relative z-[1] py-14" style={{ background: "linear-gradient(135deg, #0f1a3a 0%, #1a2b5e 100%)" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-[#7A7E8F] mb-8">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-white/60 mb-8">
             Trusted by Leading Organisations
           </p>
           <SponsorMarquee />

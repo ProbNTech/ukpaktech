@@ -23,8 +23,8 @@ export function SponsorMarquee() {
       <div className="relative overflow-x-auto scrollbar-hide py-4">
         <div className="flex gap-6 min-w-max">
           {sponsorLogos.map((logo, index) => (
-            <div key={index} className="relative flex items-center justify-center h-16 w-32 shrink-0 bg-white border border-[#D8D5CF] p-4">
-              <Image src={logo.src} alt={logo.alt} width={128} height={64} className="object-contain h-full w-full" loading="lazy" />
+            <div key={index} className="relative flex items-center justify-center h-20 w-40 shrink-0 bg-white/10 rounded-lg border border-white/15 p-4">
+              <Image src={logo.src} alt={logo.alt} width={160} height={80} className="object-contain h-full w-full" loading="lazy" />
             </div>
           ))}
         </div>
@@ -38,21 +38,21 @@ export function SponsorMarquee() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Fade edges — match the section background */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#EEECEA] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#EEECEA] to-transparent z-10 pointer-events-none" />
+      {/* Fade edges — match the dark blue section background */}
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0f1a3a] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0f1a3a] to-transparent z-10 pointer-events-none" />
 
-      <div className="flex gap-8">
+      <div className="flex gap-10">
         <div
           ref={containerRef}
-          className={`flex gap-8 shrink-0 ${isPaused ? "animation-paused" : "animate-scroll-smooth"}`}
+          className={`flex gap-10 shrink-0 ${isPaused ? "animation-paused" : "animate-scroll-smooth"}`}
         >
           {duplicatedLogos.map((logo, index) => (
             <div
               key={`logo-${index}`}
-              className="flex items-center justify-center h-16 w-32 shrink-0 bg-white border border-[#D8D5CF] p-4"
+              className="flex items-center justify-center h-20 w-40 shrink-0 bg-white/10 rounded-lg border border-white/15 p-4"
             >
-              <Image src={logo.src} alt={logo.alt} width={128} height={64} className="object-contain h-full w-full" loading="lazy" />
+              <Image src={logo.src} alt={logo.alt} width={160} height={80} className="object-contain h-full w-full" loading="lazy" />
             </div>
           ))}
         </div>
