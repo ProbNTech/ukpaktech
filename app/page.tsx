@@ -344,9 +344,9 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
               {[
                 {
-                  id: "K49VP4KJ2vk",
-                  title: "Pakistan Pushes AI & Digital Collaboration at London Event",
-                  description: "Pakistan's delegation outlines its vision for AI-driven partnerships and digital cooperation at a landmark London gathering.",
+                  id: "_mvsgeqZMbk",
+                  title: "Indus AI Week Sparks Pakistan's Journey to a Digital Future",
+                  description: "A look inside Indus AI Week — Pakistan's flagship artificial intelligence conference driving national digital transformation.",
                 },
                 {
                   id: "CyE9Mde6d_E",
@@ -354,9 +354,9 @@ export default function Home() {
                   description: "Global leaders convene in Davos to explore trade, investment, and technology opportunities with Pakistan's emerging digital economy.",
                 },
                 {
-                  id: "_mvsgeqZMbk",
-                  title: "Indus AI Week Sparks Pakistan's Journey to a Digital Future",
-                  description: "A look inside Indus AI Week — Pakistan's flagship artificial intelligence conference driving national digital transformation.",
+                  id: "K49VP4KJ2vk",
+                  title: "Pakistan Pushes AI & Digital Collaboration at London Event",
+                  description: "Pakistan's delegation outlines its vision for AI-driven partnerships and digital cooperation at a landmark London gathering.",
                 },
                 {
                   id: "pXI-qz33PoA",
