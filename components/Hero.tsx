@@ -2,16 +2,38 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Play, Pause } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
-
-
-const videos = [
-  "/image/home/hero_video_openart.mp4",
-  "/image/home/hero_video_new2.mp4",
-  "/image/home/hero_video_new3.mp4",
-  "/image/home/hero_video3.mp4",
+const slides = [
+  {
+    video: "/image/home/hero_video_openart.mp4",
+    label: "UPTECH",
+    headline: "Driving bilateral technology collaboration between the UK and Pakistan",
+    cta: { text: "Explore our work", href: "/about" },
+    secondary: { text: "Discover our membership", href: "/membership" },
+  },
+  {
+    video: "/image/home/hero_video_new2.mp4",
+    label: "INNOVATION",
+    headline: "Connecting startups, investors & enterprises across borders",
+    cta: { text: "Discover programmes", href: "/programs/ai-tech-programs" },
+    secondary: { text: "View initiatives", href: "/initiatives/people-ai" },
+  },
+  {
+    video: "/image/home/hero_video_new3.mp4",
+    label: "PARTNERSHIP",
+    headline: "Building the UK–Pakistan digital corridor of the future",
+    cta: { text: "Join the ecosystem", href: "/ecosystem/uk-pakistan-technology-partnership" },
+    secondary: { text: "Trade delegations", href: "/ecosystem/trade-delegations-and-exhibitions" },
+  },
+  {
+    video: "/image/home/hero_video3.mp4",
+    label: "MEMBERSHIP",
+    headline: "A trusted network of 120+ members shaping bilateral tech growth",
+    cta: { text: "Become a member", href: "/membership" },
+    secondary: { text: "Upcoming events", href: "/events" },
+  },
 ];
 
 export function Hero() {
@@ -27,7 +49,7 @@ export function Hero() {
   );
 
   const handleVideoEnded = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % videos.length);
+    setCurrentIndex((prev) => (prev + 1) % slides.length);
   }, []);
 
   useEffect(() => {
@@ -63,12 +85,14 @@ export function Hero() {
     });
   }, [currentIndex]);
 
+  const slide = slides[currentIndex];
+
   return (
     <section className="relative w-full min-h-0 lg:h-screen overflow-hidden bg-[#0B0F1A]">
-      {/* Background videos — all screen sizes */}
-      {videos.map((src, index) => (
+      {/* Background videos */}
+      {slides.map((s, index) => (
         <video
-          key={src}
+          key={s.video}
           ref={setVideoRef(index)}
           autoPlay={index === 0}
           muted
@@ -79,11 +103,11 @@ export function Hero() {
             index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
-          <source src={src} type="video/mp4" />
+          <source src={s.video} type="video/mp4" />
         </video>
       ))}
 
-      {/* Subtle left-side gradient so white text remains readable over any video */}
+      {/* Subtle left-side gradient for text readability */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
@@ -94,40 +118,46 @@ export function Hero() {
       {/* Content wrapper */}
       <div className="relative z-20 flex items-center lg:h-screen px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-14 sm:pt-16 lg:pt-0 pb-14 lg:pb-0">
         <div className="w-full max-w-full lg:max-w-[55%]">
-
-          {/* Small label */}
-          <p className="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.18em] text-[#C41E3A] mb-4 sm:mb-5">
-            UPTECH
-          </p>
-
-          {/* Headline */}
-          <h1
-            className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-5 sm:mb-7"
-            style={{ lineHeight: 1.25 }}
-          >
-            Driving bilateral technology collaboration between the UK and Pakistan
-          </h1>
-
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-6 mb-8 sm:mb-10">
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#C41E3A] text-white font-bold text-sm sm:text-base hover:bg-[#A01830] transition-colors duration-200"
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              Explore our work
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
-              href="/membership"
-              className="inline-flex items-center gap-2.5 text-white font-semibold text-sm sm:text-base underline underline-offset-4 hover:text-white/75 transition-colors duration-200"
-            >
-              Discover our membership
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
+              {/* Small label */}
+              <p className="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.18em] text-[#C41E3A] mb-4 sm:mb-5">
+                {slide.label}
+              </p>
 
-          {/* Gold/yellow separator line */}
+              {/* Headline */}
+              <h1
+                className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-5 sm:mb-7"
+                style={{ lineHeight: 1.25 }}
+              >
+                {slide.headline}
+              </h1>
 
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-6 mb-8 sm:mb-10">
+                <Link
+                  href={slide.cta.href}
+                  className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#C41E3A] text-white font-bold text-sm sm:text-base hover:bg-[#A01830] transition-colors duration-200"
+                >
+                  {slide.cta.text}
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link
+                  href={slide.secondary.href}
+                  className="inline-flex items-center gap-2.5 text-white font-semibold text-sm sm:text-base underline underline-offset-4 hover:text-white/75 transition-colors duration-200"
+                >
+                  {slide.secondary.text}
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
 
@@ -142,11 +172,11 @@ export function Hero() {
 
       {/* Video indicator dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
-        {videos.map((_, index) => (
+        {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            aria-label={`Switch to video ${index + 1}`}
+            aria-label={`Switch to slide ${index + 1}`}
             className={`h-2 rounded-full transition-all duration-500 ${
               index === currentIndex
                 ? "bg-[#22C55E] w-6"

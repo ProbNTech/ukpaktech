@@ -81,14 +81,41 @@ function PillButton({ href, children }: { href: string; children: React.ReactNod
 }
 
 /* ─── Event filter tabs for homepage ─── */
-type EventFilter = "All" | "London" | "Pakistan" | "Summit" | "Expo" | "Conference";
-const EVENT_FILTERS: EventFilter[] = ["All", "London", "Pakistan", "Summit", "Expo", "Conference"];
+type EventFilter = "All" | "London" | "Pakistan" | "Summit" | "Expo" | "Conference" | "Past Events";
+const EVENT_FILTERS: EventFilter[] = ["All", "London", "Pakistan", "Summit", "Expo", "Conference", "Past Events"];
+
+/* Helper to check if an event date is in the past */
+function isEventPast(dateStr: string): boolean {
+  const now = new Date();
+  // Extract year from the date string
+  const yearMatch = dateStr.match(/(\d{4})/);
+  if (!yearMatch) return false;
+  const year = parseInt(yearMatch[1]);
+
+  // Map month names to numbers
+  const months: Record<string, number> = {
+    january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
+    july: 6, august: 7, september: 8, october: 9, november: 10, december: 11,
+  };
+
+  const monthMatch = dateStr.toLowerCase().match(/^(january|february|march|april|may|june|july|august|september|october|november|december)/);
+  if (!monthMatch) return false;
+  const month = months[monthMatch[1]];
+
+  // Extract day(s) — use the last day if it's a range
+  const dayMatch = dateStr.match(/(\d{1,2})(?:[–-](\d{1,2}))?(?:,|\s)/);
+  const day = dayMatch ? parseInt(dayMatch[2] || dayMatch[1]) : 28; // default to end of month
+
+  const eventEnd = new Date(year, month, day, 23, 59, 59);
+  return eventEnd < now;
+}
 
 function HomeEventsSection() {
   const [filter, setFilter] = useState<EventFilter>("All");
 
   const filtered = homepageEvents.filter((e) => {
     if (filter === "All") return true;
+    if (filter === "Past Events") return isEventPast(e.date);
     if (filter === "London") return e.location?.toLowerCase().includes("london");
     if (filter === "Pakistan") return e.location?.toLowerCase().includes("pakistan") || e.location?.toLowerCase().includes("karachi") || e.location?.toLowerCase().includes("islamabad") || e.location?.toLowerCase().includes("lahore");
     return e.tag === filter;
@@ -109,6 +136,7 @@ function HomeEventsSection() {
           <div className="flex flex-wrap gap-2 mb-8">
             {EVENT_FILTERS.map((tab) => {
               const count = tab === "All" ? homepageEvents.length
+                : tab === "Past Events" ? homepageEvents.filter((e) => isEventPast(e.date)).length
                 : tab === "London" ? homepageEvents.filter((e) => e.location?.toLowerCase().includes("london")).length
                 : tab === "Pakistan" ? homepageEvents.filter((e) => e.location?.toLowerCase().includes("pakistan") || e.location?.toLowerCase().includes("karachi") || e.location?.toLowerCase().includes("islamabad") || e.location?.toLowerCase().includes("lahore")).length
                 : homepageEvents.filter((e) => e.tag === tab).length;
