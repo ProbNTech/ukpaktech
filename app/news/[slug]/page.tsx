@@ -39,7 +39,7 @@ export default async function ArticleDetailPage({ params }: Props) {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────── */}
-      <section className="relative w-full h-[55vh] min-h-[380px] -mt-[72px] overflow-hidden bg-[#1C1F2E]">
+      <section className="relative w-full h-[55vh] min-h-[380px] overflow-hidden bg-[#1C1F2E]">
         <Image
           src={article.image}
           alt={article.title}

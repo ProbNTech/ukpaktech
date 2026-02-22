@@ -85,7 +85,7 @@ export default function EventsPage() {
           className="absolute bottom-0 inset-x-0 h-24 z-[1]"
           style={{ background: "linear-gradient(to bottom, transparent, rgba(10,14,30,0.45))" }}
         />
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-[160px] pb-16">
+        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-16 pb-16">
           {/* Breadcrumb */}
           <motion.nav
             initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}

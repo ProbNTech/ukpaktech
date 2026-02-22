@@ -83,58 +83,16 @@ export function Hero() {
         </video>
       ))}
 
-      {/* SVG Overlay — dark glassy panel with circular cutout */}
-      <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 508 264.583"
-          preserveAspectRatio="xMinYMin slice"
-          className="w-full h-full"
-        >
-          <defs>
-            <filter id="crescentBlur" x="-10%" y="-10%" width="120%" height="120%">
-              <feGaussianBlur stdDeviation="6" />
-            </filter>
-          </defs>
-          <path
-            d="
-              M -760 -445 L -760 710 L 1268 710 L 1268 -445 Z
-              M 205.357 -442.635
-              A 425.831 425.831 0 0 1 582.289 -19.654
-              A 425.831 425.831 0 0 1 156.457  406.176
-              A 425.831 425.831 0 0 1   9.520  379.762
-              A 425.831 425.831 0 0 0  58.562  382.893
-              A 425.831 425.831 0 0 0 484.395  -42.938
-              A 425.831 425.831 0 0 0 205.357 -442.635 Z
-            "
-            style={{ fill: "#111827", fillOpacity: 0.6, mixBlendMode: "multiply" }}
-          />
-          <path
-            d="
-              M 205.357 -442.635
-              A 425.831 425.831 0 0 1 484.395  -42.938
-              A 425.831 425.831 0 0 1  58.562  382.893
-              A 425.831 425.831 0 0 1   9.520  379.762
-              L -760 710
-              L -760 -445
-              Z
-            "
-            filter="url(#crescentBlur)"
-            style={{ fill: "#1e3a5f", fillOpacity: 0.1, mixBlendMode: "normal" }}
-          />
-        </svg>
-      </div>
-
-      {/* Overlay — top darkness for header readability */}
+      {/* Subtle left-side gradient so white text remains readable over any video */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
-          background: "linear-gradient(to bottom, rgba(5,10,20,0.6) 0%, rgba(5,10,20,0.25) 18%, rgba(5,10,20,0.00) 38%)",
+          background: "linear-gradient(to right, rgba(5,10,20,0.45) 0%, rgba(5,10,20,0.15) 50%, rgba(5,10,20,0.0) 75%)",
         }}
       />
 
       {/* Content wrapper */}
-      <div className="relative z-20 flex items-center lg:h-screen px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-36 sm:pt-40 lg:pt-40 pb-14 lg:pb-0">
+      <div className="relative z-20 flex items-center lg:h-screen px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-14 sm:pt-16 lg:pt-0 pb-14 lg:pb-0">
         <div className="w-full max-w-full lg:max-w-[55%]">
 
           {/* Small label */}

@@ -199,22 +199,23 @@ export function Header() {
         Skip to main content
       </a>
 
-
       {/* ═══════════════════════════════════════════════════════════
-          HEADER SHELL — transparent at top, white + border on scroll
+          HEADER — always white, separate from hero, sticky on scroll
       ══════════════════════════════════════════════════════════════ */}
-      {/* To re-enable sticky header: replace `absolute` with `fixed` below (and restore `left-0 right-0`) */}
       <header
         role="banner"
-        className={`absolute top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-          isScrolled ? "bg-white" : "bg-transparent"
+        className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
+          isScrolled ? "shadow-[0_2px_16px_rgba(0,0,0,0.08)]" : ""
         }`}
         onMouseLeave={handleLeave}
       >
-        {/* ── Top masthead bar ───────────────────────────────────── */}
-        <div className={`transition-colors duration-300 ${isScrolled ? "border-b-[2px] border-[#0A0A0A]" : "border-b-0"}`}>
+        {/* ── Top accent line — gradient brand bar ──────────────── */}
+        <div className="h-[3px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
+
+        {/* ── Main nav bar ─────────────────────────────────────── */}
+        <div className="border-b border-[#E4E1DC]">
           <div className="px-6 sm:px-10 lg:px-14 xl:px-18">
-            <div className="flex items-center justify-between h-[124px]">
+            <div className="flex items-center justify-between h-[80px]">
 
               {/* Wordmark */}
               <Link
@@ -225,17 +226,16 @@ export function Header() {
                 <Image
                   src="/image/main-logo/mainlogo.png"
                   alt="UPTECH Council logo"
-                  width={64}
-                  height={64}
-                  className="h-[64px] w-auto object-contain"
+                  width={52}
+                  height={52}
+                  className="h-[52px] w-auto object-contain"
                   priority
                 />
-                <span className={`font-heading font-bold text-[16px] uppercase tracking-[0.2em] leading-none transition-colors duration-300 ${isScrolled ? "text-[#0A0A0A]" : "text-white"}`}>
+                <span className="font-heading font-bold text-[16px] uppercase tracking-[0.2em] leading-none text-[#0A0A0A]">
                   UPTECH
                 </span>
-                <span className="hidden xl:block w-px h-5 bg-white/30 mx-2" aria-hidden="true" />
-                {/* nav-label token → 10px / tracking-[0.13em] */}
-                <span className={`hidden xl:block font-sans text-[13px] uppercase tracking-[0.08em] leading-tight max-w-[140px] transition-colors duration-300 ${isScrolled ? "text-[#6B6B6B]" : "text-white/70"}`}>
+                <span className="hidden xl:block w-px h-5 bg-[#D8D5CF] mx-2" aria-hidden="true" />
+                <span className="hidden xl:block font-sans text-[13px] uppercase tracking-[0.08em] leading-tight max-w-[140px] text-[#6B6B6B]">
                   UK–Pakistan Tech Council
                 </span>
               </Link>
@@ -245,12 +245,10 @@ export function Header() {
                 className="hidden lg:flex items-center h-full"
                 aria-label="Main navigation"
               >
-                {/* Home — plain link, no dropdown */}
-                {/* nav-item token → 15px / tracking-[0.12em] */}
                 <Link
                   href="/"
                   onMouseEnter={handleLeave}
-                  className={`relative h-full px-4 flex items-center font-sans text-nav-item uppercase font-semibold transition-colors duration-150 ${isScrolled ? "text-[#3D3D3D] hover:text-[#0A0A0A]" : "text-white/80 hover:text-white"}`}
+                  className="relative h-full px-4 flex items-center font-sans text-[14px] uppercase font-semibold tracking-[0.06em] text-[#3D3D3D] hover:text-[#0A0A0A] transition-colors duration-150"
                 >
                   Home
                 </Link>
@@ -266,13 +264,11 @@ export function Header() {
                       onMouseEnter={() => handleGroupEnter(group.label)}
                       className={`
                         relative h-full px-4 flex items-center gap-1.5
-                        font-sans text-nav-item uppercase font-semibold
+                        font-sans text-[14px] uppercase font-semibold tracking-[0.06em]
                         transition-colors duration-150 cursor-default select-none
                         ${isActive
                           ? "text-[#C41E3A]"
-                          : isScrolled
-                            ? "text-[#3D3D3D] hover:text-[#0A0A0A]"
-                            : "text-white/80 hover:text-white"}
+                          : "text-[#3D3D3D] hover:text-[#0A0A0A]"}
                       `}
                     >
                       {group.label}
@@ -291,13 +287,12 @@ export function Header() {
 
               {/* ── Desktop CTA ──────────────────────────────────── */}
               <div className="hidden lg:flex items-center gap-3">
-                {/* Always crimson pill — high visibility on both transparent and white header */}
                 <Link
                   href="/membership"
                   onMouseEnter={handleLeave}
                   className="
-                    px-8 py-3.5 rounded-full
-                    font-heading font-bold text-[15px] uppercase tracking-[0.12em]
+                    px-7 py-2.5 rounded-full
+                    font-heading font-bold text-[13px] uppercase tracking-[0.1em]
                     bg-[#C41E3A] text-white border-2 border-[#C41E3A]
                     hover:bg-[#A01830] hover:border-[#A01830]
                     transition-colors duration-200 whitespace-nowrap
@@ -314,9 +309,9 @@ export function Header() {
                 aria-label="Open menu"
                 aria-expanded={isMobileOpen}
               >
-                <span className={`block w-6 h-[1.5px] transition-colors duration-300 ${isScrolled ? "bg-[#0A0A0A]" : "bg-white"}`} />
-                <span className={`block w-6 h-[1.5px] transition-colors duration-300 ${isScrolled ? "bg-[#0A0A0A]" : "bg-white"}`} />
-                <span className={`block w-4 h-[1.5px] self-start transition-colors duration-300 ${isScrolled ? "bg-[#0A0A0A]" : "bg-white"}`} />
+                <span className="block w-6 h-[1.5px] bg-[#0A0A0A]" />
+                <span className="block w-6 h-[1.5px] bg-[#0A0A0A]" />
+                <span className="block w-4 h-[1.5px] self-start bg-[#0A0A0A]" />
               </button>
             </div>
           </div>

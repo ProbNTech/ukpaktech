@@ -7,7 +7,7 @@ export function EventHero() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F8FAFC] pt-[140px]">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F8FAFC]">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute top-1/4 left-1/4 w-[900px] h-[900px] bg-[#2563EB] rounded-full opacity-[0.12] blur-[200px]"
@@ -50,7 +50,7 @@ export function EventHero() {
         />
       </div>
 
-      <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-[160px] pb-24">
+      <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-16 pb-24">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <motion.div
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 50 }}

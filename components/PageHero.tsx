@@ -58,7 +58,7 @@ export function PageHero({
 
       {/* Content */}
       <div
-        className={`relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-[160px] pb-16 flex flex-col ${
+        className={`relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-16 pb-16 flex flex-col ${
           align === "center" ? "items-center text-center" : "items-start text-left"
         }`}
       >
