@@ -108,49 +108,47 @@ export function Hero() {
         />
       )}
 
-      {/* SVG Overlay — desktop only (too complex for portrait mobile) */}
-      {!isMobile && (
-        <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 508 264.583"
-            preserveAspectRatio="xMinYMin slice"
-            className="w-full h-full"
-          >
-            <defs>
-              <filter id="crescentBlur" x="-10%" y="-10%" width="120%" height="120%">
-                <feGaussianBlur stdDeviation="6" />
-              </filter>
-            </defs>
-            <path
-              d="
-                M -760 -445 L -760 710 L 1268 710 L 1268 -445 Z
-                M 205.357 -442.635
-                A 425.831 425.831 0 0 1 582.289 -19.654
-                A 425.831 425.831 0 0 1 156.457  406.176
-                A 425.831 425.831 0 0 1   9.520  379.762
-                A 425.831 425.831 0 0 0  58.562  382.893
-                A 425.831 425.831 0 0 0 484.395  -42.938
-                A 425.831 425.831 0 0 0 205.357 -442.635 Z
-              "
-              style={{ fill: "#1a2e35", fillOpacity: 0.78, mixBlendMode: "multiply" }}
-            />
-            <path
-              d="
-                M 205.357 -442.635
-                A 425.831 425.831 0 0 1 484.395  -42.938
-                A 425.831 425.831 0 0 1  58.562  382.893
-                A 425.831 425.831 0 0 1   9.520  379.762
-                L -760 710
-                L -760 -445
-                Z
-              "
-              filter="url(#crescentBlur)"
-              style={{ fill: "#2a8c8c", fillOpacity: 0.2, mixBlendMode: "normal" }}
-            />
-          </svg>
-        </div>
-      )}
+      {/* SVG Overlay — dark glassy panel with circular cutout */}
+      <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 508 264.583"
+          preserveAspectRatio="xMinYMin slice"
+          className="w-full h-full"
+        >
+          <defs>
+            <filter id="crescentBlur" x="-10%" y="-10%" width="120%" height="120%">
+              <feGaussianBlur stdDeviation="6" />
+            </filter>
+          </defs>
+          <path
+            d="
+              M -760 -445 L -760 710 L 1268 710 L 1268 -445 Z
+              M 205.357 -442.635
+              A 425.831 425.831 0 0 1 582.289 -19.654
+              A 425.831 425.831 0 0 1 156.457  406.176
+              A 425.831 425.831 0 0 1   9.520  379.762
+              A 425.831 425.831 0 0 0  58.562  382.893
+              A 425.831 425.831 0 0 0 484.395  -42.938
+              A 425.831 425.831 0 0 0 205.357 -442.635 Z
+            "
+            style={{ fill: "#1a2e35", fillOpacity: 0.78, mixBlendMode: "multiply" }}
+          />
+          <path
+            d="
+              M 205.357 -442.635
+              A 425.831 425.831 0 0 1 484.395  -42.938
+              A 425.831 425.831 0 0 1  58.562  382.893
+              A 425.831 425.831 0 0 1   9.520  379.762
+              L -760 710
+              L -760 -445
+              Z
+            "
+            filter="url(#crescentBlur)"
+            style={{ fill: "#2a8c8c", fillOpacity: 0.2, mixBlendMode: "normal" }}
+          />
+        </svg>
+      </div>
 
       {/* Overlay — top darkness for header readability */}
       <div
