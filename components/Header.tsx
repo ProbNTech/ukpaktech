@@ -235,7 +235,7 @@ export function Header() {
                 </span>
                 <span className="hidden xl:block w-px h-5 bg-white/30 mx-2" aria-hidden="true" />
                 {/* nav-label token → 10px / tracking-[0.13em] */}
-                <span className={`hidden xl:block font-sans text-nav-label uppercase leading-tight max-w-[108px] transition-colors duration-300 ${isScrolled ? "text-[#6B6B6B]" : "text-white/70"}`}>
+                <span className={`hidden xl:block font-sans text-[13px] uppercase tracking-[0.08em] leading-tight max-w-[140px] transition-colors duration-300 ${isScrolled ? "text-[#6B6B6B]" : "text-white/70"}`}>
                   UK–Pakistan Tech Council
                 </span>
               </Link>
