@@ -209,23 +209,23 @@ export function Header() {
       >
         {/* ── Tier 1: Brand bar ──────────────────────────────── */}
         <div className="px-5 sm:px-8 lg:px-12 xl:px-16">
-          <div className="flex items-center justify-between h-[58px]">
+          <div className="flex items-center justify-between h-[72px]">
 
             {/* ── Left: Logo + name ────────────────────────────── */}
             <Link
               href="/"
-              className="flex items-center gap-3 flex-shrink-0 group"
+              className="flex items-center gap-3.5 flex-shrink-0 group"
               aria-label="UPTECH — Home"
             >
               <Image
                 src="/image/main-logo/mainlogo.png"
                 alt="UPTECH Council logo"
-                width={48}
-                height={48}
-                className="h-[40px] w-auto object-contain"
+                width={56}
+                height={56}
+                className="h-[52px] w-auto object-contain"
                 priority
               />
-              <span className="hidden sm:inline font-heading font-bold text-[15px] lg:text-[17px] tracking-[0.01em] leading-tight text-[#0F172A] uppercase">
+              <span className="hidden sm:inline font-heading font-extrabold text-[18px] sm:text-[20px] lg:text-[22px] tracking-[0.02em] leading-tight text-[#0F172A] uppercase">
                 UK–PAKISTAN TECH COUNCIL <span className="text-[#1a2b5e]">(UPTECH)</span>
               </span>
             </Link>
@@ -265,7 +265,7 @@ export function Header() {
         <div className="hidden lg:block border-t border-gray-100">
           <div className="px-5 sm:px-8 lg:px-12 xl:px-16">
             <nav
-              className="flex items-center h-[42px]"
+              className="flex items-center h-[44px]"
               aria-label="Main navigation"
             >
               <Link
