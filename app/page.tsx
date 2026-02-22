@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
@@ -29,22 +30,31 @@ const homepageArticles = articles.slice(0, 15);
 const homepageEvents = featuredEvents.slice(0, 9);
 
 /* ─── Shared section header: label + large title + full-width rule ─── */
+const bannerThemes = {
+  blue: { bg: "linear-gradient(135deg, #1a2b5e 0%, #0f1a3a 100%)", accent: "#3b82f6", accentTo: "#1a2b5e", label: "#60a5fa" },
+  red: { bg: "linear-gradient(135deg, #8b1a1a 0%, #5c1010 100%)", accent: "#ef4444", accentTo: "#8b1a1a", label: "#fca5a5" },
+  green: { bg: "linear-gradient(135deg, #0d6b3a 0%, #064e2b 100%)", accent: "#22c55e", accentTo: "#0d6b3a", label: "#86efac" },
+};
+
 function SectionHeader({
   label,
   title,
   body,
+  color = "blue",
 }: {
   label: string;
   title: string;
   body?: string;
+  color?: "blue" | "red" | "green";
 }) {
+  const theme = bannerThemes[color];
   return (
     <div className="mb-10 lg:mb-12">
-      <div className="relative overflow-hidden rounded mb-5 -mx-2 sm:-mx-4" style={{ background: "linear-gradient(135deg, #1a2b5e 0%, #0f1a3a 100%)" }}>
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#3b82f6] to-[#1a2b5e]" />
+      <div className="relative overflow-hidden rounded mb-5 -mx-2 sm:-mx-4" style={{ background: theme.bg }}>
+        <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${theme.accent}, ${theme.accentTo})` }} />
         <div className="absolute top-0 right-0 w-40 h-full opacity-[0.06]" style={{ background: "radial-gradient(circle at 80% 30%, white 0%, transparent 70%)" }} />
         <div className="py-5 px-7 sm:px-10 pl-8 sm:pl-12">
-          <p className="text-[10px] font-bold text-[#60a5fa] uppercase tracking-[0.2em] mb-1.5">{label}</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5" style={{ color: theme.label }}>{label}</p>
           <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-[2.2rem] leading-tight">
             {title}
           </h2>
@@ -67,6 +77,111 @@ function PillButton({ href, children }: { href: string; children: React.ReactNod
       {children}
       <ChevronRight className="w-4 h-4" />
     </Link>
+  );
+}
+
+/* ─── Event filter tabs for homepage ─── */
+type EventFilter = "All" | "London" | "Pakistan" | "Summit" | "Expo" | "Conference";
+const EVENT_FILTERS: EventFilter[] = ["All", "London", "Pakistan", "Summit", "Expo", "Conference"];
+
+function HomeEventsSection() {
+  const [filter, setFilter] = useState<EventFilter>("All");
+
+  const filtered = homepageEvents.filter((e) => {
+    if (filter === "All") return true;
+    if (filter === "London") return e.location?.toLowerCase().includes("london");
+    if (filter === "Pakistan") return e.location?.toLowerCase().includes("pakistan") || e.location?.toLowerCase().includes("karachi") || e.location?.toLowerCase().includes("islamabad") || e.location?.toLowerCase().includes("lahore");
+    return e.tag === filter;
+  });
+
+  return (
+    <section className="bg-[#EEECEA] py-16 lg:py-20">
+      <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+        <AnimatedSection>
+          <SectionHeader
+            label="Attend an event"
+            title="Upcoming events"
+            body="Our upcoming events span bilateral summits, investor dialogues, webinars, and trade delegations. All events are open to UPTECH members and selected guests."
+            color="green"
+          />
+
+          {/* Filter tabs */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            {EVENT_FILTERS.map((tab) => {
+              const count = tab === "All" ? homepageEvents.length
+                : tab === "London" ? homepageEvents.filter((e) => e.location?.toLowerCase().includes("london")).length
+                : tab === "Pakistan" ? homepageEvents.filter((e) => e.location?.toLowerCase().includes("pakistan") || e.location?.toLowerCase().includes("karachi") || e.location?.toLowerCase().includes("islamabad") || e.location?.toLowerCase().includes("lahore")).length
+                : homepageEvents.filter((e) => e.tag === tab).length;
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setFilter(tab)}
+                  className={`px-4 py-2 text-xs font-bold uppercase tracking-wide border transition-colors duration-200 rounded-sm ${
+                    filter === tab
+                      ? "bg-[#1a2b5e] text-white border-[#1a2b5e]"
+                      : "bg-white text-[#3D4152] border-[#D8D5CF] hover:border-[#1a2b5e] hover:text-[#1a2b5e]"
+                  }`}
+                >
+                  {tab} <span className="ml-1 opacity-60">{count}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* 3-column event card grid */}
+          {filtered.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-10">
+              {filtered.map((event) => (
+                <Link key={event.id} href="/events" className="group flex flex-col bg-white border border-[#D8D5CF] rounded overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                  <div className="aspect-[16/9] bg-[#1C1F2E] relative overflow-hidden">
+                    {event.image ? (
+                      <Image
+                        src={event.image}
+                        alt={event.title}
+                        fill
+                        className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-white/25 text-[10px] font-semibold uppercase tracking-widest">{event.tag}</span>
+                      </div>
+                    )}
+                    <span className="absolute top-3 left-3 px-3 py-1 bg-[#1C1F2E]/80 backdrop-blur-sm text-white text-xs font-semibold rounded-full">{event.tag}</span>
+                  </div>
+                  <div className="flex flex-col flex-1 p-5">
+                    <div className="flex items-center gap-2 text-xs text-[#7A7E8F] mb-3">
+                      <time className="font-medium">{event.date}</time>
+                      {event.location && (
+                        <>
+                          <span className="w-1 h-1 rounded-full bg-[#7A7E8F]" />
+                          <span>{event.location}</span>
+                        </>
+                      )}
+                    </div>
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base leading-snug mb-3 line-clamp-2 group-hover:text-[#2563EB] transition-colors duration-200">{event.title}</h3>
+                    <p className="text-[#3D4152] text-sm leading-relaxed line-clamp-3 mb-4">{event.shortDescription}</p>
+                    <div className="mt-auto pt-3 border-t border-[#D8D5CF]">
+                      <span className="text-sm font-semibold text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 inline-flex items-center gap-1">
+                        Learn more <ChevronRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12 text-[#3D4152] mb-10">
+              <p className="text-base">No events found for this filter.</p>
+            </div>
+          )}
+
+          <div className="flex justify-center">
+            <PillButton href="/events">Find out more</PillButton>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
   );
 }
 
@@ -129,12 +244,12 @@ export default function Home() {
       <section className="bg-[#E8E6E3] py-14 lg:py-18">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            {/* Section header with blue banner */}
-            <div className="relative overflow-hidden rounded mb-5 -mx-2 sm:-mx-4" style={{ background: "linear-gradient(135deg, #1a2b5e 0%, #0f1a3a 100%)" }}>
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#3b82f6] to-[#1a2b5e]" />
+            {/* Section header with red banner */}
+            <div className="relative overflow-hidden rounded mb-5 -mx-2 sm:-mx-4" style={{ background: bannerThemes.red.bg }}>
+              <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${bannerThemes.red.accent}, ${bannerThemes.red.accentTo})` }} />
               <div className="absolute top-0 right-0 w-40 h-full opacity-[0.06]" style={{ background: "radial-gradient(circle at 80% 30%, white 0%, transparent 70%)" }} />
               <div className="py-5 px-7 sm:px-10 pl-8 sm:pl-12">
-                <p className="text-[10px] font-bold text-[#60a5fa] uppercase tracking-[0.2em] mb-1.5">Membership</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5" style={{ color: bannerThemes.red.label }}>Membership</p>
                 <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-[2.2rem] leading-tight">
                   Who can join?
                 </h2>
@@ -186,83 +301,9 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-           ATTEND AN EVENT — 4 column event cards
-           Exact ukproptech pattern: label → h2+rule → 4 image cards
-           → "Find out more" pill button centered below
+           ATTEND AN EVENT — filtered event cards
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#EEECEA] py-16 lg:py-20">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <SectionHeader
-              label="Attend an event"
-              title="Upcoming events"
-              body="Our upcoming events span bilateral summits, investor dialogues, webinars, and trade delegations. All events are open to UPTECH members and selected guests."
-            />
-
-            {/* 3-column event card grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-10">
-              {homepageEvents.map((event) => (
-                <Link key={event.id} href="/events" className="group flex flex-col bg-white border border-[#D8D5CF] rounded overflow-hidden hover:-translate-y-1 transition-all duration-300">
-                  {/* Image */}
-                  <div className="aspect-[16/9] bg-[#1C1F2E] relative overflow-hidden">
-                    {event.image ? (
-                      <Image
-                        src={event.image}
-                        alt={event.title}
-                        fill
-                        className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-white/25 text-[10px] font-semibold uppercase tracking-widest">
-                          {event.tag}
-                        </span>
-                      </div>
-                    )}
-                    {/* Tag badge */}
-                    <span className="absolute top-3 left-3 px-3 py-1 bg-[#1C1F2E]/80 backdrop-blur-sm text-white text-xs font-semibold rounded-full">
-                      {event.tag}
-                    </span>
-                  </div>
-                  {/* Card body */}
-                  <div className="flex flex-col flex-1 p-5">
-                    {/* Date & location */}
-                    <div className="flex items-center gap-2 text-xs text-[#7A7E8F] mb-3">
-                      <time className="font-medium">{event.date}</time>
-                      {event.location && (
-                        <>
-                          <span className="w-1 h-1 rounded-full bg-[#7A7E8F]" />
-                          <span>{event.location}</span>
-                        </>
-                      )}
-                    </div>
-                    {/* Title */}
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base leading-snug mb-3 line-clamp-2 group-hover:text-[#2563EB] transition-colors duration-200">
-                      {event.title}
-                    </h3>
-                    {/* Description */}
-                    <p className="text-[#3D4152] text-sm leading-relaxed line-clamp-3 mb-4">
-                      {event.shortDescription}
-                    </p>
-                    {/* Learn more link */}
-                    <div className="mt-auto pt-3 border-t border-[#D8D5CF]">
-                      <span className="text-sm font-semibold text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 inline-flex items-center gap-1">
-                        Learn more <ChevronRight className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            {/* Centered pill button */}
-            <div className="flex justify-center">
-              <PillButton href="/events">Find out more</PillButton>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <HomeEventsSection />
 
       {/* ════════════════════════════════════════════════════════════
            RESOURCES / NEWS & INSIGHTS — 3 column editorial cards
@@ -275,6 +316,7 @@ export default function Home() {
               label="Stay informed"
               title="News &amp; Insights"
               body="Investment deals, policy developments, innovation spotlights, and bilateral progress — what's shaping the UK–Pakistan technology corridor."
+              color="blue"
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-10">
@@ -321,6 +363,7 @@ export default function Home() {
               label="Our impact"
               title="Impact Momentum"
               body="A modern technology council engineered to scale collaboration, talent, and investment across the UK–Pakistan corridor."
+              color="red"
             />
             <ImpactStats />
           </AnimatedSection>
