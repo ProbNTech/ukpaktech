@@ -9,8 +9,8 @@ import { ArrowRight, Play, Pause } from "lucide-react";
 
 const videos = [
   "/image/home/hero_video3.mp4",
-  "/image/home/hero_video.mp4",
-  "/image/home/hero_video1.mp4",
+  "/image/home/hero_video_new2.mp4",
+  "/image/home/hero_video_new3.mp4",
   "/image/home/hero_video2.mp4",
 ];
 

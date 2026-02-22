@@ -200,145 +200,130 @@ export function Header() {
       </a>
 
       {/* ═══════════════════════════════════════════════════════════
-          HEADER — two-tier: brand strip + navigation bar
+          HEADER — dark futuristic single bar
       ══════════════════════════════════════════════════════════════ */}
       <header
         role="banner"
-        className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
-          isScrolled ? "shadow-[0_4px_20px_rgba(0,0,0,0.06)]" : ""
-        }`}
+        className="sticky top-0 z-50 bg-[#0F1629]"
         onMouseLeave={handleLeave}
       >
-        {/* ── Top accent line — gradient brand bar ──────────────── */}
-        <div className="h-[3px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
+        {/* ── Top accent line ──────────────────────────────────── */}
+        <div className="h-[2px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#E11D48]" />
 
-        {/* ── Tier 1: Brand identity strip ─────────────────────── */}
-        <div className="border-b border-[#E8E6E3] bg-[#FAFAF9]">
-          <div className="px-6 sm:px-10 lg:px-14 xl:px-18">
-            <div className="flex items-center justify-between h-[56px]">
-              {/* Logo + Full site name */}
+        {/* ── Main bar ─────────────────────────────────────────── */}
+        <div className="px-5 sm:px-8 lg:px-12 xl:px-16">
+          <div className="flex items-center justify-between h-[70px]">
+
+            {/* ── Left: Logo + name ────────────────────────────── */}
+            <Link
+              href="/"
+              className="flex items-center gap-3 flex-shrink-0 group"
+              aria-label="UPTECH — Home"
+            >
+              <Image
+                src="/image/main-logo/mainlogo.png"
+                alt="UPTECH Council logo"
+                width={48}
+                height={48}
+                className="h-[42px] w-auto object-contain"
+                priority
+              />
+              <div className="hidden sm:flex flex-col">
+                <span className="font-heading font-bold text-[16px] lg:text-[18px] tracking-[0.02em] leading-tight text-white">
+                  UK–Pakistan Tech Council
+                </span>
+                <span className="font-sans text-[9px] uppercase tracking-[0.35em] text-[#22C55E] font-semibold mt-0.5">
+                  UPTECH
+                </span>
+              </div>
+            </Link>
+
+            {/* ── Center: Navigation ───────────────────────────── */}
+            <nav
+              className="hidden lg:flex items-center h-full"
+              aria-label="Main navigation"
+            >
               <Link
                 href="/"
-                className="flex items-center gap-3.5 flex-shrink-0 group"
-                aria-label="UPTECH — Home"
+                onMouseEnter={handleLeave}
+                className="relative h-full px-4 xl:px-5 flex items-center font-sans text-[12px] uppercase font-semibold tracking-[0.1em] text-white/70 hover:text-white transition-colors duration-150"
               >
-                <Image
-                  src="/image/main-logo/mainlogo.png"
-                  alt="UPTECH Council logo"
-                  width={40}
-                  height={40}
-                  className="h-[40px] w-auto object-contain"
-                  priority
-                />
-                <div className="flex flex-col">
-                  <span className="font-heading font-extrabold text-[15px] sm:text-[17px] tracking-[0.04em] leading-none text-[#0A0A0A]">
-                    UK–Pakistan Tech Council
-                  </span>
-                  <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#2563EB] font-semibold mt-0.5">
-                    UPTECH
-                  </span>
-                </div>
+                Home
               </Link>
 
-              {/* Right side — contact + CTA on desktop, hamburger on mobile */}
-              <div className="hidden lg:flex items-center gap-5">
-                <Link
-                  href="/contact"
-                  className="text-[12px] font-medium text-[#6B6B6B] hover:text-[#0A0A0A] transition-colors duration-150 uppercase tracking-[0.08em]"
-                >
-                  Contact
-                </Link>
-                <span className="w-px h-4 bg-[#D8D5CF]" />
-                <Link
-                  href="/membership"
-                  onMouseEnter={handleLeave}
-                  className="
-                    px-6 py-2 rounded-full
-                    font-heading font-bold text-[12px] uppercase tracking-[0.1em]
-                    bg-[#C41E3A] text-white
-                    hover:bg-[#A01830]
-                    transition-colors duration-200 whitespace-nowrap
-                  "
-                >
-                  Become a Member
-                </Link>
-              </div>
-
-              {/* ── Mobile hamburger ─────────────────────────────── */}
-              <button
-                className="lg:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px]"
-                onClick={() => setIsMobileOpen(true)}
-                aria-label="Open menu"
-                aria-expanded={isMobileOpen}
-              >
-                <span className="block w-6 h-[1.5px] bg-[#0A0A0A]" />
-                <span className="block w-6 h-[1.5px] bg-[#0A0A0A]" />
-                <span className="block w-4 h-[1.5px] self-start bg-[#0A0A0A]" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* ── Tier 2: Navigation bar ───────────────────────────── */}
-        <div className="hidden lg:block border-b border-[#E4E1DC] bg-white">
-          <div className="px-6 sm:px-10 lg:px-14 xl:px-18">
-            <div className="flex items-center h-[48px]">
-              <nav
-                className="flex items-center h-full gap-1"
-                aria-label="Main navigation"
-              >
-                <Link
-                  href="/"
-                  onMouseEnter={handleLeave}
-                  className="relative h-full px-4 flex items-center font-sans text-[13px] uppercase font-semibold tracking-[0.08em] text-[#3D3D3D] hover:text-[#0A0A0A] transition-colors duration-150"
-                >
-                  Home
-                </Link>
-
-                {navGroups.map((group) => {
-                  const isActive = openGroup === group.label;
-                  return (
-                    <button
-                      key={group.label}
-                      type="button"
-                      aria-expanded={isActive}
-                      aria-haspopup="true"
-                      onMouseEnter={() => handleGroupEnter(group.label)}
-                      className={`
-                        relative h-full px-4 flex items-center gap-1.5
-                        font-sans text-[13px] uppercase font-semibold tracking-[0.08em]
-                        transition-colors duration-150 cursor-default select-none
-                        ${isActive
-                          ? "text-[#C41E3A]"
-                          : "text-[#3D3D3D] hover:text-[#0A0A0A]"}
-                      `}
+              {navGroups.map((group) => {
+                const isActive = openGroup === group.label;
+                return (
+                  <button
+                    key={group.label}
+                    type="button"
+                    aria-expanded={isActive}
+                    aria-haspopup="true"
+                    onMouseEnter={() => handleGroupEnter(group.label)}
+                    className={`
+                      relative h-full px-4 xl:px-5 flex items-center gap-1
+                      font-sans text-[12px] uppercase font-semibold tracking-[0.1em]
+                      transition-colors duration-150 cursor-default select-none
+                      ${isActive
+                        ? "text-[#22C55E]"
+                        : "text-white/70 hover:text-white"}
+                    `}
+                  >
+                    {group.label}
+                    <svg
+                      className={`w-2.5 h-2.5 transition-transform duration-200 ${isActive ? "rotate-180" : ""}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
                     >
-                      {group.label}
-                      {/* Small chevron indicator */}
-                      <svg
-                        className={`w-3 h-3 transition-transform duration-150 ${isActive ? "rotate-180 text-[#C41E3A]" : "text-[#9CA3AF]"}`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2.5}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                      </svg>
-                      {/* Active underline */}
-                      <span
-                        className={`
-                          absolute bottom-0 left-2 right-2 h-[2.5px] bg-[#C41E3A] rounded-full
-                          transition-opacity duration-150
-                          ${isActive ? "opacity-100" : "opacity-0"}
-                        `}
-                      />
-                    </button>
-                  );
-                })}
-              </nav>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    <span
+                      className={`
+                        absolute bottom-0 left-3 right-3 h-[2px] bg-[#22C55E]
+                        transition-opacity duration-150
+                        ${isActive ? "opacity-100" : "opacity-0"}
+                      `}
+                    />
+                  </button>
+                );
+              })}
+            </nav>
+
+            {/* ── Right: CTA ──────────────────────────────────── */}
+            <div className="hidden lg:flex items-center gap-4">
+              <Link
+                href="/contact"
+                className="text-[11px] font-medium text-white/50 hover:text-white transition-colors uppercase tracking-[0.1em]"
+              >
+                Contact
+              </Link>
+              <Link
+                href="/membership"
+                onMouseEnter={handleLeave}
+                className="px-5 py-2 font-heading font-bold text-[11px] uppercase tracking-[0.12em] bg-[#E11D48] text-white hover:bg-[#BE123C] transition-colors duration-200 whitespace-nowrap rounded-sm"
+              >
+                Become a Member
+              </Link>
             </div>
+
+            {/* ── Mobile hamburger ─────────────────────────────── */}
+            <button
+              className="lg:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px]"
+              onClick={() => setIsMobileOpen(true)}
+              aria-label="Open menu"
+              aria-expanded={isMobileOpen}
+            >
+              <span className="block w-6 h-[1.5px] bg-white" />
+              <span className="block w-6 h-[1.5px] bg-white" />
+              <span className="block w-4 h-[1.5px] self-start bg-white" />
+            </button>
           </div>
         </div>
+
+        {/* ── Bottom glow line ─────────────────────────────────── */}
+        <div className="h-px bg-gradient-to-r from-transparent via-[#2563EB]/40 to-transparent" />
 
         {/* ═══════════════════════════════════════════════════════════
             MEGA PANEL — three-column editorial dropdown
