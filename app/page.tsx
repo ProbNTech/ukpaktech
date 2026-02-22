@@ -374,8 +374,14 @@ export default function Home() {
            JOIN CTA — dark section with animated background
            Matches ukproptech's dark "BPF Futures" image section
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-[#1C1F2E] text-white py-20 md:py-24">
-        <JoinUPTECHBackground />
+      <section className="relative overflow-hidden bg-[#0B0F1A] text-white py-20 md:py-24">
+        <Image
+          src="/image/home/join_uptech_bg.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-50"
+          sizes="100vw"
+        />
         <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="max-w-3xl">

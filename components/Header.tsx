@@ -209,23 +209,23 @@ export function Header() {
       >
         {/* ── Tier 1: Brand bar ──────────────────────────────── */}
         <div className="px-5 sm:px-8 lg:px-12 xl:px-16">
-          <div className="flex items-center justify-between h-[72px]">
+          <div className="flex items-center justify-between h-[90px]">
 
             {/* ── Left: Logo + name ────────────────────────────── */}
             <Link
               href="/"
-              className="flex items-center gap-3.5 flex-shrink-0 group"
+              className="flex items-center gap-4 flex-shrink-0 group"
               aria-label="UPTECH — Home"
             >
               <Image
                 src="/image/main-logo/mainlogo.png"
                 alt="UPTECH Council logo"
-                width={56}
-                height={56}
-                className="h-[52px] w-auto object-contain"
+                width={72}
+                height={72}
+                className="h-[68px] w-auto object-contain"
                 priority
               />
-              <span className="hidden sm:inline font-heading font-extrabold text-[18px] sm:text-[20px] lg:text-[22px] tracking-[0.02em] leading-tight text-[#0F172A] uppercase">
+              <span className="hidden sm:inline font-heading font-black text-[28px] sm:text-[34px] lg:text-[42px] xl:text-[48px] tracking-[0.01em] leading-none text-[#0F172A] uppercase">
                 UK–PAKISTAN TECH COUNCIL <span className="text-[#1a2b5e]">(UPTECH)</span>
               </span>
             </Link>
@@ -241,7 +241,7 @@ export function Header() {
               <Link
                 href="/membership"
                 onMouseEnter={handleLeave}
-                className="px-5 py-2 font-heading font-bold text-[11px] uppercase tracking-[0.12em] bg-[#1a2b5e] text-white hover:bg-[#131f47] transition-colors duration-200 whitespace-nowrap rounded"
+                className="px-6 py-2.5 font-heading font-bold text-[12px] uppercase tracking-[0.12em] bg-[#1a2b5e] text-white hover:bg-[#131f47] transition-colors duration-200 whitespace-nowrap rounded"
               >
                 Become a Member
               </Link>
@@ -265,7 +265,7 @@ export function Header() {
         <div className="hidden lg:block border-t border-gray-100">
           <div className="px-5 sm:px-8 lg:px-12 xl:px-16">
             <nav
-              className="flex items-center h-[44px]"
+              className="flex items-center h-[46px]"
               aria-label="Main navigation"
             >
               <Link
