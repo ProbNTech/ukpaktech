@@ -11,6 +11,10 @@ import { ChevronRight } from "lucide-react";
 import { articles } from "@/data/articles";
 import { featuredEvents } from "@/data/featured-events";
 
+const ParticleNetwork = dynamic(() =>
+  import("@/components/ParticleNetwork").then((m) => ({ default: m.ParticleNetwork })),
+  { ssr: false }
+);
 const SponsorMarquee = dynamic(() =>
   import("@/components/SponsorMarquee").then((m) => ({ default: m.SponsorMarquee }))
 );
@@ -122,7 +126,7 @@ function HomeEventsSection() {
   });
 
   return (
-    <section className="bg-[#EEECEA] py-16 lg:py-20">
+    <section className="relative z-[2] py-16 lg:py-20" style={{ backgroundColor: "rgba(238,236,234,0.88)" }}>
       <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
         <AnimatedSection>
           <SectionHeader
@@ -216,6 +220,9 @@ function HomeEventsSection() {
 export default function Home() {
   return (
     <div className="bg-[#EEECEA]">
+      {/* Interactive particle constellation background */}
+      <ParticleNetwork />
+
       {/* ──────────────────────────────────────────────────────────── */}
       {/*  HERO                                                        */}
       {/* ──────────────────────────────────────────────────────────── */}
@@ -227,7 +234,7 @@ export default function Home() {
            Layout: full-width text paragraph + About Us button
            Matches ukproptech.com "intro" section structure exactly
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#EEECEA] py-16 lg:py-20">
+      <section className="relative z-[2] py-16 lg:py-20" style={{ backgroundColor: "rgba(238,236,234,0.88)" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -269,7 +276,7 @@ export default function Home() {
            WHO CAN JOIN — horizontal scroll of member types
            Matches the ukproptech "Who can join?" horizontal card row
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#E8E6E3] py-14 lg:py-18">
+      <section className="relative z-[2] py-14 lg:py-18" style={{ backgroundColor: "rgba(232,230,227,0.88)" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             {/* Section header with red banner */}
@@ -337,7 +344,7 @@ export default function Home() {
            RESOURCES / NEWS & INSIGHTS — 3 column editorial cards
            Exact ukproptech "Resources" pattern: date → title → tags → rule
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#E8E6E3] py-16 lg:py-20">
+      <section className="relative z-[2] py-16 lg:py-20" style={{ backgroundColor: "rgba(232,230,227,0.88)" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -372,7 +379,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            PARTNER / MEMBER LOGOS — slim marquee strip
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#EEECEA] border-t border-[#1C1F2E]/10 py-12">
+      <section className="relative z-[2] border-t border-[#1C1F2E]/10 py-12" style={{ backgroundColor: "rgba(238,236,234,0.88)" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-[#7A7E8F] mb-8">
             Trusted by Leading Organisations
@@ -384,7 +391,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            IMPACT NUMBERS — 4 stat cards on white bg
       ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#EEECEA] py-16 lg:py-20">
+      <section className="relative z-[2] py-16 lg:py-20" style={{ backgroundColor: "rgba(238,236,234,0.88)" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -402,7 +409,7 @@ export default function Home() {
            JOIN CTA — dark section with animated background
            Matches ukproptech's dark "BPF Futures" image section
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-[#0B0F1A] text-white py-20 md:py-24">
+      <section className="relative z-[2] overflow-hidden bg-[#0B0F1A] text-white py-20 md:py-24">
         <Image
           src="/image/home/join_uptech_bg.jpg"
           alt=""
