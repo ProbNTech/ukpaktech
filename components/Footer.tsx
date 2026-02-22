@@ -14,8 +14,8 @@ export function Footer() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/image/footer/uk_building.jpg"
-            alt="UK cityscape"
+            src="/image/footer/tower_bridge.jpg"
+            alt="Tower Bridge, London"
             fill
             className="object-cover object-center"
             sizes="100vw"
