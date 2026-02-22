@@ -344,7 +344,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
               {[
                 {
-                  id: "_mvsgeqZMbk",
+                  id: "NnKZrypT_tE",
                   title: "Indus AI Week Sparks Pakistan's Journey to a Digital Future",
                   description: "A look inside Indus AI Week — Pakistan's flagship artificial intelligence conference driving national digital transformation.",
                 },
