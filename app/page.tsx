@@ -435,9 +435,9 @@ export default function Home() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-14" style={{ background: "linear-gradient(135deg, #0f1a3a 0%, #1a2b5e 100%)" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-white/60 mb-8">
+          <h2 className="text-center text-lg sm:text-xl font-bold uppercase tracking-[0.2em] text-white/80 mb-10">
             Trusted by Leading Organisations
-          </p>
+          </h2>
           <SponsorMarquee />
         </div>
       </section>
