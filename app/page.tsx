@@ -40,11 +40,15 @@ function SectionHeader({
 }) {
   return (
     <div className="mb-10 lg:mb-12">
-      <div className="bg-[#1a2b5e] py-4 px-6 sm:px-8 rounded-sm mb-5 -mx-2 sm:-mx-4">
-        <p className="text-xs font-semibold text-white/60 uppercase tracking-[0.15em] mb-1">{label}</p>
-        <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-[2.2rem] leading-none">
-          {title}
-        </h2>
+      <div className="relative overflow-hidden rounded mb-5 -mx-2 sm:-mx-4" style={{ background: "linear-gradient(135deg, #1a2b5e 0%, #0f1a3a 100%)" }}>
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#3b82f6] to-[#1a2b5e]" />
+        <div className="absolute top-0 right-0 w-40 h-full opacity-[0.06]" style={{ background: "radial-gradient(circle at 80% 30%, white 0%, transparent 70%)" }} />
+        <div className="py-5 px-7 sm:px-10 pl-8 sm:pl-12">
+          <p className="text-[10px] font-bold text-[#60a5fa] uppercase tracking-[0.2em] mb-1.5">{label}</p>
+          <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-[2.2rem] leading-tight">
+            {title}
+          </h2>
+        </div>
       </div>
       {body && (
         <p className="text-[#3D4152] text-base sm:text-lg leading-relaxed max-w-3xl">{body}</p>
@@ -126,11 +130,15 @@ export default function Home() {
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             {/* Section header with blue banner */}
-            <div className="bg-[#1a2b5e] py-4 px-6 sm:px-8 rounded-sm mb-5 -mx-2 sm:-mx-4">
-              <p className="text-xs font-semibold text-white/60 uppercase tracking-[0.15em] mb-1">Membership</p>
-              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-[2.2rem] leading-none">
-                Who can join?
-              </h2>
+            <div className="relative overflow-hidden rounded mb-5 -mx-2 sm:-mx-4" style={{ background: "linear-gradient(135deg, #1a2b5e 0%, #0f1a3a 100%)" }}>
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#3b82f6] to-[#1a2b5e]" />
+              <div className="absolute top-0 right-0 w-40 h-full opacity-[0.06]" style={{ background: "radial-gradient(circle at 80% 30%, white 0%, transparent 70%)" }} />
+              <div className="py-5 px-7 sm:px-10 pl-8 sm:pl-12">
+                <p className="text-[10px] font-bold text-[#60a5fa] uppercase tracking-[0.2em] mb-1.5">Membership</p>
+                <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-[2.2rem] leading-tight">
+                  Who can join?
+                </h2>
+              </div>
             </div>
             <p className="text-[#3D4152] text-base sm:text-lg mb-8 max-w-2xl">
               We offer different memberships based on whether you are a technology company, investor, institution, or individual professional.
