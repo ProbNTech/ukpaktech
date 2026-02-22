@@ -1,26 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo, useCallback } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Hero } from "@/components/Hero";
 import { NewsCard } from "@/components/NewsCard";
+import { LiteYouTube } from "@/components/LiteYouTube";
 import { ChevronRight } from "lucide-react";
 import { articles } from "@/data/articles";
 import { featuredEvents } from "@/data/featured-events";
 
 const SponsorMarquee = dynamic(() =>
-  import("@/components/SponsorMarquee").then((m) => ({ default: m.SponsorMarquee }))
-);
-const JoinUPTECHBackground = dynamic(() =>
-  import("@/components/JoinUPTECHBackground").then((m) => ({
-    default: m.JoinUPTECHBackground,
-  }))
+  import("@/components/SponsorMarquee").then((m) => ({ default: m.SponsorMarquee })),
+  { ssr: false }
 );
 const ImpactStats = dynamic(() =>
-  import("@/components/ImpactStats").then((m) => ({ default: m.ImpactStats }))
+  import("@/components/ImpactStats").then((m) => ({ default: m.ImpactStats })),
+  { ssr: false }
 );
 
 /* Top 15 articles for the homepage news grid — 5 rows × 3 columns */
@@ -113,13 +111,28 @@ function isEventPast(dateStr: string): boolean {
 function HomeEventsSection() {
   const [filter, setFilter] = useState<EventFilter>("All");
 
-  const filtered = homepageEvents.filter((e) => {
-    if (filter === "All") return true;
-    if (filter === "Past Events") return isEventPast(e.date);
-    if (filter === "London") return e.location?.toLowerCase().includes("london");
-    if (filter === "Pakistan") return e.location?.toLowerCase().includes("pakistan") || e.location?.toLowerCase().includes("karachi") || e.location?.toLowerCase().includes("islamabad") || e.location?.toLowerCase().includes("lahore");
-    return e.tag === filter;
-  });
+  /* Memoize filter function to avoid re-filtering on every render */
+  const filterEvent = useCallback((e: typeof homepageEvents[0], tab: EventFilter) => {
+    if (tab === "All") return true;
+    if (tab === "Past Events") return isEventPast(e.date);
+    if (tab === "London") return e.location?.toLowerCase().includes("london");
+    if (tab === "Pakistan") {
+      const loc = e.location?.toLowerCase() ?? "";
+      return loc.includes("pakistan") || loc.includes("karachi") || loc.includes("islamabad") || loc.includes("lahore");
+    }
+    return e.tag === tab;
+  }, []);
+
+  const filtered = useMemo(() => homepageEvents.filter((e) => filterEvent(e, filter)), [filter, filterEvent]);
+
+  /* Pre-compute tab counts once */
+  const tabCounts = useMemo(() => {
+    const counts: Record<EventFilter, number> = {} as Record<EventFilter, number>;
+    for (const tab of EVENT_FILTERS) {
+      counts[tab] = homepageEvents.filter((e) => filterEvent(e, tab)).length;
+    }
+    return counts;
+  }, [filterEvent]);
 
   return (
     <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "#EEECEA" }}>
@@ -134,26 +147,19 @@ function HomeEventsSection() {
 
           {/* Filter tabs */}
           <div className="flex flex-wrap gap-2 mb-8">
-            {EVENT_FILTERS.map((tab) => {
-              const count = tab === "All" ? homepageEvents.length
-                : tab === "Past Events" ? homepageEvents.filter((e) => isEventPast(e.date)).length
-                : tab === "London" ? homepageEvents.filter((e) => e.location?.toLowerCase().includes("london")).length
-                : tab === "Pakistan" ? homepageEvents.filter((e) => e.location?.toLowerCase().includes("pakistan") || e.location?.toLowerCase().includes("karachi") || e.location?.toLowerCase().includes("islamabad") || e.location?.toLowerCase().includes("lahore")).length
-                : homepageEvents.filter((e) => e.tag === tab).length;
-              return (
-                <button
-                  key={tab}
-                  onClick={() => setFilter(tab)}
-                  className={`px-4 py-2 text-xs font-bold uppercase tracking-wide border transition-colors duration-200 rounded-sm ${
-                    filter === tab
-                      ? "bg-[#1a2b5e] text-white border-[#1a2b5e]"
-                      : "bg-white text-[#3D4152] border-[#D8D5CF] hover:border-[#1a2b5e] hover:text-[#1a2b5e]"
-                  }`}
-                >
-                  {tab} <span className="ml-1 opacity-60">{count}</span>
-                </button>
-              );
-            })}
+            {EVENT_FILTERS.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setFilter(tab)}
+                className={`px-4 py-2 text-xs font-bold uppercase tracking-wide border transition-colors duration-200 rounded-sm ${
+                  filter === tab
+                    ? "bg-[#1a2b5e] text-white border-[#1a2b5e]"
+                    : "bg-white text-[#3D4152] border-[#D8D5CF] hover:border-[#1a2b5e] hover:text-[#1a2b5e]"
+                }`}
+              >
+                {tab} <span className="ml-1 opacity-60">{tabCounts[tab]}</span>
+              </button>
+            ))}
           </div>
 
           {/* 3-column event card grid */}
@@ -365,16 +371,7 @@ export default function Home() {
                 },
               ].map((video) => (
                 <div key={video.id} className="bg-white rounded overflow-hidden border border-[#D8D5CF]">
-                  <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                    <iframe
-                      className="absolute inset-0 w-full h-full"
-                      src={`https://www.youtube.com/embed/${video.id}`}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    />
-                  </div>
+                  <LiteYouTube id={video.id} title={video.title} />
                   <div className="p-5">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base sm:text-lg leading-snug mb-2">
                       {video.title}

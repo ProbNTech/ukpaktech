@@ -232,7 +232,7 @@ export const articles: Article[] = [
     date: "12 February 2025",
     author: "UPTECH Editorial Team",
     authorRole: "UK–Pakistan Tech Council",
-    image: "/image/events/UK-Pakistan-Business-Summit-2025.jpg",
+    image: "/image/events/uk-pakistan-bilateral-investment-signing.jpeg",
     excerpt:
       "A landmark bilateral investment agreement signed in London will channel £200 million into joint technology ventures, establishing new innovation corridors between the two nations.",
     body: [

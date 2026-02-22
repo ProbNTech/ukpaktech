@@ -179,6 +179,8 @@
 
   .animate-scroll-smooth {
     animation: scroll-smooth 50s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
   }
 
   .animation-paused {

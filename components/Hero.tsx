@@ -89,23 +89,27 @@ export function Hero() {
 
   return (
     <section className="relative z-[2] w-full min-h-0 lg:h-screen overflow-hidden bg-[#0B0F1A]">
-      {/* Background videos */}
-      {slides.map((s, index) => (
-        <video
-          key={s.video}
-          ref={setVideoRef(index)}
-          autoPlay={index === 0}
-          muted
-          playsInline
-          preload="auto"
-          onEnded={index === currentIndex ? handleVideoEnded : undefined}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
-            index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-          }`}
-        >
-          <source src={s.video} type="video/mp4" />
-        </video>
-      ))}
+      {/* Background videos — only preload current + next to save bandwidth */}
+      {slides.map((s, index) => {
+        const isActive = index === currentIndex;
+        const isNext = index === (currentIndex + 1) % slides.length;
+        return (
+          <video
+            key={s.video}
+            ref={setVideoRef(index)}
+            autoPlay={index === 0}
+            muted
+            playsInline
+            preload={isActive || isNext ? "auto" : "none"}
+            onEnded={isActive ? handleVideoEnded : undefined}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
+              isActive ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          >
+            <source src={s.video} type="video/mp4" />
+          </video>
+        );
+      })}
 
       {/* Subtle left-side gradient for text readability */}
       <div

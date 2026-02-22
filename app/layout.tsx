@@ -87,7 +87,7 @@ const jsonLd = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "general enquiry",
-    email: "info@uptechcouncil.org",
+    email: "info@ukpaktech.org.uk",
   },
 };
 
@@ -98,6 +98,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
+      <head>
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
+        <link rel="dns-prefetch" href="https://i.ytimg.com" />
+        <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="anonymous" />
+      </head>
       <body className="bg-[#EEECEA]">
         <script
           type="application/ld+json"
