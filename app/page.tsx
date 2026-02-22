@@ -40,12 +40,11 @@ function SectionHeader({
 }) {
   return (
     <div className="mb-10 lg:mb-12">
-      <p className="text-sm font-semibold text-[#2563EB] mb-2 tracking-wide">{label}</p>
-      <div className="flex items-center gap-5 mb-5">
-        <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-[2.6rem] leading-none shrink-0 whitespace-nowrap">
+      <div className="bg-[#1a2b5e] py-4 px-6 sm:px-8 rounded-sm mb-5 -mx-2 sm:-mx-4">
+        <p className="text-xs font-semibold text-white/60 uppercase tracking-[0.15em] mb-1">{label}</p>
+        <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-[2.2rem] leading-none">
           {title}
         </h2>
-        <div className="flex-1 h-px bg-[#1C1F2E]/25 min-w-0" />
       </div>
       {body && (
         <p className="text-[#3D4152] text-base sm:text-lg leading-relaxed max-w-3xl">{body}</p>
@@ -126,14 +125,14 @@ export default function Home() {
       <section className="bg-[#E8E6E3] py-14 lg:py-18">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            {/* Section header with full-width rule */}
-            <div className="flex items-center gap-5 mb-3">
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl leading-none shrink-0">
+            {/* Section header with blue banner */}
+            <div className="bg-[#1a2b5e] py-4 px-6 sm:px-8 rounded-sm mb-5 -mx-2 sm:-mx-4">
+              <p className="text-xs font-semibold text-white/60 uppercase tracking-[0.15em] mb-1">Membership</p>
+              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-[2.2rem] leading-none">
                 Who can join?
               </h2>
-              <div className="flex-1 h-px bg-[#1C1F2E]/25" />
             </div>
-            <p className="text-[#3D4152] text-base mb-8 max-w-2xl">
+            <p className="text-[#3D4152] text-base sm:text-lg mb-8 max-w-2xl">
               We offer different memberships based on whether you are a technology company, investor, institution, or individual professional.
             </p>
 
