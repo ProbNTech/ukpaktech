@@ -96,7 +96,7 @@ export function Hero() {
         <div className="w-full max-w-full lg:max-w-[55%]">
 
           {/* Small label */}
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#C41E3A] mb-3 sm:mb-4">
+          <p className="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.18em] text-[#C41E3A] mb-4 sm:mb-5">
             UPTECH
           </p>
 
