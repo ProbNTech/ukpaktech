@@ -102,7 +102,7 @@ function HomeEventsSection() {
             label="Attend an event"
             title="Upcoming events"
             body="Our upcoming events span bilateral summits, investor dialogues, webinars, and trade delegations. All events are open to UPTECH members and selected guests."
-            color="green"
+            color="red"
           />
 
           {/* Filter tabs */}
@@ -245,11 +245,11 @@ export default function Home() {
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             {/* Section header with red banner */}
-            <div className="relative overflow-hidden rounded mb-5 -mx-2 sm:-mx-4" style={{ background: bannerThemes.red.bg }}>
-              <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${bannerThemes.red.accent}, ${bannerThemes.red.accentTo})` }} />
+            <div className="relative overflow-hidden rounded mb-5 -mx-2 sm:-mx-4" style={{ background: bannerThemes.blue.bg }}>
+              <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${bannerThemes.blue.accent}, ${bannerThemes.blue.accentTo})` }} />
               <div className="absolute top-0 right-0 w-40 h-full opacity-[0.06]" style={{ background: "radial-gradient(circle at 80% 30%, white 0%, transparent 70%)" }} />
               <div className="py-5 px-7 sm:px-10 pl-8 sm:pl-12">
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5" style={{ color: bannerThemes.red.label }}>Membership</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5" style={{ color: bannerThemes.blue.label }}>Membership</p>
                 <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-[2.2rem] leading-tight">
                   Who can join?
                 </h2>
@@ -316,7 +316,7 @@ export default function Home() {
               label="Stay informed"
               title="News &amp; Insights"
               body="Investment deals, policy developments, innovation spotlights, and bilateral progress — what's shaping the UK–Pakistan technology corridor."
-              color="blue"
+              color="green"
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-10">
@@ -363,7 +363,7 @@ export default function Home() {
               label="Our impact"
               title="Impact Momentum"
               body="A modern technology council engineered to scale collaboration, talent, and investment across the UK–Pakistan corridor."
-              color="red"
+              color="blue"
             />
             <ImpactStats />
           </AnimatedSection>
