@@ -225,8 +225,8 @@ export function Header() {
                 className="h-[40px] w-auto object-contain"
                 priority
               />
-              <span className="hidden sm:inline font-heading font-bold text-[15px] lg:text-[17px] tracking-[0.01em] leading-tight text-[#0F172A]">
-                UK–Pakistan Tech Council <span className="text-[#1E3A5F]">(UPTECH)</span>
+              <span className="hidden sm:inline font-heading font-bold text-[15px] lg:text-[17px] tracking-[0.01em] leading-tight text-[#0F172A] uppercase">
+                UK–PAKISTAN TECH COUNCIL <span className="text-[#1a2b5e]">(UPTECH)</span>
               </span>
             </Link>
 
@@ -234,14 +234,14 @@ export function Header() {
             <div className="hidden lg:flex items-center gap-5">
               <Link
                 href="/contact"
-                className="text-[12px] font-medium text-[#475569] hover:text-[#1E3A5F] transition-colors uppercase tracking-[0.08em]"
+                className="text-[12px] font-medium text-[#475569] hover:text-[#1a2b5e] transition-colors uppercase tracking-[0.08em]"
               >
                 Contact
               </Link>
               <Link
                 href="/membership"
                 onMouseEnter={handleLeave}
-                className="px-5 py-2 font-heading font-bold text-[11px] uppercase tracking-[0.12em] bg-[#1E3A5F] text-white hover:bg-[#162D4A] transition-colors duration-200 whitespace-nowrap rounded"
+                className="px-5 py-2 font-heading font-bold text-[11px] uppercase tracking-[0.12em] bg-[#1a2b5e] text-white hover:bg-[#131f47] transition-colors duration-200 whitespace-nowrap rounded"
               >
                 Become a Member
               </Link>
@@ -271,7 +271,7 @@ export function Header() {
               <Link
                 href="/"
                 onMouseEnter={handleLeave}
-                className="relative h-full px-4 xl:px-5 flex items-center font-sans text-[13px] font-semibold tracking-[0.02em] text-[#1E3A5F] hover:text-[#0F172A] transition-colors duration-150"
+                className="relative h-full px-4 xl:px-5 flex items-center font-sans text-[13px] font-semibold tracking-[0.02em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150"
               >
                 HOME
               </Link>
@@ -291,7 +291,7 @@ export function Header() {
                       transition-colors duration-150 cursor-default select-none
                       ${isActive
                         ? "text-[#0F172A]"
-                        : "text-[#1E3A5F] hover:text-[#0F172A]"}
+                        : "text-[#1a2b5e] hover:text-[#0F172A]"}
                     `}
                   >
                     {group.label.toUpperCase()}
@@ -306,7 +306,7 @@ export function Header() {
                     </svg>
                     <span
                       className={`
-                        absolute bottom-0 left-3 right-3 h-[2px] bg-[#1E3A5F]
+                        absolute bottom-0 left-3 right-3 h-[2px] bg-[#1a2b5e]
                         transition-opacity duration-150
                         ${isActive ? "opacity-100" : "opacity-0"}
                       `}
@@ -572,7 +572,7 @@ export function Header() {
                 <Link
                   href="/membership"
                   onClick={() => setIsMobileOpen(false)}
-                  className="block text-center py-3 px-4 bg-[#1E3A5F] text-white font-heading font-bold text-mobile-cta uppercase hover:bg-[#162D4A] transition-colors duration-200 rounded"
+                  className="block text-center py-3 px-4 bg-[#1a2b5e] text-white font-heading font-bold text-mobile-cta uppercase hover:bg-[#131f47] transition-colors duration-200 rounded"
                 >
                   Become a Member
                 </Link>
