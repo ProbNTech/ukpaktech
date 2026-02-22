@@ -47,7 +47,7 @@ function SectionHeader({
 }) {
   const theme = bannerThemes[color];
   return (
-    <div className="mb-10 lg:mb-12">
+    <div className="mb-6 lg:mb-8">
       <div className="relative overflow-hidden rounded mb-5 -mx-2 sm:-mx-4" style={{ background: theme.bg }}>
         <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${theme.accent}, ${theme.accentTo})` }} />
         <div className="absolute top-0 right-0 w-40 h-full opacity-[0.06]" style={{ background: "radial-gradient(circle at 80% 30%, white 0%, transparent 70%)" }} />
@@ -135,7 +135,7 @@ function HomeEventsSection() {
   }, [filterEvent]);
 
   return (
-    <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "#EEECEA" }}>
+    <section className="relative z-[1] py-10 lg:py-14" style={{ backgroundColor: "#EEECEA" }}>
       <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
         <AnimatedSection>
           <SectionHeader
@@ -164,7 +164,7 @@ function HomeEventsSection() {
 
           {/* 3-column event card grid */}
           {filtered.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-8">
               {filtered.map((event) => (
                 <Link key={event.id} href="/events" className="group flex flex-col bg-white border border-[#D8D5CF] rounded overflow-hidden hover:-translate-y-1 transition-all duration-300">
                   <div className="aspect-[16/9] bg-[#1C1F2E] relative overflow-hidden">
@@ -233,7 +233,7 @@ export default function Home() {
            Layout: full-width text paragraph + About Us button
            Matches ukproptech.com "intro" section structure exactly
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "#EEECEA" }}>
+      <section className="relative z-[1] py-10 lg:py-14" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -275,7 +275,7 @@ export default function Home() {
            WHO CAN JOIN — horizontal scroll of member types
            Matches the ukproptech "Who can join?" horizontal card row
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-14 lg:py-18" style={{ backgroundColor: "#E8E6E3" }}>
+      <section className="relative z-[1] py-10 lg:py-14" style={{ backgroundColor: "#E8E6E3" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             {/* Section header with red banner */}
@@ -337,7 +337,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            EVENT HIGHLIGHTS — YouTube video embeds
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "#EEECEA" }}>
+      <section className="relative z-[1] py-10 lg:py-14" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -347,7 +347,7 @@ export default function Home() {
               color="red"
             />
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
               {[
                 {
                   id: "NnKZrypT_tE",
@@ -390,7 +390,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            RESOURCES / NEWS & INSIGHTS — 3 column editorial cards
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "#E8E6E3" }}>
+      <section className="relative z-[1] py-10 lg:py-14" style={{ backgroundColor: "#E8E6E3" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -400,7 +400,7 @@ export default function Home() {
               color="green"
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 mb-8">
               {homepageArticles.map((article, i) => (
                 <NewsCard
                   key={article.slug}
@@ -430,9 +430,9 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            PARTNER / MEMBER LOGOS — slim marquee strip
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-14" style={{ background: "linear-gradient(135deg, #15803d 0%, #22C55E 100%)" }}>
+      <section className="relative z-[1] py-10" style={{ background: "linear-gradient(135deg, #15803d 0%, #22C55E 100%)" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <h2 className="text-center text-lg sm:text-xl font-bold uppercase tracking-[0.2em] text-white/80 mb-10">
+          <h2 className="text-center text-lg sm:text-xl font-bold uppercase tracking-[0.2em] text-white/80 mb-6">
             Leading Organisations
           </h2>
           <SponsorMarquee />
@@ -442,7 +442,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            IMPACT NUMBERS — 4 stat cards on white bg
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-16 lg:py-20" style={{ backgroundColor: "#EEECEA" }}>
+      <section className="relative z-[1] py-10 lg:py-14" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -460,7 +460,7 @@ export default function Home() {
            JOIN CTA — dark section with animated background
            Matches ukproptech's dark "BPF Futures" image section
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[2] overflow-hidden bg-[#0B0F1A] text-white py-20 md:py-24">
+      <section className="relative z-[2] overflow-hidden bg-[#0B0F1A] text-white py-14 md:py-16">
         <Image
           src="/image/home/join_uptech_bg.jpg"
           alt=""
