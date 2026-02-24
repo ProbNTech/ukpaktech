@@ -68,6 +68,47 @@ const navGroups = [
     ],
   },
   {
+    label: "Services",
+    tagline: "How we support you",
+    editorial: {
+      headline: "Grow faster.\nGo further.",
+      body: "From business networks and mentorship to marketing support and legal infrastructure — everything your tech business needs to scale.",
+      cta: { label: "Explore services →", href: "/services" },
+    },
+    items: [
+      {
+        label: "Business Networks",
+        href: "/services/business-networks",
+        desc: "Strategic connections, market advice, and access to the Enterprise Europe Network.",
+      },
+      {
+        label: "SME Hub",
+        href: "/services/sme-hub",
+        desc: "Sales insights, finance access, talent support, and exclusive member offers for growing tech SMEs.",
+      },
+      {
+        label: "Digital Marketing Hub",
+        href: "/services/digital-marketing",
+        desc: "Promote your tech products and services across the UK, Europe, Middle East and Africa.",
+      },
+      {
+        label: "Overseas Employment",
+        href: "/services/overseas-employment",
+        desc: "Contract employment connecting skilled tech professionals with international opportunities.",
+      },
+      {
+        label: "Mentorship",
+        href: "/services/mentorship",
+        desc: "Experienced entrepreneurs and industry experts guiding startups from idea to scale.",
+      },
+      {
+        label: "Business Support",
+        href: "/services/business-support",
+        desc: "Company registration, legal, IP protection, investment documents, and data rooms.",
+      },
+    ],
+  },
+  {
     label: "Initiatives",
     tagline: "What we're building",
     editorial: {

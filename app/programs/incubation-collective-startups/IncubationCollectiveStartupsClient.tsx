@@ -166,8 +166,63 @@ export default function IncubationCollectiveStartupsClient() {
         </AnimatedSection>
       </Section>
 
-      {/* Who Should Join */}
+      {/* Corporate & Accelerator Partnerships */}
       <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Partnerships"
+            title="Corporate & Accelerator Partnerships"
+            subtitle="Strategic partnerships between startups, scale-ups, corporates, and accelerator programs across the UK and Pakistan."
+          />
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-white border border-[#D8D5CF] rounded p-6">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-wide mb-3">Founders</p>
+              <h3 className="font-heading font-bold text-[#1C1F2E] mb-2">Start Your Journey</h3>
+              <div className="h-px bg-[#D8D5CF] mb-3" />
+              <p className="text-sm text-[#3D4152] leading-relaxed mb-3">Pre-seed capital, dedicated team support, access to corporate partners, and membership to our global founder community.</p>
+              <ul className="space-y-2">
+                {["Rapid technical development", "Holistic growth support", "Expert mentorship", "Pathway to 10x growth"].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-[#3D4152]">
+                    <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white border border-[#D8D5CF] rounded p-6">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-wide mb-3">Startups</p>
+              <h3 className="font-heading font-bold text-[#1C1F2E] mb-2">Elevate Your Startup</h3>
+              <div className="h-px bg-[#D8D5CF] mb-3" />
+              <p className="text-sm text-[#3D4152] leading-relaxed mb-3">Capital investment with hands-on operational support. Pitch at flagship investor days with warm introductions to top-tier funds.</p>
+              <ul className="space-y-2">
+                {["Raise capital", "Six months 1:1 expert support", "Product & design", "Strategic partnerships"].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-[#3D4152]">
+                    <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white border border-[#D8D5CF] rounded p-6">
+              <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-wide mb-3">Accelerators</p>
+              <h3 className="font-heading font-bold text-[#1C1F2E] mb-2">Partner With Us</h3>
+              <div className="h-px bg-[#D8D5CF] mb-3" />
+              <p className="text-sm text-[#3D4152] leading-relaxed mb-3">Co-build acceleration programs with cross-border reach, shared deal flow, and access to the UK–Pakistan tech corridor.</p>
+              <ul className="space-y-2">
+                {["Co-branded programs", "Shared deal flow", "Cross-border market access", "Investor network access"].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-[#3D4152]">
+                    <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* Who Should Join */}
+      <Section variant="alt">
         <AnimatedSection>
           <SectionHeader
             label="Who It&apos;s For"

@@ -22,6 +22,27 @@ const opportunities = [
   { title: "Skills Development", description: "Grants for programs that enhance technology skills and workforce capabilities." },
 ];
 
+const fundingStages = [
+  {
+    stage: "Pre-Seed & Seed",
+    title: "Startup Funding",
+    description: "We provide entrepreneurs with pre-seed capital, support from a dedicated team, access to corporate partners and membership to our global founder community.",
+    features: ["Pre-seed capital investment", "Dedicated support team", "Corporate partner introductions", "Global founder community access"],
+  },
+  {
+    stage: "Series A & B",
+    title: "Growth Capital",
+    description: "For companies that demonstrate potential to 10x their growth. By aligning with our expertise, network, and capital, your startup will be well-positioned to scale rapidly.",
+    features: ["Raise capital with operational support", "Pitch at flagship investor days", "Warm introductions to top-tier funds", "Six months 1:1 expert support"],
+  },
+  {
+    stage: "R&D",
+    title: "R&D Incentives",
+    description: "Support for research and development initiatives in emerging technologies, digital transformation, and innovation-led projects with cross-border impact.",
+    features: ["R&D tax credit guidance", "Innovation grant applications", "Research partnership facilitation", "Technology transfer support"],
+  },
+];
+
 const eligibilityCriteria = [
   "Technology-focused projects with clear innovation potential",
   "Alignment with UK–Pakistan technology partnership objectives",
@@ -95,8 +116,37 @@ export default function FundingAndGrantsClient() {
         </AnimatedSection>
       </Section>
 
-      {/* Eligibility & Application Process */}
+      {/* Funding Stages */}
       <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Stages"
+            title="Funding by Growth Stage"
+            subtitle="Tailored funding support from pre-seed through to Series B and R&D incentives."
+          />
+          <div className="grid lg:grid-cols-3 gap-6">
+            {fundingStages.map((item) => (
+              <div key={item.stage} className="bg-white border border-[#D8D5CF] rounded p-6 flex flex-col">
+                <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-wide mb-2">{item.stage}</p>
+                <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2">{item.title}</h3>
+                <div className="h-px bg-[#D8D5CF] mb-3" />
+                <p className="text-sm text-[#3D4152] leading-relaxed mb-4">{item.description}</p>
+                <ul className="space-y-2 mt-auto">
+                  {item.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-[#3D4152]">
+                      <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* Eligibility & Application Process */}
+      <Section variant="alt">
         <AnimatedSection>
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
