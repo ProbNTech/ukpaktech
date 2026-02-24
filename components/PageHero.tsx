@@ -37,20 +37,12 @@ export function PageHero({
             className="object-cover object-center"
             sizes="100vw"
           />
-          {/* Dark overlay — left heavier, fading slightly right, matching the UKPropTech reference */}
+          {/* Subtle text-readability gradient — only behind the text area, image stays clear */}
           <div
-            className="absolute inset-0 z-[1]"
+            className="absolute inset-0 z-[1] pointer-events-none"
             style={{
               background:
-                "linear-gradient(to right, rgba(10,14,30,0.82) 0%, rgba(10,14,30,0.70) 50%, rgba(10,14,30,0.58) 100%)",
-            }}
-          />
-          {/* Subtle bottom vignette so the page content below blends cleanly */}
-          <div
-            className="absolute bottom-0 inset-x-0 h-24 z-[1]"
-            style={{
-              background:
-                "linear-gradient(to bottom, transparent, rgba(10,14,30,0.45))",
+                "linear-gradient(to right, rgba(10,14,30,0.50) 0%, rgba(10,14,30,0.18) 45%, transparent 70%)",
             }}
           />
         </>
