@@ -54,7 +54,7 @@ export default function AITechProgramsPage() {
       <PageHero
         title="AI and Tech Programs"
         subtitle="Driving AI innovation and tech leadership between the UK and Pakistan through comprehensive training, certifications, and collaborative startup models."
-        image="/image/Ai%20and%20program/banner1.webp"
+        image="/image/london-images/london-modern-buildings.jpg"
       >
         <div className="flex flex-wrap gap-4 mt-2">
           <Button href="/membership" variant="glass" showArrow>Become a Member</Button>

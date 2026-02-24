@@ -19,7 +19,7 @@ export default function MembershipDirectoryPage() {
       <PageHero
         title="Membership Directory"
         subtitle="Browse our growing network of technology companies, investors, academic institutions, and professionals shaping the UK–Pakistan technology corridor."
-        image="/image/london-images/1.jpg"
+        image="/image/london-images/night-skyline-shard.jpg"
       />
 
       <MemberDirectory />

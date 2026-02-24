@@ -67,7 +67,7 @@ export default function EventsPage() {
       {/* ============================================================ */}
       <section className="relative overflow-hidden min-h-[480px]">
         <Image
-          src="/image/Events%20%26%20Engagements/banner1.webp"
+          src="/image/london-images/tower-bridge-wide.jpg"
           alt=""
           fill
           priority

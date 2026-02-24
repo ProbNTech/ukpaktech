@@ -20,7 +20,7 @@ export default function ContactPage() {
       <PageHero
         title="Contact"
         subtitle="Get in touch with the UK–Pakistan Tech Council. Reach out for partnerships, membership enquiries, or general questions."
-        image="/image/contact/banner3.webp"
+        image="/image/london-images/contact-tower-bridge-day.jpg"
       />
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16">

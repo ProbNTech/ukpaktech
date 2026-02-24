@@ -44,7 +44,7 @@ export default function LeadershipPage() {
       <PageHero
         title="Leadership &amp; Governance"
         subtitle="UPTECH operates under a defined governance structure ensuring transparency, ethics, and accountability across all initiatives."
-        image="/image/Leadership%20Governance/Leadership%20_banner.webp"
+        image="/image/london-images/big-ben-night.jpg"
       >
         <div className="flex flex-wrap gap-4 mt-2">
           {[

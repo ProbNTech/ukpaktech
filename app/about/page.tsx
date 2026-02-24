@@ -14,7 +14,7 @@ export default function AboutPage() {
       <PageHero
         title="About UPTECH"
         subtitle="Strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan."
-        image="/image/about%20page/about_banner.webp"
+        image="/image/london-images/about-london-skyline.jpg"
       >
         <div className="flex flex-wrap gap-4 mt-2">
           <Button href="/membership" variant="glass" showArrow>Become a Member</Button>
