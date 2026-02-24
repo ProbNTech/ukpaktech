@@ -120,6 +120,22 @@ const navGroups = [
     ],
   },
   {
+    label: "Membership",
+    tagline: "Join the council",
+    editorial: {
+      headline: "Be part of\nthe movement.",
+      body: "Join a growing network of technology companies, investors, and professionals driving UK–Pakistan bilateral growth.",
+      cta: { label: "Become a member →", href: "/membership" },
+    },
+    items: [
+      {
+        label: "Membership Directory",
+        href: "/membership/directory",
+        desc: "Browse our corporate and individual members shaping the UK–Pakistan technology corridor.",
+      },
+    ],
+  },
+  {
     label: "Updates",
     tagline: "What's happening",
     editorial: {
