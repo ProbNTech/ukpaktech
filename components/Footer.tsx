@@ -136,7 +136,7 @@ export function Footer() {
                       { label: "Mentorship", href: "/services/mentorship" },
                       { label: "Funding", href: "/ecosystem/funding-and-grants" },
                       { label: "FAQs", href: "/faqs" },
-                      { label: "Jobs", href: "/careers" },
+                      { label: "Jobs", href: "/job-portal" },
                       { label: "Contact", href: "/contact" },
                     ].map((link) => (
                       <li key={link.href}>

@@ -1,13 +1,71 @@
+"use client";
+
 import { Section } from "@/components/Section";
 import { PageHero } from "@/components/PageHero";
-import type { Metadata } from "next";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import { SectionHeader } from "@/components/SectionHeader";
+import { motion, useReducedMotion } from "framer-motion";
+import {
+  Target, Users, Award, Trophy, Shield, Scale, Mail, CheckCircle2,
+} from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Excellence Management Terms & Conditions",
-  description: "Terms and conditions for UPTECH's Excellence Management programmes and awards.",
-};
+const terms = [
+  {
+    icon: Target,
+    number: "01",
+    title: "Scope",
+    accent: "border-[#2563EB]",
+    content: "These terms and conditions apply to all participants, nominees, and awardees involved in UPTECH\u2019s excellence management programmes, including the Tech Excellence Awards, recognition initiatives, and related activities.",
+  },
+  {
+    icon: Users,
+    number: "02",
+    title: "Eligibility",
+    accent: "border-[#22C55E]",
+    content: "Participation in excellence management programmes is open to UPTECH members and invited participants who meet the published eligibility criteria for each programme. UPTECH reserves the right to verify eligibility and disqualify participants who do not meet the requirements.",
+  },
+  {
+    icon: Award,
+    number: "03",
+    title: "Nomination & Selection",
+    accent: "border-[#2563EB]",
+    content: "Nominations may be submitted by members, partners, or the UPTECH team. All nominations are reviewed by an independent panel. The selection process is based on merit, impact, innovation, and alignment with UPTECH\u2019s values and objectives. Decisions of the judging panel are final.",
+  },
+  {
+    icon: Trophy,
+    number: "04",
+    title: "Awards & Recognition",
+    accent: "border-[#22C55E]",
+    content: "Awards and recognition are granted at the sole discretion of UPTECH and the judging panel. UPTECH reserves the right to withhold or withdraw awards if the recipient is found to have breached these terms, the Code of Conduct, or any applicable laws.",
+  },
+  {
+    icon: Shield,
+    number: "05",
+    title: "Intellectual Property",
+    accent: "border-[#2563EB]",
+    content: "By participating, you grant UPTECH a non-exclusive, royalty-free licence to use your name, likeness, company name, and submitted materials for promotional and marketing purposes related to the programme.",
+  },
+  {
+    icon: Scale,
+    number: "06",
+    title: "Liability",
+    accent: "border-[#C41E3A]",
+    content: "UPTECH shall not be liable for any loss, damage, or expense arising from participation in excellence management programmes, except where caused by our negligence. Participants are responsible for their own travel, accommodation, and related expenses unless otherwise specified.",
+  },
+];
+
+const processSteps = [
+  "Review published eligibility criteria for the programme",
+  "Submit nomination through official channels",
+  "Independent panel reviews all submissions",
+  "Shortlisted candidates are notified",
+  "Final selection based on merit and impact",
+  "Awards presented at official ceremony",
+];
 
 export default function ExcellenceManagementTermsPage() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <div>
       <PageHero
@@ -15,46 +73,90 @@ export default function ExcellenceManagementTermsPage() {
         subtitle="Terms governing participation in UPTECH's excellence management programmes, awards, and recognition initiatives."
         image="/image/london-images/legal-documents.jpg"
       />
-      <Section>
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-widest mb-8">Last updated: 2025</p>
-          <div className="space-y-10 text-[#3D4152] leading-relaxed">
-            <PolicySection title="Scope">
-              <p>These terms and conditions apply to all participants, nominees, and awardees involved in UPTECH&apos;s excellence management programmes, including the Tech Excellence Awards, recognition initiatives, and related activities.</p>
-            </PolicySection>
-            <PolicySection title="Eligibility">
-              <p>Participation in excellence management programmes is open to UPTECH members and invited participants who meet the published eligibility criteria for each programme. UPTECH reserves the right to verify eligibility and disqualify participants who do not meet the requirements.</p>
-            </PolicySection>
-            <PolicySection title="Nomination & Selection">
-              <p>Nominations may be submitted by members, partners, or the UPTECH team. All nominations are reviewed by an independent panel. The selection process is based on merit, impact, innovation, and alignment with UPTECH&apos;s values and objectives. Decisions of the judging panel are final.</p>
-            </PolicySection>
-            <PolicySection title="Awards & Recognition">
-              <p>Awards and recognition are granted at the sole discretion of UPTECH and the judging panel. UPTECH reserves the right to withhold or withdraw awards if the recipient is found to have breached these terms, the Code of Conduct, or any applicable laws.</p>
-            </PolicySection>
-            <PolicySection title="Intellectual Property">
-              <p>By participating, you grant UPTECH a non-exclusive, royalty-free licence to use your name, likeness, company name, and submitted materials for promotional and marketing purposes related to the programme.</p>
-            </PolicySection>
-            <PolicySection title="Liability">
-              <p>UPTECH shall not be liable for any loss, damage, or expense arising from participation in excellence management programmes, except where caused by our negligence. Participants are responsible for their own travel, accommodation, and related expenses unless otherwise specified.</p>
-            </PolicySection>
-            <PolicySection title="Contact">
-              <p>For questions about these terms, contact us at{" "}
-                <a href="mailto:info@uptechcouncil.com" className="text-[#2563EB] underline underline-offset-2">info@uptechcouncil.com</a>.
-              </p>
-            </PolicySection>
-          </div>
-        </div>
-      </Section>
-    </div>
-  );
-}
 
-function PolicySection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <h2 className="font-heading font-bold text-xl text-[#1C1F2E] mb-2">{title}</h2>
-      <div className="h-px bg-[#1C1F2E]/20 mb-4" />
-      <div className="text-[#3D4152] leading-relaxed">{children}</div>
+      {/* Terms */}
+      <Section variant="light">
+        <AnimatedSection>
+          <div className="max-w-3xl mb-8">
+            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-widest">Last updated: 2025</p>
+          </div>
+          <div className="space-y-6 max-w-4xl">
+            {terms.map((term, i) => {
+              const Icon = term.icon;
+              return (
+                <motion.div
+                  key={term.title}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.06 }}
+                  className={`bg-white border border-[#D8D5CF] border-l-4 ${term.accent} rounded p-6 sm:p-8`}
+                >
+                  <div className="flex items-start gap-4 mb-3">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#EEECEA] flex-shrink-0">
+                      <Icon className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <span className="text-xs text-[#7A7E8F] font-semibold">{term.number}</span>
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">{term.title}</h3>
+                    </div>
+                  </div>
+                  <p className="text-[#3D4152] text-sm leading-relaxed">{term.content}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* Process */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Process"
+            title="Awards Process"
+            subtitle="The step-by-step journey from nomination to recognition."
+          />
+          <div className="max-w-3xl">
+            {processSteps.map((step, i) => (
+              <motion.div
+                key={step}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.3, delay: i * 0.06 }}
+                className="flex gap-4 py-4 border-t border-[#D8D5CF] last:border-b"
+              >
+                <span className="text-sm font-bold text-[#2563EB] tabular-nums w-6 flex-shrink-0 pt-0.5">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0" strokeWidth={2} />
+                  <span className="text-[#3D4152] text-sm leading-relaxed">{step}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* Contact */}
+      <Section variant="dark">
+        <AnimatedSection>
+          <div className="max-w-3xl">
+            <Mail className="w-8 h-8 text-[#2563EB] mb-4" strokeWidth={1.5} />
+            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight mb-4">
+              Questions About These Terms?
+            </h2>
+            <p className="text-white/70 text-base leading-relaxed">
+              For questions about these terms, contact us at{" "}
+              <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
+                info@ukpaktech.org.uk
+              </a>.
+            </p>
+          </div>
+        </AnimatedSection>
+      </Section>
     </div>
   );
 }

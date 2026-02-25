@@ -117,7 +117,7 @@ const navItems: NavItem[] = [
   /* 7 — Mentorship (direct link) */
   { kind: "link", label: "Mentorship", href: "/services/mentorship" },
   /* 8 — Job Portal (direct link) */
-  { kind: "link", label: "Job Portal", displayLabel: "Jobs", href: "/careers" },
+  { kind: "link", label: "Job Portal", displayLabel: "Jobs", href: "/job-portal" },
   /* 9 — Events (direct link) */
   { kind: "link", label: "Events", href: "/events" },
   /* 10 — News & Updates (direct link) */
