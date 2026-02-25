@@ -241,10 +241,16 @@ export default function AboutPage() {
           <SectionHeader label="From the Founder" title="A Message from Our CEO" />
           <div className="grid lg:grid-cols-[1fr_2fr] gap-12 items-start">
             <div className="bg-white border border-[#D8D5CF] rounded p-8">
-              <div className="w-20 h-20 bg-[#1C1F2E] rounded-full flex items-center justify-center mb-5">
-                <span className="text-white text-2xl font-heading font-bold">KA</span>
+              <div className="w-24 h-24 rounded-full overflow-hidden mb-5 border-2 border-[#2563EB]/20">
+                <Image
+                  src="/image/ceo/khalil-choudhary-portrait.jpg"
+                  alt="Khalil Choudhary — Founder & CEO, UPTECH"
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-1">Khalil Ahmed</h3>
+              <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-1">Khalil Choudhary</h3>
               <p className="text-sm text-[#2563EB] font-semibold mb-3">Founder & CEO, UPTECH</p>
               <div className="h-px bg-[#D8D5CF] mb-3" />
               <p className="text-xs text-[#7A7E8F] leading-relaxed">

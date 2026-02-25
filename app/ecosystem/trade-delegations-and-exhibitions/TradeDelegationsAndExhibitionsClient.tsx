@@ -6,6 +6,7 @@ import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 
 const offerItems = [
   { title: "Event Organisation", description: "End-to-end planning and execution of trade delegations and technology exhibitions." },
@@ -135,8 +136,29 @@ export default function TradeDelegationsAndExhibitionsClient() {
         </AnimatedSection>
       </Section>
 
-      {/* Stats */}
+      {/* CEO at Summit */}
       <Section variant="alt">
+        <AnimatedSection>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#2563EB] mb-3">On the Ground</p>
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1C1F2E] mb-4 leading-tight">
+                Leading From the Front
+              </h2>
+              <div className="h-px bg-[#1C1F2E]/20 mb-5 max-w-xs" />
+              <p className="text-[#3D4152] text-base leading-relaxed">
+                UPTECH Founder & CEO Khalil Choudhary personally leads trade delegations and represents the Council at international summits, ensuring our members have direct access to decision-makers and opportunities at the highest level.
+              </p>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded">
+              <Image src="/image/ceo/khalil-choudhary-summit.jpg" alt="Khalil Choudhary at international business summit" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+            </div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* Stats */}
+      <Section variant="light">
         <AnimatedSection>
           <SectionHeader
             label="Impact"

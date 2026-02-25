@@ -60,8 +60,41 @@ export default function LeadershipPage() {
         </div>
       </PageHero>
 
-      {/* Navigation Grid */}
+      {/* Founder & CEO */}
       <Section variant="light">
+        <AnimatedSection>
+          <div className="grid lg:grid-cols-[280px_1fr] gap-10 items-center mb-14">
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5 }}
+              className="relative aspect-[3/4] overflow-hidden rounded border-2 border-[#2563EB]/20"
+            >
+              <Image src="/image/ceo/khalil-choudhary-headshot.jpg" alt="Khalil Choudhary — Founder & CEO, UPTECH" fill className="object-cover" sizes="280px" />
+            </motion.div>
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <p className="text-xs font-bold uppercase tracking-widest text-[#2563EB] mb-2">Founder & CEO</p>
+              <h2 className="font-heading font-extrabold text-3xl text-[#1C1F2E] mb-2">Khalil Choudhary</h2>
+              <div className="h-px bg-[#1C1F2E]/20 mb-5 max-w-xs" />
+              <p className="text-[#3D4152] leading-relaxed mb-4">
+                A visionary leader dedicated to strengthening the UK–Pakistan technology corridor through innovation, collaboration, and sustainable partnerships. Under his leadership, UPTECH has grown into a strategic platform connecting technology professionals, entrepreneurs, and organisations across both nations.
+              </p>
+              <p className="text-[#3D4152] leading-relaxed">
+                With deep expertise in technology strategy, bilateral trade, and community building, Khalil Choudhary drives UPTECH&apos;s mission to champion Pakistan&apos;s soft image globally while creating pathways for prosperity through digital innovation.
+              </p>
+            </motion.div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* Navigation Grid */}
+      <Section variant="alt">
         <AnimatedSection>
           <SectionHeader label="Our structure" title="Governance Framework" subtitle="Click any area to navigate to that section." />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

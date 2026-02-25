@@ -115,8 +115,32 @@ export default function UKPakistanTechnologyPartnershipClient() {
         </AnimatedSection>
       </Section>
 
-      {/* Recognition */}
+      {/* CEO at Conference */}
       <Section variant="light">
+        <AnimatedSection>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative aspect-[4/3] overflow-hidden rounded">
+              <Image src="/image/ceo/khalil-choudhary-conference.jpg" alt="Khalil Choudhary at UK-Pakistan technology conference" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#2563EB] mb-3">Our Leadership</p>
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1C1F2E] mb-4 leading-tight">
+                Driving Partnership at the Highest Level
+              </h2>
+              <div className="h-px bg-[#1C1F2E]/20 mb-5 max-w-xs" />
+              <p className="text-[#3D4152] text-base leading-relaxed mb-4">
+                UPTECH Founder & CEO Khalil Choudhary actively engages with government officials, industry leaders, and international organisations to strengthen the UK–Pakistan technology corridor.
+              </p>
+              <p className="text-[#3D4152] text-base leading-relaxed">
+                Through conferences, trade missions, and bilateral summits, UPTECH creates high-level networking opportunities that drive meaningful partnerships and collaboration.
+              </p>
+            </div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* Recognition */}
+      <Section variant="alt">
         <AnimatedSection>
           <SectionHeader
             label="Recognition Program"
