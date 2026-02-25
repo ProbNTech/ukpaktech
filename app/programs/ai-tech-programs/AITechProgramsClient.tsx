@@ -5,7 +5,19 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Cpu, Zap, Building2, Car, Globe2, Microscope, HeartPulse, Wheat, BookOpen } from "lucide-react";
+
+const techFocusAreas = [
+  { icon: BookOpen, title: "Driving Digital Literacy", desc: "Empowering communities across Pakistan with digital skills, coding education, and technology awareness programmes to bridge the digital divide." },
+  { icon: Zap, title: "Energy Solutions", desc: "Leveraging technology to develop renewable energy solutions, smart grids, and efficient power management systems for Pakistan's growing energy needs." },
+  { icon: Cpu, title: "Fusion Technology", desc: "Exploring cutting-edge fusion technology research and development through UK–Pakistan academic and industry collaboration." },
+  { icon: Building2, title: "Smart Buildings & Infrastructure", desc: "Developing IoT-enabled smart building solutions, sustainable construction technology, and intelligent infrastructure management systems." },
+  { icon: Car, title: "Electric Vehicles & Mobility", desc: "Supporting the electric vehicle ecosystem through technology transfer, charging infrastructure development, and sustainable mobility solutions." },
+  { icon: Globe2, title: "Internet Access & Connectivity", desc: "Bridging connectivity gaps with broadband expansion, satellite internet solutions, and digital infrastructure development across underserved regions." },
+  { icon: Microscope, title: "Microchip & Biotech", desc: "Advancing semiconductor design, microchip manufacturing capabilities, and biotechnology research through bilateral partnerships and knowledge exchange." },
+  { icon: HeartPulse, title: "Body Mapping & Health Tech", desc: "Pioneering digital health solutions including AI-powered body mapping, telemedicine platforms, and health data analytics for improved patient outcomes." },
+  { icon: Wheat, title: "Agriculture & AgriTech", desc: "Transforming Pakistan's agriculture sector through precision farming, drone technology, supply chain digitalisation, and climate-smart agriculture solutions." },
+];
 
 const programs = [
   {
@@ -129,8 +141,32 @@ export default function AITechProgramsPage() {
         </AnimatedSection>
       </Section>
 
-      {/* Next Steps */}
+      {/* Technology Focus Areas */}
       <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="What We Do"
+            title="Technology Focus Areas"
+            subtitle="UPTECH drives innovation across key technology sectors that are transforming both nations."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {techFocusAreas.map((area) => {
+              const Icon = area.icon;
+              return (
+                <div key={area.title} className="bg-white border border-[#D8D5CF] rounded p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
+                  <Icon className="w-6 h-6 text-[#2563EB] mb-3" strokeWidth={1.5} />
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{area.title}</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-3" />
+                  <p className="text-[#3D4152] text-sm leading-relaxed">{area.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* Next Steps */}
+      <Section variant="light">
         <AnimatedSection>
           <SectionHeader
             label="Get involved"

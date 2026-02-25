@@ -8,7 +8,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Hero } from "@/components/Hero";
 import { NewsCard } from "@/components/NewsCard";
 import { LiteYouTube } from "@/components/LiteYouTube";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Cpu, Briefcase, GraduationCap, Globe2, Shield, Handshake, Users, Building2, MapPin } from "lucide-react";
 import { articles } from "@/data/articles";
 import { featuredEvents } from "@/data/featured-events";
 
@@ -329,6 +329,83 @@ export default function Home() {
                   <div className="h-px bg-[#1C1F2E]/20 group-hover:bg-[#2563EB]/50 transition-colors duration-300" />
                 </Link>
               ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════
+           WHAT WE DO — Preview sections with Read More
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#EEECEA" }}>
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+          <AnimatedSection>
+            <SectionHeader
+              label="Explore our work"
+              title="What We Do"
+              body="From AI innovation to bilateral trade, from startup incubation to skill development — discover how UPTECH is building the future."
+              color="blue"
+            />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+              {[
+                { icon: Cpu, title: "AI & Tech Programs", desc: "Driving AI innovation through training, certifications, and collaborative startup models across key sectors including energy, smart buildings, and agriculture.", href: "/programs/ai-tech-programs", color: "#2563EB" },
+                { icon: Briefcase, title: "Services", desc: "Business networks, SME hub, digital marketing, overseas employment, and business support services to help your technology venture grow.", href: "/services", color: "#2563EB" },
+                { icon: GraduationCap, title: "Skill Development", desc: "Practical training pathways, professional certifications, and mentorship programmes for the modern tech workforce.", href: "/programs/skill-development-center", color: "#22C55E" },
+                { icon: Globe2, title: "UK–Pakistan Partnership", desc: "A bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment between both nations.", href: "/ecosystem/uk-pakistan-technology-partnership", color: "#2563EB" },
+                { icon: Shield, title: "Leadership & Governance", desc: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", href: "/leadership", color: "#C41E3A" },
+                { icon: Handshake, title: "Trade Delegations", desc: "Curated business missions, trade expos, and pavilion programmes placing members on the world stage.", href: "/ecosystem/trade-delegations-and-exhibitions", color: "#22C55E" },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link key={item.title} href={item.href} className="group bg-white border border-[#D8D5CF] rounded overflow-hidden hover:border-[#2563EB]/40 hover:-translate-y-1 transition-all duration-300">
+                    <div className="p-6">
+                      <Icon className="w-7 h-7 mb-4" style={{ color: item.color }} strokeWidth={1.5} />
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{item.title}</h3>
+                      <div className="h-px bg-[#D8D5CF] mb-3" />
+                      <p className="text-[#3D4152] text-sm leading-relaxed mb-4">{item.desc}</p>
+                      <span className="text-sm font-semibold text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 inline-flex items-center gap-1">
+                        Read more <ChevronRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════
+           MORE FROM UPTECH — Products, Mentorship, Meeting Space, Structure
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#E8E6E3" }}>
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+          <AnimatedSection>
+            <SectionHeader
+              label="Discover more"
+              title="More from UPTECH"
+              body="Explore our platforms, meeting facilities, organisational structure, and flagship initiatives."
+              color="green"
+            />
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: Cpu, title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms changing industries.", href: "/products" },
+                { icon: Users, title: "Mentorship", desc: "Connect with experienced mentors for guidance, career development, and business growth.", href: "/services/mentorship" },
+                { icon: MapPin, title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners.", href: "/meeting-space" },
+                { icon: Building2, title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures.", href: "/structure" },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link key={item.title} href={item.href} className="group flex flex-col bg-white border border-[#D8D5CF] rounded p-6 hover:border-[#2563EB]/40 hover:-translate-y-1 transition-all duration-300">
+                    <Icon className="w-6 h-6 text-[#2563EB] mb-3" strokeWidth={1.5} />
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-sm sm:text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{item.title}</h3>
+                    <p className="text-[#3D4152] text-sm leading-relaxed mb-4 flex-1">{item.desc}</p>
+                    <span className="text-sm font-semibold text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 inline-flex items-center gap-1 mt-auto">
+                      Read more <ChevronRight className="w-3.5 h-3.5" />
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </AnimatedSection>
         </div>

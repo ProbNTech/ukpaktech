@@ -78,76 +78,71 @@ export default function MembershipClient() {
     },
   ];
 
-  const membershipCategories = [
+  const membershipTiers = [
     {
-      title: "Individual Professional",
-      description: "For technology professionals and executives.",
-      features: ["Access to exclusive events", "Member portal", "Networking opportunities"],
-    },
-    {
-      title: "Startup/Company",
-      description: "For startups and small to medium enterprises.",
-      features: ["All individual benefits", "Company profile listing", "Partnership opportunities"],
-    },
-    {
-      title: "Enterprise",
-      description: "For large organizations and corporations.",
-      features: ["All company benefits", "Priority event access", "Strategic partnership support"],
-    },
-    {
-      title: "Academic Institution",
-      description: "For universities and research organizations.",
-      features: ["All enterprise benefits", "Research collaboration", "Student program access"],
-    },
-  ];
-
-  const membershipPlans = [
-    {
-      name: "Individual Professional",
-      price: "TBD",
-      period: "Annual",
+      name: "Strategic Partner",
+      highlight: true,
+      description: "For leading organisations and anchor partners driving the UK–Pakistan tech corridor.",
       features: [
-        "Access to exclusive events and networking",
-        "Member portal access",
-        "Industry insights and resources",
-        "Collaboration opportunities",
-        "Newsletter and updates",
+        "Unlimited event access & priority booking",
+        "Board-level introductions & advocacy",
+        "Logo placement across UPTECH platforms",
+        "Access to executive boardroom & meeting spaces",
+        "Dedicated account manager",
+        "Thought leadership & speaking slots",
+        "Custom bilateral programme design",
       ],
     },
     {
-      name: "Startup/Company",
-      price: "TBD",
-      period: "Annual",
+      name: "Corporate",
+      highlight: false,
+      description: "For established companies seeking cross-border technology partnerships and growth.",
       features: [
-        "All Individual Professional benefits",
+        "20 hours meeting room access per month",
+        "Priority event registration & networking",
         "Company profile on UPTECH platform",
-        "Priority event registration",
         "Partnership matching services",
-        "Market access support",
+        "Market access & trade delegation support",
+        "Industry reports & strategic insights",
       ],
     },
     {
-      name: "Enterprise",
-      price: "TBD",
-      period: "Annual",
+      name: "SME",
+      highlight: false,
+      description: "For small and medium enterprises looking to scale through the UK–Pakistan corridor.",
       features: [
-        "All Startup/Company benefits",
-        "Strategic partnership facilitation",
-        "Custom collaboration programs",
-        "Thought leadership opportunities",
-        "Dedicated account support",
+        "10 hours meeting room access per month",
+        "Member portal & directory listing",
+        "Networking events & workshops",
+        "Business support & advisory services",
+        "Access to SME Hub resources",
+        "Collaboration opportunities",
       ],
     },
     {
-      name: "Academic Institution",
-      price: "TBD",
-      period: "Annual",
+      name: "Startup / Associate",
+      highlight: false,
+      description: "For startups, founders, and individual professionals entering the ecosystem.",
       features: [
-        "All Enterprise benefits",
-        "Research collaboration programs",
-        "Student internship opportunities",
-        "Academic event participation",
-        "Knowledge transfer initiatives",
+        "5 hours meeting room access per month",
+        "Member portal access",
+        "Exclusive events & networking sessions",
+        "Mentorship programme access",
+        "Incubation & accelerator referrals",
+        "Newsletter & industry updates",
+      ],
+    },
+    {
+      name: "Government / Institutional",
+      highlight: false,
+      description: "For government bodies, academic institutions, and research organisations.",
+      features: [
+        "Custom allocation & partnership terms",
+        "Priority bilateral & policy event access",
+        "Full meeting & event space access",
+        "Dedicated coordination support",
+        "Research collaboration programmes",
+        "Student & talent pipeline initiatives",
       ],
     },
   ];
@@ -341,78 +336,42 @@ export default function MembershipClient() {
         </AnimatedSection>
       </Section>
 
-      {/* Membership Categories */}
+      {/* Membership Tiers */}
       <Section variant="light">
         <AnimatedSection>
           <SectionHeader
-            label="Types"
-            title="Membership Categories"
-            subtitle="Choose the membership type that best fits your needs."
+            label="Tiers"
+            title="Membership Tiers & Benefits"
+            subtitle="Choose the membership tier that best fits your organisation and goals."
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {membershipCategories.map((category, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {membershipTiers.map((tier, index) => (
               <motion.div
                 key={index}
                 initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`rounded p-6 flex flex-col ${
+                  tier.highlight
+                    ? "bg-[#1C1F2E] text-white border-2 border-[#2563EB]"
+                    : "bg-white border border-[#D8D5CF] hover:border-[#2563EB]/40 transition-colors duration-300"
+                }`}
               >
-                <Card className="h-full">
-                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2">{category.title}</h3>
-                  <div className="h-px bg-[#D8D5CF] mb-3" />
-                  <p className="text-sm text-[#3D4152] mb-4 leading-relaxed">{category.description}</p>
-                  <ul className="space-y-2">
-                    {category.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-[#3D4152]">
-                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Membership Plans */}
-      <Section variant="alt">
-        <AnimatedSection>
-          <SectionHeader
-            label="Plans"
-            title="Membership Plans"
-            subtitle="Comprehensive membership options designed for different needs."
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {membershipPlans.map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card variant="light" className="h-full flex flex-col">
-                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-1">{plan.name}</h3>
-                  <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-2xl font-heading font-bold text-[#2563EB]">{plan.price}</span>
-                    <span className="text-xs text-[#7A7E8F]">/{plan.period}</span>
-                  </div>
-                  <div className="h-px bg-[#D8D5CF] mb-4" />
-                  <ul className="space-y-3 flex-1 mb-6">
-                    {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-[#3D4152]">
-                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button variant="primary" size="md" className="w-full mt-auto">
-                    Apply Now
-                  </Button>
-                </Card>
+                <h3 className={`font-heading font-bold text-lg mb-1 ${tier.highlight ? "text-white" : "text-[#1C1F2E]"}`}>{tier.name}</h3>
+                <p className={`text-sm mb-4 leading-relaxed ${tier.highlight ? "text-white/70" : "text-[#3D4152]"}`}>{tier.description}</p>
+                <div className={`h-px mb-4 ${tier.highlight ? "bg-white/20" : "bg-[#D8D5CF]"}`} />
+                <ul className="space-y-3 flex-1 mb-6">
+                  {tier.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                      <span className={tier.highlight ? "text-white/80" : "text-[#3D4152]"}>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button variant={tier.highlight ? "primary" : "primary"} size="md" className="w-full mt-auto">
+                  Apply Now
+                </Button>
               </motion.div>
             ))}
           </div>
@@ -612,11 +571,12 @@ function MembershipForm() {
           <select id="mem-membershipType" name="membershipType" required
             value={form.membershipType} onChange={handleChange}
             className={`${inputBase} appearance-none cursor-pointer`}>
-            <option value="" disabled>Select a type</option>
-            <option value="Individual Professional">Individual Professional</option>
-            <option value="Startup / Company">Startup / Company</option>
-            <option value="Enterprise">Enterprise</option>
-            <option value="Academic Institution">Academic Institution</option>
+            <option value="" disabled>Select a tier</option>
+            <option value="Strategic Partner">Strategic Partner</option>
+            <option value="Corporate">Corporate</option>
+            <option value="SME">SME</option>
+            <option value="Startup / Associate">Startup / Associate</option>
+            <option value="Government / Institutional">Government / Institutional</option>
           </select>
         </div>
 

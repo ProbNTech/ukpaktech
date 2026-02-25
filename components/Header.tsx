@@ -40,6 +40,7 @@ const navItems: NavItem[] = [
     items: [
       { label: "About UPTECH", href: "/about", desc: "Our founding mission, vision for bilateral tech growth, and the values that guide everything we do." },
       { label: "Leadership & Governance", href: "/leadership", desc: "Meet the board, advisory council and executive team steering UPTECH's strategic direction." },
+      { label: "Structure & Procedure", href: "/structure", desc: "Organisational chart, key roles, and operating procedures governing UPTECH's operations." },
       { label: "Code of Conduct", href: "/code-of-conduct", desc: "The ethics, accountability standards and community guidelines every member upholds." },
     ],
   },
@@ -110,6 +111,7 @@ const navItems: NavItem[] = [
     items: [
       { label: "Membership Overview", href: "/membership", desc: "Explore membership tiers, benefits, and how to join the UPTECH community." },
       { label: "Membership Directory", href: "/membership/directory", desc: "Browse our corporate and individual members shaping the UK–Pakistan technology corridor." },
+      { label: "London Meeting Space", href: "/meeting-space", desc: "Professional meeting and event facilities in central London for UPTECH members." },
     ],
   },
   /* 7 — Mentorship (direct link) */
