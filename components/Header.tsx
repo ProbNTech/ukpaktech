@@ -6,11 +6,30 @@ import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 /* ─────────────────────────────────────────────────────────────────
-   Navigation data — each group carries items with descriptions,
-   plus editorial metadata used by the mega-panel sidebar.
+   Navigation types & data
 ───────────────────────────────────────────────────────────────── */
-const navGroups = [
+type NavGroup = {
+  kind: "group";
+  label: string;
+  displayLabel?: string;
+  tagline: string;
+  editorial: { headline: string; body: string; cta: { label: string; href: string } };
+  items: { label: string; href: string; desc: string }[];
+};
+
+type NavLink = {
+  kind: "link";
+  label: string;
+  displayLabel?: string;
+  href: string;
+};
+
+type NavItem = NavGroup | NavLink;
+
+const navItems: NavItem[] = [
+  /* 1 — About */
   {
+    kind: "group",
     label: "About",
     tagline: "Who we are",
     editorial: {
@@ -19,148 +38,68 @@ const navGroups = [
       cta: { label: "Our story →", href: "/about" },
     },
     items: [
-      {
-        label: "About UPTECH",
-        href: "/about",
-        desc: "Our founding mission, vision for bilateral tech growth, and the values that guide everything we do.",
-      },
-      {
-        label: "Leadership & Governance",
-        href: "/leadership",
-        desc: "Meet the board, advisory council and executive team steering UPTECH's strategic direction.",
-      },
-      {
-        label: "Code of Conduct",
-        href: "/code-of-conduct",
-        desc: "The ethics, accountability standards and community guidelines every member upholds.",
-      },
-      {
-        label: "Get in Touch",
-        href: "/contact",
-        desc: "Reach out for partnerships, membership enquiries, or general questions.",
-      },
+      { label: "About UPTECH", href: "/about", desc: "Our founding mission, vision for bilateral tech growth, and the values that guide everything we do." },
+      { label: "Leadership & Governance", href: "/leadership", desc: "Meet the board, advisory council and executive team steering UPTECH's strategic direction." },
+      { label: "Code of Conduct", href: "/code-of-conduct", desc: "The ethics, accountability standards and community guidelines every member upholds." },
     ],
   },
+  /* 2 — What We Do */
   {
-    label: "Programs",
-    tagline: "What we offer",
+    kind: "group",
+    label: "What We Do",
+    tagline: "Our work",
     editorial: {
       headline: "From classroom\nto cutting edge.",
-      body: "Our programmes equip individuals and organisations with the skills, networks and capital to compete on the global stage.",
+      body: "Our programmes, initiatives, and partnerships equip individuals and organisations with the skills, networks and capital to compete on the global stage.",
       cta: { label: "Explore programmes →", href: "/programs/ai-tech-programs" },
     },
     items: [
-      {
-        label: "AI & Tech Programs",
-        href: "/programs/ai-tech-programs",
-        desc: "Structured initiatives in artificial intelligence, cloud, cybersecurity and emerging technology adoption.",
-      },
-      {
-        label: "Skill Development Centre",
-        href: "/programs/skill-development-center",
-        desc: "Practical training pathways, certification tracks and mentorship for the modern tech workforce.",
-      },
-      {
-        label: "Incubation & Collective Startups",
-        href: "/programs/incubation-collective-startups",
-        desc: "Early-stage support, co-working access, investor introductions and go-to-market acceleration.",
-      },
+      { label: "AI & Tech Programs", href: "/programs/ai-tech-programs", desc: "Structured initiatives in artificial intelligence, cloud, cybersecurity and emerging technology." },
+      { label: "Skill Development Centre", href: "/programs/skill-development-center", desc: "Practical training pathways, certification tracks and mentorship for the modern tech workforce." },
+      { label: "Incubation & Startups", href: "/programs/incubation-collective-startups", desc: "Early-stage support, co-working access, investor introductions and go-to-market acceleration." },
+      { label: "Tech Excellence Awards", href: "/initiatives/tech-excellence-awards", desc: "Annual recognition celebrating the individuals and organisations driving extraordinary innovation." },
+      { label: "UK–Pakistan Partnership", href: "/ecosystem/uk-pakistan-technology-partnership", desc: "The bilateral framework underpinning joint ventures, policy dialogue and shared R&D investment." },
+      { label: "Trade Delegations", href: "/ecosystem/trade-delegations-and-exhibitions", desc: "Curated business missions, trade expos and pavilion programmes placing members on the world stage." },
     ],
   },
+  /* 3 — Services */
   {
+    kind: "group",
     label: "Services",
     tagline: "How we support you",
     editorial: {
       headline: "Grow faster.\nGo further.",
-      body: "From business networks and mentorship to marketing support and legal infrastructure — everything your tech business needs to scale.",
+      body: "From business networks to marketing support and legal infrastructure — everything your tech business needs to scale.",
       cta: { label: "Explore services →", href: "/services" },
     },
     items: [
-      {
-        label: "Business Networks",
-        href: "/services/business-networks",
-        desc: "Strategic connections, market advice, and access to the Enterprise Europe Network.",
-      },
-      {
-        label: "SME Hub",
-        href: "/services/sme-hub",
-        desc: "Sales insights, finance access, talent support, and exclusive member offers for growing tech SMEs.",
-      },
-      {
-        label: "Digital Marketing Hub",
-        href: "/services/digital-marketing",
-        desc: "Promote your tech products and services across the UK, Europe, Middle East and Africa.",
-      },
-      {
-        label: "Overseas Employment",
-        href: "/services/overseas-employment",
-        desc: "Contract employment connecting skilled tech professionals with international opportunities.",
-      },
-      {
-        label: "Mentorship",
-        href: "/services/mentorship",
-        desc: "Experienced entrepreneurs and industry experts guiding startups from idea to scale.",
-      },
-      {
-        label: "Business Support",
-        href: "/services/business-support",
-        desc: "Company registration, legal, IP protection, investment documents, and data rooms.",
-      },
+      { label: "Business Networks", href: "/services/business-networks", desc: "Strategic connections, market advice, and access to the Enterprise Europe Network." },
+      { label: "SME Hub", href: "/services/sme-hub", desc: "Sales insights, finance access, talent support, and exclusive member offers for growing tech SMEs." },
+      { label: "Digital Marketing Hub", href: "/services/digital-marketing", desc: "Promote your tech products and services across the UK, Europe, Middle East and Africa." },
+      { label: "Overseas Employment", href: "/services/overseas-employment", desc: "Contract employment connecting skilled tech professionals with international opportunities." },
+      { label: "Business Support", href: "/services/business-support", desc: "Company registration, legal, IP protection, investment documents, and data rooms." },
     ],
   },
+  /* 4 — Products */
   {
-    label: "Initiatives",
-    tagline: "What we're building",
+    kind: "group",
+    label: "Products",
+    tagline: "Our platforms",
     editorial: {
       headline: "Platforms that\nchange industries.",
-      body: "From AI marketplaces to cross-border recognition, our initiatives are creating new infrastructure for the digital economy.",
-      cta: { label: "View initiatives →", href: "/initiatives/people-ai" },
+      body: "From AI talent matching to cross-border digital marketplaces — our products are creating new infrastructure for the digital economy.",
+      cta: { label: "View products →", href: "/products" },
     },
     items: [
-      {
-        label: "People AI Platform",
-        href: "/initiatives/people-ai",
-        desc: "A human-centric AI ecosystem connecting talent, tools and opportunity at national scale.",
-      },
-      {
-        label: "TechMart Global",
-        href: "/initiatives/techmart-global",
-        desc: "A cross-border digital marketplace enabling UK and Pakistani tech firms to trade and collaborate.",
-      },
-      {
-        label: "Tech Excellence Awards",
-        href: "/initiatives/tech-excellence-awards",
-        desc: "Annual recognition celebrating the individuals and organisations driving extraordinary innovation.",
-      },
+      { label: "People AI Platform", href: "/initiatives/people-ai", desc: "A human-centric AI ecosystem connecting talent, tools and opportunity at national scale." },
+      { label: "TechMart Global", href: "/initiatives/techmart-global", desc: "A cross-border digital marketplace enabling UK and Pakistani tech firms to trade and collaborate." },
     ],
   },
+  /* 5 — Startup Funding (direct link) */
+  { kind: "link", label: "Startup Funding", displayLabel: "Funding", href: "/ecosystem/funding-and-grants" },
+  /* 6 — Membership */
   {
-    label: "Ecosystem",
-    tagline: "How we connect",
-    editorial: {
-      headline: "Two nations.\nOne digital future.",
-      body: "The UK–Pakistan technology corridor is open for business — backed by government, capital and a growing community of innovators.",
-      cta: { label: "Explore the corridor →", href: "/ecosystem/uk-pakistan-technology-partnership" },
-    },
-    items: [
-      {
-        label: "UK–Pakistan Tech Partnership",
-        href: "/ecosystem/uk-pakistan-technology-partnership",
-        desc: "The bilateral framework underpinning joint ventures, policy dialogue and shared R&D investment.",
-      },
-      {
-        label: "Funding & Grants",
-        href: "/ecosystem/funding-and-grants",
-        desc: "Access grant programmes, match-funding schemes and investment readiness support for qualifying members.",
-      },
-      {
-        label: "Trade Delegations & Exhibitions",
-        href: "/ecosystem/trade-delegations-and-exhibitions",
-        desc: "Curated business missions, trade expos and pavilion programmes placing members on the world stage.",
-      },
-    ],
-  },
-  {
+    kind: "group",
     label: "Membership",
     tagline: "Join the council",
     editorial: {
@@ -169,35 +108,25 @@ const navGroups = [
       cta: { label: "Become a member →", href: "/membership" },
     },
     items: [
-      {
-        label: "Membership Directory",
-        href: "/membership/directory",
-        desc: "Browse our corporate and individual members shaping the UK–Pakistan technology corridor.",
-      },
+      { label: "Membership Overview", href: "/membership", desc: "Explore membership tiers, benefits, and how to join the UPTECH community." },
+      { label: "Membership Directory", href: "/membership/directory", desc: "Browse our corporate and individual members shaping the UK–Pakistan technology corridor." },
     ],
   },
-  {
-    label: "Updates",
-    tagline: "What's happening",
-    editorial: {
-      headline: "Stay at the\nforefront.",
-      body: "From flagship conferences to open roles, everything happening across the UPTECH community — live and upcoming.",
-      cta: { label: "See all updates →", href: "/events" },
-    },
-    items: [
-      {
-        label: "Events & News",
-        href: "/events",
-        desc: "Conferences, roundtables, webinars and press coverage from across the UPTECH community.",
-      },
-      // {
-      //   label: "Careers at UPTECH",
-      //   href: "/careers",
-      //   desc: "Open positions, internship opportunities and ways to contribute to our growing organisation.",
-      // },
-    ],
-  },
+  /* 7 — Mentorship (direct link) */
+  { kind: "link", label: "Mentorship", href: "/services/mentorship" },
+  /* 8 — Job Portal (direct link) */
+  { kind: "link", label: "Job Portal", displayLabel: "Jobs", href: "/careers" },
+  /* 9 — Events (direct link) */
+  { kind: "link", label: "Events", href: "/events" },
+  /* 10 — News & Updates (direct link) */
+  { kind: "link", label: "News & Updates", displayLabel: "News", href: "/events" },
+  /* 11 — FAQs (direct link) */
+  { kind: "link", label: "FAQs", href: "/faqs" },
+  /* 12 — Contact Us (direct link) */
+  { kind: "link", label: "Contact Us", displayLabel: "Contact", href: "/contact" },
 ];
+
+const navGroups = navItems.filter((item): item is NavGroup => item.kind === "group");
 
 const HOVER_OPEN_DELAY = 80;
 const HOVER_CLOSE_DELAY = 180;
@@ -226,19 +155,16 @@ export function Header() {
     if (closeTimerRef.current) { clearTimeout(closeTimerRef.current); closeTimerRef.current = null; }
   }, []);
 
-  /* Open the panel for this group after a short delay */
   const handleGroupEnter = useCallback((label: string) => {
     clearTimers();
     openTimerRef.current = setTimeout(() => setOpenGroup(label), HOVER_OPEN_DELAY);
   }, [clearTimers]);
 
-  /* Keep the panel alive while the mouse is inside it */
   const handlePanelEnter = useCallback((label: string) => {
     clearTimers();
     setOpenGroup(label);
   }, [clearTimers]);
 
-  /* Start the close timer — cancelled if mouse re-enters before it fires */
   const handleLeave = useCallback(() => {
     clearTimers();
     closeTimerRef.current = setTimeout(() => setOpenGroup(null), HOVER_CLOSE_DELAY);
@@ -287,14 +213,8 @@ export function Header() {
               </span>
             </Link>
 
-            {/* ── Right: Contact + CTA ────────────────────────── */}
+            {/* ── Right: CTA ────────────────────────── */}
             <div className="hidden lg:flex items-center gap-5">
-              <Link
-                href="/contact"
-                className="text-[12px] font-medium text-[#475569] hover:text-[#1a2b5e] transition-colors uppercase tracking-[0.08em]"
-              >
-                Contact
-              </Link>
               <Link
                 href="/membership"
                 onMouseEnter={handleLeave}
@@ -320,7 +240,7 @@ export function Header() {
 
         {/* ── Tier 2: Navigation bar ─────────────────────────── */}
         <div className="hidden lg:block border-t border-gray-100">
-          <div className="px-5 sm:px-8 lg:px-12 xl:px-16">
+          <div className="px-5 sm:px-8 lg:px-8 xl:px-12">
             <nav
               className="flex items-center h-[46px]"
               aria-label="Main navigation"
@@ -328,30 +248,43 @@ export function Header() {
               <Link
                 href="/"
                 onMouseEnter={handleLeave}
-                className="relative h-full px-4 xl:px-5 flex items-center font-sans text-[13px] font-semibold tracking-[0.02em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150"
+                className="relative h-full px-2.5 xl:px-3 flex items-center font-sans text-[12px] font-semibold tracking-[0.02em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150"
               >
                 HOME
               </Link>
 
-              {navGroups.map((group) => {
-                const isActive = openGroup === group.label;
+              {navItems.map((item) => {
+                if (item.kind === "link") {
+                  return (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      onMouseEnter={handleLeave}
+                      className="relative h-full px-2.5 xl:px-3 flex items-center font-sans text-[12px] font-semibold tracking-[0.02em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150 whitespace-nowrap"
+                    >
+                      {(item.displayLabel ?? item.label).toUpperCase()}
+                    </Link>
+                  );
+                }
+
+                const isActive = openGroup === item.label;
                 return (
                   <button
-                    key={group.label}
+                    key={item.label}
                     type="button"
                     aria-expanded={isActive}
                     aria-haspopup="true"
-                    onMouseEnter={() => handleGroupEnter(group.label)}
+                    onMouseEnter={() => handleGroupEnter(item.label)}
                     className={`
-                      relative h-full px-4 xl:px-5 flex items-center gap-1
-                      font-sans text-[13px] font-semibold tracking-[0.02em]
-                      transition-colors duration-150 cursor-default select-none
+                      relative h-full px-2.5 xl:px-3 flex items-center gap-1
+                      font-sans text-[12px] font-semibold tracking-[0.02em]
+                      transition-colors duration-150 cursor-default select-none whitespace-nowrap
                       ${isActive
                         ? "text-[#0F172A]"
                         : "text-[#1a2b5e] hover:text-[#0F172A]"}
                     `}
                   >
-                    {group.label.toUpperCase()}
+                    {(item.displayLabel ?? item.label).toUpperCase()}
                     <svg
                       className={`w-2.5 h-2.5 transition-transform duration-200 ${isActive ? "rotate-180" : ""}`}
                       fill="none"
@@ -363,7 +296,7 @@ export function Header() {
                     </svg>
                     <span
                       className={`
-                        absolute bottom-0 left-3 right-3 h-[2px] bg-[#1a2b5e]
+                        absolute bottom-0 left-2 right-2 h-[2px] bg-[#1a2b5e]
                         transition-opacity duration-150
                         ${isActive ? "opacity-100" : "opacity-0"}
                       `}
@@ -377,9 +310,6 @@ export function Header() {
 
         {/* ═══════════════════════════════════════════════════════════
             MEGA PANEL — three-column editorial dropdown
-            Left:   large section title + tagline
-            Centre: nav items with descriptions (ruled list)
-            Right:  editorial pull-quote / CTA card
         ══════════════════════════════════════════════════════════════ */}
         <AnimatePresence>
           {activeGroup && (
@@ -397,17 +327,14 @@ export function Header() {
                   {/* ── LEFT: Section identity ──────────────────── */}
                   <div className="py-10 pr-10 flex flex-col justify-between">
                     <div>
-                      {/* panel-eyebrow token → 9px / tracking-[0.2em] */}
                       <p className="font-sans text-panel-eyebrow uppercase text-[#C41E3A] mb-3">
                         {activeGroup.tagline}
                       </p>
-                      {/* panel-title token → 26px / leading-[1.15] */}
                       <h2 className="font-heading font-bold text-panel-title text-[#0A0A0A]">
                         {activeGroup.label}
                       </h2>
                       <span className="block w-8 h-[2px] bg-[#C41E3A] mt-4" />
                     </div>
-                    {/* panel-desc token → 12px / leading-[1.7] */}
                     <p className="font-sans text-panel-desc text-[#6B6B6B] mt-6">
                       Navigate with the links to the right, or{" "}
                       <Link
@@ -423,7 +350,6 @@ export function Header() {
 
                   {/* ── CENTRE: Items list ──────────────────────── */}
                   <div className="py-10 px-10">
-                    {/* panel-eyebrow token → 9px / tracking-[0.2em] */}
                     <p className="font-sans text-panel-eyebrow uppercase text-[#6B6B6B] mb-4 pb-3 border-b border-[#E4E1DC]">
                       Section index
                     </p>
@@ -440,21 +366,17 @@ export function Header() {
                               transition-colors duration-150
                             "
                           >
-                            {/* panel-index token → 10px */}
                             <span className="font-sans text-panel-index text-[#C5C2BE] tabular-nums mt-0.5 flex-shrink-0 w-4">
                               {String(i + 1).padStart(2, "0")}
                             </span>
                             <div className="flex-1 min-w-0">
-                              {/* panel-item token → 14px */}
                               <span className="block font-heading font-semibold text-panel-item text-[#0A0A0A] group-hover/item:text-[#C41E3A] transition-colors duration-150 leading-snug mb-1">
                                 {item.label}
                               </span>
-                              {/* panel-desc token → 12px / leading-[1.7] */}
                               <span className="block font-sans text-panel-desc text-[#6B6B6B]">
                                 {item.desc}
                               </span>
                             </div>
-                            {/* panel-desc token → 12px */}
                             <span className="flex-shrink-0 font-sans text-panel-desc text-[#C41E3A] opacity-0 group-hover/item:opacity-100 transition-opacity duration-150 mt-0.5">
                               →
                             </span>
@@ -467,22 +389,18 @@ export function Header() {
                   {/* ── RIGHT: Editorial feature panel ─────────── */}
                   <div className="py-10 pl-10 flex flex-col justify-between">
                     <div>
-                      {/* panel-eyebrow token → 9px / tracking-[0.2em] */}
                       <p className="font-sans text-panel-eyebrow uppercase text-[#6B6B6B] mb-4">
                         From the council
                       </p>
-                      {/* panel-quote token → 18px / leading-[1.3] */}
                       <blockquote className="font-heading font-bold text-panel-quote text-[#0A0A0A] whitespace-pre-line">
                         {activeGroup.editorial.headline}
                       </blockquote>
                       <span className="block w-6 h-[1.5px] bg-[#E4E1DC] mt-5 mb-5" />
-                      {/* panel-body token → 12px / leading-[1.7] */}
                       <p className="font-sans text-panel-body text-[#6B6B6B]">
                         {activeGroup.editorial.body}
                       </p>
                     </div>
 
-                    {/* nav-label token → 10px / tracking-[0.13em] */}
                     <Link
                       href={activeGroup.editorial.cta.href}
                       onClick={() => setOpenGroup(null)}
@@ -551,7 +469,6 @@ export function Header() {
                   aria-label="Close menu"
                   className="w-8 h-8 flex items-center justify-center"
                 >
-                  {/* CSS ✕ */}
                   <span className="relative w-4 h-4 block">
                     <span className="absolute inset-0 flex items-center justify-center">
                       <span className="block w-4 h-[1.5px] bg-[#0A0A0A] rotate-45" />
@@ -565,20 +482,47 @@ export function Header() {
 
               {/* Scrollable nav */}
               <nav className="flex-1 overflow-y-auto" aria-label="Mobile navigation">
-                {navGroups.map((group) => {
-                  const isExp = mobileExpanded === group.label;
+                {/* Home link */}
+                <div className="border-b border-[#D8D5D0]">
+                  <Link
+                    href="/"
+                    onClick={() => setIsMobileOpen(false)}
+                    className="w-full px-6 py-4 flex items-center text-left"
+                  >
+                    <span className="font-heading font-bold text-mobile-group uppercase text-[#0A0A0A]">
+                      Home
+                    </span>
+                  </Link>
+                </div>
+
+                {navItems.map((item) => {
+                  if (item.kind === "link") {
+                    return (
+                      <div key={item.label} className="border-b border-[#D8D5D0]">
+                        <Link
+                          href={item.href}
+                          onClick={() => setIsMobileOpen(false)}
+                          className="w-full px-6 py-4 flex items-center text-left"
+                        >
+                          <span className="font-heading font-bold text-mobile-group uppercase text-[#0A0A0A]">
+                            {item.label}
+                          </span>
+                        </Link>
+                      </div>
+                    );
+                  }
+
+                  const isExp = mobileExpanded === item.label;
                   return (
-                    <div key={group.label} className="border-b border-[#D8D5D0]">
+                    <div key={item.label} className="border-b border-[#D8D5D0]">
                       <button
                         className="w-full px-6 py-4 flex items-center justify-between text-left"
-                        onClick={() => setMobileExpanded(isExp ? null : group.label)}
+                        onClick={() => setMobileExpanded(isExp ? null : item.label)}
                         aria-expanded={isExp}
                       >
-                        {/* mobile-group token → 13px / tracking-[0.16em] */}
                         <span className="font-heading font-bold text-mobile-group uppercase text-[#0A0A0A]">
-                          {group.label}
+                          {item.label}
                         </span>
-                        {/* CSS chevron */}
                         <span
                           className={`block w-[9px] h-[9px] border-r-[1.5px] border-b-[1.5px] border-[#0A0A0A] transition-transform duration-200 mr-1 ${
                             isExp ? "-rotate-135 translate-y-[3px]" : "rotate-45 -translate-y-[2px]"
@@ -596,20 +540,18 @@ export function Header() {
                             transition={{ duration: 0.2 }}
                             className="overflow-hidden"
                           >
-                            {group.items.map((item) => (
-                              <li key={item.href} className="border-t border-[#E4E1DC]">
+                            {item.items.map((subItem) => (
+                              <li key={subItem.href} className="border-t border-[#E4E1DC]">
                                 <Link
-                                  href={item.href}
+                                  href={subItem.href}
                                   onClick={() => setIsMobileOpen(false)}
                                   className="block px-8 py-3.5"
                                 >
-                                  {/* mobile-item token → 14px */}
                                   <span className="block font-sans text-mobile-item font-medium text-[#0A0A0A] hover:text-[#C41E3A] transition-colors duration-150 mb-0.5">
-                                    {item.label}
+                                    {subItem.label}
                                   </span>
-                                  {/* mobile-desc token → 12px / leading-[1.6] */}
                                   <span className="block font-sans text-mobile-desc text-[#6B6B6B]">
-                                    {item.desc}
+                                    {subItem.desc}
                                   </span>
                                 </Link>
                               </li>
@@ -620,12 +562,10 @@ export function Header() {
                     </div>
                   );
                 })}
-
               </nav>
 
               {/* Drawer CTA */}
               <div className="flex-shrink-0 p-6 border-t-2 border-[#0A0A0A] space-y-3">
-                {/* mobile-cta token → 11px / tracking-[0.14em] */}
                 <Link
                   href="/membership"
                   onClick={() => setIsMobileOpen(false)}
