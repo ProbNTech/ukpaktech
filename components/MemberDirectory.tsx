@@ -163,6 +163,18 @@ export function MemberDirectory() {
   return (
     <section className="py-8 lg:py-12" style={{ backgroundColor: "#EEECEA" }}>
       <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+        {/* ── Section banner ─────────────────────────────── */}
+        <div className="relative overflow-hidden rounded mb-6 -mx-2 sm:-mx-4" style={{ background: "linear-gradient(135deg, #1a2b5e 0%, #0f1a3a 100%)" }}>
+          <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: "linear-gradient(to bottom, #3b82f6, #1a2b5e)" }} />
+          <div className="absolute top-0 right-0 w-40 h-full opacity-[0.06]" style={{ background: "radial-gradient(circle at 80% 30%, white 0%, transparent 70%)" }} />
+          <div className="py-5 px-7 sm:px-10 pl-8 sm:pl-12">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5" style={{ color: "#60a5fa" }}>Member Directory</p>
+            <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-[2.2rem] leading-tight">
+              Browse Our Members
+            </h2>
+          </div>
+        </div>
+
         {/* ── Filter bar ──────────────────────────────────── */}
         <div className="bg-white border border-[#D8D5CF] rounded-lg p-5 mb-8">
           <div className="flex flex-col lg:flex-row gap-4">

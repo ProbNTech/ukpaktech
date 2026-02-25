@@ -35,6 +35,52 @@ export const articles: Article[] = [
     ],
   },
   {
+    slug: "indus-ai-week-pakistan-2026",
+    title:
+      "Pakistan Opens Indus AI Week 2026 with Landmark AI Summit and USD 1 Billion Commitment",
+    category: "Events",
+    date: "9 February 2026",
+    author: "UPTECH Editorial Team",
+    authorRole: "UK–Pakistan Tech Council",
+    image: "/image/Indus-AI-week-2026.webp",
+    excerpt:
+      "Pakistan launched Indus AI Week 2026, a five-day national platform on artificial intelligence, opening with the Indus AI Summit in Islamabad and announcing a USD 1 billion commitment to AI by 2030.",
+    body: [
+      "Pakistan launched Indus AI Week 2026 from 9 to 15 February, marking the country's most ambitious national engagement with artificial intelligence. The week-long programme, led by the Ministry of Information Technology and Telecommunication under Federal Minister Shaza Fatima Khawaja, brought together government leadership, international industry pioneers, academia, and youth to accelerate AI awareness and practical adoption across the country.",
+      "The programme opened with the Indus AI Summit on 9 February at the Jinnah Convention Center in Islamabad, attended by Prime Minister Muhammad Shehbaz Sharif as Chief Guest. Over 1,000 participants, including 150 international delegates, gathered as the Minister formally unveiled the Islamabad AI Declaration — articulating Pakistan's position on sovereign, inclusive, and responsible artificial intelligence across eight strategic pillars covering public value, human accountability, data privacy, safe AI, and a private-sector-led AI ecosystem.",
+      "The Innovation, Learning and Engagement Arena at Pakistan Sports Complex hosted over 40 specialised events across 11 thematic pavilions, including a National AI Training Bootcamp, the URAAN AI Techathon, the AI for HER Pavilion promoting gender-inclusive innovation, GovTech and DefenceTech showcases, and AR/VR and Robotics demonstrations. Jazz and PTCL Ufone led private-sector participation as primary sponsors, complemented by partnerships with SIFC, P@SHA, the Prime Minister's Youth Programme, and Ignite National Technology Fund.",
+      "For the UK–Pakistan technology partnership, Indus AI Week 2026 represents a significant acceleration of Pakistan's AI ecosystem maturity. UPTECH is working to identify partnership and investment opportunities emerging from the week's commitments, particularly in AI infrastructure, enterprise adoption, and talent development programmes that align with UK technology capabilities.",
+    ],
+    relatedSlugs: [
+      "islamabad-ai-declaration-2026",
+      "pakistan-1-billion-ai-investment-2026",
+      "indus-ai-week-london-2026",
+    ],
+  },
+  {
+    slug: "indus-ai-week-london-2026",
+    title:
+      "AI Indus Week Pakistan Held in London with UK–Pakistan AI Healthcare Roundtable",
+    category: "Events",
+    date: "21 February 2026",
+    author: "UPTECH Editorial Team",
+    authorRole: "UK–Pakistan Tech Council",
+    image: "/image/indus_london.webp",
+    excerpt:
+      "The AI Indus Week Pakistan event was held in London, hosted by SK Hub UK, bringing together AI experts, industry leaders, investors, Commonwealth representatives, and British Pakistani diaspora for high-level dialogue on UK–Pakistan digital collaboration.",
+    body: [
+      "The AI Indus Week Pakistan event was held in London, hosted by SK Hub UK, a UK-based innovation centre and business group. The flagship policy and leadership conference brought together prominent experts in artificial intelligence, industry leaders, innovators, investors, entrepreneurs, representatives of the Commonwealth, and members of the British Pakistani diaspora for high-level dialogue on AI policy and bilateral technology cooperation.",
+      "Pakistan's High Commissioner Dr Mohammad Faisal delivered keynote remarks, emphasising that Pakistan is prepared, capable, and open to sustained, trust-based digital collaboration. The event spotlighted Pakistan's transition from cost-competitive outsourcing to a capability-driven digital economy delivering AI, fintech, SaaS, and cybersecurity solutions — with tech diplomacy positioned as a framework placing technology at the core of economic transformation.",
+      "A centrepiece of the London engagement was a UK–Pakistan roundtable on AI in healthcare, which presented a practical model for sectoral cooperation. The roundtable produced actionable outcomes including a national AI-enabled health data framework, pilot AI-integrated EMR systems, responsible AI governance frameworks, public–private partnerships, and specialised human capital development initiatives across both countries.",
+      "For UPTECH and its members, the London event demonstrates the growing international dimension of Pakistan's AI strategy. The Council sees the UK–Pakistan AI healthcare roundtable as a template for sector-specific bilateral cooperation that can be replicated across fintech, education, and climate technology. UPTECH will facilitate follow-up engagement between roundtable participants and UK member companies with relevant capabilities.",
+    ],
+    relatedSlugs: [
+      "indus-ai-week-pakistan-2026",
+      "islamabad-ai-declaration-2026",
+      "pakistan-1-billion-ai-investment-2026",
+    ],
+  },
+  {
     slug: "pakistan-1-billion-ai-investment-2026",
     title: "Pakistan Secures USD 1 Billion AI Investment Commitment",
     category: "Investment",
