@@ -34,7 +34,7 @@ export default function CodeOfConductPage() {
       <PageHero
         title="Code of Conduct"
         subtitle="UPTECH is committed to maintaining the highest standards of ethical conduct, transparency, and accountability in all our activities."
-        image="/image/london-images/parliament-aerial.jpg"
+        image="/image/london-images/governance-ethics.jpg"
       />
 
       <Section>

@@ -61,7 +61,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
       <PageHero
         title="UK–Pakistan Technology Partnership"
         subtitle="Strengthening bilateral technology collaboration between the United Kingdom and Pakistan."
-        image="/image/london-images/about-london-skyline.jpg"
+        image="/image/london-images/partnership-collaboration.jpg"
       />
 
       {/* Intro */}

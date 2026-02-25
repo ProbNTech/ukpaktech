@@ -220,7 +220,7 @@ export default function MembershipClient() {
       <PageHero
         title="Become a Member"
         subtitle="Join a trusted network shaping the future of UK–Pakistan technology collaboration."
-        image="/image/london-images/tower-bridge-wide.jpg"
+        image="/image/london-images/professional-networking.jpg"
       />
 
       {/* Application Form */}

@@ -54,7 +54,7 @@ export default function SkillDevelopmentCenterPage() {
       <PageHero
         title="Skill Development Center"
         subtitle="Comprehensive training programs designed to build world-class tech capabilities and accelerate your career."
-        image="/image/london-images/membership-city-aerial.jpg"
+        image="/image/london-images/training-education.jpg"
       />
 
       {/* Trust Strip */}

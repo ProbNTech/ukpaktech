@@ -51,7 +51,7 @@ export default function TechExcellenceAwardsClient() {
       <PageHero
         title="UK–Pakistan Tech Excellence Awards"
         subtitle="Celebrating Innovation, Partnership, and Digital Leadership across Two Nations."
-        image="/image/london-images/contact-tower-bridge-day.jpg"
+        image="/image/london-images/awards-trophy.jpg"
       />
 
       {/* About */}
