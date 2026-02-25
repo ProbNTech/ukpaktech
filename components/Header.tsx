@@ -79,6 +79,7 @@ const navItems: NavItem[] = [
       { label: "Digital Marketing Hub", href: "/services/digital-marketing", desc: "Promote your tech products and services across the UK, Europe, Middle East and Africa." },
       { label: "Overseas Employment", href: "/services/overseas-employment", desc: "Contract employment connecting skilled tech professionals with international opportunities." },
       { label: "Business Support", href: "/services/business-support", desc: "Company registration, legal, IP protection, investment documents, and data rooms." },
+      { label: "Mentorship", href: "/services/mentorship", desc: "One-to-one guidance from experienced UK and Pakistan tech leaders and entrepreneurs." },
     ],
   },
   /* 4 — Products */
@@ -114,14 +115,12 @@ const navItems: NavItem[] = [
       { label: "London Meeting Space", href: "/meeting-space", desc: "Professional meeting and event facilities in central London for UPTECH members." },
     ],
   },
-  /* 7 — Mentorship (direct link) */
-  { kind: "link", label: "Mentorship", href: "/services/mentorship" },
-  /* 8 — Job Portal (direct link) */
-  { kind: "link", label: "Job Portal", displayLabel: "Jobs", href: "/job-portal" },
-  /* 9 — Events (direct link) */
+  /* 7 — Job Portal (direct link) */
+  { kind: "link", label: "Job Portal", href: "/job-portal" },
+  /* 8 — Events (direct link) */
   { kind: "link", label: "Events", href: "/events" },
-  /* 10 — News & Updates (direct link) */
-  { kind: "link", label: "News & Updates", displayLabel: "News", href: "/events" },
+  /* 9 — News & Updates (direct link) */
+  { kind: "link", label: "News & Updates", displayLabel: "News", href: "/news" },
   /* 11 — FAQs (direct link) */
   { kind: "link", label: "FAQs", href: "/faqs" },
   /* 12 — Contact Us (direct link) */

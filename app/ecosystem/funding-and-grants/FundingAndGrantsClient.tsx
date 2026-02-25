@@ -1,12 +1,29 @@
 "use client";
 
-import { Section } from "@/components/Section";
+import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
-import { SectionHeader } from "@/components/SectionHeader";
-import { PageHero } from "@/components/PageHero";
-import { CheckCircle2, ChevronDown } from "lucide-react";
+import {
+  Rocket,
+  Lightbulb,
+  Globe2,
+  Cpu,
+  Building2,
+  GraduationCap,
+  TrendingUp,
+  BookOpen,
+  Banknote,
+  Users,
+  Shield,
+  FileText,
+  CheckCircle2,
+  ArrowUpRight,
+  ChevronDown,
+} from "lucide-react";
 import { useState } from "react";
+import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+
+/* ─── Data ──────────────────────────────────────────────────────────── */
 
 const stats = [
   { value: "£50M+", label: "Funding Facilitated" },
@@ -16,18 +33,33 @@ const stats = [
 ];
 
 const overviewItems = [
-  { title: "Startup Funding", description: "Seed and early-stage funding for innovative technology startups with cross-border potential." },
-  { title: "Research Grants", description: "Support for academic research and technology development projects driving bilateral innovation." },
-  { title: "Growth Capital", description: "Investment opportunities for scaling technology businesses across the UK–Pakistan corridor." },
+  {
+    title: "Startup Funding",
+    description: "Seed and early-stage funding for innovative technology startups with cross-border potential.",
+    icon: Rocket,
+    color: "#2563EB",
+  },
+  {
+    title: "Research Grants",
+    description: "Support for academic research and technology development projects driving bilateral innovation.",
+    icon: BookOpen,
+    color: "#8b5cf6",
+  },
+  {
+    title: "Growth Capital",
+    description: "Investment opportunities for scaling technology businesses across the UK–Pakistan corridor.",
+    icon: TrendingUp,
+    color: "#22C55E",
+  },
 ];
 
 const opportunities = [
-  { title: "Innovation Grants", description: "Funding for innovative technology projects that demonstrate potential for cross-border impact." },
-  { title: "Startup Accelerator", description: "Comprehensive support including funding, mentorship, and access to networks." },
-  { title: "Bilateral Projects", description: "Grants for collaborative projects between UK and Pakistan organisations." },
-  { title: "Research & Development", description: "Support for R&D initiatives in emerging technologies and digital transformation." },
-  { title: "Enterprise Partnerships", description: "Funding opportunities for established companies expanding cross-border operations." },
-  { title: "Skills Development", description: "Grants for programs that enhance technology skills and workforce capabilities." },
+  { title: "Innovation Grants", description: "Funding for innovative technology projects that demonstrate potential for cross-border impact.", icon: Lightbulb, color: "#f59e0b" },
+  { title: "Startup Accelerator", description: "Comprehensive support including funding, mentorship, and access to networks.", icon: Rocket, color: "#2563EB" },
+  { title: "Bilateral Projects", description: "Grants for collaborative projects between UK and Pakistan organisations.", icon: Globe2, color: "#22C55E" },
+  { title: "Research & Development", description: "Support for R&D initiatives in emerging technologies and digital transformation.", icon: Cpu, color: "#8b5cf6" },
+  { title: "Enterprise Partnerships", description: "Funding opportunities for established companies expanding cross-border operations.", icon: Building2, color: "#C41E3A" },
+  { title: "Skills Development", description: "Grants for programs that enhance technology skills and workforce capabilities.", icon: GraduationCap, color: "#ef4444" },
 ];
 
 const fundingStages = [
@@ -36,41 +68,47 @@ const fundingStages = [
     title: "Startup Funding",
     description: "We provide entrepreneurs with pre-seed capital, support from a dedicated team, access to corporate partners and membership to our global founder community.",
     features: ["Pre-seed capital investment", "Dedicated support team", "Corporate partner introductions", "Global founder community access"],
+    icon: Rocket,
+    color: "#2563EB",
   },
   {
     stage: "Series A & B",
     title: "Growth Capital",
     description: "For companies that demonstrate potential to 10x their growth. By aligning with our expertise, network, and capital, your startup will be well-positioned to scale rapidly.",
     features: ["Raise capital with operational support", "Pitch at flagship investor days", "Warm introductions to top-tier funds", "Six months 1:1 expert support"],
+    icon: TrendingUp,
+    color: "#22C55E",
   },
   {
     stage: "R&D",
     title: "R&D Incentives",
     description: "Support for research and development initiatives in emerging technologies, digital transformation, and innovation-led projects with cross-border impact.",
     features: ["R&D tax credit guidance", "Innovation grant applications", "Research partnership facilitation", "Technology transfer support"],
+    icon: Cpu,
+    color: "#8b5cf6",
   },
 ];
 
 const eligibilityCriteria = [
-  "Technology-focused projects with clear innovation potential",
-  "Alignment with UK–Pakistan technology partnership objectives",
-  "Demonstrated commitment to cross-border collaboration",
-  "Viable business model or research proposal",
-  "Experienced team with relevant expertise",
+  { text: "Technology-focused projects with clear innovation potential", icon: Lightbulb, color: "#2563EB" },
+  { text: "Alignment with UK–Pakistan technology partnership objectives", icon: Globe2, color: "#22C55E" },
+  { text: "Demonstrated commitment to cross-border collaboration", icon: Users, color: "#8b5cf6" },
+  { text: "Viable business model or research proposal", icon: FileText, color: "#f59e0b" },
+  { text: "Experienced team with relevant expertise", icon: Shield, color: "#C41E3A" },
 ];
 
 const applicationSteps = [
-  { number: "01", title: "Submit Application", description: "Complete the online application form with project details and objectives.", outcome: "Application logged" },
-  { number: "02", title: "Review Process", description: "Expert panel evaluates your proposal against eligibility and impact criteria.", outcome: "Proposal scored" },
-  { number: "03", title: "Due Diligence", description: "Shortlisted applicants undergo a thorough due diligence and reference check process.", outcome: "Validation complete" },
-  { number: "04", title: "Funding Decision", description: "Notification of outcome and disbursement of approved funds with milestone tracking.", outcome: "Funds released" },
+  { number: "01", title: "Submit Application", description: "Complete the online application form with project details and objectives.", outcome: "Application logged", icon: FileText, color: "#2563EB" },
+  { number: "02", title: "Review Process", description: "Expert panel evaluates your proposal against eligibility and impact criteria.", outcome: "Proposal scored", icon: Shield, color: "#22C55E" },
+  { number: "03", title: "Due Diligence", description: "Shortlisted applicants undergo a thorough due diligence and reference check process.", outcome: "Validation complete", icon: CheckCircle2, color: "#8b5cf6" },
+  { number: "04", title: "Funding Decision", description: "Notification of outcome and disbursement of approved funds with milestone tracking.", outcome: "Funds released", icon: Banknote, color: "#f59e0b" },
 ];
 
 const benefits = [
-  { title: "Financial Support", description: "Access to capital for project development, scaling, and cross-border expansion." },
-  { title: "Mentorship", description: "Guidance from experienced industry leaders, investors, and domain experts." },
-  { title: "Networking", description: "Connect with investors, corporate partners, and potential collaborators across borders." },
-  { title: "Market Access", description: "Opportunities to expand into UK, Pakistan, and international markets." },
+  { title: "Financial Support", description: "Access to capital for project development, scaling, and cross-border expansion.", icon: Banknote, color: "#2563EB" },
+  { title: "Mentorship", description: "Guidance from experienced industry leaders, investors, and domain experts.", icon: Users, color: "#22C55E" },
+  { title: "Networking", description: "Connect with investors, corporate partners, and potential collaborators across borders.", icon: Globe2, color: "#8b5cf6" },
+  { title: "Market Access", description: "Opportunities to expand into UK, Pakistan, and international markets.", icon: ArrowUpRight, color: "#f59e0b" },
 ];
 
 const faqs = [
@@ -81,220 +119,771 @@ const faqs = [
   { question: "What are the reporting requirements?", answer: "Funded companies are required to provide quarterly progress reports, financial updates, and milestone tracking. We work collaboratively with funded companies to ensure success and accountability." },
 ];
 
-export default function FundingAndGrantsClient() {
-  return (
-    <div>
-      <PageHero
-        title="Funding and Grants"
-        subtitle="Access funding opportunities to drive technology innovation and cross-border collaboration between the UK and Pakistan."
-        image="/image/london-images/investment-finance-meeting.jpg"
-      />
+/* ─── Helpers ───────────────────────────────────────────────────────── */
 
-      {/* Stats Bar */}
-      <section className="relative z-[1] bg-[#1C1F2E]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl mb-1">{stat.value}</p>
-                <p className="text-white/60 text-xs sm:text-sm font-medium uppercase tracking-wider">{stat.label}</p>
-              </div>
-            ))}
+const faqColors = ["#2563EB", "#22C55E", "#8b5cf6", "#f59e0b", "#C41E3A"];
+
+const statColors = ["#2563EB", "#22C55E", "#8b5cf6", "#f59e0b"];
+
+/* ─── Component ─────────────────────────────────────────────────────── */
+
+export default function FundingAndGrantsClient() {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <div className="bg-[#0B0F1A]">
+      {/* ── HERO ──────────────────────────────────────────────────── */}
+      <section className="relative w-full min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/image/london-images/investment-finance-meeting.jpg"
+          alt="Funding and Grants"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F1A]/80 via-[#0B0F1A]/70 to-[#0B0F1A]" />
+        {/* Grid pattern overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        {/* Glow orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#2563EB]/10 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#8b5cf6]/8 blur-[100px] pointer-events-none" />
+
+        {/* Hero content */}
+        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-32 md:py-40">
+          <motion.div
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-4xl"
+          >
+            {/* Glass morphism label */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
+              <span className="text-white/70 text-xs font-semibold uppercase tracking-widest">Ecosystem / Funding &amp; Grants</span>
+            </div>
+
+            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
+              <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
+                Funding and{" "}
+              </span>
+              <span className="bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
+                Grants
+              </span>
+            </h1>
+
+            <p className="text-white/60 text-lg sm:text-xl max-w-2xl leading-relaxed mb-10">
+              Access funding opportunities to drive technology innovation and cross-border collaboration between the UK and Pakistan.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <Button href="/membership" variant="primary" size="lg" showArrow className="!bg-[#2563EB] hover:!bg-[#1d4ed8]">
+                Become a Member
+              </Button>
+              <Button href="/contact" variant="glass" size="lg" showArrow>
+                Contact Us
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── STATS BAR ─────────────────────────────────────────────── */}
+      <section className="relative z-[1] bg-[#0E1221]">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+            {stats.map((stat, i) => {
+              const color = statColors[i % statColors.length];
+              return (
+                <motion.div
+                  key={stat.label}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="relative text-center rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm px-6 py-7 overflow-hidden group hover:border-white/[0.12] transition-all duration-500"
+                >
+                  {/* Colored top border */}
+                  <div
+                    className="absolute top-0 left-0 right-0 h-[2px]"
+                    style={{ background: `linear-gradient(to right, transparent, ${color}, transparent)` }}
+                  />
+                  {/* Subtle glow on hover */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    style={{ background: `radial-gradient(ellipse at center, ${color}08, transparent 70%)` }}
+                  />
+                  <p
+                    className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl mb-2 relative"
+                    style={{ color }}
+                  >
+                    {stat.value}
+                  </p>
+                  <p className="text-white/50 text-xs sm:text-sm font-medium uppercase tracking-wider relative">{stat.label}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Intro */}
-      <Section variant="light">
-        <AnimatedSection>
-          <div className="max-w-3xl mb-10">
-            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Overview</p>
-            <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl leading-snug mb-6">
-              Funding Programs Designed for the UK–Pakistan Tech Corridor
-            </h2>
-            <p className="text-[#3D4152] text-base leading-relaxed mb-5">
-              UPTECH provides access to funding opportunities and grants designed to support technology innovation, startup growth, and cross-border collaboration between the UK and Pakistan.
-            </p>
-            <p className="text-[#3D4152] text-base leading-relaxed">
-              Our funding programs enable entrepreneurs, researchers, and organisations to turn innovative ideas into reality. Whether you&apos;re a startup seeking seed funding, a researcher looking for grant support, or an enterprise exploring partnership opportunities, we connect you with the right funding sources and resources.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {overviewItems.map((item) => (
-              <div key={item.title} className="bg-white border border-[#D8D5CF] p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
-                <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{item.title}</h3>
-                <div className="h-px bg-[#1C1F2E]/15 mb-3" />
-                <p className="text-[#3D4152] text-sm leading-relaxed">{item.description}</p>
+      {/* ── OVERVIEW ──────────────────────────────────────────────── */}
+      <section className="relative bg-[#0B0F1A] overflow-hidden">
+        {/* Subtle grid bg */}
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+          <AnimatedSection>
+            <div className="max-w-3xl mb-14">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">Overview</span>
               </div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Available Opportunities */}
-      <Section variant="alt">
-        <AnimatedSection>
-          <SectionHeader
-            label="Funding"
-            title="Available Opportunities"
-            subtitle="Explore our range of funding programs designed to support technology innovation and cross-border collaboration."
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {opportunities.map((opp) => (
-              <div key={opp.title} className="bg-white border border-[#D8D5CF] p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
-                <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{opp.title}</h3>
-                <div className="h-px bg-[#1C1F2E]/15 mb-3" />
-                <p className="text-[#3D4152] text-sm leading-relaxed">{opp.description}</p>
-              </div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Funding Stages */}
-      <Section variant="light">
-        <AnimatedSection>
-          <SectionHeader
-            label="Stages"
-            title="Funding by Growth Stage"
-            subtitle="Tailored funding support from pre-seed through to Series B and R&D incentives."
-          />
-          <div className="grid lg:grid-cols-3 gap-6">
-            {fundingStages.map((item) => (
-              <div key={item.stage} className="bg-white border border-[#D8D5CF] rounded p-6 flex flex-col hover:border-[#2563EB]/40 transition-colors duration-300">
-                <p className="text-xs font-semibold text-[#2563EB] uppercase tracking-wide mb-2">{item.stage}</p>
-                <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2">{item.title}</h3>
-                <div className="h-px bg-[#D8D5CF] mb-3" />
-                <p className="text-sm text-[#3D4152] leading-relaxed mb-4">{item.description}</p>
-                <ul className="space-y-2 mt-auto">
-                  {item.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-[#3D4152]">
-                      <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Application Process */}
-      <Section variant="alt">
-        <AnimatedSection>
-          <SectionHeader
-            label="Process"
-            title="Application Process"
-            subtitle="A transparent, structured pathway from application to funding."
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {applicationSteps.map((step) => (
-              <div key={step.number} className="border-t-2 border-[#2563EB] pt-5">
-                <span className="text-xs font-bold text-[#2563EB] tabular-nums block mb-2">{step.number}</span>
-                <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{step.title}</h3>
-                <p className="text-[#3D4152] text-sm leading-relaxed mb-3">{step.description}</p>
-                <span className="text-xs font-semibold text-[#22C55E]">&rarr; {step.outcome}</span>
-              </div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Eligibility + Benefits Sidebar */}
-      <Section variant="light">
-        <AnimatedSection>
-          <div className="grid lg:grid-cols-5 gap-12">
-            <div className="lg:col-span-3">
-              <SectionHeader
-                label="Eligibility"
-                title="Eligibility Criteria"
-                subtitle="Understanding the requirements for funding and grant applications."
-              />
-              <ul className="space-y-0">
-                {eligibilityCriteria.map((item) => (
-                  <li key={item} className="flex items-start gap-3 py-3 border-b border-[#1C1F2E]/10 last:border-b-0">
-                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+                Funding Programs Designed for the{" "}
+                <span className="bg-gradient-to-r from-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">
+                  UK–Pakistan Tech Corridor
+                </span>
+              </h2>
+              <p className="text-white/50 text-base leading-relaxed mb-5">
+                UPTECH provides access to funding opportunities and grants designed to support technology innovation, startup growth, and cross-border collaboration between the UK and Pakistan.
+              </p>
+              <p className="text-white/50 text-base leading-relaxed">
+                Our funding programs enable entrepreneurs, researchers, and organisations to turn innovative ideas into reality. Whether you&apos;re a startup seeking seed funding, a researcher looking for grant support, or an enterprise exploring partnership opportunities, we connect you with the right funding sources and resources.
+              </p>
             </div>
-            <div className="lg:col-span-2">
-              <div className="bg-white border border-[#D8D5CF] p-8 sticky top-8">
-                <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-5">Why Apply Through UPTECH</h3>
-                <div className="h-px bg-[#1C1F2E]/15 mb-5" />
-                <ul className="space-y-4">
-                  {benefits.map((benefit) => (
-                    <li key={benefit.title} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <div>
-                        <span className="font-semibold text-[#1C1F2E] text-sm">{benefit.title}</span>
-                        <p className="text-[#3D4152] text-xs leading-relaxed mt-0.5">{benefit.description}</p>
+            <div className="grid md:grid-cols-3 gap-6">
+              {overviewItems.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    className="group relative rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm p-7 hover:-translate-y-1 transition-all duration-500 overflow-hidden"
+                  >
+                    {/* Gradient top border */}
+                    <div
+                      className="absolute top-0 left-0 right-0 h-[2px]"
+                      style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}40)` }}
+                    />
+                    {/* Glow effect on hover */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      style={{ background: `radial-gradient(ellipse at top, ${item.color}0a, transparent 70%)` }}
+                    />
+                    {/* Colored border glow on hover */}
+                    <div
+                      className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      style={{ boxShadow: `inset 0 0 0 1px ${item.color}20, 0 0 30px -10px ${item.color}15` }}
+                    />
+                    {/* Icon */}
+                    <div className="relative mb-5">
+                      <div
+                        className="absolute inset-[-8px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500 pointer-events-none"
+                        style={{ background: item.color }}
+                      />
+                      <div
+                        className="relative w-13 h-13 rounded-xl flex items-center justify-center"
+                        style={{ background: `${item.color}10`, border: `1px solid ${item.color}15` }}
+                      >
+                        <Icon className="w-6 h-6" style={{ color: item.color }} strokeWidth={1.5} />
                       </div>
-                    </li>
-                  ))}
-                </ul>
+                    </div>
+                    <h3 className="relative font-heading font-bold text-white text-base mb-3">{item.title}</h3>
+                    <div className="relative h-px bg-white/[0.06] mb-3" />
+                    <p className="relative text-white/45 text-sm leading-relaxed">{item.description}</p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── OPPORTUNITIES ─────────────────────────────────────────── */}
+      <section className="relative bg-[#0E1221] overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
+        {/* Glow orb */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#22C55E]/5 blur-[150px] pointer-events-none" />
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+          <AnimatedSection>
+            {/* Section header */}
+            <div className="max-w-3xl mb-14">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/5 mb-5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]" />
+                <span className="text-[#22C55E] text-xs font-semibold uppercase tracking-wider">Funding</span>
+              </div>
+              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
+                Available Opportunities
+              </h2>
+              <p className="text-white/45 text-base leading-relaxed">
+                Explore our range of funding programs designed to support technology innovation and cross-border collaboration.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {opportunities.map((opp, i) => {
+                const Icon = opp.icon;
+                return (
+                  <motion.div
+                    key={opp.title}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                    className="group relative rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm p-7 hover:-translate-y-1 transition-all duration-500 overflow-hidden"
+                  >
+                    {/* Gradient top border */}
+                    <div
+                      className="absolute top-0 left-0 right-0 h-[2px]"
+                      style={{ background: `linear-gradient(to right, ${opp.color}, ${opp.color}40)` }}
+                    />
+                    {/* Hover glow */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      style={{ background: `radial-gradient(ellipse at top, ${opp.color}0a, transparent 70%)` }}
+                    />
+                    <div
+                      className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      style={{ boxShadow: `inset 0 0 0 1px ${opp.color}20, 0 0 30px -10px ${opp.color}15` }}
+                    />
+                    {/* Icon */}
+                    <div className="relative mb-5">
+                      <div
+                        className="absolute inset-[-8px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500 pointer-events-none"
+                        style={{ background: opp.color }}
+                      />
+                      <div
+                        className="relative w-12 h-12 rounded-xl flex items-center justify-center"
+                        style={{ background: `${opp.color}10`, border: `1px solid ${opp.color}15` }}
+                      >
+                        <Icon className="w-5.5 h-5.5" style={{ color: opp.color }} strokeWidth={1.5} />
+                      </div>
+                    </div>
+                    <h3 className="relative font-heading font-bold text-white text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-300">
+                      {opp.title}
+                    </h3>
+                    <div className="relative h-px bg-white/[0.06] mb-3" />
+                    <p className="relative text-white/45 text-sm leading-relaxed">{opp.description}</p>
+                    {/* Arrow hint on hover */}
+                    <div
+                      className="relative mt-5 flex items-center gap-1.5 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ color: opp.color }}
+                    >
+                      <span>Learn more</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── FUNDING STAGES — PREMIUM ──────────────────────────────── */}
+      <section className="relative bg-[#131942] overflow-hidden">
+        {/* Ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-[#2563EB]/5 blur-[200px] pointer-events-none" />
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+          <AnimatedSection>
+            {/* Section header */}
+            <div className="max-w-3xl mb-14">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#8b5cf6]/20 bg-[#8b5cf6]/5 mb-5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
+                <span className="text-[#8b5cf6] text-xs font-semibold uppercase tracking-wider">Stages</span>
+              </div>
+              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
+                Funding by{" "}
+                <span className="bg-gradient-to-r from-[#8b5cf6] to-[#2563EB] bg-clip-text text-transparent">
+                  Growth Stage
+                </span>
+              </h2>
+              <p className="text-white/45 text-base leading-relaxed">
+                Tailored funding support from pre-seed through to Series B and R&amp;D incentives.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-7">
+              {fundingStages.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={item.stage}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.5, delay: i * 0.12 }}
+                    className="group relative rounded-2xl border border-white/[0.07] bg-white/[0.03] backdrop-blur-sm p-8 flex flex-col hover:-translate-y-1.5 transition-all duration-500 overflow-hidden"
+                  >
+                    {/* Gradient top border */}
+                    <div
+                      className="absolute top-0 left-0 right-0 h-[2px]"
+                      style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}40)` }}
+                    />
+                    {/* Full card glow on hover */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      style={{ background: `radial-gradient(ellipse at top, ${item.color}0c, transparent 70%)` }}
+                    />
+                    <div
+                      className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      style={{ boxShadow: `inset 0 0 0 1px ${item.color}25, 0 0 40px -10px ${item.color}20` }}
+                    />
+
+                    {/* Stage label + icon row */}
+                    <div className="relative flex items-center gap-4 mb-6">
+                      <div className="relative">
+                        <div
+                          className="absolute inset-[-8px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500 pointer-events-none"
+                          style={{ background: item.color }}
+                        />
+                        <div
+                          className="relative w-14 h-14 rounded-xl flex items-center justify-center"
+                          style={{ background: `${item.color}12`, border: `1px solid ${item.color}20` }}
+                        >
+                          <Icon className="w-7 h-7" style={{ color: item.color }} strokeWidth={1.5} />
+                        </div>
+                      </div>
+                      <div>
+                        {/* Glowing badge */}
+                        <span
+                          className="inline-block text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-1.5"
+                          style={{
+                            background: `${item.color}15`,
+                            color: item.color,
+                            border: `1px solid ${item.color}30`,
+                            boxShadow: `0 0 12px -3px ${item.color}30`,
+                          }}
+                        >
+                          {item.stage}
+                        </span>
+                        <h3 className="font-heading font-bold text-lg text-white">{item.title}</h3>
+                      </div>
+                    </div>
+
+                    <div className="relative h-px bg-white/[0.06] mb-5" />
+                    <p className="relative text-sm text-white/45 leading-relaxed mb-6">{item.description}</p>
+                    <ul className="relative space-y-3 mt-auto">
+                      {item.features.map((f) => (
+                        <li key={f} className="flex items-start gap-3 text-sm text-white/55">
+                          <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: item.color }} />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── APPLICATION PROCESS ────────────────────────────────────── */}
+      <section className="relative bg-[#0E1221] overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[400px] rounded-full bg-[#f59e0b]/5 blur-[150px] pointer-events-none" />
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+          <AnimatedSection>
+            {/* Section header */}
+            <div className="max-w-3xl mb-14">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f59e0b]/20 bg-[#f59e0b]/5 mb-5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
+                <span className="text-[#f59e0b] text-xs font-semibold uppercase tracking-wider">Process</span>
+              </div>
+              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
+                Application Process
+              </h2>
+              <p className="text-white/45 text-base leading-relaxed">
+                A transparent, structured pathway from application to funding.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {applicationSteps.map((step, i) => {
+                const Icon = step.icon;
+                return (
+                  <motion.div
+                    key={step.number}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    className="group relative rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm p-7 hover:-translate-y-1 transition-all duration-500 overflow-hidden"
+                  >
+                    {/* Gradient top border */}
+                    <div
+                      className="absolute top-0 left-0 right-0 h-[2px]"
+                      style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}40)` }}
+                    />
+                    {/* Hover glow */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                      style={{ background: `radial-gradient(ellipse at top, ${step.color}0a, transparent 70%)` }}
+                    />
+
+                    {/* Numbered glowing circle + icon */}
+                    <div className="relative flex items-center gap-3 mb-5">
+                      <div className="relative">
+                        {/* Glow behind circle */}
+                        <div
+                          className="absolute inset-[-4px] rounded-full blur-md opacity-40 pointer-events-none"
+                          style={{ background: step.color }}
+                        />
+                        <div
+                          className="relative w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
+                          style={{
+                            background: `linear-gradient(135deg, ${step.color}, ${step.color}90)`,
+                            boxShadow: `0 0 20px -5px ${step.color}50`,
+                          }}
+                        >
+                          {step.number}
+                        </div>
+                      </div>
+                      <div
+                        className="w-9 h-9 rounded-lg flex items-center justify-center"
+                        style={{ background: `${step.color}10`, border: `1px solid ${step.color}15` }}
+                      >
+                        <Icon className="w-4.5 h-4.5" style={{ color: step.color }} strokeWidth={1.5} />
+                      </div>
+                    </div>
+
+                    <h3 className="relative font-heading font-bold text-white text-base mb-2">{step.title}</h3>
+                    <p className="relative text-white/45 text-sm leading-relaxed mb-5">{step.description}</p>
+
+                    {/* Outcome badge */}
+                    <div
+                      className="relative inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full"
+                      style={{
+                        background: `${step.color}10`,
+                        color: step.color,
+                        border: `1px solid ${step.color}20`,
+                      }}
+                    >
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      <span>{step.outcome}</span>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── ELIGIBILITY + BENEFITS SIDEBAR ─────────────────────────── */}
+      <section className="relative bg-[#0B0F1A] overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#C41E3A]/5 blur-[150px] pointer-events-none" />
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+          <AnimatedSection>
+            <div className="grid lg:grid-cols-5 gap-12">
+              {/* Eligibility */}
+              <div className="lg:col-span-3">
+                <div className="mb-10">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
+                    <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">Eligibility</span>
+                  </div>
+                  <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
+                    Eligibility Criteria
+                  </h2>
+                  <p className="text-white/45 text-base leading-relaxed">
+                    Understanding the requirements for funding and grant applications.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  {eligibilityCriteria.map((item, i) => {
+                    const Icon = item.icon;
+                    return (
+                      <motion.div
+                        key={item.text}
+                        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -12 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-30px" }}
+                        transition={{ duration: 0.35, delay: i * 0.07 }}
+                        className="group relative rounded-xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm p-5 flex items-start gap-4 hover:-translate-y-0.5 transition-all duration-500 overflow-hidden"
+                      >
+                        {/* Left accent border */}
+                        <div
+                          className="absolute top-3 bottom-3 left-0 w-1 rounded-r-full"
+                          style={{ background: `linear-gradient(to bottom, ${item.color}, ${item.color}40)` }}
+                        />
+                        {/* Hover glow */}
+                        <div
+                          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                          style={{ background: `radial-gradient(ellipse at left, ${item.color}08, transparent 60%)` }}
+                        />
+                        <div
+                          className="relative flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ml-2"
+                          style={{ background: `${item.color}10`, border: `1px solid ${item.color}15` }}
+                        >
+                          <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
+                        </div>
+                        <span className="relative text-white/55 text-sm leading-relaxed pt-2">{item.text}</span>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Benefits Sidebar */}
+              <div className="lg:col-span-2">
+                <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] backdrop-blur-sm p-8 sticky top-8 overflow-hidden relative">
+                  {/* Subtle top glow */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E]" />
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-24 bg-gradient-to-b from-[#8b5cf6]/10 to-transparent blur-xl pointer-events-none" />
+
+                  <h3 className="relative font-heading font-bold text-white text-lg mb-5">Why Apply Through UPTECH</h3>
+                  <div className="relative h-px bg-white/[0.06] mb-6" />
+                  <ul className="relative space-y-6">
+                    {benefits.map((benefit, i) => {
+                      const Icon = benefit.icon;
+                      return (
+                        <motion.li
+                          key={benefit.title}
+                          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, margin: "-30px" }}
+                          transition={{ duration: 0.3, delay: i * 0.08 }}
+                          className="relative flex items-start gap-3.5 pl-4"
+                        >
+                          {/* Left accent */}
+                          <div
+                            className="absolute top-1 bottom-1 left-0 w-1 rounded-r-full"
+                            style={{ background: `linear-gradient(to bottom, ${benefit.color}, ${benefit.color}30)` }}
+                          />
+                          <div
+                            className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center mt-0.5"
+                            style={{ background: `${benefit.color}10`, border: `1px solid ${benefit.color}15` }}
+                          >
+                            <Icon className="w-4.5 h-4.5" style={{ color: benefit.color }} strokeWidth={1.5} />
+                          </div>
+                          <div>
+                            <span className="font-semibold text-white text-sm">{benefit.title}</span>
+                            <p className="text-white/40 text-xs leading-relaxed mt-1">{benefit.description}</p>
+                          </div>
+                        </motion.li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-        </AnimatedSection>
-      </Section>
+          </AnimatedSection>
+        </div>
+      </section>
 
-      {/* FAQ */}
-      <Section variant="alt">
-        <AnimatedSection>
-          <SectionHeader
-            label="FAQ"
-            title="Frequently Asked Questions"
-            subtitle="Common questions about funding and grants."
-          />
-          <FAQSection faqs={faqs} />
-        </AnimatedSection>
-      </Section>
-
-      {/* CTA */}
-      <Section variant="dark">
-        <AnimatedSection>
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-4">Apply Now</p>
-            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-              Ready to Secure Funding for Your Innovation?
-            </h2>
-            <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-              Explore funding opportunities and take your technology innovation to the next level with UPTECH&apos;s funding and grants programs.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>Become a Member</Button>
-              <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
+      {/* ── FAQ ────────────────────────────────────────────────────── */}
+      <section className="relative bg-[#0E1221] overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-[#2563EB]/5 blur-[150px] pointer-events-none" />
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+          <AnimatedSection>
+            {/* Section header */}
+            <div className="max-w-3xl mb-14">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">FAQ</span>
+              </div>
+              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-white/45 text-base leading-relaxed">
+                Common questions about funding and grants.
+              </p>
             </div>
-          </div>
-        </AnimatedSection>
-      </Section>
+
+            <FAQSection faqs={faqs} shouldReduceMotion={shouldReduceMotion} />
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── CTA ────────────────────────────────────────────────────── */}
+      <section className="relative bg-[#131942] overflow-hidden">
+        {/* Gradient glow effects */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full bg-[#2563EB]/8 blur-[200px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#8b5cf6]/6 blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[#22C55E]/5 blur-[120px] pointer-events-none" />
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
+          <AnimatedSection>
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-6">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse" />
+                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">Apply Now</span>
+              </div>
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+                <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
+                  Ready to Secure Funding for Your{" "}
+                </span>
+                <span className="bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
+                  Innovation?
+                </span>
+              </h2>
+              <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+                Explore funding opportunities and take your technology innovation to the next level with UPTECH&apos;s funding and grants programs.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button href="/membership" variant="primary" size="lg" showArrow className="!bg-[#2563EB] hover:!bg-[#1d4ed8]">
+                  Become a Member
+                </Button>
+                <Button href="/contact" variant="glass" size="lg" showArrow>
+                  Contact Us
+                </Button>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
     </div>
   );
 }
 
-function FAQSection({ faqs }: { faqs: { question: string; answer: string }[] }) {
+/* ─── FAQ Section (dark glass accordion) ─────────────────────────────── */
+
+function FAQSection({
+  faqs,
+  shouldReduceMotion,
+}: {
+  faqs: { question: string; answer: string }[];
+  shouldReduceMotion: boolean | null;
+}) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
-    <div>
-      {faqs.map((faq, index) => (
-        <div key={faq.question} className="border-t border-[#1C1F2E]/15 last:border-b">
-          <button
-            onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            className="w-full flex items-center justify-between py-5 text-left gap-4"
+    <div className="space-y-3">
+      {faqs.map((faq, index) => {
+        const isOpen = openIndex === index;
+        const color = faqColors[index % faqColors.length];
+        return (
+          <motion.div
+            key={faq.question}
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.3, delay: index * 0.05 }}
+            className={`rounded-xl border overflow-hidden transition-all duration-500 ${
+              isOpen
+                ? "border-white/[0.1] bg-white/[0.05]"
+                : "border-white/[0.06] bg-white/[0.02] hover:border-white/[0.1]"
+            }`}
+            style={isOpen ? { borderLeft: `3px solid ${color}` } : {}}
           >
-            <span className="font-heading font-semibold text-[#1C1F2E] text-base">{faq.question}</span>
-            <ChevronDown
-              className={`w-5 h-5 text-[#7A7E8F] flex-shrink-0 transition-transform duration-200 ${openIndex === index ? "rotate-180" : ""}`}
-            />
-          </button>
-          {openIndex === index && (
-            <div className="pb-5 text-[#3D4152] text-sm leading-relaxed">{faq.answer}</div>
-          )}
-        </div>
-      ))}
+            <button
+              onClick={() => setOpenIndex(isOpen ? null : index)}
+              className="w-full flex items-center gap-4 p-5 lg:p-6 text-left"
+            >
+              <span
+                className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold transition-all duration-300"
+                style={
+                  isOpen
+                    ? {
+                        background: color,
+                        color: "#fff",
+                        boxShadow: `0 0 15px -3px ${color}50`,
+                      }
+                    : { background: `${color}12`, color }
+                }
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="font-heading font-semibold text-white text-base flex-1">
+                {faq.question}
+              </span>
+              <div
+                className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
+                style={isOpen ? { background: `${color}15` } : { background: "transparent" }}
+              >
+                <ChevronDown
+                  className="w-4.5 h-4.5 transition-transform duration-300"
+                  style={{
+                    color: isOpen ? color : "rgba(255,255,255,0.35)",
+                    transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                  }}
+                />
+              </div>
+            </button>
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-5 lg:px-6 pb-5 lg:pb-6 pl-[4.25rem] lg:pl-[4.75rem]">
+                    <div className="h-px bg-white/[0.06] mb-4" />
+                    <p className="text-white/45 text-sm leading-[1.8]">{faq.answer}</p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        );
+      })}
     </div>
   );
 }

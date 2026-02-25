@@ -61,8 +61,8 @@ export default function TermsPage() {
             <TermsSection title="Contact">
               <p>
                 If you have any questions about these Terms of Service, please contact us at{" "}
-                <a href="mailto:info@uptechcouncil.com" className="text-[#2563EB] underline underline-offset-2">
-                  info@uptechcouncil.com
+                <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] underline underline-offset-2">
+                  info@uptech.org.uk
                 </a>.
               </p>
             </TermsSection>

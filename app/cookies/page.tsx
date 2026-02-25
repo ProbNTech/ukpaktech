@@ -153,8 +153,8 @@ export default function CookiesPage() {
             </h2>
             <p className="text-white/70 text-base leading-relaxed mb-2">
               If you have questions about our use of cookies, please contact us at{" "}
-              <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
-                info@ukpaktech.org.uk
+              <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
+                info@uptech.org.uk
               </a>.
             </p>
           </div>

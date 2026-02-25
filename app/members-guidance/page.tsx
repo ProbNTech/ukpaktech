@@ -125,8 +125,8 @@ export default function MembersGuidancePage() {
             </h2>
             <p className="text-white/70 text-base leading-relaxed mb-8">
               For any questions, support requests, or feedback, contact our membership team at{" "}
-              <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
-                info@ukpaktech.org.uk
+              <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
+                info@uptech.org.uk
               </a>.
               We aim to respond to all member enquiries within 2 business days.
             </p>

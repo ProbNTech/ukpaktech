@@ -49,8 +49,8 @@ export default function PrivacyPage() {
             <PolicySection title="Contact">
               <p>
                 If you have any questions about this Privacy Policy or how we handle your personal data, please contact us at{" "}
-                <a href="mailto:info@uptechcouncil.com" className="text-[#2563EB] underline underline-offset-2">
-                  info@uptechcouncil.com
+                <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] underline underline-offset-2">
+                  info@uptech.org.uk
                 </a>.
               </p>
             </PolicySection>

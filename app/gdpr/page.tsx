@@ -136,8 +136,8 @@ export default function GDPRPage() {
             </h2>
             <p className="text-white/70 text-base leading-relaxed">
               To exercise your rights or for any data protection queries, contact us at{" "}
-              <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
-                info@ukpaktech.org.uk
+              <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
+                info@uptech.org.uk
               </a>.
             </p>
           </div>

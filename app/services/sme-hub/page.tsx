@@ -1,18 +1,17 @@
 "use client";
 
-import { Section } from "@/components/Section";
+import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
-import { SectionHeader } from "@/components/SectionHeader";
-import { PageHero } from "@/components/PageHero";
 import { TrendingUp, Wallet, Users, Gift, CheckCircle2, ChevronDown, Target, Globe, Zap, BarChart3 } from "lucide-react";
 import { useState } from "react";
+import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 
 const stats = [
-  { value: "200+", label: "SMEs Supported" },
-  { value: "£25M+", label: "Revenue Generated" },
-  { value: "4", label: "Key Markets" },
-  { value: "85%", label: "Member Satisfaction" },
+  { value: "200+", label: "SMEs Supported", color: "#2563EB" },
+  { value: "\u00A325M+", label: "Revenue Generated", color: "#22C55E" },
+  { value: "4", label: "Key Markets", color: "#8b5cf6" },
+  { value: "85%", label: "Member Satisfaction", color: "#f59e0b" },
 ];
 
 const pillars = [
@@ -21,32 +20,36 @@ const pillars = [
     title: "Generating Sales",
     description: "Get exclusive insights and expert tips to help your tech SME grow in private and public sector markets across the UK, Europe, Middle East and Africa.",
     features: ["Sales strategy workshops", "Lead generation tools", "Market access programs", "Procurement opportunities"],
+    color: "#2563EB",
   },
   {
     icon: Wallet,
     title: "Access to Finance",
     description: "Specialist insight from investors, finance experts, and founders on accessing finance to grow your business. Find the latest funding and partnership opportunities.",
     features: ["Investor introductions", "Grant applications support", "Financial modelling guidance", "Pitch preparation"],
+    color: "#22C55E",
   },
   {
     icon: Users,
     title: "Talent",
-    description: "Find support and insights for accessing the talent you need to scale your business — from hiring strategies to workforce development.",
+    description: "Find support and insights for accessing the talent you need to scale your business \u2014 from hiring strategies to workforce development.",
     features: ["Talent matching services", "HR advisory support", "Skills development programs", "Remote team building"],
+    color: "#C41E3A",
   },
   {
     icon: Gift,
     title: "Member Offers",
-    description: "Get the latest exclusive benefits for UPTECH members only — including discounts, priority access, and partner deals.",
+    description: "Get the latest exclusive benefits for UPTECH members only \u2014 including discounts, priority access, and partner deals.",
     features: ["Software discounts", "Event priority access", "Partner service deals", "Free consulting hours"],
+    color: "#8b5cf6",
   },
 ];
 
 const markets = [
-  { name: "United Kingdom", description: "Access UK government contracts, corporate partnerships, and a thriving startup ecosystem.", flag: "🇬🇧" },
-  { name: "Europe", description: "Expand into European markets through our Enterprise Europe Network partnership.", flag: "🇪🇺" },
-  { name: "Middle East", description: "Tap into the Gulf's rapidly growing technology sector and investment ecosystem.", flag: "🇦🇪" },
-  { name: "Africa", description: "Enter emerging African markets with the fastest-growing tech adoption rates globally.", flag: "🇳🇬" },
+  { name: "United Kingdom", description: "Access UK government contracts, corporate partnerships, and a thriving startup ecosystem.", flag: "\uD83C\uDDEC\uD83C\uDDE7", color: "#2563EB" },
+  { name: "Europe", description: "Expand into European markets through our Enterprise Europe Network partnership.", flag: "\uD83C\uDDEA\uD83C\uDDFA", color: "#8b5cf6" },
+  { name: "Middle East", description: "Tap into the Gulf\u2019s rapidly growing technology sector and investment ecosystem.", flag: "\uD83C\uDDE6\uD83C\uDDEA", color: "#f59e0b" },
+  { name: "Africa", description: "Enter emerging African markets with the fastest-growing tech adoption rates globally.", flag: "\uD83C\uDDF3\uD83C\uDDEC", color: "#22C55E" },
 ];
 
 const growthSteps = [
@@ -64,207 +67,395 @@ const whoIsThisFor = [
 ];
 
 const faqs = [
-  { question: "What size companies qualify for SME Hub?", answer: "The SME Hub is designed for technology companies with fewer than 250 employees. Whether you're a solo founder or a growing team, we have programs tailored to your stage." },
+  { question: "What size companies qualify for SME Hub?", answer: "The SME Hub is designed for technology companies with fewer than 250 employees. Whether you\u2019re a solo founder or a growing team, we have programs tailored to your stage." },
   { question: "What markets can SME Hub help me enter?", answer: "Our primary focus is the UK, Europe, Middle East, and Africa. We provide market intelligence, regulatory guidance, and warm introductions to help you navigate each market effectively." },
   { question: "Are the resources included in membership?", answer: "Yes, core SME Hub resources are included in your UPTECH membership. Premium services like dedicated advisory, bespoke market research, and concierge introductions are available as add-ons." },
-  { question: "How quickly can I expect results?", answer: "Most members see meaningful connections within the first 30 days. Sales pipeline impact typically materialises within 3–6 months, depending on your growth stage and market readiness." },
+  { question: "How quickly can I expect results?", answer: "Most members see meaningful connections within the first 30 days. Sales pipeline impact typically materialises within 3\u20136 months, depending on your growth stage and market readiness." },
 ];
 
-export default function SMEHubPage() {
-  return (
-    <div>
-      <PageHero
-        title="SME Hub"
-        subtitle="Whether you're growing your business, entering new markets, securing contracts, or boosting sales — SME Hub provides the support, connections, and insights you need."
-        image="/image/london-images/entrepreneur-sme.jpg"
-      >
-        <div className="flex flex-wrap gap-4 mt-2">
-          <Button href="/membership" variant="glass" showArrow>Join the Hub</Button>
-          <Button href="/contact" variant="ghost">Learn More</Button>
-        </div>
-      </PageHero>
+const stepColors = ["#2563EB", "#22C55E", "#C41E3A", "#8b5cf6"];
+const whoColors = ["#2563EB", "#22C55E", "#f59e0b", "#8b5cf6"];
+const faqColors = ["#2563EB", "#8b5cf6", "#22C55E", "#f59e0b"];
 
-      {/* Stats Bar */}
-      <section className="relative z-[1] bg-[#1C1F2E]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
+export default function SMEHubPage() {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <div className="bg-[#0B0F1A]">
+      {/* ── Hero Section ── */}
+      <section className="relative min-h-[75vh] flex items-center overflow-hidden">
+        <Image
+          src="/image/london-images/entrepreneur-sme.jpg"
+          alt="SME Hub"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(10,14,30,0.85), rgba(10,14,30,0.65), rgba(10,14,30,1))" }} />
+        <div
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
+          <motion.div
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">UPTECH Service</p>
+            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-6">
+              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg, #ffffff 0%, #22C55E 50%, #2563EB 100%)" }}>
+                SME Hub
+              </span>
+            </h1>
+            <div className="max-w-2xl backdrop-blur-md bg-white/[0.05] border border-white/[0.1] rounded-2xl p-6 mb-8">
+              <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
+                Whether you&apos;re growing your business, entering new markets, securing contracts, or boosting sales &mdash; SME Hub provides the support, connections, and insights you need.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/membership" variant="primary" size="lg" showArrow>Join the Hub</Button>
+              <Button href="/contact" variant="glass" size="lg" showArrow>Learn More</Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Stats Bar ── */}
+      <section className="relative bg-[#0E1221]">
+        <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl mb-1">{stat.value}</p>
-                <p className="text-white/60 text-xs sm:text-sm font-medium uppercase tracking-wider">{stat.label}</p>
-              </div>
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="group relative backdrop-blur-md bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
+              >
+                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl" style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }} />
+                <div className="absolute -top-1 left-4 right-4 h-4 rounded-full opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500" style={{ background: stat.color }} />
+                <div className="font-heading font-extrabold text-3xl sm:text-4xl mb-2" style={{ color: stat.color, textShadow: `0 0 30px ${stat.color}40` }}>
+                  {stat.value}
+                </div>
+                <p className="text-white/50 text-sm">{stat.label}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Intro */}
-      <Section variant="light">
-        <AnimatedSection>
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Your one-stop shop</p>
-            <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl leading-snug mb-6">
-              Comprehensive Support for Growing Technology SMEs
-            </h2>
-            <p className="text-[#3D4152] text-base leading-relaxed mb-5">
-              The SME Hub is UPTECH&apos;s dedicated platform for technology small and medium enterprises. We provide practical, hands-on support across four key pillars — sales, finance, talent, and member benefits — to help you overcome challenges and unlock new opportunities across multiple markets.
-            </p>
-            <p className="text-[#3D4152] text-base leading-relaxed">
-              Whether you&apos;re a solo founder building your first product or a growing team expanding internationally, the SME Hub gives you the tools, connections, and expertise to compete at scale.
-            </p>
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Four Pillars */}
-      <Section variant="alt">
-        <AnimatedSection>
-          <SectionHeader
-            label="Core Pillars"
-            title="Four Pillars of Support"
-            subtitle="Everything you need to grow, all in one place."
-          />
-          <div className="grid md:grid-cols-2 gap-6">
-            {pillars.map((pillar) => {
-              const Icon = pillar.icon;
-              return (
-                <div key={pillar.title} className="bg-white border border-[#D8D5CF] rounded p-8 hover:border-[#2563EB]/40 transition-colors duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Icon className="w-7 h-7 text-[#2563EB]" />
-                    <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">{pillar.title}</h3>
-                  </div>
-                  <div className="h-px bg-[#D8D5CF] mb-4" />
-                  <p className="text-sm text-[#3D4152] leading-relaxed mb-5">{pillar.description}</p>
-                  <ul className="grid grid-cols-2 gap-2">
-                    {pillar.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-sm text-[#3D4152]">
-                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Markets */}
-      <Section variant="light">
-        <AnimatedSection>
-          <SectionHeader
-            label="Markets"
-            title="Where We Operate"
-            subtitle="Helping tech SMEs grow across key global markets."
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {markets.map((market) => (
-              <div key={market.name} className="bg-white border border-[#D8D5CF] rounded p-6 hover:border-[#2563EB]/40 transition-colors duration-300">
-                <p className="text-3xl mb-3">{market.flag}</p>
-                <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{market.name}</h3>
-                <div className="h-px bg-[#D8D5CF] mb-3" />
-                <p className="text-sm text-[#3D4152] leading-relaxed">{market.description}</p>
-              </div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* How It Works */}
-      <Section variant="alt">
-        <AnimatedSection>
-          <SectionHeader
-            label="Process"
-            title="Your Growth Journey"
-            subtitle="A structured pathway from onboarding to scaling your business internationally."
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {growthSteps.map((step) => (
-              <div key={step.number} className="border-t-2 border-[#2563EB] pt-5">
-                <span className="text-xs font-bold text-[#2563EB] tabular-nums block mb-2">{step.number}</span>
-                <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{step.title}</h3>
-                <p className="text-[#3D4152] text-sm leading-relaxed mb-3">{step.description}</p>
-                <span className="text-xs font-semibold text-[#22C55E]">&rarr; {step.outcome}</span>
-              </div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Who Is This For */}
-      <Section variant="light">
-        <AnimatedSection>
-          <SectionHeader
-            label="For You"
-            title="Who Is This For"
-            subtitle="SME Hub is built for technology companies at every growth stage."
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whoIsThisFor.map((item) => (
-              <div key={item.title} className="border-t-2 border-[#1C1F2E] pt-4">
-                <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{item.title}</h3>
-                <p className="text-[#3D4152] text-sm leading-relaxed">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* FAQ */}
-      <Section variant="alt">
-        <AnimatedSection>
-          <SectionHeader
-            label="FAQ"
-            title="Frequently Asked Questions"
-            subtitle="Common questions about the SME Hub."
-          />
-          <FAQSection faqs={faqs} />
-        </AnimatedSection>
-      </Section>
-
-      {/* CTA — Dark */}
-      <Section variant="dark">
-        <AnimatedSection>
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-4">Start Growing</p>
-            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-              Ready to Accelerate Your SME&apos;s Growth?
-            </h2>
-            <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-              Join the SME Hub and gain access to sales insights, finance opportunities, talent networks, and exclusive member benefits across four key global markets.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>Join the Hub</Button>
-              <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
+      {/* ── Intro Section ── */}
+      <section className="relative bg-[#0B0F1A]">
+        <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-10 bg-[#22C55E]" />
+        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
+          <AnimatedSection>
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">Your one-stop shop</p>
+              <h2 className="font-heading font-extrabold text-white/90 text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
+                Comprehensive Support for Growing Technology SMEs
+              </h2>
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
+              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-5">
+                The SME Hub is UPTECH&apos;s dedicated platform for technology small and medium enterprises. We provide practical, hands-on support across four key pillars &mdash; sales, finance, talent, and member benefits &mdash; to help you overcome challenges and unlock new opportunities across multiple markets.
+              </p>
+              <p className="text-white/60 text-base sm:text-lg leading-relaxed">
+                Whether you&apos;re a solo founder building your first product or a growing team expanding internationally, the SME Hub gives you the tools, connections, and expertise to compete at scale.
+              </p>
             </div>
-          </div>
-        </AnimatedSection>
-      </Section>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── Four Pillars ── */}
+      <section className="relative bg-[#0E1221]">
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-10 bg-[#2563EB]" />
+        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
+          <AnimatedSection>
+            <div className="mb-14">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">Core Pillars</p>
+              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Four Pillars of Support</h2>
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#22C55E] to-[#22C55E]/40 mb-4" />
+              <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">Everything you need to grow, all in one place.</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {pillars.map((pillar, i) => {
+                const Icon = pillar.icon;
+                return (
+                  <motion.div
+                    key={pillar.title}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                    className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
+                  >
+                    <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${pillar.color}, ${pillar.color}60)` }} />
+                    <div className="p-8">
+                      <div className="flex items-center gap-3 mb-5">
+                        <div className="relative">
+                          <div className="absolute inset-[-8px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500" style={{ background: pillar.color }} />
+                          <div className="relative w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${pillar.color}15`, border: `1px solid ${pillar.color}30`, boxShadow: `0 0 20px ${pillar.color}10` }}>
+                            <Icon className="w-5 h-5" style={{ color: pillar.color }} strokeWidth={1.5} />
+                          </div>
+                        </div>
+                        <h3 className="font-heading font-bold text-lg text-white group-hover:text-[#2563EB] transition-colors duration-200">{pillar.title}</h3>
+                      </div>
+                      <div className="h-px bg-white/10 mb-4" />
+                      <p className="text-sm text-white/50 leading-relaxed mb-5">{pillar.description}</p>
+                      <ul className="grid grid-cols-2 gap-2">
+                        {pillar.features.map((f) => (
+                          <li key={f} className="flex items-start gap-2 text-sm text-white/50">
+                            <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: pillar.color }} />
+                            <span>{f}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── Markets ── */}
+      <section className="relative bg-[#131942]">
+        <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-10 bg-[#f59e0b]" />
+        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
+          <AnimatedSection>
+            <div className="mb-14">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">Markets</p>
+              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Where We Operate</h2>
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#8b5cf6]/40 mb-4" />
+              <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">Helping tech SMEs grow across key global markets.</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {markets.map((market, i) => (
+                <motion.div
+                  key={market.name}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300 pl-7"
+                >
+                  <div className="absolute top-4 bottom-4 left-0 w-1 rounded-r-full" style={{ background: `linear-gradient(to bottom, ${market.color}, ${market.color}30)` }} />
+                  <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${market.color}, ${market.color}60)` }} />
+                  <div className="p-6 pl-0">
+                    <p className="text-3xl mb-3">{market.flag}</p>
+                    <h3 className="font-heading font-bold text-white text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{market.name}</h3>
+                    <div className="h-px bg-white/10 mb-3" />
+                    <p className="text-sm text-white/50 leading-relaxed">{market.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── Your Growth Journey ── */}
+      <section className="relative bg-[#0B0F1A]">
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
+        <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-10 bg-[#8b5cf6]" />
+        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
+          <AnimatedSection>
+            <div className="mb-14">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">Process</p>
+              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Your Growth Journey</h2>
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#f59e0b]/40 mb-4" />
+              <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">A structured pathway from onboarding to scaling your business internationally.</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {growthSteps.map((step, i) => {
+                const color = stepColors[i];
+                return (
+                  <motion.div
+                    key={step.number}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                    className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
+                  >
+                    <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${color}, ${color}60)` }} />
+                    <div className="p-6">
+                      <div className="relative mb-5">
+                        <div className="absolute inset-[-4px] rounded-full opacity-30 group-hover:opacity-60 blur-md transition-opacity duration-500" style={{ background: color }} />
+                        <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold border" style={{ background: `${color}25`, borderColor: `${color}50`, boxShadow: `0 0 20px ${color}30` }}>
+                          {step.number}
+                        </div>
+                      </div>
+                      <h3 className="font-heading font-bold text-white text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{step.title}</h3>
+                      <p className="text-white/50 text-sm leading-relaxed mb-4">{step.description}</p>
+                      <div className="flex items-center gap-2 pt-3 border-t border-white/10">
+                        <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color }} strokeWidth={2} />
+                        <span className="text-xs font-semibold" style={{ color }}>{step.outcome}</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── Who Is This For ── */}
+      <section className="relative bg-[#0E1221]">
+        <div className="absolute top-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-10 bg-[#22C55E]" />
+        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
+          <AnimatedSection>
+            <div className="mb-14">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">For You</p>
+              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Who Is This For</h2>
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40 mb-4" />
+              <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">SME Hub is built for technology companies at every growth stage.</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {whoIsThisFor.map((item, i) => {
+                const color = whoColors[i];
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                    className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
+                  >
+                    <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${color}, ${color}60)` }} />
+                    <div className="p-6">
+                      <h3 className="font-heading font-bold text-white text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{item.title}</h3>
+                      <div className="h-px bg-white/10 mb-3" />
+                      <p className="text-white/50 text-sm leading-relaxed">{item.description}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="relative bg-[#131942]">
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
+        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
+          <AnimatedSection>
+            <div className="mb-14">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">FAQ</p>
+              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Frequently Asked Questions</h2>
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#f59e0b]/40 mb-4" />
+              <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">Common questions about the SME Hub.</p>
+            </div>
+            <FAQSection faqs={faqs} />
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── CTA Section ── */}
+      <section className="relative bg-[#0B0F1A] overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#22C55E]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#2563EB]" />
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-28">
+          <AnimatedSection>
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">Start Growing</p>
+              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+                Ready to Accelerate Your SME&apos;s Growth?
+              </h2>
+              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+                Join the SME Hub and gain access to sales insights, finance opportunities, talent networks, and exclusive member benefits across four key global markets.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button href="/membership" variant="primary" size="lg" showArrow>Join the Hub</Button>
+                <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
     </div>
   );
 }
 
 function FAQSection({ faqs }: { faqs: { question: string; answer: string }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <div>
-      {faqs.map((faq, index) => (
-        <div key={faq.question} className="border-t border-[#1C1F2E]/15 last:border-b">
-          <button
-            onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            className="w-full flex items-center justify-between py-5 text-left gap-4"
+    <div className="space-y-3">
+      {faqs.map((faq, index) => {
+        const isOpen = openIndex === index;
+        const color = faqColors[index % faqColors.length];
+        return (
+          <motion.div
+            key={faq.question}
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4, delay: index * 0.08 }}
+            className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:border-white/[0.12] transition-all duration-300"
           >
-            <span className="font-heading font-semibold text-[#1C1F2E] text-base">{faq.question}</span>
-            <ChevronDown
-              className={`w-5 h-5 text-[#7A7E8F] flex-shrink-0 transition-transform duration-200 ${openIndex === index ? "rotate-180" : ""}`}
+            <div
+              className="absolute top-0 bottom-0 left-0 w-1 transition-opacity duration-300"
+              style={{ background: `linear-gradient(to bottom, ${color}, ${color}60)`, opacity: isOpen ? 1 : 0 }}
             />
-          </button>
-          {openIndex === index && (
-            <div className="pb-5 text-[#3D4152] text-sm leading-relaxed">{faq.answer}</div>
-          )}
-        </div>
-      ))}
+            <button
+              onClick={() => setOpenIndex(isOpen ? null : index)}
+              className="w-full flex items-center gap-4 p-5 lg:p-6 text-left"
+            >
+              <span
+                className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold transition-colors duration-300"
+                style={isOpen ? { background: color, color: "#fff" } : { background: `${color}15`, color }}
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="font-heading font-semibold text-white text-base flex-1">{faq.question}</span>
+              <div
+                className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
+                style={isOpen ? { background: `${color}15` } : { background: "transparent" }}
+              >
+                <ChevronDown
+                  className="w-4.5 h-4.5 transition-transform duration-300"
+                  style={{ color: isOpen ? color : "#7A7E8F", transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                />
+              </div>
+            </button>
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-5 lg:px-6 pb-5 lg:pb-6 pl-[4.25rem] lg:pl-[4.75rem]">
+                    <div className="h-px bg-white/[0.08] mb-4" />
+                    <p className="text-white/60 text-sm leading-[1.8]">{faq.answer}</p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        );
+      })}
     </div>
   );
 }
