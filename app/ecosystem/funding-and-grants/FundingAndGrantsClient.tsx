@@ -62,6 +62,11 @@ const opportunities = [
   { title: "Skills Development", description: "Grants for programs that enhance technology skills and workforce capabilities.", icon: GraduationCap, color: "#ef4444" },
 ];
 
+const fundingGrantsIntro = {
+  heading: "BRIDGING THE FUNDING GAP FOR EARLY-STAGE COMPANIES",
+  description: "Pakistan\u2019s policy framework already offers vital support for early-stage companies, but we can enhance this further by introducing:",
+};
+
 const fundingStages = [
   {
     stage: "Pre-Seed & Seed",
@@ -70,6 +75,14 @@ const fundingStages = [
     features: ["Pre-seed capital investment", "Dedicated support team", "Corporate partner introductions", "Global founder community access"],
     icon: Rocket,
     color: "#2563EB",
+  },
+  {
+    stage: "Sophisticated Investor",
+    title: "Sophisticated Investor",
+    description: "Currently, to participate in early-stage investment syndicates, individuals must qualify as sophisticated investors based on an income of \u00A3250K or assets worth \u00A31 million. This rule excludes many knowledgeable and experienced individuals, like startup employees and senior leaders, who might have lower salaries due to equity-based compensation. By broadening the criteria, we can include more of these potential investors and strengthen support for early-stage startups.",
+    features: ["Broaden qualification criteria beyond income thresholds", "Include experienced startup employees and senior leaders", "Support equity-based compensation holders", "Strengthen early-stage startup investment syndicates"],
+    icon: Users,
+    color: "#f59e0b",
   },
   {
     stage: "Series A & B",
@@ -81,9 +94,9 @@ const fundingStages = [
   },
   {
     stage: "R&D",
-    title: "R&D Incentives",
-    description: "Support for research and development initiatives in emerging technologies, digital transformation, and innovation-led projects with cross-border impact.",
-    features: ["R&D tax credit guidance", "Innovation grant applications", "Research partnership facilitation", "Technology transfer support"],
+    title: "Research & Development Incentives",
+    description: "At UK-Pakistan Tech Council (UPTECH), we highly value the current R&D tax incentive, recognizing the pivotal role that research and development play in driving technological advancements. With the launch of this initiative in Pakistan, we aim to further bolster the tech sector by making the R&D tax incentive more transparent and accessible, for digital literacy, healthcare sector, energy solutions and infusion technologies. We appreciate ongoing efforts to clarify the application of these incentives and are committed to collaborating closely with experts in the field to provide clearer guidance. Our goal is to ensure that the intent and application of this incentive are well understood and effectively implemented by both industry leaders and administrators. Through this initiative, we are paving the way for a robust, innovation-driven future in Pakistan.",
+    features: ["Digital literacy R&D incentives", "Healthcare sector innovation support", "Energy solutions R&D programmes", "Infusion technologies advancement"],
     icon: Cpu,
     color: "#8b5cf6",
   },
@@ -405,6 +418,35 @@ export default function FundingAndGrantsClient() {
         </div>
       </section>
 
+      {/* ── FUNDING GRANTS INTRO ────────────────────────────────────── */}
+      <section className="relative bg-[#0B0F1A] overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-[#f59e0b]/5 blur-[150px] pointer-events-none" />
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+          <AnimatedSection>
+            <div className="max-w-4xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f59e0b]/20 bg-[#f59e0b]/5 mb-5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
+                <span className="text-[#f59e0b] text-xs font-semibold uppercase tracking-wider">Funding Grants</span>
+              </div>
+              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+                {fundingGrantsIntro.heading}
+              </h2>
+              <p className="text-white/50 text-base sm:text-lg leading-relaxed">
+                {fundingGrantsIntro.description}
+              </p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ── FUNDING STAGES — PREMIUM ──────────────────────────────── */}
       <section className="relative bg-[#131942] overflow-hidden">
         {/* Ambient glow */}
@@ -436,7 +478,7 @@ export default function FundingAndGrantsClient() {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-7">
+            <div className="grid md:grid-cols-2 gap-7">
               {fundingStages.map((item, i) => {
                 const Icon = item.icon;
                 return (

@@ -18,28 +18,28 @@ const pillars = [
   {
     icon: TrendingUp,
     title: "Generating Sales",
-    description: "Get exclusive insights and expert tips to help your tech SME grow in private and public sector markets across the UK, Europe, Middle East and Africa.",
+    description: "Get exclusive insights and expert tips to help your tech SME grow in private and public sector markets both in the UK, Europe, Middle East & African continents.",
     features: ["Sales strategy workshops", "Lead generation tools", "Market access programs", "Procurement opportunities"],
     color: "#2563EB",
   },
   {
     icon: Wallet,
-    title: "Access to Finance",
-    description: "Specialist insight from investors, finance experts, and founders on accessing finance to grow your business. Find the latest funding and partnership opportunities.",
+    title: "Access to Finance Opportunities",
+    description: "Specialist insight from investors, finance experts and founders on access finance to grow your business. Find the latest opportunities, including funding and partnership opportunities.",
     features: ["Investor introductions", "Grant applications support", "Financial modelling guidance", "Pitch preparation"],
     color: "#22C55E",
   },
   {
     icon: Users,
     title: "Talent",
-    description: "Find support and insights for accessing the talent you need to scale your business \u2014 from hiring strategies to workforce development.",
+    description: "Find support and insights for accessing the talent you need to scale your business.",
     features: ["Talent matching services", "HR advisory support", "Skills development programs", "Remote team building"],
     color: "#C41E3A",
   },
   {
     icon: Gift,
     title: "Member Offers",
-    description: "Get the latest exclusive benefits for UPTECH members only \u2014 including discounts, priority access, and partner deals.",
+    description: "Get the latest exclusive benefits for UPTECH Members only.",
     features: ["Software discounts", "Event priority access", "Partner service deals", "Free consulting hours"],
     color: "#8b5cf6",
   },
@@ -113,7 +113,7 @@ export default function SMEHubPage() {
             </h1>
             <div className="max-w-2xl backdrop-blur-md bg-white/[0.05] border border-white/[0.1] rounded-2xl p-6 mb-8">
               <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
-                Whether you&apos;re growing your business, entering new markets, securing contracts, or boosting sales &mdash; SME Hub provides the support, connections, and insights you need.
+                Whether you&apos;re growing your business, entering new markets, securing public sector contracts, or boosting sales, SME Hub provides the support, connections, and insights you need. Our hub is your one-stop shop for overcoming challenges and unlocking new opportunities.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -160,11 +160,8 @@ export default function SMEHubPage() {
                 Comprehensive Support for Growing Technology SMEs
               </h2>
               <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
-              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-5">
-                The SME Hub is UPTECH&apos;s dedicated platform for technology small and medium enterprises. We provide practical, hands-on support across four key pillars &mdash; sales, finance, talent, and member benefits &mdash; to help you overcome challenges and unlock new opportunities across multiple markets.
-              </p>
               <p className="text-white/60 text-base sm:text-lg leading-relaxed">
-                Whether you&apos;re a solo founder building your first product or a growing team expanding internationally, the SME Hub gives you the tools, connections, and expertise to compete at scale.
+                Whether you&apos;re growing your business, entering new markets, securing public sector contracts, or boosting sales, SME Hub provides the support, connections, and insights you need. Our hub is your one-stop shop for overcoming challenges and unlocking new opportunities.
               </p>
             </div>
           </AnimatedSection>

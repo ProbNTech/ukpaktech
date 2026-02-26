@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
-import { CheckCircle2, Globe, Handshake, BarChart3, Users, Target, Lightbulb, ChevronDown, Search, GitBranch, MessageSquare, TrendingUp } from "lucide-react";
+import { CheckCircle2, Globe, Handshake, BarChart3, Users, Target, ChevronDown, Search, GitBranch, MessageSquare, TrendingUp } from "lucide-react";
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 
@@ -15,20 +15,19 @@ const stats = [
 ];
 
 const whyChooseUs = [
-  { icon: Handshake, title: "Strategic Connections", description: "Every event brings together the right founders and the right investors who can help them scale.", color: "#2563EB" },
-  { icon: Globe, title: "Comprehensive Support", description: "From event design to investor outreach, branding, post-event follow-up and deal tracking \u2014 we handle every step.", color: "#22C55E" },
-  { icon: BarChart3, title: "Proven Results", description: "Our track record of funding success speaks for itself across multiple markets.", color: "#C41E3A" },
+  { icon: Handshake, title: "Strategic Connections", description: "We ensure that every event brings together the right founders and the right investors who can help them scale.", color: "#2563EB" },
+  { icon: Globe, title: "Comprehensive Support", description: "From event design to investor outreach, branding, post-event follow-up and deal tracking, we handle every step.", color: "#22C55E" },
+  { icon: BarChart3, title: "Proven Results", description: "Our track record of funding success speaks for itself.", color: "#C41E3A" },
   { icon: Users, title: "Global Ecosystem", description: "A growing network of VCs, angels, incubators, and ecosystem partners across continents.", color: "#8b5cf6" },
   { icon: Target, title: "Data-Driven Insights", description: "We use analytics to identify high-potential startups and investor interests.", color: "#f59e0b" },
-  { icon: Lightbulb, title: "Cross-Border Expertise", description: "Deep understanding of both UK and Pakistan markets, regulations, and business cultures.", color: "#ef4444" },
 ];
 
 const partners = [
-  { title: "Venture Capital & Private Equity Firms", description: "Access to tier-1 VC funds and PE firms across London, Karachi, and global hubs." },
-  { title: "Angel Networks & Family Offices", description: "Curated introductions to angel investors and family offices seeking tech opportunities." },
-  { title: "Government Startup Missions", description: "Partnerships with government-backed trade missions and startup support programs." },
-  { title: "University Incubators & Accelerators", description: "Collaboration with leading academic incubation and acceleration programs." },
-  { title: "Corporate Innovation & R&D Divisions", description: "Connect with corporate innovation labs and R&D divisions seeking partnerships." },
+  { title: "Venture Capital & Private Equity Firms" },
+  { title: "Angel Networks & Family Offices" },
+  { title: "Government Startup Missions" },
+  { title: "University Incubators & Accelerators" },
+  { title: "Corporate Innovation & R&D Divisions" },
 ];
 
 const processSteps = [
@@ -44,6 +43,13 @@ const targetMarket = [
   "Accelerators, incubators, and innovation hubs",
   "Corporate innovation and CSR programs",
   "Government and development agencies supporting entrepreneurship",
+];
+
+const revenueModel = [
+  "Event organization fees (B2B contracts)",
+  "Sponsorship packages",
+  "Ticketing and participation fees",
+  "Partnership retainers for recurring event programs",
 ];
 
 const faqs = [
@@ -91,7 +97,7 @@ export default function BusinessNetworksPage() {
             </h1>
             <div className="max-w-2xl backdrop-blur-md bg-white/[0.05] border border-white/[0.1] rounded-2xl p-6 mb-8">
               <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
-                Access the world&apos;s largest business network with strategic connections, comprehensive advice, and tailored market support across the UK and international markets.
+                The world&apos;s largest business network.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -136,17 +142,11 @@ export default function BusinessNetworksPage() {
               <div className="lg:col-span-3">
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">Overview</p>
                 <h2 className="font-heading font-extrabold text-white text-xl sm:text-2xl lg:text-3xl leading-snug mb-6">
-                  The World&apos;s Largest Business Network &mdash; Tailored for the UK&ndash;Pakistan Tech Corridor
+                  The World&apos;s Largest Business Network
                 </h2>
                 <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#8b5cf6]/20 to-transparent mb-8" />
                 <p className="text-white/60 text-base leading-relaxed mb-5">
-                  Our specialists provide access to comprehensive and tailored advice covering both the UK and international markets. They build on a heritage of collaboration with the Enterprise Europe Network, the most extensive association of innovation and growth support organisations around the world.
-                </p>
-                <p className="text-white/60 text-base leading-relaxed mb-5">
-                  This advice ranges from sourcing and establishing connections with new collaborators and potential partners, to information on local regulations and market entry strategies.
-                </p>
-                <p className="text-white/60 text-base leading-relaxed">
-                  Whether you&apos;re a startup seeking your first international client, or an enterprise expanding into new geographies &mdash; our network delivers the introductions, insights, and institutional support you need to succeed.
+                  Our specialists provide access to comprehensive and tailored advice covering both the UK and international markets. They build on a heritage of collaboration with the Enterprise Europe Network, the most extensive association of innovation and growth support organizations around the world. This advice ranges from sourcing and establishing connections with new collaborators and potential partners, to information on local regulations. To find partners via Enterprise Europe Network, please see the section &apos;Live global partnering opportunities&apos; below.
                 </p>
               </div>
               <div className="lg:col-span-2">
@@ -187,7 +187,7 @@ export default function BusinessNetworksPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">Advantages</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Why Choose Us</h2>
               <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#22C55E] to-[#22C55E]/40 mb-4" />
-              <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">Six reasons organisations trust UPTECH to build their international network.</p>
+              <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">Five reasons organisations trust UPTECH to build their international network.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {whyChooseUs.map((item, i) => {
@@ -287,7 +287,7 @@ export default function BusinessNetworksPage() {
                   <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Collaborations</p>
                   <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight mb-4">Our Partners</h2>
                   <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40 mb-4" />
-                  <p className="text-white/40 text-base leading-relaxed">We work with the best in the ecosystem to deliver results.</p>
+                  <p className="text-white/40 text-base leading-relaxed">We proudly collaborate with:</p>
                 </div>
                 <div className="space-y-4">
                   {partners.map((partner, i) => (
@@ -303,8 +303,7 @@ export default function BusinessNetworksPage() {
                       <div className="p-5 flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
                         <div>
-                          <h4 className="font-heading font-bold text-white text-sm mb-1">{partner.title}</h4>
-                          <p className="text-xs text-white/50 leading-relaxed">{partner.description}</p>
+                          <h4 className="font-heading font-bold text-white text-sm">{partner.title}</h4>
                         </div>
                       </div>
                     </motion.div>
@@ -314,7 +313,7 @@ export default function BusinessNetworksPage() {
               <div>
                 <div className="mb-10">
                   <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">Audience</p>
-                  <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight mb-4">Who Is This For</h2>
+                  <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight mb-4">Target Market</h2>
                   <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#22C55E] to-[#22C55E]/40 mb-4" />
                   <p className="text-white/40 text-base leading-relaxed">Our network is designed for organisations at every growth stage.</p>
                 </div>
@@ -328,6 +327,28 @@ export default function BusinessNetworksPage() {
                 </ul>
               </div>
             </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── Revenue Model ── */}
+      <section className="relative bg-[#131942]">
+        <div className="absolute top-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-10 bg-[#f59e0b]" />
+        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
+          <AnimatedSection>
+            <div className="mb-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">Revenue</p>
+              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight mb-4">Revenue Model</h2>
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#f59e0b]/40 mb-4" />
+            </div>
+            <ul className="space-y-0 max-w-2xl">
+              {revenueModel.map((item) => (
+                <li key={item} className="flex items-start gap-3 py-4 border-b border-white/[0.08] last:border-b-0">
+                  <CheckCircle2 className="w-4 h-4 text-[#f59e0b] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                  <span className="text-white/60 text-sm leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
           </AnimatedSection>
         </div>
       </section>

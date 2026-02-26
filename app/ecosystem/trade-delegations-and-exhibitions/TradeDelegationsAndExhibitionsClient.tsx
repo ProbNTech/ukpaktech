@@ -6,6 +6,26 @@ import { Button } from "@/components/Button";
 import { motion, useReducedMotion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
+const tradeDelegationIntro = "The UK-Pakistan Tech Council organises trade delegations to connect technology companies with key stakeholders, potential partners, investors, and government representatives in both the UK and Pakistan. These delegations provide members with a strategic platform to explore new markets, forge partnerships, and drive business growth.";
+
+const tradeDelegationBenefits = [
+  { title: "Market Access", description: "Gain first-hand exposure to emerging opportunities in cross-border technology markets.", color: "#2563EB" },
+  { title: "Business Development", description: "Meet corporates, investors, regulators, and policymakers to explore collaborations and partnerships.", color: "#22C55E" },
+  { title: "Networking Opportunities", description: "Build relationships with industry leaders, innovators, and decision-makers.", color: "#8b5cf6" },
+  { title: "Insights & Intelligence", description: "Learn about local market trends, regulatory frameworks, and business opportunities.", color: "#f59e0b" },
+];
+
+const exhibitionIntro = "The UK-Pakistan Tech Council organises and participates in high-impact exhibition events to showcase innovation, foster collaboration, and create business opportunities across the UK and Pakistan. These events provide members with a platform to present their technology solutions, connect with potential clients and partners, and gain visibility in key markets.";
+
+const exhibitionBenefits = [
+  { title: "Showcase Your Solutions", description: "Present software, platforms, and digital products to a targeted audience of corporates, investors, and industry leaders.", color: "#2563EB" },
+  { title: "Network & Collaborate", description: "Meet decision-makers, potential partners, and cross-border stakeholders.", color: "#22C55E" },
+  { title: "Gain Market Insights", description: "Stay updated on emerging trends, technologies, and opportunities in both markets.", color: "#8b5cf6" },
+  { title: "Build Brand Visibility", description: "Increase awareness of your company\u2019s expertise and innovation capabilities.", color: "#f59e0b" },
+];
+
+const exhibitionWhyItMatters = "Exhibition events create a dynamic environment where innovation meets opportunity. By participating, members can accelerate business growth, forge strategic partnerships, and strengthen their presence in the UK-Pakistan technology corridor. Connect. Showcase. Grow.";
+
 const offerItems = [
   { title: "Event Organisation", description: "End-to-end planning and execution of trade delegations and technology exhibitions.", color: "#2563EB" },
   { title: "Participant Matching", description: "Strategic matching of UK and Pakistan businesses for meaningful partnerships.", color: "#22C55E" },
@@ -132,35 +152,111 @@ export default function TradeDelegationsAndExhibitionsClient() {
         </div>
       </section>
 
-      {/* ── Intro Section ── */}
+      {/* ── Trade Delegation Section ── */}
       <section className="relative bg-[#0B0F1A]">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
-                  Our Mission
-                </p>
-                <p className="font-heading font-extrabold text-white/90 text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
-                  UPTECH organises and facilitates trade delegations and technology exhibitions that bring together businesses, investors, startups, and technology leaders from the UK and Pakistan.
-                </p>
-                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
-                <p className="text-white/60 text-base sm:text-lg leading-relaxed">
-                  These events create opportunities for networking, collaboration, and knowledge exchange. Through strategic delegations and exhibitions, we enable cross-border partnerships, showcase innovation, and drive technology-led growth across both nations.
-                </p>
-              </div>
-              <div className="backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl p-8">
-                <h3 className="font-heading font-bold text-white text-base mb-5">What We Facilitate</h3>
-                <div className="h-px bg-white/10 mb-5" />
-                <ul className="space-y-3">
-                  {["Trade Delegations", "Technology Exhibitions", "Networking Events", "B2B Meetings"].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-white/60 text-sm leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="max-w-4xl mb-14">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
+                Trade Delegations
+              </p>
+              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+                Connecting Technology Companies Across Borders
+              </h2>
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
+              <p className="text-white/60 text-base sm:text-lg leading-relaxed">
+                {tradeDelegationIntro}
+              </p>
+            </div>
+
+            {/* Trade Delegation For Members */}
+            <div className="mb-8">
+              <h3 className="font-heading font-bold text-white text-lg mb-6">For Members</h3>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {tradeDelegationBenefits.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
+                >
+                  <div
+                    className="absolute top-0 left-0 right-0 h-[3px]"
+                    style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
+                  />
+                  <div className="p-6">
+                    <h4 className="font-heading font-bold text-white text-base mb-2" style={{ color: item.color }}>
+                      {item.title}
+                    </h4>
+                    <div className="h-px bg-white/10 mb-3" />
+                    <p className="text-white/50 text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── Exhibition Events Section ── */}
+      <section className="relative bg-[#131942]">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#8b5cf6]/5 blur-[150px] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <AnimatedSection>
+            <div className="max-w-4xl mb-14">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-5">
+                Exhibition Events
+              </p>
+              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+                High-Impact Exhibition Events
+              </h2>
+              <div className="h-px bg-gradient-to-r from-[#22C55E]/40 via-[#22C55E]/10 to-transparent mb-8" />
+              <p className="text-white/60 text-base sm:text-lg leading-relaxed">
+                {exhibitionIntro}
+              </p>
+            </div>
+
+            {/* Exhibition For Members */}
+            <div className="mb-8">
+              <h3 className="font-heading font-bold text-white text-lg mb-6">For Members</h3>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 mb-14">
+              {exhibitionBenefits.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
+                >
+                  <div
+                    className="absolute top-0 left-0 right-0 h-[3px]"
+                    style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
+                  />
+                  <div className="p-6">
+                    <h4 className="font-heading font-bold text-white text-base mb-2" style={{ color: item.color }}>
+                      {item.title}
+                    </h4>
+                    <div className="h-px bg-white/10 mb-3" />
+                    <p className="text-white/50 text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Why It Matters */}
+            <div className="relative backdrop-blur-md bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#8b5cf6]" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-20 bg-gradient-to-b from-[#22C55E]/10 to-transparent blur-xl pointer-events-none" />
+              <h3 className="relative font-heading font-bold text-white text-lg mb-4">Why It Matters</h3>
+              <div className="relative h-px bg-white/[0.06] mb-4" />
+              <p className="relative text-white/60 text-base sm:text-lg leading-relaxed">
+                {exhibitionWhyItMatters}
+              </p>
             </div>
           </AnimatedSection>
         </div>

@@ -7,33 +7,37 @@ import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
-const categories = [
-  { title: "Innovator of the Year", tag: "Individual", description: "Recognising exceptional innovation and breakthrough contributions to technology." },
-  { title: "Woman in Tech Leadership Award", tag: "Individual", description: "Celebrating outstanding female leaders driving technology transformation." },
-  { title: "Emerging Young Technologist", tag: "Individual", description: "Honouring promising young talent making significant impact in tech." },
-  { title: "Tech Educator / Mentor of the Year", tag: "Individual", description: "Recognising educators and mentors shaping the next generation of tech leaders." },
-  { title: "Emerging AI / FinTech Leader", tag: "Individual", description: "Celebrating leaders at the forefront of AI and financial technology." },
-  { title: "Startup of the Year", tag: "Startup", description: "Recognising exceptional startups from Pakistan, UK, or joint ventures." },
-  { title: "Best UK–Pakistan Collaboration Project", tag: "Collaboration", description: "Honouring outstanding collaborative projects between both nations." },
-  { title: "Excellence in AI / FinTech / HealthTech / EdTech", tag: "Sector", description: "Recognising sector-specific excellence across key technology domains." },
-  { title: "R&D Excellence Award", tag: "Research", description: "Celebrating groundbreaking research and development achievements." },
-  { title: "Tech for Social Impact", tag: "Impact", description: "Honouring technology solutions that create positive social change." },
-  { title: "Outstanding Digital Export Achievement", tag: "Achievement", description: "Recognising exceptional success in digital exports and international growth." },
-  { title: "Lifetime Contribution to Tech Diplomacy", tag: "Special Recognition", description: "Celebrating lifelong dedication to strengthening UK–Pakistan tech relations." },
+const companyAwards = [
+  { title: "Excellence in IT Exports", tag: "Company", description: "Recognising outstanding achievement in IT export growth and international market development." },
+  { title: "Innovation in Software & Digital Products", tag: "Company", description: "Celebrating innovative software solutions and digital products driving industry advancement." },
+  { title: "High-Growth Technology Company", tag: "Company", description: "Honouring technology companies demonstrating exceptional growth and scalability." },
+  { title: "Excellence in AI / Emerging Technologies", tag: "Company", description: "Recognising excellence in artificial intelligence and emerging technology domains." },
+  { title: "Global Market Expansion Award", tag: "Company", description: "Celebrating companies successfully expanding into global markets." },
+  { title: "E-Governance Awards", tag: "Company", description: "Honouring outstanding contributions to e-governance solutions and digital government services." },
+];
+
+const professionalAwards = [
+  { title: "IT Professional of the Year", tag: "Professional", description: "Recognising an outstanding IT professional for exceptional contributions to the industry." },
+  { title: "Emerging Tech Leader Award", tag: "Professional", description: "Celebrating rising leaders making significant impact in the technology sector." },
+  { title: "Excellence in Engineering & Product Development", tag: "Professional", description: "Honouring exceptional achievement in engineering and product development." },
+  { title: "Women in Technology Excellence Award", tag: "Professional", description: "Celebrating outstanding women leaders driving technology transformation." },
+  { title: "Young IT Professionals Awards", tag: "Professional", description: "Recognising promising young IT professionals making significant contributions." },
+  { title: "Academic Excellence Awards", tag: "Professional", description: "Honouring outstanding academic contributions to IT education and research." },
+  { title: "Fellowship and Hon. Fellowship Awards", tag: "Special Recognition", description: "Members with many years of significant contribution to the IT industry are made Fellows of the Council." },
+  { title: "Lifetime Achievement Award", tag: "Special Recognition", description: "Celebrating lifelong dedication and transformative contributions to the technology industry." },
 ];
 
 const nominationSteps = [
-  { number: "01", title: "Eligibility", description: "Review category requirements and ensure nominee meets eligibility criteria.", outcome: "Confirmed eligibility", color: "#2563EB" },
-  { number: "02", title: "Submission", description: "Complete nomination form with supporting documentation and evidence of achievement.", outcome: "Submission received", color: "#22C55E" },
-  { number: "03", title: "Evaluation", description: "Independent jury reviews and scores nominations based on established merit criteria.", outcome: "Scored and ranked", color: "#8b5cf6" },
-  { number: "04", title: "Recognition", description: "Winners announced and celebrated at the annual UK–Pakistan Tech Excellence Awards ceremony.", outcome: "Publicly recognised", color: "#f59e0b" },
+  { number: "01", title: "Nominations", description: "Nominations through industry bodies, and partner organizations.", outcome: "Nominations received", color: "#2563EB" },
+  { number: "02", title: "Committee Review", description: "Review by a joint committee comprising representatives and industry experts.", outcome: "Reviewed and scored", color: "#22C55E" },
+  { number: "03", title: "Final Approval", description: "Final approval of awardees by joint committee.", outcome: "Awardees confirmed", color: "#8b5cf6" },
 ];
 
-const evaluationCriteria = [
-  "Innovation and originality of contribution",
-  "Impact and scalability of the work",
-  "Cross-border collaboration and inclusivity",
-  "Sustainability and export potential",
+const objectives = [
+  "Recognize outstanding achievements in Pakistan\u2019s IT & digital services sector.",
+  "Highlight success stories to international investors and partners",
+  "Reinforce Pakistan\u2019s image as a competitive global technology destination",
+  "Motivate continued excellence and export-led growth within the IT industry",
 ];
 
 const faqs = [
@@ -45,13 +49,8 @@ const faqs = [
 ];
 
 const tagColors: Record<string, string> = {
-  Individual: "#2563EB",
-  Startup: "#22C55E",
-  Collaboration: "#8b5cf6",
-  Sector: "#f59e0b",
-  Research: "#06b6d4",
-  Impact: "#C41E3A",
-  Achievement: "#ef4444",
+  Company: "#2563EB",
+  Professional: "#22C55E",
   "Special Recognition": "#f59e0b",
 };
 
@@ -95,12 +94,12 @@ export default function TechExcellenceAwardsClient() {
                   backgroundImage: "linear-gradient(135deg, #ffffff 0%, #f59e0b 50%, #C41E3A 100%)",
                 }}
               >
-                Tech Excellence Awards
+                UPTECH Awards
               </span>
             </h1>
             <div className="max-w-2xl backdrop-blur-md bg-white/[0.05] border border-white/[0.1] rounded-2xl p-6 mb-8">
               <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
-                Celebrating Innovation, Partnership, and Digital Leadership across Two Nations.
+                Achievement is a wonderful thing. But what makes it even more wonderful is being publicly acclaimed for it&#8212;especially in the presence of one&apos;s peers.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -125,33 +124,29 @@ export default function TechExcellenceAwardsClient() {
                   About the Awards
                 </p>
                 <p className="font-heading font-extrabold text-white/90 text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
-                  The UK–Pakistan Tech Excellence Awards celebrate the outstanding achievements of individuals, teams, and organisations driving innovation and digital transformation across both nations.
+                  UPTECH Awards
                 </p>
                 <div className="h-px bg-gradient-to-r from-[#f59e0b]/40 via-[#f59e0b]/10 to-transparent mb-8" />
                 <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-5">
-                  These awards recognise excellence in technology development, cross-border collaboration, and leadership that strengthens the UK–Pakistan tech corridor.
+                  Achievement is a wonderful thing. But what makes it even more wonderful is being publicly acclaimed for it&#8212;especially in the presence of one&apos;s peers. That&apos;s why UPTECH has instituted awards in several categories. Also, members with many years of significant contribution to the IT industry are made Fellows of the Council. It is regarded as one of the most prestigious titles that an IT professional can receive in the country today.
                 </p>
                 <p className="text-white/60 text-base sm:text-lg leading-relaxed">
-                  By honouring innovators, educators, startups, and established companies, the awards program highlights the transformative power of technology partnerships and inspires the next generation of tech leaders.
+                  Awards will be honorary in nature and presented during a high-impact ceremony /annual Black Tie Gala dinner in UK and other prominent locations.
                 </p>
               </div>
               <div className="backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl p-8">
-                <h3 className="font-heading font-bold text-white text-base mb-5">What the Awards Stand For</h3>
+                <h3 className="font-heading font-bold text-white text-base mb-5">Objectives</h3>
                 <div className="h-px bg-white/10 mb-5" />
                 <ul className="space-y-4">
-                  {[
-                    { title: "Recognition", desc: "Celebrating outstanding achievements in technology and innovation across both nations.", color: "#f59e0b" },
-                    { title: "Bilateral Collaboration", desc: "Highlighting successful partnerships that strengthen UK–Pakistan tech relations.", color: "#2563EB" },
-                    { title: "Global Visibility", desc: "Elevating award winners to international recognition and new opportunities.", color: "#22C55E" },
-                  ].map((item) => (
-                    <li key={item.title} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: item.color }} strokeWidth={2} />
-                      <div>
-                        <span className="font-semibold text-white text-sm">{item.title}</span>
-                        <p className="text-white/50 text-xs leading-relaxed mt-0.5">{item.desc}</p>
-                      </div>
-                    </li>
-                  ))}
+                  {objectives.map((objective, i) => {
+                    const colors = ["#f59e0b", "#2563EB", "#22C55E", "#8b5cf6"];
+                    return (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: colors[i % colors.length] }} strokeWidth={2} />
+                        <p className="text-white/60 text-sm leading-relaxed">{objective}</p>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
@@ -159,25 +154,80 @@ export default function TechExcellenceAwardsClient() {
         </div>
       </section>
 
-      {/* ── Award Categories ── */}
+      {/* ── Company Awards ── */}
       <section className="relative bg-[#0B0F1A]">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">
-                Award Categories
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
+                Proposed Award Categories
               </p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Categories
+                Company Awards
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#f59e0b]/40 via-[#f59e0b]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">
-                Recognising excellence across diverse dimensions of technology innovation and leadership.
+                Recognising excellence in IT exports, innovation, and technology leadership at the company level.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {categories.map((category, i) => {
+              {companyAwards.map((category, i) => {
                 const tagColor = tagColors[category.tag] || "#2563EB";
+                return (
+                  <motion.div
+                    key={category.title}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.4, delay: i * 0.06 }}
+                    className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300 flex flex-col"
+                  >
+                    <div
+                      className="absolute top-0 left-0 right-0 h-[3px]"
+                      style={{ background: `linear-gradient(to right, ${tagColor}, ${tagColor}60)` }}
+                    />
+                    <div className="p-6 flex flex-col flex-1">
+                      <div className="flex items-start justify-between mb-3">
+                        <h3 className="font-heading font-bold text-white text-sm flex-1 pr-3 group-hover:text-[#f59e0b] transition-colors duration-200">
+                          {category.title}
+                        </h3>
+                        <span
+                          className="text-xs font-semibold px-2 py-0.5 flex-shrink-0 rounded"
+                          style={{ color: tagColor, background: `${tagColor}15` }}
+                        >
+                          {category.tag}
+                        </span>
+                      </div>
+                      <div className="h-px bg-white/10 mb-3" />
+                      <p className="text-white/50 text-sm leading-relaxed flex-1">{category.description}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ── Professional Awards ── */}
+      <section className="relative bg-[#0E1221]">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <AnimatedSection>
+            <div className="mb-14">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
+                Proposed Award Categories
+              </p>
+              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
+                Professional Awards
+              </h2>
+              <div className="h-px bg-gradient-to-r from-[#22C55E]/40 via-[#22C55E]/10 to-transparent mb-4 max-w-xs" />
+              <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">
+                Recognising individual excellence, leadership, and contributions to the IT industry.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {professionalAwards.map((category, i) => {
+                const tagColor = tagColors[category.tag] || "#22C55E";
                 return (
                   <motion.div
                     key={category.title}
@@ -223,14 +273,14 @@ export default function TechExcellenceAwardsClient() {
                 Nomination Process
               </p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                How to Nominate
+                Award Selection Process
               </h2>
               <div className="h-px bg-gradient-to-r from-[#8b5cf6]/40 via-[#8b5cf6]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">
                 A transparent, structured process designed to identify and celebrate true excellence.
               </p>
             </div>
-            <div className="grid md:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               {nominationSteps.map((step, i) => (
                 <motion.div
                   key={step.number}
@@ -281,47 +331,40 @@ export default function TechExcellenceAwardsClient() {
         </div>
       </section>
 
-      {/* ── Judging / Evaluation ── */}
-      <section className="relative bg-[#0E1221]">
+      {/* ── Objectives ── */}
+      <section className="relative bg-[#0B0F1A]">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="grid lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
-                  Judging
+                  Purpose
                 </p>
                 <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                  Evaluation Process
+                  Objectives
                 </h2>
                 <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
                 <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed mb-8">
-                  Transparent, merit-based scoring by an independent jury of senior experts.
+                  The UPTECH Awards programme is designed to achieve the following key objectives.
                 </p>
-                <p className="text-white/60 text-base leading-relaxed mb-5">
-                  All nominations are evaluated by an independent jury of 6–10 senior experts from both the UK and Pakistan. The judging process is designed to be transparent, merit-based, and free from bias.
-                </p>
-                <p className="text-white/60 text-base leading-relaxed mb-6">
-                  Our jury members bring decades of combined experience in technology, innovation, business, and cross-border collaboration.
-                </p>
-                <h3 className="font-heading font-bold text-white/80 text-sm uppercase tracking-wide mb-4">Evaluation Criteria</h3>
                 <ul className="space-y-0">
-                  {evaluationCriteria.map((criterion) => (
-                    <li key={criterion} className="flex items-start gap-3 py-3 border-b border-white/[0.08] last:border-b-0">
+                  {objectives.map((objective, i) => (
+                    <li key={i} className="flex items-start gap-3 py-3 border-b border-white/[0.08] last:border-b-0">
                       <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-white/60 text-sm">{criterion}</span>
+                      <span className="text-white/60 text-sm">{objective}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="lg:col-span-1">
-                <div className="backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 sticky top-8">
+                <div className="backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 sticky top-8 relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl bg-gradient-to-r from-[#f59e0b] to-[#f59e0b60]" />
-                  <h3 className="font-heading font-bold text-white text-base mb-3">Independent Jury</h3>
+                  <h3 className="font-heading font-bold text-white text-base mb-3">Fellowship</h3>
                   <div className="h-px bg-white/10 mb-4" />
                   <p className="text-white/50 text-sm leading-relaxed mb-4">
-                    6–10 senior experts from both the UK and Pakistan with decades of combined experience in technology, innovation, and cross-border collaboration.
+                    Members with many years of significant contribution to the IT industry are made Fellows of the Council. It is regarded as one of the most prestigious titles that an IT professional can receive in the country today.
                   </p>
-                  <p className="text-xs text-white/30 italic">Transparent, merit-based evaluation process</p>
+                  <p className="text-xs text-white/30 italic">Honorary awards presented at the annual Black Tie Gala dinner</p>
                 </div>
               </div>
             </div>

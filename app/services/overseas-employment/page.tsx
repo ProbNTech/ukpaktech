@@ -15,19 +15,19 @@ const stats = [
 ];
 
 const employerBenefits = [
-  { title: "Pre-Qualified Talent", description: "Access skilled technology professionals who have been vetted and assessed for contract-based roles." },
-  { title: "Flexible Teams", description: "Build flexible, high-performing teams without long-term commitments or overhead costs." },
-  { title: "Fast Matching", description: "Save time and connect with pre-qualified talent networks \u2014 matched to your specific requirements." },
-  { title: "Outsourcing Options", description: "Explore outsourcing and managed service partnerships for project-based or ongoing needs." },
-  { title: "International Expertise", description: "Expand your business with international expertise, diverse perspectives, and cross-border collaboration." },
+  { title: "Skilled Professionals", description: "Access skilled technology professionals for contract-based roles" },
+  { title: "Flexible Teams", description: "Build flexible, high-performing teams without long-term commitments" },
+  { title: "Fast Matching", description: "Save time and connect with pre-qualified talent networks" },
+  { title: "Outsourcing Options", description: "Explore outsourcing and managed service partnerships" },
+  { title: "International Expertise", description: "Expand your business with international expertise and collaboration" },
 ];
 
 const professionalBenefits = [
-  { title: "Global Opportunities", description: "Discover exciting international contract opportunities with leading technology companies." },
-  { title: "Cutting-Edge Projects", description: "Gain exposure to cutting-edge global technology projects across multiple industries." },
-  { title: "Network Building", description: "Build your professional network across cross-border industry networks and communities." },
-  { title: "Skill Development", description: "Develop skills while working with top-tier companies on challenging technology projects." },
-  { title: "Career Pathways", description: "Access professional development pathways including certifications and training programs." },
+  { title: "Global Opportunities", description: "Discover exciting international contract opportunities" },
+  { title: "Cutting-Edge Projects", description: "Gain exposure to international and cutting-edge global technology projects" },
+  { title: "Network Building", description: "Build your network and experience Cross-border industry networks" },
+  { title: "Skill Development", description: "Develop skills while working with top-tier companies" },
+  { title: "Career Pathways", description: "Professional development pathways" },
 ];
 
 const processSteps = [
@@ -87,12 +87,12 @@ export default function OverseasEmploymentPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">UPTECH Service</p>
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-6">
               <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #22C55E 100%)" }}>
-                Overseas Employment
+                Overseas Contract Employment Opportunities
               </span>
             </h1>
             <div className="max-w-2xl backdrop-blur-md bg-white/[0.05] border border-white/[0.1] rounded-2xl p-6 mb-8">
               <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
-                Connecting skilled technology professionals with international contract opportunities, strengthening collaboration and innovation across the UK&ndash;Pakistan tech ecosystem.
+                The UK-Pakistan Tech Council facilitates skilled technology professionals with high-value overseas contract opportunities, helping both employers and talent thrive in global markets.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -136,14 +136,14 @@ export default function OverseasEmploymentPage() {
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">Overview</p>
               <h2 className="font-heading font-extrabold text-white/90 text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
-                Bridging Talent with Opportunity Across Borders
+                Our Focus
               </h2>
               <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
               <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-5">
-                UPTECH&apos;s Overseas Contract Employment service connects UK and international employers with Pakistan&apos;s deep pool of skilled technology professionals. We facilitate compliant, high-quality contract placements that benefit both parties.
+                We support ethical, compliant, and commercially viable pathways that connect skilled professionals with long-term, short-term and project-based opportunities across UK, Europe, Middle East and Pakistan.
               </p>
               <p className="text-white/60 text-base sm:text-lg leading-relaxed">
-                By enabling overseas contract employment, we strengthen collaboration, accelerate knowledge exchange, and support innovation across both ecosystems &mdash; creating a sustainable talent pipeline for the UK&ndash;Pakistan tech corridor.
+                We prioritise transparency, compliance, and long-term relationship building. Our goal is to create structured, sustainable talent mobility between the UK, Europe, Middle East and Pakistan&apos;s technology sectors. By enabling overseas contract employment, we strengthen collaboration, accelerate knowledge exchange, and support innovation across both ecosystems.
               </p>
             </div>
           </AnimatedSection>
@@ -178,7 +178,7 @@ export default function OverseasEmploymentPage() {
                   </div>
                   <div className="h-px bg-white/10 mb-5" />
                   <p className="text-sm text-white/50 leading-relaxed mb-5">
-                    Find the right talent, fast. We help organisations build flexible teams with skilled tech professionals &mdash; vetted, matched, and ready to deliver.
+                    Find the Right Talent, Fast &mdash; We help organisations:
                   </p>
                   <div className="space-y-4">
                     {employerBenefits.map((item) => (
@@ -215,7 +215,7 @@ export default function OverseasEmploymentPage() {
                   </div>
                   <div className="h-px bg-white/10 mb-5" />
                   <p className="text-sm text-white/50 leading-relaxed mb-5">
-                    Grow your career globally. We provide access to international contract opportunities and professional development pathways.
+                    Grow Your Career Globally &mdash; We provide access to:
                   </p>
                   <div className="space-y-4">
                     {professionalBenefits.map((item) => (
@@ -354,10 +354,10 @@ export default function OverseasEmploymentPage() {
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">Get Started</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Connect Talent with Opportunity &mdash; Across Borders
+                Get connected. Access opportunities. Grow your impact.
               </h2>
               <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
-                Whether you&apos;re an employer seeking skilled professionals or a technologist looking for international opportunities &mdash; UPTECH connects you with the right match.
+                Overseas contract employment through the Council provides a trusted, compliant, and efficient way to connect talent with opportunity. Our goal is to accelerate growth, enhance careers, and strengthen the UK-Pakistan tech ecosystem through high-quality contract placements.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button href="/membership" variant="primary" size="lg" showArrow>Get Connected</Button>

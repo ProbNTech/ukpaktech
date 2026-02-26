@@ -19,7 +19,7 @@ const services = [
     icon: Building2,
     color: "#2563EB",
     title: "Company Registration",
-    description: "Assistance and guidance for the registration of startups in the UK \u2014 from formation to compliance.",
+    description: "We will provide assistance and guidance for the registration of the startups in UK.",
     features: ["UK company formation", "Director & shareholder setup", "Registered office address", "Post-incorporation compliance"],
   },
   {
@@ -33,35 +33,35 @@ const services = [
     icon: FileCheck,
     color: "#8b5cf6",
     title: "S/EIS Advance Assurance",
-    description: "Check your eligibility and apply seamlessly. Once you\u2019ve raised funds, submit compliance statements \u2014 we handle all correspondence with HMRC.",
+    description: "Check your eligibility and apply seamlessly in-app. Once you\u2019ve raised funds, submit your compliance statements right there, we\u2019ll handle all correspondence with HMRC for you.",
     features: ["Eligibility assessment", "Application preparation", "HMRC correspondence", "Compliance statement filing"],
   },
   {
     icon: FileText,
     color: "#f59e0b",
     title: "Investment Documents",
-    description: "All investment agreements needed to execute your round \u2014 including term sheets, Advance Subscription Agreements, and convertible loan notes.",
+    description: "Includes all the investment agreements needed to execute your round \u2014 including a term sheet, Advance Subscription Agreement, or convertible loan note.",
     features: ["Term sheet drafting", "SHA & SSA preparation", "Convertible note agreements", "Board resolution templates"],
   },
   {
     icon: Shield,
     color: "#C41E3A",
     title: "Intellectual Property Rights",
-    description: "Protect your creations in the growing trend of piracy. We provide intellectual and property rights to safeguard your startup.",
+    description: "It is essential to protect your creation in the growing trend of piracy. We, thus, take care of providing you with the intellectual & property rights to safeguard your startup.",
     features: ["Trademark registration", "Patent application support", "IP strategy development", "Infringement protection"],
   },
   {
     icon: Scale,
     color: "#ef4444",
     title: "Legal & Accounting Support",
-    description: "Sound legal and accounting advice plays an important role in smooth business operations. We provide the necessary support for seamless development.",
+    description: "The sound legal and accounting advice plays an important role in the smooth running of the business. We would be providing the incubates with the necessary legal & accounting support for their seamless development.",
     features: ["Legal advisory", "Tax planning & compliance", "Financial reporting", "Regulatory guidance"],
   },
   {
     icon: Database,
     color: "#8b5cf6",
     title: "Data Rooms",
-    description: "Share key documents with prospective investors via a secure digital vault \u2014 organised, accessible, and confidential.",
+    description: "Share key documents with prospective investors via a secure digital vault.",
     features: ["Secure document hosting", "Investor access controls", "Activity tracking & analytics", "Due diligence organisation"],
   },
 ];
@@ -121,12 +121,12 @@ export default function BusinessSupportPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">UPTECH Service</p>
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-6">
               <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg, #ffffff 0%, #8b5cf6 50%, #2563EB 100%)" }}>
-                Business Support
+                Business Support Services
               </span>
             </h1>
             <div className="max-w-2xl backdrop-blur-md bg-white/[0.05] border border-white/[0.1] rounded-2xl p-6 mb-8">
               <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
-                From company registration to legal support, IP protection to data rooms &mdash; we provide the essential business infrastructure startups need to succeed.
+                These services will be offered directly and through our partners
               </p>
             </div>
             <div className="flex flex-wrap gap-4">

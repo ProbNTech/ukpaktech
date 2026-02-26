@@ -80,6 +80,7 @@ const navItems: NavItem[] = [
       { label: "Overseas Employment", href: "/services/overseas-employment", desc: "Contract employment connecting skilled tech professionals with international opportunities." },
       { label: "Business Support", href: "/services/business-support", desc: "Company registration, legal, IP protection, investment documents, and data rooms." },
       { label: "Mentorship", href: "/services/mentorship", desc: "One-to-one guidance from experienced UK and Pakistan tech leaders and entrepreneurs." },
+      { label: "Corporate Partnerships", href: "/services/corporate-partnerships", desc: "Strategic partnerships connecting founders, startups, accelerators, investors, and corporate partners." },
     ],
   },
   /* 4 — Products */
@@ -97,8 +98,22 @@ const navItems: NavItem[] = [
       { label: "TechMart Global", href: "/initiatives/techmart-global", desc: "A cross-border digital marketplace enabling UK and Pakistani tech firms to trade and collaborate." },
     ],
   },
-  /* 5 — Startup Funding (direct link) */
-  { kind: "link", label: "Startup Funding", displayLabel: "Funding", href: "/ecosystem/funding-and-grants" },
+  /* 5 — Funding */
+  {
+    kind: "group",
+    label: "Funding",
+    tagline: "Investment & grants",
+    editorial: {
+      headline: "Fuelling growth\nat every stage.",
+      body: "From pre-seed grants to Series A & B investment — access the capital, networks, and strategic guidance your tech business needs to scale globally.",
+      cta: { label: "Explore funding →", href: "/ecosystem/funding-and-grants" },
+    },
+    items: [
+      { label: "Funding & Grants", href: "/ecosystem/funding-and-grants", desc: "Government grants, R&D incentives, sophisticated investor access, and funding strategy support." },
+      { label: "Startup Funding", href: "/ecosystem/startup-funding", desc: "Angel and VC access, pitch events, investor matchmaking, and funding strategy for early-stage startups." },
+      { label: "Series A & B Funding", href: "/ecosystem/series-funding", desc: "Growth-stage investment, cross-border expansion capital, and VC/PE partner introductions." },
+    ],
+  },
   /* 6 — Membership */
   {
     kind: "group",
@@ -111,6 +126,7 @@ const navItems: NavItem[] = [
     },
     items: [
       { label: "Membership Overview", href: "/membership", desc: "Explore membership tiers, benefits, and how to join the UPTECH community." },
+      { label: "Apply for Membership", href: "/membership/apply", desc: "Complete the membership application form to join the UK–Pakistan Tech Council." },
       { label: "Membership Directory", href: "/membership/directory", desc: "Browse our corporate and individual members shaping the UK–Pakistan technology corridor." },
       { label: "London Meeting Space", href: "/meeting-space", desc: "Professional meeting and event facilities in central London for UPTECH members." },
     ],

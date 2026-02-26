@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
-import { CheckCircle2, ChevronDown, Megaphone, Globe, PenTool, Calendar, Mail, BarChart3, TrendingUp, Eye, Users, Zap } from "lucide-react";
+import { CheckCircle2, ChevronDown, Megaphone, Globe, PenTool, Calendar, Mail } from "lucide-react";
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 
@@ -15,12 +15,11 @@ const stats = [
 ];
 
 const offerings = [
-  { icon: Megaphone, color: "#C41E3A", title: "Product & Solutions Showcase", description: "Feature your software products, digital platforms, and services through Council channels, events, and curated industry showcases.", features: ["Featured product listings", "Demo day presentations", "Industry showcase placement"] },
-  { icon: Globe, color: "#22C55E", title: "Cross-Border Promotion", description: "Reach new audiences in the UK, Europe, Middle East, and Africa through targeted marketing campaigns and strategic partnerships.", features: ["Multi-market campaigns", "Localised messaging", "Partner network amplification"] },
-  { icon: PenTool, color: "#8b5cf6", title: "Content & Thought Leadership", description: "Publish articles, case studies, and insights to position your company as an industry leader.", features: ["Ghostwritten articles", "Case study creation", "Expert commentary placement"] },
-  { icon: Calendar, color: "#f59e0b", title: "Event Marketing", description: "Promote your brand at Council events, exhibitions, and trade delegations with premium visibility packages.", features: ["Speaking opportunities", "Exhibition booths", "Sponsored networking sessions"] },
-  { icon: Mail, color: "#2563EB", title: "Digital Campaigns", description: "Leverage Council digital channels including email, social media, and the web platform for targeted outreach.", features: ["Email marketing campaigns", "Social media promotion", "Website feature placement"] },
-  { icon: BarChart3, color: "#ef4444", title: "Market Intelligence", description: "Access insights on buyer preferences, competitive landscape, and market trends to refine your marketing strategy.", features: ["Market reports", "Competitor analysis", "Buyer persona insights"] },
+  { icon: Megaphone, color: "#C41E3A", title: "Product & Solutions Showcase", description: "Feature your software products, digital platforms, and services through Council channels, events, and curated industry spotlights." },
+  { icon: Globe, color: "#22C55E", title: "Market Visibility & Promotion", description: "Gain exposure through newsletters, digital campaigns, industry roundtables, trade missions, and strategic introductions to potential partners and customers." },
+  { icon: PenTool, color: "#8b5cf6", title: "Go-to-Market Support", description: "Receive guidance on positioning, messaging, and market entry strategies tailored to the UK and Europe technology ecosystems." },
+  { icon: Calendar, color: "#f59e0b", title: "Thought Leadership Opportunities", description: "Position your organisation as an industry leader through speaking opportunities, panel discussions, policy forums, and published insights." },
+  { icon: Mail, color: "#2563EB", title: "Cross-Border Business Development", description: "Access networks of policymakers, regulators, investors, and corporate buyers to support partnership building and commercial growth." },
 ];
 
 const steps = [
@@ -30,18 +29,12 @@ const steps = [
   { number: "04", title: "Grow", description: "Track results, optimise performance, and scale your international presence.", outcome: "ROI measured & scaled", color: "#f59e0b" },
 ];
 
-const results = [
-  { icon: Eye, color: "#2563EB", metric: "12M+", title: "Impressions Delivered", description: "Across email, social, web, and event channels for member products." },
-  { icon: Users, color: "#22C55E", metric: "3,500+", title: "Qualified Leads Generated", description: "Warm leads delivered to member companies through targeted campaigns." },
-  { icon: TrendingUp, color: "#f59e0b", metric: "8x", title: "Average Campaign ROI", description: "Return on investment across digital and event marketing programs." },
-  { icon: Zap, color: "#ef4444", metric: "72hrs", title: "Average Campaign Launch", description: "From brief to live campaign across Council channels." },
-];
-
-const targetAudience = [
-  { title: "Tech SMEs", description: "Looking to expand into international markets with limited marketing budgets.", color: "#2563EB" },
-  { title: "Scale-Ups", description: "Seeking brand visibility, lead generation, and market positioning across borders.", color: "#22C55E" },
-  { title: "Established Firms", description: "Promoting new products or entering new regional markets via Council channels.", color: "#f59e0b" },
-  { title: "SaaS Companies", description: "Targeting UK, European, and Middle Eastern buyers for subscription software.", color: "#8b5cf6" },
+const whyItMatters = [
+  "Increase brand credibility",
+  "Enter new markets with confidence",
+  "Build strategic partnerships",
+  "Generate commercial opportunities",
+  "Strengthen their international presence",
 ];
 
 const faqs = [
@@ -84,12 +77,12 @@ export default function DigitalMarketingPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">UPTECH Service</p>
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-6">
               <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg, #ffffff 0%, #C41E3A 50%, #f59e0b 100%)" }}>
-                Digital Marketing Hub
+                Digital Product Marketing Hub
               </span>
             </h1>
             <div className="max-w-2xl backdrop-blur-md bg-white/[0.05] border border-white/[0.1] rounded-2xl p-6 mb-8">
               <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
-                Promote your software solutions, platforms, and technology services across the UK, Europe, Middle East and Africa. Accelerate cross-border growth with practical, results-driven marketing support.
+                The Digital Product Marketing Hub supports members in promoting their software solutions, platforms, and technology services across the UK, Europe, Middle East &amp; African continents. We help technology companies strengthen their market presence, reach new audiences, and accelerate cross-border growth.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -137,10 +130,10 @@ export default function DigitalMarketingPage() {
               </h2>
               <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#f59e0b]/20 to-transparent mb-8" />
               <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-5">
-                The Digital Product Marketing Hub is UPTECH&apos;s dedicated platform for promoting member technology products and services to international audiences. We combine our extensive network, event program, and digital channels to deliver measurable marketing results.
+                The Digital Product Marketing Hub supports members in promoting their software solutions, platforms, and technology services across the UK, Europe, Middle East &amp; African continents. We help technology companies strengthen their market presence, reach new audiences, and accelerate cross-border growth.
               </p>
               <p className="text-white/60 text-base sm:text-lg leading-relaxed">
-                Whether you&apos;re launching a new SaaS product, expanding into the Middle East, or positioning your company as a thought leader &mdash; we provide the strategy, channels, and execution support to get you there.
+                Our Hub is designed to provide practical, results-driven marketing support tailored to the needs of tech SMEs, scale-ups, and established firms looking to expand into new markets.
               </p>
             </div>
           </AnimatedSection>
@@ -157,7 +150,7 @@ export default function DigitalMarketingPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">Services</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">What We Offer</h2>
               <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#22C55E] to-[#22C55E]/40 mb-4" />
-              <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">Six core marketing services tailored for tech SMEs, scale-ups, and established firms.</p>
+              <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">Five core marketing services tailored for tech SMEs, scale-ups, and established firms.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {offerings.map((item, i) => {
@@ -181,15 +174,7 @@ export default function DigitalMarketingPage() {
                       </div>
                       <h3 className="font-heading font-bold text-white text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{item.title}</h3>
                       <div className="h-px bg-white/10 mb-3" />
-                      <p className="text-sm text-white/50 leading-relaxed mb-4 flex-1">{item.description}</p>
-                      <ul className="space-y-1.5">
-                        {item.features.map((f) => (
-                          <li key={f} className="flex items-start gap-2 text-xs text-white/50">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                            <span>{f}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <p className="text-sm text-white/50 leading-relaxed flex-1">{item.description}</p>
                     </div>
                   </motion.div>
                 );
@@ -242,83 +227,28 @@ export default function DigitalMarketingPage() {
         </div>
       </section>
 
-      {/* ── Results That Speak ── */}
+      {/* ── Why It Matters ── */}
       <section className="relative bg-[#0B0F1A]">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-10 bg-[#f59e0b]" />
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-10">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">Impact</p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Results That Speak</h2>
+              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Why It Matters</h2>
               <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#f59e0b]/40 mb-4" />
-              <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">Real numbers from our marketing programs across member companies.</p>
+              <p className="text-white/40 text-base sm:text-lg max-w-3xl leading-relaxed">
+                The UK and Pakistan technology sectors present significant opportunities for collaboration, outsourcing, innovation partnerships, and product expansion. The Digital Product Marketing Hub helps members:
+              </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {results.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
-                  >
-                    <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }} />
-                    <div className="p-6">
-                      <div className="relative mb-4">
-                        <div className="absolute inset-[-8px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500" style={{ background: item.color }} />
-                        <div className="relative w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${item.color}15`, border: `1px solid ${item.color}30`, boxShadow: `0 0 20px ${item.color}10` }}>
-                          <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
-                        </div>
-                      </div>
-                      <div className="font-heading font-extrabold text-2xl mb-1" style={{ color: item.color, textShadow: `0 0 20px ${item.color}30` }}>
-                        {item.metric}
-                      </div>
-                      <h3 className="font-heading font-bold text-white text-sm mb-2">{item.title}</h3>
-                      <div className="h-px bg-white/10 mb-2" />
-                      <p className="text-xs text-white/50 leading-relaxed">{item.description}</p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── Who Is This For ── */}
-      <section className="relative bg-[#0E1221]">
-        <div className="absolute top-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-10 bg-[#22C55E]" />
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
-          <AnimatedSection>
-            <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">For You</p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Who Is This For</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40 mb-4" />
-              <p className="text-white/40 text-base sm:text-lg max-w-2xl leading-relaxed">The Marketing Hub is designed for technology companies ready to grow internationally.</p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {targetAudience.map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
-                >
-                  <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }} />
-                  <div className="p-6">
-                    <h3 className="font-heading font-bold text-white text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{item.title}</h3>
-                    <div className="h-px bg-white/10 mb-3" />
-                    <p className="text-white/50 text-sm leading-relaxed">{item.description}</p>
-                  </div>
-                </motion.div>
+            <ul className="space-y-0 max-w-2xl">
+              {whyItMatters.map((item) => (
+                <li key={item} className="flex items-start gap-3 py-4 border-b border-white/[0.08] last:border-b-0">
+                  <CheckCircle2 className="w-4 h-4 text-[#f59e0b] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                  <span className="text-white/60 text-sm leading-relaxed">{item}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </AnimatedSection>
         </div>
       </section>
@@ -358,7 +288,7 @@ export default function DigitalMarketingPage() {
                 Ready to Grow Your Market Presence Globally?
               </h2>
               <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
-                Join the Digital Product Marketing Hub and start promoting your technology solutions to a global audience across the UK, Europe, Middle East, and Africa.
+                Whether you are launching a new software solution, scaling into new territories, or seeking strategic partnerships, the Digital Product Marketing Hub provides the platform and support to help you grow.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button href="/membership" variant="primary" size="lg" showArrow>Join the Hub</Button>

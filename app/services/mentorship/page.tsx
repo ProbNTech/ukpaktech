@@ -19,21 +19,21 @@ const advantages = [
     icon: Lightbulb,
     title: "Help Build the Future",
     color: "#2563EB",
-    description: "Your insights and experience can be pivotal in helping founders overcome obstacles and scale their businesses effectively, having a direct impact on their success.",
+    description: "As a mentor, your insights and experience can be pivotal in helping founders overcome obstacles and scale their businesses effectively, having a direct impact on their success.",
     features: ["Shape the next generation of tech leaders", "Direct impact on startup outcomes", "Contribute to the UK\u2013Pakistan tech ecosystem"],
   },
   {
     icon: Compass,
     title: "Enhance Your Horizons",
     color: "#8b5cf6",
-    description: "Mentoring enables you to examine existing challenges from different perspectives, honing your own strategic thinking and problem-solving skills.",
+    description: "Mentoring enables you to examine existing challenges from different perspectives, not only providing startups with innovative solutions but also honing your own strategic thinking and problem-solving skills.",
     features: ["Fresh perspectives on industry challenges", "Sharpen your leadership skills", "Stay connected to emerging trends"],
   },
   {
     icon: Globe,
-    title: "Access a Global Community",
+    title: "Access to a Global Community",
     color: "#22C55E",
-    description: "Join our diverse network spanning several countries and tech industries. Connect with forward-thinking individuals and organisations worldwide.",
+    description: "Join our diverse network spanning several countries and Tech industries. Connect with forward-thinking individuals and organizations worldwide, enabling potential collaboration, partnerships, or even new business opportunities.",
     features: ["Cross-border mentor network", "Industry events and summits", "Peer learning opportunities"],
   },
 ];
@@ -43,7 +43,7 @@ const mentorRoles = [
     title: "Being an Advisor",
     icon: Target,
     color: "#2563EB",
-    description: "Work closely with startups on a weekly basis and form part of our Advisory Board for the duration of the programme. Advisor mentors meet participating teams face-to-face, play a role in selection, and choose which startups to engage with.",
+    description: "Work closely with startups on a weekly basis and will often form part of our Advisory Board for the duration of the program. All advisory mentors will get the opportunity time to meet participating teams face-to-face, play a role in selection, and then decide which startups they want to engage with.",
     commitment: "Weekly sessions throughout the programme",
     responsibilities: ["Weekly 1:1 sessions with founders", "Participate in startup selection", "Advisory Board membership", "Face-to-face team meetings"],
   },
@@ -51,7 +51,7 @@ const mentorRoles = [
     title: "Being an Expert",
     icon: Award,
     color: "#8b5cf6",
-    description: "For those who don\u2019t have time to dedicate to a particular team, our secondary pool of standby experts work with one or more startups on an ad-hoc basis. They provide niche advice, troubleshoot problems, and make introductions to their personal network.",
+    description: "For those who don\u2019t have time to dedicate themselves to a particular team, we have a secondary pool of standby experts that will work with one or more startups on an ad-hoc basis. They provide niche advice, troubleshoot problems startups face, and provide introductions to their personal network. The time commitment is on an as-needed basis when best suits.",
     commitment: "As-needed basis, when it best suits",
     responsibilities: ["Ad-hoc expert consultations", "Niche problem-solving sessions", "Network introductions", "Specialist workshops"],
   },
@@ -151,14 +151,14 @@ export default function MentorshipPage() {
               </span>
               <br />
               <span className="bg-gradient-to-r from-white via-white/80 to-white/60 bg-clip-text text-transparent">
-                With Those on Their Way
+                With the Ones on Their Way
               </span>
             </h1>
 
             {/* Subtitle in glass card */}
             <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-5 mb-8 max-w-2xl">
               <p className="text-white/70 text-base sm:text-lg leading-relaxed">
-                Our domain-specific network of mentors guides startups with their experience and expertise, bridging the gap between ambition and achievement across the UK-Pakistan tech corridor.
+                We provide a pool of experts who will mentor the incubates and guide startups with their experience. Our domain-specific and generic network of mentors would acknowledge the challenges faced by the incubates and give them advice in their fields of expertise.
               </p>
             </div>
 
@@ -237,7 +237,7 @@ export default function MentorshipPage() {
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-12 items-start">
               <div className="lg:col-span-3">
-                <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">The backbone of great startups</p>
+                <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Be The backbone of great startups</p>
                 <h2 className="font-heading font-extrabold text-white text-xl sm:text-2xl lg:text-3xl leading-snug mb-6">
                   Shaping the Future by{" "}
                   <span className="bg-gradient-to-r from-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">
@@ -245,13 +245,7 @@ export default function MentorshipPage() {
                   </span>
                 </h2>
                 <p className="text-white/60 text-base leading-relaxed mb-5">
-                  Innovators are everywhere, but they need a little push from someone who knows what it takes to make their dreams come true. That&apos;s where our mentors come in — shaping the future by empowering innovators around the world with their wisdom and experience.
-                </p>
-                <p className="text-white/60 text-base leading-relaxed mb-5">
-                  Our mentorship programme connects experienced technology leaders, business strategists, and investment experts with ambitious founders building the next generation of cross-border technology companies.
-                </p>
-                <p className="text-white/60 text-base leading-relaxed">
-                  Whether you&apos;re a seasoned founder looking to give back, or an early-stage startup seeking guidance — our programme creates meaningful, structured mentoring relationships that drive real results.
+                  Innovators are everywhere, but they need a little push from someone who knows what it takes to make their dreams come true. That&apos;s where our mentors come in shaping the future by empowering innovators around the world with their wisdom and experience. If you&apos;ve ever had the privilege of meeting a mentor who changed your life, you know how important mentors can be. Mentors help us find our path and shape us for the future by showing us what&apos;s possible.
                 </p>
               </div>
 
@@ -410,7 +404,7 @@ export default function MentorshipPage() {
                 <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">Startups</span>
               </h2>
               <p className="text-white/50 text-base max-w-2xl mx-auto">
-                As a mentor, you get to work closely with ambitious innovators building businesses for the first time.
+                As a mentor with us, you get to work closely with ambitious innovators. Many are building businesses for the first time and need guidance across different areas. This is where you step in. Whether you&apos;re a successful founder or an industry specialist, this is your chance to support the next generation of entrepreneurs and learn along the way.
               </p>
             </div>
 
