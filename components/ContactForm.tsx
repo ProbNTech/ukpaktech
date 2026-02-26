@@ -141,7 +141,7 @@ export function ContactForm() {
       {/* Light card container */}
       <div className="relative bg-white rounded-2xl border border-[#D8D5CF] overflow-hidden shadow-xl">
         {/* Animated top gradient accent */}
-        <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#2563EB]" />
+        <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] via-[#2563EB] to-[#2563EB]" />
 
         {/* ─── Personal Details Section ─── */}
         <div className="relative px-7 pt-8 pb-2">
@@ -322,8 +322,8 @@ export function ContactForm() {
         {/* ─── Message Section ─── */}
         <div className="relative px-7 pb-7">
           <motion.div variants={itemVariants} className="flex items-center gap-2.5 mb-6">
-            <div className="w-6 h-6 rounded-lg bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center">
-              <Send className="w-3 h-3 text-[#8b5cf6]" />
+            <div className="w-6 h-6 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
+              <Send className="w-3 h-3 text-[#2563EB]" />
             </div>
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">
               Your Message
@@ -333,14 +333,14 @@ export function ContactForm() {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="message"
-              className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "message" ? "text-[#8b5cf6]" : "text-[#1C1F2E]"}`}
+              className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "message" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
             >
               Message <span className="text-[#C41E3A]">*</span>
             </label>
             <div className="relative group">
-              <div className={`absolute inset-0 rounded-xl transition-all duration-500 ${focusedField === "message" ? "shadow-[0_0_20px_rgba(139,92,246,0.08)]" : ""}`} />
-              <div className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${focusedField === "message" ? "bg-[#8b5cf6] opacity-100" : "bg-transparent opacity-0"}`} />
-              <MessageSquare className={`absolute left-3.5 top-4 w-4 h-4 transition-colors duration-300 ${focusedField === "message" ? "text-[#8b5cf6]" : "text-[#9A9EAF]"}`} />
+              <div className={`absolute inset-0 rounded-xl transition-all duration-500 ${focusedField === "message" ? "shadow-[0_0_20px_rgba(37,99,235,0.08)]" : ""}`} />
+              <div className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${focusedField === "message" ? "bg-[#2563EB] opacity-100" : "bg-transparent opacity-0"}`} />
+              <MessageSquare className={`absolute left-3.5 top-4 w-4 h-4 transition-colors duration-300 ${focusedField === "message" ? "text-[#2563EB]" : "text-[#9A9EAF]"}`} />
               <textarea
                 id="message"
                 name="message"
@@ -351,7 +351,7 @@ export function ContactForm() {
                 onChange={handleChange}
                 onFocus={() => setFocusedField("message")}
                 onBlur={() => setFocusedField(null)}
-                className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#8b5cf6]/50 focus:bg-white focus:ring-1 focus:ring-[#8b5cf6]/20 resize-none"
+                className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#2563EB]/50 focus:bg-white focus:ring-1 focus:ring-[#2563EB]/20 resize-none"
               />
             </div>
           </motion.div>

@@ -20,21 +20,21 @@ const programs = [
 const pathwaySteps = [
   { number: "01", title: "Assess", description: "Complete skill assessments and identify your learning goals and current proficiency level.", outcome: "Personalised learning roadmap", color: "#2563EB" },
   { number: "02", title: "Train", description: "Participate in structured training programs with hands-on labs and expert mentorship.", outcome: "Industry-relevant skills", color: "#22C55E" },
-  { number: "03", title: "Build", description: "Create portfolio projects and capstone assignments that demonstrate your capabilities.", outcome: "Portfolio-ready projects", color: "#8b5cf6" },
-  { number: "04", title: "Launch", description: "Access career support, internship placements, and job readiness programs.", outcome: "Career-ready profile", color: "#f59e0b" },
+  { number: "03", title: "Build", description: "Create portfolio projects and capstone assignments that demonstrate your capabilities.", outcome: "Portfolio-ready projects", color: "#C41E3A" },
+  { number: "04", title: "Launch", description: "Access career support, internship placements, and job readiness programs.", outcome: "Career-ready profile", color: "#2563EB" },
 ];
 
 const tracks = [
   { title: "AI Engineering Track", duration: "12 weeks", level: "Intermediate to Advanced", commitment: "15–20 hours/week", build: "Build production-ready AI models and deploy ML pipelines", color: "#2563EB" },
   { title: "Data and Automation Track", duration: "10 weeks", level: "Beginner to Intermediate", commitment: "12–15 hours/week", build: "Build data pipelines, automation scripts, and analytics dashboards", color: "#22C55E" },
-  { title: "Cloud and Cyber Foundations", duration: "8 weeks", level: "Beginner", commitment: "10–12 hours/week", build: "Build secure cloud infrastructure and implement security best practices", color: "#8b5cf6" },
+  { title: "Cloud and Cyber Foundations", duration: "8 weeks", level: "Beginner", commitment: "10–12 hours/week", build: "Build secure cloud infrastructure and implement security best practices", color: "#C41E3A" },
 ];
 
 const outcomes = [
   { value: "30+", label: "mentor hours per cohort", color: "#2563EB" },
   { value: "6–10", label: "projects per learner", color: "#22C55E" },
-  { value: "8 week", label: "job readiness sprint", color: "#8b5cf6" },
-  { value: "100+", label: "cross border mentor network", color: "#f59e0b" },
+  { value: "8 week", label: "job readiness sprint", color: "#C41E3A" },
+  { value: "100+", label: "cross border mentor network", color: "#2563EB" },
 ];
 
 const faqs = [
@@ -131,7 +131,7 @@ export default function SkillDevelopmentCenterPage() {
               <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
                 UPTECH&apos;s Skill Development Center provides comprehensive training programs designed to build world-class tech capabilities across the UK and Pakistan.
               </p>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#8b5cf6]/20 to-transparent mb-8" />
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
               <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
                 Our Skill Development Center offers industry-recognised certifications, specialised training, and personalised mentorship to empower individuals and organisations with cutting-edge technology skills.
               </p>
@@ -200,13 +200,13 @@ export default function SkillDevelopmentCenterPage() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Your Journey
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 Learning Pathway
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#8b5cf6]/40 via-[#8b5cf6]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
                 A structured journey from assessment to career launch.
               </p>
@@ -267,13 +267,13 @@ export default function SkillDevelopmentCenterPage() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Flagship Tracks
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 Intensive Training Tracks
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#f59e0b]/40 via-[#f59e0b]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
                 Intensive programs designed to build expertise in high-demand tech domains.
               </p>
@@ -378,13 +378,13 @@ export default function SkillDevelopmentCenterPage() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 FAQ
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 Frequently Asked Questions
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#8b5cf6]/40 via-[#8b5cf6]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
                 Everything you need to know about our programs.
               </p>
@@ -400,7 +400,7 @@ export default function SkillDevelopmentCenterPage() {
                     className="w-full flex items-center justify-between py-5 text-left gap-4"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-xs font-bold text-[#8b5cf6] bg-[#8b5cf6]/10 px-2 py-0.5 rounded flex-shrink-0">
+                      <span className="text-xs font-bold text-[#2563EB] bg-[#2563EB]/10 px-2 py-0.5 rounded flex-shrink-0">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <span className="font-heading font-semibold text-[#1C1F2E] text-base">{faq.question}</span>

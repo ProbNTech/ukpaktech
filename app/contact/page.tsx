@@ -42,8 +42,8 @@ const contactInfo = [
     label: "Response Time",
     value: "2–3 Business Days",
     href: null,
-    color: "#8b5cf6",
-    glow: "rgba(139,92,246,0.15)",
+    color: "#2563EB",
+    glow: "rgba(37,99,235,0.15)",
   },
 ];
 
@@ -52,15 +52,15 @@ const enquiryTypes = [
   { icon: Handshake, label: "Partnerships", desc: "Strategic alliances, joint ventures, and bilateral collaboration opportunities.", color: "#2563EB" },
   { icon: Users, label: "Membership", desc: "Join UPTECH as an individual, startup, SME, or corporate member.", color: "#22C55E" },
   { icon: Megaphone, label: "Sponsorship", desc: "Sponsor events, programmes, and initiatives across the UK–Pakistan corridor.", color: "#C41E3A" },
-  { icon: Calendar, label: "Events & Media", desc: "Event participation, press enquiries, and media partnerships.", color: "#f59e0b" },
-  { icon: HelpCircle, label: "General Enquiry", desc: "Anything else — we're happy to help with your questions.", color: "#8b5cf6" },
+  { icon: Calendar, label: "Events & Media", desc: "Event participation, press enquiries, and media partnerships.", color: "#2563EB" },
+  { icon: HelpCircle, label: "General Enquiry", desc: "Anything else — we're happy to help with your questions.", color: "#22C55E" },
 ];
 
 /* ── What happens next steps ─────────────────────────────────────── */
 const nextSteps = [
   { step: "01", title: "Received", text: "Your message is logged by our team immediately.", icon: Mail, color: "#2563EB" },
   { step: "02", title: "Reviewed", text: "A relevant team member reviews your enquiry.", icon: Shield, color: "#22C55E" },
-  { step: "03", title: "Responded", text: "We respond within 2–3 business days.", icon: Zap, color: "#8b5cf6" },
+  { step: "03", title: "Responded", text: "We respond within 2–3 business days.", icon: Zap, color: "#C41E3A" },
 ];
 
 export default function ContactPage() {
@@ -224,16 +224,16 @@ export default function ContactPage() {
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "60px 60px" }} />
         {/* Glowing orb accents */}
         <div className="absolute top-0 left-1/4 w-96 h-96 opacity-[0.03]" style={{ background: "radial-gradient(circle, #2563EB, transparent 60%)" }} />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 opacity-[0.03]" style={{ background: "radial-gradient(circle, #8b5cf6, transparent 60%)" }} />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 opacity-[0.03]" style={{ background: "radial-gradient(circle, #2563EB, transparent 60%)" }} />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6] mb-3">Write to us</p>
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Write to us</p>
               <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Send a Message
               </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#8b5cf6] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
               <p className="text-white/40 text-base max-w-xl">
                 Fill in the form below and a member of our team will get back to you.
               </p>
@@ -318,7 +318,7 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="relative bg-gradient-to-br from-[#2563EB]/10 to-[#8b5cf6]/10 border border-[#2563EB]/20 rounded-2xl p-7 overflow-hidden"
+                  className="relative bg-gradient-to-br from-[#2563EB]/10 to-[#2563EB]/10 border border-[#2563EB]/20 rounded-2xl p-7 overflow-hidden"
                 >
                   {/* Glow */}
                   <div className="absolute top-0 right-0 w-32 h-32 opacity-20" style={{ background: "radial-gradient(circle, #2563EB, transparent 70%)" }} />

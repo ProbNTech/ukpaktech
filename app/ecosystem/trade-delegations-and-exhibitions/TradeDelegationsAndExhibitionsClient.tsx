@@ -11,8 +11,8 @@ const tradeDelegationIntro = "The UK-Pakistan Tech Council organises trade deleg
 const tradeDelegationBenefits = [
   { title: "Market Access", description: "Gain first-hand exposure to emerging opportunities in cross-border technology markets.", color: "#2563EB" },
   { title: "Business Development", description: "Meet corporates, investors, regulators, and policymakers to explore collaborations and partnerships.", color: "#22C55E" },
-  { title: "Networking Opportunities", description: "Build relationships with industry leaders, innovators, and decision-makers.", color: "#8b5cf6" },
-  { title: "Insights & Intelligence", description: "Learn about local market trends, regulatory frameworks, and business opportunities.", color: "#f59e0b" },
+  { title: "Networking Opportunities", description: "Build relationships with industry leaders, innovators, and decision-makers.", color: "#C41E3A" },
+  { title: "Insights & Intelligence", description: "Learn about local market trends, regulatory frameworks, and business opportunities.", color: "#2563EB" },
 ];
 
 const exhibitionIntro = "The UK-Pakistan Tech Council organises and participates in high-impact exhibition events to showcase innovation, foster collaboration, and create business opportunities across the UK and Pakistan. These events provide members with a platform to present their technology solutions, connect with potential clients and partners, and gain visibility in key markets.";
@@ -20,8 +20,8 @@ const exhibitionIntro = "The UK-Pakistan Tech Council organises and participates
 const exhibitionBenefits = [
   { title: "Showcase Your Solutions", description: "Present software, platforms, and digital products to a targeted audience of corporates, investors, and industry leaders.", color: "#2563EB" },
   { title: "Network & Collaborate", description: "Meet decision-makers, potential partners, and cross-border stakeholders.", color: "#22C55E" },
-  { title: "Gain Market Insights", description: "Stay updated on emerging trends, technologies, and opportunities in both markets.", color: "#8b5cf6" },
-  { title: "Build Brand Visibility", description: "Increase awareness of your company\u2019s expertise and innovation capabilities.", color: "#f59e0b" },
+  { title: "Gain Market Insights", description: "Stay updated on emerging trends, technologies, and opportunities in both markets.", color: "#C41E3A" },
+  { title: "Build Brand Visibility", description: "Increase awareness of your company\u2019s expertise and innovation capabilities.", color: "#2563EB" },
 ];
 
 const exhibitionWhyItMatters = "Exhibition events create a dynamic environment where innovation meets opportunity. By participating, members can accelerate business growth, forge strategic partnerships, and strengthen their presence in the UK-Pakistan technology corridor. Connect. Showcase. Grow.";
@@ -29,10 +29,10 @@ const exhibitionWhyItMatters = "Exhibition events create a dynamic environment w
 const offerItems = [
   { title: "Event Organisation", description: "End-to-end planning and execution of trade delegations and technology exhibitions.", color: "#2563EB" },
   { title: "Participant Matching", description: "Strategic matching of UK and Pakistan businesses for meaningful partnerships.", color: "#22C55E" },
-  { title: "Venue Coordination", description: "Premium venues and facilities for exhibitions and networking events.", color: "#8b5cf6" },
-  { title: "Business Development", description: "Support for B2B meetings and partnership development opportunities.", color: "#f59e0b" },
-  { title: "Market Insights", description: "Access to market intelligence and cross-border business opportunities.", color: "#C41E3A" },
-  { title: "Growth Opportunities", description: "Platforms to showcase products and expand into new markets.", color: "#06b6d4" },
+  { title: "Venue Coordination", description: "Premium venues and facilities for exhibitions and networking events.", color: "#C41E3A" },
+  { title: "Business Development", description: "Support for B2B meetings and partnership development opportunities.", color: "#2563EB" },
+  { title: "Market Insights", description: "Access to market intelligence and cross-border business opportunities.", color: "#22C55E" },
+  { title: "Growth Opportunities", description: "Platforms to showcase products and expand into new markets.", color: "#C41E3A" },
 ];
 
 const benefits = [
@@ -46,14 +46,14 @@ const benefits = [
 const howItWorks = [
   { number: "01", title: "Register Interest", description: "Express your interest in upcoming delegations and exhibitions through the portal.", color: "#2563EB" },
   { number: "02", title: "Get Matched", description: "We connect you with relevant participants and opportunities aligned to your goals.", color: "#22C55E" },
-  { number: "03", title: "Participate", description: "Join delegations and exhibitions to build partnerships and explore new markets.", color: "#8b5cf6" },
+  { number: "03", title: "Participate", description: "Join delegations and exhibitions to build partnerships and explore new markets.", color: "#C41E3A" },
 ];
 
 const stats = [
   { value: "20+", label: "delegations facilitated", color: "#2563EB" },
   { value: "500+", label: "participants connected", color: "#22C55E" },
-  { value: "12+", label: "exhibitions supported", color: "#8b5cf6" },
-  { value: "2", label: "bilateral markets", color: "#f59e0b" },
+  { value: "12+", label: "exhibitions supported", color: "#C41E3A" },
+  { value: "2", label: "bilateral markets", color: "#2563EB" },
 ];
 
 export default function TradeDelegationsAndExhibitionsClient() {
@@ -249,7 +249,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
             {/* Why It Matters */}
             <div className="relative bg-white border border-[#D8D5CF] shadow-md rounded-2xl p-8 overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#8b5cf6]" />
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#C41E3A]" />
               <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-4">Why It Matters</h3>
               <div className="relative h-px bg-[#D8D5CF] mb-4" />
               <p className="relative text-[#5A5F72] text-base sm:text-lg leading-relaxed">
@@ -310,33 +310,33 @@ export default function TradeDelegationsAndExhibitionsClient() {
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                   Participation
                 </p>
                 <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl leading-tight mb-4">
                   Benefits of Participating
                 </h2>
-                <div className="h-px bg-gradient-to-r from-[#f59e0b]/40 via-[#f59e0b]/10 to-transparent mb-4 max-w-xs" />
+                <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
                 <p className="text-[#7A7E8F] text-sm mb-6">
                   Why join our trade delegations and exhibitions.
                 </p>
                 <ul className="space-y-0">
                   {benefits.map((item) => (
                     <li key={item} className="flex items-start gap-3 py-4 border-b border-[#D8D5CF] last:border-b-0">
-                      <CheckCircle2 className="w-4 h-4 text-[#f59e0b] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                      <CheckCircle2 className="w-4 h-4 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
                       <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                   Process
                 </p>
                 <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl leading-tight mb-4">
                   How It Works
                 </h2>
-                <div className="h-px bg-gradient-to-r from-[#8b5cf6]/40 via-[#8b5cf6]/10 to-transparent mb-4 max-w-xs" />
+                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
                 <p className="text-[#7A7E8F] text-sm mb-6">
                   Three simple steps to join our delegations and exhibitions.
                 </p>

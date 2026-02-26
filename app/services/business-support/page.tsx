@@ -10,8 +10,8 @@ import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 const stats = [
   { value: "300+", label: "Companies Supported", color: "#2563EB" },
   { value: "50+", label: "Legal Partners", color: "#22C55E" },
-  { value: "\u00A3100M+", label: "Investment Documented", color: "#8b5cf6" },
-  { value: "99%", label: "Compliance Rate", color: "#f59e0b" },
+  { value: "\u00A3100M+", label: "Investment Documented", color: "#C41E3A" },
+  { value: "99%", label: "Compliance Rate", color: "#2563EB" },
 ];
 
 const services = [
@@ -31,14 +31,14 @@ const services = [
   },
   {
     icon: FileCheck,
-    color: "#8b5cf6",
+    color: "#C41E3A",
     title: "S/EIS Advance Assurance",
     description: "Check your eligibility and apply seamlessly in-app. Once you\u2019ve raised funds, submit your compliance statements right there, we\u2019ll handle all correspondence with HMRC for you.",
     features: ["Eligibility assessment", "Application preparation", "HMRC correspondence", "Compliance statement filing"],
   },
   {
     icon: FileText,
-    color: "#f59e0b",
+    color: "#2563EB",
     title: "Investment Documents",
     description: "Includes all the investment agreements needed to execute your round \u2014 including a term sheet, Advance Subscription Agreement, or convertible loan note.",
     features: ["Term sheet drafting", "SHA & SSA preparation", "Convertible note agreements", "Board resolution templates"],
@@ -59,7 +59,7 @@ const services = [
   },
   {
     icon: Database,
-    color: "#8b5cf6",
+    color: "#22C55E",
     title: "Data Rooms",
     description: "Share key documents with prospective investors via a secure digital vault.",
     features: ["Secure document hosting", "Investor access controls", "Activity tracking & analytics", "Due diligence organisation"],
@@ -69,15 +69,15 @@ const services = [
 const processSteps = [
   { number: "01", title: "Consultation", description: "Book a free consultation to discuss your business needs and identify the services you require.", outcome: "Needs assessed", color: "#2563EB" },
   { number: "02", title: "Proposal", description: "Receive a tailored service proposal with clear deliverables, timelines, and pricing.", outcome: "Scope agreed", color: "#22C55E" },
-  { number: "03", title: "Execution", description: "Our team and partners deliver the services \u2014 keeping you informed at every stage.", outcome: "Services delivered", color: "#8b5cf6" },
-  { number: "04", title: "Ongoing Support", description: "Continued access to support, compliance monitoring, and advisory as your business grows.", outcome: "Long-term partnership", color: "#f59e0b" },
+  { number: "03", title: "Execution", description: "Our team and partners deliver the services \u2014 keeping you informed at every stage.", outcome: "Services delivered", color: "#C41E3A" },
+  { number: "04", title: "Ongoing Support", description: "Continued access to support, compliance monitoring, and advisory as your business grows.", outcome: "Long-term partnership", color: "#2563EB" },
 ];
 
 const whyUptech = [
   { title: "Startup-First Approach", description: "Every service is designed with startups and growing companies in mind \u2014 no unnecessary complexity.", color: "#2563EB" },
   { title: "Trusted Partners", description: "We work with vetted legal, accounting, and compliance professionals with deep startup experience.", color: "#22C55E" },
-  { title: "Cross-Border Expertise", description: "Understanding of both UK and Pakistan business environments, regulations, and best practices.", color: "#8b5cf6" },
-  { title: "Member Pricing", description: "UPTECH members receive preferential rates across all business support services.", color: "#f59e0b" },
+  { title: "Cross-Border Expertise", description: "Understanding of both UK and Pakistan business environments, regulations, and best practices.", color: "#C41E3A" },
+  { title: "Member Pricing", description: "UPTECH members receive preferential rates across all business support services.", color: "#2563EB" },
 ];
 
 const faqs = [
@@ -88,7 +88,7 @@ const faqs = [
   { question: "Do you offer ongoing accounting services?", answer: "Yes, through our accounting partners we offer bookkeeping, management accounts, year-end filing, tax returns, and VAT registration and returns. Packages are available for startups, SMEs, and growing companies." },
 ];
 
-const faqColors = ["#2563EB", "#8b5cf6", "#22C55E", "#f59e0b", "#C41E3A"];
+const faqColors = ["#2563EB", "#C41E3A", "#22C55E", "#2563EB", "#C41E3A"];
 
 export default function BusinessSupportPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -120,7 +120,7 @@ export default function BusinessSupportPage() {
           >
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">UPTECH Service</p>
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-6">
-              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg, #ffffff 0%, #8b5cf6 50%, #2563EB 100%)" }}>
+              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #22C55E 100%)" }}>
                 Business Support Services
               </span>
             </h1>
@@ -164,7 +164,7 @@ export default function BusinessSupportPage() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#8b5cf6]" />
+        <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
           <AnimatedSection>
             <div className="max-w-3xl">
@@ -172,7 +172,7 @@ export default function BusinessSupportPage() {
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
                 Essential Business Infrastructure for Startups and Growing Companies
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#8b5cf6]/40 via-[#2563EB]/20 to-transparent mb-8" />
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
               <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
                 Starting and scaling a business involves navigating a complex landscape of legal, financial, and operational requirements. UPTECH&apos;s Business Support Services remove the friction &mdash; giving you access to trusted professionals and streamlined processes so you can focus on building your product and growing your business.
               </p>
@@ -237,13 +237,13 @@ export default function BusinessSupportPage() {
 
       {/* ── How It Works ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#8b5cf6]" />
+        <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">Process</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Process</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">How It Works</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#8b5cf6]/40 mb-4" />
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40 mb-4" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">A simple, structured process from consultation to ongoing support.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -280,13 +280,13 @@ export default function BusinessSupportPage() {
       {/* ── Why Choose UPTECH ── */}
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#f59e0b]" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#C41E3A]" />
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">Advantages</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">Advantages</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Why Choose UPTECH</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#f59e0b]/40 mb-4" />
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/40 mb-4" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">What makes our business support services different.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -330,7 +330,7 @@ export default function BusinessSupportPage() {
 
       {/* ── CTA Section ── */}
       <section className="relative bg-[#131942] overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#8b5cf6]" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#2563EB]" />
         <div
           className="absolute inset-0 opacity-[0.04]"

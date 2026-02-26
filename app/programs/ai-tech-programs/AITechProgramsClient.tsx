@@ -21,13 +21,13 @@ import {
 const techFocusAreas = [
   { icon: BookOpen, title: "Driving Digital Literacy", desc: "Empowering communities across Pakistan with digital skills, coding education, and technology awareness programmes to bridge the digital divide.", color: "#2563EB" },
   { icon: Zap, title: "Energy Solutions", desc: "Leveraging technology to develop renewable energy solutions, smart grids, and efficient power management systems for Pakistan's growing energy needs.", color: "#22C55E" },
-  { icon: Cpu, title: "Fusion Technology", desc: "Exploring cutting-edge fusion technology research and development through UK–Pakistan academic and industry collaboration.", color: "#8b5cf6" },
-  { icon: Building2, title: "Smart Buildings & Infrastructure", desc: "Developing IoT-enabled smart building solutions, sustainable construction technology, and intelligent infrastructure management systems.", color: "#f59e0b" },
+  { icon: Cpu, title: "Fusion Technology", desc: "Exploring cutting-edge fusion technology research and development through UK–Pakistan academic and industry collaboration.", color: "#C41E3A" },
+  { icon: Building2, title: "Smart Buildings & Infrastructure", desc: "Developing IoT-enabled smart building solutions, sustainable construction technology, and intelligent infrastructure management systems.", color: "#2563EB" },
   { icon: Car, title: "Electric Vehicles & Mobility", desc: "Supporting the electric vehicle ecosystem through technology transfer, charging infrastructure development, and sustainable mobility solutions.", color: "#C41E3A" },
   { icon: Globe2, title: "Internet Access & Connectivity", desc: "Bridging connectivity gaps with broadband expansion, satellite internet solutions, and digital infrastructure development across underserved regions.", color: "#ef4444" },
   { icon: Microscope, title: "Microchip & Biotech", desc: "Advancing semiconductor design, microchip manufacturing capabilities, and biotechnology research through bilateral partnerships and knowledge exchange.", color: "#06b6d4" },
   { icon: HeartPulse, title: "Body Mapping & Health Tech", desc: "Pioneering digital health solutions including AI-powered body mapping, telemedicine platforms, and health data analytics for improved patient outcomes.", color: "#22C55E" },
-  { icon: Wheat, title: "Agriculture & AgriTech", desc: "Transforming Pakistan's agriculture sector through precision farming, drone technology, supply chain digitalisation, and climate-smart agriculture solutions.", color: "#f59e0b" },
+  { icon: Wheat, title: "Agriculture & AgriTech", desc: "Transforming Pakistan's agriculture sector through precision farming, drone technology, supply chain digitalisation, and climate-smart agriculture solutions.", color: "#C41E3A" },
 ];
 
 const programs = [
@@ -66,8 +66,8 @@ const programs = [
 const steps = [
   { number: "01", title: "Join the Program", description: "Become a member and access our comprehensive AI and tech programs.", color: "#2563EB" },
   { number: "02", title: "Assessment & Placement", description: "Complete skill assessments and get matched with the right program track.", color: "#22C55E" },
-  { number: "03", title: "Training & Development", description: "Participate in certifications, training, and skill development programs.", color: "#8b5cf6" },
-  { number: "04", title: "Collective Startup Formation", description: "Join or form collective startups leveraging shared resources, expertise, and collaborative models.", color: "#f59e0b" },
+  { number: "03", title: "Training & Development", description: "Participate in certifications, training, and skill development programs.", color: "#C41E3A" },
+  { number: "04", title: "Collective Startup Formation", description: "Join or form collective startups leveraging shared resources, expertise, and collaborative models.", color: "#2563EB" },
   { number: "05", title: "Launch & Scale", description: "Launch your venture with ongoing support and cross-border market access.", color: "#C41E3A" },
 ];
 
@@ -107,7 +107,7 @@ export default function AITechProgramsPage() {
               <span
                 className="bg-clip-text text-transparent"
                 style={{
-                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #8b5cf6 100%)",
+                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #22C55E 100%)",
                 }}
               >
                 AI &amp; Tech Programs
@@ -141,7 +141,7 @@ export default function AITechProgramsPage() {
               <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
                 UPTECH&apos;s AI and Tech Programs bridge the UK and Pakistan through cutting-edge AI services, collective company models, and innovative startup ecosystems.
               </p>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#8b5cf6]/20 to-transparent mb-8" />
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
               <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
                 Our programs are designed to accelerate technology adoption, build world-class AI capabilities, and create sustainable pathways for innovation across both nations through collective business models and collaborative startup ecosystems.
               </p>
@@ -210,13 +210,13 @@ export default function AITechProgramsPage() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Process
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 How It Works
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#8b5cf6]/40 via-[#8b5cf6]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
                 A step-by-step journey from concept to successful AI and tech venture.
               </p>
@@ -265,13 +265,13 @@ export default function AITechProgramsPage() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 What We Do
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 Technology Focus Areas
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#f59e0b]/40 via-[#f59e0b]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
                 UPTECH drives innovation across key technology sectors that are transforming both nations.
               </p>
@@ -327,7 +327,7 @@ export default function AITechProgramsPage() {
       {/* ── Next Steps / CTA ── */}
       <section className="relative bg-[#0B0F1A] overflow-hidden">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#8b5cf6]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{

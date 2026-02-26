@@ -29,10 +29,10 @@ const FILTER_TABS: FilterTab[] = [
 const TAB_COLORS: Record<FilterTab, string> = {
   All: "#2563EB",
   Upcoming: "#22C55E",
-  Past: "#8b5cf6",
+  Past: "#C41E3A",
   London: "#2563EB",
   Pakistan: "#22C55E",
-  UPTECH: "#f59e0b",
+  UPTECH: "#C41E3A",
 };
 
 /* ------------------------------------------------------------------ */
@@ -91,10 +91,10 @@ export default function EventsPage() {
   const stats = [
     { label: "Total Events", value: events.length, color: "#2563EB" },
     { label: "Upcoming", value: upcomingCount, color: "#22C55E" },
-    { label: "Past", value: pastCount, color: "#8b5cf6" },
+    { label: "Past", value: pastCount, color: "#C41E3A" },
     { label: "London", value: londonCount, color: "#2563EB" },
     { label: "Pakistan", value: pakistanCount, color: "#22C55E" },
-    { label: "UPTECH", value: uptechCount, color: "#f59e0b" },
+    { label: "UPTECH", value: uptechCount, color: "#C41E3A" },
   ];
 
   return (
@@ -144,7 +144,7 @@ export default function EventsPage() {
           className="absolute bottom-[-30%] left-[-10%] w-[500px] h-[500px] z-[2] pointer-events-none opacity-15 rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(139,92,246,0.35) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(34,197,94,0.35) 0%, transparent 70%)",
           }}
         />
 
@@ -222,7 +222,7 @@ export default function EventsPage() {
               className="h-px max-w-md"
               style={{
                 background:
-                  "linear-gradient(90deg, #2563EB 0%, rgba(139,92,246,0.5) 60%, transparent 100%)",
+                  "linear-gradient(90deg, #2563EB 0%, rgba(34,197,94,0.5) 60%, transparent 100%)",
               }}
             />
           </motion.div>
@@ -274,7 +274,7 @@ export default function EventsPage() {
                     borderColor: "rgba(255,255,255,0.06)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = `rgba(${stat.color === "#2563EB" ? "37,99,235" : stat.color === "#22C55E" ? "34,197,94" : stat.color === "#8b5cf6" ? "139,92,246" : "245,158,11"},0.08)`;
+                    e.currentTarget.style.background = `rgba(${stat.color === "#2563EB" ? "37,99,235" : stat.color === "#22C55E" ? "34,197,94" : "196,30,58"},0.08)`;
                     e.currentTarget.style.borderColor = `${stat.color}33`;
                     e.currentTarget.style.boxShadow = `0 0 20px ${stat.color}15`;
                   }}

@@ -20,8 +20,8 @@ import {
 const capabilities = [
   { title: "AI-Powered Insights", description: "Intelligent analytics and recommendations to enhance decision-making and productivity.", icon: Brain, color: "#2563EB", num: "01" },
   { title: "Workforce Enablement", description: "Tools and platforms that empower teams to work smarter and achieve better outcomes.", icon: Cpu, color: "#22C55E", num: "02" },
-  { title: "Skills Development", description: "Personalised learning paths and AI-assisted training to build future-ready capabilities.", icon: GraduationCap, color: "#8b5cf6", num: "03" },
-  { title: "Collaboration Tools", description: "Seamless cross-border collaboration platforms connecting UK and Pakistan professionals.", icon: Users, color: "#f59e0b", num: "04" },
+  { title: "Skills Development", description: "Personalised learning paths and AI-assisted training to build future-ready capabilities.", icon: GraduationCap, color: "#C41E3A", num: "03" },
+  { title: "Collaboration Tools", description: "Seamless cross-border collaboration platforms connecting UK and Pakistan professionals.", icon: Users, color: "#2563EB", num: "04" },
   { title: "AI Governance", description: "Ethical frameworks and compliance tools ensuring responsible AI deployment.", icon: Shield, color: "#C41E3A", num: "05" },
   { title: "Automation & Efficiency", description: "Streamline workflows and automate routine tasks to focus on high-value work.", icon: Zap, color: "#ef4444", num: "06" },
 ];
@@ -29,22 +29,22 @@ const capabilities = [
 const howItWorks = [
   { number: "01", title: "Assess & Plan", description: "Evaluate your organisation\u2019s needs and develop a tailored AI integration strategy.", outcome: "Personalised AI roadmap", icon: Lightbulb, color: "#2563EB" },
   { number: "02", title: "Implement & Train", description: "Deploy AI tools and provide comprehensive training to your team across all levels.", outcome: "Operational AI capability", icon: Cpu, color: "#22C55E" },
-  { number: "03", title: "Optimise & Scale", description: "Continuously refine AI applications and scale successful implementations.", outcome: "Measurable productivity gains", icon: Zap, color: "#8b5cf6" },
-  { number: "04", title: "Collaborate & Grow", description: "Leverage cross-border networks and partnerships to expand your AI impact.", outcome: "Sustained innovation culture", icon: Globe2, color: "#f59e0b" },
+  { number: "03", title: "Optimise & Scale", description: "Continuously refine AI applications and scale successful implementations.", outcome: "Measurable productivity gains", icon: Zap, color: "#C41E3A" },
+  { number: "04", title: "Collaborate & Grow", description: "Leverage cross-border networks and partnerships to expand your AI impact.", outcome: "Sustained innovation culture", icon: Globe2, color: "#2563EB" },
 ];
 
 const useCases = [
   { title: "Workforce Enablement", description: "Empower employees with AI tools that augment capabilities and accelerate performance across organisations.", icon: Users, color: "#2563EB" },
   { title: "Skills Development", description: "Personalised learning experiences that adapt to individual needs and career goals for future-readiness.", icon: GraduationCap, color: "#22C55E" },
-  { title: "AI Inclusion", description: "Democratise access to AI technologies, ensuring no one is left behind in the digital transformation.", icon: Globe2, color: "#8b5cf6" },
-  { title: "Policy & Ecosystem Collaboration", description: "Foster cross-border partnerships and policy frameworks that support responsible AI adoption.", icon: Shield, color: "#f59e0b" },
+  { title: "AI Inclusion", description: "Democratise access to AI technologies, ensuring no one is left behind in the digital transformation.", icon: Globe2, color: "#C41E3A" },
+  { title: "Policy & Ecosystem Collaboration", description: "Foster cross-border partnerships and policy frameworks that support responsible AI adoption.", icon: Shield, color: "#2563EB" },
 ];
 
 const stats = [
   { value: "6", label: "sectors covered", color: "#2563EB" },
   { value: "76%", label: "average adoption rate", color: "#22C55E" },
-  { value: "79%", label: "average efficiency gain", color: "#8b5cf6" },
-  { value: "Cross-border", label: "UK\u2013Pakistan delivery", color: "#f59e0b" },
+  { value: "79%", label: "average efficiency gain", color: "#C41E3A" },
+  { value: "Cross-border", label: "UK\u2013Pakistan delivery", color: "#2563EB" },
 ];
 
 export default function PeopleAIClient() {
@@ -91,7 +91,7 @@ export default function PeopleAIClient() {
               <span
                 className="bg-clip-text text-transparent"
                 style={{
-                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #8b5cf6 100%)",
+                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #22C55E 100%)",
                 }}
               >
                 People AI Platform
@@ -167,7 +167,7 @@ export default function PeopleAIClient() {
               <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
                 The People AI Platform is designed to democratise access to AI capabilities, ensuring that individuals and organisations can leverage artificial intelligence to enhance productivity, develop skills, and drive innovation.
               </p>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#8b5cf6]/20 to-transparent mb-8" />
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
               <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
                 We focus on creating inclusive AI solutions that support workforce enablement, skills development, and cross-border collaboration between the UK and Pakistan.
               </p>
@@ -261,7 +261,7 @@ export default function PeopleAIClient() {
           <AnimatedSection>
             {/* Section header */}
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Your Journey
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
@@ -355,7 +355,7 @@ export default function PeopleAIClient() {
           <AnimatedSection>
             {/* Section header */}
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Impact
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
@@ -423,7 +423,7 @@ export default function PeopleAIClient() {
       <section className="relative bg-[#0B0F1A] overflow-hidden">
         {/* Gradient glow effects */}
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#8b5cf6]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />
 
         {/* Grid pattern */}
         <div

@@ -25,7 +25,7 @@ const advantages = [
   {
     icon: Compass,
     title: "Enhance Your Horizons",
-    color: "#8b5cf6",
+    color: "#C41E3A",
     description: "Mentoring enables you to examine existing challenges from different perspectives, not only providing startups with innovative solutions but also honing your own strategic thinking and problem-solving skills.",
     features: ["Fresh perspectives on industry challenges", "Sharpen your leadership skills", "Stay connected to emerging trends"],
   },
@@ -50,7 +50,7 @@ const mentorRoles = [
   {
     title: "Being an Expert",
     icon: Award,
-    color: "#8b5cf6",
+    color: "#C41E3A",
     description: "For those who don\u2019t have time to dedicate themselves to a particular team, we have a secondary pool of standby experts that will work with one or more startups on an ad-hoc basis. They provide niche advice, troubleshoot problems startups face, and provide introductions to their personal network. The time commitment is on an as-needed basis when best suits.",
     commitment: "As-needed basis, when it best suits",
     responsibilities: ["Ad-hoc expert consultations", "Niche problem-solving sessions", "Network introductions", "Specialist workshops"],
@@ -59,16 +59,16 @@ const mentorRoles = [
 
 const processSteps = [
   { number: "01", title: "Apply", icon: Target, color: "#2563EB", description: "Submit your application with your expertise, industry background, and areas where you can add the most value.", outcome: "Application reviewed" },
-  { number: "02", title: "Onboard", icon: Users, color: "#8b5cf6", description: "Complete our mentor onboarding including orientation, toolkit access, and introduction to the current cohort.", outcome: "Mentor activated" },
-  { number: "03", title: "Match", icon: Compass, color: "#f59e0b", description: "We match you with startups based on your expertise, industry focus, and the startup\u2019s specific needs.", outcome: "Startup matched" },
+  { number: "02", title: "Onboard", icon: Users, color: "#22C55E", description: "Complete our mentor onboarding including orientation, toolkit access, and introduction to the current cohort.", outcome: "Mentor activated" },
+  { number: "03", title: "Match", icon: Compass, color: "#C41E3A", description: "We match you with startups based on your expertise, industry focus, and the startup\u2019s specific needs.", outcome: "Startup matched" },
   { number: "04", title: "Mentor", icon: Award, color: "#22C55E", description: "Begin your mentoring journey \u2014 guiding founders through challenges, strategy, and growth.", outcome: "Impact delivered" },
 ];
 
 const mentorProfiles = [
   { title: "Technology Leaders", description: "CTOs, VPs of Engineering, and technical founders with deep product and engineering expertise.", color: "#2563EB" },
-  { title: "Business Strategists", description: "CEOs, Managing Directors, and strategy consultants with scaling and market entry experience.", color: "#8b5cf6" },
+  { title: "Business Strategists", description: "CEOs, Managing Directors, and strategy consultants with scaling and market entry experience.", color: "#C41E3A" },
   { title: "Investment Experts", description: "VCs, angel investors, and fund managers who understand fundraising from both sides.", color: "#22C55E" },
-  { title: "Domain Specialists", description: "Industry experts in FinTech, HealthTech, EdTech, AI, and other high-growth sectors.", color: "#f59e0b" },
+  { title: "Domain Specialists", description: "Industry experts in FinTech, HealthTech, EdTech, AI, and other high-growth sectors.", color: "#2563EB" },
 ];
 
 const faqs = [
@@ -81,11 +81,11 @@ const faqs = [
 
 const sidebarItems = [
   { title: "Strategic Guidance", desc: "Help founders navigate critical decisions on product, market, and growth strategy.", color: "#2563EB" },
-  { title: "Network Access", desc: "Open doors to investors, partners, customers, and talent through warm introductions.", color: "#8b5cf6" },
+  { title: "Network Access", desc: "Open doors to investors, partners, customers, and talent through warm introductions.", color: "#C41E3A" },
   { title: "Accountability", desc: "Keep founders focused on execution with regular check-ins and milestone tracking.", color: "#22C55E" },
 ];
 
-const faqColors = ["#2563EB", "#8b5cf6", "#22C55E", "#f59e0b", "#C41E3A"];
+const faqColors = ["#2563EB", "#C41E3A", "#22C55E", "#2563EB", "#C41E3A"];
 
 export default function MentorshipPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -120,7 +120,7 @@ export default function MentorshipPage() {
 
         {/* Decorative glow orbs */}
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#2563EB]/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-[#8b5cf6]/8 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-[#22C55E]/8 rounded-full blur-[100px] pointer-events-none" />
 
         {/* Hero content */}
         <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-32">
@@ -146,7 +146,7 @@ export default function MentorshipPage() {
               <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                 Connecting Those Who{" "}
               </span>
-              <span className="bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#2563EB] via-[#C41E3A] to-[#22C55E] bg-clip-text text-transparent">
                 Made It
               </span>
               <br />
@@ -186,7 +186,7 @@ export default function MentorshipPage() {
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {stats.map((stat, i) => {
-              const colors = ["#2563EB", "#8b5cf6", "#22C55E", "#f59e0b"];
+              const colors = ["#2563EB", "#C41E3A", "#22C55E", "#2563EB"];
               const color = colors[i % colors.length];
               return (
                 <motion.div
@@ -240,7 +240,7 @@ export default function MentorshipPage() {
                 <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Be The backbone of great startups</p>
                 <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-6">
                   Shaping the Future by{" "}
-                  <span className="bg-gradient-to-r from-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                     Empowering Innovators
                   </span>
                 </h2>
@@ -299,15 +299,15 @@ export default function MentorshipPage() {
           ================================================================ */}
       <section className="relative bg-white overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#8b5cf6]/5 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C41E3A]/5 rounded-full blur-[150px] pointer-events-none" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
           <AnimatedSection>
             {/* Section header - inline */}
             <div className="text-center mb-14">
-              <p className="text-sm font-semibold text-[#8b5cf6] uppercase tracking-wider mb-3">Benefits</p>
+              <p className="text-sm font-semibold text-[#C41E3A] uppercase tracking-wider mb-3">Benefits</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Advantages of Being a{" "}
-                <span className="bg-gradient-to-r from-[#8b5cf6] to-[#2563EB] bg-clip-text text-transparent">Mentor</span>
+                <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">Mentor</span>
               </h2>
               <p className="text-[#7A7E8F] text-base max-w-2xl mx-auto">
                 Mentoring isn&apos;t just about giving — it&apos;s about growing together.
@@ -543,10 +543,10 @@ export default function MentorshipPage() {
           <AnimatedSection>
             {/* Section header */}
             <div className="text-center mb-14">
-              <p className="text-sm font-semibold text-[#f59e0b] uppercase tracking-wider mb-3">Profiles</p>
+              <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Profiles</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Who We&apos;re{" "}
-                <span className="bg-gradient-to-r from-[#f59e0b] to-[#22C55E] bg-clip-text text-transparent">Looking For</span>
+                <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">Looking For</span>
               </h2>
               <p className="text-[#7A7E8F] text-base max-w-2xl mx-auto">
                 We welcome mentors from diverse backgrounds and disciplines.
@@ -598,7 +598,7 @@ export default function MentorshipPage() {
               <p className="text-sm font-semibold text-[#C41E3A] uppercase tracking-wider mb-3">FAQ</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Frequently Asked{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">Questions</span>
+                <span className="bg-gradient-to-r from-[#2563EB] to-[#C41E3A] bg-clip-text text-transparent">Questions</span>
               </h2>
               <p className="text-[#7A7E8F] text-base max-w-2xl mx-auto">
                 Common questions about our mentorship programme.
@@ -619,7 +619,7 @@ export default function MentorshipPage() {
         {/* Multi-color glow orbs */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none">
           <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#2563EB]/10 rounded-full blur-[120px]" />
-          <div className="absolute top-10 right-0 w-[350px] h-[350px] bg-[#8b5cf6]/8 rounded-full blur-[100px]" />
+          <div className="absolute top-10 right-0 w-[350px] h-[350px] bg-[#C41E3A]/8 rounded-full blur-[100px]" />
           <div className="absolute bottom-0 left-1/3 w-[300px] h-[300px] bg-[#22C55E]/5 rounded-full blur-[80px]" />
         </div>
         {/* Grid pattern */}
@@ -648,7 +648,7 @@ export default function MentorshipPage() {
                 <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                   Ready to Shape the Next Generation of{" "}
                 </span>
-                <span className="bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2563EB] via-[#C41E3A] to-[#22C55E] bg-clip-text text-transparent">
                   Tech Leaders?
                 </span>
               </h2>
@@ -658,7 +658,7 @@ export default function MentorshipPage() {
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
-                <Button href="/membership" variant="primary" size="lg" showArrow className="!bg-gradient-to-r !from-[#2563EB] !to-[#8b5cf6] hover:!shadow-[0_0_40px_rgba(37,99,235,0.3)]">
+                <Button href="/membership" variant="primary" size="lg" showArrow className="!bg-gradient-to-r !from-[#2563EB] !to-[#22C55E] hover:!shadow-[0_0_40px_rgba(37,99,235,0.3)]">
                   Join as a Mentor
                 </Button>
                 <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>

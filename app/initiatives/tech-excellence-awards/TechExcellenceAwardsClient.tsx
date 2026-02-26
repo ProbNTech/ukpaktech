@@ -30,7 +30,7 @@ const professionalAwards = [
 const nominationSteps = [
   { number: "01", title: "Nominations", description: "Nominations through industry bodies, and partner organizations.", outcome: "Nominations received", color: "#2563EB" },
   { number: "02", title: "Committee Review", description: "Review by a joint committee comprising representatives and industry experts.", outcome: "Reviewed and scored", color: "#22C55E" },
-  { number: "03", title: "Final Approval", description: "Final approval of awardees by joint committee.", outcome: "Awardees confirmed", color: "#8b5cf6" },
+  { number: "03", title: "Final Approval", description: "Final approval of awardees by joint committee.", outcome: "Awardees confirmed", color: "#C41E3A" },
 ];
 
 const objectives = [
@@ -51,7 +51,7 @@ const faqs = [
 const tagColors: Record<string, string> = {
   Company: "#2563EB",
   Professional: "#22C55E",
-  "Special Recognition": "#f59e0b",
+  "Special Recognition": "#C41E3A",
 };
 
 export default function TechExcellenceAwardsClient() {
@@ -84,14 +84,14 @@ export default function TechExcellenceAwardsClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-5">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-5">
               UPTECH Initiative
             </p>
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-6">
               <span
                 className="bg-clip-text text-transparent"
                 style={{
-                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #f59e0b 50%, #C41E3A 100%)",
+                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #C41E3A 100%)",
                 }}
               >
                 UPTECH Awards
@@ -120,13 +120,13 @@ export default function TechExcellenceAwardsClient() {
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-5">
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-5">
                   About the Awards
                 </p>
                 <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
                   UPTECH Awards
                 </p>
-                <div className="h-px bg-gradient-to-r from-[#f59e0b]/40 via-[#f59e0b]/10 to-transparent mb-8" />
+                <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-8" />
                 <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
                   Achievement is a wonderful thing. But what makes it even more wonderful is being publicly acclaimed for it&#8212;especially in the presence of one&apos;s peers. That&apos;s why UPTECH has instituted awards in several categories. Also, members with many years of significant contribution to the IT industry are made Fellows of the Council. It is regarded as one of the most prestigious titles that an IT professional can receive in the country today.
                 </p>
@@ -139,7 +139,7 @@ export default function TechExcellenceAwardsClient() {
                 <div className="h-px bg-[#D8D5CF] mb-5" />
                 <ul className="space-y-4">
                   {objectives.map((objective, i) => {
-                    const colors = ["#f59e0b", "#2563EB", "#22C55E", "#8b5cf6"];
+                    const colors = ["#C41E3A", "#2563EB", "#22C55E", "#C41E3A"];
                     return (
                       <li key={i} className="flex items-start gap-3">
                         <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: colors[i % colors.length] }} strokeWidth={2} />
@@ -188,7 +188,7 @@ export default function TechExcellenceAwardsClient() {
                     />
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-start justify-between mb-3">
-                        <h3 className="font-heading font-bold text-[#1C1F2E] text-sm flex-1 pr-3 group-hover:text-[#f59e0b] transition-colors duration-200">
+                        <h3 className="font-heading font-bold text-[#1C1F2E] text-sm flex-1 pr-3 group-hover:text-[#2563EB] transition-colors duration-200">
                           {category.title}
                         </h3>
                         <span
@@ -243,7 +243,7 @@ export default function TechExcellenceAwardsClient() {
                     />
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-start justify-between mb-3">
-                        <h3 className="font-heading font-bold text-[#1C1F2E] text-sm flex-1 pr-3 group-hover:text-[#f59e0b] transition-colors duration-200">
+                        <h3 className="font-heading font-bold text-[#1C1F2E] text-sm flex-1 pr-3 group-hover:text-[#2563EB] transition-colors duration-200">
                           {category.title}
                         </h3>
                         <span
@@ -269,13 +269,13 @@ export default function TechExcellenceAwardsClient() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Nomination Process
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 Award Selection Process
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#8b5cf6]/40 via-[#8b5cf6]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
                 A transparent, structured process designed to identify and celebrate true excellence.
               </p>
@@ -313,7 +313,7 @@ export default function TechExcellenceAwardsClient() {
                         </div>
                       </div>
                     </div>
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#f59e0b] transition-colors duration-200">
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
                       {step.title}
                     </h3>
                     <p className="text-[#7A7E8F] text-sm leading-relaxed mb-4">{step.description}</p>
@@ -358,7 +358,7 @@ export default function TechExcellenceAwardsClient() {
               </div>
               <div className="lg:col-span-1">
                 <div className="bg-white border border-[#D8D5CF] rounded-xl p-6 sticky top-8 relative overflow-hidden shadow-sm">
-                  <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl bg-gradient-to-r from-[#f59e0b] to-[#f59e0b60]" />
+                  <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl bg-gradient-to-r from-[#C41E3A] to-[#C41E3A60]" />
                   <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-3">Fellowship</h3>
                   <div className="h-px bg-[#D8D5CF] mb-4" />
                   <p className="text-[#7A7E8F] text-sm leading-relaxed mb-4">
@@ -377,13 +377,13 @@ export default function TechExcellenceAwardsClient() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 FAQ
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 Frequently Asked Questions
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#8b5cf6]/40 via-[#8b5cf6]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
                 Common questions about the UK–Pakistan Tech Excellence Awards.
               </p>
@@ -399,7 +399,7 @@ export default function TechExcellenceAwardsClient() {
                     className="w-full flex items-center justify-between py-5 text-left gap-4"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-xs font-bold text-[#f59e0b] bg-[#f59e0b]/10 px-2 py-0.5 rounded flex-shrink-0">
+                      <span className="text-xs font-bold text-[#C41E3A] bg-[#C41E3A]/10 px-2 py-0.5 rounded flex-shrink-0">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <span className="font-heading font-semibold text-[#1C1F2E] text-base">{faq.question}</span>
@@ -430,7 +430,7 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── CTA ── */}
       <section className="relative bg-[#0B0F1A] overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#f59e0b]" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#C41E3A]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#C41E3A]" />
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -443,7 +443,7 @@ export default function TechExcellenceAwardsClient() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-5">
                 Submit a Nomination
               </p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">

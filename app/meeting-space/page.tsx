@@ -40,10 +40,10 @@ const uses = [
 
 const facilities = [
   { icon: Building2, title: "Fully Furnished Boardrooms", desc: "Fully furnished boardrooms and meeting rooms.", color: "#2563EB" },
-  { icon: Wifi, title: "High-Speed Internet", desc: "High-speed internet connectivity.", color: "#8b5cf6" },
-  { icon: Monitor, title: "Video Conferencing & AV", desc: "Video conferencing and AV facilities.", color: "#f59e0b" },
-  { icon: UserCheck, title: "Reception Support", desc: "Reception support (where applicable).", color: "#10b981" },
-  { icon: Clock, title: "Flexible Booking", desc: "Flexible hourly and daily booking options.", color: "#ef4444" },
+  { icon: Wifi, title: "High-Speed Internet", desc: "High-speed internet connectivity.", color: "#22C55E" },
+  { icon: Monitor, title: "Video Conferencing & AV", desc: "Video conferencing and AV facilities.", color: "#C41E3A" },
+  { icon: UserCheck, title: "Reception Support", desc: "Reception support (where applicable).", color: "#2563EB" },
+  { icon: Clock, title: "Flexible Booking", desc: "Flexible hourly and daily booking options.", color: "#22C55E" },
 ];
 
 const bilateralBenefits = [
@@ -79,7 +79,7 @@ const tierTableData = [
     policyEngagement: "Participation in Policy Working Groups",
     brandVisibility: "Featured on Website & Publications",
     highlight: false,
-    color: "#8b5cf6",
+    color: "#22C55E",
   },
   {
     tier: "SME Member",
@@ -89,7 +89,7 @@ const tierTableData = [
     policyEngagement: "Industry Consultation Access",
     brandVisibility: "Listed in Member Directory",
     highlight: false,
-    color: "#10b981",
+    color: "#C41E3A",
   },
   {
     tier: "Startup / Associate",
@@ -99,7 +99,7 @@ const tierTableData = [
     policyEngagement: "Observer Access to Forums",
     brandVisibility: "Directory Listing",
     highlight: false,
-    color: "#f59e0b",
+    color: "#2563EB",
   },
   {
     tier: "Government / Institutional",
@@ -109,7 +109,7 @@ const tierTableData = [
     policyEngagement: "Formal Bilateral Engagement",
     brandVisibility: "Institutional Recognition",
     highlight: false,
-    color: "#ef4444",
+    color: "#22C55E",
   },
 ];
 
@@ -122,10 +122,10 @@ const meetingSpaceTerms = [
 ];
 
 const addOnServices = [
-  { icon: ClipboardList, title: "Secretariat Support", desc: "Secretariat support for delegation visits.", color: "#f59e0b" },
-  { icon: HeadphonesIcon, title: "Event Coordination", desc: "Event coordination assistance.", color: "#2563EB" },
-  { icon: Palette, title: "Meeting Space Branding", desc: "Branding within meeting space.", color: "#8b5cf6" },
-  { icon: UtensilsCrossed, title: "Catering & Hospitality", desc: "Catering and hospitality arrangements.", color: "#10b981" },
+  { icon: ClipboardList, title: "Secretariat Support", desc: "Secretariat support for delegation visits.", color: "#2563EB" },
+  { icon: HeadphonesIcon, title: "Event Coordination", desc: "Event coordination assistance.", color: "#22C55E" },
+  { icon: Palette, title: "Meeting Space Branding", desc: "Branding within meeting space.", color: "#C41E3A" },
+  { icon: UtensilsCrossed, title: "Catering & Hospitality", desc: "Catering and hospitality arrangements.", color: "#2563EB" },
 ];
 
 const bookingChecklist = [
@@ -306,7 +306,7 @@ export default function MeetingSpacePage() {
         <div
           className="absolute bottom-0 right-1/4 w-96 h-96 opacity-[0.02]"
           style={{
-            background: "radial-gradient(circle, #8b5cf6, transparent 60%)",
+            background: "radial-gradient(circle, #2563EB, transparent 60%)",
           }}
         />
 
@@ -371,7 +371,7 @@ export default function MeetingSpacePage() {
                   className="absolute top-0 left-0 right-0 h-[3px]"
                   style={{
                     background:
-                      "linear-gradient(to right, #2563EB, #8b5cf6)",
+                      "linear-gradient(to right, #2563EB, #2563EB)",
                   }}
                 />
                 <div className="p-8">
@@ -440,7 +440,7 @@ export default function MeetingSpacePage() {
       {/* ── Facilities — Dark bg with glass cards ─────────────────── */}
       <section className="relative py-16 overflow-hidden bg-white">
         {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         {/* Subtle grid */}
         <div
           className="absolute inset-0 opacity-[0.02]"
@@ -454,20 +454,20 @@ export default function MeetingSpacePage() {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-[0.02]"
           style={{
-            background: "radial-gradient(circle, #8b5cf6, transparent 50%)",
+            background: "radial-gradient(circle, #2563EB, transparent 50%)",
           }}
         />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6] mb-3">
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
                 Our Facilities
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Facilities &amp; Amenities
               </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#8b5cf6] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
               <p className="text-[#5A5F72] text-base max-w-2xl">
                 Our London meeting spaces provide a professional and secure environment equipped with:
               </p>
@@ -610,12 +610,12 @@ export default function MeetingSpacePage() {
               {/* Member Benefits Card */}
               <div className="relative bg-white border border-[#D8D5CF] rounded-2xl shadow-sm overflow-hidden">
                 {/* Top gradient accent */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
                 <div
                   className="absolute top-0 left-0 right-0 h-[3px]"
                   style={{
                     background:
-                      "linear-gradient(to right, #8b5cf6, #2563EB)",
+                      "linear-gradient(to right, #2563EB, #2563EB)",
                   }}
                 />
                 <div className="p-8">
@@ -624,12 +624,12 @@ export default function MeetingSpacePage() {
                       <div
                         className="w-10 h-10 rounded-xl flex items-center justify-center"
                         style={{
-                          backgroundColor: "#8b5cf615",
-                          border: "1px solid #8b5cf625",
+                          backgroundColor: "#2563EB15",
+                          border: "1px solid #2563EB25",
                         }}
                       >
                         <BadgeCheck
-                          className="w-5 h-5 text-[#8b5cf6]"
+                          className="w-5 h-5 text-[#2563EB]"
                           strokeWidth={1.5}
                         />
                       </div>
@@ -659,12 +659,12 @@ export default function MeetingSpacePage() {
                         <div
                           className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
                           style={{
-                            backgroundColor: "#8b5cf610",
-                            border: "1px solid #8b5cf620",
+                            backgroundColor: "#2563EB10",
+                            border: "1px solid #2563EB20",
                           }}
                         >
                           <CheckCircle2
-                            className="w-3.5 h-3.5 text-[#8b5cf6]"
+                            className="w-3.5 h-3.5 text-[#2563EB]"
                             strokeWidth={2}
                           />
                         </div>
@@ -704,7 +704,7 @@ export default function MeetingSpacePage() {
         <div
           className="absolute bottom-0 left-1/4 w-96 h-96 opacity-[0.02]"
           style={{
-            background: "radial-gradient(circle, #8b5cf6, transparent 60%)",
+            background: "radial-gradient(circle, #2563EB, transparent 60%)",
           }}
         />
 
@@ -728,7 +728,7 @@ export default function MeetingSpacePage() {
                   className="absolute top-0 left-0 right-0 h-[2px]"
                   style={{
                     background:
-                      "linear-gradient(to right, #2563EB, #8b5cf6, #10b981, #f59e0b, #ef4444)",
+                      "linear-gradient(to right, #2563EB, #22C55E, #C41E3A, #2563EB, #22C55E)",
                   }}
                 />
                 <div className="overflow-x-auto">
@@ -803,7 +803,7 @@ export default function MeetingSpacePage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={`group relative rounded-xl overflow-hidden ${
                     row.highlight
-                      ? "bg-gradient-to-br from-[#2563EB]/[0.08] to-[#8b5cf6]/[0.05] border-2 border-[#2563EB]/40 shadow-[0_0_30px_rgba(37,99,235,0.15)]"
+                      ? "bg-gradient-to-br from-[#2563EB]/[0.08] to-[#2563EB]/[0.05] border-2 border-[#2563EB]/40 shadow-[0_0_30px_rgba(37,99,235,0.15)]"
                       : "bg-white border border-[#D8D5CF] shadow-sm"
                   }`}
                 >
@@ -873,7 +873,7 @@ export default function MeetingSpacePage() {
         style={{ backgroundColor: "#EEECEA" }}
       >
         {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/30 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/30 to-transparent" />
         {/* Grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.02]"
@@ -887,20 +887,20 @@ export default function MeetingSpacePage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#f59e0b] mb-3">
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">
                 Terms &amp; Conditions
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Meeting Space Terms
               </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#f59e0b] to-transparent" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent" />
             </div>
 
             <div className="relative bg-white border border-[#D8D5CF] rounded-2xl shadow-sm overflow-hidden max-w-3xl">
               <div
                 className="absolute top-0 left-0 right-0 h-[2px]"
                 style={{
-                  background: "linear-gradient(to right, #f59e0b, #f59e0b60)",
+                  background: "linear-gradient(to right, #C41E3A, #C41E3A60)",
                 }}
               />
               <div className="p-8">
@@ -921,12 +921,12 @@ export default function MeetingSpacePage() {
                       <div
                         className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
                         style={{
-                          backgroundColor: "#f59e0b10",
-                          border: "1px solid #f59e0b20",
+                          backgroundColor: "#C41E3A10",
+                          border: "1px solid #C41E3A20",
                         }}
                       >
                         <CheckCircle2
-                          className="w-3.5 h-3.5 text-[#f59e0b]"
+                          className="w-3.5 h-3.5 text-[#C41E3A]"
                           strokeWidth={2}
                         />
                       </div>
@@ -945,7 +945,7 @@ export default function MeetingSpacePage() {
       {/* ── Optional Add-On Services (Member Rates) ────────────────── */}
       <section className="relative py-16 overflow-hidden bg-white">
         {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#10b981]/30 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/30 to-transparent" />
         {/* Grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.02]"
@@ -959,13 +959,13 @@ export default function MeetingSpacePage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#10b981] mb-3">
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">
                 Member Rates
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Optional Add-On Services
               </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#10b981] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -1050,7 +1050,7 @@ export default function MeetingSpacePage() {
         <div
           className="absolute top-0 right-0 w-96 h-96 opacity-[0.02]"
           style={{
-            background: "radial-gradient(circle, #8b5cf6, transparent 60%)",
+            background: "radial-gradient(circle, #2563EB, transparent 60%)",
           }}
         />
 

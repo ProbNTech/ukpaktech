@@ -56,7 +56,7 @@ const disciplinarySteps = [
   { step: "11", title: "Final Verdict", description: "The verdict rendered by the Executive Committee on the appeal(s) shall be final and non-negotiable." },
 ];
 
-const principleColors = ["#2563EB", "#22C55E", "#8b5cf6", "#C41E3A", "#f59e0b", "#2563EB", "#22C55E", "#8b5cf6", "#C41E3A"];
+const principleColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E", "#C41E3A"];
 
 export default function CodeOfConductPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -174,7 +174,7 @@ export default function CodeOfConductPage() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm"
               >
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/20 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-5">Quick Navigation</h3>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
                 <nav className="space-y-2">
@@ -200,16 +200,16 @@ export default function CodeOfConductPage() {
 
       {/* ── 9 Principles — Light alt section ─────────────────────────── */}
       <section id="principles" className="relative py-16 overflow-hidden bg-white">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6] mb-3">Core Values</p>
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Core Values</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Our 9 Principles
               </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#8b5cf6] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
               <p className="text-[#7A7E8F] text-base max-w-xl">
                 The foundation of ethical conduct and professional standards that every UPTECH member upholds.
               </p>
@@ -336,10 +336,10 @@ export default function CodeOfConductPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-30px" }}
                   transition={{ duration: 0.4, delay: 0.25 }}
-                  className="relative bg-gradient-to-br from-[#f59e0b]/10 to-[#C41E3A]/10 border border-[#f59e0b]/20 rounded-xl p-6 mt-3 overflow-hidden"
+                  className="relative bg-gradient-to-br from-[#C41E3A]/10 to-[#C41E3A]/10 border border-[#C41E3A]/20 rounded-xl p-6 mt-3 overflow-hidden"
                 >
                   <div className="relative">
-                    <AlertTriangle className="w-5 h-5 text-[#FBBF24] mb-3" />
+                    <AlertTriangle className="w-5 h-5 text-[#C41E3A] mb-3" />
                     <p className="text-[#5A5F72] text-sm leading-relaxed">
                       Violations of these rules may result in removal from the group and further disciplinary action as outlined in the Disciplinary Procedure below.
                     </p>
@@ -399,16 +399,16 @@ export default function CodeOfConductPage() {
 
       {/* ── Reporting & Commitment — Light section ──────────────────── */}
       <section className="relative bg-white py-16 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6] mb-3">Accountability</p>
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Accountability</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Reporting & Commitment
               </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#8b5cf6] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-6">

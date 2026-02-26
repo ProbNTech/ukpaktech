@@ -21,8 +21,8 @@ const categoryMeta: Record<string, { color: string; border: string; bg: string; 
   General: { color: "#2563EB", border: "border-[#2563EB]", bg: "bg-[#2563EB]", desc: "Learn about UPTECH, our mission, and how to get involved." },
   Membership: { color: "#22C55E", border: "border-[#22C55E]", bg: "bg-[#22C55E]", desc: "Tiers, benefits, application process, and cancellation policy." },
   "Programs & Services": { color: "#C41E3A", border: "border-[#C41E3A]", bg: "bg-[#C41E3A]", desc: "Training, mentorship, incubation, and business support." },
-  "Funding & Grants": { color: "#8b5cf6", border: "border-[#8b5cf6]", bg: "bg-[#8b5cf6]", desc: "Investment stages, eligibility criteria, and application timelines." },
-  "Events & Networking": { color: "#f59e0b", border: "border-[#f59e0b]", bg: "bg-[#f59e0b]", desc: "Conferences, sponsorship, speaking opportunities, and networking." },
+  "Funding & Grants": { color: "#2563EB", border: "border-[#2563EB]", bg: "bg-[#2563EB]", desc: "Investment stages, eligibility criteria, and application timelines." },
+  "Events & Networking": { color: "#22C55E", border: "border-[#22C55E]", bg: "bg-[#22C55E]", desc: "Conferences, sponsorship, speaking opportunities, and networking." },
 };
 
 const faqCategories = [

@@ -10,8 +10,8 @@ import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 const stats = [
   { value: "500+", label: "Placements Made", color: "#2563EB" },
   { value: "120+", label: "Partner Companies", color: "#22C55E" },
-  { value: "15+", label: "Countries Covered", color: "#8b5cf6" },
-  { value: "95%", label: "Satisfaction Rate", color: "#f59e0b" },
+  { value: "15+", label: "Countries Covered", color: "#C41E3A" },
+  { value: "95%", label: "Satisfaction Rate", color: "#2563EB" },
 ];
 
 const employerBenefits = [
@@ -32,17 +32,17 @@ const professionalBenefits = [
 
 const processSteps = [
   { number: "01", title: "Register", description: "Create your profile as an employer or professional. Share your requirements, skills, and preferences.", outcome: "Profile activated", color: "#2563EB" },
-  { number: "02", title: "Match", description: "Our team uses AI-assisted matching and manual curation to find the best fit for both parties.", outcome: "Shortlist prepared", color: "#8b5cf6" },
-  { number: "03", title: "Interview", description: "Facilitated introductions and interviews between matched employers and professionals.", outcome: "Candidates selected", color: "#22C55E" },
-  { number: "04", title: "Onboard", description: "We handle contracts, compliance, and onboarding to ensure a smooth start for all parties.", outcome: "Placement confirmed", color: "#f59e0b" },
+  { number: "02", title: "Match", description: "Our team uses AI-assisted matching and manual curation to find the best fit for both parties.", outcome: "Shortlist prepared", color: "#22C55E" },
+  { number: "03", title: "Interview", description: "Facilitated introductions and interviews between matched employers and professionals.", outcome: "Candidates selected", color: "#C41E3A" },
+  { number: "04", title: "Onboard", description: "We handle contracts, compliance, and onboarding to ensure a smooth start for all parties.", outcome: "Placement confirmed", color: "#2563EB" },
 ];
 
 const sectors = [
   { icon: Globe, color: "#2563EB", title: "Software Development", description: "Full-stack, frontend, backend, mobile, and cloud engineering professionals." },
   { icon: Shield, color: "#C41E3A", title: "Cybersecurity", description: "Security analysts, penetration testers, and compliance specialists." },
   { icon: TrendingUp, color: "#22C55E", title: "Data & AI", description: "Data scientists, ML engineers, and AI specialists for advanced analytics projects." },
-  { icon: Briefcase, color: "#8b5cf6", title: "Product & Design", description: "Product managers, UX designers, and UI engineers for digital products." },
-  { icon: Clock, color: "#f59e0b", title: "DevOps & Cloud", description: "DevOps engineers, cloud architects, and infrastructure specialists." },
+  { icon: Briefcase, color: "#2563EB", title: "Product & Design", description: "Product managers, UX designers, and UI engineers for digital products." },
+  { icon: Clock, color: "#22C55E", title: "DevOps & Cloud", description: "DevOps engineers, cloud architects, and infrastructure specialists." },
   { icon: Award, color: "#ef4444", title: "FinTech & HealthTech", description: "Domain specialists for regulated industries including finance and healthcare." },
 ];
 
@@ -54,7 +54,7 @@ const faqs = [
   { question: "What are the costs for employers?", answer: "Employer fees are based on the contract value and duration. UPTECH members receive preferential rates. Contact us for a detailed pricing structure tailored to your requirements." },
 ];
 
-const faqColors = ["#2563EB", "#8b5cf6", "#22C55E", "#f59e0b", "#C41E3A"];
+const faqColors = ["#2563EB", "#C41E3A", "#22C55E", "#2563EB", "#C41E3A"];
 
 export default function OverseasEmploymentPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -235,13 +235,13 @@ export default function OverseasEmploymentPage() {
 
       {/* ── How It Works ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#8b5cf6]" />
+        <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">Process</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Process</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">How It Works</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#8b5cf6]/40 mb-4" />
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40 mb-4" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">A structured, compliant process from registration to placement.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -324,9 +324,9 @@ export default function OverseasEmploymentPage() {
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">FAQ</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">FAQ</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Frequently Asked Questions</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#f59e0b]/40 mb-4" />
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/40 mb-4" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">Common questions about overseas contract employment.</p>
             </div>
             <FAQSection faqs={faqs} />

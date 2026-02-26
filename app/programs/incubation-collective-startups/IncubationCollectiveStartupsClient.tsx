@@ -9,8 +9,8 @@ import { CheckCircle2 } from "lucide-react";
 const focusAreas = [
   { title: "AI & Data Products", description: "Building intelligent solutions that transform industries through data-driven innovation.", color: "#2563EB" },
   { title: "FinTech & Digital Payments", description: "Revolutionising financial services with secure, scalable payment technologies.", color: "#22C55E" },
-  { title: "HealthTech & MedTech", description: "Advancing healthcare delivery through cutting-edge medical technologies and digital health solutions.", color: "#8b5cf6" },
-  { title: "Cloud, SaaS & Enterprise Software", description: "Delivering scalable software solutions that power modern businesses and enterprises.", color: "#f59e0b" },
+  { title: "HealthTech & MedTech", description: "Advancing healthcare delivery through cutting-edge medical technologies and digital health solutions.", color: "#C41E3A" },
+  { title: "Cloud, SaaS & Enterprise Software", description: "Delivering scalable software solutions that power modern businesses and enterprises.", color: "#2563EB" },
   { title: "Cybersecurity & Digital Infrastructure", description: "Protecting digital assets and building resilient infrastructure for the modern economy.", color: "#C41E3A" },
   { title: "EdTech & Future Skills", description: "Transforming education and workforce development through innovative learning platforms.", color: "#06b6d4" },
 ];
@@ -18,8 +18,8 @@ const focusAreas = [
 const timelineSteps = [
   { number: "01", title: "Ideation & Validation", outcomes: ["Market research and opportunity assessment", "Concept validation and feasibility analysis"], color: "#2563EB" },
   { number: "02", title: "Product & Market Fit", outcomes: ["MVP development and testing support", "Customer discovery and market positioning"], color: "#22C55E" },
-  { number: "03", title: "Compliance & Readiness", outcomes: ["Legal structure and regulatory guidance", "Intellectual property and compliance frameworks"], color: "#8b5cf6" },
-  { number: "04", title: "Market Access & Partnerships", outcomes: ["UK and Pakistan market entry strategies", "Strategic partnership and distribution channels"], color: "#f59e0b" },
+  { number: "03", title: "Compliance & Readiness", outcomes: ["Legal structure and regulatory guidance", "Intellectual property and compliance frameworks"], color: "#C41E3A" },
+  { number: "04", title: "Market Access & Partnerships", outcomes: ["UK and Pakistan market entry strategies", "Strategic partnership and distribution channels"], color: "#2563EB" },
   { number: "05", title: "Investment & Scale", outcomes: ["Funding rounds and investor introductions", "Scaling strategies and operational excellence"], color: "#C41E3A" },
 ];
 
@@ -40,7 +40,7 @@ const audiences = [
     title: "Corporate & Institutional Partners",
     description: "For organisations seeking to collaborate with innovative startups, access new technologies, and drive digital transformation.",
     gains: ["Access to curated startup portfolios", "Innovation partnerships and co-development", "Cross-border market entry support"],
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
 ];
 
@@ -56,8 +56,8 @@ const resources = [
 const stats = [
   { value: "50+", label: "startups supported", color: "#2563EB" },
   { value: "200+", label: "partnerships enabled", color: "#22C55E" },
-  { value: "15+", label: "markets accessed", color: "#8b5cf6" },
-  { value: "£5M+", label: "funding facilitated", color: "#f59e0b" },
+  { value: "15+", label: "markets accessed", color: "#C41E3A" },
+  { value: "£5M+", label: "funding facilitated", color: "#2563EB" },
 ];
 
 export default function IncubationCollectiveStartupsClient() {
@@ -168,7 +168,7 @@ export default function IncubationCollectiveStartupsClient() {
                 <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
                   UPTECH&apos;s Incubation Centre provides a comprehensive ecosystem for startups to grow, scale, and succeed through collective models and collaborative structures.
                 </p>
-                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#8b5cf6]/20 to-transparent mb-8" />
+                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
                 <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
                   Our Incubation Centre offers mentorship, resources, funding connections, and a collaborative environment where innovation thrives. Through our collective startup model, entrepreneurs can leverage shared infrastructure, expertise, and networks.
                 </p>
@@ -242,13 +242,13 @@ export default function IncubationCollectiveStartupsClient() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Our Model
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 Incubation Pathway
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#8b5cf6]/40 via-[#8b5cf6]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
                 A structured pathway from concept to market-ready venture with comprehensive support at every stage.
               </p>
@@ -304,13 +304,13 @@ export default function IncubationCollectiveStartupsClient() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Collective Model
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 The Collective Startup Approach
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#f59e0b]/40 via-[#f59e0b]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed mb-8">
                 A model that transforms how startups collaborate, share resources, and scale together.
               </p>
@@ -362,7 +362,7 @@ export default function IncubationCollectiveStartupsClient() {
                   title: "Partner With Us",
                   desc: "Co-build acceleration programs with cross-border reach, shared deal flow, and access to the UK–Pakistan tech corridor.",
                   items: ["Co-branded programs", "Shared deal flow", "Cross-border market access", "Investor network access"],
-                  color: "#8b5cf6",
+                  color: "#C41E3A",
                 },
               ].map((card, i) => (
                 <motion.div
@@ -463,13 +463,13 @@ export default function IncubationCollectiveStartupsClient() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Support
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 What Participants Receive
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#f59e0b]/40 via-[#f59e0b]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
                 Comprehensive resources and support designed to accelerate your startup journey.
               </p>

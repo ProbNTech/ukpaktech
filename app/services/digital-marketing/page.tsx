@@ -10,23 +10,23 @@ import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 const stats = [
   { value: "150+", label: "Products Promoted", color: "#2563EB" },
   { value: "12M+", label: "Audience Reach", color: "#22C55E" },
-  { value: "40+", label: "Campaign Launches", color: "#8b5cf6" },
-  { value: "8x", label: "Avg. ROI", color: "#f59e0b" },
+  { value: "40+", label: "Campaign Launches", color: "#C41E3A" },
+  { value: "8x", label: "Avg. ROI", color: "#2563EB" },
 ];
 
 const offerings = [
   { icon: Megaphone, color: "#C41E3A", title: "Product & Solutions Showcase", description: "Feature your software products, digital platforms, and services through Council channels, events, and curated industry spotlights." },
   { icon: Globe, color: "#22C55E", title: "Market Visibility & Promotion", description: "Gain exposure through newsletters, digital campaigns, industry roundtables, trade missions, and strategic introductions to potential partners and customers." },
-  { icon: PenTool, color: "#8b5cf6", title: "Go-to-Market Support", description: "Receive guidance on positioning, messaging, and market entry strategies tailored to the UK and Europe technology ecosystems." },
-  { icon: Calendar, color: "#f59e0b", title: "Thought Leadership Opportunities", description: "Position your organisation as an industry leader through speaking opportunities, panel discussions, policy forums, and published insights." },
+  { icon: PenTool, color: "#2563EB", title: "Go-to-Market Support", description: "Receive guidance on positioning, messaging, and market entry strategies tailored to the UK and Europe technology ecosystems." },
+  { icon: Calendar, color: "#22C55E", title: "Thought Leadership Opportunities", description: "Position your organisation as an industry leader through speaking opportunities, panel discussions, policy forums, and published insights." },
   { icon: Mail, color: "#2563EB", title: "Cross-Border Business Development", description: "Access networks of policymakers, regulators, investors, and corporate buyers to support partnership building and commercial growth." },
 ];
 
 const steps = [
   { number: "01", title: "Onboard", description: "Join the hub and share your product portfolio, target markets, and growth objectives.", outcome: "Strategy brief prepared", color: "#2563EB" },
   { number: "02", title: "Strategy", description: "We develop a tailored cross-border marketing strategy aligned with your business goals.", outcome: "Campaign plan approved", color: "#22C55E" },
-  { number: "03", title: "Execute", description: "Launch campaigns across Council channels, events, and partner networks.", outcome: "Campaigns live", color: "#8b5cf6" },
-  { number: "04", title: "Grow", description: "Track results, optimise performance, and scale your international presence.", outcome: "ROI measured & scaled", color: "#f59e0b" },
+  { number: "03", title: "Execute", description: "Launch campaigns across Council channels, events, and partner networks.", outcome: "Campaigns live", color: "#C41E3A" },
+  { number: "04", title: "Grow", description: "Track results, optimise performance, and scale your international presence.", outcome: "ROI measured & scaled", color: "#2563EB" },
 ];
 
 const whyItMatters = [
@@ -44,7 +44,7 @@ const faqs = [
   { question: "How do you measure campaign success?", answer: "We provide detailed analytics including impressions, click-through rates, lead generation, and ROI metrics. Monthly reports track campaign performance against agreed KPIs." },
 ];
 
-const faqColors = ["#2563EB", "#8b5cf6", "#22C55E", "#f59e0b"];
+const faqColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB"];
 
 export default function DigitalMarketingPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -76,7 +76,7 @@ export default function DigitalMarketingPage() {
           >
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">UPTECH Service</p>
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-6">
-              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg, #ffffff 0%, #C41E3A 50%, #f59e0b 100%)" }}>
+              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg, #ffffff 0%, #C41E3A 50%, #2563EB 100%)" }}>
                 Digital Product Marketing Hub
               </span>
             </h1>
@@ -128,7 +128,7 @@ export default function DigitalMarketingPage() {
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
                 Practical, Results-Driven Marketing for Technology Companies
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#f59e0b]/20 to-transparent mb-8" />
+              <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#2563EB]/20 to-transparent mb-8" />
               <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
                 The Digital Product Marketing Hub supports members in promoting their software solutions, platforms, and technology services across the UK, Europe, Middle East &amp; African continents. We help technology companies strengthen their market presence, reach new audiences, and accelerate cross-border growth.
               </p>
@@ -143,7 +143,7 @@ export default function DigitalMarketingPage() {
       {/* ── What We Offer ── */}
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#8b5cf6]" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-14">
@@ -189,9 +189,9 @@ export default function DigitalMarketingPage() {
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">Process</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Process</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">How It Works</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#8b5cf6]/40 mb-4" />
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40 mb-4" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">From onboarding to measurable growth &mdash; a clear four-step process.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -228,13 +228,13 @@ export default function DigitalMarketingPage() {
       {/* ── Why It Matters ── */}
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#f59e0b]" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#C41E3A]" />
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">Impact</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">Impact</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Why It Matters</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#f59e0b]/40 mb-4" />
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/40 mb-4" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-3xl leading-relaxed">
                 The UK and Pakistan technology sectors present significant opportunities for collaboration, outsourcing, innovation partnerships, and product expansion. The Digital Product Marketing Hub helps members:
               </p>
@@ -242,7 +242,7 @@ export default function DigitalMarketingPage() {
             <ul className="space-y-0 max-w-2xl">
               {whyItMatters.map((item) => (
                 <li key={item} className="flex items-start gap-3 py-4 border-b border-[#D8D5CF] last:border-b-0">
-                  <CheckCircle2 className="w-4 h-4 text-[#f59e0b] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                  <CheckCircle2 className="w-4 h-4 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
                   <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
                 </li>
               ))}
@@ -270,7 +270,7 @@ export default function DigitalMarketingPage() {
       {/* ── CTA Section ── */}
       <section className="relative bg-[#0B0F1A] overflow-hidden">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#C41E3A]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#f59e0b]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{

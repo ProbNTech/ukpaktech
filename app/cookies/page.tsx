@@ -13,10 +13,10 @@ import {
 const cookieTypes = [
   { icon: Shield, title: "Necessary", color: "#2563EB", desc: "These cookies are necessary in order to allow the Site to work correctly. They enable you to access the Site, move around, and access different services, features, and tools. Examples include remembering previous actions (e.g. entered text) when navigating back to a page in the same session. These cookies cannot be disabled." },
   { icon: Settings, title: "Functionality", color: "#22C55E", desc: "These cookies remember your settings and preferences and the choices you make (such as language or regional preferences) in order to help us personalize your experience and offer you enhanced functionality and content." },
-  { icon: Lock, title: "Security", color: "#8b5cf6", desc: "These cookies can help us identify and prevent security risks. They may be used to store your session information to prevent others from changing your password without your login information." },
-  { icon: BarChart3, title: "Performance", color: "#f59e0b", desc: "These cookies can help us collect information to help us understand how you use our Site, for example whether you have viewed messages or specific pages and how long you spent on each page. This helps us improve the performance of our Site." },
-  { icon: LineChart, title: "Analytics", color: "#C41E3A", desc: "These cookies collect information regarding your activity on our Site to help us learn more about which features are popular with our users and how our Site can be improved." },
-  { icon: Megaphone, title: "Advertising", color: "#2563EB", desc: "These cookies are placed in order to deliver content, including ads relevant and meaningful to you and your interests. They may also be used to deliver targeted advertising or to limit the number of times you see an advertisement. This can help us track how efficient advertising campaigns are, both for our own Services and for other websites. Such cookies may track your browsing habits and activity when visiting our Site and those of third parties" },
+  { icon: Lock, title: "Security", color: "#C41E3A", desc: "These cookies can help us identify and prevent security risks. They may be used to store your session information to prevent others from changing your password without your login information." },
+  { icon: BarChart3, title: "Performance", color: "#2563EB", desc: "These cookies can help us collect information to help us understand how you use our Site, for example whether you have viewed messages or specific pages and how long you spent on each page. This helps us improve the performance of our Site." },
+  { icon: LineChart, title: "Analytics", color: "#22C55E", desc: "These cookies collect information regarding your activity on our Site to help us learn more about which features are popular with our users and how our Site can be improved." },
+  { icon: Megaphone, title: "Advertising", color: "#C41E3A", desc: "These cookies are placed in order to deliver content, including ads relevant and meaningful to you and your interests. They may also be used to deliver targeted advertising or to limit the number of times you see an advertisement. This can help us track how efficient advertising campaigns are, both for our own Services and for other websites. Such cookies may track your browsing habits and activity when visiting our Site and those of third parties" },
 ];
 
 const additionalCookieDetails = [
@@ -30,9 +30,9 @@ const additionalCookieDetails = [
 
 const dataSubjectRights = [
   { icon: Eye, title: "Right to Access", color: "#2563EB", desc: "Right to Access: Data subjects reserve the right to request and obtain confirmation that data is or is not being collected on them and if so, exactly what data is being collected, how, where, and for what purposes. This data can be manually requested via info@uptech.org.uk and provided in an electronic format free of charge." },
-  { icon: Users, title: "Right to Be Forgotten", color: "#C41E3A", desc: "Right to Be Forgotten: Should data subjects at any time wish to withdraw their consent and no longer allow UK-PAKISTAN TECH COUNCIL LTD (UPTECH) International to store their personal data, this request can be manually made via info@uptech.org.uk Please be sure to include the full name (including any prefixes) and email address of whom the data is in reference too, so that all data relating to the data subject in question can be accurately removed." },
-  { icon: FileText, title: "Data Portability", color: "#22C55E", desc: "Data Portability: Similar to the Right to Access, Data Portability requires that data subjects are able to request, obtain, and/or transfer possession of collected data at any time. As mentioned above, this data can be manually requested via info@uptech.org.uk and provided in an electronic format free of charge. Should the data subject wish to transfer the possession of the data stored by UK-PAKISTAN TECH COUNCIL LTD (UPTECH), please be sure to also include the full name (including any prefixes) and the relevant contact information relating to the individual or organization whom you wish the data to be transferred to." },
-  { icon: Bell, title: "Breach Notification", color: "#8b5cf6", desc: "Breach Notification: Should UK-PAKISTAN TECH COUNCIL LTD (UPTECH) encounter a breach/unauthorized access of personal data that is likely to \u201Cresult in a risk for the rights and freedoms of individuals\u201D, UK-PAKISTAN TECH COUNCIL LTD (UPTECH) will ensure that a notification is made within 72 hours of becoming aware of the breach." },
+  { icon: Users, title: "Right to Be Forgotten", color: "#22C55E", desc: "Right to Be Forgotten: Should data subjects at any time wish to withdraw their consent and no longer allow UK-PAKISTAN TECH COUNCIL LTD (UPTECH) International to store their personal data, this request can be manually made via info@uptech.org.uk Please be sure to include the full name (including any prefixes) and email address of whom the data is in reference too, so that all data relating to the data subject in question can be accurately removed." },
+  { icon: FileText, title: "Data Portability", color: "#C41E3A", desc: "Data Portability: Similar to the Right to Access, Data Portability requires that data subjects are able to request, obtain, and/or transfer possession of collected data at any time. As mentioned above, this data can be manually requested via info@uptech.org.uk and provided in an electronic format free of charge. Should the data subject wish to transfer the possession of the data stored by UK-PAKISTAN TECH COUNCIL LTD (UPTECH), please be sure to also include the full name (including any prefixes) and the relevant contact information relating to the individual or organization whom you wish the data to be transferred to." },
+  { icon: Bell, title: "Breach Notification", color: "#2563EB", desc: "Breach Notification: Should UK-PAKISTAN TECH COUNCIL LTD (UPTECH) encounter a breach/unauthorized access of personal data that is likely to \u201Cresult in a risk for the rights and freedoms of individuals\u201D, UK-PAKISTAN TECH COUNCIL LTD (UPTECH) will ensure that a notification is made within 72 hours of becoming aware of the breach." },
 ];
 
 export default function CookiesPage() {
@@ -124,13 +124,13 @@ export default function CookiesPage() {
 
       {/* ── Cookie Types — Light section ───────────────────────────── */}
       <section className="relative bg-[#EEECEA] py-16 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6] mb-3">Cookie Categories</p>
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Cookie Categories</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">We Use These Cookies</h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#8b5cf6] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {cookieTypes.map((cookie, i) => {
@@ -173,7 +173,7 @@ export default function CookiesPage() {
                 </motion.div>
               ))}
             </div>
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4, delay: 0.3 }} className="mt-8 relative bg-gradient-to-br from-[#2563EB]/10 to-[#8b5cf6]/10 border border-[#2563EB]/20 rounded-xl p-6 overflow-hidden max-w-4xl">
+            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4, delay: 0.3 }} className="mt-8 relative bg-gradient-to-br from-[#2563EB]/10 to-[#2563EB]/10 border border-[#2563EB]/20 rounded-xl p-6 overflow-hidden max-w-4xl">
               <div className="relative">
                 <Cookie className="w-5 h-5 text-[#2563EB] mb-3" strokeWidth={1.5} />
                 <p className="text-[#5A5F72] text-sm leading-relaxed">The specific names and types of cookies, web beacons, and other similar technologies we use may change from time to time. However, the cookies we use generally fall into one of the following categories:</p>
@@ -185,25 +185,25 @@ export default function CookiesPage() {
 
       {/* ── Browser Settings — Light section ────────────────────────── */}
       <section className="relative bg-white py-16 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#f59e0b] mb-3">Cookie Management</p>
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Cookie Management</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Browser Settings</h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#f59e0b] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
             </div>
             <div className="max-w-4xl">
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/20 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center flex-shrink-0">
-                    <Settings className="w-5 h-5 text-[#f59e0b]" strokeWidth={1.5} />
+                  <div className="w-10 h-10 rounded-xl bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
+                    <Settings className="w-5 h-5 text-[#C41E3A]" strokeWidth={1.5} />
                   </div>
                   <h3 className="font-heading font-bold text-lg text-[#1C1F2E] pt-2">Managing Your Cookies</h3>
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
-                <p className="text-sm text-[#5A5F72] leading-relaxed">Your web browser may be set to accept cookies automatically but can be changed to decline them. If you don{"\u2019"}t want to receive cookies, you can modify your browser so that it notifies you when cookies are sent to it or you can refuse cookies altogether. You can also delete cookies that have already been set. The Help section of the toolbar on most browsers will tell you how to set your browser to prevent new cookies or disable cookies altogether, or you should browse the site using your browser{"\u2019"}s anonymous usage setting (called {"\u201C"}Incognito{"\u201D"} in Chrome, {"\u201C"}InPrivate{"\u201D"} for Internet Explorer, {"\u201C"}Private Browsing{"\u201D"} in Firefox and Safari). For more help,{" "}<a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#f59e0b] hover:text-[#fbbf24] transition-colors">www.aboutcookies.org</a>{" "}contains information on how to do this on a wide variety of desktop browsers.</p>
+                <p className="text-sm text-[#5A5F72] leading-relaxed">Your web browser may be set to accept cookies automatically but can be changed to decline them. If you don{"\u2019"}t want to receive cookies, you can modify your browser so that it notifies you when cookies are sent to it or you can refuse cookies altogether. You can also delete cookies that have already been set. The Help section of the toolbar on most browsers will tell you how to set your browser to prevent new cookies or disable cookies altogether, or you should browse the site using your browser{"\u2019"}s anonymous usage setting (called {"\u201C"}Incognito{"\u201D"} in Chrome, {"\u201C"}InPrivate{"\u201D"} for Internet Explorer, {"\u201C"}Private Browsing{"\u201D"} in Firefox and Safari). For more help,{" "}<a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#C41E3A] hover:text-[#ef4444] transition-colors">www.aboutcookies.org</a>{" "}contains information on how to do this on a wide variety of desktop browsers.</p>
               </motion.div>
             </div>
           </AnimatedSection>
@@ -244,20 +244,20 @@ export default function CookiesPage() {
 
       {/* ── Changes, Review & General — Light alt section ───────────── */}
       <section className="relative py-16 overflow-hidden bg-[#F5F4F2]">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6] mb-3">Policy Updates</p>
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Policy Updates</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Changes, Review & General</h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#8b5cf6] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
             </div>
             <div className="grid lg:grid-cols-3 gap-5 max-w-5xl">
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/20 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center flex-shrink-0">
-                    <RefreshCw className="w-5 h-5 text-[#8b5cf6]" strokeWidth={1.5} />
+                  <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center flex-shrink-0">
+                    <RefreshCw className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
                   </div>
                 </div>
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-3">Changes to this Policy</h3>
@@ -276,10 +276,10 @@ export default function CookiesPage() {
                 <p className="text-sm text-[#7A7E8F] leading-relaxed">We keep this policy under regular review.</p>
               </motion.div>
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.16 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/20 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center flex-shrink-0">
-                    <FileText className="w-5 h-5 text-[#f59e0b]" strokeWidth={1.5} />
+                  <div className="w-10 h-10 rounded-xl bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-5 h-5 text-[#C41E3A]" strokeWidth={1.5} />
                   </div>
                 </div>
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-3">General</h3>

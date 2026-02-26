@@ -378,7 +378,7 @@ export default function Home() {
               {[
                 { href: "/services", icon: Briefcase, title: "Services", desc: "Business networks, SME hub, digital marketing, overseas employment, and business support for your tech venture.", color: "#2563EB", num: "01" },
                 { href: "/programs/skill-development-center", icon: GraduationCap, title: "Skill Development", desc: "Practical training pathways, professional certifications, and mentorship for the modern tech workforce.", color: "#22c55e", num: "02" },
-                { href: "/ecosystem/uk-pakistan-technology-partnership", icon: Globe2, title: "UK–Pakistan Partnership", desc: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", color: "#8b5cf6", num: "03" },
+                { href: "/ecosystem/uk-pakistan-technology-partnership", icon: Globe2, title: "UK–Pakistan Partnership", desc: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", color: "#C41E3A", num: "03" },
               ].map((card) => {
                 const Icon = card.icon;
                 return (
@@ -406,7 +406,7 @@ export default function Home() {
             {/* Row 2 — 2 wider cards */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {[
-                { href: "/leadership", icon: Shield, title: "Leadership & Governance", desc: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", color: "#f59e0b", num: "04" },
+                { href: "/leadership", icon: Shield, title: "Leadership & Governance", desc: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", color: "#C41E3A", num: "04" },
                 { href: "/ecosystem/trade-delegations-and-exhibitions", icon: Handshake, title: "Trade Delegations & Exhibitions", desc: "Curated business missions, international trade expos, and pavilion programmes placing our members on the world stage.", color: "#ef4444", num: "05" },
               ].map((card) => {
                 const Icon = card.icon;
@@ -453,7 +453,7 @@ export default function Home() {
               {[
                 { href: "/products", icon: Cpu, title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms connecting talent and enabling cross-border trade.", color: "#22c55e" },
                 { href: "/services/mentorship", icon: Users, title: "Mentorship", desc: "Connect with experienced mentors for guidance, career development, and business growth across both nations.", color: "#2563EB" },
-                { href: "/meeting-space", icon: MapPin, title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners.", color: "#8b5cf6" },
+                { href: "/meeting-space", icon: MapPin, title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners.", color: "#C41E3A" },
                 { href: "/structure", icon: Building2, title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures.", color: "#1C1F2E" },
               ].map((card) => {
                 const Icon = card.icon;

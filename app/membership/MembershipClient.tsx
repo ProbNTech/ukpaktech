@@ -86,42 +86,42 @@ export default function MembershipClient() {
       title: "Market Visibility",
       description:
         "Promote your products, services, and solutions through Council channels, digital campaigns, and cross-border events.",
-      color: "#8b5cf6",
+      color: "#C41E3A",
     },
     {
       icon: DollarSign,
       title: "Funding & Investment Support",
       description:
         "Receive guidance and access to startup funding, Series A and B investment, and accelerator programs.",
-      color: "#f59e0b",
+      color: "#2563EB",
     },
     {
       icon: Users,
       title: "Talent & Employment Opportunities",
       description:
         "Leverage overseas contract employment programs to access global tech talent.",
-      color: "#C41E3A",
+      color: "#22C55E",
     },
     {
       icon: Lightbulb,
       title: "Thought Leadership",
       description:
         "Position your organisation as a leader in technology through speaking opportunities, published insights, and policy engagement.",
-      color: "#2563EB",
+      color: "#C41E3A",
     },
     {
       icon: Building2,
       title: "Business Incubation Centres",
       description:
         "Members have access to shared boardrooms, office space, and other resources in our London office. Additional fees may apply.",
-      color: "#22C55E",
+      color: "#2563EB",
     },
     {
       icon: Megaphone,
       title: "Sponsorships",
       description:
         "To increase exposure in both markets and demonstrate commitment to the bilateral relationship, CCBC offers sponsorship opportunities exclusive to our member companies.",
-      color: "#8b5cf6",
+      color: "#22C55E",
     },
   ];
 
@@ -153,7 +153,7 @@ export default function MembershipClient() {
       title: "Corporates & Investors",
       description:
         "Discover high-potential startups, engage in partnerships, and participate in innovation programs",
-      color: "#f59e0b",
+      color: "#C41E3A",
     },
   ];
 
@@ -184,7 +184,7 @@ export default function MembershipClient() {
       title: "By Application",
       description:
         "Holding the title: Founder, Chairperson, Managing Director, Managing Partner, C-Suite or equivalent title: Age criterion: 30 \u2013 55 years Revenue: USD 1 million or above",
-      color: "#8b5cf6",
+      color: "#C41E3A",
     },
   ];
 
@@ -283,13 +283,13 @@ export default function MembershipClient() {
       title: "Group / Corporate Discount",
       description:
         "Reduced rates for multiple memberships within the same organisation or group.",
-      color: "#8b5cf6",
+      color: "#C41E3A",
     },
     {
       title: "Cross-Border Collaboration Discount",
       description:
         "Incentives for organisations actively engaging in UK-Pakistan technology partnerships.",
-      color: "#f59e0b",
+      color: "#2563EB",
     },
   ];
 
@@ -318,7 +318,7 @@ export default function MembershipClient() {
 
         {/* Multi-layer gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F1A]/90 via-[#0B0F1A]/80 to-[#0B0F1A]/95" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2563EB]/10 via-transparent to-[#8b5cf6]/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2563EB]/10 via-transparent to-[#22C55E]/10" />
 
         {/* Animated grid pattern */}
         <div
@@ -338,7 +338,7 @@ export default function MembershipClient() {
           className="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-[0.08]"
           style={{
             background:
-              "radial-gradient(circle at 100% 100%, #8b5cf6, transparent 50%)",
+              "radial-gradient(circle at 100% 100%, #22C55E, transparent 50%)",
           }}
         />
 
@@ -371,7 +371,7 @@ export default function MembershipClient() {
                 At UK Pakistan Tech Council,
               </span>
               <br />
-              <span className="bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
                 membership means business.
               </span>
             </h1>
@@ -484,7 +484,7 @@ export default function MembershipClient() {
           className="absolute top-0 right-0 w-[500px] h-[500px] opacity-[0.02]"
           style={{
             background:
-              "radial-gradient(circle at 100% 0%, #8b5cf6, transparent 60%)",
+              "radial-gradient(circle at 100% 0%, #C41E3A, transparent 60%)",
           }}
         />
 
@@ -492,16 +492,16 @@ export default function MembershipClient() {
           <AnimatedSection>
             <div className="mb-16">
               <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-7 h-7 rounded-lg bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center">
-                  <Users className="w-3.5 h-3.5 text-[#f59e0b]" />
+                <div className="w-7 h-7 rounded-lg bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center">
+                  <Users className="w-3.5 h-3.5 text-[#C41E3A]" />
                 </div>
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#f59e0b]">
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A]">
                   Who Should Join
                 </span>
               </div>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
                 Who Should{" "}
-                <span className="bg-gradient-to-r from-[#f59e0b] to-[#C41E3A] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">
                   Join
                 </span>
               </h2>
@@ -671,7 +671,7 @@ export default function MembershipClient() {
               </div>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
                 Membership Tiers &{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
                   Benefits
                 </span>
               </h2>
@@ -728,16 +728,16 @@ export default function MembershipClient() {
           <AnimatedSection>
             <div className="mb-16">
               <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-7 h-7 rounded-lg bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center">
-                  <Shield className="w-3.5 h-3.5 text-[#8b5cf6]" />
+                <div className="w-7 h-7 rounded-lg bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center">
+                  <Shield className="w-3.5 h-3.5 text-[#C41E3A]" />
                 </div>
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6]">
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A]">
                   Eligibility
                 </span>
               </div>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
                 Eligibility{" "}
-                <span className="bg-gradient-to-r from-[#8b5cf6] to-[#2563EB] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">
                   Criteria
                 </span>
               </h2>
@@ -833,28 +833,28 @@ export default function MembershipClient() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#D8D5CF] bg-white shadow-sm mb-6">
-                  <DollarSign className="w-3.5 h-3.5 text-[#f59e0b]" />
+                  <DollarSign className="w-3.5 h-3.5 text-[#C41E3A]" />
                   <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">
                     Membership Fees
                   </span>
                 </div>
                 <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
                   Membership{" "}
-                  <span className="bg-gradient-to-r from-[#f59e0b] to-[#C41E3A] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">
                     Fees
                   </span>
                 </h2>
-                <div className="mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/40 to-transparent mb-6" />
+                <div className="mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/40 to-transparent mb-6" />
               </div>
 
               <div className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 lg:p-10 shadow-sm">
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/30 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/30 to-transparent" />
 
                 <p className="text-base text-[#3D4152] leading-relaxed mb-6">
                   The UK-Pakistan Tech Council offers flexible membership plans designed to suit technology startups, SMEs, scale-ups, and corporates. Our membership fees provide access to a wealth of benefits, including networking, industry insights, cross-border opportunities, funding support, and promotional platforms.
                 </p>
 
-                <div className="relative bg-white/[0.04] border border-[#f59e0b]/20 rounded-xl p-6 mb-6">
+                <div className="relative bg-white/[0.04] border border-[#C41E3A]/20 rounded-xl p-6 mb-6">
                   <p className="text-lg text-[#5A5F72] leading-relaxed font-medium text-center">
                     Invest in your growth. Gain access to cross-border opportunities, funding, and strategic networks.
                   </p>
@@ -968,7 +968,7 @@ export default function MembershipClient() {
           className="absolute top-0 left-0 w-[500px] h-[500px] opacity-[0.02]"
           style={{
             background:
-              "radial-gradient(circle at 0% 0%, #8b5cf6, transparent 60%)",
+              "radial-gradient(circle at 0% 0%, #C41E3A, transparent 60%)",
           }}
         />
         <div
@@ -983,18 +983,18 @@ export default function MembershipClient() {
           <AnimatedSection>
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#D8D5CF] bg-white shadow-sm mb-6">
-                <MapPin className="w-3.5 h-3.5 text-[#8b5cf6]" />
+                <MapPin className="w-3.5 h-3.5 text-[#C41E3A]" />
                 <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">
                   Cross-Border Support
                 </span>
               </div>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
                 Cross-Border{" "}
-                <span className="bg-gradient-to-r from-[#8b5cf6] to-[#2563EB] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">
                   Market Entry
                 </span>
               </h2>
-              <div className="mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/40 to-transparent mb-4" />
+              <div className="mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/40 to-transparent mb-4" />
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -1130,7 +1130,7 @@ export default function MembershipClient() {
                 </div>
                 <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
                   Membership{" "}
-                  <span className="bg-gradient-to-r from-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#2563EB] to-[#C41E3A] bg-clip-text text-transparent">
                     Application
                   </span>
                 </h2>
@@ -1145,7 +1145,7 @@ export default function MembershipClient() {
                   {[
                     { step: "01", text: "Submit your application below", color: "#2563EB" },
                     { step: "02", text: "Our team reviews your profile", color: "#22C55E" },
-                    { step: "03", text: "Receive approval & onboard", color: "#8b5cf6" },
+                    { step: "03", text: "Receive approval & onboard", color: "#C41E3A" },
                   ].map((item) => (
                     <div key={item.step} className="flex items-start gap-4">
                       <div
@@ -1277,11 +1277,11 @@ function TierCard({
   const tierColors: Record<string, string> = {
     "Chairman\u2019s Circle Membership": "#2563EB",
     "Corporate Membership": "#22C55E",
-    "SME / Scale-up Membership": "#8b5cf6",
-    "Startup Membership": "#f59e0b",
-    Associates: "#C41E3A",
-    "Academic Institutions": "#2563EB",
-    "Individual Membership": "#22C55E",
+    "SME / Scale-up Membership": "#C41E3A",
+    "Startup Membership": "#2563EB",
+    Associates: "#22C55E",
+    "Academic Institutions": "#C41E3A",
+    "Individual Membership": "#2563EB",
   };
 
   const color = tierColors[tier.name] || "#2563EB";
@@ -1303,7 +1303,7 @@ function TierCard({
           <div
             className="absolute -inset-[1px] rounded-2xl opacity-60"
             style={{
-              background: `linear-gradient(135deg, #2563EB, #8b5cf6, #22C55E, #2563EB)`,
+              background: `linear-gradient(135deg, #2563EB, #C41E3A, #22C55E, #2563EB)`,
               backgroundSize: "300% 300%",
               animation: "gradient-shift 4s ease infinite",
             }}
@@ -1328,7 +1328,7 @@ function TierCard({
           className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl"
           style={{
             background: tier.highlight
-              ? `linear-gradient(90deg, #2563EB, #8b5cf6, #22C55E)`
+              ? `linear-gradient(90deg, #2563EB, #C41E3A, #22C55E)`
               : `linear-gradient(90deg, transparent, ${color}40, transparent)`,
           }}
         />
@@ -1544,7 +1544,7 @@ function MembershipForm() {
     >
       <div className="relative bg-white rounded-2xl border border-[#D8D5CF] overflow-hidden shadow-lg">
         {/* Top gradient accent */}
-        <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#2563EB]" />
+        <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] via-[#C41E3A] to-[#2563EB]" />
 
         {/* Grid background */}
         <div
@@ -1564,7 +1564,7 @@ function MembershipForm() {
           className="absolute bottom-0 left-0 w-64 h-64 opacity-[0.02]"
           style={{
             background:
-              "radial-gradient(circle at 0% 100%, #8b5cf6, transparent 60%)",
+              "radial-gradient(circle at 0% 100%, #C41E3A, transparent 60%)",
           }}
         />
 
@@ -1893,8 +1893,8 @@ function MembershipForm() {
             variants={itemVariants}
             className="flex items-center gap-2.5 mb-6"
           >
-            <div className="w-6 h-6 rounded-lg bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center">
-              <MessageSquare className="w-3 h-3 text-[#8b5cf6]" />
+            <div className="w-6 h-6 rounded-lg bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center">
+              <MessageSquare className="w-3 h-3 text-[#C41E3A]" />
             </div>
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#7A7E8F]">
               Additional Information
@@ -1907,7 +1907,7 @@ function MembershipForm() {
               htmlFor="mem-linkedin"
               className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${
                 focusedField === "linkedin"
-                  ? "text-[#8b5cf6]"
+                  ? "text-[#C41E3A]"
                   : "text-[#5A5F72]"
               }`}
             >
@@ -1917,14 +1917,14 @@ function MembershipForm() {
               <div
                 className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${
                   focusedField === "linkedin"
-                    ? "bg-[#8b5cf6] opacity-100"
+                    ? "bg-[#C41E3A] opacity-100"
                     : "bg-transparent opacity-0"
                 }`}
               />
               <Linkedin
                 className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${
                   focusedField === "linkedin"
-                    ? "text-[#8b5cf6]"
+                    ? "text-[#C41E3A]"
                     : "text-[#9A9EAF]"
                 }`}
               />
@@ -1937,7 +1937,7 @@ function MembershipForm() {
                 onChange={handleChange}
                 onFocus={() => setFocusedField("linkedin")}
                 onBlur={() => setFocusedField(null)}
-                className="relative w-full bg-white border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#8b5cf6]/50 focus:bg-[#F5F4F2] focus:ring-1 focus:ring-[#8b5cf6]/20"
+                className="relative w-full bg-white border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#C41E3A]/50 focus:bg-[#F5F4F2] focus:ring-1 focus:ring-[#C41E3A]/20"
               />
             </div>
           </motion.div>
@@ -1948,7 +1948,7 @@ function MembershipForm() {
               htmlFor="mem-message"
               className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${
                 focusedField === "message"
-                  ? "text-[#8b5cf6]"
+                  ? "text-[#C41E3A]"
                   : "text-[#5A5F72]"
               }`}
             >
@@ -1959,21 +1959,21 @@ function MembershipForm() {
               <div
                 className={`absolute inset-0 rounded-xl transition-all duration-500 ${
                   focusedField === "message"
-                    ? "shadow-[0_0_20px_rgba(139,92,246,0.1)]"
+                    ? "shadow-[0_0_20px_rgba(196,30,58,0.1)]"
                     : ""
                 }`}
               />
               <div
                 className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${
                   focusedField === "message"
-                    ? "bg-[#8b5cf6] opacity-100"
+                    ? "bg-[#C41E3A] opacity-100"
                     : "bg-transparent opacity-0"
                 }`}
               />
               <MessageSquare
                 className={`absolute left-3.5 top-4 w-4 h-4 transition-colors duration-300 ${
                   focusedField === "message"
-                    ? "text-[#8b5cf6]"
+                    ? "text-[#C41E3A]"
                     : "text-[#9A9EAF]"
                 }`}
               />
@@ -1987,7 +1987,7 @@ function MembershipForm() {
                 onChange={handleChange}
                 onFocus={() => setFocusedField("message")}
                 onBlur={() => setFocusedField(null)}
-                className="relative w-full bg-white border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#8b5cf6]/50 focus:bg-[#F5F4F2] focus:ring-1 focus:ring-[#8b5cf6]/20 resize-none"
+                className="relative w-full bg-white border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#C41E3A]/50 focus:bg-[#F5F4F2] focus:ring-1 focus:ring-[#C41E3A]/20 resize-none"
               />
             </div>
           </motion.div>

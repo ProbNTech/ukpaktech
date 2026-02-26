@@ -137,7 +137,7 @@ export default function MembershipApplicationForm() {
       {/* ── Ambient background ────────────────────────────── */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-0 left-1/4 w-[800px] h-[800px] rounded-full bg-blue-600/[0.02] blur-[150px]" />
-        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full bg-purple-600/[0.02] blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full bg-[#2563EB]/[0.02] blur-[120px]" />
       </div>
 
       {/* ═══════════════════════════════════════════════════════
@@ -172,7 +172,7 @@ export default function MembershipApplicationForm() {
                 Join the UK–Pakistan
               </span>
               <br />
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                 Tech Council
               </span>
             </motion.h1>
@@ -283,8 +283,8 @@ export default function MembershipApplicationForm() {
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
-                  <Building2 className="w-5 h-5 text-purple-400" />
+                <div className="w-10 h-10 rounded-lg bg-[#2563EB]/20 flex items-center justify-center">
+                  <Building2 className="w-5 h-5 text-[#2563EB]" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">Organisation Details</h2>
@@ -535,8 +535,8 @@ export default function MembershipApplicationForm() {
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-amber-400" />
+                <div className="w-10 h-10 rounded-lg bg-[#C41E3A]/20 flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-[#C41E3A]" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">Office Locations</h2>
@@ -857,8 +857,8 @@ export default function MembershipApplicationForm() {
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center">
-                  <Users className="w-5 h-5 text-violet-400" />
+                <div className="w-10 h-10 rounded-lg bg-[#2563EB]/20 flex items-center justify-center">
+                  <Users className="w-5 h-5 text-[#2563EB]" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">Secondary Contact (Optional)</h2>
@@ -1048,7 +1048,7 @@ export default function MembershipApplicationForm() {
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               variants={fadeUp}
-              className="bg-gradient-to-b from-blue-50 to-purple-50 border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
+              className="bg-gradient-to-b from-blue-50 to-green-50 border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
               <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-2xl font-bold text-[#1C1F2E] mb-4">Submit Your Application</h2>

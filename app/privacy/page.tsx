@@ -14,10 +14,10 @@ import {
 const retentionData = [
   { category: "Members", period: "Through the contract period & up to 24 months after this has ended", color: "#2563EB" },
   { category: "Prospects", period: "Up to 24 months from last contact", color: "#22C55E" },
-  { category: "Statutory Board Members", period: "Whilst serving and up to 6 months after term", color: "#8b5cf6" },
-  { category: "Advisory Board Members", period: "Whilst serving and up to 6 months after term", color: "#C41E3A" },
-  { category: "Stakeholders", period: "Whilst serving and up to 6 months after term", color: "#f59e0b" },
-  { category: "Suppliers", period: "Through the contract period & up to 24 months after this has ended", color: "#2563EB" },
+  { category: "Statutory Board Members", period: "Whilst serving and up to 6 months after term", color: "#C41E3A" },
+  { category: "Advisory Board Members", period: "Whilst serving and up to 6 months after term", color: "#2563EB" },
+  { category: "Stakeholders", period: "Whilst serving and up to 6 months after term", color: "#22C55E" },
+  { category: "Suppliers", period: "Through the contract period & up to 24 months after this has ended", color: "#C41E3A" },
 ];
 
 /* ── Quick nav sections ───────────────────────────────────────────── */
@@ -153,7 +153,7 @@ export default function PrivacyPage() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm"
               >
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/20 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-5">Quick Navigation</h3>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
                 <nav className="space-y-1.5">
@@ -245,10 +245,10 @@ export default function PrivacyPage() {
                 transition={{ duration: 0.4, delay: 0.12 }}
                 className="relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:shadow-md hover:border-[#D8D5CF] transition-all duration-300 overflow-hidden shadow-sm"
               >
-                <div className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full bg-gradient-to-b from-[#8b5cf6] to-[#8b5cf6]/40 opacity-40" />
+                <div className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full bg-gradient-to-b from-[#2563EB] to-[#2563EB]/40 opacity-40" />
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center flex-shrink-0">
-                    <Eye className="w-5 h-5 text-[#8b5cf6]" strokeWidth={1.5} />
+                  <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center flex-shrink-0">
+                    <Eye className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] pt-2">When You Visit Our Website</h3>
                 </div>
@@ -257,11 +257,11 @@ export default function PrivacyPage() {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-[#8b5cf6] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
                     <span className="text-sm text-[#5A5F72] leading-relaxed">Technical information, including the type of device you&apos;re using, the IP address, browser and operating system being used to connect your computer to the internet.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-[#8b5cf6] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
                     <span className="text-sm text-[#5A5F72] leading-relaxed">Information about your visit to this website, for example we collect information about pages you visit and how you navigate the website, i.e. length of visits to certain pages, services you viewed and searched for, referral sources (e.g. how you arrived at our website).</span>
                   </li>
                 </ul>
@@ -333,16 +333,16 @@ export default function PrivacyPage() {
 
       {/* ── How and Why Is Your Information Used ──────────────────────── */}
       <section id="how-used" className="relative py-16 overflow-hidden bg-white">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6] mb-3">Data Usage</p>
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Data Usage</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 How and Why Is Your Information Used?
               </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#8b5cf6] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
               <p className="text-[#7A7E8F] text-base max-w-2xl">
                 We may use your information for a number of different purposes, which may include:
               </p>
@@ -355,7 +355,7 @@ export default function PrivacyPage() {
               transition={{ duration: 0.5 }}
               className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden max-w-4xl shadow-sm"
             >
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/20 to-transparent" />
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
               <ul className="space-y-3">
                 {[
                   "providing you with the services and information you asked for.",
@@ -369,7 +369,7 @@ export default function PrivacyPage() {
                   "sending you communications which you have requested or that may be of interest to you.",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-4 h-4 text-[#8b5cf6] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
                     <span className="text-sm text-[#5A5F72] leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -381,16 +381,16 @@ export default function PrivacyPage() {
 
       {/* ── How Long Is Your Information Kept For ─────────────────────── */}
       <section id="retention" className="relative py-16 overflow-hidden bg-[#F5F4F2]">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#f59e0b] mb-3">Retention Periods</p>
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Retention Periods</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 How Long Is Your Information Kept For?
               </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#f59e0b] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
               <p className="text-[#7A7E8F] text-base max-w-3xl">
                 We keep your information for no longer than is necessary for the purposes it was collected for. The length of time we retain your personal information is determined by operational and legal considerations. For example, we are legally required to hold some types of information to fulfil our statutory and regulatory obligations (e.g. health/safety and tax/accounting purposes). We review our retention periods on a regular basis:
               </p>
@@ -514,10 +514,10 @@ export default function PrivacyPage() {
               </motion.div>
 
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, delay: 0.12 }} className="relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:shadow-md transition-all duration-300 overflow-hidden shadow-sm">
-                <div className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full bg-gradient-to-b from-[#8b5cf6] to-[#8b5cf6]/40 opacity-40" />
+                <div className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full bg-gradient-to-b from-[#2563EB] to-[#2563EB]/40 opacity-40" />
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center flex-shrink-0">
-                    <Fingerprint className="w-5 h-5 text-[#8b5cf6]" strokeWidth={1.5} />
+                  <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center flex-shrink-0">
+                    <Fingerprint className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] pt-2">Legitimate Interests</h3>
                 </div>
@@ -525,7 +525,7 @@ export default function PrivacyPage() {
                 <ul className="space-y-3 mb-5">
                   {["broker connections where there is mutual benefit in doing so","send postal communications which we think will be of interest to you;","conduct research to better understand the priorities of our membership and to represent accurately the UK and Pakistan business community.","contact you to seek your views or comments on emerging political or economic issues.","enhance, modify, personalize, or otherwise improve our services /communications for the benefit of our members, partners and stakeholders; and understand better how people interact with our website.","invite you to event(s) that we may think are relevant to you in your professional capacity."].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-[#8b5cf6] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                      <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
                       <span className="text-sm text-[#5A5F72] leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -552,24 +552,24 @@ export default function PrivacyPage() {
 
       {/* ── Marketing Communications & Building Profiles ──────────────── */}
       <section id="marketing" className="relative bg-[#EEECEA] py-16 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#f59e0b] mb-3">Communications</p>
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Communications</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Marketing Communications
               </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#f59e0b] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
             </div>
 
             <div className="grid lg:grid-cols-2 gap-6 max-w-5xl">
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/20 to-transparent" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center flex-shrink-0">
-                    <Bell className="w-5 h-5 text-[#f59e0b]" strokeWidth={1.5} />
+                  <div className="w-10 h-10 rounded-xl bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
+                    <Bell className="w-5 h-5 text-[#C41E3A]" strokeWidth={1.5} />
                   </div>
                   <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">Marketing</h3>
                 </div>
@@ -577,11 +577,11 @@ export default function PrivacyPage() {
                 <p className="text-sm text-[#7A7E8F] leading-relaxed mb-5">We may use your contact details to provide you with information about the vital work we do for the UK and Pakistan business community and additional opportunities to support us or to work together on projects, if we think it may be of interest to you.</p>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-xs font-bold tracking-[0.1em] uppercase text-[#f59e0b] mb-2">Email</h4>
+                    <h4 className="text-xs font-bold tracking-[0.1em] uppercase text-[#C41E3A] mb-2">Email</h4>
                     <p className="text-sm text-[#7A7E8F] leading-relaxed">You may opt out of our marketing communications at any time by clicking the unsubscribed link at the end of our marketing emails.</p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold tracking-[0.1em] uppercase text-[#f59e0b] mb-2">Post</h4>
+                    <h4 className="text-xs font-bold tracking-[0.1em] uppercase text-[#C41E3A] mb-2">Post</h4>
                     <p className="text-sm text-[#7A7E8F] leading-relaxed">We may occasionally send you marketing communications by post unless you have told us that you would prefer not to hear from us, under your access rights request (details listed below).</p>
                   </div>
                 </div>
@@ -622,10 +622,10 @@ export default function PrivacyPage() {
               {[
                 { icon: Eye, title: "Right of Access", color: "#2563EB", desc: "You have a right to request access to the personal data that we hold about you. You also have the right to request a copy of the information we hold about you, and we will provide you with this unless legal exceptions apply. If you want to access your information, please send a description of the information you want to see and proof of your identity by email: " },
                 { icon: FileText, title: "Right to Correction", color: "#22C55E", desc: "We shall update, archive or securely delete information if it goes out of date. You have the right to have inaccurate or incomplete information we hold about you corrected." },
-                { icon: Shield, title: "Right to Restrict Use", color: "#8b5cf6", desc: "You have a right to ask us to restrict the processing of some or all your personal information if there is a disagreement about its accuracy or we\u2019re not lawfully allowed to use it." },
-                { icon: AlertTriangle, title: "Right of Erasure", color: "#C41E3A", desc: "You may ask us to delete some or all your personal information and in certain cases, and subject to certain exceptions; we will do so as far as we are required to. In many cases, we will anonymize that information, rather than delete it." },
-                { icon: Database, title: "Right to Data Portability", color: "#f59e0b", desc: "If we are processing your personal information (1) based on your consent, or in order to enter into or carry out a contract with you, and (2) the processing is being done by automated means, you may ask us to provide it to you or another service provider in a machine-readable format." },
-                { icon: Scale, title: "Right to Object", color: "#2563EB", desc: "You have the right to object to processing where we are using your personal information (1) based on legitimate interests, (2) for direct marketing or (3) for statistical/research purposes." },
+                { icon: Shield, title: "Right to Restrict Use", color: "#C41E3A", desc: "You have a right to ask us to restrict the processing of some or all your personal information if there is a disagreement about its accuracy or we\u2019re not lawfully allowed to use it." },
+                { icon: AlertTriangle, title: "Right of Erasure", color: "#2563EB", desc: "You may ask us to delete some or all your personal information and in certain cases, and subject to certain exceptions; we will do so as far as we are required to. In many cases, we will anonymize that information, rather than delete it." },
+                { icon: Database, title: "Right to Data Portability", color: "#22C55E", desc: "If we are processing your personal information (1) based on your consent, or in order to enter into or carry out a contract with you, and (2) the processing is being done by automated means, you may ask us to provide it to you or another service provider in a machine-readable format." },
+                { icon: Scale, title: "Right to Object", color: "#C41E3A", desc: "You have the right to object to processing where we are using your personal information (1) based on legitimate interests, (2) for direct marketing or (3) for statistical/research purposes." },
               ].map((right, i) => {
                 const Icon = right.icon;
                 return (
@@ -645,7 +645,7 @@ export default function PrivacyPage() {
               })}
             </div>
 
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.36 }} className="relative bg-gradient-to-br from-[#2563EB]/10 to-[#8b5cf6]/10 border border-[#2563EB]/20 rounded-xl p-6 mt-8 overflow-hidden max-w-5xl">
+            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.36 }} className="relative bg-gradient-to-br from-[#2563EB]/10 to-[#2563EB]/10 border border-[#2563EB]/20 rounded-xl p-6 mt-8 overflow-hidden max-w-5xl">
               <div className="relative">
                 <p className="text-sm text-[#5A5F72] leading-relaxed mb-4">
                   If you want to exercise any of the above rights, please email us at{" "}

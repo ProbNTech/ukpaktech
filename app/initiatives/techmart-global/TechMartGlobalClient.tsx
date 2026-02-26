@@ -43,13 +43,13 @@ const audiences = [
     title: "Enterprises and Buyers",
     description: "Organisations looking to discover, evaluate, and engage with qualified technology vendors and service providers.",
     icon: ShoppingCart,
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
   {
     title: "Investors and Partners",
     description: "Investment firms, strategic partners, and institutions interested in connecting with high-potential technology companies.",
     icon: TrendingUp,
-    color: "#f59e0b",
+    color: "#2563EB",
   },
 ];
 
@@ -74,14 +74,14 @@ const features = [
     tag: "Partnerships",
     description: "Facilitation of joint ventures, technology licensing, co-development agreements, and long-term strategic alliances between companies.",
     icon: Globe2,
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
   {
     title: "Trade, Procurement, and Outsourcing",
     tag: "Global Trade",
     description: "Direct access to procurement opportunities, outsourcing projects, and trade facilitation services that streamline cross-border transactions.",
     icon: ArrowUpRight,
-    color: "#f59e0b",
+    color: "#2563EB",
   },
 ];
 
@@ -109,7 +109,7 @@ const howItWorks = [
     description: "Engage in due diligence, capability assessments, and preliminary discussions to ensure mutual fit before proceeding.",
     outcome: "Confirmed alignment",
     icon: Shield,
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
   {
     number: "04",
@@ -117,7 +117,7 @@ const howItWorks = [
     description: "Execute agreements, launch partnerships, and leverage platform resources to scale relationships and achieve long-term objectives.",
     outcome: "Partnership launched",
     icon: TrendingUp,
-    color: "#f59e0b",
+    color: "#2563EB",
   },
 ];
 
@@ -148,12 +148,12 @@ const alignment = [
     label: "Fair Process",
     description: "Merit-based matching and dispute resolution.",
     icon: Handshake,
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
 ];
 
 /* ── Stat color map ──────────────────────────────────────────────── */
-const statColors = ["#2563EB", "#22C55E", "#8b5cf6", "#f59e0b"];
+const statColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB"];
 
 export default function TechMartGlobalClient() {
   const shouldReduceMotion = useReducedMotion();
@@ -186,7 +186,7 @@ export default function TechMartGlobalClient() {
 
         {/* Accent glow orbs */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#2563EB]/10 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#8b5cf6]/8 blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#22C55E]/8 blur-[100px] pointer-events-none" />
 
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 lg:py-40">
@@ -208,7 +208,7 @@ export default function TechMartGlobalClient() {
               <span
                 className="bg-clip-text text-transparent"
                 style={{
-                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #8b5cf6 100%)",
+                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #22C55E 100%)",
                 }}
               >
                 TechMart Global
@@ -316,7 +316,7 @@ export default function TechMartGlobalClient() {
                   {/* Top gradient accent */}
                   <div
                     className="absolute top-0 left-0 right-0 h-[2px]"
-                    style={{ background: "linear-gradient(to right, #2563EB, #8b5cf6)" }}
+                    style={{ background: "linear-gradient(to right, #2563EB, #22C55E)" }}
                   />
 
                   <div className="relative p-8">
@@ -424,11 +424,11 @@ export default function TechMartGlobalClient() {
             {/* Section header */}
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 mb-4 justify-center">
-                <span className="h-px w-8 bg-[#8b5cf6]" />
-                <span className="text-sm font-semibold text-[#8b5cf6] uppercase tracking-widest">
+                <span className="h-px w-8 bg-[#C41E3A]" />
+                <span className="text-sm font-semibold text-[#C41E3A] uppercase tracking-widest">
                   Capabilities
                 </span>
-                <span className="h-px w-8 bg-[#8b5cf6]" />
+                <span className="h-px w-8 bg-[#C41E3A]" />
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 What TechMart Global Enables
@@ -593,11 +593,11 @@ export default function TechMartGlobalClient() {
             {/* Section header */}
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 mb-4 justify-center">
-                <span className="h-px w-8 bg-[#f59e0b]" />
-                <span className="text-sm font-semibold text-[#f59e0b] uppercase tracking-widest">
+                <span className="h-px w-8 bg-[#C41E3A]" />
+                <span className="text-sm font-semibold text-[#C41E3A] uppercase tracking-widest">
                   Process
                 </span>
-                <span className="h-px w-8 bg-[#f59e0b]" />
+                <span className="h-px w-8 bg-[#C41E3A]" />
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 How TechMart Global Works
@@ -777,7 +777,7 @@ export default function TechMartGlobalClient() {
       <section className="relative bg-[#0B0F1A] overflow-hidden">
         {/* Gradient glow effects */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#2563EB]/8 blur-[150px] pointer-events-none" />
-        <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-[#8b5cf6]/6 blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-[#22C55E]/6 blur-[100px] pointer-events-none" />
         <div className="absolute bottom-1/3 left-1/4 w-[300px] h-[300px] bg-[#22C55E]/5 blur-[100px] pointer-events-none" />
 
         {/* Grid pattern */}
@@ -806,7 +806,7 @@ export default function TechMartGlobalClient() {
                 <span
                   className="bg-clip-text text-transparent"
                   style={{
-                    backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 60%, #8b5cf6 100%)",
+                    backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 60%, #22C55E 100%)",
                   }}
                 >
                   Join TechMart Global

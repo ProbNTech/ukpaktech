@@ -10,16 +10,16 @@ import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 const stats = [
   { value: "60+", label: "Countries Connected", color: "#2563EB" },
   { value: "500+", label: "Partner Organisations", color: "#22C55E" },
-  { value: "3,000+", label: "Business Introductions", color: "#8b5cf6" },
-  { value: "\u00A350M+", label: "Deals Facilitated", color: "#f59e0b" },
+  { value: "3,000+", label: "Business Introductions", color: "#C41E3A" },
+  { value: "\u00A350M+", label: "Deals Facilitated", color: "#2563EB" },
 ];
 
 const whyChooseUs = [
   { icon: Handshake, title: "Strategic Connections", description: "We ensure that every event brings together the right founders and the right investors who can help them scale.", color: "#2563EB" },
   { icon: Globe, title: "Comprehensive Support", description: "From event design to investor outreach, branding, post-event follow-up and deal tracking, we handle every step.", color: "#22C55E" },
   { icon: BarChart3, title: "Proven Results", description: "Our track record of funding success speaks for itself.", color: "#C41E3A" },
-  { icon: Users, title: "Global Ecosystem", description: "A growing network of VCs, angels, incubators, and ecosystem partners across continents.", color: "#8b5cf6" },
-  { icon: Target, title: "Data-Driven Insights", description: "We use analytics to identify high-potential startups and investor interests.", color: "#f59e0b" },
+  { icon: Users, title: "Global Ecosystem", description: "A growing network of VCs, angels, incubators, and ecosystem partners across continents.", color: "#2563EB" },
+  { icon: Target, title: "Data-Driven Insights", description: "We use analytics to identify high-potential startups and investor interests.", color: "#22C55E" },
 ];
 
 const partners = [
@@ -32,9 +32,9 @@ const partners = [
 
 const processSteps = [
   { number: "01", title: "Discovery", description: "We learn about your business, goals, target markets, and growth stage to understand your needs.", outcome: "Tailored profile created", icon: Search, color: "#2563EB" },
-  { number: "02", title: "Matching", description: "Using our database and network intelligence, we identify the most relevant connections for your business.", outcome: "Curated shortlist prepared", icon: GitBranch, color: "#8b5cf6" },
-  { number: "03", title: "Introduction", description: "We facilitate warm introductions through events, meetings, or direct outreach to matched partners.", outcome: "Meetings arranged", icon: MessageSquare, color: "#22C55E" },
-  { number: "04", title: "Follow-Through", description: "We track outcomes, facilitate follow-ups, and ensure connections translate into tangible business results.", outcome: "Deals tracked & supported", icon: TrendingUp, color: "#f59e0b" },
+  { number: "02", title: "Matching", description: "Using our database and network intelligence, we identify the most relevant connections for your business.", outcome: "Curated shortlist prepared", icon: GitBranch, color: "#22C55E" },
+  { number: "03", title: "Introduction", description: "We facilitate warm introductions through events, meetings, or direct outreach to matched partners.", outcome: "Meetings arranged", icon: MessageSquare, color: "#C41E3A" },
+  { number: "04", title: "Follow-Through", description: "We track outcomes, facilitate follow-ups, and ensure connections translate into tangible business results.", outcome: "Deals tracked & supported", icon: TrendingUp, color: "#2563EB" },
 ];
 
 const targetMarket = [
@@ -59,7 +59,7 @@ const faqs = [
   { question: "Is there a cost beyond membership?", answer: "Core networking services are included in your UPTECH membership. Premium services such as bespoke matchmaking, dedicated advisory, and event sponsorships are available as add-ons." },
 ];
 
-const faqColors = ["#2563EB", "#8b5cf6", "#22C55E", "#f59e0b"];
+const faqColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB"];
 
 export default function BusinessNetworksPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -91,7 +91,7 @@ export default function BusinessNetworksPage() {
           >
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">UPTECH Service</p>
             <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-6">
-              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #8b5cf6 100%)" }}>
+              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #22C55E 100%)" }}>
                 Business Networks
               </span>
             </h1>
@@ -144,7 +144,7 @@ export default function BusinessNetworksPage() {
                 <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-6">
                   The World&apos;s Largest Business Network
                 </h2>
-                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#8b5cf6]/20 to-transparent mb-8" />
+                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
                 <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
                   Our specialists provide access to comprehensive and tailored advice covering both the UK and international markets. They build on a heritage of collaboration with the Enterprise Europe Network, the most extensive association of innovation and growth support organizations around the world. This advice ranges from sourcing and establishing connections with new collaborators and potential partners, to information on local regulations. To find partners via Enterprise Europe Network, please see the section &apos;Live global partnering opportunities&apos; below.
                 </p>
@@ -180,7 +180,7 @@ export default function BusinessNetworksPage() {
       {/* ── Why Choose Us ── */}
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#8b5cf6]" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-14">
@@ -226,9 +226,9 @@ export default function BusinessNetworksPage() {
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">Process</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Process</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">How It Works</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#8b5cf6]/40 mb-4" />
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40 mb-4" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">A structured, results-driven approach to building your international network.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -330,18 +330,18 @@ export default function BusinessNetworksPage() {
 
       {/* ── Revenue Model ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="absolute top-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#f59e0b]" />
+        <div className="absolute top-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#C41E3A]" />
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">Revenue</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">Revenue</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl leading-tight mb-4">Revenue Model</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#f59e0b]/40 mb-4" />
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/40 mb-4" />
             </div>
             <ul className="space-y-0 max-w-2xl">
               {revenueModel.map((item) => (
                 <li key={item} className="flex items-start gap-3 py-4 border-b border-[#D8D5CF] last:border-b-0">
-                  <CheckCircle2 className="w-4 h-4 text-[#f59e0b] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                  <CheckCircle2 className="w-4 h-4 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
                   <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
                 </li>
               ))}
@@ -356,9 +356,9 @@ export default function BusinessNetworksPage() {
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">FAQ</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">FAQ</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Frequently Asked Questions</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#f59e0b]/40 mb-4" />
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/40 mb-4" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">Common questions about UPTECH Business Networks.</p>
             </div>
             <FAQSection faqs={faqs} />
@@ -369,7 +369,7 @@ export default function BusinessNetworksPage() {
       {/* ── CTA Section ── */}
       <section className="relative bg-[#131942] overflow-hidden">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#8b5cf6]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{

@@ -28,8 +28,8 @@ import { motion, useReducedMotion } from "framer-motion";
 const stats = [
   { value: "100+", label: "Startups Funded", color: "#2563EB" },
   { value: "£30M+", label: "Capital Raised", color: "#22C55E" },
-  { value: "50+", label: "Investor Partners", color: "#8b5cf6" },
-  { value: "12+", label: "Pitch Events Annually", color: "#f59e0b" },
+  { value: "50+", label: "Investor Partners", color: "#C41E3A" },
+  { value: "12+", label: "Pitch Events Annually", color: "#2563EB" },
 ];
 
 const startupBenefits = [
@@ -52,35 +52,35 @@ const startupBenefits = [
     title: "Funding Strategy Guidance",
     description:
       "Receive guidance on funding strategy, valuation, and investor engagement.",
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
   {
     icon: Globe,
     title: "Market Credibility",
     description:
       "Build credibility and visibility in both UK and Europe markets.",
-    color: "#f59e0b",
+    color: "#2563EB",
   },
   {
     icon: Mic2,
     title: "Pitch Coaching",
     description:
       "Pitch coaching and presentation readiness support.",
-    color: "#C41E3A",
+    color: "#22C55E",
   },
   {
     icon: Users,
     title: "Investor Matchmaking",
     description:
       "Themed networking dinners, panels, and roundtables for targeted investor-startup matchmaking.",
-    color: "#2563EB",
+    color: "#C41E3A",
   },
 ];
 
 const vipFeatures = [
   {
     text: "VIP investor experiences and private pitch sessions",
-    color: "#8b5cf6",
+    color: "#2563EB",
   },
   {
     text: "Exclusive access to high-value investor networks",
@@ -88,7 +88,7 @@ const vipFeatures = [
   },
   {
     text: "One-to-one investor introductions and relationship building",
-    color: "#f59e0b",
+    color: "#C41E3A",
   },
 ];
 
@@ -112,22 +112,22 @@ const investorBenefits = [
     title: "Cross-Border Founders",
     description:
       "Engage with emerging tech founders driving cross-border growth.",
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
   {
     icon: Building2,
     title: "Startup Summits & Expos",
     description:
       "Large-scale events highlighting emerging technologies, disruptive ideas, business models and scalable ventures.",
-    color: "#f59e0b",
+    color: "#2563EB",
   },
 ];
 
 const whyItMattersPoints = [
   { text: "Accelerate product development", color: "#2563EB" },
   { text: "Scale operations efficiently", color: "#22C55E" },
-  { text: "Enter new markets with confidence", color: "#8b5cf6" },
-  { text: "Access the most promising technology ventures across the UK and Pakistan", color: "#f59e0b" },
+  { text: "Enter new markets with confidence", color: "#C41E3A" },
+  { text: "Access the most promising technology ventures across the UK and Pakistan", color: "#2563EB" },
 ];
 
 /* ─── Component ─────────────────────────────────────────────────────── */
@@ -183,7 +183,7 @@ export default function StartupFundingPage() {
               <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                 Startup{" "}
               </span>
-              <span className="bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#C41E3A] bg-clip-text text-transparent">
                 Funding
               </span>
               <br />
@@ -274,7 +274,7 @@ export default function StartupFundingPage() {
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
                 Startup Funding{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                   Events &amp; Opportunities
                 </span>
               </h2>
@@ -323,7 +323,7 @@ export default function StartupFundingPage() {
 
             {/* VIP Features */}
             <div className="bg-white border border-[#D8D5CF] shadow-md rounded-2xl p-8 relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#8b5cf6] via-[#2563EB] to-[#22C55E]" />
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
               <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-5">
                 Exclusive Access
               </h3>
@@ -369,7 +369,7 @@ export default function StartupFundingPage() {
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Discover the Next{" "}
-                <span className="bg-gradient-to-r from-[#22C55E] to-[#f59e0b] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
                   Big Thing
                 </span>
               </h2>
@@ -429,15 +429,15 @@ export default function StartupFundingPage() {
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-12 items-start">
               <div className="lg:col-span-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#8b5cf6]/20 bg-[#8b5cf6]/5 mb-5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
-                  <span className="text-[#8b5cf6] text-xs font-semibold uppercase tracking-wider">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                  <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
                     Why It Matters
                   </span>
                 </div>
                 <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
                   Funding is a Critical Enabler for{" "}
-                  <span className="bg-gradient-to-r from-[#8b5cf6] to-[#2563EB] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                     Innovation
                   </span>
                 </h2>
@@ -476,7 +476,7 @@ export default function StartupFundingPage() {
               {/* Sidebar */}
               <div className="lg:col-span-2">
                 <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-md p-8 sticky top-8 overflow-hidden relative">
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#8b5cf6]" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#C41E3A]" />
 
                   <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-5">
                     What We Provide
@@ -486,8 +486,8 @@ export default function StartupFundingPage() {
                     {[
                       { title: "Investment Networks", desc: "Connections to angel investors, VCs, and corporate partners.", color: "#2563EB" },
                       { title: "Growth Capital", desc: "Access to funding programs and government-backed initiatives.", color: "#22C55E" },
-                      { title: "Fundraising Support", desc: "Strategy guidance, pitch coaching, and valuation advisory.", color: "#8b5cf6" },
-                      { title: "Cross-Border Access", desc: "Investment opportunities spanning UK and Pakistan markets.", color: "#f59e0b" },
+                      { title: "Fundraising Support", desc: "Strategy guidance, pitch coaching, and valuation advisory.", color: "#C41E3A" },
+                      { title: "Cross-Border Access", desc: "Investment opportunities spanning UK and Pakistan markets.", color: "#2563EB" },
                     ].map((item, i) => (
                       <motion.li
                         key={item.title}
@@ -528,7 +528,7 @@ export default function StartupFundingPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none">
           <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#22C55E]/10 rounded-full blur-[120px]" />
           <div className="absolute top-10 right-0 w-[350px] h-[350px] bg-[#2563EB]/8 rounded-full blur-[100px]" />
-          <div className="absolute bottom-0 left-1/3 w-[300px] h-[300px] bg-[#8b5cf6]/5 rounded-full blur-[80px]" />
+          <div className="absolute bottom-0 left-1/3 w-[300px] h-[300px] bg-[#C41E3A]/5 rounded-full blur-[80px]" />
         </div>
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -557,7 +557,7 @@ export default function StartupFundingPage() {
                 <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                   Empowering Startups.{" "}
                 </span>
-                <span className="bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#C41E3A] bg-clip-text text-transparent">
                   Connecting Investors.
                 </span>
                 <br />

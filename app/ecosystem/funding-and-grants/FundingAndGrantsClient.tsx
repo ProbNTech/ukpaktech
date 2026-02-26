@@ -43,23 +43,23 @@ const overviewItems = [
     title: "Research Grants",
     description: "Support for academic research and technology development projects driving bilateral innovation.",
     icon: BookOpen,
-    color: "#8b5cf6",
+    color: "#22C55E",
   },
   {
     title: "Growth Capital",
     description: "Investment opportunities for scaling technology businesses across the UK–Pakistan corridor.",
     icon: TrendingUp,
-    color: "#22C55E",
+    color: "#C41E3A",
   },
 ];
 
 const opportunities = [
-  { title: "Innovation Grants", description: "Funding for innovative technology projects that demonstrate potential for cross-border impact.", icon: Lightbulb, color: "#f59e0b" },
-  { title: "Startup Accelerator", description: "Comprehensive support including funding, mentorship, and access to networks.", icon: Rocket, color: "#2563EB" },
-  { title: "Bilateral Projects", description: "Grants for collaborative projects between UK and Pakistan organisations.", icon: Globe2, color: "#22C55E" },
-  { title: "Research & Development", description: "Support for R&D initiatives in emerging technologies and digital transformation.", icon: Cpu, color: "#8b5cf6" },
-  { title: "Enterprise Partnerships", description: "Funding opportunities for established companies expanding cross-border operations.", icon: Building2, color: "#C41E3A" },
-  { title: "Skills Development", description: "Grants for programs that enhance technology skills and workforce capabilities.", icon: GraduationCap, color: "#ef4444" },
+  { title: "Innovation Grants", description: "Funding for innovative technology projects that demonstrate potential for cross-border impact.", icon: Lightbulb, color: "#2563EB" },
+  { title: "Startup Accelerator", description: "Comprehensive support including funding, mentorship, and access to networks.", icon: Rocket, color: "#22C55E" },
+  { title: "Bilateral Projects", description: "Grants for collaborative projects between UK and Pakistan organisations.", icon: Globe2, color: "#C41E3A" },
+  { title: "Research & Development", description: "Support for R&D initiatives in emerging technologies and digital transformation.", icon: Cpu, color: "#2563EB" },
+  { title: "Enterprise Partnerships", description: "Funding opportunities for established companies expanding cross-border operations.", icon: Building2, color: "#22C55E" },
+  { title: "Skills Development", description: "Grants for programs that enhance technology skills and workforce capabilities.", icon: GraduationCap, color: "#C41E3A" },
 ];
 
 const fundingGrantsIntro = {
@@ -82,7 +82,7 @@ const fundingStages = [
     description: "Currently, to participate in early-stage investment syndicates, individuals must qualify as sophisticated investors based on an income of \u00A3250K or assets worth \u00A31 million. This rule excludes many knowledgeable and experienced individuals, like startup employees and senior leaders, who might have lower salaries due to equity-based compensation. By broadening the criteria, we can include more of these potential investors and strengthen support for early-stage startups.",
     features: ["Broaden qualification criteria beyond income thresholds", "Include experienced startup employees and senior leaders", "Support equity-based compensation holders", "Strengthen early-stage startup investment syndicates"],
     icon: Users,
-    color: "#f59e0b",
+    color: "#22C55E",
   },
   {
     stage: "Series A & B",
@@ -90,7 +90,7 @@ const fundingStages = [
     description: "For companies that demonstrate potential to 10x their growth. By aligning with our expertise, network, and capital, your startup will be well-positioned to scale rapidly.",
     features: ["Raise capital with operational support", "Pitch at flagship investor days", "Warm introductions to top-tier funds", "Six months 1:1 expert support"],
     icon: TrendingUp,
-    color: "#22C55E",
+    color: "#C41E3A",
   },
   {
     stage: "R&D",
@@ -98,30 +98,30 @@ const fundingStages = [
     description: "At UK-Pakistan Tech Council (UPTECH), we highly value the current R&D tax incentive, recognizing the pivotal role that research and development play in driving technological advancements. With the launch of this initiative in Pakistan, we aim to further bolster the tech sector by making the R&D tax incentive more transparent and accessible, for digital literacy, healthcare sector, energy solutions and infusion technologies. We appreciate ongoing efforts to clarify the application of these incentives and are committed to collaborating closely with experts in the field to provide clearer guidance. Our goal is to ensure that the intent and application of this incentive are well understood and effectively implemented by both industry leaders and administrators. Through this initiative, we are paving the way for a robust, innovation-driven future in Pakistan.",
     features: ["Digital literacy R&D incentives", "Healthcare sector innovation support", "Energy solutions R&D programmes", "Infusion technologies advancement"],
     icon: Cpu,
-    color: "#8b5cf6",
+    color: "#2563EB",
   },
 ];
 
 const eligibilityCriteria = [
   { text: "Technology-focused projects with clear innovation potential", icon: Lightbulb, color: "#2563EB" },
   { text: "Alignment with UK–Pakistan technology partnership objectives", icon: Globe2, color: "#22C55E" },
-  { text: "Demonstrated commitment to cross-border collaboration", icon: Users, color: "#8b5cf6" },
-  { text: "Viable business model or research proposal", icon: FileText, color: "#f59e0b" },
-  { text: "Experienced team with relevant expertise", icon: Shield, color: "#C41E3A" },
+  { text: "Demonstrated commitment to cross-border collaboration", icon: Users, color: "#C41E3A" },
+  { text: "Viable business model or research proposal", icon: FileText, color: "#2563EB" },
+  { text: "Experienced team with relevant expertise", icon: Shield, color: "#22C55E" },
 ];
 
 const applicationSteps = [
   { number: "01", title: "Submit Application", description: "Complete the online application form with project details and objectives.", outcome: "Application logged", icon: FileText, color: "#2563EB" },
   { number: "02", title: "Review Process", description: "Expert panel evaluates your proposal against eligibility and impact criteria.", outcome: "Proposal scored", icon: Shield, color: "#22C55E" },
-  { number: "03", title: "Due Diligence", description: "Shortlisted applicants undergo a thorough due diligence and reference check process.", outcome: "Validation complete", icon: CheckCircle2, color: "#8b5cf6" },
-  { number: "04", title: "Funding Decision", description: "Notification of outcome and disbursement of approved funds with milestone tracking.", outcome: "Funds released", icon: Banknote, color: "#f59e0b" },
+  { number: "03", title: "Due Diligence", description: "Shortlisted applicants undergo a thorough due diligence and reference check process.", outcome: "Validation complete", icon: CheckCircle2, color: "#C41E3A" },
+  { number: "04", title: "Funding Decision", description: "Notification of outcome and disbursement of approved funds with milestone tracking.", outcome: "Funds released", icon: Banknote, color: "#2563EB" },
 ];
 
 const benefits = [
   { title: "Financial Support", description: "Access to capital for project development, scaling, and cross-border expansion.", icon: Banknote, color: "#2563EB" },
   { title: "Mentorship", description: "Guidance from experienced industry leaders, investors, and domain experts.", icon: Users, color: "#22C55E" },
-  { title: "Networking", description: "Connect with investors, corporate partners, and potential collaborators across borders.", icon: Globe2, color: "#8b5cf6" },
-  { title: "Market Access", description: "Opportunities to expand into UK, Pakistan, and international markets.", icon: ArrowUpRight, color: "#f59e0b" },
+  { title: "Networking", description: "Connect with investors, corporate partners, and potential collaborators across borders.", icon: Globe2, color: "#C41E3A" },
+  { title: "Market Access", description: "Opportunities to expand into UK, Pakistan, and international markets.", icon: ArrowUpRight, color: "#2563EB" },
 ];
 
 const faqs = [
@@ -134,9 +134,9 @@ const faqs = [
 
 /* ─── Helpers ───────────────────────────────────────────────────────── */
 
-const faqColors = ["#2563EB", "#22C55E", "#8b5cf6", "#f59e0b", "#C41E3A"];
+const faqColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E"];
 
-const statColors = ["#2563EB", "#22C55E", "#8b5cf6", "#f59e0b"];
+const statColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB"];
 
 /* ─── Component ─────────────────────────────────────────────────────── */
 
@@ -168,7 +168,7 @@ export default function FundingAndGrantsClient() {
         />
         {/* Glow orbs */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#2563EB]/10 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#8b5cf6]/8 blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#22C55E]/8 blur-[100px] pointer-events-none" />
 
         {/* Hero content */}
         <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-32 md:py-40">
@@ -188,7 +188,7 @@ export default function FundingAndGrantsClient() {
               <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                 Funding and{" "}
               </span>
-              <span className="bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
                 Grants
               </span>
             </h1>
@@ -259,7 +259,7 @@ export default function FundingAndGrantsClient() {
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
                 Funding Programs Designed for the{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                   UK–Pakistan Tech Corridor
                 </span>
               </h2>
@@ -377,9 +377,9 @@ export default function FundingAndGrantsClient() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
           <AnimatedSection>
             <div className="max-w-4xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f59e0b]/20 bg-[#f59e0b]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
-                <span className="text-[#f59e0b] text-xs font-semibold uppercase tracking-wider">Funding Grants</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
+                <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">Funding Grants</span>
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
                 {fundingGrantsIntro.heading}
@@ -398,13 +398,13 @@ export default function FundingAndGrantsClient() {
           <AnimatedSection>
             {/* Section header */}
             <div className="max-w-3xl mb-14">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#8b5cf6]/20 bg-[#8b5cf6]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
-                <span className="text-[#8b5cf6] text-xs font-semibold uppercase tracking-wider">Stages</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">Stages</span>
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Funding by{" "}
-                <span className="bg-gradient-to-r from-[#8b5cf6] to-[#2563EB] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                   Growth Stage
                 </span>
               </h2>
@@ -481,9 +481,9 @@ export default function FundingAndGrantsClient() {
           <AnimatedSection>
             {/* Section header */}
             <div className="max-w-3xl mb-14">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f59e0b]/20 bg-[#f59e0b]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
-                <span className="text-[#f59e0b] text-xs font-semibold uppercase tracking-wider">Process</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
+                <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">Process</span>
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Application Process
@@ -608,7 +608,7 @@ export default function FundingAndGrantsClient() {
               <div className="lg:col-span-2">
                 <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-md p-8 sticky top-8 overflow-hidden relative">
                   {/* Subtle top glow */}
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E]" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
 
                   <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-5">Why Apply Through UPTECH</h3>
                   <div className="relative h-px bg-[#D8D5CF] mb-6" />
@@ -677,7 +677,7 @@ export default function FundingAndGrantsClient() {
       <section className="relative bg-[#131942] overflow-hidden">
         {/* Gradient glow effects */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full bg-[#2563EB]/8 blur-[200px] pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#8b5cf6]/6 blur-[150px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#C41E3A]/6 blur-[150px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[#22C55E]/5 blur-[120px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -698,7 +698,7 @@ export default function FundingAndGrantsClient() {
                 <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                   Ready to Secure Funding for Your{" "}
                 </span>
-                <span className="bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
                   Innovation?
                 </span>
               </h2>

@@ -9,7 +9,7 @@ import { CheckCircle2 } from "lucide-react";
 const pillars = [
   { title: "Governments", description: "Facilitating policy alignment and bilateral technology cooperation between UK and Pakistani government bodies.", color: "#2563EB" },
   { title: "Enterprises & Investors", description: "Supporting cross-border trade, investment facilitation, and market access for businesses and capital.", color: "#22C55E" },
-  { title: "Startups & Academia", description: "Fostering innovation, talent development, and research collaboration between both nations.", color: "#8b5cf6" },
+  { title: "Startups & Academia", description: "Fostering innovation, talent development, and research collaboration between both nations.", color: "#C41E3A" },
 ];
 
 const whyJoin = [
@@ -21,7 +21,7 @@ const whyJoin = [
 ];
 
 const recognitionItems = [
-  { title: "Innovation", description: "Celebrating exceptional achievements in technology innovation and cross-border development.", color: "#f59e0b" },
+  { title: "Innovation", description: "Celebrating exceptional achievements in technology innovation and cross-border development.", color: "#C41E3A" },
   { title: "Collaboration", description: "Recognising successful partnerships that strengthen the UK–Pakistan tech corridor.", color: "#2563EB" },
   { title: "Leadership", description: "Honouring individuals and organisations driving digital transformation.", color: "#22C55E" },
 ];
@@ -29,8 +29,8 @@ const recognitionItems = [
 const benefits = [
   { title: "Connect with Leading Minds", description: "Access an exclusive network of tech leaders, founders, and executives across both nations.", color: "#2563EB" },
   { title: "Launch New Products", description: "Platform to showcase innovations and reach key stakeholders across the corridor.", color: "#22C55E" },
-  { title: "Establish Thought Leadership", description: "Position your organisation as a leader in the UK–Pakistan tech ecosystem.", color: "#8b5cf6" },
-  { title: "Boost Brand Awareness", description: "Increase visibility and recognition across both markets simultaneously.", color: "#f59e0b" },
+  { title: "Establish Thought Leadership", description: "Position your organisation as a leader in the UK–Pakistan tech ecosystem.", color: "#C41E3A" },
+  { title: "Boost Brand Awareness", description: "Increase visibility and recognition across both markets simultaneously.", color: "#2563EB" },
 ];
 
 const attendees = [
@@ -124,7 +124,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
                   The UK–Pakistan Technology Partnership is a strategic collaboration framework designed to strengthen technology, innovation, and digital trade between the United Kingdom and Pakistan.
                 </p>
-                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#8b5cf6]/20 to-transparent mb-8" />
+                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/20 to-transparent mb-8" />
                 <p className="text-[#3D4152] text-base sm:text-lg leading-relaxed mb-5">
                   By connecting governments, enterprises, investors, startups, and academia, we create a powerful network that enables technology-led growth, fosters innovation, and builds lasting bridges between our two nations.
                 </p>
@@ -203,13 +203,13 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                   Our Leadership
                 </p>
                 <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl leading-tight mb-4">
                   Driving Partnership at the Highest Level
                 </h2>
-                <div className="h-px bg-gradient-to-r from-[#8b5cf6]/40 via-[#8b5cf6]/10 to-transparent mb-6 max-w-xs" />
+                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-6 max-w-xs" />
                 <p className="text-[#3D4152] text-base leading-relaxed mb-4">
                   UPTECH Founder &amp; CEO Khalil Choudhary actively engages with government officials, industry leaders, and international organisations to strengthen the UK–Pakistan technology corridor.
                 </p>
@@ -227,13 +227,13 @@ export default function UKPakistanTechnologyPartnershipClient() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Recognition Program
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 Recognising Excellence
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#f59e0b]/40 via-[#f59e0b]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
                 Celebrating Pakistan&apos;s contributions to the UK tech sector through prestigious recognition.
               </p>
@@ -338,20 +338,20 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 </ul>
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                   Community
                 </p>
                 <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl leading-tight mb-4">
                   Typical Attendees
                 </h2>
-                <div className="h-px bg-gradient-to-r from-[#8b5cf6]/40 via-[#8b5cf6]/10 to-transparent mb-4 max-w-xs" />
+                <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
                 <p className="text-[#7A7E8F] text-sm mb-6">
                   Join a community of distinguished technology leaders and innovators.
                 </p>
                 <ul className="space-y-0">
                   {attendees.map((item) => (
                     <li key={item} className="flex items-start gap-3 py-3 border-b border-[#D8D5CF] last:border-b-0">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#8b5cf6] flex-shrink-0" />
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#C41E3A] flex-shrink-0" />
                       <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}
@@ -367,13 +367,13 @@ export default function UKPakistanTechnologyPartnershipClient() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Partners
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
                 Our Partners Make Us Stronger
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#f59e0b]/40 via-[#f59e0b]/10 to-transparent mb-4 max-w-xs" />
+              <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
                 Collaborating with leading organisations to drive innovation and strengthen the UK–Pakistan tech corridor.
               </p>

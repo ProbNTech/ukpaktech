@@ -228,9 +228,9 @@ const termsSections = [
 
 /* Section accent colours — cycle through palette */
 const sectionAccents = [
-  "#2563EB", "#22C55E", "#8b5cf6", "#C41E3A", "#f59e0b",
-  "#2563EB", "#22C55E", "#8b5cf6", "#C41E3A", "#f59e0b",
-  "#2563EB", "#22C55E", "#8b5cf6", "#C41E3A", "#f59e0b",
+  "#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E",
+  "#C41E3A", "#2563EB", "#22C55E", "#C41E3A", "#2563EB",
+  "#22C55E", "#C41E3A", "#2563EB", "#22C55E", "#C41E3A",
   "#2563EB", "#22C55E",
 ];
 
@@ -383,18 +383,18 @@ export default function TermsPage() {
 
       {/* ── Expand / Collapse Controls + Section Nav — Light alt ─── */}
       <section className="relative py-16 overflow-hidden bg-white">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/20 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6] mb-3">
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
                 {termsSections.length} Sections
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Quick Navigation
               </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#8b5cf6] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
               <p className="text-[#7A7E8F] text-base max-w-xl">
                 Click any section below to jump directly, or use the expand/collapse controls.
               </p>

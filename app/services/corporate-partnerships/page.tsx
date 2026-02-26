@@ -30,8 +30,8 @@ import { motion, useReducedMotion } from "framer-motion";
 const stats = [
   { value: "50+", label: "Corporate Partners", color: "#2563EB" },
   { value: "120+", label: "Startups Accelerated", color: "#22C55E" },
-  { value: "30+", label: "Accelerator Programs", color: "#8b5cf6" },
-  { value: "£40M+", label: "Investment Facilitated", color: "#f59e0b" },
+  { value: "30+", label: "Accelerator Programs", color: "#C41E3A" },
+  { value: "£40M+", label: "Investment Facilitated", color: "#2563EB" },
 ];
 
 const founderBenefits = [
@@ -52,14 +52,14 @@ const founderBenefits = [
     icon: Handshake,
     title: "Holistic Growth Support",
     description: "Our investment comes with hands-on help.",
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
   {
     icon: Lightbulb,
     title: "Expert Mentorship",
     description:
       "You\u2019ll be guided by experienced entrepreneurs and advisors who have built and exited high-growth companies.",
-    color: "#f59e0b",
+    color: "#2563EB",
   },
   {
     icon: TrendingUp,
@@ -73,12 +73,12 @@ const founderBenefits = [
 const operationalAreas = [
   { name: "Product & Design", icon: PenTool, color: "#2563EB" },
   { name: "Fundraising", icon: BarChart3, color: "#22C55E" },
-  { name: "Growth", icon: TrendingUp, color: "#8b5cf6" },
-  { name: "Talent", icon: Users, color: "#f59e0b" },
+  { name: "Growth", icon: TrendingUp, color: "#C41E3A" },
+  { name: "Talent", icon: Users, color: "#2563EB" },
   { name: "Data Science", icon: Database, color: "#C41E3A" },
   { name: "Strategic Partnerships", icon: Handshake, color: "#2563EB" },
   { name: "PR and Communications", icon: Megaphone, color: "#22C55E" },
-  { name: "Engineering", icon: Code2, color: "#8b5cf6" },
+  { name: "Engineering", icon: Code2, color: "#C41E3A" },
 ];
 
 const acceleratorBenefits = [
@@ -101,7 +101,7 @@ const acceleratorBenefits = [
     title: "Corporate Partnerships",
     description:
       "Access to leading innovators in the world\u2019s most influential companies.",
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
 ];
 
@@ -125,7 +125,7 @@ const investorBenefits = [
   },
   {
     text: "We back AI-first companies solving real problems in sectors like FinTech, MedTech, Agri Tech and beyond.",
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
 ];
 
@@ -149,7 +149,7 @@ const partnerOfferings = [
     title: "Invest in Startups with Proven Technology and Business Models",
     description:
       "Identify high-potential ventures with validated products and market fit.",
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
 ];
 
@@ -181,7 +181,7 @@ export default function CorporatePartnershipsPage() {
           }}
         />
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#2563EB]/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-[#8b5cf6]/8 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-[#22C55E]/8 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-32">
           <motion.div
@@ -206,7 +206,7 @@ export default function CorporatePartnershipsPage() {
               <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                 Corporate &amp;{" "}
               </span>
-              <span className="bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#2563EB] via-[#C41E3A] to-[#22C55E] bg-clip-text text-transparent">
                 Accelerator
               </span>
               <br />
@@ -305,7 +305,7 @@ export default function CorporatePartnershipsPage() {
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
                 Start Your Journey with a{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                   Unique Advantage
                 </span>
               </h2>
@@ -408,9 +408,9 @@ export default function CorporatePartnershipsPage() {
                   <div className="flex items-center gap-3 mb-4">
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ background: "#8b5cf615", border: "1px solid #8b5cf625" }}
+                      style={{ background: "#C41E3A15", border: "1px solid #C41E3A25" }}
                     >
-                      <Briefcase className="w-5 h-5 text-[#8b5cf6]" />
+                      <Briefcase className="w-5 h-5 text-[#C41E3A]" />
                     </div>
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base">
                       Operational Support
@@ -426,7 +426,7 @@ export default function CorporatePartnershipsPage() {
             {/* WE ARE HERE TO HELP YOU headline */}
             <div className="text-center mb-10">
               <h3 className="font-heading font-extrabold text-xl sm:text-2xl lg:text-3xl leading-snug">
-                <span className="bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#C41E3A] bg-clip-text text-transparent">
                   WE ARE HERE TO HELP YOU GO FURTHER, FASTER
                 </span>
               </h3>
@@ -468,7 +468,7 @@ export default function CorporatePartnershipsPage() {
           ACCELERATORS SECTION
           ================================================================ */}
       <section className="relative bg-[#EEECEA] overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#8b5cf6]/5 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C41E3A]/5 rounded-full blur-[150px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.015]"
           style={{
@@ -479,15 +479,15 @@ export default function CorporatePartnershipsPage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
           <AnimatedSection>
             <div className="max-w-4xl mb-14">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#8b5cf6]/20 bg-[#8b5cf6]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
-                <span className="text-[#8b5cf6] text-xs font-semibold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
+                <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">
                   Accelerators
                 </span>
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
                 Designed to Help Ambitious Founders{" "}
-                <span className="bg-gradient-to-r from-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#C41E3A] to-[#22C55E] bg-clip-text text-transparent">
                   Scale Beyond Limits
                 </span>
               </h2>
@@ -536,7 +536,7 @@ export default function CorporatePartnershipsPage() {
 
             {/* Accelerator details list */}
             <div className="bg-white border border-[#D8D5CF] rounded-2xl p-8 shadow-sm relative">
-              <div className="absolute -top-px left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-[#8b5cf6]/50 to-transparent" />
+              <div className="absolute -top-px left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-[#C41E3A]/50 to-transparent" />
               <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-5">
                 What Our Accelerator Partners Provide
               </h3>
@@ -553,7 +553,7 @@ export default function CorporatePartnershipsPage() {
                   >
                     <CheckCircle2
                       className="w-4 h-4 flex-shrink-0 mt-0.5"
-                      style={{ color: ["#2563EB", "#22C55E", "#8b5cf6", "#f59e0b", "#C41E3A", "#2563EB"][i] }}
+                      style={{ color: ["#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#C41E3A", "#22C55E"][i] }}
                     />
                     <span className="text-[#5A5F72] text-sm leading-relaxed">
                       {detail}
@@ -577,20 +577,20 @@ export default function CorporatePartnershipsPage() {
             backgroundSize: "80px 80px",
           }}
         />
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#f59e0b]/5 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[150px] pointer-events-none" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-12 items-start">
               <div className="lg:col-span-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f59e0b]/20 bg-[#f59e0b]/5 mb-5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
-                  <span className="text-[#f59e0b] text-xs font-semibold uppercase tracking-wider">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
+                  <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
                     For Investors
                   </span>
                 </div>
                 <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
                   Invest in the Tech Winners of{" "}
-                  <span className="bg-gradient-to-r from-[#f59e0b] to-[#22C55E] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                     Tomorrow, Today
                   </span>
                 </h2>
@@ -630,14 +630,14 @@ export default function CorporatePartnershipsPage() {
               {/* Sidebar */}
               <div className="lg:col-span-2">
                 <div className="bg-white border border-[#D8D5CF] rounded-2xl p-8 shadow-md sticky top-8 overflow-hidden relative">
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#f59e0b] via-[#22C55E] to-[#2563EB]" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
                   <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-5">
                     Why Invest Through UPTECH
                   </h3>
                   <div className="relative h-px bg-[#D8D5CF] mb-6" />
                   <ul className="relative space-y-4">
                     <li className="flex items-start gap-3 text-[#5A5F72] text-sm leading-relaxed">
-                      <ArrowUpRight className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#f59e0b]" />
+                      <ArrowUpRight className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#2563EB]" />
                       <span>Access curated portfolios of high-growth technology companies</span>
                     </li>
                     <li className="flex items-start gap-3 text-[#5A5F72] text-sm leading-relaxed">
@@ -679,7 +679,7 @@ export default function CorporatePartnershipsPage() {
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
                 Learn, Engage, Work with the{" "}
-                <span className="bg-gradient-to-r from-[#C41E3A] to-[#f59e0b] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">
                   Tech of Tomorrow, Today
                 </span>
               </h2>
@@ -739,7 +739,7 @@ export default function CorporatePartnershipsPage() {
           ================================================================ */}
       <section className="relative bg-[#131942] overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full bg-[#2563EB]/8 blur-[200px] pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#8b5cf6]/6 blur-[150px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#C41E3A]/6 blur-[150px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[#22C55E]/5 blur-[120px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -768,7 +768,7 @@ export default function CorporatePartnershipsPage() {
                 <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                   Ready to Build the Future of{" "}
                 </span>
-                <span className="bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2563EB] via-[#C41E3A] to-[#22C55E] bg-clip-text text-transparent">
                   Tech Together?
                 </span>
               </h2>
@@ -783,7 +783,7 @@ export default function CorporatePartnershipsPage() {
                   variant="primary"
                   size="lg"
                   showArrow
-                  className="!bg-gradient-to-r !from-[#2563EB] !to-[#8b5cf6] hover:!shadow-[0_0_40px_rgba(37,99,235,0.3)]"
+                  className="!bg-gradient-to-r !from-[#2563EB] !to-[#22C55E] hover:!shadow-[0_0_40px_rgba(37,99,235,0.3)]"
                 >
                   Become a Member
                 </Button>

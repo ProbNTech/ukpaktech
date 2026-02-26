@@ -24,15 +24,15 @@ const categoryMeta: Record<string, { icon: typeof Newspaper; color: string }> = 
   All: { icon: Newspaper, color: "#2563EB" },
   Policy: { icon: Landmark, color: "#2563EB" },
   Events: { icon: Globe2, color: "#22C55E" },
-  Investment: { icon: Banknote, color: "#f59e0b" },
-  Leadership: { icon: Award, color: "#8b5cf6" },
-  Technology: { icon: Cpu, color: "#2563EB" },
-  Industry: { icon: TrendingUp, color: "#22C55E" },
-  Regulation: { icon: Shield, color: "#C41E3A" },
-  Innovation: { icon: Lightbulb, color: "#f59e0b" },
-  Cybersecurity: { icon: Shield, color: "#ef4444" },
-  Funding: { icon: Banknote, color: "#22C55E" },
-  Research: { icon: BookOpen, color: "#8b5cf6" },
+  Investment: { icon: Banknote, color: "#C41E3A" },
+  Leadership: { icon: Award, color: "#2563EB" },
+  Technology: { icon: Cpu, color: "#22C55E" },
+  Industry: { icon: TrendingUp, color: "#C41E3A" },
+  Regulation: { icon: Shield, color: "#2563EB" },
+  Innovation: { icon: Lightbulb, color: "#22C55E" },
+  Cybersecurity: { icon: Shield, color: "#C41E3A" },
+  Funding: { icon: Banknote, color: "#2563EB" },
+  Research: { icon: BookOpen, color: "#22C55E" },
   Awards: { icon: Award, color: "#C41E3A" },
 };
 
@@ -40,7 +40,7 @@ const categoryMeta: Record<string, { icon: typeof Newspaper; color: string }> = 
 const bannerThemes = {
   blue: { bg: "linear-gradient(135deg, #1a2b5e 0%, #0f1a3a 100%)", accent: "#3b82f6", accentTo: "#1a2b5e", label: "#60a5fa" },
   green: { bg: "linear-gradient(135deg, #15803d 0%, #22C55E 100%)", accent: "#22c55e", accentTo: "#15803d", label: "#86efac" },
-  purple: { bg: "linear-gradient(135deg, #5b21b6 0%, #7c3aed 100%)", accent: "#8b5cf6", accentTo: "#5b21b6", label: "#c4b5fd" },
+  red: { bg: "linear-gradient(135deg, #7f1d1d 0%, #C41E3A 100%)", accent: "#C41E3A", accentTo: "#7f1d1d", label: "#fca5a5" },
 };
 
 function DarkBannerHeader({
@@ -52,7 +52,7 @@ function DarkBannerHeader({
   label: string;
   title: string;
   body?: string;
-  color?: "blue" | "green" | "purple";
+  color?: "blue" | "green" | "red";
 }) {
   const theme = bannerThemes[color];
   return (
@@ -137,7 +137,7 @@ export default function NewsPage() {
         <div
           className="absolute bottom-0 left-0 w-[400px] h-[400px] z-[2] pointer-events-none opacity-15"
           style={{
-            background: "radial-gradient(circle at center, rgba(139,92,246,0.3) 0%, transparent 70%)",
+            background: "radial-gradient(circle at center, rgba(34,197,94,0.3) 0%, transparent 70%)",
           }}
         />
 
@@ -174,7 +174,7 @@ export default function NewsPage() {
             transition={{ duration: 0.8, delay: 0.05 }}
             className="w-20 h-[2px] mb-6 origin-left"
             style={{
-              background: "linear-gradient(90deg, #2563EB, #8b5cf6, transparent)",
+              background: "linear-gradient(90deg, #2563EB, #C41E3A, transparent)",
               boxShadow: "0 0 12px rgba(37,99,235,0.4)",
             }}
           />
@@ -186,7 +186,7 @@ export default function NewsPage() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] mb-5 max-w-3xl"
             style={{
-              background: "linear-gradient(135deg, #ffffff 0%, #e2e8f0 30%, #2563EB 70%, #8b5cf6 100%)",
+              background: "linear-gradient(135deg, #ffffff 0%, #e2e8f0 30%, #2563EB 70%, #C41E3A 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -202,7 +202,7 @@ export default function NewsPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-full h-px mb-6 origin-left"
             style={{
-              background: "linear-gradient(90deg, rgba(37,99,235,0.5), rgba(139,92,246,0.3), transparent)",
+              background: "linear-gradient(90deg, rgba(37,99,235,0.5), rgba(34,197,94,0.3), transparent)",
             }}
           />
 
@@ -225,7 +225,7 @@ export default function NewsPage() {
           >
             {[
               { label: `${articles.length} Articles`, icon: Newspaper, color: "#2563EB" },
-              { label: `${new Set(articles.map((a) => a.category)).size} Categories`, icon: Radio, color: "#8b5cf6" },
+              { label: `${new Set(articles.map((a) => a.category)).size} Categories`, icon: Radio, color: "#C41E3A" },
               { label: "UK & Pakistan Coverage", icon: Globe2, color: "#22C55E" },
             ].map((chip) => {
               const Icon = chip.icon;
@@ -238,7 +238,7 @@ export default function NewsPage() {
                     backdropFilter: "blur(12px)",
                     WebkitBackdropFilter: "blur(12px)",
                     border: `1px solid rgba(255,255,255,0.08)`,
-                    boxShadow: `inset 0 1px 0 rgba(255,255,255,0.05), 0 0 20px rgba(${chip.color === "#2563EB" ? "37,99,235" : chip.color === "#8b5cf6" ? "139,92,246" : "34,197,94"},0.08)`,
+                    boxShadow: `inset 0 1px 0 rgba(255,255,255,0.05), 0 0 20px rgba(${chip.color === "#2563EB" ? "37,99,235" : chip.color === "#C41E3A" ? "196,30,58" : "34,197,94"},0.08)`,
                   }}
                 >
                   <Icon className="w-3.5 h-3.5" style={{ color: chip.color }} />
@@ -267,9 +267,9 @@ export default function NewsPage() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
               {[
                 { value: `${articles.length}+`, label: "Published Articles", color: "#2563EB", icon: Newspaper },
-                { value: `${new Set(articles.map((a) => a.category)).size}`, label: "Topic Categories", color: "#8b5cf6", icon: Radio },
+                { value: `${new Set(articles.map((a) => a.category)).size}`, label: "Topic Categories", color: "#C41E3A", icon: Radio },
                 { value: "UK-PK", label: "Bilateral Coverage", color: "#22C55E", icon: Globe2 },
-                { value: "Live", label: "Real-time Updates", color: "#f59e0b", icon: Zap },
+                { value: "Live", label: "Real-time Updates", color: "#2563EB", icon: Zap },
               ].map((stat) => {
                 const Icon = stat.icon;
                 return (
@@ -472,21 +472,21 @@ export default function NewsPage() {
                   title: "Policy & Regulation",
                   desc: "Data protection frameworks, digital governance strategies, and regulatory developments shaping the corridor.",
                   icon: Shield,
-                  color: "#8b5cf6",
+                  color: "#C41E3A",
                   category: "Policy",
                 },
                 {
                   title: "Cybersecurity",
                   desc: "Threat intelligence, national security frameworks, and cyber resilience initiatives across the UK-Pakistan digital space.",
                   icon: Shield,
-                  color: "#C41E3A",
+                  color: "#2563EB",
                   category: "Cybersecurity",
                 },
                 {
                   title: "Research & Academia",
                   desc: "University partnerships, R&D programmes, and academic collaborations advancing bilateral knowledge exchange.",
                   icon: BookOpen,
-                  color: "#f59e0b",
+                  color: "#22C55E",
                   category: "Research",
                 },
                 {
@@ -548,7 +548,7 @@ export default function NewsPage() {
               label="Just published"
               title="Latest Articles"
               body="The most recent coverage from the UK--Pakistan technology corridor."
-              color="purple"
+              color="red"
             />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-8">
@@ -601,7 +601,7 @@ export default function NewsPage() {
         <div
           className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] pointer-events-none opacity-25"
           style={{
-            background: "radial-gradient(circle, rgba(139,92,246,0.35) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(34,197,94,0.35) 0%, transparent 70%)",
             filter: "blur(80px)",
           }}
         />
@@ -638,7 +638,7 @@ export default function NewsPage() {
               <div
                 className="w-16 h-[2px] mb-6"
                 style={{
-                  background: "linear-gradient(90deg, #2563EB, #8b5cf6, transparent)",
+                  background: "linear-gradient(90deg, #2563EB, #C41E3A, transparent)",
                   boxShadow: "0 0 15px rgba(37,99,235,0.5), 0 0 30px rgba(37,99,235,0.2)",
                 }}
               />
@@ -646,7 +646,7 @@ export default function NewsPage() {
               <p
                 className="text-sm font-bold uppercase tracking-[0.2em] mb-4"
                 style={{
-                  background: "linear-gradient(90deg, #2563EB, #8b5cf6)",
+                  background: "linear-gradient(90deg, #2563EB, #C41E3A)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",

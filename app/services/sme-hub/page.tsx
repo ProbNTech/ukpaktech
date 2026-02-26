@@ -10,8 +10,8 @@ import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 const stats = [
   { value: "200+", label: "SMEs Supported", color: "#2563EB" },
   { value: "\u00A325M+", label: "Revenue Generated", color: "#22C55E" },
-  { value: "4", label: "Key Markets", color: "#8b5cf6" },
-  { value: "85%", label: "Member Satisfaction", color: "#f59e0b" },
+  { value: "4", label: "Key Markets", color: "#C41E3A" },
+  { value: "85%", label: "Member Satisfaction", color: "#2563EB" },
 ];
 
 const pillars = [
@@ -41,14 +41,14 @@ const pillars = [
     title: "Member Offers",
     description: "Get the latest exclusive benefits for UPTECH Members only.",
     features: ["Software discounts", "Event priority access", "Partner service deals", "Free consulting hours"],
-    color: "#8b5cf6",
+    color: "#2563EB",
   },
 ];
 
 const markets = [
   { name: "United Kingdom", description: "Access UK government contracts, corporate partnerships, and a thriving startup ecosystem.", flag: "\uD83C\uDDEC\uD83C\uDDE7", color: "#2563EB" },
-  { name: "Europe", description: "Expand into European markets through our Enterprise Europe Network partnership.", flag: "\uD83C\uDDEA\uD83C\uDDFA", color: "#8b5cf6" },
-  { name: "Middle East", description: "Tap into the Gulf\u2019s rapidly growing technology sector and investment ecosystem.", flag: "\uD83C\uDDE6\uD83C\uDDEA", color: "#f59e0b" },
+  { name: "Europe", description: "Expand into European markets through our Enterprise Europe Network partnership.", flag: "\uD83C\uDDEA\uD83C\uDDFA", color: "#C41E3A" },
+  { name: "Middle East", description: "Tap into the Gulf\u2019s rapidly growing technology sector and investment ecosystem.", flag: "\uD83C\uDDE6\uD83C\uDDEA", color: "#2563EB" },
   { name: "Africa", description: "Enter emerging African markets with the fastest-growing tech adoption rates globally.", flag: "\uD83C\uDDF3\uD83C\uDDEC", color: "#22C55E" },
 ];
 
@@ -73,9 +73,9 @@ const faqs = [
   { question: "How quickly can I expect results?", answer: "Most members see meaningful connections within the first 30 days. Sales pipeline impact typically materialises within 3\u20136 months, depending on your growth stage and market readiness." },
 ];
 
-const stepColors = ["#2563EB", "#22C55E", "#C41E3A", "#8b5cf6"];
-const whoColors = ["#2563EB", "#22C55E", "#f59e0b", "#8b5cf6"];
-const faqColors = ["#2563EB", "#8b5cf6", "#22C55E", "#f59e0b"];
+const stepColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB"];
+const whoColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB"];
+const faqColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB"];
 
 export default function SMEHubPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -223,13 +223,13 @@ export default function SMEHubPage() {
 
       {/* ── Markets ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#f59e0b]" />
+        <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#C41E3A]" />
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">Markets</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Markets</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Where We Operate</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#8b5cf6] to-[#8b5cf6]/40 mb-4" />
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40 mb-4" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">Helping tech SMEs grow across key global markets.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -260,13 +260,13 @@ export default function SMEHubPage() {
       {/* ── Your Growth Journey ── */}
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#8b5cf6]" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">Process</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">Process</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Your Growth Journey</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#f59e0b]/40 mb-4" />
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/40 mb-4" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">A structured pathway from onboarding to scaling your business internationally.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -346,9 +346,9 @@ export default function SMEHubPage() {
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
           <AnimatedSection>
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">FAQ</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">FAQ</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Frequently Asked Questions</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#f59e0b] to-[#f59e0b]/40 mb-4" />
+              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/40 mb-4" />
               <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">Common questions about the SME Hub.</p>
             </div>
             <FAQSection faqs={faqs} />

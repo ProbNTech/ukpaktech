@@ -119,12 +119,12 @@ const operatingProcedures = [
 const levelColors: Record<string, string> = {
   "Executive Leadership": "#2563EB",
   "Senior Management": "#22C55E",
-  "Governance": "#8b5cf6",
-  "Operations": "#f59e0b",
-  "Regional Leadership": "#C41E3A",
+  "Governance": "#C41E3A",
+  "Operations": "#2563EB",
+  "Regional Leadership": "#22C55E",
 };
 
-const procedureColors = ["#2563EB", "#22C55E", "#8b5cf6", "#C41E3A", "#f59e0b", "#2563EB"];
+const procedureColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E", "#C41E3A"];
 
 const stats = [
   { value: "8", label: "Leadership Roles" },
@@ -292,16 +292,16 @@ export default function StructurePage() {
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "60px 60px" }} />
         {/* Glowing orb accents */}
         <div className="absolute top-0 right-1/4 w-96 h-96 opacity-[0.02]" style={{ background: "radial-gradient(circle, #2563EB, transparent 60%)" }} />
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 opacity-[0.02]" style={{ background: "radial-gradient(circle, #8b5cf6, transparent 60%)" }} />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 opacity-[0.02]" style={{ background: "radial-gradient(circle, #C41E3A, transparent 60%)" }} />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6] mb-3">Leadership Roles</p>
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Leadership Roles</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Key Positions & Responsibilities
               </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#8b5cf6] to-transparent mb-4" />
+              <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
               <p className="text-[#5A5F72] text-base max-w-xl">
                 Each role within UPTECH has defined responsibilities and accountability lines.
               </p>

@@ -32,8 +32,8 @@ import {
 const stats = [
   { value: "500+", label: "Opportunities", color: "#2563EB" },
   { value: "120+", label: "Partner Companies", color: "#22C55E" },
-  { value: "15+", label: "Countries", color: "#8b5cf6" },
-  { value: "95%", label: "Satisfaction", color: "#f59e0b" },
+  { value: "15+", label: "Countries", color: "#C41E3A" },
+  { value: "95%", label: "Satisfaction", color: "#2563EB" },
 ];
 
 const forEmployers = [
@@ -55,26 +55,26 @@ const forJobSeekers = [
 const portalFeatures = [
   { icon: Globe2, title: "Cross-Border Reach", desc: "Connect talent and employers across UK, Pakistan, Europe, and the Middle East through a unified platform.", color: "#2563EB", num: "01" },
   { icon: Shield, title: "Verified Profiles", desc: "All candidates and employers are verified through the UPTECH membership network for trust and quality.", color: "#22C55E", num: "02" },
-  { icon: TrendingUp, title: "Career Growth", desc: "Access career tips, market insights, salary benchmarks, and professional development resources.", color: "#8b5cf6", num: "03" },
-  { icon: GraduationCap, title: "Internship Pipeline", desc: "Dedicated pathways for students and graduates entering the tech workforce across borders.", color: "#f59e0b", num: "04" },
-  { icon: FileText, title: "Smart Matching", desc: "AI-powered recommendations matching candidates with roles based on skills, experience, and preferences.", color: "#C41E3A", num: "05" },
-  { icon: Rocket, title: "Fast-Track Hiring", desc: "Streamlined application process designed for speed, efficiency, and quality of hire.", color: "#ef4444", num: "06" },
+  { icon: TrendingUp, title: "Career Growth", desc: "Access career tips, market insights, salary benchmarks, and professional development resources.", color: "#C41E3A", num: "03" },
+  { icon: GraduationCap, title: "Internship Pipeline", desc: "Dedicated pathways for students and graduates entering the tech workforce across borders.", color: "#2563EB", num: "04" },
+  { icon: FileText, title: "Smart Matching", desc: "AI-powered recommendations matching candidates with roles based on skills, experience, and preferences.", color: "#22C55E", num: "05" },
+  { icon: Rocket, title: "Fast-Track Hiring", desc: "Streamlined application process designed for speed, efficiency, and quality of hire.", color: "#C41E3A", num: "06" },
 ];
 
 const howItWorks = [
   { step: "01", icon: UserCheck, title: "Register", desc: "Create your profile as a candidate or employer and join the UPTECH network.", outcome: "Account activated", color: "#2563EB" },
   { step: "02", icon: Search, title: "Browse or Post", desc: "Job seekers explore listings with advanced filters. Employers post openings with detailed requirements.", outcome: "Matched to opportunities", color: "#22C55E" },
-  { step: "03", icon: Send, title: "Apply or Review", desc: "Candidates apply directly. Employers review applications, shortlist, and connect with talent.", outcome: "Applications submitted", color: "#8b5cf6" },
-  { step: "04", icon: Briefcase, title: "Connect & Hire", desc: "Schedule interviews, make offers, and build cross-border technology teams.", outcome: "Talent connected", color: "#f59e0b" },
+  { step: "03", icon: Send, title: "Apply or Review", desc: "Candidates apply directly. Employers review applications, shortlist, and connect with talent.", outcome: "Applications submitted", color: "#C41E3A" },
+  { step: "04", icon: Briefcase, title: "Connect & Hire", desc: "Schedule interviews, make offers, and build cross-border technology teams.", outcome: "Talent connected", color: "#2563EB" },
 ];
 
 const keySectors = [
   { icon: Code2, title: "Software Dev", desc: "Full-stack, mobile, frontend, backend, and systems engineering roles across global tech teams.", color: "#2563EB" },
   { icon: Shield, title: "Cybersecurity", desc: "Security analysts, penetration testers, compliance officers, and threat intelligence specialists.", color: "#22C55E" },
-  { icon: Database, title: "Data & AI", desc: "Data scientists, ML engineers, AI researchers, and analytics professionals driving innovation.", color: "#8b5cf6" },
-  { icon: Palette, title: "Product & Design", desc: "UX/UI designers, product managers, and design system leads shaping digital experiences.", color: "#f59e0b" },
-  { icon: Cloud, title: "DevOps & Cloud", desc: "Cloud architects, SRE engineers, platform teams, and infrastructure automation specialists.", color: "#C41E3A" },
-  { icon: Landmark, title: "FinTech", desc: "Payment systems, digital banking, blockchain, and regulatory technology professionals.", color: "#ef4444" },
+  { icon: Database, title: "Data & AI", desc: "Data scientists, ML engineers, AI researchers, and analytics professionals driving innovation.", color: "#C41E3A" },
+  { icon: Palette, title: "Product & Design", desc: "UX/UI designers, product managers, and design system leads shaping digital experiences.", color: "#2563EB" },
+  { icon: Cloud, title: "DevOps & Cloud", desc: "Cloud architects, SRE engineers, platform teams, and infrastructure automation specialists.", color: "#22C55E" },
+  { icon: Landmark, title: "FinTech", desc: "Payment systems, digital banking, blockchain, and regulatory technology professionals.", color: "#C41E3A" },
 ];
 
 /* ── Component ─────────────────────────────────────────────────────── */
@@ -129,7 +129,7 @@ export default function JobPortalPage() {
               <span
                 className="bg-clip-text text-transparent"
                 style={{
-                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #8b5cf6 100%)",
+                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #C41E3A 100%)",
                 }}
               >
                 Job Portal
@@ -389,7 +389,7 @@ export default function JobPortalPage() {
           <AnimatedSection>
             {/* Section header */}
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Process
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
@@ -496,7 +496,7 @@ export default function JobPortalPage() {
           <AnimatedSection>
             {/* Section header */}
             <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Industries
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
@@ -565,7 +565,7 @@ export default function JobPortalPage() {
       <section className="relative bg-[#0E1221] overflow-hidden">
         {/* Gradient glow effects */}
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#8b5cf6]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#C41E3A]" />
 
         {/* Grid pattern */}
         <div

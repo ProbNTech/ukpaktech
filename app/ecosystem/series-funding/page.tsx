@@ -26,8 +26,8 @@ import { motion, useReducedMotion } from "framer-motion";
 const stats = [
   { value: "£75M+", label: "Series Funding Facilitated", color: "#2563EB" },
   { value: "40+", label: "Companies Scaled", color: "#22C55E" },
-  { value: "30+", label: "VC & PE Partners", color: "#8b5cf6" },
-  { value: "15+", label: "Markets Accessed", color: "#f59e0b" },
+  { value: "30+", label: "VC & PE Partners", color: "#C41E3A" },
+  { value: "15+", label: "Markets Accessed", color: "#2563EB" },
 ];
 
 const scalingBenefits = [
@@ -50,14 +50,14 @@ const scalingBenefits = [
     title: "Cross-Border Expansion",
     description:
       "Explore cross-border investment opportunities for market expansion.",
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
   {
     icon: Eye,
     title: "Global Visibility",
     description:
       "Build credibility and visibility among global investors and corporates.",
-    color: "#f59e0b",
+    color: "#2563EB",
   },
 ];
 
@@ -81,15 +81,15 @@ const investorBenefits = [
     title: "Direct Founder Access",
     description:
       "Engage directly with founders and executive teams for strategic partnerships.",
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
 ];
 
 const whyItMattersPoints = [
   { text: "Scale efficiently and strengthen market position", color: "#2563EB" },
   { text: "Move beyond early-stage validation into rapid growth", color: "#22C55E" },
-  { text: "Expand across borders with strategic investor backing", color: "#8b5cf6" },
-  { text: "Access tailored guidance for Series A and B rounds", color: "#f59e0b" },
+  { text: "Expand across borders with strategic investor backing", color: "#C41E3A" },
+  { text: "Access tailored guidance for Series A and B rounds", color: "#2563EB" },
 ];
 
 const fundingProcess = [
@@ -112,14 +112,14 @@ const fundingProcess = [
     title: "Matching",
     description: "We connect you with the right VCs, PE firms, and corporate investors aligned to your sector and stage.",
     outcome: "Investors matched",
-    color: "#8b5cf6",
+    color: "#C41E3A",
   },
   {
     number: "04",
     title: "Closing",
     description: "Support through due diligence, term sheets, and deal closing to secure your Series A or B round.",
     outcome: "Round closed",
-    color: "#f59e0b",
+    color: "#2563EB",
   },
 ];
 
@@ -150,7 +150,7 @@ export default function SeriesFundingPage() {
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#8b5cf6]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#22C55E]/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-[#2563EB]/8 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-32">
@@ -161,13 +161,13 @@ export default function SeriesFundingPage() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#8b5cf6]/30 bg-[#8b5cf6]/10 backdrop-blur-sm mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 backdrop-blur-sm mb-6"
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="w-2 h-2 rounded-full bg-[#8b5cf6] animate-pulse" />
-              <span className="text-[#8b5cf6] text-xs font-semibold uppercase tracking-wider">
+              <div className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse" />
+              <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
                 Ecosystem / Series Funding
               </span>
             </motion.div>
@@ -176,7 +176,7 @@ export default function SeriesFundingPage() {
               <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                 Series A &amp; B{" "}
               </span>
-              <span className="bg-gradient-to-r from-[#8b5cf6] via-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
                 Funding
               </span>
               <br />
@@ -203,7 +203,7 @@ export default function SeriesFundingPage() {
               <Button
                 href="/contact"
                 variant="ghost"
-                className="!text-white/70 !decoration-white/30 hover:!text-[#8b5cf6]"
+                className="!text-white/70 !decoration-white/30 hover:!text-[#2563EB]"
               >
                 Speak to Our Team
               </Button>
@@ -267,7 +267,7 @@ export default function SeriesFundingPage() {
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
                 Scale Your Business with{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                   Strategic Funding
                 </span>
               </h2>
@@ -334,7 +334,7 @@ export default function SeriesFundingPage() {
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Invest in{" "}
-                <span className="bg-gradient-to-r from-[#22C55E] to-[#f59e0b] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
                   Growth-Stage Winners
                 </span>
               </h2>
@@ -391,15 +391,15 @@ export default function SeriesFundingPage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
           <AnimatedSection>
             <div className="text-center mb-14">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#f59e0b]/20 bg-[#f59e0b]/5 mb-5 mx-auto">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
-                <span className="text-[#f59e0b] text-xs font-semibold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5 mx-auto">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
+                <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">
                   Process
                 </span>
               </div>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 How We Help You{" "}
-                <span className="bg-gradient-to-r from-[#f59e0b] to-[#22C55E] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#C41E3A] to-[#22C55E] bg-clip-text text-transparent">
                   Close Your Round
                 </span>
               </h2>
@@ -479,7 +479,7 @@ export default function SeriesFundingPage() {
                 </div>
                 <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
                   Critical Funding for{" "}
-                  <span className="bg-gradient-to-r from-[#C41E3A] to-[#8b5cf6] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">
                     Rapid Growth
                   </span>
                 </h2>
@@ -518,7 +518,7 @@ export default function SeriesFundingPage() {
               {/* Sidebar */}
               <div className="lg:col-span-2">
                 <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-md p-8 sticky top-8 overflow-hidden relative">
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#8b5cf6] via-[#2563EB] to-[#22C55E]" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
 
                   <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-5">
                     UPTECH Advantage
@@ -528,8 +528,8 @@ export default function SeriesFundingPage() {
                     {[
                       { title: "VC & PE Networks", desc: "Direct access to venture capital and private equity firms specializing in growth-stage investment.", color: "#2563EB" },
                       { title: "Cross-Border Funding", desc: "Investment networks spanning UK, Pakistan, Europe, and beyond.", color: "#22C55E" },
-                      { title: "Strategic Guidance", desc: "Expert advisory on valuation, deal structuring, and investor engagement.", color: "#8b5cf6" },
-                      { title: "Market Expansion", desc: "Support for cross-border market entry alongside your funding round.", color: "#f59e0b" },
+                      { title: "Strategic Guidance", desc: "Expert advisory on valuation, deal structuring, and investor engagement.", color: "#C41E3A" },
+                      { title: "Market Expansion", desc: "Support for cross-border market entry alongside your funding round.", color: "#2563EB" },
                     ].map((item, i) => (
                       <motion.li
                         key={item.title}
@@ -568,7 +568,7 @@ export default function SeriesFundingPage() {
           ================================================================ */}
       <section className="relative bg-[#0E1221] overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none">
-          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#8b5cf6]/10 rounded-full blur-[120px]" />
+          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#C41E3A]/10 rounded-full blur-[120px]" />
           <div className="absolute top-10 right-0 w-[350px] h-[350px] bg-[#2563EB]/8 rounded-full blur-[100px]" />
           <div className="absolute bottom-0 left-1/3 w-[300px] h-[300px] bg-[#22C55E]/5 rounded-full blur-[80px]" />
         </div>
@@ -583,14 +583,14 @@ export default function SeriesFundingPage() {
           <AnimatedSection>
             <div className="text-center max-w-3xl mx-auto">
               <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#8b5cf6]/30 bg-[#8b5cf6]/10 backdrop-blur-sm mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 backdrop-blur-sm mb-6"
                 initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="w-2 h-2 rounded-full bg-[#8b5cf6] animate-pulse" />
-                <span className="text-[#8b5cf6] text-xs font-semibold uppercase tracking-wider">
+                <div className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse" />
+                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
                   Scale Now
                 </span>
               </motion.div>
@@ -599,7 +599,7 @@ export default function SeriesFundingPage() {
                 <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                   Fuel Growth.{" "}
                 </span>
-                <span className="bg-gradient-to-r from-[#8b5cf6] via-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
                   Expand Markets.
                 </span>
                 <br />
@@ -618,7 +618,7 @@ export default function SeriesFundingPage() {
                   variant="primary"
                   size="lg"
                   showArrow
-                  className="!bg-gradient-to-r !from-[#8b5cf6] !to-[#2563EB] hover:!shadow-[0_0_40px_rgba(139,92,246,0.3)]"
+                  className="!bg-gradient-to-r !from-[#2563EB] !to-[#22C55E] hover:!shadow-[0_0_40px_rgba(37,99,235,0.3)]"
                 >
                   Become a Member
                 </Button>
