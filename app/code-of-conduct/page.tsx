@@ -19,41 +19,41 @@ const navSections = [
 ];
 
 const principles = [
-  { icon: Shield, title: "Integrity", description: "Members shall act with honesty, fairness, and transparency in all professional dealings. Upholding truthfulness and sincerity in every interaction with fellow members, partners, and stakeholders." },
-  { icon: Users, title: "Respect & Equality", description: "Treat all individuals with dignity and respect regardless of background, nationality, gender, religion, or status. Foster a culture of equality and mutual understanding within the community." },
-  { icon: Award, title: "Competence", description: "Maintain and continuously improve professional knowledge and skills. Deliver services and advice only within areas of genuine expertise and seek to raise the standard of the profession." },
-  { icon: Heart, title: "Loyalty", description: "Demonstrate loyalty to the Council's mission, values, and objectives. Act in the best interests of UPTECH and the broader Pakistani technology community in the UK." },
-  { icon: Scale, title: "Impartiality", description: "Exercise objective and unbiased judgement in all professional matters. Avoid favouritism and ensure decisions are made on merit, evidence, and the best interests of the community." },
-  { icon: Lightbulb, title: "Ethical Conduct", description: "Adhere to the highest standards of ethical behaviour in business and personal conduct. Reject corruption, bribery, and any form of dishonest practice." },
-  { icon: Ban, title: "Non-discrimination", description: "Actively oppose discrimination in all forms. Ensure equal opportunity and access for all members regardless of ethnicity, age, disability, gender identity, or socioeconomic background." },
-  { icon: GraduationCap, title: "Continuous Development", description: "Commit to lifelong learning and professional growth. Stay current with emerging technologies, industry trends, and best practices to contribute meaningfully to the profession." },
-  { icon: Briefcase, title: "Professionalism", description: "Maintain the highest standards of professional conduct at all times. Represent UPTECH and the Pakistani technology community with distinction, dignity, and excellence." },
+  { icon: Shield, title: "Integrity", description: "Members will consistently demonstrate honesty and ethical behavior in all actions and decisions." },
+  { icon: Users, title: "Respect and Equality", description: "Treat all members with dignity, equality, and cultural sensitivity, without discrimination based on any criteria." },
+  { icon: Award, title: "Competence", description: "Members will accurately represent their skills and experience and continuously strive to maintain professional competence." },
+  { icon: Heart, title: "Loyalty", description: "Act with unwavering loyalty towards the Council and maintain confidentiality when entrusted with sensitive information." },
+  { icon: Scale, title: "Impartiality", description: "Provide objective advice, disclosing any potential conflicts of interest promptly and transparently." },
+  { icon: Lightbulb, title: "Ethical Conduct", description: "Members will not pursue personal gain at the expense of the Council and actively work to enhance its reputation." },
+  { icon: Ban, title: "Non-discrimination", description: "Refrain from engaging in discriminatory practices in any professional activities." },
+  { icon: GraduationCap, title: "Continuous Development", description: "Commit to lifelong learning, actively seeking opportunities to develop skills and knowledge, and encouraging fellow members to do the same." },
+  { icon: Briefcase, title: "Professionalism", description: "Adhere to recognized professional standards, offering services and advice diligently and responsibly within their areas of expertise." },
 ];
 
 const whatsappRules = [
-  { number: "01", rule: "All members must maintain a respectful and professional tone in all group communications. Personal attacks, offensive language, or disrespectful behaviour will not be tolerated." },
-  { number: "02", rule: "Share only content that is relevant to the group's purpose — technology, innovation, business opportunities, events, and professional development. Avoid unrelated political, religious, or controversial topics." },
-  { number: "03", rule: "Do not share unverified news, rumours, or misleading information. Always verify facts before posting and provide credible sources where applicable." },
-  { number: "04", rule: "Respect the privacy of all group members. Do not share personal information, screenshots, or conversations from the group without explicit consent from the individuals involved." },
-  { number: "05", rule: "No spam, excessive self-promotion, or unsolicited advertising. Members may share business opportunities and achievements in a professional manner with prior approval from group administrators." },
-  { number: "06", rule: "Constructive criticism and healthy debate are encouraged; however, all discussions must remain civil and solution-oriented. Avoid arguments, trolling, or provocative behaviour." },
-  { number: "07", rule: "Do not forward chain messages, irrelevant videos, memes, or content that does not add value to the group's professional objectives." },
-  { number: "08", rule: "Respect the time and attention of other members. Avoid excessive messaging, voice notes, or large file shares that may disrupt the group experience." },
-  { number: "09", rule: "Group administrators reserve the right to remove messages that violate these rules and take appropriate action against repeat offenders, including temporary or permanent removal from the group." },
+  { number: "01", title: "No Personal Attacks", rule: "Refrain from personal attacks in group chats to maintain a respectful environment; violation may result in temporary or permanent BAN." },
+  { number: "02", title: "Avoid Irrelevant Posts", rule: "Steer clear of posting irrelevant content or discussions." },
+  { number: "03", title: "No Political or Religious Posts", rule: "Do not share political, religious, sectarian, or biased content." },
+  { number: "04", title: "No Unauthorized Adverts", rule: "Obtain prior approval from Management before sharing advertisements in the group." },
+  { number: "05", title: "Notify Admins of Number Changes", rule: "Inform Group Admin or Management of any mobile number changes within 3 days to avoid temporary or permanent BAN." },
+  { number: "06", title: "Stay Relevant", rule: "Keep discussions aligned with the group\u2019s objectives to ensure focused communication." },
+  { number: "07", title: "Post Curfew", rule: "Refrain from posting after 11:00 PM unless urgent matters arise." },
+  { number: "08", title: "Welcoming New Members", rule: "Designate one member to welcome new members on behalf of the group to maintain efficiency." },
+  { number: "09", title: "Address Grievances Privately", rule: "Contact Management directly for grievances instead of discussing them publicly." },
 ];
 
 const disciplinarySteps = [
-  { step: "01", title: "Complaint Receipt", description: "A formal complaint or report of a breach of the Code of Conduct is received by the UPTECH governance team through the designated reporting channel." },
-  { step: "02", title: "Initial Assessment", description: "The governance team conducts a preliminary review to determine whether the complaint falls within the scope of the Code of Conduct and warrants further investigation." },
-  { step: "03", title: "Acknowledgement", description: "The complainant receives written acknowledgement within 5 working days, confirming that their report has been received and is being assessed." },
-  { step: "04", title: "Investigation Panel", description: "An independent investigation panel of three members is appointed, including at least one Board member, to conduct a fair and thorough investigation." },
-  { step: "05", title: "Evidence Gathering", description: "The panel gathers evidence including written statements, documentation, and testimony from all relevant parties. Both the complainant and the respondent are given the opportunity to present their case." },
-  { step: "06", title: "Right to Respond", description: "The member under investigation is formally notified of the allegations and given a minimum of 14 days to provide a written response and any supporting evidence." },
-  { step: "07", title: "Panel Hearing", description: "Where appropriate, a formal hearing is held where both parties may present their case. The hearing follows a structured format ensuring procedural fairness." },
-  { step: "08", title: "Determination", description: "The panel reaches a determination based on the balance of evidence. Findings and recommendations are documented in a formal report." },
-  { step: "09", title: "Sanctions", description: "If the complaint is upheld, appropriate sanctions are imposed. These may range from a formal warning, suspension of membership, removal from leadership positions, to permanent expulsion from UPTECH." },
-  { step: "10", title: "Appeals Process", description: "The respondent has the right to appeal the decision within 21 days of receiving the outcome. Appeals are reviewed by a separate appeals committee that was not involved in the original investigation." },
-  { step: "11", title: "Final Resolution", description: "The appeals committee reviews the case and issues a final decision, which is binding. All parties are notified in writing, and the matter is formally closed and recorded." },
+  { step: "01", title: "Complaint Submission", description: "All complaints must be submitted in writing and sent to the Management Committee of the Council. Any member is eligible to lodge a complaint." },
+  { step: "02", title: "Investigation", description: "Upon receipt, the complaint will undergo investigation by a Committee vested with the authority to summon any member(s) deemed relevant to the matter." },
+  { step: "03", title: "Response Period", description: "Should the Committee determine potential misconduct, the implicated member(s) will be afforded a 7-day period to respond to the allegations." },
+  { step: "04", title: "Disciplinary Actions", description: "Should the member(s) be found guilty, disciplinary actions may include caution, reprimand, suspension, or expulsion from Council membership." },
+  { step: "05", title: "Lack of Merit", description: "If the complaint lacks merit following the Committee\u2019s evaluation, the complainant will be duly informed." },
+  { step: "06", title: "Referral to Disciplinary Committee", description: "In instances where the matter is referred to the Disciplinary Committee, formal proceedings will be arranged for a fair hearing of the charges." },
+  { step: "07", title: "Escalation", description: "If the Committee finds the response inadequate or no written representation is received, the matter will be escalated to the Disciplinary Committee." },
+  { step: "08", title: "Outcome Communication", description: "For caution and reprimand, the Council will disseminate details of the circumstances and outcome to all members without disclosing the member\u2019s identity. In cases of suspension or expulsion, the Council will, at its discretion, inform members confidentially." },
+  { step: "09", title: "Right to Appeal", description: "Affected members retain the right to appeal the committee\u2019s decision within 7 days, submitting a written appeal." },
+  { step: "10", title: "Appeal Review", description: "The Executive Committee will then review the appeal." },
+  { step: "11", title: "Final Verdict", description: "The verdict rendered by the Executive Committee on the appeal(s) shall be final and non-negotiable." },
 ];
 
 const principleColors = ["#2563EB", "#22C55E", "#8b5cf6", "#C41E3A", "#f59e0b", "#2563EB", "#22C55E", "#8b5cf6", "#C41E3A"];
@@ -124,7 +124,7 @@ export default function CodeOfConductPage() {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="text-lg text-white/50 max-w-2xl leading-relaxed"
           >
-            UPTECH is committed to maintaining the highest standards of ethical conduct, transparency, and accountability in all our activities.
+            UK-Pakistan Tech Council Code of Conduct
           </motion.p>
         </div>
       </section>
@@ -153,10 +153,19 @@ export default function CodeOfConductPage() {
                 transition={{ duration: 0.5 }}
               >
                 <p className="text-white/50 text-base leading-relaxed mb-5">
-                  This Code of Conduct applies to all members, partners, staff, and stakeholders of UPTECH and outlines the principles and responsibilities that guide our community. Every individual associated with UPTECH is expected to uphold these standards in their professional and personal conduct.
+                  All members are required to give an undertaking to the effect that they would abide by the UPTECH Code of Conduct. The Code of Conduct will also specify the procedure for the action to be taken against concerned members for any breach of this Code. The following is the Code of Conduct prepared by the Executive Committee and adopted after approval by balloting by the Voting Members of UPTECH.
+                </p>
+                <p className="text-white/50 text-base leading-relaxed mb-5">
+                  UK-Pakistan Tech Council Code of Conduct is issued under the authority of the Constitution of the UK-Pakistan Tech Council and is binding on all members of the Organization. {"\u201C"}UK-Pakistani Tech Council is hereby also mentioned as UPTECH{"\u201D"}
+                </p>
+                <p className="text-white/50 text-base leading-relaxed mb-5">
+                  The Code of Conduct for UK-Pakistan Tech Council is a foundational document established under the authority of our organization{"\u2019"}s Constitution. It outlines the principles and standards that all members are expected to uphold in their professional and personal conduct.
+                </p>
+                <p className="text-white/50 text-base leading-relaxed mb-5">
+                  As a binding document, adherence to this Code is mandatory for all members, ensuring consistency, integrity, and professionalism in our collective endeavors. By adhering to these ethical and behavioral guidelines, we demonstrate our commitment to excellence, integrity, and mutual respect within our community and in our interactions with others. {"\u201C"}UK-Pakistani Tech Council is hereby also mentioned as UPTECH{"\u201D"}
                 </p>
                 <p className="text-white/50 text-base leading-relaxed">
-                  Our code reflects the values of the Pakistani technology diaspora in the United Kingdom and sets a benchmark for professionalism, integrity, and ethical behaviour that inspires trust and excellence across the community.
+                  The UPTECH Code of Conduct is compulsory for all members and adherence to its principles is obligatory. Therefore, it is imperative for every member of UPTECH to possess a comprehensive understanding and knowledge of its provisions.
                 </p>
               </motion.div>
 
@@ -306,7 +315,7 @@ export default function CodeOfConductPage() {
                       >
                         {item.number}
                       </span>
-                      <p className="text-sm text-white/40 leading-relaxed">{item.rule}</p>
+                      <p className="text-sm text-white/40 leading-relaxed"><span className="text-white/60 font-semibold">{item.title}:</span> {item.rule}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -327,7 +336,7 @@ export default function CodeOfConductPage() {
                     >
                       {item.number}
                     </span>
-                    <p className="text-sm text-white/40 leading-relaxed">{item.rule}</p>
+                    <p className="text-sm text-white/40 leading-relaxed"><span className="text-white/60 font-semibold">{item.title}:</span> {item.rule}</p>
                   </motion.div>
                 ))}
 
@@ -370,7 +379,7 @@ export default function CodeOfConductPage() {
               </h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
               <p className="text-white/40 text-base max-w-xl">
-                A transparent, fair, and structured process for addressing breaches of the Code of Conduct.
+                All members of the Council are expected to adhere to the Council{"\u2019"}s Code of Conduct. In the event of a member wishing to file a complaint against other members for violating the Code, the following procedures apply:
               </p>
             </div>
 
