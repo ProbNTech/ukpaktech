@@ -1,8 +1,9 @@
 "use client";
 
-import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { PageHero } from "@/components/PageHero";
+import { Section } from "@/components/Section";
+import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import {
   CheckCircle2,
@@ -134,967 +135,518 @@ const bookingChecklist = [
 ];
 
 export default function MeetingSpacePage() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <div>
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden min-h-[520px]">
-        <Image
-          src="/image/london-images/executive-boardroom.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div
-          className="absolute inset-0 z-[1]"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(10,14,30,0.92) 0%, rgba(10,14,30,0.70) 50%, rgba(10,14,30,0.50) 100%)",
-          }}
-        />
-        {/* Grid pattern overlay */}
-        <div
-          className="absolute inset-0 z-[2] opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-20 pb-16">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
-              <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-white/60">
-                Exclusive Member Privilege
-              </span>
-            </div>
-          </motion.div>
-
-          <motion.h1
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-white mb-6 max-w-4xl"
-          >
-            London Meeting{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#60a5fa]">
-              Space Access
-            </span>{" "}
-            &mdash; An Exclusive Member Privilege
-          </motion.h1>
-
-          <motion.p
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-lg text-white/50 max-w-3xl leading-relaxed mb-10"
-          >
-            The UK-Pakistan Tech Council offers members access to professional meeting facilities in Central London, enabling high-level engagement within a credible and strategic business environment. This benefit supports our mission to strengthen bilateral Tech collaboration and provides members with the infrastructure required to conduct business effectively in the United Kingdom.
-          </motion.p>
-
-          {/* Stats — Floating glass cards inside hero */}
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-4"
-          >
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.4 + i * 0.08 }}
-                className="group relative bg-white/[0.04] backdrop-blur-md border border-white/[0.08] rounded-xl p-5 hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300 text-center overflow-hidden"
-              >
-                {/* Glow on hover */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 50% 50%, rgba(37,99,235,0.12), transparent 70%)",
-                  }}
-                />
-                <div className="relative">
-                  <p className="font-heading font-extrabold text-white text-3xl sm:text-4xl mb-1">
-                    {stat.value}
-                  </p>
-                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">
-                    {stat.label}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Stats Bar (secondary) — Glowing glass cards on dark bg ──── */}
-      <section className="relative z-[1] bg-[#0B0F1A] overflow-hidden">
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-        {/* Subtle grid */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={`bar-${stat.label}`}
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="relative bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 text-center overflow-hidden"
-              >
-                {/* Glowing border accent */}
-                <div
-                  className="absolute inset-0 rounded-xl opacity-20"
-                  style={{
-                    boxShadow: "inset 0 0 20px rgba(37,99,235,0.08)",
-                  }}
-                />
-                <p className="font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#60a5fa] text-3xl sm:text-4xl lg:text-5xl mb-1">
-                  {stat.value}
-                </p>
-                <p className="text-white/40 text-xs sm:text-sm font-medium uppercase tracking-wider">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Uses Section — What members can use facilities for ──────── */}
-      <section
-        className="relative py-16 overflow-hidden"
-        style={{ backgroundColor: "#0E1221" }}
+      {/* ── Hero ─────────────────────────────────────────────────── */}
+      <PageHero
+        image="/image/london-images/executive-boardroom.jpg"
+        title={
+          <>
+            London Meeting Space Access &mdash; An Exclusive Member Privilege
+          </>
+        }
+        subtitle="The UK-Pakistan Tech Council offers members access to professional meeting facilities in Central London, enabling high-level engagement within a credible and strategic business environment. This benefit supports our mission to strengthen bilateral Tech collaboration and provides members with the infrastructure required to conduct business effectively in the United Kingdom."
       >
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        {/* Glow orbs */}
-        <div
-          className="absolute top-0 left-1/4 w-96 h-96 opacity-[0.03]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 60%)",
-          }}
-        />
-        <div
-          className="absolute bottom-0 right-1/4 w-96 h-96 opacity-[0.03]"
-          style={{
-            background: "radial-gradient(circle, #8b5cf6, transparent 60%)",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <div className="mb-8">
-                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
-                    Meeting Facility Uses
-                  </p>
-                  <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                    Designated Meeting Facilities
-                  </h2>
-                  <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent" />
-                </div>
-                <p className="text-white/50 text-base leading-relaxed mb-6">
-                  As part of our commitment to strengthening bilateral engagement and fostering high-level dialogue, members may utilise designated meeting facilities for:
-                </p>
-                <ul className="space-y-4">
-                  {uses.map((item, i) => (
-                    <motion.li
-                      key={item}
-                      initial={
-                        shouldReduceMotion
-                          ? { opacity: 1 }
-                          : { opacity: 0, x: -12 }
-                      }
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 0.4, delay: i * 0.08 }}
-                      className="flex items-start gap-3"
-                    >
-                      <CheckCircle2
-                        className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0"
-                        strokeWidth={2}
-                      />
-                      <span className="text-sm text-white/50 leading-relaxed">
-                        {item}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
-                <div className="flex items-center gap-3 mt-8">
-                  <div className="w-9 h-9 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
-                    <MapPin
-                      className="w-4.5 h-4.5 text-[#2563EB]"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-                  <span className="text-white/70 font-semibold text-sm">
-                    Central London location with excellent transport links
-                  </span>
-                </div>
-              </div>
-
-              {/* Booking Info Card — dark glass */}
-              <div className="relative bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden">
-                {/* Top gradient accent */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{
-                    background:
-                      "linear-gradient(to right, #2563EB, #8b5cf6)",
-                  }}
-                />
-                <div className="p-8">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="relative">
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center"
-                        style={{
-                          backgroundColor: "#2563EB15",
-                          border: "1px solid #2563EB25",
-                        }}
-                      >
-                        <DoorOpen
-                          className="w-5 h-5 text-[#2563EB]"
-                          strokeWidth={1.5}
-                        />
-                      </div>
-                    </div>
-                    <h3 className="font-heading font-bold text-white text-base">
-                      Access &amp; Reservations
-                    </h3>
-                  </div>
-                  <div className="h-px bg-white/[0.06] mb-5" />
-                  <ul className="space-y-4">
-                    {bookingChecklist.map((item, i) => {
-                      const Icon = item.icon;
-                      return (
-                        <motion.li
-                          key={item.text}
-                          initial={
-                            shouldReduceMotion
-                              ? { opacity: 1 }
-                              : { opacity: 0, x: -12 }
-                          }
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true, margin: "-50px" }}
-                          transition={{ duration: 0.4, delay: i * 0.08 }}
-                          className="flex items-start gap-3"
-                        >
-                          <div
-                            className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                            style={{
-                              backgroundColor: "#22C55E10",
-                              border: "1px solid #22C55E20",
-                            }}
-                          >
-                            <Icon
-                              className="w-3.5 h-3.5 text-[#22C55E]"
-                              strokeWidth={2}
-                            />
-                          </div>
-                          <span className="text-sm text-white/50 leading-relaxed">
-                            {item.text}
-                          </span>
-                        </motion.li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
+        <div className="flex flex-wrap gap-4">
+          <Button href="/membership" variant="glass" size="lg" showArrow>
+            Become a Member
+          </Button>
+          <Button href="/contact" variant="glass" size="lg" showArrow>
+            Contact Us
+          </Button>
         </div>
-      </section>
+      </PageHero>
 
-      {/* ── Facilities — Dark bg with glass cards ─────────────────── */}
-      <section className="relative py-16 overflow-hidden bg-[#0B0F1A]">
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
-        {/* Subtle grid */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        {/* Glow orb */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-[0.04]"
-          style={{
-            background: "radial-gradient(circle, #8b5cf6, transparent 50%)",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6] mb-3">
-                Our Facilities
+      {/* ── Stats Bar ────────────────────────────────────────────── */}
+      <Section variant="alt">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="bg-white border border-[#D8D5CF] rounded p-6 text-center"
+            >
+              <p className="font-heading font-extrabold text-[#2563EB] text-3xl sm:text-4xl mb-1">
+                {stat.value}
               </p>
-              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Facilities &amp; Amenities
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#8b5cf6] to-transparent mb-4" />
-              <p className="text-white/40 text-base max-w-2xl">
-                Our London meeting spaces provide a professional and secure environment equipped with:
+              <p className="text-[#3D4152] text-xs sm:text-sm font-medium uppercase tracking-wider">
+                {stat.label}
               </p>
             </div>
+          ))}
+        </div>
+      </Section>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {facilities.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={
-                      shouldReduceMotion
-                        ? { opacity: 1 }
-                        : { opacity: 0, y: 20 }
-                    }
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group relative bg-white/[0.03] rounded-xl border border-white/[0.06] overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
+      {/* ── Designated Meeting Facilities / Uses ─────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <SectionHeader
+                label="Meeting Facility Uses"
+                title="Designated Meeting Facilities"
+              />
+              <p className="text-[#3D4152] text-base leading-relaxed mb-6">
+                As part of our commitment to strengthening bilateral engagement and fostering high-level dialogue, members may utilise designated meeting facilities for:
+              </p>
+              <ul className="space-y-4">
+                {uses.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2
+                      className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0"
+                      strokeWidth={2}
+                    />
+                    <span className="text-sm text-[#3D4152] leading-relaxed">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex items-center gap-3 mt-8">
+                <div className="w-9 h-9 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
+                  <MapPin className="w-4 h-4 text-[#2563EB]" />
+                </div>
+                <span className="text-[#1C1F2E] font-semibold text-sm">
+                  Central London location with excellent transport links
+                </span>
+              </div>
+            </div>
+
+            {/* Booking Info Card */}
+            <div className="bg-white border border-[#D8D5CF] rounded overflow-hidden">
+              <div className="h-[3px] bg-gradient-to-r from-[#2563EB] to-[#8b5cf6]" />
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+                    style={{
+                      backgroundColor: "#2563EB12",
+                      border: "1px solid #2563EB25",
+                    }}
                   >
-                    {/* Colored glow top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px]"
-                      style={{
-                        background: `linear-gradient(to right, ${item.color}, ${item.color}60)`,
-                      }}
-                    />
-                    {/* Hover glow effect */}
-                    <div
-                      className="absolute top-0 left-1/4 right-1/4 h-16 opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500"
-                      style={{ background: item.color }}
-                    />
-
-                    <div className="relative p-6 lg:p-7">
-                      <div className="flex items-center justify-between mb-5">
-                        <div className="relative">
-                          {/* Icon glow on hover */}
-                          <div
-                            className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500"
-                            style={{ background: item.color }}
-                          />
-                          <div
-                            className="relative w-11 h-11 rounded-xl flex items-center justify-center"
-                            style={{
-                              background: `${item.color}10`,
-                              border: `1px solid ${item.color}20`,
-                            }}
-                          >
-                            <Icon
-                              className="w-5 h-5"
-                              style={{ color: item.color }}
-                              strokeWidth={1.5}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <h3 className="font-heading font-bold text-base text-white mb-2">
-                        {item.title}
-                      </h3>
-                      <div className="h-px bg-white/[0.06] mb-3" />
-                      <p className="text-sm text-white/40 leading-relaxed">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── Supporting Bilateral Collaboration ─────────────────────── */}
-      <section
-        className="relative py-16 overflow-hidden"
-        style={{ backgroundColor: "#0E1221" }}
-      >
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        {/* Glow orbs */}
-        <div
-          className="absolute top-0 right-1/4 w-96 h-96 opacity-[0.03]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 60%)",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <div className="mb-8">
-                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
-                    Bilateral Collaboration
-                  </p>
-                  <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                    Supporting Bilateral Collaboration
-                  </h2>
-                  <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent" />
-                </div>
-                <p className="text-white/50 text-base leading-relaxed mb-6">
-                  These facilities are designed to support our members in conducting business, hosting visiting delegations from Pakistan or the UK, and engaging with policymakers and investors in a credible and professional setting. By facilitating access to centrally located meeting infrastructure, the Council enables:
-                </p>
-                <ul className="space-y-4">
-                  {bilateralBenefits.map((item, i) => (
-                    <motion.li
-                      key={item}
-                      initial={
-                        shouldReduceMotion
-                          ? { opacity: 1 }
-                          : { opacity: 0, x: -12 }
-                      }
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 0.4, delay: i * 0.08 }}
-                      className="flex items-start gap-3"
-                    >
-                      <CheckCircle2
-                        className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0"
-                        strokeWidth={2}
-                      />
-                      <span className="text-sm text-white/50 leading-relaxed">
-                        {item}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Member Benefits Card */}
-              <div className="relative bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden">
-                {/* Top gradient accent */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{
-                    background:
-                      "linear-gradient(to right, #8b5cf6, #2563EB)",
-                  }}
-                />
-                <div className="p-8">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="relative">
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center"
-                        style={{
-                          backgroundColor: "#8b5cf615",
-                          border: "1px solid #8b5cf625",
-                        }}
-                      >
-                        <BadgeCheck
-                          className="w-5 h-5 text-[#8b5cf6]"
-                          strokeWidth={1.5}
-                        />
-                      </div>
-                    </div>
-                    <h3 className="font-heading font-bold text-white text-base">
-                      Member Benefits
-                    </h3>
+                    <DoorOpen className="w-5 h-5 text-[#2563EB]" />
                   </div>
-                  <div className="h-px bg-white/[0.06] mb-5" />
-                  <p className="text-white/40 text-sm leading-relaxed mb-5">
-                    Eligible members may receive:
-                  </p>
-                  <ul className="space-y-4">
-                    {memberBenefits.map((item, i) => (
-                      <motion.li
-                        key={item}
-                        initial={
-                          shouldReduceMotion
-                            ? { opacity: 1 }
-                            : { opacity: 0, x: -12 }
-                        }
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-50px" }}
-                        transition={{ duration: 0.4, delay: i * 0.08 }}
-                        className="flex items-start gap-3"
-                      >
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-base">
+                    Access &amp; Reservations
+                  </h3>
+                </div>
+                <div className="h-px bg-[#D8D5CF] mb-5" />
+                <ul className="space-y-4">
+                  {bookingChecklist.map((item, i) => {
+                    const Icon = item.icon;
+                    return (
+                      <li key={item.text} className="flex items-start gap-3">
                         <div
                           className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
                           style={{
-                            backgroundColor: "#8b5cf610",
-                            border: "1px solid #8b5cf620",
+                            backgroundColor: "#22C55E10",
+                            border: "1px solid #22C55E20",
                           }}
                         >
-                          <CheckCircle2
-                            className="w-3.5 h-3.5 text-[#8b5cf6]"
-                            strokeWidth={2}
-                          />
+                          <Icon className="w-3.5 h-3.5 text-[#22C55E]" strokeWidth={2} />
                         </div>
-                        <span className="text-sm text-white/50 leading-relaxed">
-                          {item}
+                        <span className="text-sm text-[#3D4152] leading-relaxed">
+                          {item.text}
                         </span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </AnimatedSection>
+      </Section>
 
-      {/* ── Membership Tier Benefits Table — Styled Grid ────────────── */}
-      <section className="relative py-16 overflow-hidden bg-[#0B0F1A]">
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        {/* Glow orbs */}
-        <div
-          className="absolute top-0 right-1/4 w-96 h-96 opacity-[0.03]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 60%)",
-          }}
-        />
-        <div
-          className="absolute bottom-0 left-1/4 w-96 h-96 opacity-[0.03]"
-          style={{
-            background: "radial-gradient(circle, #8b5cf6, transparent 60%)",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
-                Membership Tiers
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Meeting Space Benefits by Membership Tier
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-            </div>
-
-            {/* Desktop Table */}
-            <div className="hidden lg:block">
-              <div className="relative bg-white/[0.02] border border-white/[0.06] rounded-2xl overflow-hidden">
-                {/* Top gradient accent */}
+      {/* ── Facilities & Amenities ───────────────────────────────── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Our Facilities"
+            title="Facilities & Amenities"
+            subtitle="Our London meeting spaces provide a professional and secure environment equipped with:"
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {facilities.map((item) => {
+              const Icon = item.icon;
+              return (
                 <div
-                  className="absolute top-0 left-0 right-0 h-[2px]"
-                  style={{
-                    background:
-                      "linear-gradient(to right, #2563EB, #8b5cf6, #10b981, #f59e0b, #ef4444)",
-                  }}
-                />
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="border-b border-white/[0.08]">
-                        <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-white/60">Tier</th>
-                        <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-white/60">Annual Hours</th>
-                        <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-white/60">Booking Priority</th>
-                        <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-white/60">Event Access</th>
-                        <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-white/60">Policy Engagement</th>
-                        <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-white/60">Brand Visibility</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {tierTableData.map((row, index) => (
-                        <motion.tr
-                          key={row.tier}
-                          initial={
-                            shouldReduceMotion
-                              ? { opacity: 1 }
-                              : { opacity: 0, y: 10 }
-                          }
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true, margin: "-50px" }}
-                          transition={{ duration: 0.4, delay: index * 0.08 }}
-                          className={`border-b border-white/[0.04] transition-colors duration-200 hover:bg-white/[0.03] ${
-                            row.highlight ? "bg-[#2563EB]/[0.06]" : ""
-                          }`}
-                        >
-                          <td className="px-6 py-4">
-                            <div className="flex items-center gap-2">
-                              {row.highlight && (
-                                <Star
-                                  className="w-4 h-4 text-[#FBBF24] flex-shrink-0"
-                                  fill="#FBBF24"
-                                />
-                              )}
-                              <span
-                                className="font-heading font-bold text-sm"
-                                style={{ color: row.color }}
-                              >
-                                {row.tier}
-                              </span>
-                            </div>
-                          </td>
-                          <td className="px-6 py-4 text-sm text-white/60 font-semibold">{row.annualHours}</td>
-                          <td className="px-6 py-4 text-sm text-white/50">{row.bookingPriority}</td>
-                          <td className="px-6 py-4 text-sm text-white/50">{row.eventAccess}</td>
-                          <td className="px-6 py-4 text-sm text-white/50">{row.policyEngagement}</td>
-                          <td className="px-6 py-4 text-sm text-white/50">{row.brandVisibility}</td>
-                        </motion.tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile Cards */}
-            <div className="lg:hidden grid gap-6">
-              {tierTableData.map((row, index) => (
-                <motion.div
-                  key={row.tier}
-                  initial={
-                    shouldReduceMotion
-                      ? { opacity: 1 }
-                      : { opacity: 0, y: 20 }
-                  }
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`group relative rounded-xl overflow-hidden ${
-                    row.highlight
-                      ? "bg-gradient-to-br from-[#2563EB]/[0.08] to-[#8b5cf6]/[0.05] border-2 border-[#2563EB]/40 shadow-[0_0_30px_rgba(37,99,235,0.15)]"
-                      : "bg-white/[0.03] border border-white/[0.06]"
-                  }`}
+                  key={item.title}
+                  className="bg-white border border-[#D8D5CF] rounded overflow-hidden relative"
                 >
-                  {row.highlight && (
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[3px]"
-                      style={{
-                        background:
-                          "linear-gradient(to right, #2563EB, #60a5fa, #2563EB)",
-                      }}
-                    />
-                  )}
-                  {!row.highlight && (
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px]"
-                      style={{
-                        background: `linear-gradient(to right, ${row.color}, ${row.color}60)`,
-                      }}
-                    />
-                  )}
-
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      {row.highlight && (
-                        <Star
-                          className="w-5 h-5 text-[#FBBF24]"
-                          fill="#FBBF24"
-                        />
-                      )}
-                      <h3
-                        className="font-heading font-bold text-lg"
-                        style={{ color: row.color }}
+                  <div
+                    className="absolute top-0 left-0 right-0 h-[3px]"
+                    style={{
+                      background: `linear-gradient(to right, ${item.color}, ${item.color}60)`,
+                    }}
+                  />
+                  <div className="p-6 lg:p-7">
+                    <div className="mb-5">
+                      <div
+                        className="w-11 h-11 rounded-lg flex items-center justify-center"
+                        style={{
+                          background: `${item.color}10`,
+                          border: `1px solid ${item.color}20`,
+                        }}
                       >
-                        {row.tier}
-                      </h3>
+                        <Icon
+                          className="w-5 h-5"
+                          style={{ color: item.color }}
+                          strokeWidth={1.5}
+                        />
+                      </div>
                     </div>
-                    <div className="h-px bg-white/[0.06] mb-4" />
-                    <div className="space-y-3">
-                      {[
-                        { label: "Annual Hours", value: row.annualHours },
-                        { label: "Booking Priority", value: row.bookingPriority },
-                        { label: "Event Access", value: row.eventAccess },
-                        { label: "Policy Engagement", value: row.policyEngagement },
-                        { label: "Brand Visibility", value: row.brandVisibility },
-                      ].map((field) => (
-                        <div key={field.label}>
-                          <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-white/30 mb-1">
-                            {field.label}
-                          </p>
-                          <p className="text-sm text-white/50">
-                            {field.value}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
+                    <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">
+                      {item.title}
+                    </h3>
+                    <div className="h-px bg-[#D8D5CF] mb-3" />
+                    <p className="text-sm text-[#3D4152] leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+                </div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
 
-      {/* ── Meeting Space Terms ────────────────────────────────────── */}
-      <section
-        className="relative py-16 overflow-hidden"
-        style={{ backgroundColor: "#0E1221" }}
-      >
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/30 to-transparent" />
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#f59e0b] mb-3">
-                Terms &amp; Conditions
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Meeting Space Terms
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#f59e0b] to-transparent" />
-            </div>
-
-            <div className="relative bg-white/[0.03] border border-white/[0.06] rounded-2xl overflow-hidden max-w-3xl">
-              <div
-                className="absolute top-0 left-0 right-0 h-[2px]"
-                style={{
-                  background: "linear-gradient(to right, #f59e0b, #f59e0b60)",
-                }}
+      {/* ── Supporting Bilateral Collaboration ───────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <SectionHeader
+                label="Bilateral Collaboration"
+                title="Supporting Bilateral Collaboration"
               />
+              <p className="text-[#3D4152] text-base leading-relaxed mb-6">
+                These facilities are designed to support our members in conducting business, hosting visiting delegations from Pakistan or the UK, and engaging with policymakers and investors in a credible and professional setting. By facilitating access to centrally located meeting infrastructure, the Council enables:
+              </p>
+              <ul className="space-y-4">
+                {bilateralBenefits.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2
+                      className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0"
+                      strokeWidth={2}
+                    />
+                    <span className="text-sm text-[#3D4152] leading-relaxed">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Member Benefits Card */}
+            <div className="bg-white border border-[#D8D5CF] rounded overflow-hidden">
+              <div className="h-[3px] bg-gradient-to-r from-[#8b5cf6] to-[#2563EB]" />
               <div className="p-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+                    style={{
+                      backgroundColor: "#8b5cf612",
+                      border: "1px solid #8b5cf625",
+                    }}
+                  >
+                    <BadgeCheck className="w-5 h-5 text-[#8b5cf6]" />
+                  </div>
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-base">
+                    Member Benefits
+                  </h3>
+                </div>
+                <div className="h-px bg-[#D8D5CF] mb-5" />
+                <p className="text-[#3D4152] text-sm leading-relaxed mb-5">
+                  Eligible members may receive:
+                </p>
                 <ul className="space-y-4">
-                  {meetingSpaceTerms.map((term, i) => (
-                    <motion.li
-                      key={term}
-                      initial={
-                        shouldReduceMotion
-                          ? { opacity: 1 }
-                          : { opacity: 0, x: -12 }
-                      }
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 0.4, delay: i * 0.08 }}
-                      className="flex items-start gap-3"
-                    >
+                  {memberBenefits.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
                       <div
                         className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
                         style={{
-                          backgroundColor: "#f59e0b10",
-                          border: "1px solid #f59e0b20",
+                          backgroundColor: "#8b5cf610",
+                          border: "1px solid #8b5cf620",
                         }}
                       >
                         <CheckCircle2
-                          className="w-3.5 h-3.5 text-[#f59e0b]"
+                          className="w-3.5 h-3.5 text-[#8b5cf6]"
                           strokeWidth={2}
                         />
                       </div>
-                      <span className="text-sm text-white/50 leading-relaxed">
-                        {term}
+                      <span className="text-sm text-[#3D4152] leading-relaxed">
+                        {item}
                       </span>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
               </div>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </AnimatedSection>
+      </Section>
 
-      {/* ── Optional Add-On Services (Member Rates) ────────────────── */}
-      <section className="relative py-16 overflow-hidden bg-[#0B0F1A]">
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#10b981]/30 to-transparent" />
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "40px 40px",
-          }}
-        />
+      {/* ── Membership Tier Benefits Table ────────────────────────── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Membership Tiers"
+            title="Meeting Space Benefits by Membership Tier"
+          />
 
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#10b981] mb-3">
-                Member Rates
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Optional Add-On Services
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#10b981] to-transparent mb-4" />
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {addOnServices.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={
-                      shouldReduceMotion
-                        ? { opacity: 1 }
-                        : { opacity: 0, y: 20 }
-                    }
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.5, delay: index * 0.08 }}
-                    className="group relative bg-white/[0.03] rounded-xl border border-white/[0.06] overflow-hidden hover:-translate-y-1 hover:border-white/[0.12] transition-all duration-300"
-                  >
-                    {/* Left accent */}
-                    <div
-                      className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{
-                        background: `linear-gradient(to bottom, ${item.color}, ${item.color}40)`,
-                      }}
-                    />
-
-                    <div className="relative p-6 lg:p-7 flex items-start gap-5">
-                      <div className="relative flex-shrink-0">
-                        {/* Icon glow on hover */}
-                        <div
-                          className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500"
-                          style={{ background: item.color }}
-                        />
-                        <div
-                          className="relative w-11 h-11 rounded-xl flex items-center justify-center"
-                          style={{
-                            background: `${item.color}10`,
-                            border: `1px solid ${item.color}20`,
-                          }}
-                        >
-                          <Icon
-                            className="w-5 h-5"
-                            style={{ color: item.color }}
-                            strokeWidth={1.5}
-                          />
-                        </div>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-heading font-bold text-base text-white mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-sm text-white/40 leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── CTA — Access & Reservations ─────────────────────────────── */}
-      <section
-        className="relative overflow-hidden py-20"
-        style={{
-          background:
-            "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)",
-        }}
-      >
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-        {/* Glow orbs */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 50%)",
-          }}
-        />
-        <div
-          className="absolute top-0 right-0 w-96 h-96 opacity-[0.04]"
-          style={{
-            background: "radial-gradient(circle, #8b5cf6, transparent 60%)",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">
-                Access &amp; Reservations
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Reserve Your Meeting{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#60a5fa]">
-                  Space
-                </span>
-              </h2>
-              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
-                Meeting facilities are available by advance booking and subject to membership tier allocations and availability.
-              </p>
-              <p className="text-white/50 text-base leading-relaxed mb-10 max-w-2xl">
-                Contact: Membership &amp; Operations Team | Email:{" "}
-                <a
-                  href="mailto:info@uptech.org.uk"
-                  className="text-[#60a5fa] hover:text-[#2563EB] transition-colors duration-200 underline underline-offset-2"
-                >
-                  info@uptech.org.uk
-                </a>
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button
-                  href="/membership"
-                  variant="primary"
-                  size="lg"
-                  showArrow
-                >
-                  Become a Member
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Contact Us
-                </Button>
+          {/* Desktop Table */}
+          <div className="hidden lg:block">
+            <div className="bg-white border border-[#D8D5CF] rounded overflow-hidden">
+              <div
+                className="h-[3px]"
+                style={{
+                  background:
+                    "linear-gradient(to right, #2563EB, #8b5cf6, #10b981, #f59e0b, #ef4444)",
+                }}
+              />
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-[#D8D5CF]">
+                      <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#3D4152]/60">Tier</th>
+                      <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#3D4152]/60">Annual Hours</th>
+                      <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#3D4152]/60">Booking Priority</th>
+                      <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#3D4152]/60">Event Access</th>
+                      <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#3D4152]/60">Policy Engagement</th>
+                      <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#3D4152]/60">Brand Visibility</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tierTableData.map((row) => (
+                      <tr
+                        key={row.tier}
+                        className={`border-b border-[#D8D5CF]/60 transition-colors duration-200 hover:bg-[#EEECEA] ${
+                          row.highlight ? "bg-[#2563EB]/5" : ""
+                        }`}
+                      >
+                        <td className="px-6 py-4">
+                          <div className="flex items-center gap-2">
+                            {row.highlight && (
+                              <Star
+                                className="w-4 h-4 text-[#FBBF24] flex-shrink-0"
+                                fill="#FBBF24"
+                              />
+                            )}
+                            <span
+                              className="font-heading font-bold text-sm"
+                              style={{ color: row.color }}
+                            >
+                              {row.tier}
+                            </span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 text-sm text-[#1C1F2E] font-semibold">{row.annualHours}</td>
+                        <td className="px-6 py-4 text-sm text-[#3D4152]">{row.bookingPriority}</td>
+                        <td className="px-6 py-4 text-sm text-[#3D4152]">{row.eventAccess}</td>
+                        <td className="px-6 py-4 text-sm text-[#3D4152]">{row.policyEngagement}</td>
+                        <td className="px-6 py-4 text-sm text-[#3D4152]">{row.brandVisibility}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+
+          {/* Mobile Cards */}
+          <div className="lg:hidden grid gap-6">
+            {tierTableData.map((row) => (
+              <div
+                key={row.tier}
+                className={`bg-white rounded overflow-hidden ${
+                  row.highlight
+                    ? "border-2 border-[#2563EB]"
+                    : "border border-[#D8D5CF]"
+                }`}
+              >
+                <div
+                  className="h-[3px]"
+                  style={{
+                    background: row.highlight
+                      ? "linear-gradient(to right, #2563EB, #60a5fa, #2563EB)"
+                      : `linear-gradient(to right, ${row.color}, ${row.color}60)`,
+                  }}
+                />
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    {row.highlight && (
+                      <Star
+                        className="w-5 h-5 text-[#FBBF24]"
+                        fill="#FBBF24"
+                      />
+                    )}
+                    <h3
+                      className="font-heading font-bold text-lg"
+                      style={{ color: row.color }}
+                    >
+                      {row.tier}
+                    </h3>
+                  </div>
+                  <div className="h-px bg-[#D8D5CF] mb-4" />
+                  <div className="space-y-3">
+                    {[
+                      { label: "Annual Hours", value: row.annualHours },
+                      { label: "Booking Priority", value: row.bookingPriority },
+                      { label: "Event Access", value: row.eventAccess },
+                      { label: "Policy Engagement", value: row.policyEngagement },
+                      { label: "Brand Visibility", value: row.brandVisibility },
+                    ].map((field) => (
+                      <div key={field.label}>
+                        <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#3D4152]/40 mb-1">
+                          {field.label}
+                        </p>
+                        <p className="text-sm text-[#3D4152]">
+                          {field.value}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Meeting Space Terms ───────────────────────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Terms & Conditions"
+            title="Meeting Space Terms"
+          />
+
+          <div className="bg-white border border-[#D8D5CF] rounded overflow-hidden max-w-3xl">
+            <div
+              className="h-[3px]"
+              style={{
+                background: "linear-gradient(to right, #f59e0b, #f59e0b60)",
+              }}
+            />
+            <div className="p-8">
+              <ul className="space-y-4">
+                {meetingSpaceTerms.map((term) => (
+                  <li key={term} className="flex items-start gap-3">
+                    <div
+                      className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                      style={{
+                        backgroundColor: "#f59e0b10",
+                        border: "1px solid #f59e0b20",
+                      }}
+                    >
+                      <CheckCircle2
+                        className="w-3.5 h-3.5 text-[#f59e0b]"
+                        strokeWidth={2}
+                      />
+                    </div>
+                    <span className="text-sm text-[#3D4152] leading-relaxed">
+                      {term}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Optional Add-On Services ─────────────────────────────── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Member Rates"
+            title="Optional Add-On Services"
+          />
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {addOnServices.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className="bg-white border border-[#D8D5CF] rounded overflow-hidden relative"
+                >
+                  {/* Left accent */}
+                  <div
+                    className="absolute top-3 bottom-3 left-0 w-[3px] rounded-r-full"
+                    style={{
+                      background: `linear-gradient(to bottom, ${item.color}, ${item.color}40)`,
+                    }}
+                  />
+                  <div className="p-6 lg:p-7 flex items-start gap-5">
+                    <div
+                      className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={{
+                        background: `${item.color}10`,
+                        border: `1px solid ${item.color}20`,
+                      }}
+                    >
+                      <Icon
+                        className="w-5 h-5"
+                        style={{ color: item.color }}
+                        strokeWidth={1.5}
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-[#3D4152] leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── CTA - Reserve Your Meeting Space ─────────────────────── */}
+      <Section variant="dark">
+        <AnimatedSection>
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold text-[#2563EB] mb-4 tracking-wide uppercase">
+              Access &amp; Reservations
+            </p>
+            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+              Reserve Your Meeting Space
+            </h2>
+            <div className="w-full h-px bg-white/20 mb-6" />
+            <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
+              Meeting facilities are available by advance booking and subject to membership tier allocations and availability.
+            </p>
+            <p className="text-white/70 text-base leading-relaxed mb-10 max-w-2xl">
+              Contact: Membership &amp; Operations Team | Email:{" "}
+              <a
+                href="mailto:info@uptech.org.uk"
+                className="text-[#2563EB] hover:text-[#60a5fa] transition-colors duration-200 underline underline-offset-2"
+              >
+                info@uptech.org.uk
+              </a>
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button
+                href="/membership"
+                variant="glass"
+                size="lg"
+                showArrow
+              >
+                Become a Member
+              </Button>
+              <Button href="/contact" variant="glass" size="lg" showArrow>
+                Contact Us
+              </Button>
+            </div>
+          </div>
+        </AnimatedSection>
+      </Section>
     </div>
   );
 }

@@ -3,10 +3,9 @@
 import { Section } from "@/components/Section";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
-import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
-import { ChevronDown, HelpCircle, Users, Briefcase, Banknote, Calendar, MessageCircle } from "lucide-react";
+import { ChevronDown, HelpCircle, Users, Briefcase, Banknote, Calendar } from "lucide-react";
 import { useState } from "react";
 
 const categoryIcons: Record<string, typeof HelpCircle> = {
@@ -17,12 +16,12 @@ const categoryIcons: Record<string, typeof HelpCircle> = {
   "Events & Networking": Calendar,
 };
 
-const categoryMeta: Record<string, { color: string; border: string; bg: string; desc: string }> = {
-  General: { color: "#2563EB", border: "border-[#2563EB]", bg: "bg-[#2563EB]", desc: "Learn about UPTECH, our mission, and how to get involved." },
-  Membership: { color: "#22C55E", border: "border-[#22C55E]", bg: "bg-[#22C55E]", desc: "Tiers, benefits, application process, and cancellation policy." },
-  "Programs & Services": { color: "#C41E3A", border: "border-[#C41E3A]", bg: "bg-[#C41E3A]", desc: "Training, mentorship, incubation, and business support." },
-  "Funding & Grants": { color: "#8b5cf6", border: "border-[#8b5cf6]", bg: "bg-[#8b5cf6]", desc: "Investment stages, eligibility criteria, and application timelines." },
-  "Events & Networking": { color: "#f59e0b", border: "border-[#f59e0b]", bg: "bg-[#f59e0b]", desc: "Conferences, sponsorship, speaking opportunities, and networking." },
+const categoryColors: Record<string, string> = {
+  General: "text-[#2563EB] bg-[#2563EB]/10",
+  Membership: "text-[#22C55E] bg-[#22C55E]/10",
+  "Programs & Services": "text-[#C41E3A] bg-[#C41E3A]/10",
+  "Funding & Grants": "text-[#2563EB] bg-[#2563EB]/10",
+  "Events & Networking": "text-[#22C55E] bg-[#22C55E]/10",
 };
 
 const faqCategories = [
@@ -73,19 +72,8 @@ const faqCategories = [
   },
 ];
 
-const totalQuestions = faqCategories.reduce((sum, cat) => sum + cat.faqs.length, 0);
-
 export default function FAQsPage() {
   const shouldReduceMotion = useReducedMotion();
-
-  const scrollToCategory = (category: string) => {
-    const id = `faq-${category.toLowerCase().replace(/[^a-z]/g, "-")}`;
-    const el = document.getElementById(id);
-    if (el) {
-      const offset = el.getBoundingClientRect().top + window.pageYOffset - 100;
-      window.scrollTo({ top: offset, behavior: "smooth" });
-    }
-  };
 
   return (
     <div>
@@ -95,129 +83,26 @@ export default function FAQsPage() {
         image="/image/london-images/governance-ethics.jpg"
       />
 
-      {/* Stats Bar */}
-      <Section variant="light">
-        <AnimatedSection>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { value: String(faqCategories.length), label: "Categories" },
-              { value: String(totalQuestions), label: "Questions Answered" },
-              { value: "24/7", label: "Online Access" },
-              { value: "5–10", label: "Days Response Time" },
-            ].map((stat) => (
-              <motion.div
-                key={stat.label}
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4 }}
-                className="text-center"
-              >
-                <p className="font-heading font-extrabold text-3xl text-[#1C1F2E]">{stat.value}</p>
-                <p className="text-sm text-[#7A7E8F]">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Category Navigation Grid */}
-      <Section variant="alt">
-        <AnimatedSection>
-          <SectionHeader label="Browse topics" title="Select a Category" subtitle="Click any topic below to jump directly to that section." />
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
-            {faqCategories.map((cat, i) => {
-              const Icon = categoryIcons[cat.category] || HelpCircle;
-              const meta = categoryMeta[cat.category];
-              return (
-                <motion.button
-                  key={cat.category}
-                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.3, delay: i * 0.06 }}
-                  onClick={() => scrollToCategory(cat.category)}
-                  className="group text-left bg-white rounded-xl border border-[#D8D5CF] p-5 hover:border-[#2563EB]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
-                >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: `${meta.color}10`, border: `1px solid ${meta.color}15` }}>
-                    <Icon className="w-5 h-5" style={{ color: meta.color }} strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-sm mb-1 group-hover:text-[#2563EB] transition-colors duration-200">{cat.category}</h3>
-                  <p className="text-xs text-[#7A7E8F] leading-relaxed hidden sm:block">{meta.desc}</p>
-                  <p className="text-[10px] font-bold text-[#D8D5CF] uppercase tracking-wider mt-2">{cat.faqs.length} questions</p>
-                </motion.button>
-              );
-            })}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* FAQ Sections */}
       {faqCategories.map((cat, catIdx) => {
         const Icon = categoryIcons[cat.category] || HelpCircle;
-        const meta = categoryMeta[cat.category];
-        const sectionId = `faq-${cat.category.toLowerCase().replace(/[^a-z]/g, "-")}`;
-
+        const colorClass = categoryColors[cat.category] || "text-[#2563EB] bg-[#2563EB]/10";
         return (
-          <section key={cat.category} id={sectionId} className="scroll-mt-24">
-            <Section variant={catIdx % 2 === 0 ? "light" : "alt"}>
-              <AnimatedSection>
-                {/* Category Header */}
-                <div className="flex items-start gap-5 mb-8">
-                  <div className="relative flex-shrink-0">
-                    <div className="absolute inset-[-4px] rounded-xl blur-lg opacity-30" style={{ background: meta.color }} />
-                    <div className="relative w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${meta.color}10`, border: `1px solid ${meta.color}20` }}>
-                      <Icon className="w-6 h-6" style={{ color: meta.color }} strokeWidth={1.5} />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-3 mb-1">
-                      <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl">{cat.category}</h2>
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full text-white" style={{ background: meta.color }}>
-                        {cat.faqs.length} Q&A
-                      </span>
-                    </div>
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed">{meta.desc}</p>
-                  </div>
+          <Section key={cat.category} variant={catIdx % 2 === 0 ? "light" : "alt"}>
+            <AnimatedSection>
+              <div className="flex items-center gap-4 mb-8">
+                <div className={`flex items-center justify-center w-10 h-10 rounded-full ${colorClass}`}>
+                  <Icon className="w-5 h-5" strokeWidth={1.5} />
                 </div>
-
-                {/* Accordion */}
-                <FAQAccordion
-                  faqs={cat.faqs}
-                  shouldReduceMotion={shouldReduceMotion}
-                  color={meta.color}
-                />
-              </AnimatedSection>
-            </Section>
-          </section>
+                <div>
+                  <h2 className="font-heading font-bold text-[#1C1F2E] text-2xl">{cat.category}</h2>
+                  <p className="text-sm text-[#7A7E8F]">{cat.faqs.length} questions</p>
+                </div>
+              </div>
+              <FAQAccordion faqs={cat.faqs} shouldReduceMotion={shouldReduceMotion} accentColor={colorClass.split(" ")[0].replace("text-[", "").replace("]", "")} />
+            </AnimatedSection>
+          </Section>
         );
       })}
-
-      {/* CTA */}
-      <Section variant="dark">
-        <AnimatedSection>
-          <div className="grid lg:grid-cols-[1fr_auto] gap-8 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-[#2563EB]/20 flex items-center justify-center">
-                  <MessageCircle className="w-5 h-5 text-[#60a5fa]" strokeWidth={1.5} />
-                </div>
-                <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider">Still Have Questions?</p>
-              </div>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight mb-4">
-                We&apos;re Here to Help
-              </h2>
-              <p className="text-white/70 text-base leading-relaxed max-w-2xl">
-                Can&apos;t find the answer you&apos;re looking for? Our team is ready to assist with any questions about UPTECH, membership, programmes, or partnerships.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/contact" variant="primary" size="lg" showArrow>Contact Us</Button>
-              <Button href="/membership" variant="glass" size="lg" showArrow>Join UPTECH</Button>
-            </div>
-          </div>
-        </AnimatedSection>
-      </Section>
     </div>
   );
 }
@@ -225,16 +110,16 @@ export default function FAQsPage() {
 function FAQAccordion({
   faqs,
   shouldReduceMotion,
-  color,
+  accentColor,
 }: {
   faqs: { question: string; answer: string }[];
   shouldReduceMotion: boolean | null;
-  color: string;
+  accentColor: string;
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-3">
+    <div className="max-w-3xl">
       {faqs.map((faq, index) => {
         const isOpen = openIndex === index;
         return (
@@ -244,41 +129,18 @@ function FAQAccordion({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
             transition={{ duration: 0.3, delay: index * 0.05 }}
-            className={`bg-white rounded-xl border overflow-hidden transition-all duration-300 ${
-              isOpen ? "border-transparent shadow-lg" : "border-[#D8D5CF] hover:border-[#D8D5CF]/60"
-            }`}
-            style={isOpen ? { borderLeft: `3px solid ${color}` } : {}}
+            className={`border-t border-[#D8D5CF] last:border-b ${isOpen ? "bg-white rounded -mx-4 px-4 border-l-4 border-l-[#2563EB]" : ""}`}
           >
             <button
               onClick={() => setOpenIndex(isOpen ? null : index)}
-              className="w-full flex items-center gap-4 p-5 lg:p-6 text-left"
+              className="w-full flex items-center justify-between py-5 text-left gap-4"
             >
-              <span
-                className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold transition-colors duration-300"
-                style={
-                  isOpen
-                    ? { background: color, color: "#fff" }
-                    : { background: `${color}10`, color }
-                }
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className={`font-heading font-semibold text-base flex-1 transition-colors duration-200 ${isOpen ? "text-[#1C1F2E]" : "text-[#1C1F2E]"}`}>
+              <span className={`font-heading font-semibold text-base ${isOpen ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}>
                 {faq.question}
               </span>
-              <div
-                className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
-                style={
-                  isOpen
-                    ? { background: `${color}10` }
-                    : { background: "transparent" }
-                }
-              >
-                <ChevronDown
-                  className="w-4.5 h-4.5 transition-transform duration-300"
-                  style={{ color: isOpen ? color : "#7A7E8F", transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
-                />
-              </div>
+              <ChevronDown
+                className={`w-5 h-5 flex-shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180 text-[#2563EB]" : "text-[#7A7E8F]"}`}
+              />
             </button>
             <AnimatePresence>
               {isOpen && (
@@ -286,13 +148,10 @@ function FAQAccordion({
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.25 }}
+                  transition={{ duration: 0.2 }}
                   className="overflow-hidden"
                 >
-                  <div className="px-5 lg:px-6 pb-5 lg:pb-6 pl-[4.25rem] lg:pl-[4.75rem]">
-                    <div className="h-px bg-[#D8D5CF]/50 mb-4" />
-                    <p className="text-[#3D4152] text-sm leading-[1.8]">{faq.answer}</p>
-                  </div>
+                  <div className="pb-5 text-[#3D4152] text-sm leading-relaxed">{faq.answer}</div>
                 </motion.div>
               )}
             </AnimatePresence>

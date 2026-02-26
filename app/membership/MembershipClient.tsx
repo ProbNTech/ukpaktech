@@ -1,14 +1,14 @@
 "use client";
 
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { Section } from "@/components/Section";
+import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
-import Image from "next/image";
 import {
   Users,
   Network,
-  Award,
   TrendingUp,
   Building2,
   Briefcase,
@@ -21,7 +21,6 @@ import {
   MessageSquare,
   ChevronDown,
   Sparkles,
-  Shield,
   Star,
   Globe,
   ArrowRight,
@@ -31,41 +30,10 @@ import {
   Megaphone,
   Rocket,
   BadgePercent,
-  MapPin,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
-/* ─── Shared animation variants ─── */
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
-  },
-};
-
-/* ─── Grid pattern SVG for background textures ─── */
-const gridPatternStyle = {
-  backgroundImage:
-    "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-  backgroundSize: "40px 40px",
-};
-
 export default function MembershipClient() {
-  const shouldReduceMotion = useReducedMotion();
-
   const membershipBenefits = [
     {
       icon: Globe,
@@ -302,976 +270,448 @@ export default function MembershipClient() {
 
   return (
     <div>
-      {/* ═══════════════════════════════════════════════════════════════
-          HERO SECTION - Custom full-width with glassmorphism
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/image/london-images/partnership-collaboration.jpg"
-          alt="UK Pakistan Tech Council partnership and collaboration"
-          fill
-          className="object-cover"
-          priority
-          quality={90}
-        />
-
-        {/* Multi-layer gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F1A]/90 via-[#0B0F1A]/80 to-[#0B0F1A]/95" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2563EB]/10 via-transparent to-[#8b5cf6]/10" />
-
-        {/* Animated grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={gridPatternStyle}
-        />
-
-        {/* Corner glow effects */}
-        <div
-          className="absolute top-0 left-0 w-[600px] h-[600px] opacity-[0.08]"
-          style={{
-            background:
-              "radial-gradient(circle at 0% 0%, #2563EB, transparent 50%)",
-          }}
-        />
-        <div
-          className="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-[0.08]"
-          style={{
-            background:
-              "radial-gradient(circle at 100% 100%, #8b5cf6, transparent 50%)",
-          }}
-        />
-
-        {/* Horizontal scan lines */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)", backgroundSize: "100% 4px" }} />
-
-        {/* Hero content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {/* Label badge */}
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl mb-8"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/60">
-                Membership Means Business
-              </span>
-            </motion.div>
-
-            {/* Main title with gradient text */}
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-6">
-              <span className="bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
-                At UK Pakistan Tech Council,
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
-                membership means business.
-              </span>
-            </h1>
-
-            {/* Subtitle */}
-            <motion.p
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg sm:text-xl text-white/50 leading-relaxed max-w-3xl mx-auto mb-10"
-            >
-              Whether your priorities are to network with the industry and key stakeholders, to help shape policy, or to have access to insights that help your business to grow, UPTECH membership will positively impact your organisation in whatever way matters most to you.
-            </motion.p>
-
-            {/* Glass morphism CTA buttons */}
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              <a
-                href="#membership-form"
-                className="group relative inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-heading font-bold text-sm text-white bg-gradient-to-r from-[#2563EB] to-[#1a4fd4] hover:from-[#3b82f6] hover:to-[#2563EB] transition-all duration-300 shadow-[0_4px_30px_rgba(37,99,235,0.3)] hover:shadow-[0_8px_40px_rgba(37,99,235,0.45)]"
-              >
-                Apply Now
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
-              </a>
-              <a
-                href="#tiers"
-                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-heading font-bold text-sm text-white/70 border border-white/10 bg-white/[0.04] backdrop-blur-xl hover:bg-white/[0.08] hover:text-white hover:border-white/20 transition-all duration-300"
-              >
-                View Tiers
-              </a>
-            </motion.div>
-          </motion.div>
-
-          {/* Bottom decorative line */}
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="mt-16 mx-auto w-48 h-px bg-gradient-to-r from-transparent via-[#2563EB]/40 to-transparent"
+      {/* ── Intro / About Membership ─────────────────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="About UPTECH Membership"
+            title="Membership Means Business"
+            subtitle="Whether your priorities are to network with the industry and key stakeholders, to help shape policy, or to have access to insights that help your business to grow, UPTECH membership will positively impact your organisation in whatever way matters most to you."
           />
-        </div>
+          <p className="text-[#3D4152] text-base sm:text-lg leading-relaxed max-w-4xl mb-10">
+            UPTECH is a non-governmental, results-focused business council that is committed to your organization&apos;s bilateral success in Technology, business, trade, and investment. We offer a range of both universal as well as custom-built services to our UK and Pakistani corporate members, including on-the-ground UK market support for Pakistani businesses; policy guidelines and regulatory analysis; and one-stop-shop Business Incubation Centre packages.
+          </p>
 
-        {/* Bottom fade to next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0B0F1A] to-transparent" />
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          INTRO SECTION
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-[#0B0F1A] overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]" style={gridPatternStyle} />
-        <div
-          className="absolute top-0 left-0 w-[500px] h-[500px] opacity-[0.05]"
-          style={{
-            background:
-              "radial-gradient(circle at 0% 0%, #2563EB, transparent 60%)",
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <AnimatedSection>
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl mb-8">
-                <Globe className="w-3.5 h-3.5 text-[#2563EB]" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/60">
-                  About UPTECH Membership
-                </span>
-              </div>
-              <p className="text-lg sm:text-xl text-white/50 leading-relaxed mb-10">
-                UPTECH is a non-governmental, results-focused business council that is committed to your organization&#39;s bilateral success in Technology, business, trade, and investment. We offer a range of both universal as well as custom-built services to our UK and Pakistani corporate members, including on-the-ground UK market support for Pakistani businesses; policy guidelines and regulatory analysis; and one-stop-shop Business Incubation Centre packages.
-              </p>
-
-              {/* Suitable For */}
-              <div className="mt-12">
-                <h3 className="font-heading font-bold text-2xl text-white mb-8">
-                  Membership is{" "}
-                  <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
-                    suitable for
+          {/* Suitable For */}
+          <div>
+            <h3 className="font-heading font-bold text-xl text-[#1C1F2E] mb-6">
+              Membership is suitable for
+            </h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {suitableFor.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 bg-white border border-[#D8D5CF] rounded p-4"
+                >
+                  <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-[#3D4152] leading-relaxed">
+                    {item}
                   </span>
-                </h3>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto">
-                  {suitableFor.map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={
-                        shouldReduceMotion
-                          ? { opacity: 1 }
-                          : { opacity: 0, y: 12 }
-                      }
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 0.4, delay: index * 0.08 }}
-                      className="flex items-start gap-3 bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 backdrop-blur-sm hover:bg-white/[0.05] hover:border-white/[0.1] transition-all duration-300"
-                    >
-                      <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-white/50 leading-relaxed">
-                        {item}
-                      </span>
-                    </motion.div>
-                  ))}
                 </div>
-              </div>
+              ))}
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </AnimatedSection>
+      </Section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          WHO SHOULD JOIN SECTION
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-[#0E1221] overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]" style={gridPatternStyle} />
-        <div
-          className="absolute top-0 right-0 w-[500px] h-[500px] opacity-[0.06]"
-          style={{
-            background:
-              "radial-gradient(circle at 100% 0%, #8b5cf6, transparent 60%)",
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <AnimatedSection>
-            <div className="mb-16">
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-7 h-7 rounded-lg bg-[#f59e0b]/10 border border-[#f59e0b]/20 flex items-center justify-center">
-                  <Users className="w-3.5 h-3.5 text-[#f59e0b]" />
-                </div>
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#f59e0b]">
-                  Who Should Join
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-white mb-4">
-                Who Should{" "}
-                <span className="bg-gradient-to-r from-[#f59e0b] to-[#C41E3A] bg-clip-text text-transparent">
-                  Join
-                </span>
-              </h2>
-              <div className="h-px bg-gradient-to-r from-white/10 to-transparent max-w-md mb-4" />
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {whoShouldJoin.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={
-                      shouldReduceMotion
-                        ? { opacity: 1 }
-                        : { opacity: 0, y: 20 }
-                    }
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group relative"
-                  >
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/[0.08] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-px">
-                      <div className="w-full h-full rounded-2xl bg-[#0E1221]" />
-                    </div>
-
-                    <div className="relative h-full bg-white/[0.03] border border-white/[0.06] rounded-2xl p-7 backdrop-blur-sm transition-all duration-500 hover:bg-white/[0.05] hover:border-white/[0.12]">
-                      <div
-                        className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                        style={{
-                          backgroundColor: `${item.color}12`,
-                          border: `1px solid ${item.color}25`,
-                        }}
-                      >
-                        <Icon
-                          className="w-5 h-5"
-                          style={{ color: item.color }}
-                        />
-                      </div>
-                      <h3 className="font-heading font-bold text-lg text-white mb-2">
-                        {item.title}
-                      </h3>
-                      <div
-                        className="h-px mb-3"
-                        style={{
-                          background: `linear-gradient(to right, ${item.color}30, transparent)`,
-                        }}
-                      />
-                      <p className="text-sm text-white/40 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          MEMBERSHIP BENEFITS SECTION (8 items)
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-[#0B0F1A] overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]" style={gridPatternStyle} />
-        <div
-          className="absolute bottom-0 left-0 w-[500px] h-[500px] opacity-[0.05]"
-          style={{
-            background:
-              "radial-gradient(circle at 0% 100%, #22C55E, transparent 60%)",
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <AnimatedSection>
-            {/* Section header */}
-            <div className="mb-16">
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-7 h-7 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center">
-                  <Star className="w-3.5 h-3.5 text-[#22C55E]" />
-                </div>
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E]">
-                  Membership Benefits
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-white mb-4">
-                Membership{" "}
-                <span className="bg-gradient-to-r from-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">
-                  Benefits
-                </span>
-              </h2>
-              <div className="h-px bg-gradient-to-r from-white/10 to-transparent max-w-md mb-4" />
-            </div>
-
-            {/* Benefits grid - 8 items in 4-col layout */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {membershipBenefits.map((benefit, index) => {
-                const Icon = benefit.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={
-                      shouldReduceMotion
-                        ? { opacity: 1 }
-                        : { opacity: 0, y: 20 }
-                    }
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.5, delay: index * 0.08 }}
-                    className="group relative"
-                  >
-                    <div className="relative h-full bg-white/[0.03] border border-white/[0.06] rounded-2xl p-7 backdrop-blur-sm transition-all duration-500 hover:bg-white/[0.05] hover:border-white/[0.12]">
-                      {/* Icon glow */}
-                      <div
-                        className="absolute top-6 left-6 w-16 h-16 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"
-                        style={{ backgroundColor: `${benefit.color}20` }}
-                      />
-                      <div
-                        className="relative w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-all duration-300"
-                        style={{
-                          backgroundColor: `${benefit.color}12`,
-                          border: `1px solid ${benefit.color}25`,
-                        }}
-                      >
-                        <Icon
-                          className="w-5 h-5"
-                          style={{ color: benefit.color }}
-                        />
-                      </div>
-                      <h3 className="font-heading font-bold text-lg text-white mb-2">
-                        {benefit.title}
-                      </h3>
-                      <div className="h-px bg-white/[0.06] mb-3" />
-                      <p className="text-sm text-white/40 leading-relaxed">
-                        {benefit.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          MEMBERSHIP TIERS SECTION
-      ═══════════════════════════════════════════════════════════════ */}
-      <section id="tiers" className="relative bg-[#0E1221] overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]" style={gridPatternStyle} />
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-[0.04]"
-          style={{
-            background:
-              "radial-gradient(circle, #2563EB, transparent 50%)",
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl mb-6">
-                <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/60">
-                  Membership Levels
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-white mb-4">
-                Membership Tiers &{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#22C55E] bg-clip-text text-transparent">
-                  Benefits
-                </span>
-              </h2>
-              <div className="mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#2563EB]/40 to-transparent mb-4" />
-              <p className="text-white/40 text-sm leading-relaxed max-w-xl mx-auto">
-                Choose the membership tier that best fits your organisation and
-                goals.
-              </p>
-            </div>
-
-            {/* Tiers grid - first row: Chairman's Circle + Corporate + SME/Scale-up, second row: Startup + Associates + Academic */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-              {membershipTiers.slice(0, 3).map((tier, index) => (
-                <TierCard
+      {/* ── Who Should Join ──────────────────────────────────────── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Who Should Join"
+            title="Who Should Join"
+          />
+          <div className="grid md:grid-cols-3 gap-6">
+            {whoShouldJoin.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div
                   key={index}
-                  tier={tier}
-                  index={index}
-                  shouldReduceMotion={shouldReduceMotion}
-                />
-              ))}
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-              {membershipTiers.slice(3, 6).map((tier, index) => (
-                <TierCard
-                  key={index + 3}
-                  tier={tier}
-                  index={index + 3}
-                  shouldReduceMotion={shouldReduceMotion}
-                />
-              ))}
-            </div>
-            {/* Individual Membership - centered */}
-            <div className="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
-              {membershipTiers.slice(6).map((tier, index) => (
-                <TierCard
-                  key={index + 6}
-                  tier={tier}
-                  index={index + 6}
-                  shouldReduceMotion={shouldReduceMotion}
-                />
-              ))}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          ELIGIBILITY SECTION
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-[#0B0F1A] overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]" style={gridPatternStyle} />
-
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <AnimatedSection>
-            <div className="mb-16">
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-7 h-7 rounded-lg bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center">
-                  <Shield className="w-3.5 h-3.5 text-[#8b5cf6]" />
-                </div>
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6]">
-                  Eligibility
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-white mb-4">
-                Eligibility{" "}
-                <span className="bg-gradient-to-r from-[#8b5cf6] to-[#2563EB] bg-clip-text text-transparent">
-                  Criteria
-                </span>
-              </h2>
-              <div className="h-px bg-gradient-to-r from-white/10 to-transparent max-w-md mb-4" />
-            </div>
-
-            {/* Eligibility Methods */}
-            <div className="grid md:grid-cols-3 gap-6 mb-16">
-              {eligibilityMethods.map((method, index) => (
-                <motion.div
-                  key={index}
-                  initial={
-                    shouldReduceMotion
-                      ? { opacity: 1 }
-                      : { opacity: 0, y: 20 }
-                  }
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative bg-white/[0.03] border border-white/[0.06] rounded-2xl p-7 backdrop-blur-sm hover:bg-white/[0.05] hover:border-white/[0.1] transition-all duration-300"
+                  className="bg-white border border-[#D8D5CF] rounded p-8"
                 >
                   <div
-                    className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl"
+                    className="w-12 h-12 rounded-lg flex items-center justify-center mb-5"
                     style={{
-                      background: `linear-gradient(90deg, transparent, ${method.color}40, transparent)`,
+                      backgroundColor: `${item.color}12`,
+                      border: `1px solid ${item.color}25`,
+                    }}
+                  >
+                    <Icon className="w-5 h-5" style={{ color: item.color }} />
+                  </div>
+                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2">
+                    {item.title}
+                  </h3>
+                  <div
+                    className="h-px mb-3"
+                    style={{
+                      background: `linear-gradient(to right, ${item.color}30, transparent)`,
                     }}
                   />
-                  <h3
-                    className="font-heading font-bold text-lg mb-3"
-                    style={{ color: method.color }}
-                  >
-                    {method.title}
-                  </h3>
-                  <div className="h-px bg-white/[0.06] mb-3" />
-                  <p className="text-sm text-white/40 leading-relaxed">
-                    {method.description}
+                  <p className="text-sm text-[#3D4152] leading-relaxed">
+                    {item.description}
                   </p>
-                </motion.div>
+                </div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Membership Benefits (8 items) ────────────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Membership Benefits"
+            title="Membership Benefits"
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {membershipBenefits.map((benefit, index) => {
+              const Icon = benefit.icon;
+              return (
+                <div
+                  key={index}
+                  className="bg-white border border-[#D8D5CF] rounded p-8"
+                >
+                  <div
+                    className="w-12 h-12 rounded-lg flex items-center justify-center mb-5"
+                    style={{
+                      backgroundColor: `${benefit.color}12`,
+                      border: `1px solid ${benefit.color}25`,
+                    }}
+                  >
+                    <Icon className="w-5 h-5" style={{ color: benefit.color }} />
+                  </div>
+                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2">
+                    {benefit.title}
+                  </h3>
+                  <div className="h-px bg-[#D8D5CF] mb-3" />
+                  <p className="text-sm text-[#3D4152] leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Membership Tiers ─────────────────────────────────────── */}
+      <Section variant="alt" id="tiers">
+        <AnimatedSection>
+          <SectionHeader
+            label="Membership Levels"
+            title="Membership Tiers"
+            subtitle="Choose the membership tier that best fits your organisation and goals."
+          />
+
+          {/* First row: Chairman's Circle + Corporate + SME */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+            {membershipTiers.slice(0, 3).map((tier, index) => (
+              <TierCard key={index} tier={tier} index={index} />
+            ))}
+          </div>
+          {/* Second row: Startup + Associates + Academic */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+            {membershipTiers.slice(3, 6).map((tier, index) => (
+              <TierCard key={index + 3} tier={tier} index={index + 3} />
+            ))}
+          </div>
+          {/* Individual Membership - centered */}
+          <div className="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
+            {membershipTiers.slice(6).map((tier, index) => (
+              <TierCard key={index + 6} tier={tier} index={index + 6} />
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Eligibility ──────────────────────────────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Eligibility"
+            title="Eligibility Criteria"
+          />
+
+          {/* Eligibility Methods */}
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {eligibilityMethods.map((method, index) => (
+              <div
+                key={index}
+                className="bg-white border border-[#D8D5CF] rounded p-8 relative overflow-hidden"
+              >
+                <div
+                  className="absolute top-0 left-0 right-0 h-[3px]"
+                  style={{
+                    background: `linear-gradient(90deg, transparent, ${method.color}, transparent)`,
+                  }}
+                />
+                <h3
+                  className="font-heading font-bold text-lg mb-3"
+                  style={{ color: method.color }}
+                >
+                  {method.title}
+                </h3>
+                <div className="h-px bg-[#D8D5CF] mb-3" />
+                <p className="text-sm text-[#3D4152] leading-relaxed">
+                  {method.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Who Can Become Members */}
+          <div>
+            <h3 className="font-heading font-bold text-2xl text-[#1C1F2E] mb-8">
+              Who can become Members
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {whoCanBecomeMembers.map((point, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-4 bg-white border border-[#D8D5CF] rounded p-5"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-4 h-4 text-[#22C55E]" />
+                  </div>
+                  <span className="text-base text-[#3D4152] leading-relaxed pt-1">
+                    {point}
+                  </span>
+                </div>
               ))}
             </div>
+          </div>
+        </AnimatedSection>
+      </Section>
 
-            {/* Who Can Become Members */}
-            <div>
-              <h3 className="font-heading font-bold text-2xl text-white mb-8">
-                Who can become{" "}
-                <span className="bg-gradient-to-r from-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">
-                  Members
-                </span>
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {whoCanBecomeMembers.map((point, index) => (
-                  <motion.div
-                    key={index}
-                    initial={
-                      shouldReduceMotion
-                        ? { opacity: 1 }
-                        : { opacity: 0, x: -16 }
-                    }
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.5, delay: index * 0.08 }}
-                    className="flex items-start gap-4 bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 backdrop-blur-sm hover:bg-white/[0.05] hover:border-white/[0.1] transition-all duration-300"
+      {/* ── Membership Fees ──────────────────────────────────────── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Membership Fees"
+            title="Membership Fees"
+          />
+
+          <div className="max-w-4xl">
+            <div className="bg-white border border-[#D8D5CF] rounded p-8 lg:p-10">
+              <p className="text-base text-[#3D4152] leading-relaxed mb-6">
+                The UK-Pakistan Tech Council offers flexible membership plans designed to suit technology startups, SMEs, scale-ups, and corporates. Our membership fees provide access to a wealth of benefits, including networking, industry insights, cross-border opportunities, funding support, and promotional platforms.
+              </p>
+
+              <div className="bg-[#EEECEA] border border-[#D8D5CF] rounded p-6 mb-6">
+                <p className="text-lg text-[#1C1F2E] leading-relaxed font-medium text-center">
+                  Invest in your growth. Gain access to cross-border opportunities, funding, and strategic networks.
+                </p>
+              </div>
+
+              <p className="text-sm text-[#3D4152] leading-relaxed">
+                The first step towards membership is always a meeting with our Membership team where we can determine your annual fee. For further information please contact{" "}
+                <a
+                  href="mailto:membership@uptech.org.uk"
+                  className="text-[#2563EB] hover:underline transition-colors"
+                >
+                  membership@uptech.org.uk
+                </a>{" "}
+                or complete the online enquiry form and the Membership team will be in touch to set up a meeting.
+              </p>
+            </div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Membership Discounts ─────────────────────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Discounts"
+            title="Membership Discounts"
+          />
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {membershipDiscounts.map((discount, index) => (
+              <div
+                key={index}
+                className="bg-white border border-[#D8D5CF] rounded p-8"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center"
+                    style={{
+                      backgroundColor: `${discount.color}12`,
+                      border: `1px solid ${discount.color}25`,
+                    }}
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="w-4 h-4 text-[#22C55E]" />
+                    <BadgePercent
+                      className="w-4 h-4"
+                      style={{ color: discount.color }}
+                    />
+                  </div>
+                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">
+                    {discount.title}
+                  </h3>
+                </div>
+                <div className="h-px bg-[#D8D5CF] mb-4" />
+                <p className="text-sm text-[#3D4152] leading-relaxed">
+                  {discount.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Cross-Border Market Entry ────────────────────────────── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Cross-Border Support"
+            title="Cross-Border Market Entry"
+          />
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Pakistan Companies entering UK */}
+            <div className="bg-white border border-[#D8D5CF] rounded p-8 relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#22C55E] to-transparent" />
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#22C55E]/10 border border-[#22C55E]/25">
+                  <ArrowRight className="w-4 h-4 text-[#22C55E]" />
+                </div>
+                <h3 className="font-heading font-bold text-xl text-[#1C1F2E]">
+                  For Pakistan Companies entering UK
+                </h3>
+              </div>
+              <div className="h-px bg-[#D8D5CF] mb-5" />
+              <p className="text-sm text-[#3D4152] leading-relaxed mb-6">
+                Launching and maintaining momentum in UK/Europe is key for organizations investing in these regions. UPTECH offers practical solutions for Pakistani organizations entering UK/European that are designed to meet your needs.
+              </p>
+              <ul className="space-y-3">
+                {pakistanToUkServices.map((service, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-sm">
+                    <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#22C55E]" />
+                    <span className="text-[#3D4152]">{service}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* UK Companies entering Pakistan */}
+            <div className="bg-white border border-[#D8D5CF] rounded p-8 relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#2563EB] to-transparent" />
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#2563EB]/10 border border-[#2563EB]/25">
+                  <ArrowRight className="w-4 h-4 text-[#2563EB]" />
+                </div>
+                <h3 className="font-heading font-bold text-xl text-[#1C1F2E]">
+                  For UK Companies entering Pakistan
+                </h3>
+              </div>
+              <div className="h-px bg-[#D8D5CF] mb-5" />
+              <p className="text-sm text-[#3D4152] leading-relaxed">
+                UK/Europe companies entering Pakistani take many forms, such as greenfield investment and technology partnerships. UPTECH is a critical partner when entering Pakistan.
+              </p>
+            </div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Why Membership Matters ───────────────────────────────── */}
+      <Section variant="dark">
+        <AnimatedSection>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-sm font-semibold text-[#2563EB] mb-2 tracking-wide uppercase">
+              Why It Matters
+            </p>
+            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-[2.6rem] leading-none mb-6">
+              Why Membership Matters
+            </h2>
+            <div className="w-full h-px bg-white/20 mb-6" />
+            <p className="text-lg text-white/70 leading-relaxed">
+              Membership with the Council provides more than just networking, it&apos;s a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Our members gain practical support, strategic connections, and market insights that accelerate business success and cross-border collaboration. Join today. Connect, grow, and lead the future of UK-Pakistan technology.
+            </p>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Application Form ─────────────────────────────────────── */}
+      <Section variant="light" id="membership-form">
+        <AnimatedSection>
+          <div className="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16 items-start">
+            {/* Left column - info */}
+            <div>
+              <SectionHeader
+                label="Apply Now"
+                title="Membership Application"
+              />
+              <p className="text-[#3D4152] text-sm leading-relaxed mb-8">
+                Fill in your details and our team will review your application
+                within 3{"\u2013"}5 business days.
+              </p>
+
+              {/* Steps */}
+              <div className="space-y-5">
+                {[
+                  { step: "01", text: "Submit your application below", color: "#2563EB" },
+                  { step: "02", text: "Our team reviews your profile", color: "#22C55E" },
+                  { step: "03", text: "Receive approval & onboard", color: "#8b5cf6" },
+                ].map((item) => (
+                  <div key={item.step} className="flex items-start gap-4">
+                    <div
+                      className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold shrink-0"
+                      style={{
+                        backgroundColor: `${item.color}15`,
+                        border: `1px solid ${item.color}30`,
+                        color: item.color,
+                      }}
+                    >
+                      {item.step}
                     </div>
-                    <span className="text-base text-white/60 leading-relaxed pt-1">
-                      {point}
+                    <span className="text-sm text-[#3D4152] leading-relaxed pt-1.5">
+                      {item.text}
                     </span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          MEMBERSHIP FEES SECTION
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-[#131942] overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]" style={gridPatternStyle} />
-        <div
-          className="absolute top-0 left-0 w-[500px] h-[500px] opacity-[0.05]"
-          style={{
-            background:
-              "radial-gradient(circle at 0% 0%, #2563EB, transparent 60%)",
-          }}
-        />
+            {/* Right column - form */}
+            <MembershipForm />
+          </div>
+        </AnimatedSection>
+      </Section>
 
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <AnimatedSection>
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl mb-6">
-                  <DollarSign className="w-3.5 h-3.5 text-[#f59e0b]" />
-                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/60">
-                    Membership Fees
-                  </span>
-                </div>
-                <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-white mb-4">
-                  Membership{" "}
-                  <span className="bg-gradient-to-r from-[#f59e0b] to-[#C41E3A] bg-clip-text text-transparent">
-                    Fees
-                  </span>
-                </h2>
-                <div className="mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/40 to-transparent mb-6" />
-              </div>
-
-              <div className="relative bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 lg:p-10 backdrop-blur-sm">
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#f59e0b]/30 to-transparent" />
-
-                <p className="text-base text-white/50 leading-relaxed mb-6">
-                  The UK-Pakistan Tech Council offers flexible membership plans designed to suit technology startups, SMEs, scale-ups, and corporates. Our membership fees provide access to a wealth of benefits, including networking, industry insights, cross-border opportunities, funding support, and promotional platforms.
-                </p>
-
-                <div className="relative bg-white/[0.04] border border-[#f59e0b]/20 rounded-xl p-6 mb-6">
-                  <p className="text-lg text-white/60 leading-relaxed font-medium text-center">
-                    Invest in your growth. Gain access to cross-border opportunities, funding, and strategic networks.
-                  </p>
-                </div>
-
-                <p className="text-sm text-white/40 leading-relaxed">
-                  The first step towards membership is always a meeting with our Membership team where we can determine your annual fee. For further information please contact{" "}
-                  <a
-                    href="mailto:membership@uptech.org.uk"
-                    className="text-[#2563EB] hover:text-[#3b82f6] transition-colors underline underline-offset-2"
-                  >
-                    membership@uptech.org.uk
-                  </a>{" "}
-                  or complete the online enquiry form and the Membership team will be in touch to set up a meeting.
-                </p>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          MEMBERSHIP DISCOUNTS SECTION
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-[#0B0F1A] overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]" style={gridPatternStyle} />
-        <div
-          className="absolute bottom-0 right-0 w-[500px] h-[500px] opacity-[0.05]"
-          style={{
-            background:
-              "radial-gradient(circle at 100% 100%, #22C55E, transparent 60%)",
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <AnimatedSection>
-            <div className="mb-16">
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-7 h-7 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center">
-                  <BadgePercent className="w-3.5 h-3.5 text-[#22C55E]" />
-                </div>
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E]">
-                  Discounts
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-white mb-4">
-                Membership{" "}
-                <span className="bg-gradient-to-r from-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">
-                  Discounts
-                </span>
-              </h2>
-              <div className="h-px bg-gradient-to-r from-white/10 to-transparent max-w-md mb-4" />
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {membershipDiscounts.map((discount, index) => (
-                <motion.div
-                  key={index}
-                  initial={
-                    shouldReduceMotion
-                      ? { opacity: 1 }
-                      : { opacity: 0, y: 20 }
-                  }
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group"
-                >
-                  <div className="relative h-full bg-white/[0.03] border border-white/[0.06] rounded-2xl p-7 backdrop-blur-sm transition-all duration-500 hover:bg-white/[0.05] hover:border-white/[0.12]">
-                    <div
-                      className="absolute top-0 left-6 right-6 h-px"
-                      style={{
-                        background: `linear-gradient(to right, transparent, ${discount.color}30, transparent)`,
-                      }}
-                    />
-                    <div className="flex items-center gap-3 mb-4">
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center"
-                        style={{
-                          backgroundColor: `${discount.color}12`,
-                          border: `1px solid ${discount.color}25`,
-                        }}
-                      >
-                        <BadgePercent
-                          className="w-4 h-4"
-                          style={{ color: discount.color }}
-                        />
-                      </div>
-                      <h3 className="font-heading font-bold text-lg text-white">
-                        {discount.title}
-                      </h3>
-                    </div>
-                    <div className="h-px bg-white/[0.06] mb-4" />
-                    <p className="text-sm text-white/40 leading-relaxed">
-                      {discount.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          CROSS-BORDER SECTION (Pakistan to UK + UK to Pakistan)
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-[#0E1221] overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]" style={gridPatternStyle} />
-        <div
-          className="absolute top-0 left-0 w-[500px] h-[500px] opacity-[0.05]"
-          style={{
-            background:
-              "radial-gradient(circle at 0% 0%, #8b5cf6, transparent 60%)",
-          }}
-        />
-        <div
-          className="absolute bottom-0 right-0 w-[500px] h-[500px] opacity-[0.05]"
-          style={{
-            background:
-              "radial-gradient(circle at 100% 100%, #2563EB, transparent 60%)",
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl mb-6">
-                <MapPin className="w-3.5 h-3.5 text-[#8b5cf6]" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/60">
-                  Cross-Border Support
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-white mb-4">
-                Cross-Border{" "}
-                <span className="bg-gradient-to-r from-[#8b5cf6] to-[#2563EB] bg-clip-text text-transparent">
-                  Market Entry
-                </span>
-              </h2>
-              <div className="mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/40 to-transparent mb-4" />
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Pakistan Companies entering UK */}
-              <motion.div
-                initial={
-                  shouldReduceMotion
-                    ? { opacity: 1 }
-                    : { opacity: 0, x: -20 }
-                }
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6 }}
-                className="relative bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 backdrop-blur-sm hover:bg-white/[0.05] hover:border-white/[0.1] transition-all duration-300"
-              >
-                <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl bg-gradient-to-r from-transparent via-[#22C55E]/40 to-transparent" />
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#22C55E]/10 border border-[#22C55E]/25">
-                    <ArrowRight className="w-4 h-4 text-[#22C55E]" />
-                  </div>
-                  <h3 className="font-heading font-bold text-xl text-white">
-                    For Pakistan Companies entering UK
-                  </h3>
-                </div>
-                <div className="h-px bg-white/[0.06] mb-5" />
-                <p className="text-sm text-white/40 leading-relaxed mb-6">
-                  Launching and maintaining momentum in UK/Europe is key for organizations investing in these regions. UPTECH offers practical solutions for Pakistani organizations entering UK/European that are designed to meet your needs.
-                </p>
-                <ul className="space-y-3">
-                  {pakistanToUkServices.map((service, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-sm">
-                      <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#22C55E]" />
-                      <span className="text-white/50">{service}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              {/* UK Companies entering Pakistan */}
-              <motion.div
-                initial={
-                  shouldReduceMotion
-                    ? { opacity: 1 }
-                    : { opacity: 0, x: 20 }
-                }
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6 }}
-                className="relative bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 backdrop-blur-sm hover:bg-white/[0.05] hover:border-white/[0.1] transition-all duration-300"
-              >
-                <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl bg-gradient-to-r from-transparent via-[#2563EB]/40 to-transparent" />
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[#2563EB]/10 border border-[#2563EB]/25">
-                    <ArrowRight className="w-4 h-4 text-[#2563EB]" />
-                  </div>
-                  <h3 className="font-heading font-bold text-xl text-white">
-                    For UK Companies entering Pakistan
-                  </h3>
-                </div>
-                <div className="h-px bg-white/[0.06] mb-5" />
-                <p className="text-sm text-white/40 leading-relaxed">
-                  UK/Europe companies entering Pakistani take many forms, such as greenfield investment and technology partnerships. UPTECH is a critical partner when entering Pakistan.
-                </p>
-              </motion.div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          WHY MEMBERSHIP MATTERS SECTION
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-[#131942] overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]" style={gridPatternStyle} />
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] opacity-[0.06]"
-          style={{
-            background:
-              "radial-gradient(ellipse, #22C55E, transparent 60%)",
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <AnimatedSection>
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-xl mb-8">
-                <Award className="w-3.5 h-3.5 text-[#22C55E]" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/60">
-                  Why It Matters
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-white mb-6">
-                Why Membership{" "}
-                <span className="bg-gradient-to-r from-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">
-                  Matters
-                </span>
-              </h2>
-              <div className="mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#22C55E]/40 to-transparent mb-8" />
-              <p className="text-lg text-white/50 leading-relaxed">
-                Membership with the Council provides more than just networking, it&#39;s a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Our members gain practical support, strategic connections, and market insights that accelerate business success and cross-border collaboration. Join today. Connect, grow, and lead the future of UK-Pakistan technology.
+      {/* ── CTA ──────────────────────────────────────────────────── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <div className="bg-white border border-[#D8D5CF] rounded p-12 lg:p-16">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold text-[#2563EB] mb-2 tracking-wide uppercase">
+                Join Today
               </p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          APPLICATION FORM SECTION
-      ═══════════════════════════════════════════════════════════════ */}
-      <section id="membership-form" className="relative bg-[#0B0F1A] overflow-hidden">
-        {/* Background grid */}
-        <div className="absolute inset-0 opacity-[0.02]" style={gridPatternStyle} />
-        <div
-          className="absolute top-0 right-0 w-[500px] h-[500px] opacity-[0.05]"
-          style={{
-            background:
-              "radial-gradient(circle at 100% 0%, #2563EB, transparent 60%)",
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <AnimatedSection>
-            <div className="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16 items-start">
-              {/* Left column - info */}
-              <div>
-                <div className="flex items-center gap-2.5 mb-6">
-                  <div className="w-7 h-7 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
-                    <Send className="w-3.5 h-3.5 text-[#2563EB]" />
-                  </div>
-                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB]">
-                    Apply Now
-                  </span>
-                </div>
-                <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-white mb-4">
-                  Membership{" "}
-                  <span className="bg-gradient-to-r from-[#2563EB] to-[#8b5cf6] bg-clip-text text-transparent">
-                    Application
-                  </span>
-                </h2>
-                <div className="h-px bg-gradient-to-r from-white/10 to-transparent mb-6" />
-                <p className="text-white/40 text-sm leading-relaxed mb-8">
-                  Fill in your details and our team will review your application
-                  within 3{"\u2013"}5 business days.
-                </p>
-
-                {/* Steps */}
-                <div className="space-y-5">
-                  {[
-                    { step: "01", text: "Submit your application below", color: "#2563EB" },
-                    { step: "02", text: "Our team reviews your profile", color: "#22C55E" },
-                    { step: "03", text: "Receive approval & onboard", color: "#8b5cf6" },
-                  ].map((item) => (
-                    <div key={item.step} className="flex items-start gap-4">
-                      <div
-                        className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold shrink-0"
-                        style={{
-                          backgroundColor: `${item.color}15`,
-                          border: `1px solid ${item.color}30`,
-                          color: item.color,
-                        }}
-                      >
-                        {item.step}
-                      </div>
-                      <span className="text-sm text-white/50 leading-relaxed pt-1.5">
-                        {item.text}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right column - form */}
-              <MembershipForm />
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          CTA SECTION
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-[#0E1221] overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]" style={gridPatternStyle} />
-
-        {/* Central glow */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] opacity-[0.08]"
-          style={{
-            background:
-              "radial-gradient(ellipse, #2563EB, transparent 60%)",
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <AnimatedSection>
-            <div className="relative bg-white/[0.03] border border-white/[0.06] rounded-2xl p-12 lg:p-16 backdrop-blur-sm overflow-hidden">
-              {/* Card inner glows */}
-              <div
-                className="absolute top-0 left-0 w-64 h-64 opacity-[0.06]"
-                style={{
-                  background:
-                    "radial-gradient(circle at 0% 0%, #2563EB, transparent 50%)",
-                }}
-              />
-              <div
-                className="absolute bottom-0 right-0 w-64 h-64 opacity-[0.06]"
-                style={{
-                  background:
-                    "radial-gradient(circle at 100% 100%, #22C55E, transparent 50%)",
-                }}
-              />
-
-              {/* Top gradient bar */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-
-              <div className="relative max-w-2xl">
-                <div className="flex items-center gap-2.5 mb-5">
-                  <div className="w-7 h-7 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center">
-                    <Sparkles className="w-3.5 h-3.5 text-[#22C55E]" />
-                  </div>
-                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E]">
-                    Join Today
-                  </span>
-                </div>
-
-                <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-white mb-5">
-                  Ready to Join{" "}
-                  <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
-                    UPTECH?
-                  </span>
-                </h2>
-
-                <div className="h-px bg-gradient-to-r from-white/10 to-transparent mb-6" />
-
-                <p className="text-lg text-white/40 leading-relaxed mb-10 max-w-xl">
-                  Membership with the Council provides more than just networking, it&#39;s a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Join today. Connect, grow, and lead the future of UK-Pakistan technology.
-                </p>
-
-                <div className="flex flex-wrap gap-4">
-                  <Button
-                    href={siteConfig.portalUrl}
-                    variant="primary"
-                    size="lg"
-                    showArrow
-                    className="!bg-gradient-to-r !from-[#2563EB] !to-[#1a4fd4] hover:!from-[#3b82f6] hover:!to-[#2563EB] !shadow-[0_4px_30px_rgba(37,99,235,0.3)] hover:!shadow-[0_8px_40px_rgba(37,99,235,0.45)]"
-                  >
-                    Apply for Membership
-                  </Button>
-                  <Button href="/contact" variant="glass" size="lg">
-                    Get in Touch
-                  </Button>
-                </div>
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-none text-[#1C1F2E] mb-5">
+                Ready to Join UPTECH?
+              </h2>
+              <div className="h-px bg-[#D8D5CF] mb-6" />
+              <p className="text-lg text-[#3D4152] leading-relaxed mb-10 max-w-xl">
+                Membership with the Council provides more than just networking, it&apos;s a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Join today. Connect, grow, and lead the future of UK-Pakistan technology.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  href={siteConfig.portalUrl}
+                  variant="primary"
+                  size="lg"
+                  showArrow
+                >
+                  Apply for Membership
+                </Button>
+                <Button href="/contact" variant="secondary" size="lg">
+                  Get in Touch
+                </Button>
               </div>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </AnimatedSection>
+      </Section>
     </div>
   );
 }
 
-/* ═══════════════════════════════════════════════════════════════
+/* ════════════════════════════════════════════════════════════════
    TIER CARD COMPONENT
-═══════════════════════════════════════════════════════════════ */
+════════════════════════════════════════════════════════════════ */
 
 function TierCard({
   tier,
   index,
-  shouldReduceMotion,
 }: {
   tier: {
     name: string;
@@ -1280,7 +720,6 @@ function TierCard({
     features: string[];
   };
   index: number;
-  shouldReduceMotion: boolean | null;
 }) {
   const tierColors: Record<string, string> = {
     "Chairman\u2019s Circle Membership": "#2563EB",
@@ -1295,55 +734,27 @@ function TierCard({
   const color = tierColors[tier.name] || "#2563EB";
 
   return (
-    <motion.div
-      initial={
-        shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }
-      }
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group relative"
-    >
-      {/* Animated gradient border for Chairman's Circle */}
-      {tier.highlight && (
-        <>
-          {/* Outer glow */}
-          <div
-            className="absolute -inset-[1px] rounded-2xl opacity-60"
-            style={{
-              background: `linear-gradient(135deg, #2563EB, #8b5cf6, #22C55E, #2563EB)`,
-              backgroundSize: "300% 300%",
-              animation: "gradient-shift 4s ease infinite",
-            }}
-          />
-          {/* Blue glow effect */}
-          <div
-            className="absolute -inset-2 rounded-3xl blur-xl opacity-20"
-            style={{ backgroundColor: "#2563EB" }}
-          />
-        </>
-      )}
-
+    <div className="group relative h-full">
       <div
-        className={`relative h-full rounded-2xl p-7 flex flex-col backdrop-blur-sm transition-all duration-500 ${
+        className={`relative h-full rounded p-8 flex flex-col ${
           tier.highlight
-            ? "bg-[#0B0F1A] border-2 border-[#2563EB]/50 shadow-[0_0_40px_rgba(37,99,235,0.15)]"
-            : "bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.05] hover:border-white/[0.12]"
+            ? "bg-[#1C1F2E] border-2 border-[#2563EB]"
+            : "bg-white border border-[#D8D5CF]"
         }`}
       >
         {/* Top accent bar */}
         <div
-          className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl"
+          className="absolute top-0 left-0 right-0 h-[3px] rounded-t"
           style={{
             background: tier.highlight
               ? `linear-gradient(90deg, #2563EB, #8b5cf6, #22C55E)`
-              : `linear-gradient(90deg, transparent, ${color}40, transparent)`,
+              : `linear-gradient(90deg, transparent, ${color}, transparent)`,
           }}
         />
 
         {/* Highlight badge */}
         {tier.highlight && (
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2563EB]/10 border border-[#2563EB]/20 mb-4 self-start">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2563EB]/10 border border-[#2563EB]/30 mb-4 self-start">
             <Star className="w-3 h-3 text-[#2563EB]" />
             <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-[#2563EB]">
               Premium
@@ -1357,17 +768,12 @@ function TierCard({
         >
           {tier.name}
         </h3>
-        <p className="text-sm text-white/40 mb-5 leading-relaxed">
+        <p className={`text-sm mb-5 leading-relaxed ${tier.highlight ? "text-white/60" : "text-[#3D4152]"}`}>
           {tier.description}
         </p>
 
         <div
-          className="h-px mb-5"
-          style={{
-            background: tier.highlight
-              ? "linear-gradient(to right, rgba(37,99,235,0.3), transparent)"
-              : `linear-gradient(to right, ${color}20, transparent)`,
-          }}
+          className={`h-px mb-5 ${tier.highlight ? "bg-white/10" : "bg-[#D8D5CF]"}`}
         />
 
         {tier.features.length > 0 && (
@@ -1378,7 +784,9 @@ function TierCard({
                   className="w-4 h-4 flex-shrink-0 mt-0.5"
                   style={{ color: tier.highlight ? "#22C55E" : color }}
                 />
-                <span className="text-white/50">{feature}</span>
+                <span className={tier.highlight ? "text-white/70" : "text-[#3D4152]"}>
+                  {feature}
+                </span>
               </li>
             ))}
           </ul>
@@ -1387,52 +795,27 @@ function TierCard({
         {tier.features.length === 0 && <div className="flex-1 mb-7" />}
 
         {tier.highlight ? (
-          <a
-            href="#membership-form"
-            className="group/btn relative inline-flex items-center justify-center gap-2.5 w-full px-7 py-3.5 rounded-xl font-heading font-bold text-sm text-white bg-gradient-to-r from-[#2563EB] to-[#1a4fd4] hover:from-[#3b82f6] hover:to-[#2563EB] transition-all duration-300 shadow-[0_4px_20px_rgba(37,99,235,0.25)] hover:shadow-[0_8px_30px_rgba(37,99,235,0.4)]"
-          >
+          <Button href="#membership-form" variant="primary" size="md" showArrow className="w-full justify-center">
             Apply Now
-            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
-          </a>
+          </Button>
         ) : (
-          <a
-            href="#membership-form"
-            className="inline-flex items-center justify-center gap-2.5 w-full px-7 py-3.5 rounded-xl font-heading font-bold text-sm border border-white/10 text-white/60 bg-white/[0.03] hover:bg-white/[0.06] hover:text-white hover:border-white/20 transition-all duration-300"
-          >
+          <Button href="#membership-form" variant="secondary" size="md" className="w-full justify-center">
             Apply Now
-          </a>
+          </Button>
         )}
       </div>
-
-      {/* Keyframes for animated gradient border */}
-      {tier.highlight && (
-        <style jsx>{`
-          @keyframes gradient-shift {
-            0% {
-              background-position: 0% 50%;
-            }
-            50% {
-              background-position: 100% 50%;
-            }
-            100% {
-              background-position: 0% 50%;
-            }
-          }
-        `}</style>
-      )}
-    </motion.div>
+    </div>
   );
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   MEMBERSHIP FORM - Dark glass design
-═══════════════════════════════════════════════════════════════ */
+/* ════════════════════════════════════════════════════════════════
+   MEMBERSHIP FORM - White theme
+════════════════════════════════════════════════════════════════ */
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
 function MembershipForm() {
   const [state, setState] = useState<FormState>("idle");
-  const [focusedField, setFocusedField] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -1459,170 +842,70 @@ function MembershipForm() {
     setState("success");
   };
 
-  /* ─── Success state ─── */
+  const inputBase =
+    "w-full bg-white border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#3D4152]/40 text-sm pl-11 pr-4 py-3.5 rounded transition-all duration-200 outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20";
+
+  /* Success state */
   if (state === "success") {
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="relative overflow-hidden"
       >
-        <div className="relative bg-[#0B0F1A] rounded-2xl border border-white/10 overflow-hidden">
+        <div className="bg-white border border-[#D8D5CF] rounded overflow-hidden">
           <div className="h-1 w-full bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#22C55E]" />
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={gridPatternStyle}
-          />
-
-          <div className="relative px-10 py-20 text-center">
-            <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{
-                delay: 0.2,
-                duration: 0.6,
-                type: "spring",
-                stiffness: 200,
-                damping: 15,
-              }}
-              className="relative inline-flex items-center justify-center mb-8"
-            >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{
-                  opacity: [0, 0.6, 0.3],
-                  scale: [0.5, 1.2, 1],
-                }}
-                transition={{ delay: 0.4, duration: 1.2 }}
-                className="absolute w-24 h-24 rounded-full"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(34,197,94,0.15) 0%, transparent 70%)",
-                }}
-              />
-              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#22C55E]/20 to-[#22C55E]/5 flex items-center justify-center border border-[#22C55E]/30 shadow-[0_0_30px_rgba(34,197,94,0.15)]">
+          <div className="px-10 py-20 text-center">
+            <div className="inline-flex items-center justify-center mb-8">
+              <div className="w-16 h-16 rounded-2xl bg-[#22C55E]/10 flex items-center justify-center border border-[#22C55E]/30">
                 <CheckCircle2
                   className="w-8 h-8 text-[#22C55E]"
                   strokeWidth={1.8}
                 />
               </div>
-            </motion.div>
-
-            <motion.h3
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.4 }}
-              className="font-heading font-bold text-2xl text-white mb-3"
-            >
+            </div>
+            <h3 className="font-heading font-bold text-2xl text-[#1C1F2E] mb-3">
               Application Received
-            </motion.h3>
-
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45, duration: 0.4 }}
-              className="text-white/50 text-sm leading-relaxed max-w-sm mx-auto"
-            >
+            </h3>
+            <p className="text-[#3D4152] text-sm leading-relaxed max-w-sm mx-auto">
               Thank you for applying. Our team will review your application and
               be in touch within 3{"\u2013"}5 business days.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-              className="mt-8 mx-auto w-16 h-px bg-gradient-to-r from-transparent via-[#22C55E]/40 to-transparent"
-            />
+            </p>
           </div>
         </div>
       </motion.div>
     );
   }
 
-  /* ─── Form state ─── */
+  /* Form state */
   return (
-    <motion.form
-      onSubmit={handleSubmit}
-      noValidate
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      className="relative overflow-hidden"
-    >
-      <div className="relative bg-[#0B0F1A] rounded-2xl border border-white/[0.08] overflow-hidden shadow-2xl shadow-black/20">
-        {/* Top gradient accent */}
+    <form onSubmit={handleSubmit} noValidate>
+      <div className="bg-white border border-[#D8D5CF] rounded overflow-hidden">
+        {/* Top accent */}
         <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] via-[#8b5cf6] to-[#2563EB]" />
 
-        {/* Grid background */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={gridPatternStyle}
-        />
-
-        {/* Corner glow */}
-        <div
-          className="absolute top-0 right-0 w-64 h-64 opacity-[0.04]"
-          style={{
-            background:
-              "radial-gradient(circle at 100% 0%, #2563EB, transparent 60%)",
-          }}
-        />
-        <div
-          className="absolute bottom-0 left-0 w-64 h-64 opacity-[0.04]"
-          style={{
-            background:
-              "radial-gradient(circle at 0% 100%, #8b5cf6, transparent 60%)",
-          }}
-        />
-
-        {/* ─── Personal Details Section ─── */}
-        <div className="relative px-7 pt-8 pb-2">
-          <motion.div
-            variants={itemVariants}
-            className="flex items-center gap-2.5 mb-6"
-          >
+        {/* Personal Details Section */}
+        <div className="px-7 pt-8 pb-2">
+          <div className="flex items-center gap-2.5 mb-6">
             <div className="w-6 h-6 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
               <User className="w-3 h-3 text-[#2563EB]" />
             </div>
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/30">
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#3D4152]/50">
               Personal Details
             </span>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Full Name */}
-            <motion.div variants={itemVariants}>
+            <div>
               <label
                 htmlFor="mem-name"
-                className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${
-                  focusedField === "name" ? "text-[#2563EB]" : "text-white/40"
-                }`}
+                className="block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 text-[#3D4152]"
               >
                 Full Name <span className="text-[#C41E3A]">*</span>
               </label>
-              <div className="relative group">
-                <div
-                  className={`absolute inset-0 rounded-xl transition-all duration-500 ${
-                    focusedField === "name"
-                      ? "shadow-[0_0_20px_rgba(37,99,235,0.15)]"
-                      : ""
-                  }`}
-                />
-                <div
-                  className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${
-                    focusedField === "name"
-                      ? "bg-[#2563EB] opacity-100"
-                      : "bg-transparent opacity-0"
-                  }`}
-                />
-                <User
-                  className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${
-                    focusedField === "name"
-                      ? "text-[#2563EB]"
-                      : "text-white/20"
-                  }`}
-                />
+              <div className="relative">
+                <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#3D4152]/30" />
                 <input
                   id="mem-name"
                   name="name"
@@ -1631,45 +914,21 @@ function MembershipForm() {
                   placeholder="Jane Smith"
                   value={form.name}
                   onChange={handleChange}
-                  onFocus={() => setFocusedField("name")}
-                  onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/20 text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#2563EB]/50 focus:bg-white/[0.06] focus:ring-1 focus:ring-[#2563EB]/20"
+                  className={inputBase}
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* Email */}
-            <motion.div variants={itemVariants}>
+            <div>
               <label
                 htmlFor="mem-email"
-                className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${
-                  focusedField === "email" ? "text-[#2563EB]" : "text-white/40"
-                }`}
+                className="block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 text-[#3D4152]"
               >
                 Email Address <span className="text-[#C41E3A]">*</span>
               </label>
-              <div className="relative group">
-                <div
-                  className={`absolute inset-0 rounded-xl transition-all duration-500 ${
-                    focusedField === "email"
-                      ? "shadow-[0_0_20px_rgba(37,99,235,0.15)]"
-                      : ""
-                  }`}
-                />
-                <div
-                  className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${
-                    focusedField === "email"
-                      ? "bg-[#2563EB] opacity-100"
-                      : "bg-transparent opacity-0"
-                  }`}
-                />
-                <Mail
-                  className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${
-                    focusedField === "email"
-                      ? "text-[#2563EB]"
-                      : "text-white/20"
-                  }`}
-                />
+              <div className="relative">
+                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#3D4152]/30" />
                 <input
                   id="mem-email"
                   name="email"
@@ -1678,62 +937,40 @@ function MembershipForm() {
                   placeholder="jane@example.com"
                   value={form.email}
                   onChange={handleChange}
-                  onFocus={() => setFocusedField("email")}
-                  onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/20 text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#2563EB]/50 focus:bg-white/[0.06] focus:ring-1 focus:ring-[#2563EB]/20"
+                  className={inputBase}
                 />
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
 
         {/* Section divider */}
         <div className="mx-7 my-5">
-          <div className="h-px bg-gradient-to-r from-white/[0.06] via-white/[0.03] to-transparent" />
+          <div className="h-px bg-[#D8D5CF]" />
         </div>
 
-        {/* ─── Organisation Details Section ─── */}
-        <div className="relative px-7 pb-2">
-          <motion.div
-            variants={itemVariants}
-            className="flex items-center gap-2.5 mb-6"
-          >
+        {/* Organisation Details Section */}
+        <div className="px-7 pb-2">
+          <div className="flex items-center gap-2.5 mb-6">
             <div className="w-6 h-6 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center">
               <Building2 className="w-3 h-3 text-[#22C55E]" />
             </div>
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/30">
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#3D4152]/50">
               Organisation Details
             </span>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Phone */}
-            <motion.div variants={itemVariants}>
+            <div>
               <label
                 htmlFor="mem-phone"
-                className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${
-                  focusedField === "phone"
-                    ? "text-[#22C55E]"
-                    : "text-white/40"
-                }`}
+                className="block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 text-[#3D4152]"
               >
                 Phone Number
               </label>
-              <div className="relative group">
-                <div
-                  className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${
-                    focusedField === "phone"
-                      ? "bg-[#22C55E] opacity-100"
-                      : "bg-transparent opacity-0"
-                  }`}
-                />
-                <Phone
-                  className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${
-                    focusedField === "phone"
-                      ? "text-[#22C55E]"
-                      : "text-white/20"
-                  }`}
-                />
+              <div className="relative">
+                <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#3D4152]/30" />
                 <input
                   id="mem-phone"
                   name="phone"
@@ -1741,40 +978,21 @@ function MembershipForm() {
                   placeholder="+44 7000 000000"
                   value={form.phone}
                   onChange={handleChange}
-                  onFocus={() => setFocusedField("phone")}
-                  onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/20 text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white/[0.06] focus:ring-1 focus:ring-[#22C55E]/20"
+                  className={inputBase}
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* Organisation */}
-            <motion.div variants={itemVariants}>
+            <div>
               <label
                 htmlFor="mem-organisation"
-                className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${
-                  focusedField === "organisation"
-                    ? "text-[#22C55E]"
-                    : "text-white/40"
-                }`}
+                className="block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 text-[#3D4152]"
               >
                 Organisation
               </label>
-              <div className="relative group">
-                <div
-                  className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${
-                    focusedField === "organisation"
-                      ? "bg-[#22C55E] opacity-100"
-                      : "bg-transparent opacity-0"
-                  }`}
-                />
-                <Building2
-                  className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${
-                    focusedField === "organisation"
-                      ? "text-[#22C55E]"
-                      : "text-white/20"
-                  }`}
-                />
+              <div className="relative">
+                <Building2 className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#3D4152]/30" />
                 <input
                   id="mem-organisation"
                   name="organisation"
@@ -1782,40 +1000,21 @@ function MembershipForm() {
                   placeholder="Your company or institution"
                   value={form.organisation}
                   onChange={handleChange}
-                  onFocus={() => setFocusedField("organisation")}
-                  onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/20 text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white/[0.06] focus:ring-1 focus:ring-[#22C55E]/20"
+                  className={inputBase}
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* Job Title */}
-            <motion.div variants={itemVariants}>
+            <div>
               <label
                 htmlFor="mem-jobTitle"
-                className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${
-                  focusedField === "jobTitle"
-                    ? "text-[#22C55E]"
-                    : "text-white/40"
-                }`}
+                className="block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 text-[#3D4152]"
               >
                 Job Title / Role
               </label>
-              <div className="relative group">
-                <div
-                  className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${
-                    focusedField === "jobTitle"
-                      ? "bg-[#22C55E] opacity-100"
-                      : "bg-transparent opacity-0"
-                  }`}
-                />
-                <Briefcase
-                  className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${
-                    focusedField === "jobTitle"
-                      ? "text-[#22C55E]"
-                      : "text-white/20"
-                  }`}
-                />
+              <div className="relative">
+                <Briefcase className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#3D4152]/30" />
                 <input
                   id="mem-jobTitle"
                   name="jobTitle"
@@ -1823,61 +1022,34 @@ function MembershipForm() {
                   placeholder="e.g. CTO, Founder, Director"
                   value={form.jobTitle}
                   onChange={handleChange}
-                  onFocus={() => setFocusedField("jobTitle")}
-                  onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/20 text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white/[0.06] focus:ring-1 focus:ring-[#22C55E]/20"
+                  className={inputBase}
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* Membership Type */}
-            <motion.div variants={itemVariants}>
+            <div>
               <label
                 htmlFor="mem-membershipType"
-                className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${
-                  focusedField === "membershipType"
-                    ? "text-[#22C55E]"
-                    : "text-white/40"
-                }`}
+                className="block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 text-[#3D4152]"
               >
                 Membership Type <span className="text-[#C41E3A]">*</span>
               </label>
-              <div className="relative group">
-                <div
-                  className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${
-                    focusedField === "membershipType"
-                      ? "bg-[#22C55E] opacity-100"
-                      : "bg-transparent opacity-0"
-                  }`}
-                />
-                <Sparkles
-                  className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${
-                    focusedField === "membershipType"
-                      ? "text-[#22C55E]"
-                      : "text-white/20"
-                  }`}
-                />
-                <ChevronDown
-                  className={`absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none transition-colors duration-300 ${
-                    focusedField === "membershipType"
-                      ? "text-[#22C55E]"
-                      : "text-white/15"
-                  }`}
-                />
+              <div className="relative">
+                <Sparkles className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#3D4152]/30" />
+                <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none text-[#3D4152]/30" />
                 <select
                   id="mem-membershipType"
                   name="membershipType"
                   required
                   value={form.membershipType}
                   onChange={handleChange}
-                  onFocus={() => setFocusedField("membershipType")}
-                  onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-white/[0.04] border border-white/[0.08] text-white text-sm pl-11 pr-10 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white/[0.06] focus:ring-1 focus:ring-[#22C55E]/20 appearance-none cursor-pointer [&>option]:bg-[#1C1F2E] [&>option]:text-white"
+                  className={`${inputBase} pr-10 appearance-none cursor-pointer`}
                 >
-                  <option value="" disabled className="text-white/40">
+                  <option value="" disabled>
                     Select a tier
                   </option>
-                  <option value="Chairman's Circle Membership">Chairman&#39;s Circle Membership</option>
+                  <option value="Chairman's Circle Membership">Chairman&apos;s Circle Membership</option>
                   <option value="Corporate Membership">Corporate Membership</option>
                   <option value="SME / Scale-up Membership">SME / Scale-up Membership</option>
                   <option value="Startup Membership">Startup Membership</option>
@@ -1886,56 +1058,36 @@ function MembershipForm() {
                   <option value="Individual Membership">Individual Membership</option>
                 </select>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
 
         {/* Section divider */}
         <div className="mx-7 my-5">
-          <div className="h-px bg-gradient-to-r from-white/[0.06] via-white/[0.03] to-transparent" />
+          <div className="h-px bg-[#D8D5CF]" />
         </div>
 
-        {/* ─── LinkedIn & Message Section ─── */}
-        <div className="relative px-7 pb-7">
-          <motion.div
-            variants={itemVariants}
-            className="flex items-center gap-2.5 mb-6"
-          >
+        {/* LinkedIn & Message Section */}
+        <div className="px-7 pb-7">
+          <div className="flex items-center gap-2.5 mb-6">
             <div className="w-6 h-6 rounded-lg bg-[#8b5cf6]/10 border border-[#8b5cf6]/20 flex items-center justify-center">
               <MessageSquare className="w-3 h-3 text-[#8b5cf6]" />
             </div>
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/30">
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#3D4152]/50">
               Additional Information
             </span>
-          </motion.div>
+          </div>
 
           {/* LinkedIn */}
-          <motion.div variants={itemVariants} className="mb-5">
+          <div className="mb-5">
             <label
               htmlFor="mem-linkedin"
-              className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${
-                focusedField === "linkedin"
-                  ? "text-[#8b5cf6]"
-                  : "text-white/40"
-              }`}
+              className="block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 text-[#3D4152]"
             >
               LinkedIn Profile URL
             </label>
-            <div className="relative group">
-              <div
-                className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${
-                  focusedField === "linkedin"
-                    ? "bg-[#8b5cf6] opacity-100"
-                    : "bg-transparent opacity-0"
-                }`}
-              />
-              <Linkedin
-                className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${
-                  focusedField === "linkedin"
-                    ? "text-[#8b5cf6]"
-                    : "text-white/20"
-                }`}
-              />
+            <div className="relative">
+              <Linkedin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#3D4152]/30" />
               <input
                 id="mem-linkedin"
                 name="linkedin"
@@ -1943,48 +1095,22 @@ function MembershipForm() {
                 placeholder="https://linkedin.com/in/yourprofile"
                 value={form.linkedin}
                 onChange={handleChange}
-                onFocus={() => setFocusedField("linkedin")}
-                onBlur={() => setFocusedField(null)}
-                className="relative w-full bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/20 text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#8b5cf6]/50 focus:bg-white/[0.06] focus:ring-1 focus:ring-[#8b5cf6]/20"
+                className={inputBase}
               />
             </div>
-          </motion.div>
+          </div>
 
           {/* Message */}
-          <motion.div variants={itemVariants}>
+          <div>
             <label
               htmlFor="mem-message"
-              className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${
-                focusedField === "message"
-                  ? "text-[#8b5cf6]"
-                  : "text-white/40"
-              }`}
+              className="block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 text-[#3D4152]"
             >
               Why do you want to join UPTECH?{" "}
               <span className="text-[#C41E3A]">*</span>
             </label>
-            <div className="relative group">
-              <div
-                className={`absolute inset-0 rounded-xl transition-all duration-500 ${
-                  focusedField === "message"
-                    ? "shadow-[0_0_20px_rgba(139,92,246,0.1)]"
-                    : ""
-                }`}
-              />
-              <div
-                className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${
-                  focusedField === "message"
-                    ? "bg-[#8b5cf6] opacity-100"
-                    : "bg-transparent opacity-0"
-                }`}
-              />
-              <MessageSquare
-                className={`absolute left-3.5 top-4 w-4 h-4 transition-colors duration-300 ${
-                  focusedField === "message"
-                    ? "text-[#8b5cf6]"
-                    : "text-white/20"
-                }`}
-              />
+            <div className="relative">
+              <MessageSquare className="absolute left-3.5 top-4 w-4 h-4 text-[#3D4152]/30" />
               <textarea
                 id="mem-message"
                 name="message"
@@ -1993,27 +1119,22 @@ function MembershipForm() {
                 placeholder="Tell us about yourself and your interest in the UK\u2013Pakistan tech ecosystem..."
                 value={form.message}
                 onChange={handleChange}
-                onFocus={() => setFocusedField("message")}
-                onBlur={() => setFocusedField(null)}
-                className="relative w-full bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/20 text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#8b5cf6]/50 focus:bg-white/[0.06] focus:ring-1 focus:ring-[#8b5cf6]/20 resize-none"
+                className="w-full bg-white border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#3D4152]/40 text-sm pl-11 pr-4 py-3.5 rounded transition-all duration-200 outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 resize-none"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
 
-        {/* ─── Footer ─── */}
-        <motion.div
-          variants={itemVariants}
-          className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/[0.06] bg-white/[0.02] px-7 py-5"
-        >
-          <p className="text-[11px] text-white/30 leading-relaxed max-w-xs">
+        {/* Footer */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[#D8D5CF] bg-[#EEECEA] px-7 py-5">
+          <p className="text-[11px] text-[#3D4152]/60 leading-relaxed max-w-xs">
             We review all applications within 3{"\u2013"}5 business days.{" "}
             <span className="text-[#C41E3A]">*</span> Required fields.
           </p>
           <button
             type="submit"
             disabled={state === "submitting"}
-            className="group relative shrink-0 inline-flex items-center gap-2.5 px-7 py-3 rounded-xl font-heading font-bold text-sm text-white bg-gradient-to-r from-[#2563EB] to-[#1a4fd4] hover:from-[#3b82f6] hover:to-[#2563EB] transition-all duration-300 shadow-[0_4px_20px_rgba(37,99,235,0.25)] hover:shadow-[0_8px_30px_rgba(37,99,235,0.35)] disabled:opacity-50 disabled:cursor-not-allowed"
+            className="shrink-0 inline-flex items-center gap-2.5 px-7 py-3 rounded-full font-heading font-bold text-sm text-white bg-[#1C1F2E] hover:bg-[#2563EB] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {state === "submitting" ? (
               <span className="flex items-center gap-2">
@@ -2031,12 +1152,12 @@ function MembershipForm() {
             ) : (
               <>
                 Submit Application
-                <Send className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" />
+                <Send className="w-3.5 h-3.5" />
               </>
             )}
           </button>
-        </motion.div>
+        </div>
       </div>
-    </motion.form>
+    </form>
   );
 }

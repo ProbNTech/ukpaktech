@@ -8,7 +8,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Hero } from "@/components/Hero";
 import { NewsCard } from "@/components/NewsCard";
 import { LiteYouTube } from "@/components/LiteYouTube";
-import { ChevronRight, ArrowUpRight, Cpu, Briefcase, GraduationCap, Globe2, Shield, Handshake, Users, Building2, MapPin } from "lucide-react";
+import { ChevronRight, Cpu, Briefcase, GraduationCap, Globe2, Shield, Handshake, Users, Building2, MapPin } from "lucide-react";
 import { articles } from "@/data/articles";
 import { featuredEvents } from "@/data/featured-events";
 
@@ -335,7 +335,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-           WHAT WE DO — Elevated Card Grid
+           WHAT WE DO — Preview sections with Read More
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -346,88 +346,26 @@ export default function Home() {
               body="From AI innovation to bilateral trade, from startup incubation to skill development — discover how UPTECH is building the future."
               color="blue"
             />
-
-            {/* Featured: AI & Tech Programs — full-width accent card */}
-            <Link href="/programs/ai-tech-programs" className="group block mb-5 relative rounded-xl overflow-hidden bg-gradient-to-r from-[#eef2ff] to-[#f0f9ff] border border-[#2563EB]/15 hover:border-[#2563EB]/30 hover:shadow-lg hover:shadow-[#2563EB]/8 transition-all duration-500">
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#2563EB] to-[#3b82f6]" />
-              <div className="p-7 lg:p-9 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
-                <div className="flex items-center gap-5 flex-shrink-0">
-                  <div className="relative">
-                    <div className="absolute inset-[-4px] rounded-2xl bg-[#2563EB]/10 blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative w-14 h-14 rounded-2xl bg-[#2563EB]/10 border border-[#2563EB]/15 flex items-center justify-center">
-                      <Cpu className="w-7 h-7 text-[#2563EB]" strokeWidth={1.5} />
-                    </div>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#2563EB]/50 block mb-1">Featured Programme</span>
-                    <h3 className="font-heading font-extrabold text-[#1C1F2E] text-2xl lg:text-3xl leading-tight">AI & Tech Programs</h3>
-                  </div>
-                </div>
-                <p className="text-[#3D4152] text-sm sm:text-base leading-relaxed flex-1 max-w-xl">Driving AI innovation through training, certifications, and collaborative startup models across key sectors including energy, smart buildings, and agriculture.</p>
-                <div className="flex items-center gap-3 flex-shrink-0">
-                  <span className="text-sm font-semibold text-[#3D4152] group-hover:text-[#2563EB] transition-colors duration-300 hidden sm:inline">Explore</span>
-                  <div className="w-10 h-10 rounded-full border border-[#2563EB]/20 group-hover:border-[#2563EB] group-hover:bg-[#2563EB] flex items-center justify-center transition-all duration-300">
-                    <ArrowUpRight className="w-5 h-5 text-[#2563EB] group-hover:text-white transition-colors duration-300" />
-                  </div>
-                </div>
-              </div>
-            </Link>
-
-            {/* Row 1 — 3 cards with gradient top borders */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
               {[
-                { href: "/services", icon: Briefcase, title: "Services", desc: "Business networks, SME hub, digital marketing, overseas employment, and business support for your tech venture.", color: "#2563EB", num: "01" },
-                { href: "/programs/skill-development-center", icon: GraduationCap, title: "Skill Development", desc: "Practical training pathways, professional certifications, and mentorship for the modern tech workforce.", color: "#22c55e", num: "02" },
-                { href: "/ecosystem/uk-pakistan-technology-partnership", icon: Globe2, title: "UK–Pakistan Partnership", desc: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", color: "#8b5cf6", num: "03" },
-              ].map((card) => {
-                const Icon = card.icon;
+                { icon: Cpu, title: "AI & Tech Programs", desc: "Driving AI innovation through training, certifications, and collaborative startup models across key sectors including energy, smart buildings, and agriculture.", href: "/programs/ai-tech-programs", color: "#2563EB" },
+                { icon: Briefcase, title: "Services", desc: "Business networks, SME hub, digital marketing, overseas employment, and business support services to help your technology venture grow.", href: "/services", color: "#2563EB" },
+                { icon: GraduationCap, title: "Skill Development", desc: "Practical training pathways, professional certifications, and mentorship programmes for the modern tech workforce.", href: "/programs/skill-development-center", color: "#22C55E" },
+                { icon: Globe2, title: "UK–Pakistan Partnership", desc: "A bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment between both nations.", href: "/ecosystem/uk-pakistan-technology-partnership", color: "#2563EB" },
+                { icon: Shield, title: "Leadership & Governance", desc: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", href: "/leadership", color: "#C41E3A" },
+                { icon: Handshake, title: "Trade Delegations", desc: "Curated business missions, trade expos, and pavilion programmes placing members on the world stage.", href: "/ecosystem/trade-delegations-and-exhibitions", color: "#22C55E" },
+              ].map((item) => {
+                const Icon = item.icon;
                 return (
-                  <Link key={card.num} href={card.href} className="group relative bg-white rounded-xl border border-[#D8D5CF] overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
-                    <div className="h-[3px] w-full" style={{ background: `linear-gradient(90deg, ${card.color}, ${card.color}60)` }} />
-                    <div className="p-6 lg:p-7">
-                      <div className="flex items-center justify-between mb-5">
-                        <div className="relative">
-                          <div className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500" style={{ background: card.color }} />
-                          <div className="relative w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: `${card.color}10`, border: `1px solid ${card.color}20` }}>
-                            <Icon className="w-5 h-5" style={{ color: card.color }} strokeWidth={1.5} />
-                          </div>
-                        </div>
-                        <span className="text-[10px] font-bold tracking-[0.2em] text-[#D8D5CF]">{card.num}</span>
-                      </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{card.title}</h3>
-                      <p className="text-[#3D4152] text-sm leading-relaxed mb-4">{card.desc}</p>
-                      <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300" />
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-
-            {/* Row 2 — 2 wider cards */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              {[
-                { href: "/leadership", icon: Shield, title: "Leadership & Governance", desc: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", color: "#f59e0b", num: "04" },
-                { href: "/ecosystem/trade-delegations-and-exhibitions", icon: Handshake, title: "Trade Delegations & Exhibitions", desc: "Curated business missions, international trade expos, and pavilion programmes placing our members on the world stage.", color: "#ef4444", num: "05" },
-              ].map((card) => {
-                const Icon = card.icon;
-                return (
-                  <Link key={card.num} href={card.href} className="group relative bg-white rounded-xl border border-[#D8D5CF] overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
-                    <div className="h-[3px] w-full" style={{ background: `linear-gradient(90deg, ${card.color}, ${card.color}60)` }} />
-                    <div className="p-6 lg:p-7 flex items-start gap-5">
-                      <div className="relative flex-shrink-0">
-                        <div className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500" style={{ background: card.color }} />
-                        <div className="relative w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: `${card.color}10`, border: `1px solid ${card.color}20` }}>
-                          <Icon className="w-5 h-5" style={{ color: card.color }} strokeWidth={1.5} />
-                        </div>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="font-heading font-bold text-[#1C1F2E] text-lg group-hover:text-[#2563EB] transition-colors duration-200">{card.title}</h3>
-                          <span className="text-[10px] font-bold tracking-[0.2em] text-[#D8D5CF] flex-shrink-0 ml-3">{card.num}</span>
-                        </div>
-                        <p className="text-[#3D4152] text-sm leading-relaxed">{card.desc}</p>
-                      </div>
-                      <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300 flex-shrink-0 mt-1" />
+                  <Link key={item.title} href={item.href} className="group bg-white border border-[#D8D5CF] rounded overflow-hidden hover:border-[#2563EB]/40 hover:-translate-y-1 transition-all duration-300">
+                    <div className="p-6">
+                      <Icon className="w-7 h-7 mb-4" style={{ color: item.color }} strokeWidth={1.5} />
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{item.title}</h3>
+                      <div className="h-px bg-[#D8D5CF] mb-3" />
+                      <p className="text-[#3D4152] text-sm leading-relaxed mb-4">{item.desc}</p>
+                      <span className="text-sm font-semibold text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 inline-flex items-center gap-1">
+                        Read more <ChevronRight className="w-3.5 h-3.5" />
+                      </span>
                     </div>
                   </Link>
                 );
@@ -438,7 +376,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-           MORE FROM UPTECH — 2×2 Card Grid
+           MORE FROM UPTECH — Products, Mentorship, Meeting Space, Structure
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#E8E6E3" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -449,30 +387,22 @@ export default function Home() {
               body="Explore our platforms, meeting facilities, organisational structure, and flagship initiatives."
               color="green"
             />
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { href: "/products", icon: Cpu, title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms connecting talent and enabling cross-border trade.", color: "#22c55e" },
-                { href: "/services/mentorship", icon: Users, title: "Mentorship", desc: "Connect with experienced mentors for guidance, career development, and business growth across both nations.", color: "#2563EB" },
-                { href: "/meeting-space", icon: MapPin, title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners.", color: "#8b5cf6" },
-                { href: "/structure", icon: Building2, title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures.", color: "#1C1F2E" },
-              ].map((card) => {
-                const Icon = card.icon;
+                { icon: Cpu, title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms changing industries.", href: "/products" },
+                { icon: Users, title: "Mentorship", desc: "Connect with experienced mentors for guidance, career development, and business growth.", href: "/services/mentorship" },
+                { icon: MapPin, title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners.", href: "/meeting-space" },
+                { icon: Building2, title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures.", href: "/structure" },
+              ].map((item) => {
+                const Icon = item.icon;
                 return (
-                  <Link key={card.title} href={card.href} className="group relative bg-white rounded-xl border border-[#D8D5CF] overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
-                    <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${card.color}, ${card.color}60)` }} />
-                    <div className="p-6 lg:p-7">
-                      <div className="flex items-center justify-between mb-5">
-                        <div className="relative">
-                          <div className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500" style={{ background: card.color }} />
-                          <div className="relative w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${card.color}10`, border: `1px solid ${card.color}15` }}>
-                            <Icon className="w-6 h-6" style={{ color: card.color }} strokeWidth={1.5} />
-                          </div>
-                        </div>
-                        <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300" />
-                      </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{card.title}</h3>
-                      <p className="text-[#3D4152] text-sm leading-relaxed">{card.desc}</p>
-                    </div>
+                  <Link key={item.title} href={item.href} className="group flex flex-col bg-white border border-[#D8D5CF] rounded p-6 hover:border-[#2563EB]/40 hover:-translate-y-1 transition-all duration-300">
+                    <Icon className="w-6 h-6 text-[#2563EB] mb-3" strokeWidth={1.5} />
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-sm sm:text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{item.title}</h3>
+                    <p className="text-[#3D4152] text-sm leading-relaxed mb-4 flex-1">{item.desc}</p>
+                    <span className="text-sm font-semibold text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 inline-flex items-center gap-1 mt-auto">
+                      Read more <ChevronRight className="w-3.5 h-3.5" />
+                    </span>
                   </Link>
                 );
               })}

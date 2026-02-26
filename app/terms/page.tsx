@@ -1,14 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
-import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import { PageHero } from "@/components/PageHero";
+import { Section } from "@/components/Section";
+import { SectionHeader } from "@/components/SectionHeader";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown, FileText, Mail } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   Terms & Conditions Data — Client's exact wording preserved verbatim
+   Terms & Conditions Data -- Client's exact wording preserved verbatim
    ───────────────────────────────────────────────────────────────────────────── */
 
 const termsSections = [
@@ -226,18 +228,6 @@ const termsSections = [
   },
 ];
 
-/* Section accent colours — cycle through palette */
-const sectionAccents = [
-  "#2563EB", "#22C55E", "#8b5cf6", "#C41E3A", "#f59e0b",
-  "#2563EB", "#22C55E", "#8b5cf6", "#C41E3A", "#f59e0b",
-  "#2563EB", "#22C55E", "#8b5cf6", "#C41E3A", "#f59e0b",
-  "#2563EB", "#22C55E",
-];
-
-/* ─────────────────────────────────────────────────────────────────────────────
-   Page Component
-   ───────────────────────────────────────────────────────────────────────────── */
-
 export default function TermsPage() {
   const shouldReduceMotion = useReducedMotion();
   const [openSections, setOpenSections] = useState<Set<string>>(new Set());
@@ -265,534 +255,270 @@ export default function TermsPage() {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden min-h-[520px]">
-        <Image
-          src="/image/london-images/legal-documents.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div
-          className="absolute inset-0 z-[1]"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(10,14,30,0.92) 0%, rgba(10,14,30,0.72) 50%, rgba(10,14,30,0.50) 100%)",
-          }}
-        />
-        {/* Grid pattern overlay */}
-        <div
-          className="absolute inset-0 z-[2] opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "60px 60px",
-          }}
-        />
+      <PageHero
+        image="/image/london-images/legal-documents.jpg"
+        title="Acceptance of Terms of Use for This Website"
+        subtitle="These Terms and Conditions, together with any and all other documents referred to herein, set out the terms of use under which you may use this website, www.asaninsaf.co (\u201COur Site\u201D)."
+      />
 
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-20 pb-16">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
-              <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-white/60">
-                Legal
-              </span>
-            </div>
-          </motion.div>
+      {/* ── Background Notice ────────────────────────────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Important Notice"
+            title="Terms & Conditions"
+          />
 
-          <motion.h1
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-white mb-6 max-w-4xl"
-          >
-            Acceptance of Terms of Use for This{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#60a5fa]">
-              Website
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-lg text-white/50 max-w-3xl leading-relaxed"
-          >
-            These Terms and Conditions, together with any and all other documents
-            referred to herein, set out the terms of use under which you may use
-            this website, www.asaninsaf.co ({"\u201C"}Our Site{"\u201D"}).
-          </motion.p>
-        </div>
-      </section>
-
-      {/* ── Background Notice — Dark section ──────────────────────── */}
-      <section className="relative bg-[#0B0F1A] py-16 overflow-hidden">
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-        {/* Glow */}
-        <div
-          className="absolute top-0 right-1/3 w-96 h-96 opacity-[0.03]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 60%)",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="max-w-4xl">
-              <div className="mb-8">
-                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
-                  Important Notice
-                </p>
-                <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                  Terms &amp; Conditions
-                </h2>
-                <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-6" />
+          <div className="bg-white border border-[#D8D5CF] rounded p-8">
+            <div className="flex items-start gap-4 mb-5">
+              <div className="w-10 h-10 rounded-lg bg-[#2563EB]/10 flex items-center justify-center flex-shrink-0">
+                <FileText className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
               </div>
-
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5 }}
-                className="relative bg-white/[0.03] border border-white/[0.06] rounded-2xl p-8 overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
-                <div className="flex items-start gap-4 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center flex-shrink-0">
-                    <FileText
-                      className="w-5 h-5 text-[#2563EB]"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-                  <p className="text-white/50 text-base leading-relaxed pt-2">
-                    These Terms and Conditions, together with any and all other
-                    documents referred to herein, set out the terms of use under
-                    which you may use this website, www.asaninsaf.co ({"\u201C"}Our
-                    Site{"\u201D"}). Please read these Terms and Conditions
-                    carefully and ensure that you understand them. Your agreement
-                    to comply with and be bound by these Terms and Conditions is
-                    deemed to occur upon your first use of Our Site. If you do
-                    not agree to comply with and be bound by these Terms and
-                    Conditions, you must stop using Our Site immediately.
-                  </p>
-                </div>
-              </motion.div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── Expand / Collapse Controls + Section Nav — Dark alt ─── */}
-      <section
-        className="relative py-16 overflow-hidden"
-        style={{ backgroundColor: "#0E1221" }}
-      >
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b5cf6]/30 to-transparent" />
-        {/* Glow */}
-        <div
-          className="absolute bottom-0 left-1/4 w-96 h-96 opacity-[0.03]"
-          style={{
-            background: "radial-gradient(circle, #8b5cf6, transparent 60%)",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#8b5cf6] mb-3">
-                {termsSections.length} Sections
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Quick Navigation
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#8b5cf6] to-transparent mb-4" />
-              <p className="text-white/40 text-base max-w-xl">
-                Click any section below to jump directly, or use the expand/collapse controls.
+              <p className="text-[#3D4152] text-base leading-relaxed pt-2">
+                These Terms and Conditions, together with any and all other documents referred to herein, set out the terms of use under which you may use this website, www.asaninsaf.co ({"\u201C"}Our Site{"\u201D"}). Please read these Terms and Conditions carefully and ensure that you understand them. Your agreement to comply with and be bound by these Terms and Conditions is deemed to occur upon your first use of Our Site. If you do not agree to comply with and be bound by these Terms and Conditions, you must stop using Our Site immediately.
               </p>
             </div>
+          </div>
+        </AnimatedSection>
+      </Section>
 
-            {/* Expand / Collapse buttons */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              <button
-                onClick={expandAll}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2563EB]/10 border border-[#2563EB]/20 text-[#2563EB] text-sm font-semibold hover:bg-[#2563EB]/20 transition-colors duration-200"
-              >
-                Expand All
-              </button>
-              <button
-                onClick={collapseAll}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-white/50 text-sm font-semibold hover:bg-white/[0.08] transition-colors duration-200"
-              >
-                Collapse All
-              </button>
-            </div>
+      {/* ── Quick Navigation ─────────────────────────────────────────── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label={`${termsSections.length} Sections`}
+            title="Quick Navigation"
+            subtitle="Click any section below to jump directly, or use the expand/collapse controls."
+          />
 
-            {/* Section nav grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-              {termsSections.map((section, i) => {
-                const color = sectionAccents[i];
-                return (
-                  <motion.button
-                    key={section.id}
-                    initial={
-                      shouldReduceMotion
-                        ? { opacity: 1 }
-                        : { opacity: 0, y: 12 }
-                    }
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-30px" }}
-                    transition={{ duration: 0.3, delay: i * 0.03 }}
-                    onClick={() => {
-                      const el = document.getElementById(`terms-${section.id}`);
-                      if (el) {
-                        const offset =
-                          el.getBoundingClientRect().top +
-                          window.pageYOffset -
-                          100;
-                        window.scrollTo({ top: offset, behavior: "smooth" });
-                      }
-                      setOpenSections((prev) => {
-                        const next = new Set(prev);
-                        next.add(section.id);
-                        return next;
-                      });
-                    }}
-                    className="group text-left bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-300"
+          {/* Expand / Collapse buttons */}
+          <div className="flex flex-wrap gap-3 mb-8">
+            <button
+              onClick={expandAll}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2563EB] text-white text-sm font-semibold hover:bg-[#1d4ed8] transition-colors duration-200"
+            >
+              Expand All
+            </button>
+            <button
+              onClick={collapseAll}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-[#D8D5CF] text-[#3D4152] text-sm font-semibold hover:bg-[#EEECEA] transition-colors duration-200"
+            >
+              Collapse All
+            </button>
+          </div>
+
+          {/* Section nav grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+            {termsSections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => {
+                  const el = document.getElementById(`terms-${section.id}`);
+                  if (el) {
+                    const offset = el.getBoundingClientRect().top + window.pageYOffset - 100;
+                    window.scrollTo({ top: offset, behavior: "smooth" });
+                  }
+                  setOpenSections((prev) => {
+                    const next = new Set(prev);
+                    next.add(section.id);
+                    return next;
+                  });
+                }}
+                className="group text-left bg-white border border-[#D8D5CF] rounded p-4 hover:shadow-md hover:border-[#2563EB]/30 transition-all duration-300"
+              >
+                <span className="text-xs font-bold tabular-nums block mb-1.5 text-[#2563EB]">
+                  {section.number.padStart(2, "0")}
+                </span>
+                <h3 className="font-heading font-semibold text-[#1C1F2E] text-xs sm:text-sm leading-snug group-hover:text-[#2563EB] transition-colors duration-200 line-clamp-2">
+                  {section.title}
+                </h3>
+              </button>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Accordion Sections ───────────────────────────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Full Terms"
+            title="Terms & Conditions"
+          />
+
+          <div className="space-y-3">
+            {termsSections.map((section, index) => {
+              const isOpen = openSections.has(section.id);
+
+              return (
+                <div
+                  key={section.id}
+                  id={`terms-${section.id}`}
+                  className={`bg-white border overflow-hidden rounded transition-all duration-300 scroll-mt-28 ${
+                    isOpen
+                      ? "border-[#2563EB]/30 shadow-md"
+                      : "border-[#D8D5CF] hover:border-[#2563EB]/20"
+                  }`}
+                  style={isOpen ? { borderLeft: "3px solid #2563EB" } : {}}
+                >
+                  {/* Accordion button */}
+                  <button
+                    onClick={() => toggleSection(section.id)}
+                    className="w-full flex items-center gap-4 p-5 lg:p-6 text-left"
                   >
                     <span
-                      className="text-xs font-bold tabular-nums block mb-1.5"
-                      style={{ color }}
+                      className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold transition-colors duration-300 ${
+                        isOpen
+                          ? "bg-[#2563EB] text-white"
+                          : "bg-[#2563EB]/10 text-[#2563EB]"
+                      }`}
                     >
                       {section.number.padStart(2, "0")}
                     </span>
-                    <h3 className="font-heading font-semibold text-white/80 text-xs sm:text-sm leading-snug group-hover:text-white transition-colors duration-200 line-clamp-2">
+                    <span className="font-heading font-semibold text-base flex-1 text-[#1C1F2E] transition-colors duration-200">
                       {section.title}
-                    </h3>
-                  </motion.button>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── Accordion Sections — Alternating dark backgrounds ────── */}
-      <section
-        className="relative overflow-hidden"
-        style={{ backgroundColor: "#131942" }}
-      >
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/30 to-transparent" />
-        {/* Glow orbs */}
-        <div
-          className="absolute top-1/4 right-0 w-96 h-96 opacity-[0.03]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 60%)",
-          }}
-        />
-        <div
-          className="absolute bottom-1/4 left-0 w-96 h-96 opacity-[0.03]"
-          style={{
-            background: "radial-gradient(circle, #8b5cf6, transparent 60%)",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-16">
-          <AnimatedSection>
-            <div className="mb-10">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">
-                Full Terms
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Terms &amp; Conditions
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
-            </div>
-
-            <div className="space-y-3 max-w-5xl">
-              {termsSections.map((section, index) => {
-                const isOpen = openSections.has(section.id);
-                const color = sectionAccents[index];
-
-                return (
-                  <motion.div
-                    key={section.id}
-                    id={`terms-${section.id}`}
-                    initial={
-                      shouldReduceMotion
-                        ? { opacity: 1 }
-                        : { opacity: 0, y: 8 }
-                    }
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-30px" }}
-                    transition={{ duration: 0.3, delay: index * 0.03 }}
-                    className={`bg-white/[0.03] border overflow-hidden rounded-xl transition-all duration-300 scroll-mt-28 ${
-                      isOpen
-                        ? "border-white/[0.12] shadow-lg shadow-black/20"
-                        : "border-white/[0.06] hover:border-white/[0.1]"
-                    }`}
-                    style={
-                      isOpen
-                        ? { borderLeft: `3px solid ${color}` }
-                        : {}
-                    }
-                  >
-                    {/* Accordion button */}
-                    <button
-                      onClick={() => toggleSection(section.id)}
-                      className="w-full flex items-center gap-4 p-5 lg:p-6 text-left"
+                    </span>
+                    <div
+                      className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        isOpen ? "bg-[#2563EB]/10" : ""
+                      }`}
                     >
-                      <span
-                        className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold transition-colors duration-300"
-                        style={
-                          isOpen
-                            ? {
-                                background: color,
-                                color: "#fff",
-                              }
-                            : {
-                                background: `${color}10`,
-                                color,
-                              }
-                        }
-                      >
-                        {section.number.padStart(2, "0")}
-                      </span>
-                      <span className="font-heading font-semibold text-base flex-1 text-white/90 transition-colors duration-200">
-                        {section.title}
-                      </span>
-                      <div
-                        className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
-                        style={
-                          isOpen
-                            ? { background: `${color}10` }
-                            : { background: "transparent" }
-                        }
-                      >
-                        <ChevronDown
-                          className="w-4.5 h-4.5 transition-transform duration-300"
-                          style={{
-                            color: isOpen ? color : "rgba(255,255,255,0.3)",
-                            transform: isOpen
-                              ? "rotate(180deg)"
-                              : "rotate(0deg)",
-                          }}
-                        />
-                      </div>
-                    </button>
+                      <ChevronDown
+                        className="w-4.5 h-4.5 transition-transform duration-300"
+                        style={{
+                          color: isOpen ? "#2563EB" : "#3D4152",
+                          transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                        }}
+                      />
+                    </div>
+                  </button>
 
-                    {/* Accordion content */}
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.25 }}
-                          className="overflow-hidden"
-                        >
-                          <div className="px-5 lg:px-6 pb-6 lg:pb-8 pl-[4.75rem] lg:pl-[5.25rem]">
-                            <div className="h-px bg-white/[0.06] mb-5" />
-                            <div className="space-y-4">
-                              {section.content.map((paragraph, pIdx) => {
-                                /* Sub-clause numbers like 3.4, 6.3, 11.7.1 etc. */
+                  {/* Accordion content */}
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-5 lg:px-6 pb-6 lg:pb-8 pl-[4.75rem] lg:pl-[5.25rem]">
+                          <div className="h-px bg-[#D8D5CF] mb-5" />
+                          <div className="space-y-4">
+                            {section.content.map((paragraph, pIdx) => {
+                              const isSubClause = /^\d+\.\d/.test(paragraph);
+                              const isHeader = paragraph === "You may:";
+
+                              return (
+                                <p
+                                  key={pIdx}
+                                  className={`text-sm leading-[1.8] ${
+                                    isHeader
+                                      ? "text-[#1C1F2E] font-semibold mt-2"
+                                      : isSubClause
+                                      ? "text-[#3D4152]"
+                                      : "text-[#3D4152]"
+                                  }`}
+                                >
+                                  {isSubClause && (
+                                    <span className="font-semibold mr-1 text-[#2563EB]">
+                                      {paragraph.split(" ")[0]}
+                                    </span>
+                                  )}
+                                  {isSubClause
+                                    ? paragraph.substring(paragraph.indexOf(" ") + 1)
+                                    : paragraph}
+                                </p>
+                              );
+                            })}
+
+                            {/* Numbered list items (for section 8.7) */}
+                            {"listItems" in section && section.listItems && (
+                              <ol className="space-y-2 mt-3 pl-4">
+                                {(section.listItems as string[]).map((item, lIdx) => (
+                                  <li
+                                    key={lIdx}
+                                    className="flex items-start gap-3 text-sm text-[#3D4152] leading-[1.8]"
+                                  >
+                                    <span className="text-xs font-bold tabular-nums pt-1 flex-shrink-0 min-w-[20px] text-[#2563EB]">
+                                      {lIdx + 1}.
+                                    </span>
+                                    <span>{item}</span>
+                                  </li>
+                                ))}
+                              </ol>
+                            )}
+
+                            {/* After-list paragraphs (8.8, 8.9, 8.10) */}
+                            {"afterList" in section &&
+                              section.afterList &&
+                              (section.afterList as string[]).map((paragraph, aIdx) => {
                                 const isSubClause = /^\d+\.\d/.test(paragraph);
-                                const isHeader =
-                                  paragraph === "You may:";
-
                                 return (
                                   <p
-                                    key={pIdx}
-                                    className={`text-sm leading-[1.8] ${
-                                      isHeader
-                                        ? "text-white/70 font-semibold mt-2"
-                                        : isSubClause
-                                        ? "text-white/40 pl-0"
-                                        : "text-white/50"
-                                    }`}
+                                    key={`after-${aIdx}`}
+                                    className="text-sm leading-[1.8] text-[#3D4152] mt-3"
                                   >
                                     {isSubClause && (
-                                      <span
-                                        className="font-semibold mr-1"
-                                        style={{ color: `${color}cc` }}
-                                      >
+                                      <span className="font-semibold mr-1 text-[#2563EB]">
                                         {paragraph.split(" ")[0]}
                                       </span>
                                     )}
                                     {isSubClause
-                                      ? paragraph.substring(
-                                          paragraph.indexOf(" ") + 1
-                                        )
+                                      ? paragraph.substring(paragraph.indexOf(" ") + 1)
                                       : paragraph}
                                   </p>
                                 );
                               })}
-
-                              {/* Numbered list items (for section 8.7) */}
-                              {"listItems" in section &&
-                                section.listItems && (
-                                  <ol className="space-y-2 mt-3 pl-4">
-                                    {(
-                                      section.listItems as string[]
-                                    ).map((item, lIdx) => (
-                                      <li
-                                        key={lIdx}
-                                        className="flex items-start gap-3 text-sm text-white/40 leading-[1.8]"
-                                      >
-                                        <span
-                                          className="text-xs font-bold tabular-nums pt-1 flex-shrink-0 min-w-[20px]"
-                                          style={{ color }}
-                                        >
-                                          {lIdx + 1}.
-                                        </span>
-                                        <span>{item}</span>
-                                      </li>
-                                    ))}
-                                  </ol>
-                                )}
-
-                              {/* After-list paragraphs (8.8, 8.9, 8.10) */}
-                              {"afterList" in section &&
-                                section.afterList &&
-                                (section.afterList as string[]).map(
-                                  (paragraph, aIdx) => {
-                                    const isSubClause =
-                                      /^\d+\.\d/.test(paragraph);
-                                    return (
-                                      <p
-                                        key={`after-${aIdx}`}
-                                        className="text-sm leading-[1.8] text-white/40 mt-3"
-                                      >
-                                        {isSubClause && (
-                                          <span
-                                            className="font-semibold mr-1"
-                                            style={{ color: `${color}cc` }}
-                                          >
-                                            {paragraph.split(" ")[0]}
-                                          </span>
-                                        )}
-                                        {isSubClause
-                                          ? paragraph.substring(
-                                              paragraph.indexOf(" ") + 1
-                                            )
-                                          : paragraph}
-                                      </p>
-                                    );
-                                  }
-                                )}
-                            </div>
                           </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── CTA — Gradient dark section ──────────────────────────── */}
-      <section
-        className="relative overflow-hidden py-20"
-        style={{
-          background:
-            "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)",
-        }}
-      >
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-        {/* Glow orb */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 50%)",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
-                    <Mail
-                      className="w-5 h-5 text-[#2563EB]"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB]">
-                    Questions?
-                  </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-                <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                  Need Clarification?
-                </h2>
-                <p className="text-white/40 text-base sm:text-lg leading-relaxed max-w-2xl">
-                  To contact Us, please email Us at{" "}
-                  <a
-                    href="mailto:info@uptech.org.uk"
-                    className="text-[#2563EB] hover:text-[#60A5FA] transition-colors"
-                  >
-                    info@uptech.org.uk
-                  </a>{" "}
-                  or using any of the methods provided on Our contact page.
-                </p>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── CTA ──────────────────────────────────────────────────────── */}
+      <Section variant="dark">
+        <AnimatedSection>
+          <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[#2563EB]/20 flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
+                </div>
+                <p className="text-sm font-semibold text-[#2563EB] tracking-wide uppercase">Questions?</p>
               </div>
-              <div className="flex flex-wrap gap-4">
-                <Button
-                  href="/contact"
-                  variant="primary"
-                  size="lg"
-                  showArrow
+              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+                Need Clarification?
+              </h2>
+              <p className="text-white/70 text-base sm:text-lg leading-relaxed max-w-2xl">
+                To contact Us, please email Us at{" "}
+                <a
+                  href="mailto:info@uptech.org.uk"
+                  className="text-[#2563EB] hover:text-[#60A5FA] transition-colors"
                 >
-                  Contact Us
-                </Button>
-                <Button
-                  href="/privacy"
-                  variant="glass"
-                  size="lg"
-                  showArrow
-                >
-                  Privacy Policy
-                </Button>
-              </div>
+                  info@uptech.org.uk
+                </a>{" "}
+                or using any of the methods provided on Our contact page.
+              </p>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/contact" variant="primary" size="lg" showArrow className="bg-[#2563EB] hover:bg-[#1d4ed8]">
+                Contact Us
+              </Button>
+              <Button href="/privacy" variant="glass" size="lg" showArrow>
+                Privacy Policy
+              </Button>
+            </div>
+          </div>
+        </AnimatedSection>
+      </Section>
     </div>
   );
 }

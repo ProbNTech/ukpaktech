@@ -1,606 +1,300 @@
 "use client";
 
-import Image from "next/image";
+import { Section } from "@/components/Section";
+import { SectionHeader } from "@/components/SectionHeader";
+import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { motion, useReducedMotion } from "framer-motion";
 import {
-  Search,
-  Building2,
-  Users,
-  Briefcase,
-  Globe2,
-  Cpu,
-  Shield,
-  TrendingUp,
-  FileText,
-  CheckCircle2,
-  GraduationCap,
-  Rocket,
-  UserCheck,
-  Send,
-  Code2,
-  Database,
-  Palette,
-  Cloud,
-  Landmark,
-  ArrowRight,
+  Search, Building2, Users, Briefcase, Globe2, Cpu, Shield,
+  TrendingUp, BarChart3, FileText, CheckCircle2, MapPin,
+  GraduationCap, Rocket, Clock, UserCheck, Send, Layers,
 } from "lucide-react";
-
-/* ── Data ──────────────────────────────────────────────────────────── */
-
-const stats = [
-  { value: "500+", label: "Opportunities", color: "#2563EB" },
-  { value: "120+", label: "Partner Companies", color: "#22C55E" },
-  { value: "15+", label: "Countries", color: "#8b5cf6" },
-  { value: "95%", label: "Satisfaction", color: "#f59e0b" },
-];
 
 const forEmployers = [
   "Post job openings and internships to a targeted tech audience",
   "Reach qualified candidates across the UK, Europe, Middle East and Pakistan",
   "Access a curated pool of technology professionals from both nations",
-  "Leverage AI-powered matching to find the ideal candidate faster",
-  "Streamlined recruitment analytics and application management",
 ];
 
 const forJobSeekers = [
   "Explore opportunities in innovative technology companies",
   "Apply directly to UK and Pakistan-based organisations",
   "Stay informed about industry trends, skills requirements and career resources",
-  "Build a verified profile that showcases your expertise globally",
-  "Receive personalised job recommendations based on your skills",
 ];
 
-const portalFeatures = [
-  { icon: Globe2, title: "Cross-Border Reach", desc: "Connect talent and employers across UK, Pakistan, Europe, and the Middle East through a unified platform.", color: "#2563EB", num: "01" },
-  { icon: Shield, title: "Verified Profiles", desc: "All candidates and employers are verified through the UPTECH membership network for trust and quality.", color: "#22C55E", num: "02" },
-  { icon: TrendingUp, title: "Career Growth", desc: "Access career tips, market insights, salary benchmarks, and professional development resources.", color: "#8b5cf6", num: "03" },
-  { icon: GraduationCap, title: "Internship Pipeline", desc: "Dedicated pathways for students and graduates entering the tech workforce across borders.", color: "#f59e0b", num: "04" },
-  { icon: FileText, title: "Smart Matching", desc: "AI-powered recommendations matching candidates with roles based on skills, experience, and preferences.", color: "#C41E3A", num: "05" },
-  { icon: Rocket, title: "Fast-Track Hiring", desc: "Streamlined application process designed for speed, efficiency, and quality of hire.", color: "#ef4444", num: "06" },
+const quickFilters = [
+  {
+    icon: MapPin,
+    title: "Location",
+    tags: ["United Kingdom", "Pakistan", "Remote", "Europe", "Middle East"],
+  },
+  {
+    icon: Cpu,
+    title: "Sector",
+    tags: ["AI & ML", "Cybersecurity", "FinTech", "Smart Cities", "Green Tech", "Digital Govt"],
+  },
+  {
+    icon: Clock,
+    title: "Job Type",
+    tags: ["Full-Time", "Part-Time", "Internship", "Contract", "Freelance"],
+  },
 ];
 
 const howItWorks = [
-  { step: "01", icon: UserCheck, title: "Register", desc: "Create your profile as a candidate or employer and join the UPTECH network.", outcome: "Account activated", color: "#2563EB" },
-  { step: "02", icon: Search, title: "Browse or Post", desc: "Job seekers explore listings with advanced filters. Employers post openings with detailed requirements.", outcome: "Matched to opportunities", color: "#22C55E" },
-  { step: "03", icon: Send, title: "Apply or Review", desc: "Candidates apply directly. Employers review applications, shortlist, and connect with talent.", outcome: "Applications submitted", color: "#8b5cf6" },
-  { step: "04", icon: Briefcase, title: "Connect & Hire", desc: "Schedule interviews, make offers, and build cross-border technology teams.", outcome: "Talent connected", color: "#f59e0b" },
+  { step: "01", icon: UserCheck, title: "Register", desc: "Create your profile as a candidate or employer and join the UPTECH network.", outcome: "Account activated" },
+  { step: "02", icon: Search, title: "Browse or Post", desc: "Job seekers explore listings with advanced filters. Employers post openings with detailed requirements.", outcome: "Matched to opportunities" },
+  { step: "03", icon: Send, title: "Apply or Review", desc: "Candidates apply directly. Employers review applications, shortlist, and connect with talent.", outcome: "Applications submitted" },
+  { step: "04", icon: Briefcase, title: "Connect & Hire", desc: "Schedule interviews, make offers, and build cross-border technology teams.", outcome: "Talent connected" },
 ];
 
-const keySectors = [
-  { icon: Code2, title: "Software Dev", desc: "Full-stack, mobile, frontend, backend, and systems engineering roles across global tech teams.", color: "#2563EB" },
-  { icon: Shield, title: "Cybersecurity", desc: "Security analysts, penetration testers, compliance officers, and threat intelligence specialists.", color: "#22C55E" },
-  { icon: Database, title: "Data & AI", desc: "Data scientists, ML engineers, AI researchers, and analytics professionals driving innovation.", color: "#8b5cf6" },
-  { icon: Palette, title: "Product & Design", desc: "UX/UI designers, product managers, and design system leads shaping digital experiences.", color: "#f59e0b" },
-  { icon: Cloud, title: "DevOps & Cloud", desc: "Cloud architects, SRE engineers, platform teams, and infrastructure automation specialists.", color: "#C41E3A" },
-  { icon: Landmark, title: "FinTech", desc: "Payment systems, digital banking, blockchain, and regulatory technology professionals.", color: "#ef4444" },
+const upcomingFeatures = [
+  { icon: Layers, title: "Job Listings", desc: "Browse and filter hundreds of technology roles across both nations with advanced search and saved alerts.", badge: "Coming Soon" },
+  { icon: Users, title: "Candidate Portal", desc: "Complete profile setup, resume upload, application tracking, and personalised job recommendations.", badge: "Coming Soon" },
+  { icon: Building2, title: "Employer Portal", desc: "Post jobs, manage applications, shortlist candidates, and access recruitment analytics.", badge: "Coming Soon" },
+  { icon: BarChart3, title: "Analytics Dashboard", desc: "Track views, applications, and hiring metrics. Data-driven insights for better recruitment.", badge: "Coming Soon" },
 ];
 
-/* ── Component ─────────────────────────────────────────────────────── */
+const portalFeatures = [
+  { icon: Globe2, title: "Cross-Border Reach", desc: "Connect talent and employers across UK, Pakistan, Europe, and the Middle East." },
+  { icon: Shield, title: "Verified Profiles", desc: "All candidates and employers are verified through the UPTECH membership network." },
+  { icon: TrendingUp, title: "Career Growth", desc: "Access career tips, market insights, and professional development resources." },
+  { icon: GraduationCap, title: "Internship Pipeline", desc: "Dedicated pathways for students and graduates entering the tech workforce." },
+  { icon: FileText, title: "Smart Matching", desc: "AI-powered recommendations matching candidates with roles based on skills and preferences." },
+  { icon: Rocket, title: "Fast-Track Hiring", desc: "Streamlined application process designed for speed and quality of hire." },
+];
 
 export default function JobPortalPage() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#0B0F1A]">
-      {/* ── Hero Section ── */}
-      <section className="relative min-h-[75vh] flex items-center overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/image/london-images/careers-tech-workspace.jpg"
-          alt="Tech careers workspace"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-
-        {/* Dark gradient overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(10,14,30,0.85) 0%, rgba(10,14,30,0.70) 40%, rgba(10,14,30,0.95) 100%)",
-          }}
-        />
-
-        {/* Grid pattern overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        {/* Hero content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
-              UPTECH Careers
-            </p>
-
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-6">
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #8b5cf6 100%)",
-                }}
-              >
-                Job Portal
-              </span>
-            </h1>
-
-            {/* Glass morphism subtitle card */}
-            <div className="max-w-2xl backdrop-blur-md bg-white/[0.05] border border-white/[0.1] rounded-2xl p-6 mb-8">
-              <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
-                Connecting UK-Pakistan tech talent with world-class opportunities. Explore, apply, and build your career across borders with the UPTECH Job Portal.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-              <Button href="#who-its-for" variant="primary" size="lg" showArrow>
-                Browse Jobs
-              </Button>
-              <Button href="/contact" variant="glass" size="lg" showArrow>
-                Post a Job
-              </Button>
-            </div>
-          </motion.div>
+    <div>
+      <PageHero
+        title="Find Your Next Tech Opportunity"
+        subtitle="Explore, Apply, Connect: UPTECH Job Portal links skilled professionals with leading technology companies across the UK, Europe, Middle East and Pakistan."
+        image="/image/london-images/professional-networking.jpg"
+      >
+        <div className="flex flex-wrap gap-4 mt-2">
+          <Button href="#coming-soon" variant="glass" showArrow>Browse Jobs</Button>
+          <Button href="#coming-soon" variant="ghost" showArrow>Post a Job</Button>
         </div>
-      </section>
+      </PageHero>
 
-      {/* ── Stats Bar ── */}
-      <section className="relative bg-[#0E1221]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group relative backdrop-blur-md bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
-              >
-                {/* Colored top border */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
-                  style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }}
-                />
-                {/* Glow effect on hover */}
-                <div
-                  className="absolute -top-1 left-4 right-4 h-4 rounded-full opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500"
-                  style={{ background: stat.color }}
-                />
-                <div
-                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
-                  style={{
-                    color: stat.color,
-                    textShadow: `0 0 30px ${stat.color}40`,
-                  }}
-                >
-                  {stat.value}
-                </div>
-                <p className="text-white/50 text-sm">{stat.label}</p>
-              </motion.div>
-            ))}
+      {/* Intro: For Employers | For Job Seekers */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Who It's For"
+            title="Connecting Talent with Technology"
+            subtitle="Our Job Portal is designed to connect skilled professionals with leading technology organisations across the UK–Pakistan corridor."
+          />
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Employers */}
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5 }}
+              className="bg-white border border-[#D8D5CF] rounded p-8 hover:border-[#2563EB]/40 transition-colors duration-300"
+            >
+              <Building2 className="w-8 h-8 text-[#2563EB] mb-5" strokeWidth={1.5} />
+              <h3 className="font-heading font-bold text-xl text-[#1C1F2E] mb-2">For Employers</h3>
+              <div className="h-px bg-[#D8D5CF] mb-5" />
+              <ul className="space-y-3">
+                {forEmployers.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <span className="text-sm text-[#3D4152] leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Job Seekers */}
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white border border-[#D8D5CF] rounded p-8 hover:border-[#2563EB]/40 transition-colors duration-300"
+            >
+              <Users className="w-8 h-8 text-[#22C55E] mb-5" strokeWidth={1.5} />
+              <h3 className="font-heading font-bold text-xl text-[#1C1F2E] mb-2">For Job Seekers</h3>
+              <div className="h-px bg-[#D8D5CF] mb-5" />
+              <ul className="space-y-3">
+                {forJobSeekers.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <span className="text-sm text-[#3D4152] leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </AnimatedSection>
+      </Section>
 
-      {/* ── Who It's For ── */}
-      <section id="who-its-for" className="relative bg-[#0B0F1A]">
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
-          <AnimatedSection>
-            {/* Section header */}
-            <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
-                Who It&apos;s For
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Connecting Talent with Technology
-              </h2>
-              <p className="text-white/50 text-base sm:text-lg max-w-2xl leading-relaxed">
-                Our Job Portal is designed to connect skilled professionals with leading technology organisations across the UK-Pakistan corridor.
-              </p>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-8">
-              {/* Employers Card */}
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5 }}
-                className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
-              >
-                {/* Colored top border */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{ background: "linear-gradient(to right, #2563EB, #2563EB60)" }}
-                />
-
-                <div className="p-8">
-                  {/* Icon with glow */}
-                  <div className="relative mb-6">
-                    <div className="absolute inset-[-8px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500 bg-[#2563EB]" />
-                    <div
-                      className="relative w-14 h-14 rounded-xl flex items-center justify-center"
-                      style={{
-                        background: "#2563EB15",
-                        border: "1px solid #2563EB30",
-                        boxShadow: "0 0 20px #2563EB10",
-                      }}
-                    >
-                      <Building2 className="w-6 h-6 text-[#2563EB]" strokeWidth={1.5} />
-                    </div>
-                  </div>
-
-                  <h3 className="font-heading font-bold text-xl text-white mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
-                    For Employers
-                  </h3>
-                  <div className="h-px bg-white/10 mb-5" />
-                  <ul className="space-y-3">
-                    {forEmployers.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                        <span className="text-sm text-white/60 leading-relaxed">{item}</span>
-                      </li>
+      {/* Quick Filters Preview */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Explore Opportunities"
+            title="Search by Category"
+            subtitle="Filter roles by location, sector, and job type to find the perfect match."
+          />
+          <div className="grid md:grid-cols-3 gap-6">
+            {quickFilters.map((filter, i) => {
+              const Icon = filter.icon;
+              return (
+                <motion.div
+                  key={filter.title}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="bg-white border border-[#D8D5CF] rounded p-6"
+                >
+                  <Icon className="w-6 h-6 text-[#2563EB] mb-3" strokeWidth={1.5} />
+                  <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-4">{filter.title}</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-4" />
+                  <div className="flex flex-wrap gap-2">
+                    {filter.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1.5 bg-[#EEECEA] text-[#3D4152] text-xs font-medium rounded-full border border-[#D8D5CF]"
+                      >
+                        {tag}
+                      </span>
                     ))}
-                  </ul>
-                </div>
-              </motion.div>
-
-              {/* Job Seekers Card */}
-              <motion.div
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
-              >
-                {/* Colored top border */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{ background: "linear-gradient(to right, #22C55E, #22C55E60)" }}
-                />
-
-                <div className="p-8">
-                  {/* Icon with glow */}
-                  <div className="relative mb-6">
-                    <div className="absolute inset-[-8px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500 bg-[#22C55E]" />
-                    <div
-                      className="relative w-14 h-14 rounded-xl flex items-center justify-center"
-                      style={{
-                        background: "#22C55E15",
-                        border: "1px solid #22C55E30",
-                        boxShadow: "0 0 20px #22C55E10",
-                      }}
-                    >
-                      <Users className="w-6 h-6 text-[#22C55E]" strokeWidth={1.5} />
-                    </div>
                   </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
 
-                  <h3 className="font-heading font-bold text-xl text-white mb-2 group-hover:text-[#22C55E] transition-colors duration-200">
-                    For Job Seekers
-                  </h3>
-                  <div className="h-px bg-white/10 mb-5" />
-                  <ul className="space-y-3">
-                    {forJobSeekers.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                        <span className="text-sm text-white/60 leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Portal Features */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Platform Features"
+            title="Why UPTECH Job Portal"
+            subtitle="A purpose-built platform empowering cross-border technology careers and workforce development."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {portalFeatures.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.06 }}
+                  className="bg-white border border-[#D8D5CF] rounded p-6 hover:border-[#2563EB]/40 transition-colors duration-300"
+                >
+                  <Icon className="w-6 h-6 text-[#2563EB] mb-3" strokeWidth={1.5} />
+                  <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-3" />
+                  <p className="text-sm text-[#3D4152] leading-relaxed">{item.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
 
-      {/* ── Portal Features ── */}
-      <section className="relative bg-[#0E1221]">
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
-          <AnimatedSection>
-            {/* Section header */}
-            <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
-                Platform Features
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Why UPTECH Job Portal
-              </h2>
-              <p className="text-white/50 text-base sm:text-lg max-w-2xl leading-relaxed">
-                A purpose-built platform empowering cross-border technology careers and workforce development.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {portalFeatures.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
-                  >
-                    {/* Colored top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[3px]"
-                      style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
-                    />
-
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-5">
-                        {/* Icon with colored glow */}
-                        <div className="relative">
-                          <div
-                            className="absolute inset-[-8px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500"
-                            style={{ background: item.color }}
-                          />
-                          <div
-                            className="relative w-12 h-12 rounded-xl flex items-center justify-center"
-                            style={{
-                              background: `${item.color}15`,
-                              border: `1px solid ${item.color}30`,
-                              boxShadow: `0 0 20px ${item.color}10`,
-                            }}
-                          >
-                            <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
-                          </div>
-                        </div>
-                        {/* Numbered label */}
-                        <span
-                          className="text-[10px] font-bold tracking-[0.2em] uppercase"
-                          style={{ color: `${item.color}60` }}
-                        >
-                          {item.num}
-                        </span>
-                      </div>
-
-                      <h3 className="font-heading font-bold text-white text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
-                        {item.title}
-                      </h3>
-                      <div className="h-px bg-white/10 mb-3" />
-                      <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── How It Works ── */}
-      <section className="relative bg-[#131942]">
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
-          <AnimatedSection>
-            {/* Section header */}
-            <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#8b5cf6] mb-4">
-                Process
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                How It Works
-              </h2>
-              <p className="text-white/50 text-base sm:text-lg max-w-2xl leading-relaxed">
-                A streamlined journey from registration to hire -- connecting talent with opportunity in four simple steps.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {howItWorks.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.step}
-                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
-                    className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
-                  >
-                    {/* Colored top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[3px]"
-                      style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
-                    />
-
-                    <div className="p-6">
-                      {/* Number circle and icon */}
-                      <div className="flex items-center justify-between mb-5">
-                        <div className="relative">
-                          {/* Glow behind circle */}
-                          <div
-                            className="absolute inset-[-4px] rounded-full opacity-30 group-hover:opacity-60 blur-md transition-opacity duration-500"
-                            style={{ background: item.color }}
-                          />
-                          <div
-                            className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold border"
-                            style={{
-                              background: `${item.color}25`,
-                              borderColor: `${item.color}50`,
-                              boxShadow: `0 0 20px ${item.color}30`,
-                            }}
-                          >
-                            {item.step}
-                          </div>
-                        </div>
-                        {/* Icon with glow */}
-                        <div className="relative">
-                          <div
-                            className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500"
-                            style={{ background: item.color }}
-                          />
-                          <div
-                            className="relative w-10 h-10 rounded-xl flex items-center justify-center"
-                            style={{
-                              background: `${item.color}15`,
-                              border: `1px solid ${item.color}30`,
-                            }}
-                          >
-                            <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
-                          </div>
-                        </div>
-                      </div>
-
-                      <h3 className="font-heading font-bold text-white text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
-                        {item.title}
-                      </h3>
-                      <p className="text-white/50 text-sm leading-relaxed mb-4">{item.desc}</p>
-
-                      {/* Outcome */}
-                      <div className="flex items-center gap-2 pt-3 border-t border-white/10">
-                        <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: item.color }} strokeWidth={2} />
-                        <span className="text-xs font-semibold" style={{ color: item.color }}>
-                          {item.outcome}
-                        </span>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            {/* Connector arrows between steps (desktop) */}
-            <div className="hidden lg:flex items-center justify-center gap-3 mt-10">
-              {["Register", "Browse / Post", "Apply / Review", "Connect & Hire"].map((label, i) => (
-                <div key={label} className="flex items-center gap-3">
-                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.05] border border-white/[0.08]">
-                    <span className="text-xs font-bold text-white/40">{String(i + 1).padStart(2, "0")}</span>
-                    <span className="text-xs font-semibold text-white/70">{label}</span>
+      {/* How It Works */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Process"
+            title="How It Works"
+            subtitle="A streamlined journey from registration to hire — connecting talent with opportunity."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {howItWorks.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.step}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  className="border-t-2 border-[#2563EB] bg-white rounded p-6"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-heading font-bold text-[#2563EB]">{item.step}</span>
+                    <Icon className="w-5 h-5 text-[#7A7E8F]" strokeWidth={1.5} />
                   </div>
-                  {i < 3 && <ArrowRight className="w-4 h-4 text-white/20" />}
-                </div>
-              ))}
+                  <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
+                  <p className="text-sm text-[#3D4152] leading-relaxed mb-4">{item.desc}</p>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#22C55E]" strokeWidth={2} />
+                    <span className="text-xs font-semibold text-[#22C55E]">{item.outcome}</span>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* What's Coming */}
+      <Section variant="light" id="coming-soon">
+        <AnimatedSection>
+          <SectionHeader
+            label="Roadmap"
+            title="What&apos;s Coming"
+            subtitle="We're building the most comprehensive cross-border tech careers platform. Here's what's on the way."
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {upcomingFeatures.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  className="bg-white border border-[#D8D5CF] rounded p-6 relative overflow-hidden"
+                >
+                  <span className="absolute top-3 right-3 px-2.5 py-1 bg-[#2563EB]/10 text-[#2563EB] text-[10px] font-bold uppercase tracking-wide rounded-full">
+                    {item.badge}
+                  </span>
+                  <Icon className="w-7 h-7 text-[#2563EB] mb-4" strokeWidth={1.5} />
+                  <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-3" />
+                  <p className="text-sm text-[#3D4152] leading-relaxed">{item.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* CTA */}
+      <Section variant="dark">
+        <AnimatedSection>
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-4">The Future of Work</p>
+            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+              The Future of Cross-Border Tech Careers
+            </h2>
+            <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+              Empowering technology talent and fostering cross-border collaboration — our Job Portal helps build the workforce of the future.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/membership" variant="primary" size="lg" showArrow>Become a Member</Button>
+              <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── Key Sectors ── */}
-      <section className="relative bg-[#0B0F1A]">
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
-          <AnimatedSection>
-            {/* Section header */}
-            <div className="mb-14">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#f59e0b] mb-4">
-                Industries
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Key Sectors
-              </h2>
-              <p className="text-white/50 text-base sm:text-lg max-w-2xl leading-relaxed">
-                Explore high-demand technology sectors where cross-border talent is driving innovation and growth.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {keySectors.map((sector, i) => {
-                const Icon = sector.icon;
-                return (
-                  <motion.div
-                    key={sector.title}
-                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-xl overflow-hidden hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
-                  >
-                    {/* Colored left accent */}
-                    <div
-                      className="absolute top-4 bottom-4 left-0 w-1 rounded-r-full"
-                      style={{ background: `linear-gradient(to bottom, ${sector.color}, ${sector.color}30)` }}
-                    />
-
-                    <div className="p-6 pl-7">
-                      <div className="flex items-start gap-4">
-                        {/* Icon with glow */}
-                        <div className="relative flex-shrink-0">
-                          <div
-                            className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500"
-                            style={{ background: sector.color }}
-                          />
-                          <div
-                            className="relative w-12 h-12 rounded-xl flex items-center justify-center"
-                            style={{
-                              background: `${sector.color}15`,
-                              border: `1px solid ${sector.color}30`,
-                              boxShadow: `0 0 20px ${sector.color}10`,
-                            }}
-                          >
-                            <Icon className="w-5 h-5" style={{ color: sector.color }} strokeWidth={1.5} />
-                          </div>
-                        </div>
-
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-heading font-bold text-white text-base mb-1 group-hover:text-[#2563EB] transition-colors duration-200">
-                            {sector.title}
-                          </h3>
-                          <p className="text-white/50 text-sm leading-relaxed">{sector.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── CTA Section ── */}
-      <section className="relative bg-[#0E1221] overflow-hidden">
-        {/* Gradient glow effects */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#8b5cf6]" />
-
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-28">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
-                The Future of Work
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                The Future of Cross-Border Tech Careers
-              </h2>
-              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
-                Empowering technology talent and fostering cross-border collaboration -- our Job Portal helps build the workforce of the future. Join the UPTECH network and unlock your next opportunity.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg" showArrow>
-                  Become a Member
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </AnimatedSection>
+      </Section>
     </div>
   );
 }

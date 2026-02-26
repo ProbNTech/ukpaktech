@@ -87,7 +87,7 @@ const jsonLd = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "general enquiry",
-    email: "info@uptech.org.uk",
+    email: "info@ukpaktech.org.uk",
   },
 };
 
