@@ -130,12 +130,12 @@ export default function CodeOfConductPage() {
       </section>
 
       {/* ── Summary + Quick Nav — Light section ──────────────────────── */}
-      <section className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Our Standards</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Ethical Framework
@@ -199,12 +199,12 @@ export default function CodeOfConductPage() {
       </section>
 
       {/* ── 9 Principles — Light alt section ─────────────────────────── */}
-      <section id="principles" className="relative py-16 overflow-hidden bg-white">
+      <section id="principles" className="relative py-10 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Core Values</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Our 9 Principles
@@ -246,7 +246,7 @@ export default function CodeOfConductPage() {
                     </div>
                     <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed">{item.description}</p>
+                    <p className="text-base text-[#7A7E8F] leading-relaxed">{item.description}</p>
                   </motion.div>
                 );
               })}
@@ -256,12 +256,12 @@ export default function CodeOfConductPage() {
       </section>
 
       {/* ── WhatsApp Group Rules — Light section ─────────────────────── */}
-      <section id="whatsapp-rules" className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section id="whatsapp-rules" className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">Communication Standards</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 WhatsApp Group Rules
@@ -305,7 +305,7 @@ export default function CodeOfConductPage() {
                       >
                         {item.number}
                       </span>
-                      <p className="text-sm text-[#7A7E8F] leading-relaxed"><span className="text-[#5A5F72] font-semibold">{item.title}:</span> {item.rule}</p>
+                      <p className="text-base text-[#7A7E8F] leading-relaxed"><span className="text-[#5A5F72] font-semibold">{item.title}:</span> {item.rule}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -326,7 +326,7 @@ export default function CodeOfConductPage() {
                     >
                       {item.number}
                     </span>
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed"><span className="text-[#5A5F72] font-semibold">{item.title}:</span> {item.rule}</p>
+                    <p className="text-base text-[#7A7E8F] leading-relaxed"><span className="text-[#5A5F72] font-semibold">{item.title}:</span> {item.rule}</p>
                   </motion.div>
                 ))}
 
@@ -340,7 +340,7 @@ export default function CodeOfConductPage() {
                 >
                   <div className="relative">
                     <AlertTriangle className="w-5 h-5 text-[#C41E3A] mb-3" />
-                    <p className="text-[#5A5F72] text-sm leading-relaxed">
+                    <p className="text-[#5A5F72] text-base leading-relaxed">
                       Violations of these rules may result in removal from the group and further disciplinary action as outlined in the Disciplinary Procedure below.
                     </p>
                   </div>
@@ -352,12 +352,12 @@ export default function CodeOfConductPage() {
       </section>
 
       {/* ── Disciplinary Procedure — Light alt section ───────────────── */}
-      <section id="disciplinary" className="relative py-16 overflow-hidden bg-[#F5F4F2]">
+      <section id="disciplinary" className="relative py-10 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Enforcement</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Disciplinary Procedure
@@ -388,7 +388,7 @@ export default function CodeOfConductPage() {
                   </div>
                   <div className="py-6 pl-6 border-l border-[#D8D5CF]">
                     <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed">{item.description}</p>
+                    <p className="text-base text-[#7A7E8F] leading-relaxed">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -398,12 +398,12 @@ export default function CodeOfConductPage() {
       </section>
 
       {/* ── Reporting & Commitment — Light section ──────────────────── */}
-      <section className="relative bg-white py-16 overflow-hidden">
+      <section className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Accountability</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Reporting & Commitment
@@ -428,7 +428,7 @@ export default function CodeOfConductPage() {
                   <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">Reporting a Concern</h3>
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
-                <p className="text-sm text-[#7A7E8F] leading-relaxed mb-5">
+                <p className="text-base text-[#7A7E8F] leading-relaxed mb-5">
                   If you witness or experience a breach of this Code of Conduct, you are encouraged to report it through the following channels:
                 </p>
                 <ul className="space-y-3">
@@ -440,7 +440,7 @@ export default function CodeOfConductPage() {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-sm text-[#5A5F72] leading-relaxed">{item}</span>
+                      <span className="text-base text-[#5A5F72] leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -473,7 +473,7 @@ export default function CodeOfConductPage() {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-sm text-[#5A5F72] leading-relaxed">{item}</span>
+                      <span className="text-base text-[#5A5F72] leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -484,7 +484,7 @@ export default function CodeOfConductPage() {
       </section>
 
       {/* ── CTA — Gradient dark section ──────────────────────────────── */}
-      <section className="relative overflow-hidden py-20" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
+      <section className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         {/* Glow orbs */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
@@ -496,12 +496,12 @@ export default function CodeOfConductPage() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Committed to the Highest Standards
               </h2>
-              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
                 If you have questions about the Code of Conduct or need to report a concern, please contact the governance team.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button href="/contact" variant="primary" size="lg" showArrow>Contact Us</Button>
-                <Button href="/leadership" variant="glass" size="lg" showArrow>Leadership & Governance</Button>
+                <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
               </div>
             </div>
           </AnimatedSection>

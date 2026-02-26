@@ -95,10 +95,10 @@ export default function SkillDevelopmentCenterPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>
+              <Button href="/membership/apply" variant="primary" size="lg" showArrow>
                 Apply for Training
               </Button>
-              <Button href="/membership" variant="glass" size="lg" showArrow>
+              <Button href="/contact" variant="glass" size="lg" showArrow>
                 Partner with UPTECH
               </Button>
             </div>
@@ -122,20 +122,20 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
                 Our Mission
               </p>
-              <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
+              <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-5">
                 UPTECH&apos;s Skill Development Center provides comprehensive training programs designed to build world-class tech capabilities across the UK and Pakistan.
               </p>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
-              <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-5" />
+              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                 Our Skill Development Center offers industry-recognised certifications, specialised training, and personalised mentorship to empower individuals and organisations with cutting-edge technology skills.
               </p>
-              <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Through strategic partnerships with leading tech companies and educational institutions, we deliver programs that bridge the skills gap and create pathways for career advancement.
               </p>
             </div>
@@ -145,9 +145,9 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Programs Grid ── */}
       <section className="relative bg-white" id="programs">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
                 Training Programs
               </p>
@@ -177,13 +177,13 @@ export default function SkillDevelopmentCenterPage() {
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1 group-hover:text-[#22C55E] transition-colors duration-200">
                       {program.title}
                     </h3>
-                    <p className="text-[#7A7E8F] text-xs mb-3">{program.subtitle}</p>
+                    <p className="text-[#7A7E8F] text-sm mb-3">{program.subtitle}</p>
                     <div className="h-px bg-[#D8D5CF] mb-4" />
                     <ul className="space-y-2 flex-1">
                       {program.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                          <span className="text-[#5A5F72] text-sm">{bullet}</span>
+                          <span className="text-[#5A5F72] text-base">{bullet}</span>
                         </li>
                       ))}
                     </ul>
@@ -197,9 +197,9 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Learning Pathway ── */}
       <section className="relative bg-[#E8E6E3]" id="pathway">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Your Journey
               </p>
@@ -247,7 +247,7 @@ export default function SkillDevelopmentCenterPage() {
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
                       {step.title}
                     </h3>
-                    <p className="text-[#7A7E8F] text-sm leading-relaxed mb-4">{step.description}</p>
+                    <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">{step.description}</p>
                     <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
                       <span className="text-xs font-semibold" style={{ color: step.color }}>
@@ -264,9 +264,9 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Flagship Tracks ── */}
       <section className="relative bg-[#EEECEA]" id="tracks">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Flagship Tracks
               </p>
@@ -311,8 +311,8 @@ export default function SkillDevelopmentCenterPage() {
                       </div>
                     </div>
                     <div className="flex-1">
-                      <p className="text-xs font-bold text-[#7A7E8F] uppercase tracking-wider mb-1">What you build</p>
-                      <p className="text-[#5A5F72] text-sm leading-relaxed">{track.build}</p>
+                      <p className="text-sm font-bold text-[#7A7E8F] uppercase tracking-wider mb-1">What you build</p>
+                      <p className="text-[#5A5F72] text-base leading-relaxed">{track.build}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -324,9 +324,9 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Outcomes / Stats Bar ── */}
       <section className="relative bg-[#1C1F2E]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Results
               </p>
@@ -375,9 +375,9 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── FAQ ── */}
       <section className="relative bg-[#E8E6E3]" id="faq">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 FAQ
               </p>
@@ -418,7 +418,7 @@ export default function SkillDevelopmentCenterPage() {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-5 pl-12 text-[#5A5F72] text-sm leading-relaxed">{faq.answer}</div>
+                        <div className="pb-5 pl-12 text-[#5A5F72] text-base leading-relaxed">{faq.answer}</div>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -441,7 +441,7 @@ export default function SkillDevelopmentCenterPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
@@ -450,14 +450,14 @@ export default function SkillDevelopmentCenterPage() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Ready to Transform Your Career?
               </h2>
-              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl">
                 Join UPTECH&apos;s Skill Development Center and unlock your potential in the tech industry. Start your journey today with world-class training and mentorship.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg" showArrow>
+                <Button href="/membership/apply" variant="primary" size="lg" showArrow>
                   Apply for Training
                 </Button>
-                <Button href="/membership" variant="glass" size="lg" showArrow>
+                <Button href="/contact" variant="glass" size="lg" showArrow>
                   Partner with UPTECH
                 </Button>
               </div>

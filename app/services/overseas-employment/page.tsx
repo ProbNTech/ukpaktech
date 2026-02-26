@@ -121,7 +121,7 @@ export default function OverseasEmploymentPage() {
                 <div className="font-heading font-extrabold text-3xl sm:text-4xl mb-2" style={{ color: stat.color, textShadow: `0 0 30px ${stat.color}40` }}>
                   {stat.value}
                 </div>
-                <p className="text-white/50 text-sm">{stat.label}</p>
+                <p className="text-white/50 text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -131,18 +131,18 @@ export default function OverseasEmploymentPage() {
       {/* ── Intro Section ── */}
       <section className="relative bg-[#EEECEA]">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">Overview</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Overview</p>
+              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-5">
                 Our Focus
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
-              <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-5" />
+              <p className="text-[#5A5F72] text-lg sm:text-xl leading-relaxed mb-4">
                 We support ethical, compliant, and commercially viable pathways that connect skilled professionals with long-term, short-term and project-based opportunities across UK, Europe, Middle East and Pakistan.
               </p>
-              <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed">
+              <p className="text-[#5A5F72] text-lg sm:text-xl leading-relaxed">
                 We prioritise transparency, compliance, and long-term relationship building. Our goal is to create structured, sustainable talent mobility between the UK, Europe, Middle East and Pakistan&apos;s technology sectors. By enabling overseas contract employment, we strengthen collaboration, accelerate knowledge exchange, and support innovation across both ecosystems.
               </p>
             </div>
@@ -154,9 +154,9 @@ export default function OverseasEmploymentPage() {
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#22C55E]" />
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid lg:grid-cols-2 gap-6">
               {/* Employers */}
               <motion.div
                 initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
@@ -176,16 +176,16 @@ export default function OverseasEmploymentPage() {
                     <h3 className="font-heading font-bold text-xl text-[#1C1F2E]">For Employers</h3>
                   </div>
                   <div className="h-px bg-[#D8D5CF] mb-5" />
-                  <p className="text-sm text-[#5A5F72] leading-relaxed mb-5">
+                  <p className="text-base text-[#5A5F72] leading-relaxed mb-5">
                     Find the Right Talent, Fast &mdash; We help organisations:
                   </p>
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {employerBenefits.map((item) => (
                       <div key={item.title} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
                         <div>
-                          <h4 className="font-semibold text-[#1C1F2E] text-sm">{item.title}</h4>
-                          <p className="text-xs text-[#7A7E8F] leading-relaxed mt-0.5">{item.description}</p>
+                          <h4 className="font-semibold text-[#1C1F2E] text-base">{item.title}</h4>
+                          <p className="text-sm text-[#7A7E8F] leading-relaxed mt-0.5">{item.description}</p>
                         </div>
                       </div>
                     ))}
@@ -212,16 +212,16 @@ export default function OverseasEmploymentPage() {
                     <h3 className="font-heading font-bold text-xl text-[#1C1F2E]">For Professionals</h3>
                   </div>
                   <div className="h-px bg-[#D8D5CF] mb-5" />
-                  <p className="text-sm text-[#5A5F72] leading-relaxed mb-5">
+                  <p className="text-base text-[#5A5F72] leading-relaxed mb-5">
                     Grow Your Career Globally &mdash; We provide access to:
                   </p>
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {professionalBenefits.map((item) => (
                       <div key={item.title} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-[#2563EB] flex-shrink-0 mt-0.5" />
                         <div>
-                          <h4 className="font-semibold text-[#1C1F2E] text-sm">{item.title}</h4>
-                          <p className="text-xs text-[#7A7E8F] leading-relaxed mt-0.5">{item.description}</p>
+                          <h4 className="font-semibold text-[#1C1F2E] text-base">{item.title}</h4>
+                          <p className="text-sm text-[#7A7E8F] leading-relaxed mt-0.5">{item.description}</p>
                         </div>
                       </div>
                     ))}
@@ -236,13 +236,13 @@ export default function OverseasEmploymentPage() {
       {/* ── How It Works ── */}
       <section className="relative bg-[#EEECEA]">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Process</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">How It Works</h2>
               <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40 mb-4" />
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">A structured, compliant process from registration to placement.</p>
+              <p className="text-[#7A7E8F] text-lg sm:text-xl max-w-2xl leading-relaxed">A structured, compliant process from registration to placement.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {processSteps.map((step, i) => (
@@ -261,11 +261,11 @@ export default function OverseasEmploymentPage() {
                         {step.number}
                       </div>
                     </div>
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{step.title}</h3>
-                    <p className="text-[#5A5F72] text-sm leading-relaxed mb-4">{step.description}</p>
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{step.title}</h3>
+                    <p className="text-[#5A5F72] text-base leading-relaxed mb-4">{step.description}</p>
                     <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
-                      <span className="text-xs font-semibold" style={{ color: step.color }}>{step.outcome}</span>
+                      <span className="text-sm font-semibold" style={{ color: step.color }}>{step.outcome}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -279,13 +279,13 @@ export default function OverseasEmploymentPage() {
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">Sectors</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Technology Sectors We Cover</h2>
               <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#22C55E] to-[#22C55E]/40 mb-4" />
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">Our talent pool spans the full spectrum of modern technology disciplines.</p>
+              <p className="text-[#7A7E8F] text-lg sm:text-xl max-w-2xl leading-relaxed">Our talent pool spans the full spectrum of modern technology disciplines.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {sectors.map((sector, i) => {
@@ -306,9 +306,9 @@ export default function OverseasEmploymentPage() {
                           <Icon className="w-5 h-5" style={{ color: sector.color }} strokeWidth={1.5} />
                         </div>
                       </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{sector.title}</h3>
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{sector.title}</h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-sm text-[#5A5F72] leading-relaxed">{sector.description}</p>
+                      <p className="text-base text-[#5A5F72] leading-relaxed">{sector.description}</p>
                     </div>
                   </motion.div>
                 );
@@ -321,13 +321,13 @@ export default function OverseasEmploymentPage() {
       {/* ── FAQ ── */}
       <section className="relative bg-[#EEECEA]">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">FAQ</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Frequently Asked Questions</h2>
               <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/40 mb-4" />
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">Common questions about overseas contract employment.</p>
+              <p className="text-[#7A7E8F] text-lg sm:text-xl max-w-2xl leading-relaxed">Common questions about overseas contract employment.</p>
             </div>
             <FAQSection faqs={faqs} />
           </AnimatedSection>
@@ -345,14 +345,14 @@ export default function OverseasEmploymentPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">Get Started</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Get Started</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Get connected. Access opportunities. Grow your impact.
               </h2>
-              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
                 Overseas contract employment through the Council provides a trusted, compliant, and efficient way to connect talent with opportunity. Our goal is to accelerate growth, enhance careers, and strengthen the UK-Pakistan tech ecosystem through high-quality contract placements.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -421,7 +421,7 @@ function FAQSection({ faqs }: { faqs: { question: string; answer: string }[] }) 
                 >
                   <div className="px-5 lg:px-6 pb-5 lg:pb-6 pl-[4.25rem] lg:pl-[4.75rem]">
                     <div className="h-px bg-[#D8D5CF] mb-4" />
-                    <p className="text-[#5A5F72] text-sm leading-[1.8]">{faq.answer}</p>
+                    <p className="text-[#5A5F72] text-base leading-[1.8]">{faq.answer}</p>
                   </div>
                 </motion.div>
               )}

@@ -77,7 +77,7 @@ export default function MembersGuidancePage() {
                 <span className="text-2xl font-heading font-bold text-[#2563EB] mb-3 block">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="text-[#3D4152] text-sm leading-relaxed">{step}</p>
+                <p className="text-[#3D4152] text-base leading-relaxed">{step}</p>
               </motion.div>
             ))}
           </div>
@@ -107,7 +107,7 @@ export default function MembersGuidancePage() {
                   <Icon className="w-6 h-6 text-[#2563EB] mb-3" strokeWidth={1.5} />
                   <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{section.title}</h3>
                   <div className="h-px bg-[#D8D5CF] mb-3" />
-                  <p className="text-[#3D4152] text-sm leading-relaxed">{section.content}</p>
+                  <p className="text-[#3D4152] text-base leading-relaxed">{section.content}</p>
                 </motion.div>
               );
             })}
@@ -123,7 +123,7 @@ export default function MembersGuidancePage() {
             <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight mb-4">
               Communication & Support
             </h2>
-            <p className="text-white/70 text-base leading-relaxed mb-8">
+            <p className="text-white/70 text-lg leading-relaxed mb-8">
               For any questions, support requests, or feedback, contact our membership team at{" "}
               <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
                 info@uptech.org.uk
@@ -131,7 +131,7 @@ export default function MembersGuidancePage() {
               We aim to respond to all member enquiries within 2 business days.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>View Membership</Button>
+              <Button href="/membership/apply" variant="primary" size="lg" showArrow>Apply for Membership</Button>
               <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
             </div>
           </div>

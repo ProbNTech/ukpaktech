@@ -103,7 +103,7 @@ export default function TechExcellenceAwardsClient() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>
+              <Button href="/membership/apply" variant="primary" size="lg" showArrow>
                 Submit a Nomination
               </Button>
               <Button href="/contact" variant="glass" size="lg" showArrow>
@@ -116,21 +116,21 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── About Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-5">
                   About the Awards
                 </p>
-                <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
+                <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-5">
                   UPTECH Awards
                 </p>
-                <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-8" />
-                <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
+                <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-5" />
+                <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                   Achievement is a wonderful thing. But what makes it even more wonderful is being publicly acclaimed for it&#8212;especially in the presence of one&apos;s peers. That&apos;s why UPTECH has instituted awards in several categories. Also, members with many years of significant contribution to the IT industry are made Fellows of the Council. It is regarded as one of the most prestigious titles that an IT professional can receive in the country today.
                 </p>
-                <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed">
+                <p className="text-[#5A5F72] text-lg leading-relaxed">
                   Awards will be honorary in nature and presented during a high-impact ceremony /annual Black Tie Gala dinner in UK and other prominent locations.
                 </p>
               </div>
@@ -143,7 +143,7 @@ export default function TechExcellenceAwardsClient() {
                     return (
                       <li key={i} className="flex items-start gap-3">
                         <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: colors[i % colors.length] }} strokeWidth={2} />
-                        <p className="text-[#5A5F72] text-sm leading-relaxed">{objective}</p>
+                        <p className="text-[#5A5F72] text-base leading-relaxed">{objective}</p>
                       </li>
                     );
                   })}
@@ -156,9 +156,9 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── Company Awards ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Proposed Award Categories
               </p>
@@ -199,7 +199,7 @@ export default function TechExcellenceAwardsClient() {
                         </span>
                       </div>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#7A7E8F] text-sm leading-relaxed flex-1">{category.description}</p>
+                      <p className="text-[#7A7E8F] text-base leading-relaxed flex-1">{category.description}</p>
                     </div>
                   </motion.div>
                 );
@@ -211,9 +211,9 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── Professional Awards ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
                 Proposed Award Categories
               </p>
@@ -254,7 +254,7 @@ export default function TechExcellenceAwardsClient() {
                         </span>
                       </div>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#7A7E8F] text-sm leading-relaxed flex-1">{category.description}</p>
+                      <p className="text-[#7A7E8F] text-base leading-relaxed flex-1">{category.description}</p>
                     </div>
                   </motion.div>
                 );
@@ -266,9 +266,9 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── Nomination Process ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Nomination Process
               </p>
@@ -316,7 +316,7 @@ export default function TechExcellenceAwardsClient() {
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
                       {step.title}
                     </h3>
-                    <p className="text-[#7A7E8F] text-sm leading-relaxed mb-4">{step.description}</p>
+                    <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">{step.description}</p>
                     <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
                       <span className="text-xs font-semibold" style={{ color: step.color }}>
@@ -333,9 +333,9 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── Objectives ── */}
       <section className="relative bg-[#F5F4F2]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-3 gap-12">
+            <div className="grid lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                   Purpose
@@ -344,14 +344,14 @@ export default function TechExcellenceAwardsClient() {
                   Objectives
                 </h2>
                 <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
-                <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed mb-8">
+                <p className="text-[#7A7E8F] text-lg max-w-2xl leading-relaxed mb-5">
                   The UPTECH Awards programme is designed to achieve the following key objectives.
                 </p>
                 <ul className="space-y-0">
                   {objectives.map((objective, i) => (
                     <li key={i} className="flex items-start gap-3 py-3 border-b border-[#D8D5CF] last:border-b-0">
                       <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-[#5A5F72] text-sm">{objective}</span>
+                      <span className="text-[#5A5F72] text-base">{objective}</span>
                     </li>
                   ))}
                 </ul>
@@ -361,7 +361,7 @@ export default function TechExcellenceAwardsClient() {
                   <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl bg-gradient-to-r from-[#C41E3A] to-[#C41E3A60]" />
                   <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-3">Fellowship</h3>
                   <div className="h-px bg-[#D8D5CF] mb-4" />
-                  <p className="text-[#7A7E8F] text-sm leading-relaxed mb-4">
+                  <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">
                     Members with many years of significant contribution to the IT industry are made Fellows of the Council. It is regarded as one of the most prestigious titles that an IT professional can receive in the country today.
                   </p>
                   <p className="text-xs text-[#7A7E8F] italic">Honorary awards presented at the annual Black Tie Gala dinner</p>
@@ -374,9 +374,9 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── FAQ ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 FAQ
               </p>
@@ -417,7 +417,7 @@ export default function TechExcellenceAwardsClient() {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="pb-5 pl-12 text-[#5A5F72] text-sm leading-relaxed">{faq.answer}</div>
+                        <div className="pb-5 pl-12 text-[#5A5F72] text-base leading-relaxed">{faq.answer}</div>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -440,7 +440,7 @@ export default function TechExcellenceAwardsClient() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-5">
@@ -449,11 +449,11 @@ export default function TechExcellenceAwardsClient() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Nominate the Innovators Shaping the UK–Pakistan Tech Corridor
               </h2>
-              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl">
                 Help us recognise exceptional individuals and organisations driving technology excellence and cross-border collaboration.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg" showArrow>
+                <Button href="/membership/apply" variant="primary" size="lg" showArrow>
                   Submit a Nomination
                 </Button>
                 <Button href="/contact" variant="glass" size="lg" showArrow>

@@ -18,7 +18,7 @@ export function Section({ children, variant = "light", className = "", id }: Sec
 
   return (
     <section id={id} className={`${bgClass} ${className}`}>
-      <Container className="py-16 lg:py-20">{children}</Container>
+      <Container className="py-10 lg:py-14">{children}</Container>
     </section>
   );
 }

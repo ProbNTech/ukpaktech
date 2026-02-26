@@ -332,7 +332,7 @@ export default function TermsPage() {
       </section>
 
       {/* ── Background Notice — Light section ──────────────────────── */}
-      <section className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -382,12 +382,12 @@ export default function TermsPage() {
       </section>
 
       {/* ── Expand / Collapse Controls + Section Nav — Light alt ─── */}
-      <section className="relative py-16 overflow-hidden bg-white">
+      <section className="relative py-10 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
                 {termsSections.length} Sections
               </p>
@@ -454,7 +454,7 @@ export default function TermsPage() {
                     >
                       {section.number.padStart(2, "0")}
                     </span>
-                    <h3 className="font-heading font-semibold text-[#3D4152] text-xs sm:text-sm leading-snug group-hover:text-[#1C1F2E] transition-colors duration-200 line-clamp-2">
+                    <h3 className="font-heading font-semibold text-[#3D4152] text-sm sm:text-base leading-snug group-hover:text-[#1C1F2E] transition-colors duration-200 line-clamp-2">
                       {section.title}
                     </h3>
                   </motion.button>
@@ -469,9 +469,9 @@ export default function TermsPage() {
       <section className="relative overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
 
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-16">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20py-10">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">
                 Full Terms
               </p>
@@ -575,7 +575,7 @@ export default function TermsPage() {
                                 return (
                                   <p
                                     key={pIdx}
-                                    className={`text-sm leading-[1.8] ${
+                                    className={`text-base leading-[1.8] ${
                                       isHeader
                                         ? "text-[#3D4152] font-semibold mt-2"
                                         : isSubClause
@@ -609,7 +609,7 @@ export default function TermsPage() {
                                     ).map((item, lIdx) => (
                                       <li
                                         key={lIdx}
-                                        className="flex items-start gap-3 text-sm text-[#7A7E8F] leading-[1.8]"
+                                        className="flex items-start gap-3 text-base text-[#7A7E8F] leading-[1.8]"
                                       >
                                         <span
                                           className="text-xs font-bold tabular-nums pt-1 flex-shrink-0 min-w-[20px]"
@@ -667,7 +667,7 @@ export default function TermsPage() {
 
       {/* ── CTA — Gradient dark section ──────────────────────────── */}
       <section
-        className="relative overflow-hidden py-20"
+        className="relative overflow-hidden py-12"
         style={{
           background:
             "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)",
@@ -721,12 +721,12 @@ export default function TermsPage() {
                   Contact Us
                 </Button>
                 <Button
-                  href="/privacy"
+                  href="/membership/apply"
                   variant="glass"
                   size="lg"
                   showArrow
                 >
-                  Privacy Policy
+                  Apply for Membership
                 </Button>
               </div>
             </div>

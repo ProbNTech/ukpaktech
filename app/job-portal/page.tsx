@@ -157,7 +157,7 @@ export default function JobPortalPage() {
 
       {/* ── Stats Bar ── */}
       <section className="relative bg-[#0E1221]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -196,10 +196,10 @@ export default function JobPortalPage() {
 
       {/* ── Who It's For ── */}
       <section id="who-its-for" className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 py-12 lg:py-18">
           <AnimatedSection>
             {/* Section header */}
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Who It&apos;s For
               </p>
@@ -242,7 +242,7 @@ export default function JobPortalPage() {
                     </div>
                   </div>
 
-                  <h3 className="font-heading font-bold text-xl text-white mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
+                  <h3 className="font-heading font-bold text-xl text-[#1C1F2E] mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
                     For Employers
                   </h3>
                   <div className="h-px bg-[#D8D5CF] mb-5" />
@@ -250,7 +250,7 @@ export default function JobPortalPage() {
                     {forEmployers.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                        <span className="text-sm text-[#5A5F72] leading-relaxed">{item}</span>
+                        <span className="text-base text-[#5A5F72] leading-relaxed">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -287,7 +287,7 @@ export default function JobPortalPage() {
                     </div>
                   </div>
 
-                  <h3 className="font-heading font-bold text-xl text-white mb-2 group-hover:text-[#22C55E] transition-colors duration-200">
+                  <h3 className="font-heading font-bold text-xl text-[#1C1F2E] mb-2 group-hover:text-[#22C55E] transition-colors duration-200">
                     For Job Seekers
                   </h3>
                   <div className="h-px bg-[#D8D5CF] mb-5" />
@@ -295,7 +295,7 @@ export default function JobPortalPage() {
                     {forJobSeekers.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                        <span className="text-sm text-[#5A5F72] leading-relaxed">{item}</span>
+                        <span className="text-base text-[#5A5F72] leading-relaxed">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -308,10 +308,10 @@ export default function JobPortalPage() {
 
       {/* ── Portal Features ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 py-12 lg:py-18">
           <AnimatedSection>
             {/* Section header */}
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
                 Platform Features
               </p>
@@ -373,7 +373,7 @@ export default function JobPortalPage() {
                         {item.title}
                       </h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
+                      <p className="text-[#3D4152] text-base leading-relaxed">{item.desc}</p>
                     </div>
                   </motion.div>
                 );
@@ -385,10 +385,10 @@ export default function JobPortalPage() {
 
       {/* ── How It Works ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 py-12 lg:py-18">
           <AnimatedSection>
             {/* Section header */}
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Process
               </p>
@@ -459,7 +459,7 @@ export default function JobPortalPage() {
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
                         {item.title}
                       </h3>
-                      <p className="text-[#3D4152] text-sm leading-relaxed mb-4">{item.desc}</p>
+                      <p className="text-[#3D4152] text-base leading-relaxed mb-4">{item.desc}</p>
 
                       {/* Outcome */}
                       <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
@@ -492,10 +492,10 @@ export default function JobPortalPage() {
 
       {/* ── Key Sectors ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 py-12 lg:py-18">
           <AnimatedSection>
             {/* Section header */}
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Industries
               </p>
@@ -549,7 +549,7 @@ export default function JobPortalPage() {
                           <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1 group-hover:text-[#2563EB] transition-colors duration-200">
                             {sector.title}
                           </h3>
-                          <p className="text-[#3D4152] text-sm leading-relaxed">{sector.desc}</p>
+                          <p className="text-[#3D4152] text-base leading-relaxed">{sector.desc}</p>
                         </div>
                       </div>
                     </div>
@@ -577,7 +577,7 @@ export default function JobPortalPage() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 lg:py-18">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
@@ -586,7 +586,7 @@ export default function JobPortalPage() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 The Future of Cross-Border Tech Careers
               </h2>
-              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
                 Empowering technology talent and fostering cross-border collaboration -- our Job Portal helps build the workforce of the future. Join the UPTECH network and unlock your next opportunity.
               </p>
               <div className="flex flex-wrap gap-4">

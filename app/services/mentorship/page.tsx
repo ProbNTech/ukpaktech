@@ -233,9 +233,9 @@ export default function MentorshipPage() {
             backgroundSize: "80px 80px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-5 gap-12 items-start">
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-3">
                 <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Be The backbone of great startups</p>
                 <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-6">
@@ -244,7 +244,7 @@ export default function MentorshipPage() {
                     Empowering Innovators
                   </span>
                 </h2>
-                <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
+                <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                   Innovators are everywhere, but they need a little push from someone who knows what it takes to make their dreams come true. That&apos;s where our mentors come in shaping the future by empowering innovators around the world with their wisdom and experience. If you&apos;ve ever had the privilege of meeting a mentor who changed your life, you know how important mentors can be. Mentors help us find our path and shape us for the future by showing us what&apos;s possible.
                 </p>
               </div>
@@ -281,8 +281,8 @@ export default function MentorshipPage() {
                           </div>
                         </div>
                         <div>
-                          <span className="font-semibold text-[#1C1F2E] text-sm">{item.title}</span>
-                          <p className="text-[#7A7E8F] text-xs leading-relaxed mt-0.5">{item.desc}</p>
+                          <span className="font-semibold text-[#1C1F2E] text-base">{item.title}</span>
+                          <p className="text-[#7A7E8F] text-sm leading-relaxed mt-0.5">{item.desc}</p>
                         </div>
                       </motion.li>
                     ))}
@@ -300,16 +300,16 @@ export default function MentorshipPage() {
       <section className="relative bg-white overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C41E3A]/5 rounded-full blur-[150px] pointer-events-none" />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header - inline */}
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <p className="text-sm font-semibold text-[#C41E3A] uppercase tracking-wider mb-3">Benefits</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Advantages of Being a{" "}
                 <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">Mentor</span>
               </h2>
-              <p className="text-[#7A7E8F] text-base max-w-2xl mx-auto">
+              <p className="text-[#7A7E8F] text-lg max-w-2xl mx-auto">
                 Mentoring isn&apos;t just about giving — it&apos;s about growing together.
               </p>
             </div>
@@ -343,10 +343,10 @@ export default function MentorshipPage() {
 
                       <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2">{item.title}</h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-sm text-[#5A5F72] leading-relaxed mb-4">{item.description}</p>
+                      <p className="text-base text-[#5A5F72] leading-relaxed mb-4">{item.description}</p>
                       <ul className="space-y-2">
                         {item.features.map((f) => (
-                          <li key={f} className="flex items-start gap-2 text-xs text-[#5A5F72]">
+                          <li key={f} className="flex items-start gap-2 text-sm text-[#5A5F72]">
                             <CheckCircle2 className="w-3.5 h-3.5 text-[#22C55E] flex-shrink-0 mt-0.5" />
                             <span>{f}</span>
                           </li>
@@ -373,21 +373,21 @@ export default function MentorshipPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Roles</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 How Mentors Work with{" "}
                 <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">Startups</span>
               </h2>
-              <p className="text-[#7A7E8F] text-base max-w-2xl mx-auto">
+              <p className="text-[#7A7E8F] text-lg max-w-2xl mx-auto">
                 As a mentor with us, you get to work closely with ambitious innovators. Many are building businesses for the first time and need guidance across different areas. This is where you step in. Whether you&apos;re a successful founder or an industry specialist, this is your chance to support the next generation of entrepreneurs and learn along the way.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {mentorRoles.map((role, i) => {
                 const Icon = role.icon;
                 return (
@@ -427,11 +427,11 @@ export default function MentorshipPage() {
                       </div>
 
                       <div className="h-px bg-[#D8D5CF] mb-4" />
-                      <p className="text-sm text-[#5A5F72] leading-relaxed mb-5">{role.description}</p>
+                      <p className="text-base text-[#5A5F72] leading-relaxed mb-5">{role.description}</p>
 
                       <ul className="grid grid-cols-2 gap-3">
                         {role.responsibilities.map((r) => (
-                          <li key={r} className="flex items-start gap-2 text-sm text-[#5A5F72]">
+                          <li key={r} className="flex items-start gap-2 text-base text-[#5A5F72]">
                             <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: role.color }} />
                             <span>{r}</span>
                           </li>
@@ -459,16 +459,16 @@ export default function MentorshipPage() {
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <p className="text-sm font-semibold text-[#22C55E] uppercase tracking-wider mb-3">Process</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 How to Become a{" "}
                 <span className="bg-gradient-to-r from-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">Mentor</span>
               </h2>
-              <p className="text-[#7A7E8F] text-base max-w-2xl mx-auto">
+              <p className="text-[#7A7E8F] text-lg max-w-2xl mx-auto">
                 A clear four-step pathway from application to impact.
               </p>
             </div>
@@ -514,8 +514,8 @@ export default function MentorshipPage() {
                         </div>
                       </div>
 
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{step.title}</h3>
-                      <p className="text-[#5A5F72] text-sm leading-relaxed mb-4">{step.description}</p>
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">{step.title}</h3>
+                      <p className="text-[#5A5F72] text-base leading-relaxed mb-4">{step.description}</p>
 
                       {/* Outcome badge */}
                       <div
@@ -539,16 +539,16 @@ export default function MentorshipPage() {
           ================================================================ */}
       <section className="relative bg-[#EEECEA] overflow-hidden">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#22C55E]/5 rounded-full blur-[150px] pointer-events-none" />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Profiles</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Who We&apos;re{" "}
                 <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">Looking For</span>
               </h2>
-              <p className="text-[#7A7E8F] text-base max-w-2xl mx-auto">
+              <p className="text-[#7A7E8F] text-lg max-w-2xl mx-auto">
                 We welcome mentors from diverse backgrounds and disciplines.
               </p>
             </div>
@@ -570,8 +570,8 @@ export default function MentorshipPage() {
                   />
 
                   <div className="relative z-[1]">
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{item.title}</h3>
-                    <p className="text-[#5A5F72] text-sm leading-relaxed">{item.description}</p>
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">{item.title}</h3>
+                    <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -591,16 +591,16 @@ export default function MentorshipPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <p className="text-sm font-semibold text-[#C41E3A] uppercase tracking-wider mb-3">FAQ</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Frequently Asked{" "}
                 <span className="bg-gradient-to-r from-[#2563EB] to-[#C41E3A] bg-clip-text text-transparent">Questions</span>
               </h2>
-              <p className="text-[#7A7E8F] text-base max-w-2xl mx-auto">
+              <p className="text-[#7A7E8F] text-lg max-w-2xl mx-auto">
                 Common questions about our mentorship programme.
               </p>
             </div>
@@ -630,7 +630,7 @@ export default function MentorshipPage() {
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="text-center max-w-3xl mx-auto">
               <motion.div
@@ -653,7 +653,7 @@ export default function MentorshipPage() {
                 </span>
               </h2>
 
-              <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+              <p className="text-white/50 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
                 Whether you&apos;re an experienced founder or an industry specialist, this is your chance to support ambitious entrepreneurs and learn along the way.
               </p>
 
@@ -747,7 +747,7 @@ function FAQSection({ faqs }: { faqs: { question: string; answer: string }[] }) 
                 >
                   <div className="px-6 pb-5 pl-[4.75rem]">
                     <div className="h-px bg-[#D8D5CF] mb-4" />
-                    <p className="text-[#5A5F72] text-sm leading-[1.8]">{faq.answer}</p>
+                    <p className="text-[#5A5F72] text-base leading-[1.8]">{faq.answer}</p>
                   </div>
                 </motion.div>
               )}

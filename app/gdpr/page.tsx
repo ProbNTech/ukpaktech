@@ -67,11 +67,11 @@ export default function GDPRPage() {
       </section>
 
       {/* ── Data Subject Rights — Light section ─────────────────────── */}
-      <section className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">GDPR Compliance</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Data Subject Rights</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
@@ -89,7 +89,7 @@ export default function GDPRPage() {
                     </div>
                     <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{right.title}</h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed">{right.desc}</p>
+                    <p className="text-base text-[#7A7E8F] leading-relaxed">{right.desc}</p>
                   </motion.div>
                 );
               })}
@@ -99,11 +99,11 @@ export default function GDPRPage() {
       </section>
 
       {/* ── Your Rights — Light alt section ─────────── */}
-      <section className="relative py-16 overflow-hidden bg-white">
+      <section className="relative py-10 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">Your Rights</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Rights Under UK Data Protection Law</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
@@ -121,7 +121,7 @@ export default function GDPRPage() {
                     </div>
                     <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{right.title}</h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed">{right.desc}</p>
+                    <p className="text-base text-[#7A7E8F] leading-relaxed">{right.desc}</p>
                   </motion.div>
                 );
               })}
@@ -138,11 +138,11 @@ export default function GDPRPage() {
       </section>
 
       {/* ── Lawful Processing — Light section ─────────────────── */}
-      <section className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Legal Basis</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Lawful Processing</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
@@ -160,7 +160,7 @@ export default function GDPRPage() {
                     </div>
                     <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{basis.title}</h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed">{basis.desc}</p>
+                    <p className="text-base text-[#7A7E8F] leading-relaxed">{basis.desc}</p>
                   </motion.div>
                 );
               })}
@@ -170,11 +170,11 @@ export default function GDPRPage() {
       </section>
 
       {/* ── Data Retention — Light alt section ───────────────────────── */}
-      <section className="relative py-16 overflow-hidden bg-[#F5F4F2]">
+      <section className="relative py-10 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Retention Policy</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Data Retention</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
@@ -195,7 +195,7 @@ export default function GDPRPage() {
                     <span className="font-heading font-bold text-sm text-[#1C1F2E]">{item.category}</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-sm text-[#7A7E8F] leading-relaxed">{item.period}</span>
+                    <span className="text-base text-[#7A7E8F] leading-relaxed">{item.period}</span>
                   </div>
                 </motion.div>
               ))}
@@ -205,11 +205,11 @@ export default function GDPRPage() {
       </section>
 
       {/* ── Security — Light section ────────────────────────────────── */}
-      <section className="relative bg-white py-16 overflow-hidden">
+      <section className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">Data Security</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Security Measures</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
@@ -224,7 +224,7 @@ export default function GDPRPage() {
                   <h3 className="font-heading font-bold text-lg text-[#1C1F2E] pt-2">Safeguarding Your Data</h3>
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
-                <p className="text-sm text-[#5A5F72] leading-relaxed">UPTECH uses reasonable measures to safeguard personal information. We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to only those employees, contractors or agents who have a legitimate business need to have access to that data.</p>
+                <p className="text-base text-[#5A5F72] leading-relaxed">UPTECH uses reasonable measures to safeguard personal information. We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to only those employees, contractors or agents who have a legitimate business need to have access to that data.</p>
               </motion.div>
             </div>
           </AnimatedSection>
@@ -232,7 +232,7 @@ export default function GDPRPage() {
       </section>
 
       {/* ── Contact CTA — Gradient dark section ───────────────────── */}
-      <section className="relative overflow-hidden py-20" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
+      <section className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -243,7 +243,7 @@ export default function GDPRPage() {
               <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-4">For any questions about this Privacy Policy or our treatment of your Personal Information, please contact{" "}<a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a></p>
               <div className="flex flex-wrap gap-4 mt-10">
                 <Button href="/contact" variant="primary" size="lg" showArrow>Contact Us</Button>
-                <Button href="/privacy" variant="glass" size="lg" showArrow>Privacy Policy</Button>
+                <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
               </div>
             </div>
           </AnimatedSection>

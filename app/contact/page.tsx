@@ -113,7 +113,7 @@ export default function ContactPage() {
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-lg text-white/50 max-w-2xl leading-relaxed mb-10"
+            className="text-lg text-white/50 max-w-2xl leading-relaxed mb-8"
           >
             Whether you&apos;re looking to partner, join, sponsor, or simply learn more — we&apos;d love to hear from you.
           </motion.p>
@@ -164,7 +164,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── Enquiry Types — Dark with glass cards ─────────────────────── */}
-      <section className="relative bg-[#0B0F1A] py-16 overflow-hidden">
+      <section className="relative bg-[#0B0F1A] py-10 overflow-hidden">
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "40px 40px" }} />
         {/* Top gradient accent line */}
@@ -172,7 +172,7 @@ export default function ContactPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">How can we help</p>
               <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Enquiry Types
@@ -209,7 +209,7 @@ export default function ContactPage() {
                     </div>
 
                     <h3 className="font-heading font-bold text-sm text-white mb-1.5">{type.label}</h3>
-                    <p className="text-xs text-white/35 leading-relaxed">{type.desc}</p>
+                    <p className="text-sm text-white/35 leading-relaxed">{type.desc}</p>
                   </motion.div>
                 );
               })}
@@ -219,7 +219,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── Form + Sidebar — Dark tech section ────────────────────────── */}
-      <section className="relative py-16 overflow-hidden" style={{ backgroundColor: "#0E1221" }}>
+      <section className="relative py-10 overflow-hidden" style={{ backgroundColor: "#0E1221" }}>
         {/* Grid pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "60px 60px" }} />
         {/* Glowing orb accents */}
@@ -228,7 +228,7 @@ export default function ContactPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Write to us</p>
               <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Send a Message
@@ -327,8 +327,8 @@ export default function ContactPage() {
                     <Briefcase className="w-6 h-6 text-[#2563EB] mb-3" strokeWidth={1.5} />
                     <h3 className="font-heading font-bold text-sm text-white mb-1">Ready to Join?</h3>
                     <p className="text-xs text-white/40 mb-5 leading-relaxed">Become a member and unlock the full UPTECH network.</p>
-                    <Button href="/membership" variant="glass" size="sm" showArrow>
-                      Membership
+                    <Button href="/membership/apply" variant="glass" size="sm" showArrow>
+                      Apply Now
                     </Button>
                   </div>
                 </motion.div>
@@ -339,7 +339,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── CTA — Gradient dark section ──────────────────────────────── */}
-      <section className="relative overflow-hidden py-20" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
+      <section className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
         {/* Animated gradient line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         {/* Glow orbs */}
@@ -352,11 +352,11 @@ export default function ContactPage() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Let&apos;s Build the Future Together
               </h2>
-              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
                 Whether you represent a startup, corporation, government body, or academic institution — UPTECH is your gateway to the UK–Pakistan technology partnership.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg" showArrow>Become a Member</Button>
+                <Button href="/membership/apply" variant="primary" size="lg" showArrow>Apply for Membership</Button>
                 <Button href="/about" variant="glass" size="lg" showArrow>About UPTECH</Button>
               </div>
             </div>

@@ -117,7 +117,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── Stats Bar ── */}
       <section className="relative bg-[#0B0F1A]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -154,24 +154,24 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── Trade Delegation Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="max-w-4xl mb-14">
+            <div className="max-w-4xl mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
                 Trade Delegations
               </p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
                 Connecting Technology Companies Across Borders
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
-              <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed">
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-5" />
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 {tradeDelegationIntro}
               </p>
             </div>
 
             {/* Trade Delegation For Members */}
-            <div className="mb-8">
-              <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-6">For Members</h3>
+            <div className="mb-5">
+              <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-4">For Members</h3>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {tradeDelegationBenefits.map((item, i) => (
@@ -188,11 +188,11 @@ export default function TradeDelegationsAndExhibitionsClient() {
                     style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
                   />
                   <div className="p-6">
-                    <h4 className="font-heading font-bold text-[#1C1F2E] text-base mb-2" style={{ color: item.color }}>
+                    <h4 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2" style={{ color: item.color }}>
                       {item.title}
                     </h4>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-[#5A5F72] text-sm leading-relaxed">{item.description}</p>
+                    <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -203,26 +203,26 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── Exhibition Events Section ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="max-w-4xl mb-14">
+            <div className="max-w-4xl mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-5">
                 Exhibition Events
               </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-5">
                 High-Impact Exhibition Events
               </h2>
-              <div className="h-px bg-gradient-to-r from-[#22C55E]/40 via-[#22C55E]/10 to-transparent mb-8" />
-              <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed">
+              <div className="h-px bg-gradient-to-r from-[#22C55E]/40 via-[#22C55E]/10 to-transparent mb-5" />
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 {exhibitionIntro}
               </p>
             </div>
 
             {/* Exhibition For Members */}
-            <div className="mb-8">
-              <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-6">For Members</h3>
+            <div className="mb-5">
+              <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-4">For Members</h3>
             </div>
-            <div className="grid md:grid-cols-2 gap-6 mb-14">
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
               {exhibitionBenefits.map((item, i) => (
                 <motion.div
                   key={item.title}
@@ -237,11 +237,11 @@ export default function TradeDelegationsAndExhibitionsClient() {
                     style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
                   />
                   <div className="p-6">
-                    <h4 className="font-heading font-bold text-[#1C1F2E] text-base mb-2" style={{ color: item.color }}>
+                    <h4 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2" style={{ color: item.color }}>
                       {item.title}
                     </h4>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-[#5A5F72] text-sm leading-relaxed">{item.description}</p>
+                    <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -252,7 +252,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#C41E3A]" />
               <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-4">Why It Matters</h3>
               <div className="relative h-px bg-[#D8D5CF] mb-4" />
-              <p className="relative text-[#5A5F72] text-base sm:text-lg leading-relaxed">
+              <p className="relative text-[#5A5F72] text-lg leading-relaxed">
                 {exhibitionWhyItMatters}
               </p>
             </div>
@@ -262,9 +262,9 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── What We Offer ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
                 What We Offer
               </p>
@@ -272,7 +272,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
                 Services and Support
               </h2>
               <div className="h-px bg-gradient-to-r from-[#22C55E]/40 via-[#22C55E]/10 to-transparent mb-4 max-w-xs" />
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
+              <p className="text-[#7A7E8F] text-lg max-w-2xl leading-relaxed">
                 Comprehensive support for trade delegations and technology exhibitions from planning to execution.
               </p>
             </div>
@@ -291,11 +291,11 @@ export default function TradeDelegationsAndExhibitionsClient() {
                     style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
                   />
                   <div className="p-6">
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#22C55E] transition-colors duration-200">
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#22C55E] transition-colors duration-200">
                       {item.title}
                     </h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-[#5A5F72] text-sm leading-relaxed">{item.description}</p>
+                    <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -306,9 +306,9 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── Benefits & How It Works ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                   Participation
@@ -317,14 +317,14 @@ export default function TradeDelegationsAndExhibitionsClient() {
                   Benefits of Participating
                 </h2>
                 <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
-                <p className="text-[#7A7E8F] text-sm mb-6">
+                <p className="text-[#7A7E8F] text-base mb-5">
                   Why join our trade delegations and exhibitions.
                 </p>
                 <ul className="space-y-0">
                   {benefits.map((item) => (
                     <li key={item} className="flex items-start gap-3 py-4 border-b border-[#D8D5CF] last:border-b-0">
                       <CheckCircle2 className="w-4 h-4 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+                      <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -337,7 +337,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
                   How It Works
                 </h2>
                 <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
-                <p className="text-[#7A7E8F] text-sm mb-6">
+                <p className="text-[#7A7E8F] text-base mb-5">
                   Three simple steps to join our delegations and exhibitions.
                 </p>
                 <div className="space-y-0">
@@ -356,10 +356,10 @@ export default function TradeDelegationsAndExhibitionsClient() {
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-heading font-bold text-[#1C1F2E] text-sm mb-1 group-hover:text-[#2563EB] transition-colors duration-200">
+                        <h4 className="font-heading font-bold text-[#1C1F2E] text-base mb-1 group-hover:text-[#2563EB] transition-colors duration-200">
                           {step.title}
                         </h4>
-                        <p className="text-[#5A5F72] text-sm leading-relaxed">{step.description}</p>
+                        <p className="text-[#5A5F72] text-base leading-relaxed">{step.description}</p>
                       </div>
                     </div>
                   ))}
@@ -372,9 +372,9 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── CEO at Summit ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                   On the Ground
@@ -383,7 +383,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
                   Leading From the Front
                 </h2>
                 <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-6 max-w-xs" />
-                <p className="text-[#3D4152] text-base leading-relaxed">
+                <p className="text-[#3D4152] text-lg leading-relaxed">
                   UPTECH Founder &amp; CEO Khalil Choudhary personally leads trade delegations and represents the Council at international summits, ensuring our members have direct access to decision-makers and opportunities at the highest level.
                 </p>
               </div>
@@ -408,16 +408,16 @@ export default function TradeDelegationsAndExhibitionsClient() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-5">
                 Get Involved
               </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-5">
                 Join Our Next Delegation
               </h2>
-              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl">
                 Connect with technology leaders and explore cross-border opportunities through UPTECH&apos;s trade delegations and exhibitions.
               </p>
               <div className="flex flex-wrap gap-4">

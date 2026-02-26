@@ -156,7 +156,7 @@ export default function MembershipApplicationForm() {
           <div className="absolute inset-0 opacity-[0.03]" style={gridPatternStyle} />
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 pt-36 pb-20 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 pt-28 pb-14 text-center">
           <motion.div initial="hidden" animate="visible" variants={stagger}>
             <motion.p
               variants={itemFade}
@@ -219,8 +219,8 @@ export default function MembershipApplicationForm() {
           APPLICATION FORM
       ═══════════════════════════════════════════════════════ */}
       {!formSubmitted && (
-        <section className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 pb-24">
-          <form onSubmit={handleSubmit} className="space-y-10">
+        <section className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 pb-14">
+          <form onSubmit={handleSubmit} className="space-y-6">
 
             {/* ── Section 1: Membership Type ─────────────────── */}
             <motion.div
@@ -230,13 +230,13 @@ export default function MembershipApplicationForm() {
               variants={fadeUp}
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
                   <Star className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">Membership Type</h2>
-                  <p className="text-sm text-[#7A7E8F]">Select the membership category that best fits your organisation</p>
+                  <p className="text-base text-[#7A7E8F]">Select the membership category that best fits your organisation</p>
                 </div>
               </div>
 
@@ -282,19 +282,19 @@ export default function MembershipApplicationForm() {
               variants={fadeUp}
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-[#2563EB]/20 flex items-center justify-center">
                   <Building2 className="w-5 h-5 text-[#2563EB]" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">Organisation Details</h2>
-                  <p className="text-sm text-[#7A7E8F]">Information about your company or institution</p>
+                  <p className="text-base text-[#7A7E8F]">Information about your company or institution</p>
                 </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="sm:col-span-2">
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Organisation Name <span className="text-red-400">*</span>
                   </label>
                   <input
@@ -306,7 +306,7 @@ export default function MembershipApplicationForm() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Registered Business Address <span className="text-red-400">*</span>
                   </label>
                   <input
@@ -318,7 +318,7 @@ export default function MembershipApplicationForm() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Postcode <span className="text-red-400">*</span>
                   </label>
                   <input
@@ -330,7 +330,7 @@ export default function MembershipApplicationForm() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Country <span className="text-red-400">*</span>
                   </label>
                   <div className="relative">
@@ -348,7 +348,7 @@ export default function MembershipApplicationForm() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Phone Number <span className="text-red-400">*</span>
                   </label>
                   <input
@@ -360,7 +360,7 @@ export default function MembershipApplicationForm() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Website</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Website</label>
                   <input
                     type="url"
                     placeholder="https://www.example.com"
@@ -369,7 +369,7 @@ export default function MembershipApplicationForm() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Annual Revenue (GBP)
                   </label>
                   <div className="relative">
@@ -388,7 +388,7 @@ export default function MembershipApplicationForm() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Number of Employees</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Number of Employees</label>
                   <div className="relative">
                     <select className="w-full px-4 py-3 rounded-lg bg-white border border-[#D8D5CF] text-[#1C1F2E] focus:outline-none focus:border-blue-500/50 focus:bg-[#F5F4F2] transition-all appearance-none">
                       <option value="" className="bg-white">Select range</option>
@@ -404,7 +404,7 @@ export default function MembershipApplicationForm() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Core Products / Services <span className="text-red-400">*</span>
                   </label>
                   <textarea
@@ -418,7 +418,7 @@ export default function MembershipApplicationForm() {
 
               {/* Public listing preferences */}
               <div className="mt-8 pt-6 border-t border-[#D8D5CF]">
-                <p className="text-sm font-medium text-[#3D4152] mb-4">Listing Preferences</p>
+                <p className="text-base font-medium text-[#3D4152] mb-4">Listing Preferences</p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <input
@@ -476,13 +476,13 @@ export default function MembershipApplicationForm() {
               variants={fadeUp}
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
                   <Briefcase className="w-5 h-5 text-green-400" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">Industry Sectors</h2>
-                  <p className="text-sm text-[#7A7E8F]">Select the sectors that best represent your organisation&apos;s activities</p>
+                  <p className="text-base text-[#7A7E8F]">Select the sectors that best represent your organisation&apos;s activities</p>
                 </div>
               </div>
 
@@ -517,7 +517,7 @@ export default function MembershipApplicationForm() {
               </div>
 
               <div className="mt-4">
-                <label className="block text-sm font-medium text-[#3D4152] mb-2">Other (please specify)</label>
+                <label className="block text-base font-medium text-[#3D4152] mb-2">Other (please specify)</label>
                 <input
                   type="text"
                   placeholder="Enter other sectors"
@@ -534,13 +534,13 @@ export default function MembershipApplicationForm() {
               variants={fadeUp}
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-[#C41E3A]/20 flex items-center justify-center">
                   <MapPin className="w-5 h-5 text-[#C41E3A]" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">Office Locations</h2>
-                  <p className="text-sm text-[#7A7E8F]">Select all cities where your organisation has offices</p>
+                  <p className="text-base text-[#7A7E8F]">Select all cities where your organisation has offices</p>
                 </div>
               </div>
 
@@ -619,7 +619,7 @@ export default function MembershipApplicationForm() {
               {/* Employee counts */}
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Employees in the UK
                   </label>
                   <input
@@ -630,7 +630,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Employees in Pakistan
                   </label>
                   <input
@@ -651,13 +651,13 @@ export default function MembershipApplicationForm() {
               variants={fadeUp}
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center">
                   <FileText className="w-5 h-5 text-cyan-400" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">Organisation Profile</h2>
-                  <p className="text-sm text-[#7A7E8F]">This profile will be used for the UPTECH membership directory (max 100 words)</p>
+                  <p className="text-base text-[#7A7E8F]">This profile will be used for the UPTECH membership directory (max 100 words)</p>
                 </div>
               </div>
 
@@ -685,19 +685,19 @@ export default function MembershipApplicationForm() {
               variants={fadeUp}
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-rose-500/20 flex items-center justify-center">
                   <User className="w-5 h-5 text-rose-400" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">CEO / Principal Representative</h2>
-                  <p className="text-sm text-[#7A7E8F]">Primary decision-maker for the organisation</p>
+                  <p className="text-base text-[#7A7E8F]">Primary decision-maker for the organisation</p>
                 </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     First Name <span className="text-red-400">*</span>
                   </label>
                   <input
@@ -708,7 +708,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Last Name <span className="text-red-400">*</span>
                   </label>
                   <input
@@ -719,7 +719,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Job Title <span className="text-red-400">*</span>
                   </label>
                   <input
@@ -730,7 +730,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Nationality</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Nationality</label>
                   <input
                     type="text"
                     placeholder="e.g. British, Pakistani"
@@ -738,7 +738,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Email Address <span className="text-red-400">*</span>
                   </label>
                   <input
@@ -749,7 +749,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">
                     Phone Number <span className="text-red-400">*</span>
                   </label>
                   <input
@@ -760,7 +760,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Mobile Number</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Mobile Number</label>
                   <input
                     type="tel"
                     placeholder="+44 7XXX XXXXXX"
@@ -768,7 +768,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">LinkedIn Profile</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">LinkedIn Profile</label>
                   <input
                     type="url"
                     placeholder="https://linkedin.com/in/..."
@@ -786,19 +786,19 @@ export default function MembershipApplicationForm() {
               variants={fadeUp}
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
                   <Mail className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">Primary Contact Person</h2>
-                  <p className="text-sm text-[#7A7E8F]">Main point of contact for UPTECH correspondence (if different from CEO)</p>
+                  <p className="text-base text-[#7A7E8F]">Main point of contact for UPTECH correspondence (if different from CEO)</p>
                 </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">First Name</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">First Name</label>
                   <input
                     type="text"
                     placeholder="First name"
@@ -806,7 +806,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Last Name</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Last Name</label>
                   <input
                     type="text"
                     placeholder="Last name"
@@ -814,7 +814,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Job Title</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Job Title</label>
                   <input
                     type="text"
                     placeholder="e.g. Head of Operations"
@@ -822,7 +822,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Nationality</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Nationality</label>
                   <input
                     type="text"
                     placeholder="e.g. British, Pakistani"
@@ -830,7 +830,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Email Address</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Email Address</label>
                   <input
                     type="email"
                     placeholder="name@company.com"
@@ -838,7 +838,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Phone Number</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Phone Number</label>
                   <input
                     type="tel"
                     placeholder="+44 7XXX XXXXXX"
@@ -856,19 +856,19 @@ export default function MembershipApplicationForm() {
               variants={fadeUp}
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-[#2563EB]/20 flex items-center justify-center">
                   <Users className="w-5 h-5 text-[#2563EB]" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">Secondary Contact (Optional)</h2>
-                  <p className="text-sm text-[#7A7E8F]">Additional point of contact for your organisation</p>
+                  <p className="text-base text-[#7A7E8F]">Additional point of contact for your organisation</p>
                 </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">First Name</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">First Name</label>
                   <input
                     type="text"
                     placeholder="First name"
@@ -876,7 +876,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Last Name</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Last Name</label>
                   <input
                     type="text"
                     placeholder="Last name"
@@ -884,7 +884,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Job Title</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Job Title</label>
                   <input
                     type="text"
                     placeholder="e.g. CFO, Director"
@@ -892,7 +892,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Email Address</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Email Address</label>
                   <input
                     type="email"
                     placeholder="name@company.com"
@@ -900,7 +900,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Phone Number</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Phone Number</label>
                   <input
                     type="tel"
                     placeholder="+44 7XXX XXXXXX"
@@ -908,7 +908,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Mobile Number</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Mobile Number</label>
                   <input
                     type="tel"
                     placeholder="+44 7XXX XXXXXX"
@@ -926,19 +926,19 @@ export default function MembershipApplicationForm() {
               variants={fadeUp}
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center">
                   <Globe className="w-5 h-5 text-emerald-400" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">Main Contact in Pakistan (Optional)</h2>
-                  <p className="text-sm text-[#7A7E8F]">If your organisation has operations in Pakistan</p>
+                  <p className="text-base text-[#7A7E8F]">If your organisation has operations in Pakistan</p>
                 </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">First Name</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">First Name</label>
                   <input
                     type="text"
                     placeholder="First name"
@@ -946,7 +946,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Last Name</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Last Name</label>
                   <input
                     type="text"
                     placeholder="Last name"
@@ -954,7 +954,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Job Title</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Job Title</label>
                   <input
                     type="text"
                     placeholder="e.g. Country Manager"
@@ -962,7 +962,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Email Address</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Email Address</label>
                   <input
                     type="email"
                     placeholder="name@company.com"
@@ -970,7 +970,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Phone Number</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Phone Number</label>
                   <input
                     type="tel"
                     placeholder="+92 XXX XXXXXXX"
@@ -978,7 +978,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Pakistan Office Address</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Pakistan Office Address</label>
                   <input
                     type="text"
                     placeholder="Full address"
@@ -996,19 +996,19 @@ export default function MembershipApplicationForm() {
               variants={fadeUp}
               className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm"
             >
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center">
                   <Shield className="w-5 h-5 text-pink-400" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-[#1C1F2E]">Referred By (Optional)</h2>
-                  <p className="text-sm text-[#7A7E8F]">If you were referred by an existing UPTECH member</p>
+                  <p className="text-base text-[#7A7E8F]">If you were referred by an existing UPTECH member</p>
                 </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Referrer&apos;s Name</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Referrer&apos;s Name</label>
                   <input
                     type="text"
                     placeholder="Full name"
@@ -1016,7 +1016,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Organisation</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Organisation</label>
                   <input
                     type="text"
                     placeholder="Organisation name"
@@ -1024,7 +1024,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Email Address</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Email Address</label>
                   <input
                     type="email"
                     placeholder="referrer@company.com"
@@ -1032,7 +1032,7 @@ export default function MembershipApplicationForm() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-[#3D4152] mb-2">Phone Number</label>
+                  <label className="block text-base font-medium text-[#3D4152] mb-2">Phone Number</label>
                   <input
                     type="tel"
                     placeholder="+44 XXXX XXXXXX"

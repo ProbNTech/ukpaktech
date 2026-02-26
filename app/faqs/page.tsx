@@ -114,7 +114,7 @@ export default function FAQsPage() {
                 className="text-center"
               >
                 <p className="font-heading font-extrabold text-3xl text-[#1C1F2E]">{stat.value}</p>
-                <p className="text-sm text-[#7A7E8F]">{stat.label}</p>
+                <p className="text-base text-[#7A7E8F]">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -143,7 +143,7 @@ export default function FAQsPage() {
                     <Icon className="w-5 h-5" style={{ color: meta.color }} strokeWidth={1.5} />
                   </div>
                   <h3 className="font-heading font-bold text-[#1C1F2E] text-sm mb-1 group-hover:text-[#2563EB] transition-colors duration-200">{cat.category}</h3>
-                  <p className="text-xs text-[#7A7E8F] leading-relaxed hidden sm:block">{meta.desc}</p>
+                  <p className="text-sm text-[#7A7E8F] leading-relaxed hidden sm:block">{meta.desc}</p>
                   <p className="text-[10px] font-bold text-[#D8D5CF] uppercase tracking-wider mt-2">{cat.faqs.length} questions</p>
                 </motion.button>
               );
@@ -207,13 +207,13 @@ export default function FAQsPage() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight mb-4">
                 We&apos;re Here to Help
               </h2>
-              <p className="text-white/70 text-base leading-relaxed max-w-2xl">
+              <p className="text-white/70 text-lg leading-relaxed max-w-2xl">
                 Can&apos;t find the answer you&apos;re looking for? Our team is ready to assist with any questions about UPTECH, membership, programmes, or partnerships.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
               <Button href="/contact" variant="primary" size="lg" showArrow>Contact Us</Button>
-              <Button href="/membership" variant="glass" size="lg" showArrow>Join UPTECH</Button>
+              <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
             </div>
           </div>
         </AnimatedSection>
@@ -291,7 +291,7 @@ function FAQAccordion({
                 >
                   <div className="px-5 lg:px-6 pb-5 lg:pb-6 pl-[4.25rem] lg:pl-[4.75rem]">
                     <div className="h-px bg-[#D8D5CF]/50 mb-4" />
-                    <p className="text-[#3D4152] text-sm leading-[1.8]">{faq.answer}</p>
+                    <p className="text-[#3D4152] text-base leading-[1.8]">{faq.answer}</p>
                   </div>
                 </motion.div>
               )}

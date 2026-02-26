@@ -250,23 +250,23 @@ export default function FundingAndGrantsClient() {
 
       {/* ── OVERVIEW ──────────────────────────────────────────────── */}
       <section className="relative bg-[#EEECEA] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl mb-14">
+            <div className="max-w-3xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
                 <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">Overview</span>
               </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-5">
                 Funding Programs Designed for the{" "}
                 <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                   UK–Pakistan Tech Corridor
                 </span>
               </h2>
-              <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
+              <p className="text-[#5A5F72] text-lg leading-relaxed mb-4">
                 UPTECH provides access to funding opportunities and grants designed to support technology innovation, startup growth, and cross-border collaboration between the UK and Pakistan.
               </p>
-              <p className="text-[#5A5F72] text-base leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Our funding programs enable entrepreneurs, researchers, and organisations to turn innovative ideas into reality. Whether you&apos;re a startup seeking seed funding, a researcher looking for grant support, or an enterprise exploring partnership opportunities, we connect you with the right funding sources and resources.
               </p>
             </div>
@@ -296,9 +296,9 @@ export default function FundingAndGrantsClient() {
                         <Icon className="w-6 h-6" style={{ color: item.color }} strokeWidth={1.5} />
                       </div>
                     </div>
-                    <h3 className="relative font-heading font-bold text-[#1C1F2E] text-base mb-3">{item.title}</h3>
+                    <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-3">{item.title}</h3>
                     <div className="relative h-px bg-[#D8D5CF] mb-3" />
-                    <p className="relative text-[#5A5F72] text-sm leading-relaxed">{item.description}</p>
+                    <p className="relative text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
                   </motion.div>
                 );
               })}
@@ -309,10 +309,10 @@ export default function FundingAndGrantsClient() {
 
       {/* ── OPPORTUNITIES ─────────────────────────────────────────── */}
       <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="max-w-3xl mb-14">
+            <div className="max-w-3xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]" />
                 <span className="text-[#22C55E] text-xs font-semibold uppercase tracking-wider">Funding</span>
@@ -320,7 +320,7 @@ export default function FundingAndGrantsClient() {
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Available Opportunities
               </h2>
-              <p className="text-[#5A5F72] text-base leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Explore our range of funding programs designed to support technology innovation and cross-border collaboration.
               </p>
             </div>
@@ -351,11 +351,11 @@ export default function FundingAndGrantsClient() {
                         <Icon className="w-5.5 h-5.5" style={{ color: opp.color }} strokeWidth={1.5} />
                       </div>
                     </div>
-                    <h3 className="relative font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-300">
+                    <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-300">
                       {opp.title}
                     </h3>
                     <div className="relative h-px bg-[#D8D5CF] mb-3" />
-                    <p className="relative text-[#5A5F72] text-sm leading-relaxed">{opp.description}</p>
+                    <p className="relative text-[#5A5F72] text-base leading-relaxed">{opp.description}</p>
                     {/* Arrow hint on hover */}
                     <div
                       className="relative mt-5 flex items-center gap-1.5 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -374,7 +374,7 @@ export default function FundingAndGrantsClient() {
 
       {/* ── FUNDING GRANTS INTRO ────────────────────────────────────── */}
       <section className="relative bg-[#EEECEA] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-4xl">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
@@ -394,10 +394,10 @@ export default function FundingAndGrantsClient() {
 
       {/* ── FUNDING STAGES — PREMIUM ──────────────────────────────── */}
       <section className="relative bg-[#E8E6E3] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="max-w-3xl mb-14">
+            <div className="max-w-3xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
                 <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">Stages</span>
@@ -408,7 +408,7 @@ export default function FundingAndGrantsClient() {
                   Growth Stage
                 </span>
               </h2>
-              <p className="text-[#5A5F72] text-base leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Tailored funding support from pre-seed through to Series B and R&amp;D incentives.
               </p>
             </div>
@@ -458,10 +458,10 @@ export default function FundingAndGrantsClient() {
                     </div>
 
                     <div className="relative h-px bg-[#D8D5CF] mb-5" />
-                    <p className="relative text-sm text-[#5A5F72] leading-relaxed mb-6">{item.description}</p>
+                    <p className="relative text-base text-[#5A5F72] leading-relaxed mb-6">{item.description}</p>
                     <ul className="relative space-y-3 mt-auto">
                       {item.features.map((f) => (
-                        <li key={f} className="flex items-start gap-3 text-sm text-[#3D4152]">
+                        <li key={f} className="flex items-start gap-3 text-base text-[#3D4152]">
                           <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: item.color }} />
                           <span>{f}</span>
                         </li>
@@ -477,10 +477,10 @@ export default function FundingAndGrantsClient() {
 
       {/* ── APPLICATION PROCESS ────────────────────────────────────── */}
       <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="max-w-3xl mb-14">
+            <div className="max-w-3xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
                 <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">Process</span>
@@ -488,7 +488,7 @@ export default function FundingAndGrantsClient() {
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Application Process
               </h2>
-              <p className="text-[#5A5F72] text-base leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 A transparent, structured pathway from application to funding.
               </p>
             </div>
@@ -532,8 +532,8 @@ export default function FundingAndGrantsClient() {
                       </div>
                     </div>
 
-                    <h3 className="relative font-heading font-bold text-[#1C1F2E] text-base mb-2">{step.title}</h3>
-                    <p className="relative text-[#5A5F72] text-sm leading-relaxed mb-5">{step.description}</p>
+                    <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-2">{step.title}</h3>
+                    <p className="relative text-[#5A5F72] text-base leading-relaxed mb-5">{step.description}</p>
 
                     {/* Outcome badge */}
                     <div
@@ -557,12 +557,12 @@ export default function FundingAndGrantsClient() {
 
       {/* ── ELIGIBILITY + BENEFITS SIDEBAR ─────────────────────────── */}
       <section className="relative bg-[#EEECEA] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-5 gap-12">
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
               {/* Eligibility */}
               <div className="lg:col-span-3">
-                <div className="mb-10">
+                <div className="mb-6">
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
                     <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">Eligibility</span>
@@ -570,7 +570,7 @@ export default function FundingAndGrantsClient() {
                   <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                     Eligibility Criteria
                   </h2>
-                  <p className="text-[#5A5F72] text-base leading-relaxed">
+                  <p className="text-[#5A5F72] text-lg leading-relaxed">
                     Understanding the requirements for funding and grant applications.
                   </p>
                 </div>
@@ -597,7 +597,7 @@ export default function FundingAndGrantsClient() {
                         >
                           <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
                         </div>
-                        <span className="relative text-[#3D4152] text-sm leading-relaxed pt-2">{item.text}</span>
+                        <span className="relative text-[#3D4152] text-base leading-relaxed pt-2">{item.text}</span>
                       </motion.div>
                     );
                   })}
@@ -612,7 +612,7 @@ export default function FundingAndGrantsClient() {
 
                   <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-5">Why Apply Through UPTECH</h3>
                   <div className="relative h-px bg-[#D8D5CF] mb-6" />
-                  <ul className="relative space-y-6">
+                  <ul className="relative space-y-5">
                     {benefits.map((benefit, i) => {
                       const Icon = benefit.icon;
                       return (
@@ -636,8 +636,8 @@ export default function FundingAndGrantsClient() {
                             <Icon className="w-4.5 h-4.5" style={{ color: benefit.color }} strokeWidth={1.5} />
                           </div>
                           <div>
-                            <span className="font-semibold text-[#1C1F2E] text-sm">{benefit.title}</span>
-                            <p className="text-[#7A7E8F] text-xs leading-relaxed mt-1">{benefit.description}</p>
+                            <span className="font-semibold text-[#1C1F2E] text-base">{benefit.title}</span>
+                            <p className="text-[#7A7E8F] text-sm leading-relaxed mt-1">{benefit.description}</p>
                           </div>
                         </motion.li>
                       );
@@ -652,10 +652,10 @@ export default function FundingAndGrantsClient() {
 
       {/* ── FAQ ────────────────────────────────────────────────────── */}
       <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="max-w-3xl mb-14">
+            <div className="max-w-3xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
                 <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">FAQ</span>
@@ -663,7 +663,7 @@ export default function FundingAndGrantsClient() {
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-[#5A5F72] text-base leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Common questions about funding and grants.
               </p>
             </div>
@@ -687,14 +687,14 @@ export default function FundingAndGrantsClient() {
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-6">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse" />
                 <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">Apply Now</span>
               </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-5">
                 <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                   Ready to Secure Funding for Your{" "}
                 </span>
@@ -702,12 +702,12 @@ export default function FundingAndGrantsClient() {
                   Innovation?
                 </span>
               </h2>
-              <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/50 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
                 Explore funding opportunities and take your technology innovation to the next level with UPTECH&apos;s funding and grants programs.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg" showArrow className="!bg-[#2563EB] hover:!bg-[#1d4ed8]">
-                  Become a Member
+                <Button href="/membership/apply" variant="primary" size="lg" showArrow className="!bg-[#2563EB] hover:!bg-[#1d4ed8]">
+                  Apply for Membership
                 </Button>
                 <Button href="/contact" variant="glass" size="lg" showArrow>
                   Contact Us
@@ -796,7 +796,7 @@ function FAQSection({
                 >
                   <div className="px-5 lg:px-6 pb-5 lg:pb-6 pl-[4.25rem] lg:pl-[4.75rem]">
                     <div className="h-px bg-[#D8D5CF] mb-4" />
-                    <p className="text-[#5A5F72] text-sm leading-[1.8]">{faq.answer}</p>
+                    <p className="text-[#5A5F72] text-base leading-[1.8]">{faq.answer}</p>
                   </div>
                 </motion.div>
               )}

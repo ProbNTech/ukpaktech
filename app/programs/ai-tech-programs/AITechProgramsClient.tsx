@@ -119,11 +119,11 @@ export default function AITechProgramsPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>
+              <Button href="/membership/apply" variant="primary" size="lg" showArrow>
                 Become a Member
               </Button>
-              <Button href="/initiatives" variant="glass" size="lg" showArrow>
-                Explore Initiatives
+              <Button href="/contact" variant="glass" size="lg" showArrow>
+                Get in Touch
               </Button>
             </div>
           </motion.div>
@@ -132,20 +132,20 @@ export default function AITechProgramsPage() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
                 Our Vision
               </p>
-              <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
+              <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-5">
                 UPTECH&apos;s AI and Tech Programs bridge the UK and Pakistan through cutting-edge AI services, collective company models, and innovative startup ecosystems.
               </p>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
-              <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-5" />
+              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                 Our programs are designed to accelerate technology adoption, build world-class AI capabilities, and create sustainable pathways for innovation across both nations through collective business models and collaborative startup ecosystems.
               </p>
-              <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Through strategic partnerships, shared resources, and innovative collective structures, we&apos;re building a future where UK and Pakistani tech talent drives global AI innovation and technology leadership.
               </p>
             </div>
@@ -155,9 +155,9 @@ export default function AITechProgramsPage() {
 
       {/* ── Programs Grid ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
                 Our Programs
               </p>
@@ -188,12 +188,12 @@ export default function AITechProgramsPage() {
                       {program.title}
                     </h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-[#7A7E8F] text-sm leading-relaxed mb-4">{program.description}</p>
+                    <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">{program.description}</p>
                     <ul className="space-y-2">
                       {program.features.map((feature) => (
                         <li key={feature} className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                          <span className="text-[#5A5F72] text-sm">{feature}</span>
+                          <span className="text-[#5A5F72] text-base">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -207,9 +207,9 @@ export default function AITechProgramsPage() {
 
       {/* ── How It Works ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Process
               </p>
@@ -251,7 +251,7 @@ export default function AITechProgramsPage() {
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base sm:text-lg mb-1.5 group-hover:text-[#2563EB] transition-colors duration-200">
                       {step.title}
                     </h3>
-                    <p className="text-[#7A7E8F] text-sm leading-relaxed">{step.description}</p>
+                    <p className="text-[#7A7E8F] text-base leading-relaxed">{step.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -262,9 +262,9 @@ export default function AITechProgramsPage() {
 
       {/* ── Technology Focus Areas ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 What We Do
               </p>
@@ -314,7 +314,7 @@ export default function AITechProgramsPage() {
                         {area.title}
                       </h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#7A7E8F] text-sm leading-relaxed">{area.desc}</p>
+                      <p className="text-[#7A7E8F] text-base leading-relaxed">{area.desc}</p>
                     </div>
                   </motion.div>
                 );
@@ -336,7 +336,7 @@ export default function AITechProgramsPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
@@ -345,15 +345,15 @@ export default function AITechProgramsPage() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Start Building With UPTECH
               </h2>
-              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl">
                 Whether you are an entrepreneur, student, or technology professional, our programmes provide structured pathways to training, collaboration, and market access across the UK–Pakistan technology corridor.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg" showArrow>
+                <Button href="/membership/apply" variant="primary" size="lg" showArrow>
                   Become a Member
                 </Button>
-                <Button href="/initiatives" variant="glass" size="lg" showArrow>
-                  Explore Initiatives
+                <Button href="/contact" variant="glass" size="lg" showArrow>
+                  Get in Touch
                 </Button>
               </div>
             </div>

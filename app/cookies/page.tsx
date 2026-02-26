@@ -60,11 +60,11 @@ export default function CookiesPage() {
       </section>
 
       {/* ── Introduction — Light section ───────────────────────────── */}
-      <section className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Overview</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">About Our Cookies</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
@@ -80,11 +80,11 @@ export default function CookiesPage() {
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
                 <div className="space-y-5">
-                  <p className="text-sm text-[#5A5F72] leading-relaxed">Our website uses cookies, which identify technologies that your computer receives when you visit certain websites. We do not match or correlate this information with any customer information that you submit to UK-PAKISTAN TECH COUNCIL LTD (UPTECH).</p>
-                  <p className="text-sm text-[#5A5F72] leading-relaxed">Some of our web pages utilize {"\u201C"}cookies{"\u201D"} and other tracking technologies. Cookies are small pieces of data, stored in text files, that are stored on your computer or other devices when websites are loaded in a browser. They are widely used to {"\u2018"}remember{"\u2019"} you and your preferences, either for a single visit (through a {"\u2018"}session cookie{"\u2019"}) or for multiple repeat visits (using a {"\u2018"}persistent cookie{"\u2019"}). They ensure consistent and efficient experience for visitors and perform essential functions such as allowing users to register and remain logged in. Cookies may be set by the site that you are visiting (known as {"\u2018"}first-party cookies{"\u2019"}), or by other websites who serve up content on that site ({"\u2018"}third party cookies{"\u2019"}).</p>
-                  <p className="text-sm text-[#5A5F72] leading-relaxed">Tracking technologies may record information such as Internet domain and host names; Internet protocol (IP) addresses; browser software and operating system types; clickstream patterns; and dates and times that our site is accessed. Our use of cookies and other tracking technologies allows us to improve our web site and your web experience. We may also analyze information that does not contain personal information for trends and statistics.</p>
-                  <p className="text-sm text-[#5A5F72] leading-relaxed">Cookies are text files placed on your computer to collect standard internet log information and visitor behavior information. This information is used to track visitor use of the website and to compile statistical reports on website activity. For further information visit{" "}<a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">www.aboutcookies.org</a>{" "}or{" "}<a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">www.allaboutcookies.org</a>.</p>
-                  <p className="text-sm text-[#5A5F72] leading-relaxed">You can set your browser not to accept cookies, and the above websites tell you how to remove cookies from your browser. However, in a few cases, some of our website features may not function as a result.</p>
+                  <p className="text-base text-[#5A5F72] leading-relaxed">Our website uses cookies, which identify technologies that your computer receives when you visit certain websites. We do not match or correlate this information with any customer information that you submit to UK-PAKISTAN TECH COUNCIL LTD (UPTECH).</p>
+                  <p className="text-base text-[#5A5F72] leading-relaxed">Some of our web pages utilize {"\u201C"}cookies{"\u201D"} and other tracking technologies. Cookies are small pieces of data, stored in text files, that are stored on your computer or other devices when websites are loaded in a browser. They are widely used to {"\u2018"}remember{"\u2019"} you and your preferences, either for a single visit (through a {"\u2018"}session cookie{"\u2019"}) or for multiple repeat visits (using a {"\u2018"}persistent cookie{"\u2019"}). They ensure consistent and efficient experience for visitors and perform essential functions such as allowing users to register and remain logged in. Cookies may be set by the site that you are visiting (known as {"\u2018"}first-party cookies{"\u2019"}), or by other websites who serve up content on that site ({"\u2018"}third party cookies{"\u2019"}).</p>
+                  <p className="text-base text-[#5A5F72] leading-relaxed">Tracking technologies may record information such as Internet domain and host names; Internet protocol (IP) addresses; browser software and operating system types; clickstream patterns; and dates and times that our site is accessed. Our use of cookies and other tracking technologies allows us to improve our web site and your web experience. We may also analyze information that does not contain personal information for trends and statistics.</p>
+                  <p className="text-base text-[#5A5F72] leading-relaxed">Cookies are text files placed on your computer to collect standard internet log information and visitor behavior information. This information is used to track visitor use of the website and to compile statistical reports on website activity. For further information visit{" "}<a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">www.aboutcookies.org</a>{" "}or{" "}<a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">www.allaboutcookies.org</a>.</p>
+                  <p className="text-base text-[#5A5F72] leading-relaxed">You can set your browser not to accept cookies, and the above websites tell you how to remove cookies from your browser. However, in a few cases, some of our website features may not function as a result.</p>
                 </div>
               </motion.div>
             </div>
@@ -93,11 +93,11 @@ export default function CookiesPage() {
       </section>
 
       {/* ── Links to Other Websites — Light alt section ─────────────── */}
-      <section className="relative py-16 overflow-hidden bg-white">
+      <section className="relative py-10 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">External Links</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Links to Other Websites</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
@@ -113,8 +113,8 @@ export default function CookiesPage() {
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
                 <div className="space-y-5">
-                  <p className="text-sm text-[#5A5F72] leading-relaxed">Our website may contain links to other websites run by other organizations. This policy applies only to our website, so we encourage you to read the privacy statements on the other websites you visit. We cannot be responsible for the privacy policies and practices of other websites even if you access them using links from our website.</p>
-                  <p className="text-sm text-[#5A5F72] leading-relaxed">In addition, if you linked to our website from a third-party site, we cannot be responsible for the privacy policies and practices of the owners and operators of that third party site and recommend that you check the privacy policy of that third party site.</p>
+                  <p className="text-base text-[#5A5F72] leading-relaxed">Our website may contain links to other websites run by other organizations. This policy applies only to our website, so we encourage you to read the privacy statements on the other websites you visit. We cannot be responsible for the privacy policies and practices of other websites even if you access them using links from our website.</p>
+                  <p className="text-base text-[#5A5F72] leading-relaxed">In addition, if you linked to our website from a third-party site, we cannot be responsible for the privacy policies and practices of the owners and operators of that third party site and recommend that you check the privacy policy of that third party site.</p>
                 </div>
               </motion.div>
             </div>
@@ -123,11 +123,11 @@ export default function CookiesPage() {
       </section>
 
       {/* ── Cookie Types — Light section ───────────────────────────── */}
-      <section className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Cookie Categories</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">We Use These Cookies</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
@@ -144,7 +144,7 @@ export default function CookiesPage() {
                     </div>
                     <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{cookie.title}</h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed">{cookie.desc}</p>
+                    <p className="text-base text-[#7A7E8F] leading-relaxed">{cookie.desc}</p>
                   </motion.div>
                 );
               })}
@@ -154,11 +154,11 @@ export default function CookiesPage() {
       </section>
 
       {/* ── Additional Cookie Details — Light alt section ───────────── */}
-      <section className="relative py-16 overflow-hidden bg-[#F5F4F2]">
+      <section className="relative py-10 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Detailed Information</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Additional Cookie Details</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
@@ -169,7 +169,7 @@ export default function CookiesPage() {
                   <div className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full transition-opacity duration-300 opacity-40 group-hover:opacity-100 bg-gradient-to-b from-[#C41E3A] to-[#C41E3A]/25" />
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-3">{item.title}</h3>
                   <div className="h-px bg-[#D8D5CF] mb-3" />
-                  <p className="text-sm text-[#7A7E8F] leading-relaxed">{item.desc}</p>
+                  <p className="text-base text-[#7A7E8F] leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -184,11 +184,11 @@ export default function CookiesPage() {
       </section>
 
       {/* ── Browser Settings — Light section ────────────────────────── */}
-      <section className="relative bg-white py-16 overflow-hidden">
+      <section className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Cookie Management</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Browser Settings</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
@@ -203,7 +203,7 @@ export default function CookiesPage() {
                   <h3 className="font-heading font-bold text-lg text-[#1C1F2E] pt-2">Managing Your Cookies</h3>
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
-                <p className="text-sm text-[#5A5F72] leading-relaxed">Your web browser may be set to accept cookies automatically but can be changed to decline them. If you don{"\u2019"}t want to receive cookies, you can modify your browser so that it notifies you when cookies are sent to it or you can refuse cookies altogether. You can also delete cookies that have already been set. The Help section of the toolbar on most browsers will tell you how to set your browser to prevent new cookies or disable cookies altogether, or you should browse the site using your browser{"\u2019"}s anonymous usage setting (called {"\u201C"}Incognito{"\u201D"} in Chrome, {"\u201C"}InPrivate{"\u201D"} for Internet Explorer, {"\u201C"}Private Browsing{"\u201D"} in Firefox and Safari). For more help,{" "}<a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#C41E3A] hover:text-[#ef4444] transition-colors">www.aboutcookies.org</a>{" "}contains information on how to do this on a wide variety of desktop browsers.</p>
+                <p className="text-base text-[#5A5F72] leading-relaxed">Your web browser may be set to accept cookies automatically but can be changed to decline them. If you don{"\u2019"}t want to receive cookies, you can modify your browser so that it notifies you when cookies are sent to it or you can refuse cookies altogether. You can also delete cookies that have already been set. The Help section of the toolbar on most browsers will tell you how to set your browser to prevent new cookies or disable cookies altogether, or you should browse the site using your browser{"\u2019"}s anonymous usage setting (called {"\u201C"}Incognito{"\u201D"} in Chrome, {"\u201C"}InPrivate{"\u201D"} for Internet Explorer, {"\u201C"}Private Browsing{"\u201D"} in Firefox and Safari). For more help,{" "}<a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#C41E3A] hover:text-[#ef4444] transition-colors">www.aboutcookies.org</a>{" "}contains information on how to do this on a wide variety of desktop browsers.</p>
               </motion.div>
             </div>
           </AnimatedSection>
@@ -211,11 +211,11 @@ export default function CookiesPage() {
       </section>
 
       {/* ── Data Subject Rights — Light section ─────────────────────── */}
-      <section className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">GDPR Compliance</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Data Subject Rights</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
@@ -233,7 +233,7 @@ export default function CookiesPage() {
                     </div>
                     <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{right.title}</h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed">{right.desc}</p>
+                    <p className="text-base text-[#7A7E8F] leading-relaxed">{right.desc}</p>
                   </motion.div>
                 );
               })}
@@ -243,11 +243,11 @@ export default function CookiesPage() {
       </section>
 
       {/* ── Changes, Review & General — Light alt section ───────────── */}
-      <section className="relative py-16 overflow-hidden bg-[#F5F4F2]">
+      <section className="relative py-10 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Policy Updates</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Changes, Review & General</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
@@ -262,7 +262,7 @@ export default function CookiesPage() {
                 </div>
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-3">Changes to this Policy</h3>
                 <div className="h-px bg-[#D8D5CF] mb-3" />
-                <p className="text-sm text-[#7A7E8F] leading-relaxed">UPTIB reserves the right to modify or amend the Privacy Policy at any time and for any reason, as permitted by applicable law. If there are material changes to the Privacy Policy, we will post those changes here.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed">UPTIB reserves the right to modify or amend the Privacy Policy at any time and for any reason, as permitted by applicable law. If there are material changes to the Privacy Policy, we will post those changes here.</p>
               </motion.div>
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.08 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
@@ -273,7 +273,7 @@ export default function CookiesPage() {
                 </div>
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-3">Review</h3>
                 <div className="h-px bg-[#D8D5CF] mb-3" />
-                <p className="text-sm text-[#7A7E8F] leading-relaxed">We keep this policy under regular review.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed">We keep this policy under regular review.</p>
               </motion.div>
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.16 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
@@ -284,7 +284,7 @@ export default function CookiesPage() {
                 </div>
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-3">General</h3>
                 <div className="h-px bg-[#D8D5CF] mb-3" />
-                <p className="text-sm text-[#7A7E8F] leading-relaxed">You may not transfer any of your rights under this privacy policy to any other person. We may transfer our rights under this privacy policy where we believe your rights will not be affected. We may transfer your personal information to a third party as part of the sale of some or all assets. We would take steps to ensure your privacy rights continue to be protected.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed">You may not transfer any of your rights under this privacy policy to any other person. We may transfer our rights under this privacy policy where we believe your rights will not be affected. We may transfer your personal information to a third party as part of the sale of some or all assets. We would take steps to ensure your privacy rights continue to be protected.</p>
               </motion.div>
             </div>
           </AnimatedSection>
@@ -292,7 +292,7 @@ export default function CookiesPage() {
       </section>
 
       {/* ── Contact CTA — Gradient dark section ───────────────────── */}
-      <section className="relative overflow-hidden py-20" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
+      <section className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -303,7 +303,7 @@ export default function CookiesPage() {
               <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-4">For any questions about this Privacy Policy or our treatment of your Personal Information, please contact{" "}<a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a></p>
               <div className="flex flex-wrap gap-4 mt-10">
                 <Button href="/contact" variant="primary" size="lg" showArrow>Contact Us</Button>
-                <Button href="/privacy" variant="glass" size="lg" showArrow>Privacy Policy</Button>
+                <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
               </div>
             </div>
           </AnimatedSection>

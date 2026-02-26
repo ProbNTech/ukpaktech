@@ -17,14 +17,14 @@ export default function AboutPage() {
         image="/image/london-images/about-corporate-team.jpg"
       >
         <div className="flex flex-wrap gap-4 mt-2">
-          <Button href="/membership" variant="glass" showArrow>Become a Member</Button>
+          <Button href="/membership/apply" variant="glass" showArrow>Apply for Membership</Button>
           <Button href="/ecosystem/uk-pakistan-technology-partnership" variant="ghost" showArrow>UK–Pakistan Partnership</Button>
         </div>
       </PageHero>
 
       {/* About Us */}
       <Section variant="light">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
           <AnimatedSection>
             <SectionHeader
               label="Who we are"
@@ -49,7 +49,7 @@ export default function AboutPage() {
           <AnimatedSection>
             <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#D8D5CF]">
               <Image
-                src="/image/about%20page/About_Council.webp"
+                src="/image/about/about-section-home.jpg"
                 alt="About the Council"
                 fill
                 className="object-cover"
@@ -64,7 +64,7 @@ export default function AboutPage() {
       <Section variant="alt">
         <AnimatedSection>
           <SectionHeader label="Our purpose" title="Vision" />
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8">
             <div>
               <div className="bg-white border border-[#D8D5CF] rounded p-8">
                 <Lightbulb className="w-8 h-8 text-[#2563EB] mb-5" strokeWidth={1.5} />
@@ -97,7 +97,7 @@ export default function AboutPage() {
       <Section variant="light">
         <AnimatedSection>
           <SectionHeader label="Our mission" title="Mission" subtitle="Our mission is to transform Pakistan into a thriving tech hub. By forging connections with global experts and harnessing diverse resources, we're setting the stage for a tech-driven future." />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {[
               { icon: Target, title: "Apex Organization", desc: "To be the Apex organization for IT professionals in business, government, and people." },
               { icon: Award, title: "Represent Professionals", desc: "To represent IT professionals in all aspects of their profession and increase the value of the profession." },
@@ -112,7 +112,7 @@ export default function AboutPage() {
                   <Icon className="w-6 h-6 text-[#2563EB] mb-3" strokeWidth={1.5} />
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
                   <div className="h-px bg-[#D8D5CF] mb-3" />
-                  <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-[#3D4152] text-base leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}
@@ -131,7 +131,7 @@ export default function AboutPage() {
                   <Icon className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={1.5} />
                   <div>
                     <h4 className="font-semibold text-[#1C1F2E] text-sm mb-1">{item.title}</h4>
-                    <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-[#3D4152] text-base leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               );
@@ -144,12 +144,12 @@ export default function AboutPage() {
       <Section variant="alt">
         <AnimatedSection>
           <SectionHeader label="Our foundation" title="Objectives &amp; Values" subtitle="We provide a platform to all Pakistani IT professionals residing in the United Kingdom working across various levels and industry sectors." />
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8">
             {/* Values */}
             <div className="bg-white border border-[#D8D5CF] rounded p-8">
               <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-5">Our Values</h3>
               <div className="h-px bg-[#D8D5CF] mb-5" />
-              <p className="text-[#3D4152] text-sm leading-relaxed mb-5">UPTECH members share and practice a set of unique values:</p>
+              <p className="text-[#3D4152] text-base leading-relaxed mb-5">UPTECH members share and practice a set of unique values:</p>
               <ul className="space-y-3">
                 {[
                   "Pursuit of excellence in the IT profession",
@@ -161,7 +161,7 @@ export default function AboutPage() {
                 ].map((val) => (
                   <li key={val} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-[#3D4152] text-sm leading-relaxed">{val}</span>
+                    <span className="text-[#3D4152] text-base leading-relaxed">{val}</span>
                   </li>
                 ))}
               </ul>
@@ -187,7 +187,7 @@ export default function AboutPage() {
                 ].map((act) => (
                   <li key={act} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-[#3D4152] text-sm leading-relaxed">{act}</span>
+                    <span className="text-[#3D4152] text-base leading-relaxed">{act}</span>
                   </li>
                 ))}
               </ul>
@@ -212,7 +212,7 @@ export default function AboutPage() {
                 <div key={item.title} className="border-t-2 border-[#2563EB] pt-5">
                   <Icon className="w-6 h-6 text-[#2563EB] mb-3" strokeWidth={1.5} />
                   <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{item.title}</h3>
-                  <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-[#3D4152] text-base leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}
@@ -228,7 +228,7 @@ export default function AboutPage() {
             ].map((item) => (
               <div key={item} className="flex items-start gap-3 bg-white border border-[#D8D5CF] rounded p-5">
                 <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+                <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
               </div>
             ))}
           </div>
@@ -239,7 +239,7 @@ export default function AboutPage() {
       <Section variant="alt">
         <AnimatedSection>
           <SectionHeader label="From the Founder" title="A Message from Our CEO" />
-          <div className="grid lg:grid-cols-[1fr_2fr] gap-12 items-start">
+          <div className="grid lg:grid-cols-[1fr_2fr] gap-8 items-start">
             <div className="bg-white border border-[#D8D5CF] rounded p-8">
               <div className="w-24 h-24 rounded-full overflow-hidden mb-5 border-2 border-[#2563EB]/20">
                 <Image
@@ -283,11 +283,11 @@ export default function AboutPage() {
             <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
               Ready to Be Part of the Movement?
             </h2>
-            <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+            <p className="text-white/70 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
               Join UPTECH and connect with technology leaders, entrepreneurs, and innovators shaping the UK–Pakistan tech corridor.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>Become a Member</Button>
+              <Button href="/membership/apply" variant="primary" size="lg" showArrow>Apply for Membership</Button>
               <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
             </div>
           </div>

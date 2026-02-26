@@ -256,22 +256,22 @@ export default function SeriesFundingPage() {
           FOR SCALING COMPANIES
           ================================================================ */}
       <section className="relative bg-[#EEECEA] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl mb-14">
+            <div className="max-w-3xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
                 <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
                   For Scaling Companies
                 </span>
               </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-5">
                 Scale Your Business with{" "}
                 <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                   Strategic Funding
                 </span>
               </h2>
-              <p className="text-[#5A5F72] text-base leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Access the capital, connections, and guidance needed to take your company from growth-stage to market leader.
               </p>
             </div>
@@ -308,7 +308,7 @@ export default function SeriesFundingPage() {
                     </div>
 
                     <div className="relative h-px bg-[#D8D5CF] mb-5" />
-                    <p className="relative text-sm text-[#5A5F72] leading-relaxed">
+                    <p className="relative text-base text-[#5A5F72] leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>
@@ -323,9 +323,9 @@ export default function SeriesFundingPage() {
           FOR INVESTORS
           ================================================================ */}
       <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl mb-14">
+            <div className="max-w-3xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]" />
                 <span className="text-[#22C55E] text-xs font-semibold uppercase tracking-wider">
@@ -338,7 +338,7 @@ export default function SeriesFundingPage() {
                   Growth-Stage Winners
                 </span>
               </h2>
-              <p className="text-[#5A5F72] text-base leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Access curated, high-growth technology companies that have proven their market fit and are ready for significant scale.
               </p>
             </div>
@@ -368,11 +368,11 @@ export default function SeriesFundingPage() {
                           <Icon className="w-6 h-6" style={{ color: item.color }} strokeWidth={1.5} />
                         </div>
                       </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-3">
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-3">
                         {item.title}
                       </h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#5A5F72] text-sm leading-relaxed">
+                      <p className="text-[#5A5F72] text-base leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -388,9 +388,9 @@ export default function SeriesFundingPage() {
           FUNDING PROCESS
           ================================================================ */}
       <section className="relative bg-[#E8E6E3] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5 mx-auto">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
                 <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">
@@ -403,7 +403,7 @@ export default function SeriesFundingPage() {
                   Close Your Round
                 </span>
               </h2>
-              <p className="text-[#5A5F72] text-base max-w-2xl mx-auto">
+              <p className="text-[#5A5F72] text-lg max-w-2xl mx-auto">
                 A structured pathway from assessment to closing your Series A or B funding round.
               </p>
             </div>
@@ -439,10 +439,10 @@ export default function SeriesFundingPage() {
                       </div>
                     </div>
 
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-[#5A5F72] text-sm leading-relaxed mb-4">
+                    <p className="text-[#5A5F72] text-base leading-relaxed mb-4">
                       {step.description}
                     </p>
 
@@ -467,9 +467,9 @@ export default function SeriesFundingPage() {
           WHY IT MATTERS
           ================================================================ */}
       <section className="relative bg-[#EEECEA] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-5 gap-12 items-start">
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-3">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
@@ -483,7 +483,7 @@ export default function SeriesFundingPage() {
                     Rapid Growth
                   </span>
                 </h2>
-                <p className="text-[#5A5F72] text-base leading-relaxed mb-8">
+                <p className="text-[#5A5F72] text-lg leading-relaxed mb-6">
                   Series A and B funding is critical for companies moving beyond early-stage validation into rapid growth. By facilitating access to these funding rounds, the Council helps high-growth startups scale efficiently, strengthen their market position, and expand across borders.
                 </p>
 
@@ -507,7 +507,7 @@ export default function SeriesFundingPage() {
                       >
                         <CheckCircle2 className="w-5 h-5" style={{ color: point.color }} strokeWidth={1.5} />
                       </div>
-                      <span className="relative text-[#3D4152] text-sm leading-relaxed pt-2">
+                      <span className="relative text-[#3D4152] text-base leading-relaxed pt-2">
                         {point.text}
                       </span>
                     </motion.div>
@@ -550,8 +550,8 @@ export default function SeriesFundingPage() {
                           <ArrowUpRight className="w-4 h-4" style={{ color: item.color }} strokeWidth={1.5} />
                         </div>
                         <div>
-                          <span className="font-semibold text-[#1C1F2E] text-sm">{item.title}</span>
-                          <p className="text-[#7A7E8F] text-xs leading-relaxed mt-1">{item.desc}</p>
+                          <span className="font-semibold text-[#1C1F2E] text-base">{item.title}</span>
+                          <p className="text-[#7A7E8F] text-sm leading-relaxed mt-1">{item.desc}</p>
                         </div>
                       </motion.li>
                     ))}
@@ -579,7 +579,7 @@ export default function SeriesFundingPage() {
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="text-center max-w-3xl mx-auto">
               <motion.div
@@ -595,7 +595,7 @@ export default function SeriesFundingPage() {
                 </span>
               </motion.div>
 
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-5">
                 <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                   Fuel Growth.{" "}
                 </span>
@@ -608,19 +608,19 @@ export default function SeriesFundingPage() {
                 </span>
               </h2>
 
-              <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+              <p className="text-white/50 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
                 Whether you&apos;re a scaling company seeking Series A or B funding, or an investor looking for growth-stage opportunities, the UK-Pakistan Tech Council is your partner in driving cross-border innovation.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
                 <Button
-                  href="/membership"
+                  href="/membership/apply"
                   variant="primary"
                   size="lg"
                   showArrow
                   className="!bg-gradient-to-r !from-[#2563EB] !to-[#22C55E] hover:!shadow-[0_0_40px_rgba(37,99,235,0.3)]"
                 >
-                  Become a Member
+                  Apply for Membership
                 </Button>
                 <Button href="/contact" variant="glass" size="lg" showArrow>
                   Contact Us

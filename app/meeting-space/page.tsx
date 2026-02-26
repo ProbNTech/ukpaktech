@@ -284,7 +284,7 @@ export default function MeetingSpacePage() {
 
       {/* ── Uses Section — What members can use facilities for ──────── */}
       <section
-        className="relative py-16 overflow-hidden"
+        className="relative py-10 overflow-hidden"
         style={{ backgroundColor: "#EEECEA" }}
       >
         {/* Grid pattern */}
@@ -312,7 +312,7 @@ export default function MeetingSpacePage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
                 <div className="mb-8">
                   <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
@@ -344,7 +344,7 @@ export default function MeetingSpacePage() {
                         className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0"
                         strokeWidth={2}
                       />
-                      <span className="text-sm text-[#3D4152] leading-relaxed">
+                      <span className="text-base text-[#3D4152] leading-relaxed">
                         {item}
                       </span>
                     </motion.li>
@@ -423,7 +423,7 @@ export default function MeetingSpacePage() {
                               strokeWidth={2}
                             />
                           </div>
-                          <span className="text-sm text-[#3D4152] leading-relaxed">
+                          <span className="text-base text-[#3D4152] leading-relaxed">
                             {item.text}
                           </span>
                         </motion.li>
@@ -438,7 +438,7 @@ export default function MeetingSpacePage() {
       </section>
 
       {/* ── Facilities — Dark bg with glass cards ─────────────────── */}
-      <section className="relative py-16 overflow-hidden bg-white">
+      <section className="relative py-10 overflow-hidden bg-white">
         {/* Top accent line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         {/* Subtle grid */}
@@ -460,7 +460,7 @@ export default function MeetingSpacePage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-6">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
                 Our Facilities
               </p>
@@ -525,11 +525,11 @@ export default function MeetingSpacePage() {
                           </div>
                         </div>
                       </div>
-                      <h3 className="font-heading font-bold text-base text-white mb-2">
+                      <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">
                         {item.title}
                       </h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-sm text-[#5A5F72] leading-relaxed">
+                      <p className="text-base text-[#5A5F72] leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -543,7 +543,7 @@ export default function MeetingSpacePage() {
 
       {/* ── Supporting Bilateral Collaboration ─────────────────────── */}
       <section
-        className="relative py-16 overflow-hidden"
+        className="relative py-10 overflow-hidden"
         style={{ backgroundColor: "#EEECEA" }}
       >
         {/* Top accent line */}
@@ -567,7 +567,7 @@ export default function MeetingSpacePage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
                 <div className="mb-8">
                   <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
@@ -599,7 +599,7 @@ export default function MeetingSpacePage() {
                         className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0"
                         strokeWidth={2}
                       />
-                      <span className="text-sm text-[#3D4152] leading-relaxed">
+                      <span className="text-base text-[#3D4152] leading-relaxed">
                         {item}
                       </span>
                     </motion.li>
@@ -668,7 +668,7 @@ export default function MeetingSpacePage() {
                             strokeWidth={2}
                           />
                         </div>
-                        <span className="text-sm text-[#3D4152] leading-relaxed">
+                        <span className="text-base text-[#3D4152] leading-relaxed">
                           {item}
                         </span>
                       </motion.li>
@@ -682,7 +682,7 @@ export default function MeetingSpacePage() {
       </section>
 
       {/* ── Membership Tier Benefits Table — Styled Grid ────────────── */}
-      <section className="relative py-16 overflow-hidden bg-white">
+      <section className="relative py-10 overflow-hidden bg-white">
         {/* Top accent line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         {/* Grid pattern */}
@@ -710,7 +710,7 @@ export default function MeetingSpacePage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-6">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
                 Membership Tiers
               </p>
@@ -869,7 +869,7 @@ export default function MeetingSpacePage() {
 
       {/* ── Meeting Space Terms ────────────────────────────────────── */}
       <section
-        className="relative py-16 overflow-hidden"
+        className="relative py-10 overflow-hidden"
         style={{ backgroundColor: "#EEECEA" }}
       >
         {/* Top accent line */}
@@ -886,7 +886,7 @@ export default function MeetingSpacePage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-6">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">
                 Terms &amp; Conditions
               </p>
@@ -930,7 +930,7 @@ export default function MeetingSpacePage() {
                           strokeWidth={2}
                         />
                       </div>
-                      <span className="text-sm text-[#3D4152] leading-relaxed">
+                      <span className="text-base text-[#3D4152] leading-relaxed">
                         {term}
                       </span>
                     </motion.li>
@@ -943,7 +943,7 @@ export default function MeetingSpacePage() {
       </section>
 
       {/* ── Optional Add-On Services (Member Rates) ────────────────── */}
-      <section className="relative py-16 overflow-hidden bg-white">
+      <section className="relative py-10 overflow-hidden bg-white">
         {/* Top accent line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/30 to-transparent" />
         {/* Grid pattern */}
@@ -958,7 +958,7 @@ export default function MeetingSpacePage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-6">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">
                 Member Rates
               </p>
@@ -1014,10 +1014,10 @@ export default function MeetingSpacePage() {
                         </div>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-heading font-bold text-base text-white mb-2">
+                        <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">
                           {item.title}
                         </h3>
-                        <p className="text-sm text-[#5A5F72] leading-relaxed">
+                        <p className="text-base text-[#5A5F72] leading-relaxed">
                           {item.desc}
                         </p>
                       </div>
@@ -1032,7 +1032,7 @@ export default function MeetingSpacePage() {
 
       {/* ── CTA — Access & Reservations ─────────────────────────────── */}
       <section
-        className="relative overflow-hidden py-20"
+        className="relative overflow-hidden py-12"
         style={{
           background:
             "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)",
@@ -1069,7 +1069,7 @@ export default function MeetingSpacePage() {
               <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
                 Meeting facilities are available by advance booking and subject to membership tier allocations and availability.
               </p>
-              <p className="text-white/50 text-base leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/50 text-base leading-relaxed mb-6 max-w-2xl">
                 Contact: Membership &amp; Operations Team | Email:{" "}
                 <a
                   href="mailto:info@uptech.org.uk"

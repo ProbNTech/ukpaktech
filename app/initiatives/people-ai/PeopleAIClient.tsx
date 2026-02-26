@@ -106,7 +106,7 @@ export default function PeopleAIClient() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>
+              <Button href="/membership/apply" variant="primary" size="lg" showArrow>
                 Get Started
               </Button>
               <Button href="/contact" variant="glass" size="lg" showArrow>
@@ -158,20 +158,20 @@ export default function PeopleAIClient() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
                 Our Vision
               </p>
-              <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
+              <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-5">
                 The People AI Platform is designed to democratise access to AI capabilities, ensuring that individuals and organisations can leverage artificial intelligence to enhance productivity, develop skills, and drive innovation.
               </p>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
-              <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
+              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-5" />
+              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                 We focus on creating inclusive AI solutions that support workforce enablement, skills development, and cross-border collaboration between the UK and Pakistan.
               </p>
-              <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Through a human-centric approach, we bridge technology and professional services to enable sustainable workforce transformation across sectors.
               </p>
             </div>
@@ -181,10 +181,10 @@ export default function PeopleAIClient() {
 
       {/* ── Platform Capabilities ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
                 Capabilities
               </p>
@@ -245,7 +245,7 @@ export default function PeopleAIClient() {
                         {cap.title}
                       </h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#7A7E8F] text-sm leading-relaxed">{cap.description}</p>
+                      <p className="text-[#7A7E8F] text-base leading-relaxed">{cap.description}</p>
                     </div>
                   </motion.div>
                 );
@@ -257,10 +257,10 @@ export default function PeopleAIClient() {
 
       {/* ── How It Works ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Your Journey
               </p>
@@ -331,7 +331,7 @@ export default function PeopleAIClient() {
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
                         {step.title}
                       </h3>
-                      <p className="text-[#7A7E8F] text-sm leading-relaxed mb-4">{step.description}</p>
+                      <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">{step.description}</p>
 
                       {/* Outcome */}
                       <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
@@ -351,10 +351,10 @@ export default function PeopleAIClient() {
 
       {/* ── Use Cases ── */}
       <section className="relative bg-[#F5F4F2]">
-        <div className="max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Impact
               </p>
@@ -406,7 +406,7 @@ export default function PeopleAIClient() {
                         <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1 group-hover:text-[#2563EB] transition-colors duration-200">
                           {useCase.title}
                         </h3>
-                        <p className="text-[#7A7E8F] text-sm leading-relaxed">{useCase.description}</p>
+                        <p className="text-[#7A7E8F] text-base leading-relaxed">{useCase.description}</p>
                       </div>
 
                       <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300 flex-shrink-0 mt-1" />
@@ -435,7 +435,7 @@ export default function PeopleAIClient() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
@@ -444,11 +444,11 @@ export default function PeopleAIClient() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Join the People AI Platform
               </h2>
-              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl">
                 Be part of a transformative movement that&apos;s reshaping how people and organisations work with AI across the UK and Pakistan.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg" showArrow>
+                <Button href="/membership/apply" variant="primary" size="lg" showArrow>
                   Get Started
                 </Button>
                 <Button href="/contact" variant="glass" size="lg" showArrow>

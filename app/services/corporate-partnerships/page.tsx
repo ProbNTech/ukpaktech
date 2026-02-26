@@ -294,25 +294,25 @@ export default function CorporatePartnershipsPage() {
           }}
         />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[150px] pointer-events-none" />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-4xl mb-14">
+            <div className="max-w-4xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
                 <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
                   For Founders
                 </span>
               </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-5">
                 Start Your Journey with a{" "}
                 <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                   Unique Advantage
                 </span>
               </h2>
-              <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
+              <p className="text-[#5A5F72] text-lg leading-relaxed mb-4">
                 We provide entrepreneurs with pre-seed capital, support from a dedicated team, access to our corporate partners and membership to our global founder community.
               </p>
-              <p className="text-[#5A5F72] text-base leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 You&apos;ll be part of a network of founders, investors, and partners who are all building the future of AI/IT Globally.
               </p>
             </div>
@@ -344,7 +344,7 @@ export default function CorporatePartnershipsPage() {
                         {item.title}
                       </h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-sm text-[#5A5F72] leading-relaxed">
+                      <p className="text-base text-[#5A5F72] leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -368,26 +368,26 @@ export default function CorporatePartnershipsPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-4xl mb-14">
+            <div className="max-w-4xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]" />
                 <span className="text-[#22C55E] text-xs font-semibold uppercase tracking-wider">
                   For Startups
                 </span>
               </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-5">
                 Elevate Your Startup with the{" "}
                 <span className="bg-gradient-to-r from-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">
                   Backing of Our Team
                 </span>
               </h2>
-              <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
+              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                 Elevate your startup with the backing of our team and partners. We&apos;re co-pilots on your entrepreneurial journey.
               </p>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-10">
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-white border border-[#D8D5CF] rounded-2xl p-6 shadow-sm">
                   <div className="flex items-center gap-3 mb-4">
                     <div
@@ -400,7 +400,7 @@ export default function CorporatePartnershipsPage() {
                       Raise Capital
                     </h3>
                   </div>
-                  <p className="text-[#5A5F72] text-sm leading-relaxed">
+                  <p className="text-[#5A5F72] text-base leading-relaxed">
                     We invest capital together with a program of hands-on operational support.
                   </p>
                 </div>
@@ -416,7 +416,7 @@ export default function CorporatePartnershipsPage() {
                       Operational Support
                     </h3>
                   </div>
-                  <p className="text-[#5A5F72] text-sm leading-relaxed">
+                  <p className="text-[#5A5F72] text-base leading-relaxed">
                     Receive six months 1:1 support from a dedicated team of experts.
                   </p>
                 </div>
@@ -424,7 +424,7 @@ export default function CorporatePartnershipsPage() {
             </div>
 
             {/* WE ARE HERE TO HELP YOU headline */}
-            <div className="text-center mb-10">
+            <div className="text-center mb-6">
               <h3 className="font-heading font-extrabold text-xl sm:text-2xl lg:text-3xl leading-snug">
                 <span className="bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#C41E3A] bg-clip-text text-transparent">
                   WE ARE HERE TO HELP YOU GO FURTHER, FASTER
@@ -455,7 +455,7 @@ export default function CorporatePartnershipsPage() {
                     >
                       <Icon className="w-5 h-5" style={{ color: area.color }} />
                     </div>
-                    <p className="text-[#3D4152] text-sm font-medium">{area.name}</p>
+                    <p className="text-[#3D4152] text-base font-medium">{area.name}</p>
                   </motion.div>
                 );
               })}
@@ -476,27 +476,27 @@ export default function CorporatePartnershipsPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-4xl mb-14">
+            <div className="max-w-4xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
                 <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">
                   Accelerators
                 </span>
               </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-5">
                 Designed to Help Ambitious Founders{" "}
                 <span className="bg-gradient-to-r from-[#C41E3A] to-[#22C55E] bg-clip-text text-transparent">
                   Scale Beyond Limits
                 </span>
               </h2>
-              <p className="text-[#5A5F72] text-base leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Accelerators are designed with one goal in mind to help ambitious founders scale beyond limits.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
               {acceleratorBenefits.map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -521,11 +521,11 @@ export default function CorporatePartnershipsPage() {
                           <Icon className="w-6 h-6" style={{ color: item.color }} strokeWidth={1.5} />
                         </div>
                       </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-3">
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-3">
                         {item.title}
                       </h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#5A5F72] text-sm leading-relaxed">
+                      <p className="text-[#5A5F72] text-base leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -555,7 +555,7 @@ export default function CorporatePartnershipsPage() {
                       className="w-4 h-4 flex-shrink-0 mt-0.5"
                       style={{ color: ["#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#C41E3A", "#22C55E"][i] }}
                     />
-                    <span className="text-[#5A5F72] text-sm leading-relaxed">
+                    <span className="text-[#5A5F72] text-base leading-relaxed">
                       {detail}
                     </span>
                   </motion.div>
@@ -578,9 +578,9 @@ export default function CorporatePartnershipsPage() {
           }}
         />
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[150px] pointer-events-none" />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-5 gap-12 items-start">
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-3">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
@@ -588,14 +588,14 @@ export default function CorporatePartnershipsPage() {
                     For Investors
                   </span>
                 </div>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-5">
                   Invest in the Tech Winners of{" "}
                   <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                     Tomorrow, Today
                   </span>
                 </h2>
 
-                <div className="space-y-5">
+                <div className="space-y-4">
                   {investorBenefits.map((benefit, i) => (
                     <motion.div
                       key={benefit.text}
@@ -619,7 +619,7 @@ export default function CorporatePartnershipsPage() {
                           <CheckCircle2 className="w-4 h-4" style={{ color: benefit.color }} strokeWidth={2} />
                         </div>
                       </div>
-                      <p className="text-[#5A5F72] text-sm leading-relaxed">
+                      <p className="text-[#5A5F72] text-base leading-relaxed">
                         {benefit.text}
                       </p>
                     </motion.div>
@@ -636,15 +636,15 @@ export default function CorporatePartnershipsPage() {
                   </h3>
                   <div className="relative h-px bg-[#D8D5CF] mb-6" />
                   <ul className="relative space-y-4">
-                    <li className="flex items-start gap-3 text-[#5A5F72] text-sm leading-relaxed">
+                    <li className="flex items-start gap-3 text-[#5A5F72] text-base leading-relaxed">
                       <ArrowUpRight className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#2563EB]" />
                       <span>Access curated portfolios of high-growth technology companies</span>
                     </li>
-                    <li className="flex items-start gap-3 text-[#5A5F72] text-sm leading-relaxed">
+                    <li className="flex items-start gap-3 text-[#5A5F72] text-base leading-relaxed">
                       <ArrowUpRight className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#22C55E]" />
                       <span>AI-first companies solving real problems across multiple sectors</span>
                     </li>
-                    <li className="flex items-start gap-3 text-[#5A5F72] text-sm leading-relaxed">
+                    <li className="flex items-start gap-3 text-[#5A5F72] text-base leading-relaxed">
                       <ArrowUpRight className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#2563EB]" />
                       <span>Cross-border investment opportunities in FinTech, MedTech, Agri Tech and beyond</span>
                     </li>
@@ -668,16 +668,16 @@ export default function CorporatePartnershipsPage() {
             backgroundSize: "80px 80px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-4xl mb-14">
+            <div className="max-w-4xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
                 <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">
                   For Partners
                 </span>
               </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-5">
                 Learn, Engage, Work with the{" "}
                 <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">
                   Tech of Tomorrow, Today
@@ -687,7 +687,7 @@ export default function CorporatePartnershipsPage() {
                 <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-3 uppercase tracking-wide">
                   Harness the Power of Early-Stage Startups &amp; Learn from Top Change Makers
                 </h3>
-                <p className="text-[#5A5F72] text-sm leading-relaxed">
+                <p className="text-[#5A5F72] text-base leading-relaxed">
                   Our goal is to foster an inclusive ecosystem where everyone can partake in and reap the rewards from entrepreneurial successes.
                 </p>
               </div>
@@ -718,11 +718,11 @@ export default function CorporatePartnershipsPage() {
                           <Icon className="w-6 h-6" style={{ color: item.color }} strokeWidth={1.5} />
                         </div>
                       </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-3">
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-3">
                         {item.title}
                       </h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#5A5F72] text-sm leading-relaxed">
+                      <p className="text-[#5A5F72] text-base leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -748,7 +748,7 @@ export default function CorporatePartnershipsPage() {
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="text-center max-w-3xl mx-auto">
               <motion.div
@@ -773,7 +773,7 @@ export default function CorporatePartnershipsPage() {
                 </span>
               </h2>
 
-              <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+              <p className="text-white/50 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
                 Whether you&apos;re a founder, startup, investor, or corporate partner, we&apos;re here to help you go further, faster.
               </p>
 

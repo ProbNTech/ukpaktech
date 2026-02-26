@@ -106,12 +106,12 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Introduction + Quick Nav ─────────────────────────────────── */}
-      <section id="introduction" className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section id="introduction" className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Privacy Notice</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Introduction
@@ -136,10 +136,10 @@ export default function PrivacyPage() {
                     <h3 className="font-heading font-bold text-lg text-[#1C1F2E] pt-2">Our Commitment to Your Privacy</h3>
                   </div>
                   <div className="h-px bg-[#D8D5CF] mb-5" />
-                  <p className="text-sm text-[#5A5F72] leading-relaxed mb-5">
+                  <p className="text-base text-[#5A5F72] leading-relaxed mb-5">
                     The UK-PAKISTAN TECH COUNCIL LTD (UPTECH) is the UK&apos;s leading organization for promoting opportunities and increasing bi-later trade and investment in between UK and Pakistan. We are committed to protecting the privacy of your Personal Information. This policy sets out how we collect, use and transfer your Personal Information, the security measures we employ to protect such data and your rights and choices with regards to access or use of such data.
                   </p>
-                  <p className="text-sm text-[#5A5F72] leading-relaxed">
+                  <p className="text-base text-[#5A5F72] leading-relaxed">
                     This policy explains when and why we collect personal information about you, how we use it, the conditions under which we may disclose it to others, how we keep it safe and secure and your rights and choices in relation to your information.
                   </p>
                 </div>
@@ -174,12 +174,12 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── How Do We Collect Information ─────────────────────────────── */}
-      <section id="collection" className="relative py-16 overflow-hidden bg-white">
+      <section id="collection" className="relative py-10 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">Data Collection</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 How Do We Collect Information from You?
@@ -206,7 +206,7 @@ export default function PrivacyPage() {
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] pt-2">Information You Give Us Directly</h3>
                 </div>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed">
+                <p className="text-base text-[#7A7E8F] leading-relaxed">
                   For example, we may obtain information about you when you decide to become a member, partner or key stakeholder of UPTIB or take part in one of our events, or when you register to receive one of our newsletters. UPTIB collects information directly from individuals or from the parent companies of the individuals. The information could be collected through emails, phone calls, online registration forms, event registration forms and face-to-face meetings. UPTIB collects personal data about individuals when there is a legitimate basis, a contract or when such information is provided on a voluntary basis.
                 </p>
               </motion.div>
@@ -226,13 +226,13 @@ export default function PrivacyPage() {
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] pt-2">Third-Party Referrals & Networking</h3>
                 </div>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed mb-4">
+                <p className="text-base text-[#7A7E8F] leading-relaxed mb-4">
                   Your information may be shared with us by third parties (i.e. a referral from an existing member or a referral as part of a contract we are delivering) or by one of our Partners. In all cases the person sharing your information should be already known to you and have obtained your permission.
                 </p>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed mb-4">
+                <p className="text-base text-[#7A7E8F] leading-relaxed mb-4">
                   We also receive data through networking (e.g. by you giving us a business card or by you attending one of our events) and we will add these details, if relevant, onto our internal CRM management system.
                 </p>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed">
+                <p className="text-base text-[#7A7E8F] leading-relaxed">
                   If you contact us using the Contact Form on our website, we will email you in response to that request and if relevant records that information in our CRM system.
                 </p>
               </motion.div>
@@ -252,17 +252,17 @@ export default function PrivacyPage() {
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] pt-2">When You Visit Our Website</h3>
                 </div>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed mb-4">
+                <p className="text-base text-[#7A7E8F] leading-relaxed mb-4">
                   We, like many companies, automatically collect the following information:
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-sm text-[#5A5F72] leading-relaxed">Technical information, including the type of device you&apos;re using, the IP address, browser and operating system being used to connect your computer to the internet.</span>
+                    <span className="text-base text-[#5A5F72] leading-relaxed">Technical information, including the type of device you&apos;re using, the IP address, browser and operating system being used to connect your computer to the internet.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-sm text-[#5A5F72] leading-relaxed">Information about your visit to this website, for example we collect information about pages you visit and how you navigate the website, i.e. length of visits to certain pages, services you viewed and searched for, referral sources (e.g. how you arrived at our website).</span>
+                    <span className="text-base text-[#5A5F72] leading-relaxed">Information about your visit to this website, for example we collect information about pages you visit and how you navigate the website, i.e. length of visits to certain pages, services you viewed and searched for, referral sources (e.g. how you arrived at our website).</span>
                   </li>
                 </ul>
               </motion.div>
@@ -282,7 +282,7 @@ export default function PrivacyPage() {
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] pt-2">Social Media</h3>
                 </div>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed">
+                <p className="text-base text-[#7A7E8F] leading-relaxed">
                   When you interact with us on social media platforms such as LinkedIn and Twitter we may obtain information about you (for example, when you publicly tag us in an event photo). The information we receive will depend on the privacy preferences you have set on those types of platforms.
                 </p>
               </motion.div>
@@ -292,12 +292,12 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── What Type of Information Is Collected ─────────────────────── */}
-      <section id="info-type" className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section id="info-type" className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Data Types</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 What Type of Information Is Collected from You?
@@ -320,10 +320,10 @@ export default function PrivacyPage() {
                 <h3 className="font-heading font-bold text-lg text-[#1C1F2E] pt-2">Personal Information We Collect</h3>
               </div>
               <div className="h-px bg-[#D8D5CF] mb-5" />
-              <p className="text-sm text-[#7A7E8F] leading-relaxed mb-3">
+              <p className="text-base text-[#7A7E8F] leading-relaxed mb-3">
                 The personal information we collect, store and use might include:
               </p>
-              <p className="text-sm text-[#5A5F72] leading-relaxed">
+              <p className="text-base text-[#5A5F72] leading-relaxed">
                 Your name and contact details (including postal address, email address and telephone number). The name of the organization you work for and the events you attend. We do not collect sensitive data about you, other than dietary / any special access requirements for the purposes of event planning.
               </p>
             </motion.div>
@@ -332,12 +332,12 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── How and Why Is Your Information Used ──────────────────────── */}
-      <section id="how-used" className="relative py-16 overflow-hidden bg-white">
+      <section id="how-used" className="relative py-10 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Data Usage</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 How and Why Is Your Information Used?
@@ -370,7 +370,7 @@ export default function PrivacyPage() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-sm text-[#5A5F72] leading-relaxed">{item}</span>
+                    <span className="text-base text-[#5A5F72] leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -380,12 +380,12 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── How Long Is Your Information Kept For ─────────────────────── */}
-      <section id="retention" className="relative py-16 overflow-hidden bg-[#F5F4F2]">
+      <section id="retention" className="relative py-10 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Retention Periods</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 How Long Is Your Information Kept For?
@@ -418,7 +418,7 @@ export default function PrivacyPage() {
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.category}</h3>
                   <div className="h-px bg-[#D8D5CF] mb-3" />
-                  <p className="text-sm text-[#7A7E8F] leading-relaxed">{item.period}</p>
+                  <p className="text-base text-[#7A7E8F] leading-relaxed">{item.period}</p>
                 </motion.div>
               ))}
             </div>
@@ -427,12 +427,12 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Who Has Access to Your Information ────────────────────────── */}
-      <section id="access" className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section id="access" className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">Data Access</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Who Has Access to Your Information?
@@ -464,7 +464,7 @@ export default function PrivacyPage() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-sm text-[#5A5F72] leading-relaxed">{item}</span>
+                    <span className="text-base text-[#5A5F72] leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -474,12 +474,12 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Lawful Processing ────────────────────────────────────────── */}
-      <section id="lawful" className="relative py-16 overflow-hidden bg-white">
+      <section id="lawful" className="relative py-10 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Legal Basis</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Lawful Processing
@@ -499,7 +499,7 @@ export default function PrivacyPage() {
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] pt-2">Performance of a Contract</h3>
                 </div>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed">Where we are entering into a contract with you or performing our obligations under it, for example when you became a &apos;paying&apos; member of our network.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed">Where we are entering into a contract with you or performing our obligations under it, for example when you became a &apos;paying&apos; member of our network.</p>
               </motion.div>
 
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, delay: 0.06 }} className="relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:shadow-md transition-all duration-300 overflow-hidden shadow-sm">
@@ -510,7 +510,7 @@ export default function PrivacyPage() {
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] pt-2">Legal Obligation</h3>
                 </div>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed">Where necessary, we can comply with a legal or regulatory obligation to which we are subject.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed">Where necessary, we can comply with a legal or regulatory obligation to which we are subject.</p>
               </motion.div>
 
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, delay: 0.12 }} className="relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:shadow-md transition-all duration-300 overflow-hidden shadow-sm">
@@ -521,17 +521,17 @@ export default function PrivacyPage() {
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] pt-2">Legitimate Interests</h3>
                 </div>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed mb-4">Where it is reasonably necessary to achieve our legitimate interests, i.e. those required for running UPTIB as a B2B strategic networking organization in pursuit of our shared aims and ideals. For example, to:</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed mb-4">Where it is reasonably necessary to achieve our legitimate interests, i.e. those required for running UPTIB as a B2B strategic networking organization in pursuit of our shared aims and ideals. For example, to:</p>
                 <ul className="space-y-3 mb-5">
                   {["broker connections where there is mutual benefit in doing so","send postal communications which we think will be of interest to you;","conduct research to better understand the priorities of our membership and to represent accurately the UK and Pakistan business community.","contact you to seek your views or comments on emerging political or economic issues.","enhance, modify, personalize, or otherwise improve our services /communications for the benefit of our members, partners and stakeholders; and understand better how people interact with our website.","invite you to event(s) that we may think are relevant to you in your professional capacity."].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-sm text-[#5A5F72] leading-relaxed">{item}</span>
+                      <span className="text-base text-[#5A5F72] leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="bg-[#F5F4F2] border border-[#D8D5CF] rounded-lg p-5">
-                  <p className="text-sm text-[#7A7E8F] leading-relaxed">When we legitimately process your personal information in this way, we consider and balance any potential impact on you (both positive and negative), and your rights under data protection laws. We will not use your personal information where our interests are overridden by the impact on you, for example, where use would be excessively intrusive (unless, for instance, we are otherwise required or permitted to by law).</p>
+                  <p className="text-base text-[#7A7E8F] leading-relaxed">When we legitimately process your personal information in this way, we consider and balance any potential impact on you (both positive and negative), and your rights under data protection laws. We will not use your personal information where our interests are overridden by the impact on you, for example, where use would be excessively intrusive (unless, for instance, we are otherwise required or permitted to by law).</p>
                 </div>
               </motion.div>
 
@@ -543,7 +543,7 @@ export default function PrivacyPage() {
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] pt-2">Specific Consent</h3>
                 </div>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed">Where you have provided specific consent to us using your personal information in a certain way, such as to send you email, text and/or contact via telephone.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed">Where you have provided specific consent to us using your personal information in a certain way, such as to send you email, text and/or contact via telephone.</p>
               </motion.div>
             </div>
           </AnimatedSection>
@@ -551,12 +551,12 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Marketing Communications & Building Profiles ──────────────── */}
-      <section id="marketing" className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section id="marketing" className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Communications</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Marketing Communications
@@ -574,15 +574,15 @@ export default function PrivacyPage() {
                   <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">Marketing</h3>
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
-                <p className="text-sm text-[#7A7E8F] leading-relaxed mb-5">We may use your contact details to provide you with information about the vital work we do for the UK and Pakistan business community and additional opportunities to support us or to work together on projects, if we think it may be of interest to you.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed mb-5">We may use your contact details to provide you with information about the vital work we do for the UK and Pakistan business community and additional opportunities to support us or to work together on projects, if we think it may be of interest to you.</p>
                 <div className="space-y-4">
                   <div>
                     <h4 className="text-xs font-bold tracking-[0.1em] uppercase text-[#C41E3A] mb-2">Email</h4>
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed">You may opt out of our marketing communications at any time by clicking the unsubscribed link at the end of our marketing emails.</p>
+                    <p className="text-base text-[#7A7E8F] leading-relaxed">You may opt out of our marketing communications at any time by clicking the unsubscribed link at the end of our marketing emails.</p>
                   </div>
                   <div>
                     <h4 className="text-xs font-bold tracking-[0.1em] uppercase text-[#C41E3A] mb-2">Post</h4>
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed">We may occasionally send you marketing communications by post unless you have told us that you would prefer not to hear from us, under your access rights request (details listed below).</p>
+                    <p className="text-base text-[#7A7E8F] leading-relaxed">We may occasionally send you marketing communications by post unless you have told us that you would prefer not to hear from us, under your access rights request (details listed below).</p>
                   </div>
                 </div>
               </motion.div>
@@ -596,9 +596,9 @@ export default function PrivacyPage() {
                   <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">Building Profiles</h3>
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
-                <p className="text-sm text-[#7A7E8F] leading-relaxed mb-4">We may analyze your personal information to create a profile of your interests and preferences so that we can tailor and target our communications in a way that is timely and relevant to you {"\u2013"} an example of this would be where interest in one of our Special Interest Groups (SIGs) has been expressed by you. This allows us to be more focused, efficient, and cost effective with our resources and reduces the risk of someone receiving information they may find inappropriate or irrelevant.</p>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed mb-4">We{"\u2019"}re committed to putting you in control of your data, please refer to your rights, below.</p>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed">We may also use your personal information to detect and reduce fraud and credit risk.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed mb-4">We may analyze your personal information to create a profile of your interests and preferences so that we can tailor and target our communications in a way that is timely and relevant to you {"\u2013"} an example of this would be where interest in one of our Special Interest Groups (SIGs) has been expressed by you. This allows us to be more focused, efficient, and cost effective with our resources and reduces the risk of someone receiving information they may find inappropriate or irrelevant.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed mb-4">We{"\u2019"}re committed to putting you in control of your data, please refer to your rights, below.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed">We may also use your personal information to detect and reduce fraud and credit risk.</p>
               </motion.div>
             </div>
           </AnimatedSection>
@@ -606,12 +606,12 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Your Rights ──────────────────────────────────────────────── */}
-      <section id="rights" className="relative py-16 overflow-hidden bg-white">
+      <section id="rights" className="relative py-10 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Data Subject Rights</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Your Rights</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
@@ -636,7 +636,7 @@ export default function PrivacyPage() {
                     </div>
                     <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{right.title}</h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed">
+                    <p className="text-base text-[#7A7E8F] leading-relaxed">
                       {right.desc}
                       {right.title === "Right of Access" && <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a>}
                     </p>
@@ -647,12 +647,12 @@ export default function PrivacyPage() {
 
             <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.36 }} className="relative bg-gradient-to-br from-[#2563EB]/10 to-[#2563EB]/10 border border-[#2563EB]/20 rounded-xl p-6 mt-8 overflow-hidden max-w-5xl">
               <div className="relative">
-                <p className="text-sm text-[#5A5F72] leading-relaxed mb-4">
+                <p className="text-base text-[#5A5F72] leading-relaxed mb-4">
                   If you want to exercise any of the above rights, please email us at{" "}
                   <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a>
                   {" "}and clearly state in the email subject line: RIGHTS REQUEST. We may be required to ask for further information and/or evidence of identity. We will endeavor to respond fully to all requests within 10 working days of your request, however if we are unable to do so we will contact you with reasons for the delay.
                 </p>
-                <p className="text-sm text-[#5A5F72] leading-relaxed">
+                <p className="text-base text-[#5A5F72] leading-relaxed">
                   Please note that exceptions apply to a number of these rights, and not all rights will be applicable in all circumstances. For more details we recommend you consult the guidance published by the UK{"\u2019"}s Information Commissioner{"\u2019"}s Office,{" "}
                   <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">https://ico.org.uk</a>.
                 </p>
@@ -663,12 +663,12 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Keeping Your Information Safe & Security ──────────────────── */}
-      <section id="security" className="relative py-16 overflow-hidden bg-[#F5F4F2]">
+      <section id="security" className="relative py-10 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-8">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">Data Protection</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Keeping Your Information Safe</h2>
               <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
@@ -684,8 +684,8 @@ export default function PrivacyPage() {
                   <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">Technical & Organisational Controls</h3>
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
-                <p className="text-sm text-[#7A7E8F] leading-relaxed mb-4">When you give us personal information, we take steps to ensure that appropriate technical and organizational controls are in place to protect it.</p>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed">Any sensitive information such as credit or debit card details is encrypted and protected with the following software 128 Bit encryption on SSL. When you are on a secure page, a lock icon will appear on the bottom of web browsers such as Microsoft Internet Explorer. This information will be stored by a third party. We have carried out due diligence with the organization.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed mb-4">When you give us personal information, we take steps to ensure that appropriate technical and organizational controls are in place to protect it.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed">Any sensitive information such as credit or debit card details is encrypted and protected with the following software 128 Bit encryption on SSL. When you are on a secure page, a lock icon will appear on the bottom of web browsers such as Microsoft Internet Explorer. This information will be stored by a third party. We have carried out due diligence with the organization.</p>
               </motion.div>
 
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.1 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
@@ -697,8 +697,8 @@ export default function PrivacyPage() {
                   <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">Security</h3>
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
-                <p className="text-sm text-[#7A7E8F] leading-relaxed mb-4">UPTECH uses reasonable measures to safeguard personal information. We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to only those employees, contractors or agents who have a legitimate business need to have access to that data. The employees, contractors or agents will process your personal data in accordance with our instructions. They will be subject to a duty of confidentiality and due care with respect to handling personal data. We have put in place procedures to deal with any suspected data security breach and will notify you and any applicable regulator of a suspected breach where we are legally required to do so.</p>
-                <p className="text-sm text-[#7A7E8F] leading-relaxed">Emails are transmitted normally over the Internet, and this can never be guaranteed to be 100% secure. As a result, while we strive to protect your personal information, we cannot guarantee the security of any information you transmit to us, and you do so at your own risk. Once we receive your information, we will make our best effort to ensure its security on our systems. Where we have given (or where you have chosen) a password which enables you to access certain parts of our website, you are responsible for keeping this password confidential. We ask you not to share your password with anyone.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed mb-4">UPTECH uses reasonable measures to safeguard personal information. We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to only those employees, contractors or agents who have a legitimate business need to have access to that data. The employees, contractors or agents will process your personal data in accordance with our instructions. They will be subject to a duty of confidentiality and due care with respect to handling personal data. We have put in place procedures to deal with any suspected data security breach and will notify you and any applicable regulator of a suspected breach where we are legally required to do so.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed">Emails are transmitted normally over the Internet, and this can never be guaranteed to be 100% secure. As a result, while we strive to protect your personal information, we cannot guarantee the security of any information you transmit to us, and you do so at your own risk. Once we receive your information, we will make our best effort to ensure its security on our systems. Where we have given (or where you have chosen) a password which enables you to access certain parts of our website, you are responsible for keeping this password confidential. We ask you not to share your password with anyone.</p>
               </motion.div>
             </div>
           </AnimatedSection>
@@ -706,7 +706,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Contact CTA — Gradient dark section ──────────────────────── */}
-      <section id="contact" className="relative overflow-hidden py-20" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
+      <section id="contact" className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
 
@@ -715,13 +715,13 @@ export default function PrivacyPage() {
             <div className="max-w-3xl">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Get in Touch</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">Contact Information</h2>
-              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
                 For any questions about this Privacy Policy or our treatment of your Personal Information, please contact{" "}
                 <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a>
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button href="/contact" variant="primary" size="lg" showArrow>Contact Us</Button>
-                <Button href="/gdpr" variant="glass" size="lg" showArrow>GDPR Policy</Button>
+                <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
               </div>
             </div>
           </AnimatedSection>

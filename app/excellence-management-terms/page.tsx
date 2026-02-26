@@ -101,7 +101,7 @@ export default function ExcellenceManagementTermsPage() {
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">{term.title}</h3>
                     </div>
                   </div>
-                  <p className="text-[#3D4152] text-sm leading-relaxed">{term.content}</p>
+                  <p className="text-[#3D4152] text-base leading-relaxed">{term.content}</p>
                 </motion.div>
               );
             })}
@@ -132,7 +132,7 @@ export default function ExcellenceManagementTermsPage() {
                 </span>
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0" strokeWidth={2} />
-                  <span className="text-[#3D4152] text-sm leading-relaxed">{step}</span>
+                  <span className="text-[#3D4152] text-base leading-relaxed">{step}</span>
                 </div>
               </motion.div>
             ))}
@@ -148,7 +148,7 @@ export default function ExcellenceManagementTermsPage() {
             <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight mb-4">
               Questions About These Terms?
             </h2>
-            <p className="text-white/70 text-base leading-relaxed">
+            <p className="text-white/70 text-lg leading-relaxed">
               For questions about these terms, contact us at{" "}
               <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
                 info@uptech.org.uk

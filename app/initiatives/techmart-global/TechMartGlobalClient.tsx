@@ -226,10 +226,10 @@ export default function TechMartGlobalClient() {
 
             {/* CTA buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>
+              <Button href="/membership/apply" variant="primary" size="lg" showArrow>
                 Get Started
               </Button>
-              <Button href="/membership" variant="glass" size="lg" showArrow>
+              <Button href="/contact" variant="glass" size="lg" showArrow>
                 Learn More
               </Button>
             </div>
@@ -242,7 +242,7 @@ export default function TechMartGlobalClient() {
 
       {/* ── Stats Bar ──────────────────────────────────────────────── */}
       <section className="relative bg-[#1C1F2E]">
-        <div className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -279,9 +279,9 @@ export default function TechMartGlobalClient() {
 
       {/* ── What is TechMart Global ────────────────────────────────── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               {/* Text content - 3 cols */}
               <div className="lg:col-span-3">
                 <div className="inline-flex items-center gap-2 mb-6">
@@ -290,16 +290,16 @@ export default function TechMartGlobalClient() {
                     About the Platform
                   </span>
                 </div>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-8">
+                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-5">
                   What is TechMart Global?
                 </h2>
-                <p className="text-[#3D4152] text-lg leading-relaxed mb-6">
+                <p className="text-[#3D4152] text-lg leading-relaxed mb-5">
                   TechMart Global is a comprehensive B2B technology marketplace powered by the UK-Pakistan Tech Council, enabling Pakistani technology companies to showcase their capabilities to a global audience.
                 </p>
-                <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
+                <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                   Through structured matchmaking, transparent processes, and strategic support, TechMart Global facilitates cross-border partnerships, procurement opportunities, and long-term business relationships that drive innovation and economic growth.
                 </p>
-                <p className="text-[#5A5F72] text-base leading-relaxed">
+                <p className="text-[#5A5F72] text-lg leading-relaxed">
                   The platform serves as a trusted intermediary, ensuring that every connection made is verified, purposeful, and built on a foundation of accountability.
                 </p>
               </div>
@@ -336,7 +336,7 @@ export default function TechMartGlobalClient() {
                             className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0"
                             strokeWidth={2}
                           />
-                          <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+                          <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -350,10 +350,10 @@ export default function TechMartGlobalClient() {
 
       {/* ── Who It's For ───────────────────────────────────────────── */}
       <section className="relative bg-white">
-        <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 mb-4 justify-center">
                 <span className="h-px w-8 bg-[#22C55E]" />
                 <span className="text-sm font-semibold text-[#22C55E] uppercase tracking-widest">
@@ -407,7 +407,7 @@ export default function TechMartGlobalClient() {
                         {audience.title}
                       </h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#7A7E8F] text-sm leading-relaxed">{audience.description}</p>
+                      <p className="text-[#7A7E8F] text-base leading-relaxed">{audience.description}</p>
                     </div>
                   </motion.div>
                 );
@@ -419,10 +419,10 @@ export default function TechMartGlobalClient() {
 
       {/* ── What It Enables / Features ─────────────────────────────── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 mb-4 justify-center">
                 <span className="h-px w-8 bg-[#C41E3A]" />
                 <span className="text-sm font-semibold text-[#C41E3A] uppercase tracking-widest">
@@ -493,7 +493,7 @@ export default function TechMartGlobalClient() {
                           </span>
                         </div>
                         <div className="h-px bg-[#D8D5CF] mb-3" />
-                        <p className="text-[#7A7E8F] text-sm leading-relaxed">{feature.description}</p>
+                        <p className="text-[#7A7E8F] text-base leading-relaxed">{feature.description}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -506,9 +506,9 @@ export default function TechMartGlobalClient() {
 
       {/* ── UK Market Access ───────────────────────────────────────── */}
       <section className="relative bg-white">
-        <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               {/* Text content */}
               <div className="lg:col-span-3">
                 <div className="inline-flex items-center gap-2 mb-6">
@@ -523,10 +523,10 @@ export default function TechMartGlobalClient() {
                 <p className="text-[#7A7E8F] text-base sm:text-lg mb-8 max-w-xl">
                   Supporting Pakistani technology companies in entering and succeeding in the UK market.
                 </p>
-                <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
+                <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                   TechMart Global places particular emphasis on facilitating entry into the UK market, recognising its strategic importance as a gateway to broader international opportunities.
                 </p>
-                <p className="text-[#5A5F72] text-base leading-relaxed">
+                <p className="text-[#5A5F72] text-lg leading-relaxed">
                   Through partnerships with UK-based organisations, industry associations, and regulatory bodies, TechMart Global helps Pakistani tech companies understand market dynamics and build relationships with UK buyers.
                 </p>
               </div>
@@ -574,7 +574,7 @@ export default function TechMartGlobalClient() {
                             className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0"
                             strokeWidth={2}
                           />
-                          <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
+                          <span className="text-[#5A5F72] text-base leading-relaxed">{item}</span>
                         </motion.li>
                       ))}
                     </ul>
@@ -588,10 +588,10 @@ export default function TechMartGlobalClient() {
 
       {/* ── How It Works ───────────────────────────────────────────── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 mb-4 justify-center">
                 <span className="h-px w-8 bg-[#C41E3A]" />
                 <span className="text-sm font-semibold text-[#C41E3A] uppercase tracking-widest">
@@ -654,7 +654,7 @@ export default function TechMartGlobalClient() {
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">
                         {step.title}
                       </h3>
-                      <p className="text-[#7A7E8F] text-sm leading-relaxed mb-4">{step.description}</p>
+                      <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">{step.description}</p>
 
                       {/* Outcome badge */}
                       <div
@@ -684,10 +684,10 @@ export default function TechMartGlobalClient() {
 
       {/* ── Council Alignment ──────────────────────────────────────── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-28">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             {/* Section header */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 mb-4 justify-center">
                 <span className="h-px w-8 bg-[#C41E3A]" />
                 <span className="text-sm font-semibold text-[#C41E3A] uppercase tracking-widest">
@@ -703,13 +703,13 @@ export default function TechMartGlobalClient() {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-2 gap-8">
               {/* Text */}
               <div>
-                <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
+                <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                   TechMart Global is an official initiative of the UK-Pakistan Tech Council, designed to advance the council&apos;s mission of fostering collaboration, innovation, and economic growth between the UK and Pakistan technology sectors.
                 </p>
-                <p className="text-[#7A7E8F] text-base leading-relaxed">
+                <p className="text-[#7A7E8F] text-lg leading-relaxed">
                   The platform operates with a commitment to transparency, credibility, and ethical business practices. All participants benefit from the council&apos;s governance framework, which ensures fair processes, dispute resolution mechanisms, and ongoing support.
                 </p>
               </div>
@@ -756,10 +756,10 @@ export default function TechMartGlobalClient() {
                           </div>
                         </div>
                         <div>
-                          <span className="font-heading font-bold text-[#1C1F2E] text-sm">
+                          <span className="font-heading font-bold text-[#1C1F2E] text-base">
                             {item.label}
                           </span>
-                          <p className="text-[#7A7E8F] text-sm leading-relaxed mt-0.5">
+                          <p className="text-[#7A7E8F] text-base leading-relaxed mt-0.5">
                             {item.description}
                           </p>
                         </div>
@@ -790,7 +790,7 @@ export default function TechMartGlobalClient() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               {/* Label */}
@@ -813,16 +813,16 @@ export default function TechMartGlobalClient() {
                 </span>
               </h2>
 
-              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
                 Connect with the global technology marketplace and unlock new opportunities for growth and cross-border collaboration.
               </p>
 
               {/* CTA buttons */}
               <div className="flex flex-wrap gap-4 justify-center">
-                <Button href="/membership" variant="primary" size="lg" showArrow>
+                <Button href="/membership/apply" variant="primary" size="lg" showArrow>
                   Get Started
                 </Button>
-                <Button href="/membership" variant="glass" size="lg" showArrow>
+                <Button href="/contact" variant="glass" size="lg" showArrow>
                   Learn About Membership
                 </Button>
               </div>

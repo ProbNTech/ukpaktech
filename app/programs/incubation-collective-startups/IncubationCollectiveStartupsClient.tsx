@@ -108,10 +108,10 @@ export default function IncubationCollectiveStartupsClient() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>
+              <Button href="/membership/apply" variant="primary" size="lg" showArrow>
                 Apply for Incubation
               </Button>
-              <Button href="/membership" variant="glass" size="lg" showArrow>
+              <Button href="/contact" variant="glass" size="lg" showArrow>
                 Partner With Us
               </Button>
             </div>
@@ -158,21 +158,21 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
                   Our Mission
                 </p>
-                <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-8">
+                <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-5">
                   UPTECH&apos;s Incubation Centre provides a comprehensive ecosystem for startups to grow, scale, and succeed through collective models and collaborative structures.
                 </p>
-                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-8" />
-                <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
+                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-5" />
+                <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                   Our Incubation Centre offers mentorship, resources, funding connections, and a collaborative environment where innovation thrives. Through our collective startup model, entrepreneurs can leverage shared infrastructure, expertise, and networks.
                 </p>
-                <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed">
+                <p className="text-[#5A5F72] text-lg leading-relaxed">
                   We accelerate the journey from idea to market-ready product, connecting UK and Pakistani entrepreneurs with global opportunities.
                 </p>
               </div>
@@ -183,7 +183,7 @@ export default function IncubationCollectiveStartupsClient() {
                   {["Mentorship & Operators Network", "Shared Infrastructure & Tooling", "Funding & Investor Connections", "UK–Pakistan Market Access"].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
+                      <span className="text-[#5A5F72] text-base leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -195,9 +195,9 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Focus Areas ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
                 What We Incubate
               </p>
@@ -228,7 +228,7 @@ export default function IncubationCollectiveStartupsClient() {
                       {area.title}
                     </h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-[#7A7E8F] text-sm leading-relaxed">{area.description}</p>
+                    <p className="text-[#7A7E8F] text-base leading-relaxed">{area.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -239,9 +239,9 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Incubation Pathway ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Our Model
               </p>
@@ -287,7 +287,7 @@ export default function IncubationCollectiveStartupsClient() {
                       {step.outcomes.map((outcome) => (
                         <li key={outcome} className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
-                          <span className="text-[#5A5F72] text-sm leading-relaxed">{outcome}</span>
+                          <span className="text-[#5A5F72] text-base leading-relaxed">{outcome}</span>
                         </li>
                       ))}
                     </ul>
@@ -301,7 +301,7 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Collective Startup Approach ── */}
       <section className="relative bg-[#F5F4F2]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
@@ -311,13 +311,13 @@ export default function IncubationCollectiveStartupsClient() {
                 The Collective Startup Approach
               </h2>
               <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed mb-8">
+              <p className="text-[#7A7E8F] text-lg max-w-2xl leading-relaxed mb-5">
                 A model that transforms how startups collaborate, share resources, and scale together.
               </p>
-              <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
+              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                 Our collective startup model emphasises collaboration over competition, enabling entrepreneurs to pool resources, share infrastructure, and reduce individual risk while amplifying collective success.
               </p>
-              <p className="text-[#5A5F72] text-base leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 By combining expertise, networks, and market access, collective startups can tackle larger opportunities, enter new markets faster, and build sustainable ventures that benefit from sector-driven solutions and cross-border partnerships.
               </p>
             </div>
@@ -327,9 +327,9 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Corporate & Accelerator Partnerships ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
                 Partnerships
               </p>
@@ -388,10 +388,10 @@ export default function IncubationCollectiveStartupsClient() {
                       {card.title}
                     </h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed mb-4">{card.desc}</p>
+                    <p className="text-base text-[#7A7E8F] leading-relaxed mb-4">{card.desc}</p>
                     <ul className="space-y-2">
                       {card.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-sm text-[#5A5F72]">
+                        <li key={item} className="flex items-start gap-2 text-base text-[#5A5F72]">
                           <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: card.color }} />
                           <span>{item}</span>
                         </li>
@@ -407,9 +407,9 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Who Should Join ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
                 Who It&apos;s For
               </p>
@@ -440,13 +440,13 @@ export default function IncubationCollectiveStartupsClient() {
                       {audience.title}
                     </h3>
                     <div className="h-px bg-[#D8D5CF] mb-4" />
-                    <p className="text-[#7A7E8F] text-sm leading-relaxed mb-5 flex-1">{audience.description}</p>
-                    <p className="text-xs font-bold text-[#7A7E8F] uppercase tracking-wider mb-3">What they gain</p>
+                    <p className="text-[#7A7E8F] text-base leading-relaxed mb-5 flex-1">{audience.description}</p>
+                    <p className="text-sm font-bold text-[#7A7E8F] uppercase tracking-wider mb-3">What they gain</p>
                     <ul className="space-y-2">
                       {audience.gains.map((gain) => (
                         <li key={gain} className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: audience.color }} strokeWidth={2} />
-                          <span className="text-[#5A5F72] text-sm">{gain}</span>
+                          <span className="text-[#5A5F72] text-base">{gain}</span>
                         </li>
                       ))}
                     </ul>
@@ -460,9 +460,9 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Resources ── */}
       <section className="relative bg-[#F5F4F2]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-14">
+            <div className="mb-8">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
                 Support
               </p>
@@ -477,7 +477,7 @@ export default function IncubationCollectiveStartupsClient() {
             <div className="grid md:grid-cols-2 gap-x-12 gap-y-0">
               {resources.map((resource) => (
                 <div key={resource.label} className="flex items-center justify-between py-4 border-b border-[#D8D5CF]">
-                  <span className="text-[#3D4152] text-sm font-medium">{resource.label}</span>
+                  <span className="text-[#3D4152] text-base font-medium">{resource.label}</span>
                   <span className="text-xs font-semibold text-[#2563EB] bg-[#2563EB]/10 px-3 py-1 rounded">
                     {resource.badge}
                   </span>
@@ -501,7 +501,7 @@ export default function IncubationCollectiveStartupsClient() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-5">
@@ -510,14 +510,14 @@ export default function IncubationCollectiveStartupsClient() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Build, Scale, and Expand With UPTECH
               </h2>
-              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl">
                 Join our incubation program and become part of a collaborative ecosystem driving innovation across the UK and Pakistan.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg" showArrow>
+                <Button href="/membership/apply" variant="primary" size="lg" showArrow>
                   Apply for Incubation
                 </Button>
-                <Button href="/membership" variant="glass" size="lg" showArrow>
+                <Button href="/contact" variant="glass" size="lg" showArrow>
                   Partner With Us
                 </Button>
               </div>

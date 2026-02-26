@@ -215,14 +215,14 @@ export default function StructurePage() {
       </section>
 
       {/* ── Overview — Dark section ────────────────────────────────── */}
-      <section className="relative bg-[#EEECEA] py-16 overflow-hidden">
+      <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         {/* Grid pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "40px 40px" }} />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-6">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Our Framework</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Organisational Structure
@@ -246,7 +246,7 @@ export default function StructurePage() {
                   <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
                     <Building2 className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-heading font-bold text-lg text-white">Governance Model</h3>
+                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">Governance Model</h3>
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
                 <p className="text-[#3D4152] text-sm leading-relaxed mb-4">
@@ -269,7 +269,7 @@ export default function StructurePage() {
                   <div className="w-10 h-10 rounded-xl bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center">
                     <Layers className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-heading font-bold text-lg text-white">Governance Levels</h3>
+                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">Governance Levels</h3>
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
                 <div className="space-y-3">
@@ -287,7 +287,7 @@ export default function StructurePage() {
       </section>
 
       {/* ── Org Chart — Dark alt section ───────────────────────────── */}
-      <section className="relative py-16 overflow-hidden" style={{ backgroundColor: "#F5F4F2" }}>
+      <section className="relative py-10 overflow-hidden" style={{ backgroundColor: "#F5F4F2" }}>
         {/* Grid pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "60px 60px" }} />
         {/* Glowing orb accents */}
@@ -296,7 +296,7 @@ export default function StructurePage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-6">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Leadership Roles</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Key Positions & Responsibilities
@@ -338,7 +338,7 @@ export default function StructurePage() {
                         <Icon className="relative z-10 w-5 h-5" style={{ color }} strokeWidth={1.5} />
                       </div>
                       <div>
-                        <h3 className="font-heading font-bold text-base text-white">{role.title}</h3>
+                        <h3 className="font-heading font-bold text-base text-[#1C1F2E]">{role.title}</h3>
                         <span
                           className="text-[10px] font-bold tracking-[0.15em] uppercase"
                           style={{ color }}
@@ -352,7 +352,7 @@ export default function StructurePage() {
                       {role.responsibilities.map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                          <span className="text-sm text-[#3D4152] leading-relaxed">{item}</span>
+                          <span className="text-base text-[#3D4152] leading-relaxed">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -365,7 +365,7 @@ export default function StructurePage() {
       </section>
 
       {/* ── Operating Procedures — Dark section ────────────────────── */}
-      <section className="relative bg-white py-16 overflow-hidden">
+      <section className="relative bg-white py-10 overflow-hidden">
         {/* Grid pattern */}
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "40px 40px" }} />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/30 to-transparent" />
@@ -374,7 +374,7 @@ export default function StructurePage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-10">
+            <div className="mb-6">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">How We Operate</p>
               <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
                 Operating Procedures
@@ -411,9 +411,9 @@ export default function StructurePage() {
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
-                    <h3 className="font-heading font-bold text-base text-white mb-2">{item.title}</h3>
+                    <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-sm text-[#5A5F72] leading-relaxed">{item.desc}</p>
+                    <p className="text-base text-[#5A5F72] leading-relaxed">{item.desc}</p>
                   </motion.div>
                 );
               })}
@@ -423,7 +423,7 @@ export default function StructurePage() {
       </section>
 
       {/* ── CTA — Gradient dark section ──────────────────────────────── */}
-      <section className="relative overflow-hidden py-20" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
+      <section className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         {/* Glow orbs */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
@@ -435,7 +435,7 @@ export default function StructurePage() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Transparent Governance, Collective Impact
               </h2>
-              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
                 Our structure ensures every member has a voice. Learn more about how you can contribute to UPTECH&apos;s mission.
               </p>
               <div className="flex flex-wrap gap-4">

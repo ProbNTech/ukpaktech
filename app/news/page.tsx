@@ -313,7 +313,7 @@ export default function NewsPage() {
       {/* ══════════════════════════════════════════════════════════════
            CATEGORY FILTERS — Futuristic Dark Glass Tabs
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-8 lg:py-10" style={{ backgroundColor: "#EEECEA" }}>
+      <section className="relative z-[1] py-5 lg:py-7" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <DarkBannerHeader
@@ -324,7 +324,7 @@ export default function NewsPage() {
             />
 
             {/* Futuristic filter pills */}
-            <div className="flex flex-wrap gap-2 mb-10">
+            <div className="flex flex-wrap gap-2 mb-6">
               {allCategories.map((cat) => {
                 const meta = categoryMeta[cat] || { icon: Newspaper, color: "#1C1F2E" };
                 const Icon = meta.icon;
@@ -384,7 +384,7 @@ export default function NewsPage() {
               <motion.div
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-center gap-3 mb-8 px-4 py-3 rounded-lg"
+                className="flex items-center gap-3 mb-5 px-4 py-3 rounded-lg"
                 style={{
                   background: `${categoryMeta[activeCategory]?.color || "#2563EB"}08`,
                   border: `1px solid ${categoryMeta[activeCategory]?.color || "#2563EB"}20`,
@@ -406,7 +406,7 @@ export default function NewsPage() {
 
             {/* Articles Grid */}
             {filteredArticles.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
                 {filteredArticles.map((article, i) => (
                   <NewsCard
                     key={article.slug}
@@ -442,7 +442,7 @@ export default function NewsPage() {
       {/* ══════════════════════════════════════════════════════════════
            FEATURED TOPICS — Dark glassmorphism cards
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-8 lg:py-10" style={{ backgroundColor: "#E8E6E3" }}>
+      <section className="relative z-[1] py-5 lg:py-7" style={{ backgroundColor: "#E8E6E3" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <DarkBannerHeader
@@ -525,7 +525,7 @@ export default function NewsPage() {
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
                         {topic.title}
                       </h3>
-                      <p className="text-[#3D4152] text-sm leading-relaxed mb-3">{topic.desc}</p>
+                      <p className="text-[#3D4152] text-base leading-relaxed mb-3">{topic.desc}</p>
                       <span className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide group-hover:text-[#2563EB] text-[#7A7E8F] transition-colors duration-200">
                         View articles <ArrowUpRight className="w-3.5 h-3.5" />
                       </span>
@@ -541,7 +541,7 @@ export default function NewsPage() {
       {/* ══════════════════════════════════════════════════════════════
            LATEST ARTICLES — Quick preview with dark banner
       ═══════════════════════════════════════════════════════════════ */}
-      <section id="news-grid" className="relative z-[1] py-8 lg:py-10" style={{ backgroundColor: "#EEECEA" }}>
+      <section id="news-grid" className="relative z-[1] py-5 lg:py-7" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <DarkBannerHeader
@@ -551,7 +551,7 @@ export default function NewsPage() {
               color="red"
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 mb-5">
               {articles.slice(0, 6).map((article, i) => (
                 <NewsCard
                   key={article.slug}
@@ -586,7 +586,7 @@ export default function NewsPage() {
       {/* ══════════════════════════════════════════════════════════════
            CTA — Futuristic dark section with gradient glow effects
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative z-[2] overflow-hidden py-20 lg:py-28">
+      <section className="relative z-[2] overflow-hidden py-12 lg:py-16">
         {/* Deep dark background */}
         <div className="absolute inset-0 bg-[#0B0F1A]" />
 
@@ -667,7 +667,7 @@ export default function NewsPage() {
                 Never Miss an Update
               </h2>
 
-              <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl">
+              <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
                 Join the UPTECH community to receive the latest news, policy updates,
                 and investment insights from the UK--Pakistan technology corridor.
               </p>

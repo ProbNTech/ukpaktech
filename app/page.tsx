@@ -194,7 +194,7 @@ function HomeEventsSection() {
                       )}
                     </div>
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base leading-snug mb-3 line-clamp-2 group-hover:text-[#2563EB] transition-colors duration-200">{event.title}</h3>
-                    <p className="text-[#3D4152] text-sm leading-relaxed line-clamp-3 mb-4">{event.shortDescription}</p>
+                    <p className="text-[#3D4152] text-base leading-relaxed line-clamp-3 mb-4">{event.shortDescription}</p>
                     <div className="mt-auto pt-3 border-t border-[#D8D5CF]">
                       <span className="text-sm font-semibold text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 inline-flex items-center gap-1">
                         Learn more <ChevronRight className="w-3.5 h-3.5" />
@@ -395,7 +395,7 @@ export default function Home() {
                         <span className="text-[10px] font-bold tracking-[0.2em] text-[#D8D5CF]">{card.num}</span>
                       </div>
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{card.title}</h3>
-                      <p className="text-[#3D4152] text-sm leading-relaxed mb-4">{card.desc}</p>
+                      <p className="text-[#3D4152] text-base leading-relaxed mb-4">{card.desc}</p>
                       <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300" />
                     </div>
                   </Link>
@@ -425,7 +425,7 @@ export default function Home() {
                           <h3 className="font-heading font-bold text-[#1C1F2E] text-lg group-hover:text-[#2563EB] transition-colors duration-200">{card.title}</h3>
                           <span className="text-[10px] font-bold tracking-[0.2em] text-[#D8D5CF] flex-shrink-0 ml-3">{card.num}</span>
                         </div>
-                        <p className="text-[#3D4152] text-sm leading-relaxed">{card.desc}</p>
+                        <p className="text-[#3D4152] text-base leading-relaxed">{card.desc}</p>
                       </div>
                       <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300 flex-shrink-0 mt-1" />
                     </div>
@@ -471,7 +471,7 @@ export default function Home() {
                         <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300" />
                       </div>
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{card.title}</h3>
-                      <p className="text-[#3D4152] text-sm leading-relaxed">{card.desc}</p>
+                      <p className="text-[#3D4152] text-base leading-relaxed">{card.desc}</p>
                     </div>
                   </Link>
                 );
@@ -523,7 +523,7 @@ export default function Home() {
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base sm:text-lg leading-snug mb-2">
                       {video.title}
                     </h3>
-                    <p className="text-[#3D4152] text-sm leading-relaxed">
+                    <p className="text-[#3D4152] text-base leading-relaxed">
                       {video.description}
                     </p>
                   </div>
@@ -628,10 +628,10 @@ export default function Home() {
                 Membership opens access to bilateral investment introductions, exclusive summits, policy briefings, and the UK–Pakistan tech community.
               </p>
               <Link
-                href="/membership"
+                href="/membership/apply"
                 className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-white text-white text-sm font-semibold hover:bg-white hover:text-[#1C1F2E] transition-colors duration-300"
               >
-                Become a Member
+                Apply for Membership
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>

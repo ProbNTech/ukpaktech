@@ -263,27 +263,27 @@ export default function StartupFundingPage() {
           STARTUP FUNDING EVENTS
           ================================================================ */}
       <section className="relative bg-[#EEECEA] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl mb-14">
+            <div className="max-w-3xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
                 <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
                   For Startups
                 </span>
               </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
+              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-5">
                 Startup Funding{" "}
                 <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
                   Events &amp; Opportunities
                 </span>
               </h2>
-              <p className="text-[#5A5F72] text-base leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Connect with angel investors, venture capital firms, and corporate partners through our curated events and programs.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {startupBenefits.map((item, i) => {
                 const Icon = item.icon;
                 return (
@@ -308,11 +308,11 @@ export default function StartupFundingPage() {
                           <Icon className="w-6 h-6 relative z-[1]" style={{ color: item.color }} />
                         </div>
                       </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">
                         {item.title}
                       </h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#5A5F72] text-sm leading-relaxed">
+                      <p className="text-[#5A5F72] text-base leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -343,7 +343,7 @@ export default function StartupFundingPage() {
                       style={{ background: `linear-gradient(to bottom, ${feature.color}, ${feature.color}40)` }}
                     />
                     <Award className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: feature.color }} />
-                    <span className="text-[#3D4152] text-sm leading-relaxed">
+                    <span className="text-[#3D4152] text-base leading-relaxed">
                       {feature.text}
                     </span>
                   </motion.div>
@@ -358,9 +358,9 @@ export default function StartupFundingPage() {
           FOR INVESTORS
           ================================================================ */}
       <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl mb-14">
+            <div className="max-w-3xl mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/5 mb-5">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]" />
                 <span className="text-[#22C55E] text-xs font-semibold uppercase tracking-wider">
@@ -373,7 +373,7 @@ export default function StartupFundingPage() {
                   Big Thing
                 </span>
               </h2>
-              <p className="text-[#5A5F72] text-base leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Access curated, high-potential startups and engage directly with founders across the UK and Pakistan tech ecosystem.
               </p>
             </div>
@@ -410,7 +410,7 @@ export default function StartupFundingPage() {
                     </div>
 
                     <div className="relative h-px bg-[#D8D5CF] mb-5" />
-                    <p className="relative text-sm text-[#5A5F72] leading-relaxed">
+                    <p className="relative text-base text-[#5A5F72] leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>
@@ -425,9 +425,9 @@ export default function StartupFundingPage() {
           WHY IT MATTERS
           ================================================================ */}
       <section className="relative bg-[#E8E6E3] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-20 lg:py-28">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-5 gap-12 items-start">
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-3">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
@@ -441,7 +441,7 @@ export default function StartupFundingPage() {
                     Innovation
                   </span>
                 </h2>
-                <p className="text-[#5A5F72] text-base leading-relaxed mb-8">
+                <p className="text-[#5A5F72] text-lg leading-relaxed mb-6">
                   Funding is a critical enabler for innovation. By facilitating investment connections, the Council helps startups accelerate product development, scale operations, and enter new markets, while giving investors access to the most promising technology ventures across the UK and Pakistan.
                 </p>
 
@@ -465,7 +465,7 @@ export default function StartupFundingPage() {
                       >
                         <CheckCircle2 className="w-5 h-5" style={{ color: point.color }} strokeWidth={1.5} />
                       </div>
-                      <span className="relative text-[#3D4152] text-sm leading-relaxed pt-2">
+                      <span className="relative text-[#3D4152] text-base leading-relaxed pt-2">
                         {point.text}
                       </span>
                     </motion.div>
@@ -508,8 +508,8 @@ export default function StartupFundingPage() {
                           <ArrowUpRight className="w-4 h-4" style={{ color: item.color }} strokeWidth={1.5} />
                         </div>
                         <div>
-                          <span className="font-semibold text-[#1C1F2E] text-sm">{item.title}</span>
-                          <p className="text-[#7A7E8F] text-xs leading-relaxed mt-1">{item.desc}</p>
+                          <span className="font-semibold text-[#1C1F2E] text-base">{item.title}</span>
+                          <p className="text-[#7A7E8F] text-sm leading-relaxed mt-1">{item.desc}</p>
                         </div>
                       </motion.li>
                     ))}
@@ -537,7 +537,7 @@ export default function StartupFundingPage() {
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-32">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="text-center max-w-3xl mx-auto">
               <motion.div
@@ -553,7 +553,7 @@ export default function StartupFundingPage() {
                 </span>
               </motion.div>
 
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-5">
                 <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
                   Empowering Startups.{" "}
                 </span>
@@ -566,19 +566,19 @@ export default function StartupFundingPage() {
                 </span>
               </h2>
 
-              <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+              <p className="text-white/50 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
                 Whether you&apos;re a startup seeking investment or an investor looking for the next breakthrough, the UK-Pakistan Tech Council is your gateway to cross-border opportunity.
               </p>
 
               <div className="flex flex-wrap justify-center gap-4">
                 <Button
-                  href="/membership"
+                  href="/membership/apply"
                   variant="primary"
                   size="lg"
                   showArrow
                   className="!bg-gradient-to-r !from-[#22C55E] !to-[#2563EB] hover:!shadow-[0_0_40px_rgba(34,197,94,0.3)]"
                 >
-                  Become a Member
+                  Apply for Membership
                 </Button>
                 <Button href="/contact" variant="glass" size="lg" showArrow>
                   Contact Us

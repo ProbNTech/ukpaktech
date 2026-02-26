@@ -304,10 +304,10 @@ export default function EventsPage() {
       {/*  EVENTS GRID WITH FILTERS — light theme                       */}
       {/* ============================================================ */}
       <section className="relative bg-[#EEECEA]">
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-16 lg:py-20">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-10 lg:py-14">
           <AnimatedSection>
             {/* Section header */}
-            <div className="mb-12">
+            <div className="mb-8">
               <span
                 className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-3"
                 style={{ color: "#2563EB" }}
@@ -317,14 +317,14 @@ export default function EventsPage() {
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight mb-3 text-[#1C1F2E]">
                 Events Calendar
               </h2>
-              <p className="text-base text-[#5A5F72] max-w-2xl">
+              <p className="text-lg text-[#5A5F72] max-w-2xl">
                 Key engagements, summits, and activities from the UK-Pakistan
                 technology corridor.
               </p>
             </div>
 
             {/* Filter tabs — light theme */}
-            <div className="flex flex-wrap gap-2 sm:gap-3 mb-12">
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
               {FILTER_TABS.map((tab) => {
                 const isActive = activeFilter === tab;
                 const color = TAB_COLORS[tab];
