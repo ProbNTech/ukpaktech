@@ -4,40 +4,61 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { SectionHeader } from "@/components/SectionHeader";
-import { Section } from "@/components/Section";
 import { motion, useReducedMotion } from "framer-motion";
 import { EventGrid } from "@/components/events/EventGrid";
-import { NewsCard } from "@/components/NewsCard";
 import { EventsCTA } from "@/components/events/EventsCTA";
-import { ChevronRight, Mail } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { events } from "@/data/events";
-import { articles } from "@/data/articles";
-
-/* First 10 articles for the news section */
-const newsArticles = articles.slice(0, 10);
 
 /* ------------------------------------------------------------------ */
-/*  Filter tabs                                                         */
+/*  Filter tabs                                                        */
 /* ------------------------------------------------------------------ */
 type FilterTab = "All" | "Upcoming" | "Past" | "London" | "Pakistan" | "UPTECH";
-const FILTER_TABS: FilterTab[] = ["All", "Upcoming", "Past", "London", "Pakistan", "UPTECH"];
+const FILTER_TABS: FilterTab[] = [
+  "All",
+  "Upcoming",
+  "Past",
+  "London",
+  "Pakistan",
+  "UPTECH",
+];
 
 /* ------------------------------------------------------------------ */
-/*  Events listing page                                                 */
+/*  Tab colour mapping for glow effects                                */
 /* ------------------------------------------------------------------ */
-// Derive live status from dateISO so filters stay accurate regardless of
-// how the data field was set. An event is "upcoming" if its date is today or later.
+const TAB_COLORS: Record<FilterTab, string> = {
+  All: "#2563EB",
+  Upcoming: "#22C55E",
+  Past: "#8b5cf6",
+  London: "#2563EB",
+  Pakistan: "#22C55E",
+  UPTECH: "#f59e0b",
+};
+
+/* ------------------------------------------------------------------ */
+/*  Helpers                                                            */
+/* ------------------------------------------------------------------ */
 function isUpcoming(dateISO: string): boolean {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   return new Date(dateISO) >= today;
 }
 
+function getTabCount(tab: FilterTab): number {
+  if (tab === "All") return events.length;
+  if (tab === "Upcoming") return events.filter((e) => isUpcoming(e.dateISO)).length;
+  if (tab === "Past") return events.filter((e) => !isUpcoming(e.dateISO)).length;
+  return events.filter((e) => e.category === tab).length;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Events page                                                        */
+/* ------------------------------------------------------------------ */
 export default function EventsPage() {
   const shouldReduceMotion = useReducedMotion();
   const [activeFilter, setActiveFilter] = useState<FilterTab>("All");
 
+  /* Filtering */
   const filteredEvents = events.filter((e) => {
     if (activeFilter === "All") return true;
     if (activeFilter === "Upcoming") return isUpcoming(e.dateISO);
@@ -45,7 +66,7 @@ export default function EventsPage() {
     return e.category === activeFilter;
   });
 
-  // Sort: newest (highest dateISO) first in all views
+  /* Sort newest first */
   const sortedEvents = [...filteredEvents].sort((a, b) =>
     b.dateISO.localeCompare(a.dateISO)
   );
@@ -60,253 +81,347 @@ export default function EventsPage() {
     tag: e.tag,
   }));
 
+  /* Stat counts */
+  const upcomingCount = events.filter((e) => isUpcoming(e.dateISO)).length;
+  const pastCount = events.filter((e) => !isUpcoming(e.dateISO)).length;
+  const londonCount = events.filter((e) => e.category === "London").length;
+  const pakistanCount = events.filter((e) => e.category === "Pakistan").length;
+  const uptechCount = events.filter((e) => e.category === "UPTECH").length;
+
+  const stats = [
+    { label: "Total Events", value: events.length, color: "#2563EB" },
+    { label: "Upcoming", value: upcomingCount, color: "#22C55E" },
+    { label: "Past", value: pastCount, color: "#8b5cf6" },
+    { label: "London", value: londonCount, color: "#2563EB" },
+    { label: "Pakistan", value: pakistanCount, color: "#22C55E" },
+    { label: "UPTECH", value: uptechCount, color: "#f59e0b" },
+  ];
+
   return (
-    <div>
+    <div className="bg-[#EEECEA]">
       {/* ============================================================ */}
-      {/*  HERO                                                         */}
+      {/*  HERO — dark futuristic with glass morphism                   */}
       {/* ============================================================ */}
-      <section className="relative overflow-hidden min-h-[480px]">
+      <section className="relative overflow-hidden min-h-[540px]">
+        {/* Background image */}
         <Image
-          src="/image/london-images/tower-bridge-wide.jpg"
+          src="/image/london-images/international-conference.jpg"
           alt=""
           fill
           priority
           className="object-cover object-center"
           sizes="100vw"
         />
+
+        {/* Dark overlay */}
         <div
-          className="absolute inset-0 z-[1] pointer-events-none"
+          className="absolute inset-0 z-[1]"
           style={{
             background:
-              "linear-gradient(to right, rgba(10,14,30,0.50) 0%, rgba(10,14,30,0.18) 45%, transparent 70%)",
+              "linear-gradient(135deg, rgba(10,14,30,0.92) 0%, rgba(28,31,46,0.80) 50%, rgba(10,14,30,0.88) 100%)",
           }}
         />
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-16 pb-16">
+
+        {/* Grid overlay pattern */}
+        <div
+          className="absolute inset-0 z-[2] opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+
+        {/* Gradient orbs for futuristic feel */}
+        <div
+          className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] z-[2] pointer-events-none opacity-20 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(37,99,235,0.4) 0%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute bottom-[-30%] left-[-10%] w-[500px] h-[500px] z-[2] pointer-events-none opacity-15 rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(139,92,246,0.35) 0%, transparent 70%)",
+          }}
+        />
+
+        {/* Hero content */}
+        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-20 pb-20">
           {/* Breadcrumb */}
           <motion.nav
             initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="mb-6"
+            className="mb-8"
           >
-            <ol className="flex items-center gap-2 text-sm text-white/60">
+            <ol className="flex items-center gap-2 text-sm text-white/40">
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
+                <Link
+                  href="/"
+                  className="hover:text-white/80 transition-colors duration-200"
+                >
                   Home
                 </Link>
               </li>
               <ChevronRight className="w-3.5 h-3.5" />
-              <li className="text-white/90 font-medium">Events &amp; News</li>
+              <li className="text-white/70 font-medium">Events</li>
             </ol>
           </motion.nav>
 
-          {/* Title */}
+          {/* Accent label */}
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="mb-4"
+          >
+            <span
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full border"
+              style={{
+                color: "#22C55E",
+                borderColor: "rgba(34,197,94,0.3)",
+                background: "rgba(34,197,94,0.08)",
+              }}
+            >
+              <span
+                className="w-1.5 h-1.5 rounded-full animate-pulse"
+                style={{ background: "#22C55E" }}
+              />
+              Programme Calendar
+            </span>
+          </motion.div>
+
+          {/* Title with gradient text */}
           <motion.h1
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.08] text-white mb-5 max-w-3xl"
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] leading-[1.05] mb-6 max-w-4xl"
+            style={{
+              background:
+                "linear-gradient(135deg, #ffffff 0%, #e0e7ff 40%, #93c5fd 70%, #2563EB 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
           >
             Events &amp; Engagements
           </motion.h1>
 
-          <div className="w-full h-px bg-white/20 mb-5" />
-
-          <motion.p
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-lg text-white/70 max-w-2xl leading-relaxed mb-7"
-          >
-            UPTECH events, key London and Pakistan tech summits, and bilateral engagements connecting both nations&apos; technology ecosystems.
-          </motion.p>
-
-          {/* Stats chips */}
+          {/* Divider with glow */}
           <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="flex flex-wrap gap-3"
+            initial={shouldReduceMotion ? {} : { scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="origin-left mb-6"
           >
-            {[
-              { label: `${events.filter((e) => isUpcoming(e.dateISO)).length} Upcoming` },
-              { label: `${events.filter((e) => e.category === "London").length} London Events` },
-              { label: `${events.filter((e) => e.category === "Pakistan").length} Pakistan Events` },
-              { label: `${events.filter((e) => e.category === "UPTECH").length} UPTECH Events` },
-            ].map((chip) => (
-              <span
-                key={chip.label}
-                className="inline-flex items-center px-4 py-1.5 border border-white/30 text-white/80 text-xs font-semibold uppercase tracking-wide"
-              >
-                {chip.label}
-              </span>
-            ))}
+            <div
+              className="h-px max-w-md"
+              style={{
+                background:
+                  "linear-gradient(90deg, #2563EB 0%, rgba(139,92,246,0.5) 60%, transparent 100%)",
+              }}
+            />
           </motion.div>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-lg sm:text-xl text-white/50 max-w-2xl leading-relaxed mb-0"
+          >
+            UPTECH flagship summits, key London and Pakistan tech events,
+            and bilateral engagements connecting both nations&apos; technology
+            ecosystems.
+          </motion.p>
         </div>
       </section>
 
       {/* ============================================================ */}
-      {/*  OVERVIEW                                                     */}
+      {/*  STATS BAR — glass morphism (stays dark)                      */}
       {/* ============================================================ */}
-      <Section variant="light">
-        <AnimatedSection>
-          <SectionHeader label="Our programme" title="Overview" />
-
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
-            <div className="flex-1 min-w-0 space-y-6">
-              <p className="text-base leading-relaxed text-[#3D4152]">
-                Our events calendar spans the full UK–Pakistan technology corridor — from{" "}
-                <strong className="text-[#1C1F2E]">UPTECH flagship summits and dialogues</strong> to major{" "}
-                <strong className="text-[#1C1F2E]">London and Pakistan technology events</strong> where our members and partners make their mark. With a growing calendar of engagements annually, UPTECH members stay at the forefront of UK–Pakistan technology innovation.
-              </p>
-
-              <div>
-                <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">
-                  UK–Pakistan Tech Summit Series
-                </h3>
-                <p className="text-sm leading-relaxed text-[#3D4152]">
-                  The Council&apos;s flagship summit series brings together leaders from technology, investment, government, and academia for multi-day programmes of keynotes, panels, and B2B meetings across London, Islamabad, and other key cities.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">
-                  London Tech Calendar
-                </h3>
-                <p className="text-sm leading-relaxed text-[#3D4152]">
-                  From London Tech Week and SXSW London to the AI Summit and DTX, we track and attend the most significant technology events in the UK capital — connecting Pakistani companies and diaspora professionals to the heart of European tech.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">
-                  Pakistan Events Calendar
-                </h3>
-                <p className="text-sm leading-relaxed text-[#3D4152]">
-                  ITCN Asia, ASOCIO Digital Summit, and the HBL P@SHA ICT Awards represent Pakistan&apos;s most significant technology events. UPTECH helps UK companies engage meaningfully with Pakistan&apos;s domestic technology ecosystem through these premier platforms.
-                </p>
-              </div>
-            </div>
-
-            {/* Contact card */}
-            <div className="lg:w-72 shrink-0">
-              <div className="bg-white border border-[#D8D5CF] p-6">
-                <div className="flex items-start gap-5">
-                  <div className="shrink-0 flex flex-col items-center gap-4">
-                    <div className="relative w-24 h-24 overflow-hidden bg-[#D8D5CF]">
-                      <Image
-                        src="/image/eventgallery/event-2.jpg"
-                        alt="Events Programme Manager"
-                        fill
-                        className="object-cover"
-                        sizes="96px"
-                      />
-                    </div>
-                    <a
-                      href="mailto:events@uptechcouncil.org"
-                      className="inline-flex items-center justify-center w-10 h-10 bg-[#1C1F2E] text-white hover:bg-[#2563EB] transition-colors duration-200"
-                      aria-label="Email events team"
-                    >
-                      <Mail className="w-5 h-5" />
-                    </a>
-                  </div>
-                  <div className="pt-3">
-                    <h4 className="font-heading font-bold text-lg text-[#1C1F2E] leading-tight mb-1">
-                      Events Team
-                    </h4>
-                    <p className="text-sm leading-snug italic text-[#3D4152]">
-                      Events and Programmes<br />Manager
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section className="relative z-20 -mt-1">
+        <div
+          className="border-y"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(28,31,46,0.95) 0%, rgba(15,18,32,0.98) 100%)",
+            borderColor: "rgba(255,255,255,0.06)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+          }}
+        >
+          <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-6">
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6"
+            >
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={shouldReduceMotion ? {} : { opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.45 + i * 0.06 }}
+                  className="relative group flex flex-col items-center text-center rounded-lg px-4 py-4 border transition-all duration-300"
+                  style={{
+                    background: "rgba(255,255,255,0.02)",
+                    borderColor: "rgba(255,255,255,0.06)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = `rgba(${stat.color === "#2563EB" ? "37,99,235" : stat.color === "#22C55E" ? "34,197,94" : stat.color === "#8b5cf6" ? "139,92,246" : "245,158,11"},0.08)`;
+                    e.currentTarget.style.borderColor = `${stat.color}33`;
+                    e.currentTarget.style.boxShadow = `0 0 20px ${stat.color}15`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "rgba(255,255,255,0.02)";
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  <span
+                    className="text-2xl sm:text-3xl font-extrabold font-heading leading-none mb-1"
+                    style={{ color: stat.color }}
+                  >
+                    {stat.value}
+                  </span>
+                  <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white/40">
+                    {stat.label}
+                  </span>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
-        </AnimatedSection>
-      </Section>
+        </div>
+      </section>
 
       {/* ============================================================ */}
-      {/*  EVENTS GRID WITH FILTERS                                     */}
+      {/*  EVENTS GRID WITH FILTERS — light theme                       */}
       {/* ============================================================ */}
-      <Section variant="alt">
-        <AnimatedSection>
-          <SectionHeader
-            label="Programme"
-            title="Events and Highlights"
-            subtitle="Key engagements, summits, and activities from the UK–Pakistan corridor."
-          />
-
-          {/* Filter tabs */}
-          <div className="flex flex-wrap gap-2 mb-10">
-            {FILTER_TABS.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveFilter(tab)}
-                className={`px-4 py-2 text-xs font-bold uppercase tracking-wide border transition-colors duration-200 ${
-                  activeFilter === tab
-                    ? "bg-[#1C1F2E] text-white border-[#1C1F2E]"
-                    : "bg-white text-[#3D4152] border-[#D8D5CF] hover:border-[#2563EB] hover:text-[#2563EB]"
-                }`}
+      <section className="relative bg-[#EEECEA]">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-16 lg:py-20">
+          <AnimatedSection>
+            {/* Section header */}
+            <div className="mb-12">
+              <span
+                className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-3"
+                style={{ color: "#2563EB" }}
               >
-                {tab}
-                {tab === "All" && (
-                  <span className="ml-2 opacity-60">{events.length}</span>
-                )}
-                {tab === "Upcoming" && (
-                  <span className="ml-2 opacity-60">{events.filter((e) => isUpcoming(e.dateISO)).length}</span>
-                )}
-                {tab === "Past" && (
-                  <span className="ml-2 opacity-60">{events.filter((e) => !isUpcoming(e.dateISO)).length}</span>
-                )}
-                {tab === "London" && (
-                  <span className="ml-2 opacity-60">{events.filter((e) => e.category === "London").length}</span>
-                )}
-                {tab === "Pakistan" && (
-                  <span className="ml-2 opacity-60">{events.filter((e) => e.category === "Pakistan").length}</span>
-                )}
-                {tab === "UPTECH" && (
-                  <span className="ml-2 opacity-60">{events.filter((e) => e.category === "UPTECH").length}</span>
-                )}
-              </button>
-            ))}
-          </div>
-
-          {gridEvents.length > 0 ? (
-            <EventGrid hideBadge={false} events={gridEvents} />
-          ) : (
-            <div className="text-center py-16 text-[#3D4152]">
-              <p className="text-base">No events found for this filter.</p>
+                Programme
+              </span>
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight mb-3 text-[#1C1F2E]">
+                Events Calendar
+              </h2>
+              <p className="text-base text-[#5A5F72] max-w-2xl">
+                Key engagements, summits, and activities from the UK-Pakistan
+                technology corridor.
+              </p>
             </div>
-          )}
-        </AnimatedSection>
-      </Section>
 
-      {/* ============================================================ */}
-      {/*  NEWS & UPDATES                                               */}
-      {/* ============================================================ */}
-      <Section variant="light">
-        <AnimatedSection>
-          <SectionHeader
-            label="Latest"
-            title="News &amp; Updates"
-            subtitle="Stay informed with the latest news, announcements, and insights from UPTECH."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-            {newsArticles.map((article, i) => (
-              <NewsCard
-                key={article.slug}
-                slug={article.slug}
-                title={article.title}
-                category={article.category}
-                date={article.date}
-                image={article.image}
-                excerpt={article.excerpt}
-                index={i}
-              />
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
+            {/* Filter tabs — light theme */}
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-12">
+              {FILTER_TABS.map((tab) => {
+                const isActive = activeFilter === tab;
+                const color = TAB_COLORS[tab];
+                const count = getTabCount(tab);
+
+                return (
+                  <motion.button
+                    key={tab}
+                    onClick={() => setActiveFilter(tab)}
+                    whileHover={shouldReduceMotion ? {} : { scale: 1.03 }}
+                    whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
+                    className="relative px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg border transition-all duration-300 cursor-pointer"
+                    style={{
+                      background: isActive
+                        ? `linear-gradient(135deg, ${color}15 0%, ${color}08 100%)`
+                        : "#FFFFFF",
+                      borderColor: isActive ? `${color}55` : "#D8D5CF",
+                      color: isActive ? color : "#5A5F72",
+                      boxShadow: isActive
+                        ? `0 0 20px ${color}12, inset 0 1px 0 ${color}10`
+                        : "0 1px 2px rgba(0,0,0,0.04)",
+                    }}
+                  >
+                    {/* Active glow indicator */}
+                    {isActive && (
+                      <motion.span
+                        layoutId="activeFilterGlow"
+                        className="absolute inset-0 rounded-lg pointer-events-none"
+                        style={{
+                          boxShadow: `0 0 30px ${color}08`,
+                        }}
+                        transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                      />
+                    )}
+                    <span className="relative z-10 flex items-center gap-2">
+                      {tab}
+                      <span
+                        className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded text-[10px] font-bold"
+                        style={{
+                          background: isActive
+                            ? `${color}18`
+                            : "#F5F4F2",
+                          color: isActive ? color : "#7A7E8F",
+                        }}
+                      >
+                        {count}
+                      </span>
+                    </span>
+                  </motion.button>
+                );
+              })}
+            </div>
+
+            {/* Events grid or empty state */}
+            {gridEvents.length > 0 ? (
+              <EventGrid hideBadge={false} events={gridEvents} />
+            ) : (
+              <motion.div
+                initial={shouldReduceMotion ? {} : { opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center py-20 rounded-xl border bg-white border-[#D8D5CF] shadow-sm"
+              >
+                <div
+                  className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-[#F5F4F2]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#9A9EAF"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>
+                </div>
+                <p className="text-base text-[#5A5F72] font-medium">
+                  No events found for this filter.
+                </p>
+                <button
+                  onClick={() => setActiveFilter("All")}
+                  className="mt-4 text-sm font-semibold transition-colors duration-200"
+                  style={{ color: "#2563EB" }}
+                >
+                  View all events
+                </button>
+              </motion.div>
+            )}
+          </AnimatedSection>
+        </div>
+      </section>
 
       {/* ============================================================ */}
       {/*  CTA                                                          */}

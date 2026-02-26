@@ -150,8 +150,8 @@ export default function ExcellenceManagementTermsPage() {
             </h2>
             <p className="text-white/70 text-base leading-relaxed">
               For questions about these terms, contact us at{" "}
-              <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
-                info@ukpaktech.org.uk
+              <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
+                info@uptech.org.uk
               </a>.
             </p>
           </div>

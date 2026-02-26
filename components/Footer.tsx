@@ -108,10 +108,10 @@ export function Footer() {
                   <p>
                     <span className="text-white font-medium">Email:</span>{" "}
                     <a
-                      href="mailto:info@ukpaktech.org.uk"
+                      href="mailto:info@uptech.org.uk"
                       className="text-[#C41E3A] font-bold hover:text-[#E74C5E] transition-colors duration-300"
                     >
-                      info@ukpaktech.org.uk
+                      info@uptech.org.uk
                     </a>
                   </p>
                   <div>
@@ -136,7 +136,8 @@ export function Footer() {
                       { label: "Mentorship", href: "/services/mentorship" },
                       { label: "Funding", href: "/ecosystem/funding-and-grants" },
                       { label: "FAQs", href: "/faqs" },
-                      { label: "Jobs", href: "/job-portal" },
+                      { label: "Job Portal", href: "/job-portal" },
+                      { label: "News", href: "/news" },
                       { label: "Contact", href: "/contact" },
                     ].map((link) => (
                       <li key={link.href}>
