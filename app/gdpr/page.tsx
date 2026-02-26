@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
+import { SectionHeader } from "@/components/SectionHeader";
+import { PageHero } from "@/components/PageHero";
 import {
   Shield, Eye, Users, FileText, Bell, Scale, Lock, Clock,
   UserCheck, ArrowRightLeft, Ban, Mail, CheckCircle2,
@@ -48,35 +49,19 @@ export default function GDPRPage() {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden min-h-[520px]">
-        <Image src="/image/london-images/data-security-privacy.jpg" alt="" fill priority className="object-cover object-center" sizes="100vw" />
-        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(135deg, rgba(10,14,30,0.92) 0%, rgba(10,14,30,0.72) 50%, rgba(10,14,30,0.50) 100%)" }} />
-        <div className="absolute inset-0 z-[2] opacity-[0.04]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "60px 60px" }} />
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-20 pb-16">
-          <motion.div initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
-              <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-white/60">Data Protection</span>
-            </div>
-          </motion.div>
-          <motion.h1 initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-white mb-6 max-w-3xl">
-            GDPR{" "}<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#60a5fa]">Compliance</span>
-          </motion.h1>
-          <motion.p initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} className="text-lg text-white/50 max-w-2xl leading-relaxed">Our commitment to data protection and your rights under the General Data Protection Regulation.</motion.p>
-        </div>
-      </section>
+      <PageHero
+        label="Data Protection"
+        title="GDPR Compliance"
+        subtitle="Our commitment to data protection and your rights under the General Data Protection Regulation."
+        image="/image/london-images/data-security-privacy.jpg"
+      />
 
       {/* ── Data Subject Rights — Light section ─────────────────────── */}
       <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">GDPR Compliance</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Data Subject Rights</h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-3xl">GDPR compliance requires data subjects to be granted certain rights. What follows is not an exhaustive list, but those rights that are relevant to the collection, processing, and storage of personal data on{" "}<a href="https://www.uptech.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">www.uptech.org.uk</a></p>
-            </div>
+            <SectionHeader label="GDPR Compliance" title="Data Subject Rights" subtitle={<>GDPR compliance requires data subjects to be granted certain rights. What follows is not an exhaustive list, but those rights that are relevant to the collection, processing, and storage of personal data on{" "}<a href="https://www.uptech.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">www.uptech.org.uk</a></>} color="blue" />
             <div className="grid md:grid-cols-2 gap-5">
               {dataSubjectRights.map((right, i) => {
                 const Icon = right.icon;
@@ -103,12 +88,7 @@ export default function GDPRPage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">Your Rights</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Rights Under UK Data Protection Law</h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-3xl">Under UK data protection law, you have certain rights over the personal information that we hold about you. Here is a summary of the rights that we think apply:</p>
-            </div>
+            <SectionHeader label="Your Rights" title="Rights Under UK Data Protection Law" subtitle="Under UK data protection law, you have certain rights over the personal information that we hold about you. Here is a summary of the rights that we think apply:" color="green" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {yourRights.map((right, i) => {
                 const Icon = right.icon;
@@ -142,12 +122,7 @@ export default function GDPRPage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Legal Basis</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Lawful Processing</h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-3xl">Data protection law requires us to rely on one or more lawful grounds to process your personal information. We consider the following grounds to be relevant:</p>
-            </div>
+            <SectionHeader label="Legal Basis" title="Lawful Processing" subtitle="Data protection law requires us to rely on one or more lawful grounds to process your personal information. We consider the following grounds to be relevant:" color="blue" />
             <div className="grid md:grid-cols-2 gap-5 max-w-5xl">
               {lawfulBases.map((basis, i) => {
                 const Icon = basis.icon;
@@ -174,12 +149,7 @@ export default function GDPRPage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Retention Policy</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Data Retention</h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-3xl">We keep your information for no longer than is necessary for the purposes it was collected for. The length of time we retain your personal information is determined by operational and legal considerations.</p>
-            </div>
+            <SectionHeader label="Retention Policy" title="Data Retention" subtitle="We keep your information for no longer than is necessary for the purposes it was collected for. The length of time we retain your personal information is determined by operational and legal considerations." color="red" />
             <div className="max-w-4xl">
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4 }} className="grid grid-cols-[1fr_2fr] gap-4 px-6 py-4 mb-2">
                 <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A]">Category</div>
@@ -209,11 +179,7 @@ export default function GDPRPage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">Data Security</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Security Measures</h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
-            </div>
+            <SectionHeader label="Data Security" title="Security Measures" color="green" />
             <div className="max-w-4xl">
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />

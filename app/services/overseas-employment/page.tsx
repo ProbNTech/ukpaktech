@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { CheckCircle2, Building2, User, ChevronDown, Globe, Briefcase, Shield, TrendingUp, Clock, Award } from "lucide-react";
 import { useState } from "react";
@@ -62,49 +64,20 @@ export default function OverseasEmploymentPage() {
   return (
     <div>
       {/* ── Hero Section ── */}
-      <section className="relative min-h-[75vh] flex items-center overflow-hidden">
-        <Image
-          src="/image/london-images/global-workforce.jpg"
-          alt="Overseas Employment"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(10,14,30,0.85), rgba(10,14,30,0.65), rgba(10,14,30,1))" }} />
-        <div
-          className="absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">UPTECH Service</p>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-6">
-              <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #22C55E 100%)" }}>
-                Overseas Contract Employment Opportunities
-              </span>
-            </h1>
-            <div className="max-w-2xl backdrop-blur-md bg-white/[0.05] border border-white/[0.1] rounded-2xl p-6 mb-8">
-              <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
-                The UK-Pakistan Tech Council facilitates skilled technology professionals with high-value overseas contract opportunities, helping both employers and talent thrive in global markets.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>Get Connected</Button>
-              <Button href="/contact" variant="glass" size="lg" showArrow>Learn More</Button>
-            </div>
-          </motion.div>
+      <PageHero
+        label="UPTECH Service"
+        title="Overseas Contract Employment Opportunities"
+        subtitle="The UK-Pakistan Tech Council facilitates skilled technology professionals with high-value overseas contract opportunities, helping both employers and talent thrive in global markets."
+        image="/image/london-images/global-workforce.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <Button href="/membership" variant="glass" showArrow>Get Connected</Button>
+          <Button href="/contact" variant="glass" showArrow>Learn More</Button>
         </div>
-      </section>
+      </PageHero>
 
       {/* ── Stats Bar ── */}
-      <section className="relative bg-[#0E1221]">
+      <section className="relative bg-[#EEECEA]">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
@@ -114,14 +87,19 @@ export default function OverseasEmploymentPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group relative backdrop-blur-md bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 hover:-translate-y-1 hover:border-white/[0.15] transition-all duration-300"
+                className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl" style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }} />
-                <div className="absolute -top-1 left-4 right-4 h-4 rounded-full opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500" style={{ background: stat.color }} />
-                <div className="font-heading font-extrabold text-3xl sm:text-4xl mb-2" style={{ color: stat.color, textShadow: `0 0 30px ${stat.color}40` }}>
+                <div
+                  className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
+                  style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }}
+                />
+                <div
+                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                  style={{ color: stat.color }}
+                >
                   {stat.value}
                 </div>
-                <p className="text-white/50 text-base">{stat.label}</p>
+                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -133,16 +111,12 @@ export default function OverseasEmploymentPage() {
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Overview</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-5">
-                Our Focus
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-5" />
-              <p className="text-[#5A5F72] text-lg sm:text-xl leading-relaxed mb-4">
+            <div>
+              <SectionHeader label="Overview" title="Our Focus" color="blue" />
+              <p className="max-w-3xl text-[#5A5F72] text-lg sm:text-xl leading-relaxed mb-4">
                 We support ethical, compliant, and commercially viable pathways that connect skilled professionals with long-term, short-term and project-based opportunities across UK, Europe, Middle East and Pakistan.
               </p>
-              <p className="text-[#5A5F72] text-lg sm:text-xl leading-relaxed">
+              <p className="max-w-3xl text-[#5A5F72] text-lg sm:text-xl leading-relaxed">
                 We prioritise transparency, compliance, and long-term relationship building. Our goal is to create structured, sustainable talent mobility between the UK, Europe, Middle East and Pakistan&apos;s technology sectors. By enabling overseas contract employment, we strengthen collaboration, accelerate knowledge exchange, and support innovation across both ecosystems.
               </p>
             </div>
@@ -238,12 +212,7 @@ export default function OverseasEmploymentPage() {
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Process</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">How It Works</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40 mb-4" />
-              <p className="text-[#7A7E8F] text-lg sm:text-xl max-w-2xl leading-relaxed">A structured, compliant process from registration to placement.</p>
-            </div>
+            <SectionHeader label="Process" title="How It Works" subtitle="A structured, compliant process from registration to placement." color="blue" />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {processSteps.map((step, i) => (
                 <motion.div
@@ -281,12 +250,7 @@ export default function OverseasEmploymentPage() {
         <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">Sectors</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Technology Sectors We Cover</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#22C55E] to-[#22C55E]/40 mb-4" />
-              <p className="text-[#7A7E8F] text-lg sm:text-xl max-w-2xl leading-relaxed">Our talent pool spans the full spectrum of modern technology disciplines.</p>
-            </div>
+            <SectionHeader label="Sectors" title="Technology Sectors We Cover" subtitle="Our talent pool spans the full spectrum of modern technology disciplines." color="green" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {sectors.map((sector, i) => {
                 const Icon = sector.icon;
@@ -323,19 +287,18 @@ export default function OverseasEmploymentPage() {
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">FAQ</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">Frequently Asked Questions</h2>
-              <div className="h-1 w-16 rounded-full bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/40 mb-4" />
-              <p className="text-[#7A7E8F] text-lg sm:text-xl max-w-2xl leading-relaxed">Common questions about overseas contract employment.</p>
-            </div>
+            <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Common questions about overseas contract employment." color="red" />
             <FAQSection faqs={faqs} />
           </AnimatedSection>
         </div>
       </section>
 
       {/* ── CTA Section ── */}
-      <section className="relative bg-[#131942] overflow-hidden">
+      <section className="relative bg-[#131942]/80 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 -z-10">
+          <Image src="/image/london-images/global-workforce.jpg" alt="Overseas Employment background" fill className="object-cover" sizes="100vw" />
+        </div>
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />
         <div

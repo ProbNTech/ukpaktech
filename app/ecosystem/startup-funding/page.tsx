@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { PageHero } from "@/components/PageHero";
 import {
   Rocket,
   Lightbulb,
@@ -140,117 +142,48 @@ export default function StartupFundingPage() {
       {/* ================================================================
           HERO SECTION
           ================================================================ */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-        <Image
-          src="/image/london-images/investment-finance-meeting.jpg"
-          alt="Startup Funding Opportunities"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F1A] via-[#0B0F1A]/90 to-[#0B0F1A]/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F1A] via-transparent to-[#0B0F1A]/40" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#22C55E]/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#2563EB]/8 rounded-full blur-[100px] pointer-events-none" />
-
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-32">
-          <motion.div
-            className="max-w-3xl"
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#22C55E]/30 bg-[#22C55E]/10 backdrop-blur-sm mb-6"
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-              <span className="text-[#22C55E] text-xs font-semibold uppercase tracking-wider">
-                Ecosystem / Startup Funding
-              </span>
-            </motion.div>
-
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6">
-              <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-                Startup{" "}
-              </span>
-              <span className="bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#C41E3A] bg-clip-text text-transparent">
-                Funding
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-white via-white/80 to-white/60 bg-clip-text text-transparent">
-                Opportunities
-              </span>
-            </h1>
-
-            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-5 mb-8 max-w-2xl">
-              <p className="text-white/70 text-base sm:text-lg leading-relaxed">
-                The UK-Pakistan Tech Council supports early-stage technology startups in accessing funding, investment networks, and growth capital to turn innovative ideas into scalable businesses. We connect founders with investors, venture capital firms, corporate partners, and government-backed funding programs across the UK and Pakistan, helping startups navigate the fundraising process with confidence.
-              </p>
-            </div>
-
-            <motion.div
-              className="flex flex-wrap gap-4"
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <Button href="/membership" variant="glass" showArrow>
-                Access Funding
-              </Button>
-              <Button
-                href="/contact"
-                variant="ghost"
-                className="!text-white/70 !decoration-white/30 hover:!text-[#22C55E]"
-              >
-                Speak to Our Team
-              </Button>
-            </motion.div>
-          </motion.div>
+      <PageHero
+        label="Ecosystem / Startup Funding"
+        title="Startup Funding Opportunities"
+        subtitle="The UK-Pakistan Tech Council supports early-stage technology startups in accessing funding, investment networks, and growth capital to turn innovative ideas into scalable businesses."
+        image="/image/london-images/investment-finance-meeting.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <Button href="/membership" variant="glass" showArrow>
+            Access Funding
+          </Button>
+          <Button href="/contact" variant="glass" showArrow>
+            Speak to Our Team
+          </Button>
         </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0B0F1A] to-transparent" />
-      </section>
+      </PageHero>
 
       {/* ================================================================
           STATS BAR
           ================================================================ */}
-      <section className="relative z-[1] bg-[#0B0F1A]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <section className="relative bg-[#EEECEA]">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
-                className="relative text-center backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 overflow-hidden group hover:bg-white/[0.06] transition-all duration-500"
+                className="relative text-center bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                 initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
                 <div
-                  className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}00)` }}
-                />
-                <div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full blur-[40px] opacity-20 group-hover:opacity-30 transition-opacity duration-500"
-                  style={{ background: stat.color }}
+                  className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
+                  style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }}
                 />
                 <p
-                  className="relative font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl mb-1"
+                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
                   style={{ color: stat.color }}
                 >
                   {stat.value}
                 </p>
-                <p className="relative text-white/50 text-xs sm:text-sm font-medium uppercase tracking-wider">
+                <p className="text-[#5A5F72] text-sm">
                   {stat.label}
                 </p>
               </motion.div>
@@ -265,23 +198,7 @@ export default function StartupFundingPage() {
       <section className="relative bg-[#EEECEA] overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
-                  For Startups
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-5">
-                Startup Funding{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
-                  Events &amp; Opportunities
-                </span>
-              </h2>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                Connect with angel investors, venture capital firms, and corporate partners through our curated events and programs.
-              </p>
-            </div>
+            <SectionHeader label="For Startups" title="Startup Funding Events & Opportunities" subtitle="Connect with angel investors, venture capital firms, and corporate partners through our curated events and programs." color="blue" />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {startupBenefits.map((item, i) => {
@@ -360,23 +277,7 @@ export default function StartupFundingPage() {
       <section className="relative bg-white overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]" />
-                <span className="text-[#22C55E] text-xs font-semibold uppercase tracking-wider">
-                  For Investors
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                Discover the Next{" "}
-                <span className="bg-gradient-to-r from-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
-                  Big Thing
-                </span>
-              </h2>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                Access curated, high-potential startups and engage directly with founders across the UK and Pakistan tech ecosystem.
-              </p>
-            </div>
+            <SectionHeader label="For Investors" title="Discover the Next Big Thing" subtitle="Access curated, high-potential startups and engage directly with founders across the UK and Pakistan tech ecosystem." color="green" />
 
             <div className="grid md:grid-cols-2 gap-7">
               {investorBenefits.map((item, i) => {
@@ -429,18 +330,7 @@ export default function StartupFundingPage() {
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-                  <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
-                    Why It Matters
-                  </span>
-                </div>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
-                  Funding is a Critical Enabler for{" "}
-                  <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
-                    Innovation
-                  </span>
-                </h2>
+                <SectionHeader label="Why It Matters" title="Funding is a Critical Enabler for Innovation" color="blue" />
                 <p className="text-[#5A5F72] text-lg leading-relaxed mb-6">
                   Funding is a critical enabler for innovation. By facilitating investment connections, the Council helps startups accelerate product development, scale operations, and enter new markets, while giving investors access to the most promising technology ventures across the UK and Pakistan.
                 </p>
@@ -524,7 +414,11 @@ export default function StartupFundingPage() {
       {/* ================================================================
           CTA SECTION
           ================================================================ */}
-      <section className="relative bg-[#0B0F1A] overflow-hidden">
+      <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 -z-10">
+          <Image src="/image/london-images/startup-coworking.jpg" alt="Startup Funding background" fill className="object-cover" sizes="100vw" />
+        </div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none">
           <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#22C55E]/10 rounded-full blur-[120px]" />
           <div className="absolute top-10 right-0 w-[350px] h-[350px] bg-[#2563EB]/8 rounded-full blur-[100px]" />

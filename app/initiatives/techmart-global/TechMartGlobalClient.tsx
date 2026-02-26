@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   Rocket,
@@ -161,88 +163,25 @@ export default function TechMartGlobalClient() {
   return (
     <div className="bg-[#EEECEA]">
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative w-full min-h-[85vh] flex items-center overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/image/london-images/techmart-exhibition.jpg"
-          alt="TechMart Global Exhibition"
-          fill
-          className="object-cover"
-          priority
-        />
-
-        {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F1A]/80 via-[#0B0F1A]/70 to-[#0B0F1A]" />
-
-        {/* Grid pattern overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        {/* Accent glow orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#2563EB]/10 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#22C55E]/8 blur-[100px] pointer-events-none" />
-
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 lg:py-40">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {/* Label badge */}
-            <div className="inline-flex items-center gap-2 mb-6">
-              <span className="inline-block w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-              <span className="text-sm font-semibold text-white/60 uppercase tracking-widest">
-                Official UPTECH Initiative
-              </span>
-            </div>
-
-            {/* Gradient title */}
-            <h1 className="font-heading font-extrabold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] mb-6">
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #22C55E 100%)",
-                }}
-              >
-                TechMart Global
-              </span>
-            </h1>
-
-            {/* Subtitle in glass card */}
-            <div className="max-w-3xl">
-              <div className="backdrop-blur-md bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 mb-8">
-                <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
-                  A global B2B technology marketplace and collaboration platform connecting Pakistani tech companies with UK and international buyers, partners, investors, and institutions.
-                </p>
-              </div>
-            </div>
-
-            {/* CTA buttons */}
-            <div className="flex flex-wrap gap-4">
-              <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-                Get Started
-              </Button>
-              <Button href="/contact" variant="glass" size="lg" showArrow>
-                Learn More
-              </Button>
-            </div>
-          </motion.div>
+      <PageHero
+        label="UPTECH Initiative"
+        title="TechMart Global"
+        subtitle="A global B2B technology marketplace and collaboration platform connecting Pakistani tech companies with UK and international buyers, partners, investors, and institutions."
+        image="/image/london-images/techmart-exhibition.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <Button href="/membership/apply" variant="primary" size="lg" showArrow>
+            Get Started
+          </Button>
+          <Button href="/contact" variant="glass" size="lg" showArrow>
+            Learn More
+          </Button>
         </div>
-
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0B0F1A] to-transparent" />
-      </section>
+      </PageHero>
 
       {/* ── Stats Bar ──────────────────────────────────────────────── */}
-      <section className="relative bg-[#1C1F2E]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+      <section className="bg-[#EEECEA]">
+        <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -251,26 +190,16 @@ export default function TechMartGlobalClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="relative backdrop-blur-md bg-white/[0.03] border border-white/[0.07] rounded-2xl p-6 text-center overflow-hidden group"
+                className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                {/* Subtle glow */}
+                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl" style={{ background: `linear-gradient(to right, ${statColors[i]}, ${statColors[i]}60)` }} />
                 <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl"
-                  style={{
-                    background: `radial-gradient(circle at center, ${statColors[i]}10 0%, transparent 70%)`,
-                  }}
-                />
-                <div className="relative">
-                  <div
-                    className="font-heading font-extrabold text-3xl sm:text-4xl mb-1"
-                    style={{ color: statColors[i] }}
-                  >
-                    {stat.value}
-                  </div>
-                  <p className="text-white/40 text-sm font-medium uppercase tracking-wider">
-                    {stat.label}
-                  </p>
+                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                  style={{ color: statColors[i] }}
+                >
+                  {stat.value}
                 </div>
+                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -284,15 +213,11 @@ export default function TechMartGlobalClient() {
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               {/* Text content - 3 cols */}
               <div className="lg:col-span-3">
-                <div className="inline-flex items-center gap-2 mb-6">
-                  <span className="h-px w-8 bg-[#2563EB]" />
-                  <span className="text-sm font-semibold text-[#2563EB] uppercase tracking-widest">
-                    About the Platform
-                  </span>
-                </div>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-5">
-                  What is TechMart Global?
-                </h2>
+                <SectionHeader
+                  label="About the Platform"
+                  title="What is TechMart Global?"
+                  color="blue"
+                />
                 <p className="text-[#3D4152] text-lg leading-relaxed mb-5">
                   TechMart Global is a comprehensive B2B technology marketplace powered by the UK-Pakistan Tech Council, enabling Pakistani technology companies to showcase their capabilities to a global audience.
                 </p>
@@ -352,22 +277,12 @@ export default function TechMartGlobalClient() {
       <section className="relative bg-white">
         <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 mb-4 justify-center">
-                <span className="h-px w-8 bg-[#22C55E]" />
-                <span className="text-sm font-semibold text-[#22C55E] uppercase tracking-widest">
-                  Who It&apos;s For
-                </span>
-                <span className="h-px w-8 bg-[#22C55E]" />
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Who TechMart Global Serves
-              </h2>
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl mx-auto">
-                Designed to serve diverse stakeholders across the technology ecosystem.
-              </p>
-            </div>
+            <SectionHeader
+              label="Who It's For"
+              title="Who TechMart Global Serves"
+              subtitle="Designed to serve diverse stakeholders across the technology ecosystem."
+              color="green"
+            />
 
             {/* Audience cards */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -421,22 +336,12 @@ export default function TechMartGlobalClient() {
       <section className="relative bg-[#E8E6E3]">
         <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 mb-4 justify-center">
-                <span className="h-px w-8 bg-[#C41E3A]" />
-                <span className="text-sm font-semibold text-[#C41E3A] uppercase tracking-widest">
-                  Capabilities
-                </span>
-                <span className="h-px w-8 bg-[#C41E3A]" />
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                What TechMart Global Enables
-              </h2>
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl mx-auto">
-                Key capabilities and opportunities facilitated through the platform.
-              </p>
-            </div>
+            <SectionHeader
+              label="Capabilities"
+              title="What TechMart Global Enables"
+              subtitle="Key capabilities and opportunities facilitated through the platform."
+              color="red"
+            />
 
             {/* Feature cards */}
             <div className="grid md:grid-cols-2 gap-6">
@@ -511,18 +416,12 @@ export default function TechMartGlobalClient() {
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               {/* Text content */}
               <div className="lg:col-span-3">
-                <div className="inline-flex items-center gap-2 mb-6">
-                  <span className="h-px w-8 bg-[#2563EB]" />
-                  <span className="text-sm font-semibold text-[#2563EB] uppercase tracking-widest">
-                    UK Market
-                  </span>
-                </div>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                  UK Market Access Focus
-                </h2>
-                <p className="text-[#7A7E8F] text-base sm:text-lg mb-8 max-w-xl">
-                  Supporting Pakistani technology companies in entering and succeeding in the UK market.
-                </p>
+                <SectionHeader
+                  label="UK Market"
+                  title="UK Market Access Focus"
+                  subtitle="Supporting Pakistani technology companies in entering and succeeding in the UK market."
+                  color="blue"
+                />
                 <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                   TechMart Global places particular emphasis on facilitating entry into the UK market, recognising its strategic importance as a gateway to broader international opportunities.
                 </p>
@@ -590,22 +489,12 @@ export default function TechMartGlobalClient() {
       <section className="relative bg-[#EEECEA]">
         <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 mb-4 justify-center">
-                <span className="h-px w-8 bg-[#C41E3A]" />
-                <span className="text-sm font-semibold text-[#C41E3A] uppercase tracking-widest">
-                  Process
-                </span>
-                <span className="h-px w-8 bg-[#C41E3A]" />
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                How TechMart Global Works
-              </h2>
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl mx-auto">
-                A structured process designed to facilitate meaningful connections and successful outcomes.
-              </p>
-            </div>
+            <SectionHeader
+              label="Process"
+              title="How TechMart Global Works"
+              subtitle="A structured process designed to facilitate meaningful connections and successful outcomes."
+              color="red"
+            />
 
             {/* Step cards */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -686,22 +575,12 @@ export default function TechMartGlobalClient() {
       <section className="relative bg-[#E8E6E3]">
         <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 mb-4 justify-center">
-                <span className="h-px w-8 bg-[#C41E3A]" />
-                <span className="text-sm font-semibold text-[#C41E3A] uppercase tracking-widest">
-                  Official Initiative
-                </span>
-                <span className="h-px w-8 bg-[#C41E3A]" />
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Alignment With UPTECH
-              </h2>
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl mx-auto">
-                TechMart Global as a strategic initiative supporting council objectives and ecosystem development.
-              </p>
-            </div>
+            <SectionHeader
+              label="Official Initiative"
+              title="Alignment With UPTECH"
+              subtitle="TechMart Global as a strategic initiative supporting council objectives and ecosystem development."
+              color="red"
+            />
 
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Text */}
@@ -774,7 +653,11 @@ export default function TechMartGlobalClient() {
       </section>
 
       {/* ── CTA ────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#0B0F1A] overflow-hidden">
+      <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 -z-10">
+          <Image src="/image/london-images/techmart-exhibition.jpg" alt="TechMart Global background" fill className="object-cover" sizes="100vw" />
+        </div>
         {/* Gradient glow effects */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#2563EB]/8 blur-[150px] pointer-events-none" />
         <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-[#22C55E]/6 blur-[100px] pointer-events-none" />

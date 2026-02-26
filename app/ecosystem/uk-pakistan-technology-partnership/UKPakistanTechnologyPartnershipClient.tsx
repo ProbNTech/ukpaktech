@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
@@ -59,58 +61,21 @@ export default function UKPakistanTechnologyPartnershipClient() {
   return (
     <div className="bg-[#EEECEA]">
       {/* ── Hero Section ── */}
-      <section className="relative min-h-[75vh] flex items-center overflow-hidden">
-        <Image
-          src="/image/london-images/tower-bridge-wide.jpg"
-          alt="UK–Pakistan Technology Partnership"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,14,30,0.85)] via-[rgba(10,14,30,0.7)] to-[#0B0F1A]" />
-        <div
-          className="absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
-              UPTECH Ecosystem
-            </p>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-6">
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #22C55E 100%)",
-                }}
-              >
-                UK–Pakistan Technology Partnership
-              </span>
-            </h1>
-            <div className="max-w-2xl backdrop-blur-md bg-white/[0.05] border border-white/[0.1] rounded-2xl p-6 mb-8">
-              <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
-                Strengthening bilateral technology collaboration between the United Kingdom and Pakistan.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>
-                Become a Member
-              </Button>
-              <Button href="/contact" variant="glass" size="lg" showArrow>
-                Contact Us
-              </Button>
-            </div>
-          </motion.div>
+      <PageHero
+        label="UPTECH Ecosystem"
+        title="UK–Pakistan Technology Partnership"
+        subtitle="Strengthening bilateral technology collaboration between the United Kingdom and Pakistan."
+        image="/image/london-images/tower-bridge-wide.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <Button href="/membership" variant="glass" showArrow>
+            Become a Member
+          </Button>
+          <Button href="/contact" variant="glass" showArrow>
+            Contact Us
+          </Button>
         </div>
-      </section>
+      </PageHero>
 
       {/* ── Intro Section ── */}
       <section className="relative bg-white">
@@ -118,13 +83,12 @@ export default function UKPakistanTechnologyPartnershipClient() {
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
-                  Our Vision
-                </p>
-                <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-6">
-                  The UK–Pakistan Technology Partnership is a strategic collaboration framework designed to strengthen technology, innovation, and digital trade between the United Kingdom and Pakistan.
-                </p>
-                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/20 to-transparent mb-5" />
+                <SectionHeader
+                  label="Our Vision"
+                  title="The UK–Pakistan Technology Partnership"
+                  color="blue"
+                  subtitle="A strategic collaboration framework designed to strengthen technology, innovation, and digital trade between the United Kingdom and Pakistan."
+                />
                 <p className="text-[#3D4152] text-lg leading-relaxed mb-4">
                   By connecting governments, enterprises, investors, startups, and academia, we create a powerful network that enables technology-led growth, fosters innovation, and builds lasting bridges between our two nations.
                 </p>
@@ -154,16 +118,12 @@ export default function UKPakistanTechnologyPartnershipClient() {
         <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
             <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
-                Partnership Overview
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Who We Connect
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#22C55E]/40 via-[#22C55E]/10 to-transparent mb-4 max-w-xs" />
-              <p className="text-[#7A7E8F] text-lg max-w-2xl leading-relaxed">
-                Connecting governments, enterprises, investors, startups, and academia to drive technology-led growth.
-              </p>
+              <SectionHeader
+                label="Partnership Overview"
+                title="Who We Connect"
+                color="green"
+                subtitle="Connecting governments, enterprises, investors, startups, and academia to drive technology-led growth."
+              />
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {pillars.map((pillar, i) => (
@@ -203,13 +163,11 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
-                  Our Leadership
-                </p>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl leading-tight mb-4">
-                  Driving Partnership at the Highest Level
-                </h2>
-                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-6 max-w-xs" />
+                <SectionHeader
+                  label="Our Leadership"
+                  title="Driving Partnership at the Highest Level"
+                  color="blue"
+                />
                 <p className="text-[#3D4152] text-lg leading-relaxed mb-4">
                   UPTECH Founder &amp; CEO Khalil Choudhary actively engages with government officials, industry leaders, and international organisations to strengthen the UK–Pakistan technology corridor.
                 </p>
@@ -227,16 +185,12 @@ export default function UKPakistanTechnologyPartnershipClient() {
         <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
             <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
-                Recognition Program
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Recognising Excellence
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
-              <p className="text-[#7A7E8F] text-lg max-w-2xl leading-relaxed">
-                Celebrating Pakistan&apos;s contributions to the UK tech sector through prestigious recognition.
-              </p>
+              <SectionHeader
+                label="Recognition Program"
+                title="Recognising Excellence"
+                color="red"
+                subtitle="Celebrating Pakistan's contributions to the UK tech sector through prestigious recognition."
+              />
             </div>
             <p className="text-[#3D4152] text-lg leading-relaxed mb-6 max-w-3xl">
               Our recognition program celebrates exceptional achievements in technology innovation, cross-border collaboration, and leadership that strengthens the UK–Pakistan tech corridor.
@@ -273,16 +227,12 @@ export default function UKPakistanTechnologyPartnershipClient() {
         <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
             <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
-                Why Partner With Us
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Unlock Opportunities
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
-              <p className="text-[#7A7E8F] text-lg max-w-2xl leading-relaxed">
-                Benefits of joining the UK–Pakistan Technology Partnership.
-              </p>
+              <SectionHeader
+                label="Why Partner With Us"
+                title="Unlock Opportunities"
+                color="blue"
+                subtitle="Benefits of joining the UK–Pakistan Technology Partnership."
+              />
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((benefit, i) => (
@@ -318,16 +268,12 @@ export default function UKPakistanTechnologyPartnershipClient() {
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
-                  Membership
-                </p>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl leading-tight mb-4">
-                  Why UK–Pakistan Tech Council
-                </h2>
-                <div className="h-px bg-gradient-to-r from-[#22C55E]/40 via-[#22C55E]/10 to-transparent mb-4 max-w-xs" />
-                <p className="text-[#7A7E8F] text-base mb-5">
-                  An invite-only community of UK-based Pakistan tech leaders, founders, investors, and executives.
-                </p>
+                <SectionHeader
+                  label="Membership"
+                  title="Why UK–Pakistan Tech Council"
+                  color="green"
+                  subtitle="An invite-only community of UK-based Pakistan tech leaders, founders, investors, and executives."
+                />
                 <ul className="space-y-0">
                   {whyJoin.map((item) => (
                     <li key={item} className="flex items-start gap-3 py-4 border-b border-[#D8D5CF] last:border-b-0">
@@ -338,16 +284,12 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 </ul>
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
-                  Community
-                </p>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl leading-tight mb-4">
-                  Typical Attendees
-                </h2>
-                <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
-                <p className="text-[#7A7E8F] text-base mb-5">
-                  Join a community of distinguished technology leaders and innovators.
-                </p>
+                <SectionHeader
+                  label="Community"
+                  title="Typical Attendees"
+                  color="red"
+                  subtitle="Join a community of distinguished technology leaders and innovators."
+                />
                 <ul className="space-y-0">
                   {attendees.map((item) => (
                     <li key={item} className="flex items-start gap-3 py-3 border-b border-[#D8D5CF] last:border-b-0">
@@ -367,16 +309,12 @@ export default function UKPakistanTechnologyPartnershipClient() {
         <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
             <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
-                Partners
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Our Partners Make Us Stronger
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-4 max-w-xs" />
-              <p className="text-[#7A7E8F] text-lg max-w-2xl leading-relaxed">
-                Collaborating with leading organisations to drive innovation and strengthen the UK–Pakistan tech corridor.
-              </p>
+              <SectionHeader
+                label="Partners"
+                title="Our Partners Make Us Stronger"
+                color="red"
+                subtitle="Collaborating with leading organisations to drive innovation and strengthen the UK–Pakistan tech corridor."
+              />
             </div>
             <p className="text-[#3D4152] text-lg leading-relaxed mb-6 max-w-3xl">
               Our strategic partnerships with governments, enterprises, investors, and academic institutions enable us to create meaningful impact and drive sustainable growth across both nations.
@@ -402,7 +340,11 @@ export default function UKPakistanTechnologyPartnershipClient() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative bg-[#0B0F1A] overflow-hidden">
+      <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 -z-10">
+          <Image src="/image/london-images/international-conference.jpg" alt="UK-Pakistan Technology Partnership background" fill className="object-cover" sizes="100vw" />
+        </div>
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />
         <div

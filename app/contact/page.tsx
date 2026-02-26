@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SectionHeader } from "@/components/SectionHeader";
 import { ContactForm } from "@/components/ContactForm";
 import { Button } from "@/components/Button";
+import { PageHero } from "@/components/PageHero";
 import {
   Mail, MapPin, Clock, Globe2, Users, Briefcase,
   Handshake, HelpCircle, ArrowUpRight, Send,
@@ -69,97 +70,63 @@ export default function ContactPage() {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden min-h-[520px]">
-        <Image
-          src="/image/london-images/corporate-office-building.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+      <PageHero
+        label="Contact Us"
+        title="Get in Touch"
+        subtitle="Whether you're looking to partner, join, sponsor, or simply learn more — we'd love to hear from you."
+        image="/image/london-images/corporate-office-building.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <Button href="/membership/apply" variant="glass" showArrow>Apply for Membership</Button>
+          <Button href="#enquiry-types" variant="glass" showArrow>Enquiry Types</Button>
+        </div>
+      </PageHero>
+
+      {/* ── Contact Info Cards ─────────────────────────────────────────── */}
+      <section className="relative z-20 -mt-1">
         <div
-          className="absolute inset-0 z-[1]"
+          className="border-y"
           style={{
-            background: "linear-gradient(135deg, rgba(10,14,30,0.88) 0%, rgba(10,14,30,0.65) 50%, rgba(10,14,30,0.45) 100%)",
+            background: "linear-gradient(135deg, rgba(28,31,46,0.95) 0%, rgba(15,18,32,0.98) 100%)",
+            borderColor: "rgba(255,255,255,0.06)",
           }}
-        />
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 z-[2] opacity-[0.04]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "60px 60px" }} />
-
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-20 pb-16">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
-              <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-white/60">We&apos;re here to help</span>
-            </div>
-          </motion.div>
-
-          <motion.h1
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-white mb-6 max-w-3xl"
-          >
-            Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#60a5fa]">Touch</span>
-          </motion.h1>
-
-          <motion.p
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-lg text-white/50 max-w-2xl leading-relaxed mb-8"
-          >
-            Whether you&apos;re looking to partner, join, sponsor, or simply learn more — we&apos;d love to hear from you.
-          </motion.p>
-
-          {/* Contact Info Cards — Floating glass cards */}
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-4"
-          >
-            {contactInfo.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.label}
-                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.4 + i * 0.08 }}
-                  className="group relative bg-white/[0.04] backdrop-blur-md border border-white/[0.08] rounded-xl p-5 hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300 overflow-hidden"
-                >
-                  {/* Glow on hover */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `radial-gradient(circle at 50% 50%, ${item.glow}, transparent 70%)` }} />
-
-                  <div className="relative">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-                      style={{ backgroundColor: `${item.color}15`, border: `1px solid ${item.color}25` }}
-                    >
-                      <Icon className="w-4.5 h-4.5" style={{ color: item.color }} strokeWidth={1.5} />
+        >
+          <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {contactInfo.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={item.label}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                    className="group relative bg-white/[0.04] backdrop-blur-md border border-white/[0.08] rounded-xl p-5 hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300 overflow-hidden"
+                  >
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `radial-gradient(circle at 50% 50%, ${item.glow}, transparent 70%)` }} />
+                    <div className="relative">
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+                        style={{ backgroundColor: `${item.color}15`, border: `1px solid ${item.color}25` }}
+                      >
+                        <Icon className="w-4.5 h-4.5" style={{ color: item.color }} strokeWidth={1.5} />
+                      </div>
+                      <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/30 mb-1">{item.label}</p>
+                      {item.href ? (
+                        <a href={item.href} className="font-heading font-bold text-sm text-white hover:text-[#2563EB] transition-colors inline-flex items-center gap-1">
+                          {item.value}
+                          <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </a>
+                      ) : (
+                        <p className="font-heading font-bold text-sm text-white">{item.value}</p>
+                      )}
                     </div>
-
-                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/30 mb-1">{item.label}</p>
-                    {item.href ? (
-                      <a href={item.href} className="font-heading font-bold text-sm text-white hover:text-[#2563EB] transition-colors inline-flex items-center gap-1">
-                        {item.value}
-                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </a>
-                    ) : (
-                      <p className="font-heading font-bold text-sm text-white">{item.value}</p>
-                    )}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -172,16 +139,12 @@ export default function ContactPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">How can we help</p>
-              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Enquiry Types
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-              <p className="text-white/40 text-base max-w-xl">
-                Select the category that best describes your enquiry for the fastest response.
-              </p>
-            </div>
+            <SectionHeader
+              label="How can we help"
+              title="Enquiry Types"
+              subtitle="Select the category that best describes your enquiry for the fastest response."
+              color="blue"
+            />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
               {enquiryTypes.map((type, i) => {
@@ -228,16 +191,12 @@ export default function ContactPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Write to us</p>
-              <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Send a Message
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-              <p className="text-white/40 text-base max-w-xl">
-                Fill in the form below and a member of our team will get back to you.
-              </p>
-            </div>
+            <SectionHeader
+              label="Write to us"
+              title="Send a Message"
+              subtitle="Fill in the form below and a member of our team will get back to you."
+              color="blue"
+            />
 
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10 lg:gap-12">
               {/* Form */}

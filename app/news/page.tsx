@@ -36,52 +36,7 @@ const categoryMeta: Record<string, { icon: typeof Newspaper; color: string }> = 
   Awards: { icon: Award, color: "#C41E3A" },
 };
 
-/* ── Banner theme matching homepage pattern ─────────────────────── */
-const bannerThemes = {
-  blue: { bg: "linear-gradient(135deg, #1a2b5e 0%, #0f1a3a 100%)", accent: "#3b82f6", accentTo: "#1a2b5e", label: "#60a5fa" },
-  green: { bg: "linear-gradient(135deg, #15803d 0%, #22C55E 100%)", accent: "#22c55e", accentTo: "#15803d", label: "#86efac" },
-  red: { bg: "linear-gradient(135deg, #7f1d1d 0%, #C41E3A 100%)", accent: "#C41E3A", accentTo: "#7f1d1d", label: "#fca5a5" },
-};
-
-function DarkBannerHeader({
-  label,
-  title,
-  body,
-  color = "blue",
-}: {
-  label: string;
-  title: string;
-  body?: string;
-  color?: "blue" | "green" | "red";
-}) {
-  const theme = bannerThemes[color];
-  return (
-    <div className="mb-4 lg:mb-5">
-      <div className="relative overflow-hidden rounded mb-3 -mx-2 sm:-mx-4" style={{ background: theme.bg }}>
-        <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${theme.accent}, ${theme.accentTo})` }} />
-        <div className="absolute top-0 right-0 w-40 h-full opacity-[0.06]" style={{ background: "radial-gradient(circle at 80% 30%, white 0%, transparent 70%)" }} />
-        {/* Grid overlay pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="py-5 px-7 sm:px-10 pl-8 sm:pl-12">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5" style={{ color: theme.label }}>{label}</p>
-          <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-[2.2rem] leading-tight">
-            {title}
-          </h2>
-        </div>
-      </div>
-      {body && (
-        <p className="text-[#3D4152] text-base sm:text-lg leading-relaxed max-w-3xl">{body}</p>
-      )}
-    </div>
-  );
-}
+/* SectionHeader removed — now using shared SectionHeader from @/components/SectionHeader */
 
 export default function NewsPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -316,10 +271,10 @@ export default function NewsPage() {
       <section className="relative z-[1] py-5 lg:py-7" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <DarkBannerHeader
+            <SectionHeader
               label="Browse by topic"
               title="Categories"
-              body="Filter news and updates by topic to find what is most relevant to you."
+              subtitle="Filter news and updates by topic to find what is most relevant to you."
               color="blue"
             />
 
@@ -445,10 +400,10 @@ export default function NewsPage() {
       <section className="relative z-[1] py-5 lg:py-7" style={{ backgroundColor: "#E8E6E3" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <DarkBannerHeader
+            <SectionHeader
               label="Featured coverage"
               title="Trending Topics"
-              body="The themes shaping the UK--Pakistan technology corridor right now."
+              subtitle="The themes shaping the UK--Pakistan technology corridor right now."
               color="green"
             />
 
@@ -544,10 +499,10 @@ export default function NewsPage() {
       <section id="news-grid" className="relative z-[1] py-5 lg:py-7" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <DarkBannerHeader
+            <SectionHeader
               label="Just published"
               title="Latest Articles"
-              body="The most recent coverage from the UK--Pakistan technology corridor."
+              subtitle="The most recent coverage from the UK--Pakistan technology corridor."
               color="red"
             />
 

@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
+import { SectionHeader } from "@/components/SectionHeader";
+import { PageHero } from "@/components/PageHero";
 import {
   Shield, CheckCircle2, Users, Heart, Scale, Lightbulb,
   BookOpen, Award, Briefcase, MessageCircle, AlertTriangle,
@@ -57,6 +58,7 @@ const disciplinarySteps = [
 ];
 
 const principleColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E", "#C41E3A"];
+const disciplinaryColors = ["#2563EB", "#22C55E", "#2563EB", "#C41E3A", "#22C55E", "#2563EB", "#C41E3A", "#22C55E", "#2563EB", "#22C55E", "#2563EB"];
 
 export default function CodeOfConductPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -74,60 +76,12 @@ export default function CodeOfConductPage() {
 
   return (
     <div>
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden min-h-[520px]">
-        <Image
-          src="/image/london-images/governance-ethics.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div
-          className="absolute inset-0 z-[1]"
-          style={{
-            background: "linear-gradient(135deg, rgba(10,14,30,0.92) 0%, rgba(10,14,30,0.72) 50%, rgba(10,14,30,0.50) 100%)",
-          }}
-        />
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 z-[2] opacity-[0.04]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "60px 60px" }} />
-
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-20 pb-16">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
-              <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-white/60">Ethics & Standards</span>
-            </div>
-          </motion.div>
-
-          <motion.h1
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-white mb-6 max-w-3xl"
-          >
-            Code of{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#60a5fa]">
-              Conduct
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-lg text-white/50 max-w-2xl leading-relaxed"
-          >
-            UK-Pakistan Tech Council Code of Conduct
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        label="Ethics & Standards"
+        title="Code of Conduct"
+        subtitle="UK-Pakistan Tech Council Code of Conduct"
+        image="/image/london-images/governance-ethics.jpg"
+      />
 
       {/* ── Summary + Quick Nav — Light section ──────────────────────── */}
       <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
@@ -135,13 +89,7 @@ export default function CodeOfConductPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Our Standards</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Ethical Framework
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-            </div>
+            <SectionHeader label="Our Standards" title="Ethical Framework" color="blue" />
 
             <div className="grid lg:grid-cols-2 gap-8 items-start">
               <motion.div
@@ -204,16 +152,7 @@ export default function CodeOfConductPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Core Values</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Our 9 Principles
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-xl">
-                The foundation of ethical conduct and professional standards that every UPTECH member upholds.
-              </p>
-            </div>
+            <SectionHeader label="Core Values" title="Our 9 Principles" subtitle="The foundation of ethical conduct and professional standards that every UPTECH member upholds." color="blue" />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {principles.map((item, i) => {
@@ -261,16 +200,7 @@ export default function CodeOfConductPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">Communication Standards</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                WhatsApp Group Rules
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-xl">
-                Guidelines for professional conduct in UPTECH WhatsApp groups and digital communication channels.
-              </p>
-            </div>
+            <SectionHeader label="Communication Standards" title="WhatsApp Group Rules" subtitle="Guidelines for professional conduct in UPTECH WhatsApp groups and digital communication channels." color="green" />
 
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
@@ -357,19 +287,12 @@ export default function CodeOfConductPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Enforcement</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Disciplinary Procedure
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-xl">
-                All members of the Council are expected to adhere to the Council{"\u2019"}s Code of Conduct. In the event of a member wishing to file a complaint against other members for violating the Code, the following procedures apply:
-              </p>
-            </div>
+            <SectionHeader label="Enforcement" title="Disciplinary Procedure" subtitle={<>All members of the Council are expected to adhere to the Council{"\u2019"}s Code of Conduct. In the event of a member wishing to file a complaint against other members for violating the Code, the following procedures apply:</>} color="red" />
 
             <div className="space-y-0">
-              {disciplinarySteps.map((item, i) => (
+              {disciplinarySteps.map((item, i) => {
+                const color = disciplinaryColors[i];
+                return (
                 <motion.div
                   key={item.step}
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
@@ -381,9 +304,9 @@ export default function CodeOfConductPage() {
                   <div className="flex items-center justify-center py-6">
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: "rgba(196,30,58,0.08)", border: "1px solid rgba(196,30,58,0.15)" }}
+                      style={{ backgroundColor: `${color}14`, border: `1px solid ${color}25` }}
                     >
-                      <span className="text-sm font-bold text-[#C41E3A] tabular-nums">{item.step}</span>
+                      <span className="text-sm font-bold tabular-nums" style={{ color }}>{item.step}</span>
                     </div>
                   </div>
                   <div className="py-6 pl-6 border-l border-[#D8D5CF]">
@@ -391,7 +314,8 @@ export default function CodeOfConductPage() {
                     <p className="text-base text-[#7A7E8F] leading-relaxed">{item.description}</p>
                   </div>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </AnimatedSection>
         </div>
@@ -403,13 +327,7 @@ export default function CodeOfConductPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Accountability</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Reporting & Commitment
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-            </div>
+            <SectionHeader label="Accountability" title="Reporting & Commitment" color="blue" />
 
             <div className="grid lg:grid-cols-2 gap-6">
               {/* Reporting a Concern */}

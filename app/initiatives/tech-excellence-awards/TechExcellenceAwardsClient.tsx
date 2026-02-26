@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
@@ -61,58 +63,21 @@ export default function TechExcellenceAwardsClient() {
   return (
     <div className="bg-[#EEECEA]">
       {/* ── Hero Section ── */}
-      <section className="relative min-h-[75vh] flex items-center overflow-hidden">
-        <Image
-          src="/image/london-images/awards-trophy.jpg"
-          alt="Tech Excellence Awards"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,14,30,0.85)] via-[rgba(10,14,30,0.7)] to-[#0B0F1A]" />
-        <div
-          className="absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-5">
-              UPTECH Initiative
-            </p>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl leading-[1.05] mb-6">
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 50%, #C41E3A 100%)",
-                }}
-              >
-                UPTECH Awards
-              </span>
-            </h1>
-            <div className="max-w-2xl backdrop-blur-md bg-white/[0.05] border border-white/[0.1] rounded-2xl p-6 mb-8">
-              <p className="text-white/80 text-lg sm:text-xl leading-relaxed">
-                Achievement is a wonderful thing. But what makes it even more wonderful is being publicly acclaimed for it&#8212;especially in the presence of one&apos;s peers.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-                Submit a Nomination
-              </Button>
-              <Button href="/contact" variant="glass" size="lg" showArrow>
-                Contact Us
-              </Button>
-            </div>
-          </motion.div>
+      <PageHero
+        label="UPTECH Initiative"
+        title="Tech Excellence Awards"
+        subtitle="Celebrating outstanding achievements in technology innovation, digital leadership, and cross-border collaboration across the UK–Pakistan tech corridor."
+        image="/image/london-images/executive-boardroom.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <Button href="/membership/apply" variant="primary" size="lg" showArrow>
+            Submit a Nomination
+          </Button>
+          <Button href="/contact" variant="glass" size="lg" showArrow>
+            Contact Us
+          </Button>
         </div>
-      </section>
+      </PageHero>
 
       {/* ── About Section ── */}
       <section className="relative bg-[#EEECEA]">
@@ -120,13 +85,11 @@ export default function TechExcellenceAwardsClient() {
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-5">
-                  About the Awards
-                </p>
-                <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-5">
-                  UPTECH Awards
-                </p>
-                <div className="h-px bg-gradient-to-r from-[#C41E3A]/40 via-[#C41E3A]/10 to-transparent mb-5" />
+                <SectionHeader
+                  label="About the Awards"
+                  title="UPTECH Awards"
+                  color="red"
+                />
                 <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                   Achievement is a wonderful thing. But what makes it even more wonderful is being publicly acclaimed for it&#8212;especially in the presence of one&apos;s peers. That&apos;s why UPTECH has instituted awards in several categories. Also, members with many years of significant contribution to the IT industry are made Fellows of the Council. It is regarded as one of the most prestigious titles that an IT professional can receive in the country today.
                 </p>
@@ -158,18 +121,12 @@ export default function TechExcellenceAwardsClient() {
       <section className="relative bg-white">
         <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
-                Proposed Award Categories
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Company Awards
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
-                Recognising excellence in IT exports, innovation, and technology leadership at the company level.
-              </p>
-            </div>
+            <SectionHeader
+              label="Proposed Award Categories"
+              title="Company Awards"
+              subtitle="Recognising excellence in IT exports, innovation, and technology leadership at the company level."
+              color="blue"
+            />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {companyAwards.map((category, i) => {
                 const tagColor = tagColors[category.tag] || "#2563EB";
@@ -213,18 +170,12 @@ export default function TechExcellenceAwardsClient() {
       <section className="relative bg-[#EEECEA]">
         <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
-                Proposed Award Categories
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Professional Awards
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#22C55E]/40 via-[#22C55E]/10 to-transparent mb-4 max-w-xs" />
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
-                Recognising individual excellence, leadership, and contributions to the IT industry.
-              </p>
-            </div>
+            <SectionHeader
+              label="Proposed Award Categories"
+              title="Professional Awards"
+              subtitle="Recognising individual excellence, leadership, and contributions to the IT industry."
+              color="green"
+            />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {professionalAwards.map((category, i) => {
                 const tagColor = tagColors[category.tag] || "#22C55E";
@@ -268,18 +219,12 @@ export default function TechExcellenceAwardsClient() {
       <section className="relative bg-[#E8E6E3]">
         <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
-                Nomination Process
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Award Selection Process
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
-                A transparent, structured process designed to identify and celebrate true excellence.
-              </p>
-            </div>
+            <SectionHeader
+              label="Nomination Process"
+              title="Award Selection Process"
+              subtitle="A transparent, structured process designed to identify and celebrate true excellence."
+              color="blue"
+            />
             <div className="grid md:grid-cols-3 gap-6">
               {nominationSteps.map((step, i) => (
                 <motion.div
@@ -337,16 +282,12 @@ export default function TechExcellenceAwardsClient() {
           <AnimatedSection>
             <div className="grid lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
-                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
-                  Purpose
-                </p>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                  Objectives
-                </h2>
-                <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
-                <p className="text-[#7A7E8F] text-lg max-w-2xl leading-relaxed mb-5">
-                  The UPTECH Awards programme is designed to achieve the following key objectives.
-                </p>
+                <SectionHeader
+                  label="Purpose"
+                  title="Objectives"
+                  subtitle="The UPTECH Awards programme is designed to achieve the following key objectives."
+                  color="blue"
+                />
                 <ul className="space-y-0">
                   {objectives.map((objective, i) => (
                     <li key={i} className="flex items-start gap-3 py-3 border-b border-[#D8D5CF] last:border-b-0">
@@ -376,18 +317,12 @@ export default function TechExcellenceAwardsClient() {
       <section className="relative bg-[#EEECEA]">
         <div className="max-w-7xl mx-auto px-6 py-10">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
-                FAQ
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Frequently Asked Questions
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#2563EB]/10 to-transparent mb-4 max-w-xs" />
-              <p className="text-[#7A7E8F] text-base sm:text-lg max-w-2xl leading-relaxed">
-                Common questions about the UK–Pakistan Tech Excellence Awards.
-              </p>
-            </div>
+            <SectionHeader
+              label="FAQ"
+              title="Frequently Asked Questions"
+              subtitle="Common questions about the UK–Pakistan Tech Excellence Awards."
+              color="blue"
+            />
             <div className="max-w-3xl">
               {faqs.map((faq, index) => (
                 <div
@@ -429,7 +364,11 @@ export default function TechExcellenceAwardsClient() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative bg-[#0B0F1A] overflow-hidden">
+      <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 -z-10">
+          <Image src="/image/london-images/awards-trophy.jpg" alt="Tech Excellence Awards background" fill className="object-cover" sizes="100vw" />
+        </div>
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#C41E3A]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#C41E3A]" />
         <div

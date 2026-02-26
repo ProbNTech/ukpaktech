@@ -3,7 +3,6 @@
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { motion, useReducedMotion } from "framer-motion";
-import Image from "next/image";
 import {
   Users,
   Network,
@@ -26,6 +25,8 @@ import {
   MapPin,
 } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { SectionHeader } from "@/components/SectionHeader";
+import { PageHero } from "@/components/PageHero";
 
 /* ─── Shared animation variants ─── */
 const containerVariants = {
@@ -295,124 +296,19 @@ export default function MembershipClient() {
   return (
     <div>
       {/* ═══════════════════════════════════════════════════════════════
-          HERO SECTION - Custom full-width with glassmorphism
+          HERO SECTION
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/image/london-images/partnership-collaboration.jpg"
-          alt="UK Pakistan Tech Council partnership and collaboration"
-          fill
-          className="object-cover"
-          priority
-          quality={90}
-        />
-
-        {/* Multi-layer gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F1A]/90 via-[#0B0F1A]/80 to-[#0B0F1A]/95" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2563EB]/10 via-transparent to-[#22C55E]/10" />
-
-        {/* Animated grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={gridPatternStyle}
-        />
-
-        {/* Corner glow effects */}
-        <div
-          className="absolute top-0 left-0 w-[600px] h-[600px] opacity-[0.08]"
-          style={{
-            background:
-              "radial-gradient(circle at 0% 0%, #2563EB, transparent 50%)",
-          }}
-        />
-        <div
-          className="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-[0.08]"
-          style={{
-            background:
-              "radial-gradient(circle at 100% 100%, #22C55E, transparent 50%)",
-          }}
-        />
-
-        {/* Horizontal scan lines */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)", backgroundSize: "100% 4px" }} />
-
-        {/* Hero content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {/* Label badge */}
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#D8D5CF] bg-white shadow-sm mb-8"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/60">
-                Membership Means Business
-              </span>
-            </motion.div>
-
-            {/* Main title with gradient text */}
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-6">
-              <span className="bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
-                At UK Pakistan Tech Council,
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
-                membership means business.
-              </span>
-            </h1>
-
-            {/* Subtitle */}
-            <motion.p
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg sm:text-xl text-white/50 leading-relaxed max-w-3xl mx-auto mb-10"
-            >
-              Whether your priorities are to network with the industry and key stakeholders, to help shape policy, or to have access to insights that help your business to grow, UPTECH membership will positively impact your organisation in whatever way matters most to you.
-            </motion.p>
-
-            {/* Glass morphism CTA buttons */}
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              <a
-                href="/membership/apply"
-                className="group relative inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-heading font-bold text-sm text-white bg-gradient-to-r from-[#2563EB] to-[#1a4fd4] hover:from-[#3b82f6] hover:to-[#2563EB] transition-all duration-300 shadow-[0_4px_30px_rgba(37,99,235,0.3)] hover:shadow-[0_8px_40px_rgba(37,99,235,0.45)]"
-              >
-                Apply Now
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
-              </a>
-              <a
-                href="#tiers"
-                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-heading font-bold text-sm text-white/70 border border-[#D8D5CF] bg-white shadow-sm hover:bg-white/[0.08] hover:text-white hover:border-white/20 transition-all duration-300"
-              >
-                View Tiers
-              </a>
-            </motion.div>
-          </motion.div>
-
-          {/* Bottom decorative line */}
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="mt-16 mx-auto w-48 h-px bg-gradient-to-r from-transparent via-[#2563EB]/40 to-transparent"
-          />
+      <PageHero
+        label="Membership"
+        title="At UK Pakistan Tech Council, Membership Means Business"
+        subtitle="Whether your priorities are to network with the industry and key stakeholders, to help shape policy, or to have access to insights that help your business to grow, UPTECH membership will positively impact your organisation in whatever way matters most to you."
+        image="/image/london-images/partnership-collaboration.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <Button href="/membership/apply" variant="glass" showArrow>Apply Now</Button>
+          <Button href="#tiers" variant="glass" showArrow>View Tiers</Button>
         </div>
-
-        {/* Bottom fade to next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#EEECEA] to-transparent" />
-      </section>
+      </PageHero>
 
       {/* ═══════════════════════════════════════════════════════════════
           INTRO SECTION
@@ -482,23 +378,7 @@ export default function MembershipClient() {
 
         <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="mb-10">
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-7 h-7 rounded-lg bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center">
-                  <Users className="w-3.5 h-3.5 text-[#C41E3A]" />
-                </div>
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A]">
-                  Who Should Join
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
-                Who Should{" "}
-                <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">
-                  Join
-                </span>
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#D8D5CF] to-transparent max-w-md mb-4" />
-            </div>
+            <SectionHeader label="Who Should Join" title="Who Should Join" color="red" />
 
             <div className="grid md:grid-cols-3 gap-6">
               {whoShouldJoin.map((item, index) => {
@@ -569,24 +449,7 @@ export default function MembershipClient() {
 
         <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="mb-10">
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-7 h-7 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center">
-                  <Star className="w-3.5 h-3.5 text-[#22C55E]" />
-                </div>
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E]">
-                  Membership Benefits
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
-                Membership{" "}
-                <span className="bg-gradient-to-r from-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">
-                  Benefits
-                </span>
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#D8D5CF] to-transparent max-w-md mb-4" />
-            </div>
+            <SectionHeader label="Membership Benefits" title="Membership Benefits" color="green" />
 
             {/* Benefits grid - 8 items in 4-col layout */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -654,25 +517,7 @@ export default function MembershipClient() {
 
         <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#D8D5CF] bg-white shadow-sm mb-5">
-                <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">
-                  Membership Levels
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
-                Membership Tiers &{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
-                  Benefits
-                </span>
-              </h2>
-              <div className="mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#2563EB]/40 to-transparent mb-4" />
-              <p className="text-[#5A5F72] text-lg leading-relaxed max-w-xl mx-auto">
-                Choose the membership tier that best fits your organisation and
-                goals.
-              </p>
-            </div>
+            <SectionHeader label="Membership Levels" title="Membership Tiers & Benefits" color="blue" subtitle="Choose the membership tier that best fits your organisation and goals." />
 
             {/* Tiers grid - first row: Chairman's Circle + Corporate + SME/Scale-up, second row: Startup + Associates + Academic */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
@@ -718,23 +563,7 @@ export default function MembershipClient() {
 
         <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="mb-10">
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-7 h-7 rounded-lg bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center">
-                  <Shield className="w-3.5 h-3.5 text-[#C41E3A]" />
-                </div>
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A]">
-                  Eligibility
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
-                Eligibility{" "}
-                <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">
-                  Criteria
-                </span>
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#D8D5CF] to-transparent max-w-md mb-4" />
-            </div>
+            <SectionHeader label="Eligibility" title="Eligibility Criteria" color="red" />
 
             {/* Eligibility Methods */}
             <div className="grid md:grid-cols-3 gap-6 mb-10">
@@ -823,21 +652,7 @@ export default function MembershipClient() {
         <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#D8D5CF] bg-white shadow-sm mb-6">
-                  <DollarSign className="w-3.5 h-3.5 text-[#C41E3A]" />
-                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">
-                    Membership Fees
-                  </span>
-                </div>
-                <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
-                  Membership{" "}
-                  <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">
-                    Fees
-                  </span>
-                </h2>
-                <div className="mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/40 to-transparent mb-6" />
-              </div>
+              <SectionHeader label="Membership Fees" title="Membership Fees" color="red" />
 
               <div className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 lg:p-10 shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/30 to-transparent" />
@@ -883,23 +698,7 @@ export default function MembershipClient() {
 
         <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="mb-10">
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-7 h-7 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center">
-                  <BadgePercent className="w-3.5 h-3.5 text-[#22C55E]" />
-                </div>
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E]">
-                  Discounts
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
-                Membership{" "}
-                <span className="bg-gradient-to-r from-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">
-                  Discounts
-                </span>
-              </h2>
-              <div className="h-px bg-gradient-to-r from-[#D8D5CF] to-transparent max-w-md mb-4" />
-            </div>
+            <SectionHeader label="Discounts" title="Membership Discounts" color="green" />
 
             <div className="grid md:grid-cols-2 gap-6">
               {membershipDiscounts.map((discount, index) => (
@@ -973,21 +772,7 @@ export default function MembershipClient() {
 
         <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#D8D5CF] bg-white shadow-sm mb-5">
-                <MapPin className="w-3.5 h-3.5 text-[#C41E3A]" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">
-                  Cross-Border Support
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-4">
-                Cross-Border{" "}
-                <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">
-                  Market Entry
-                </span>
-              </h2>
-              <div className="mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/40 to-transparent mb-4" />
-            </div>
+            <SectionHeader label="Cross-Border Support" title="Cross-Border Market Entry" color="red" />
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Pakistan Companies entering UK */}
@@ -1071,23 +856,8 @@ export default function MembershipClient() {
 
         <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#D8D5CF] bg-white shadow-sm mb-5">
-                <Award className="w-3.5 h-3.5 text-[#22C55E]" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">
-                  Why It Matters
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-6">
-                Why Membership{" "}
-                <span className="bg-gradient-to-r from-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">
-                  Matters
-                </span>
-              </h2>
-              <div className="mx-auto w-24 h-px bg-gradient-to-r from-transparent via-[#22C55E]/40 to-transparent mb-8" />
-              <p className="text-lg text-[#3D4152] leading-relaxed">
-                Membership with the Council provides more than just networking, it&#39;s a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Our members gain practical support, strategic connections, and market insights that accelerate business success and cross-border collaboration. Join today. Connect, grow, and lead the future of UK-Pakistan technology.
-              </p>
+            <div className="mx-auto">
+              <SectionHeader label="Why It Matters" title="Why Membership Matters" color="green" subtitle="Membership with the Council provides more than just networking, it's a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Our members gain practical support, strategic connections, and market insights that accelerate business success and cross-border collaboration. Join today. Connect, grow, and lead the future of UK-Pakistan technology." />
             </div>
           </AnimatedSection>
         </div>

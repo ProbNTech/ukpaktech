@@ -1,10 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
+import { SectionHeader } from "@/components/SectionHeader";
+import { PageHero } from "@/components/PageHero";
 import { CheckCircle2, Users, Crown, Briefcase, Shield, Target, Award, Network, BookOpen, Building2, Layers, ArrowRight } from "lucide-react";
 
 const orgChart = [
@@ -127,10 +129,10 @@ const levelColors: Record<string, string> = {
 const procedureColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E", "#C41E3A"];
 
 const stats = [
-  { value: "8", label: "Leadership Roles" },
-  { value: "5", label: "Governance Levels" },
-  { value: "6", label: "Operating Procedures" },
-  { value: "100%", label: "Transparency" },
+  { value: "8", label: "Leadership Roles", color: "#2563EB" },
+  { value: "5", label: "Governance Levels", color: "#C41E3A" },
+  { value: "6", label: "Operating Procedures", color: "#22C55E" },
+  { value: "100%", label: "Transparency", color: "#2563EB" },
 ];
 
 export default function StructurePage() {
@@ -138,81 +140,21 @@ export default function StructurePage() {
 
   return (
     <div>
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden min-h-[520px]">
-        <Image
-          src="/image/london-images/business-operations-desk.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div
-          className="absolute inset-0 z-[1]"
-          style={{
-            background: "linear-gradient(135deg, rgba(10,14,30,0.92) 0%, rgba(10,14,30,0.72) 50%, rgba(10,14,30,0.50) 100%)",
-          }}
-        />
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 z-[2] opacity-[0.02]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "60px 60px" }} />
-
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-20 pb-16">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
-              <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-white/60">Governance Framework</span>
+      <PageHero
+        label="Governance Framework"
+        title="Structure & Procedure"
+        subtitle="A transparent governance framework that ensures accountability, effectiveness, and member representation at every level."
+        image="/image/london-images/business-operations-desk.jpg"
+      >
+        <div className="grid grid-cols-4 gap-4">
+          {stats.map((stat) => (
+            <div key={stat.label} className="backdrop-blur-md rounded-lg p-4 text-center relative overflow-hidden" style={{ background: `${stat.color}CC`, borderBottom: `3px solid ${stat.color}` }}>
+              <p className="font-heading font-extrabold text-white text-2xl mb-0.5">{stat.value}</p>
+              <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-white/90">{stat.label}</p>
             </div>
-          </motion.div>
-
-          <motion.h1
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-white mb-6 max-w-3xl"
-          >
-            Structure &{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#60a5fa]">
-              Procedure
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-lg text-white/50 max-w-2xl leading-relaxed mb-10"
-          >
-            A transparent governance framework that ensures accountability, effectiveness, and member representation at every level.
-          </motion.p>
-
-          {/* Stats Bar — Floating glass cards */}
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-4"
-          >
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.4 + i * 0.08 }}
-                className="bg-white/[0.04] backdrop-blur-md border border-white/[0.08] rounded-xl p-5 text-center"
-              >
-                <p className="font-heading font-extrabold text-white text-2xl sm:text-3xl mb-1">{stat.value}</p>
-                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/30">{stat.label}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+          ))}
         </div>
-      </section>
+      </PageHero>
 
       {/* ── Overview — Dark section ────────────────────────────────── */}
       <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
@@ -222,16 +164,7 @@ export default function StructurePage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-6">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Our Framework</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Organisational Structure
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-              <p className="text-[#5A5F72] text-base max-w-2xl">
-                UPTECH operates through a clearly defined hierarchy with defined roles, responsibilities, and reporting lines to ensure effective governance and delivery.
-              </p>
-            </div>
+            <SectionHeader label="Our Framework" title="Organisational Structure" subtitle="UPTECH operates through a clearly defined hierarchy with defined roles, responsibilities, and reporting lines to ensure effective governance and delivery." color="blue" />
 
             <div className="grid lg:grid-cols-2 gap-8 items-start">
               <motion.div
@@ -296,16 +229,7 @@ export default function StructurePage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-6">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Leadership Roles</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Key Positions & Responsibilities
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
-              <p className="text-[#5A5F72] text-base max-w-xl">
-                Each role within UPTECH has defined responsibilities and accountability lines.
-              </p>
-            </div>
+            <SectionHeader label="Leadership Roles" title="Key Positions & Responsibilities" subtitle="Each role within UPTECH has defined responsibilities and accountability lines." color="red" />
 
             <div className="grid md:grid-cols-2 gap-5">
               {orgChart.map((role, i) => {
@@ -374,16 +298,7 @@ export default function StructurePage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-6">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">How We Operate</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Operating Procedures
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
-              <p className="text-[#5A5F72] text-base max-w-xl">
-                Key processes and procedures that ensure transparent and effective operations.
-              </p>
-            </div>
+            <SectionHeader label="How We Operate" title="Operating Procedures" subtitle="Key processes and procedures that ensure transparent and effective operations." color="green" />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {operatingProcedures.map((item, i) => {
@@ -423,10 +338,16 @@ export default function StructurePage() {
       </section>
 
       {/* ── CTA — Gradient dark section ──────────────────────────────── */}
-      <section className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
+      <section className="relative overflow-hidden py-12">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image src="/image/london-images/partnership-collaboration.jpg" alt="" fill className="object-cover" sizes="100vw" />
+        </div>
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-[#0B0F1A]/80" />
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         {/* Glow orbs */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.08]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
@@ -435,7 +356,7 @@ export default function StructurePage() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Transparent Governance, Collective Impact
               </h2>
-              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
+              <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
                 Our structure ensures every member has a voice. Learn more about how you can contribute to UPTECH&apos;s mission.
               </p>
               <div className="flex flex-wrap gap-4">

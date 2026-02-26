@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { PageHero } from "@/components/PageHero";
 import {
   Rocket,
   Lightbulb,
@@ -146,73 +148,26 @@ export default function FundingAndGrantsClient() {
   return (
     <div className="bg-[#EEECEA]">
       {/* ── HERO ──────────────────────────────────────────────────── */}
-      <section className="relative w-full min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/image/london-images/investment-finance-meeting.jpg"
-          alt="Funding and Grants"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F1A]/80 via-[#0B0F1A]/70 to-[#0B0F1A]" />
-        {/* Grid pattern overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        {/* Glow orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#2563EB]/10 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#22C55E]/8 blur-[100px] pointer-events-none" />
-
-        {/* Hero content */}
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-32 md:py-40">
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-4xl"
-          >
-            {/* Glass morphism label */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6">
-              <div className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-              <span className="text-white/70 text-xs font-semibold uppercase tracking-widest">Ecosystem / Funding &amp; Grants</span>
-            </div>
-
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
-              <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-                Funding and{" "}
-              </span>
-              <span className="bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
-                Grants
-              </span>
-            </h1>
-
-            <p className="text-white/60 text-lg sm:text-xl max-w-2xl leading-relaxed mb-10">
-              Access funding opportunities to drive technology innovation and cross-border collaboration between the UK and Pakistan.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow className="!bg-[#2563EB] hover:!bg-[#1d4ed8]">
-                Become a Member
-              </Button>
-              <Button href="/contact" variant="glass" size="lg" showArrow>
-                Contact Us
-              </Button>
-            </div>
-          </motion.div>
+      <PageHero
+        label="Ecosystem / Funding & Grants"
+        title="Funding and Grants"
+        subtitle="Access funding opportunities to drive technology innovation and cross-border collaboration between the UK and Pakistan."
+        image="/image/london-images/investment-finance-meeting.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <Button href="/membership" variant="glass" showArrow>
+            Become a Member
+          </Button>
+          <Button href="/contact" variant="glass" showArrow>
+            Contact Us
+          </Button>
         </div>
-      </section>
+      </PageHero>
 
       {/* ── STATS BAR ─────────────────────────────────────────────── */}
-      <section className="relative z-[1] bg-[#0B0F1A]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <section className="relative bg-[#EEECEA]">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => {
               const color = statColors[i % statColors.length];
               return (
@@ -222,25 +177,20 @@ export default function FundingAndGrantsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="relative text-center rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm px-6 py-7 overflow-hidden group hover:border-white/[0.12] transition-all duration-500"
+                  className="relative text-center bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                 >
                   {/* Colored top border */}
                   <div
-                    className="absolute top-0 left-0 right-0 h-[2px]"
-                    style={{ background: `linear-gradient(to right, transparent, ${color}, transparent)` }}
-                  />
-                  {/* Subtle glow on hover */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{ background: `radial-gradient(ellipse at center, ${color}08, transparent 70%)` }}
+                    className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
+                    style={{ background: `linear-gradient(to right, ${color}, ${color}60)` }}
                   />
                   <p
-                    className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl mb-2 relative"
+                    className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
                     style={{ color }}
                   >
                     {stat.value}
                   </p>
-                  <p className="text-white/50 text-xs sm:text-sm font-medium uppercase tracking-wider relative">{stat.label}</p>
+                  <p className="text-[#5A5F72] text-sm">{stat.label}</p>
                 </motion.div>
               );
             })}
@@ -252,21 +202,14 @@ export default function FundingAndGrantsClient() {
       <section className="relative bg-[#EEECEA] overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">Overview</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-5">
-                Funding Programs Designed for the{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
-                  UK–Pakistan Tech Corridor
-                </span>
-              </h2>
-              <p className="text-[#5A5F72] text-lg leading-relaxed mb-4">
-                UPTECH provides access to funding opportunities and grants designed to support technology innovation, startup growth, and cross-border collaboration between the UK and Pakistan.
-              </p>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
+            <div className="mb-8">
+              <SectionHeader
+                label="Overview"
+                title="Funding Programs Designed for the UK–Pakistan Tech Corridor"
+                color="blue"
+                subtitle="UPTECH provides access to funding opportunities and grants designed to support technology innovation, startup growth, and cross-border collaboration between the UK and Pakistan."
+              />
+              <p className="text-[#5A5F72] text-lg leading-relaxed max-w-3xl">
                 Our funding programs enable entrepreneurs, researchers, and organisations to turn innovative ideas into reality. Whether you&apos;re a startup seeking seed funding, a researcher looking for grant support, or an enterprise exploring partnership opportunities, we connect you with the right funding sources and resources.
               </p>
             </div>
@@ -290,7 +233,7 @@ export default function FundingAndGrantsClient() {
                     {/* Icon */}
                     <div className="relative mb-5">
                       <div
-                        className="relative w-13 h-13 rounded-xl flex items-center justify-center"
+                        className="relative w-12 h-12 rounded-xl flex items-center justify-center"
                         style={{ background: `${item.color}10`, border: `1px solid ${item.color}15` }}
                       >
                         <Icon className="w-6 h-6" style={{ color: item.color }} strokeWidth={1.5} />
@@ -311,18 +254,13 @@ export default function FundingAndGrantsClient() {
       <section className="relative bg-white overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="max-w-3xl mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]" />
-                <span className="text-[#22C55E] text-xs font-semibold uppercase tracking-wider">Funding</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                Available Opportunities
-              </h2>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                Explore our range of funding programs designed to support technology innovation and cross-border collaboration.
-              </p>
+            <div className="mb-8">
+              <SectionHeader
+                label="Funding"
+                title="Available Opportunities"
+                color="green"
+                subtitle="Explore our range of funding programs designed to support technology innovation and cross-border collaboration."
+              />
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -377,16 +315,12 @@ export default function FundingAndGrantsClient() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-4xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
-                <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">Funding Grants</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
-                {fundingGrantsIntro.heading}
-              </h2>
-              <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed">
-                {fundingGrantsIntro.description}
-              </p>
+              <SectionHeader
+                label="Funding Grants"
+                title={fundingGrantsIntro.heading}
+                color="red"
+                subtitle={fundingGrantsIntro.description}
+              />
             </div>
           </AnimatedSection>
         </div>
@@ -396,21 +330,13 @@ export default function FundingAndGrantsClient() {
       <section className="relative bg-[#E8E6E3] overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="max-w-3xl mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">Stages</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                Funding by{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
-                  Growth Stage
-                </span>
-              </h2>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                Tailored funding support from pre-seed through to Series B and R&amp;D incentives.
-              </p>
+            <div className="mb-8">
+              <SectionHeader
+                label="Stages"
+                title="Funding by Growth Stage"
+                color="blue"
+                subtitle="Tailored funding support from pre-seed through to Series B and R&D incentives."
+              />
             </div>
 
             <div className="grid md:grid-cols-2 gap-7">
@@ -479,18 +405,13 @@ export default function FundingAndGrantsClient() {
       <section className="relative bg-white overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="max-w-3xl mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
-                <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">Process</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                Application Process
-              </h2>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                A transparent, structured pathway from application to funding.
-              </p>
+            <div className="mb-8">
+              <SectionHeader
+                label="Process"
+                title="Application Process"
+                color="red"
+                subtitle="A transparent, structured pathway from application to funding."
+              />
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -563,16 +484,12 @@ export default function FundingAndGrantsClient() {
               {/* Eligibility */}
               <div className="lg:col-span-3">
                 <div className="mb-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
-                    <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">Eligibility</span>
-                  </div>
-                  <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                    Eligibility Criteria
-                  </h2>
-                  <p className="text-[#5A5F72] text-lg leading-relaxed">
-                    Understanding the requirements for funding and grant applications.
-                  </p>
+                  <SectionHeader
+                    label="Eligibility"
+                    title="Eligibility Criteria"
+                    color="red"
+                    subtitle="Understanding the requirements for funding and grant applications."
+                  />
                 </div>
                 <div className="space-y-4">
                   {eligibilityCriteria.map((item, i) => {
@@ -654,18 +571,13 @@ export default function FundingAndGrantsClient() {
       <section className="relative bg-white overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="max-w-3xl mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">FAQ</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                Common questions about funding and grants.
-              </p>
+            <div className="mb-8">
+              <SectionHeader
+                label="FAQ"
+                title="Frequently Asked Questions"
+                color="blue"
+                subtitle="Common questions about funding and grants."
+              />
             </div>
 
             <FAQSection faqs={faqs} shouldReduceMotion={shouldReduceMotion} />
@@ -674,7 +586,11 @@ export default function FundingAndGrantsClient() {
       </section>
 
       {/* ── CTA ────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#131942] overflow-hidden">
+      <section className="relative bg-[#131942]/80 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 -z-10">
+          <Image src="/image/london-images/investment-finance-meeting.jpg" alt="Funding and Grants background" fill className="object-cover" sizes="100vw" />
+        </div>
         {/* Gradient glow effects */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full bg-[#2563EB]/8 blur-[200px] pointer-events-none" />
         <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#C41E3A]/6 blur-[150px] pointer-events-none" />

@@ -27,18 +27,24 @@ export default function ServicesPage() {
       />
 
       {/* Stats Bar */}
-      <section className="relative z-[1] bg-[#1C1F2E]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
+      <section className="bg-[#EEECEA]">
+        <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { value: "6", label: "Core Services" },
-              { value: "500+", label: "Companies Supported" },
-              { value: "15+", label: "Countries Reached" },
-              { value: "£150M+", label: "Value Created" },
+              { value: "6", label: "Core Services", color: "#2563EB" },
+              { value: "500+", label: "Companies Supported", color: "#22C55E" },
+              { value: "15+", label: "Countries Reached", color: "#C41E3A" },
+              { value: "£150M+", label: "Value Created", color: "#2563EB" },
             ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl mb-1">{stat.value}</p>
-                <p className="text-white/60 text-xs sm:text-sm font-medium uppercase tracking-wider">{stat.label}</p>
+              <div key={stat.label} className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl" style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }} />
+                <div
+                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                  style={{ color: stat.color }}
+                >
+                  {stat.value}
+                </div>
+                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
               </div>
             ))}
           </div>

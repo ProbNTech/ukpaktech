@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
+import { SectionHeader } from "@/components/SectionHeader";
+import { PageHero } from "@/components/PageHero";
 import {
   Shield, Lock, Eye, FileText, Clock, Users,
   CheckCircle2, Scale, Database, UserCheck,
@@ -51,59 +52,12 @@ export default function PrivacyPage() {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden min-h-[520px]">
-        <Image
-          src="/image/london-images/data-security-privacy.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div
-          className="absolute inset-0 z-[1]"
-          style={{
-            background: "linear-gradient(135deg, rgba(10,14,30,0.92) 0%, rgba(10,14,30,0.72) 50%, rgba(10,14,30,0.50) 100%)",
-          }}
-        />
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 z-[2] opacity-[0.04]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "60px 60px" }} />
-
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-20 pb-16">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
-              <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-white/60">Data Protection</span>
-            </div>
-          </motion.div>
-
-          <motion.h1
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-white mb-6 max-w-3xl"
-          >
-            Privacy{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#60a5fa]">
-              Policy
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-lg text-white/50 max-w-2xl leading-relaxed"
-          >
-            How we collect, use, and protect your personal information.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        label="Data Protection"
+        title="Privacy Policy"
+        subtitle="How we collect, use, and protect your personal information."
+        image="/image/london-images/data-security-privacy.jpg"
+      />
 
       {/* ── Introduction + Quick Nav ─────────────────────────────────── */}
       <section id="introduction" className="relative bg-[#EEECEA] py-10 overflow-hidden">
@@ -111,13 +65,7 @@ export default function PrivacyPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Privacy Notice</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Introduction
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-            </div>
+            <SectionHeader label="Privacy Notice" title="Introduction" color="blue" />
 
             <div className="grid lg:grid-cols-3 gap-8 items-start">
               <motion.div
@@ -179,16 +127,7 @@ export default function PrivacyPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">Data Collection</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                How Do We Collect Information from You?
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-2xl">
-                We obtain information about you in the following ways:
-              </p>
-            </div>
+            <SectionHeader label="Data Collection" title="How Do We Collect Information from You?" subtitle="We obtain information about you in the following ways:" color="green" />
 
             <div className="space-y-5">
               {/* Direct Information */}
@@ -297,13 +236,7 @@ export default function PrivacyPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Data Types</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                What Type of Information Is Collected from You?
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-            </div>
+            <SectionHeader label="Data Types" title="What Type of Information Is Collected from You?" color="blue" />
 
             <motion.div
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
@@ -337,16 +270,7 @@ export default function PrivacyPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Data Usage</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                How and Why Is Your Information Used?
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-2xl">
-                We may use your information for a number of different purposes, which may include:
-              </p>
-            </div>
+            <SectionHeader label="Data Usage" title="How and Why Is Your Information Used?" subtitle="We may use your information for a number of different purposes, which may include:" color="blue" />
 
             <motion.div
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
@@ -385,16 +309,7 @@ export default function PrivacyPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Retention Periods</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                How Long Is Your Information Kept For?
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-3xl">
-                We keep your information for no longer than is necessary for the purposes it was collected for. The length of time we retain your personal information is determined by operational and legal considerations. For example, we are legally required to hold some types of information to fulfil our statutory and regulatory obligations (e.g. health/safety and tax/accounting purposes). We review our retention periods on a regular basis:
-              </p>
-            </div>
+            <SectionHeader label="Retention Periods" title="How Long Is Your Information Kept For?" subtitle="We keep your information for no longer than is necessary for the purposes it was collected for. The length of time we retain your personal information is determined by operational and legal considerations. For example, we are legally required to hold some types of information to fulfil our statutory and regulatory obligations (e.g. health/safety and tax/accounting purposes). We review our retention periods on a regular basis:" color="red" />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {retentionData.map((item, i) => (
@@ -432,13 +347,7 @@ export default function PrivacyPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">Data Access</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Who Has Access to Your Information?
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
-            </div>
+            <SectionHeader label="Data Access" title="Who Has Access to Your Information?" color="green" />
 
             <motion.div
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
@@ -479,16 +388,7 @@ export default function PrivacyPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">Legal Basis</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Lawful Processing
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-3xl">
-                Data protection law requires us to rely on one or more lawful grounds to process your personal information. We consider the following grounds to be relevant:
-              </p>
-            </div>
+            <SectionHeader label="Legal Basis" title="Lawful Processing" subtitle="Data protection law requires us to rely on one or more lawful grounds to process your personal information. We consider the following grounds to be relevant:" color="blue" />
 
             <div className="space-y-5 max-w-5xl">
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4 }} className="relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:shadow-md transition-all duration-300 overflow-hidden shadow-sm">
@@ -556,13 +456,7 @@ export default function PrivacyPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Communications</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Marketing Communications
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
-            </div>
+            <SectionHeader label="Communications" title="Marketing Communications" color="red" />
 
             <div className="grid lg:grid-cols-2 gap-6 max-w-5xl">
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
@@ -611,12 +505,7 @@ export default function PrivacyPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A] mb-3">Data Subject Rights</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Your Rights</h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#C41E3A] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-3xl">Under UK data protection law, you have certain rights over the personal information that we hold about you. Here is a summary of the rights that we think apply:</p>
-            </div>
+            <SectionHeader label="Data Subject Rights" title="Your Rights" subtitle="Under UK data protection law, you have certain rights over the personal information that we hold about you. Here is a summary of the rights that we think apply:" color="red" />
 
             <div className="grid md:grid-cols-2 gap-5 max-w-5xl">
               {[
@@ -668,11 +557,7 @@ export default function PrivacyPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">Data Protection</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">Keeping Your Information Safe</h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
-            </div>
+            <SectionHeader label="Data Protection" title="Keeping Your Information Safe" color="green" />
 
             <div className="grid lg:grid-cols-2 gap-6 max-w-5xl">
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">

@@ -1,14 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { motion, useReducedMotion } from "framer-motion";
 import { EventGrid } from "@/components/events/EventGrid";
 import { EventsCTA } from "@/components/events/EventsCTA";
-import { ChevronRight } from "lucide-react";
 import { events } from "@/data/events";
+import { SectionHeader } from "@/components/SectionHeader";
+import { PageHero } from "@/components/PageHero";
 
 /* ------------------------------------------------------------------ */
 /*  Filter tabs                                                        */
@@ -100,202 +99,40 @@ export default function EventsPage() {
   return (
     <div className="bg-[#EEECEA]">
       {/* ============================================================ */}
-      {/*  HERO — dark futuristic with glass morphism                   */}
+      {/*  HERO                                                         */}
       {/* ============================================================ */}
-      <section className="relative overflow-hidden min-h-[540px]">
-        {/* Background image */}
-        <Image
-          src="/image/london-images/international-conference.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+      <PageHero
+        label="Programme Calendar"
+        title="Events & Engagements"
+        subtitle="UPTECH flagship summits, key London and Pakistan tech events, and bilateral engagements connecting both nations' technology ecosystems."
+        image="/image/london-images/international-conference.jpg"
+      />
 
-        {/* Dark overlay */}
-        <div
-          className="absolute inset-0 z-[1]"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(10,14,30,0.92) 0%, rgba(28,31,46,0.80) 50%, rgba(10,14,30,0.88) 100%)",
-          }}
-        />
-
-        {/* Grid overlay pattern */}
-        <div
-          className="absolute inset-0 z-[2] opacity-[0.04] pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        {/* Gradient orbs for futuristic feel */}
-        <div
-          className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] z-[2] pointer-events-none opacity-20 rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(37,99,235,0.4) 0%, transparent 70%)",
-          }}
-        />
-        <div
-          className="absolute bottom-[-30%] left-[-10%] w-[500px] h-[500px] z-[2] pointer-events-none opacity-15 rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(34,197,94,0.35) 0%, transparent 70%)",
-          }}
-        />
-
-        {/* Hero content */}
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-20 pb-20">
-          {/* Breadcrumb */}
-          <motion.nav
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <ol className="flex items-center gap-2 text-sm text-white/40">
-              <li>
-                <Link
-                  href="/"
-                  className="hover:text-white/80 transition-colors duration-200"
+      {/* ============================================================ */}
+      {/*  STATS BAR                                                    */}
+      {/* ============================================================ */}
+      <section className="bg-[#EEECEA]">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+              >
+                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl" style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }} />
+                <div
+                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                  style={{ color: stat.color }}
                 >
-                  Home
-                </Link>
-              </li>
-              <ChevronRight className="w-3.5 h-3.5" />
-              <li className="text-white/70 font-medium">Events</li>
-            </ol>
-          </motion.nav>
-
-          {/* Accent label */}
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-            className="mb-4"
-          >
-            <span
-              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full border"
-              style={{
-                color: "#22C55E",
-                borderColor: "rgba(34,197,94,0.3)",
-                background: "rgba(34,197,94,0.08)",
-              }}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full animate-pulse"
-                style={{ background: "#22C55E" }}
-              />
-              Programme Calendar
-            </span>
-          </motion.div>
-
-          {/* Title with gradient text */}
-          <motion.h1
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] leading-[1.05] mb-6 max-w-4xl"
-            style={{
-              background:
-                "linear-gradient(135deg, #ffffff 0%, #e0e7ff 40%, #93c5fd 70%, #2563EB 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            Events &amp; Engagements
-          </motion.h1>
-
-          {/* Divider with glow */}
-          <motion.div
-            initial={shouldReduceMotion ? {} : { scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="origin-left mb-6"
-          >
-            <div
-              className="h-px max-w-md"
-              style={{
-                background:
-                  "linear-gradient(90deg, #2563EB 0%, rgba(34,197,94,0.5) 60%, transparent 100%)",
-              }}
-            />
-          </motion.div>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-lg sm:text-xl text-white/50 max-w-2xl leading-relaxed mb-0"
-          >
-            UPTECH flagship summits, key London and Pakistan tech events,
-            and bilateral engagements connecting both nations&apos; technology
-            ecosystems.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* ============================================================ */}
-      {/*  STATS BAR — glass morphism (stays dark)                      */}
-      {/* ============================================================ */}
-      <section className="relative z-20 -mt-1">
-        <div
-          className="border-y"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(28,31,46,0.95) 0%, rgba(15,18,32,0.98) 100%)",
-            borderColor: "rgba(255,255,255,0.06)",
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
-          }}
-        >
-          <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-6">
-            <motion.div
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6"
-            >
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={shouldReduceMotion ? {} : { opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.45 + i * 0.06 }}
-                  className="relative group flex flex-col items-center text-center rounded-lg px-4 py-4 border transition-all duration-300"
-                  style={{
-                    background: "rgba(255,255,255,0.02)",
-                    borderColor: "rgba(255,255,255,0.06)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = `rgba(${stat.color === "#2563EB" ? "37,99,235" : stat.color === "#22C55E" ? "34,197,94" : "196,30,58"},0.08)`;
-                    e.currentTarget.style.borderColor = `${stat.color}33`;
-                    e.currentTarget.style.boxShadow = `0 0 20px ${stat.color}15`;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "rgba(255,255,255,0.02)";
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
-                    e.currentTarget.style.boxShadow = "none";
-                  }}
-                >
-                  <span
-                    className="text-2xl sm:text-3xl font-extrabold font-heading leading-none mb-1"
-                    style={{ color: stat.color }}
-                  >
-                    {stat.value}
-                  </span>
-                  <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-white/40">
-                    {stat.label}
-                  </span>
-                </motion.div>
-              ))}
-            </motion.div>
+                  {stat.value}
+                </div>
+                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -307,21 +144,12 @@ export default function EventsPage() {
         <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-10 lg:py-14">
           <AnimatedSection>
             {/* Section header */}
-            <div className="mb-8">
-              <span
-                className="inline-block text-xs font-bold uppercase tracking-[0.2em] mb-3"
-                style={{ color: "#2563EB" }}
-              >
-                Programme
-              </span>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] leading-tight mb-3 text-[#1C1F2E]">
-                Events Calendar
-              </h2>
-              <p className="text-lg text-[#5A5F72] max-w-2xl">
-                Key engagements, summits, and activities from the UK-Pakistan
-                technology corridor.
-              </p>
-            </div>
+            <SectionHeader
+              label="Programme"
+              title="Events Calendar"
+              subtitle="Key engagements, summits, and activities from the UK-Pakistan technology corridor."
+              color="blue"
+            />
 
             {/* Filter tabs — light theme */}
             <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">

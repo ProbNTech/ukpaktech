@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { PageHero } from "@/components/PageHero";
 import {
   Rocket,
   TrendingUp,
@@ -133,117 +135,48 @@ export default function SeriesFundingPage() {
       {/* ================================================================
           HERO SECTION
           ================================================================ */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-        <Image
-          src="/image/london-images/innovation-ideas.jpg"
-          alt="Series A and B Funding Opportunities"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F1A] via-[#0B0F1A]/90 to-[#0B0F1A]/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F1A] via-transparent to-[#0B0F1A]/40" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#22C55E]/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-[#2563EB]/8 rounded-full blur-[100px] pointer-events-none" />
-
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-32">
-          <motion.div
-            className="max-w-3xl"
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 backdrop-blur-sm mb-6"
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse" />
-              <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
-                Ecosystem / Series Funding
-              </span>
-            </motion.div>
-
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6">
-              <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-                Series A &amp; B{" "}
-              </span>
-              <span className="bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
-                Funding
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-white via-white/80 to-white/60 bg-clip-text text-transparent">
-                Opportunities
-              </span>
-            </h1>
-
-            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-5 mb-8 max-w-2xl">
-              <p className="text-white/70 text-base sm:text-lg leading-relaxed">
-                The UK-Pakistan Tech Council supports high-growth technology companies in securing Series A and B funding to scale operations, expand into new markets, and accelerate innovation. We connect scaling startups and scale-ups with venture capitalists, private equity firms, corporate investors, and cross-border funding networks, providing the guidance and access needed to close strategic investment rounds.
-              </p>
-            </div>
-
-            <motion.div
-              className="flex flex-wrap gap-4"
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <Button href="/membership" variant="glass" showArrow>
-                Access Series Funding
-              </Button>
-              <Button
-                href="/contact"
-                variant="ghost"
-                className="!text-white/70 !decoration-white/30 hover:!text-[#2563EB]"
-              >
-                Speak to Our Team
-              </Button>
-            </motion.div>
-          </motion.div>
+      <PageHero
+        label="Ecosystem / Series Funding"
+        title="Series A & B Funding Opportunities"
+        subtitle="The UK-Pakistan Tech Council supports high-growth technology companies in securing Series A and B funding to scale operations, expand into new markets, and accelerate innovation."
+        image="/image/london-images/innovation-ideas.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <Button href="/membership" variant="glass" showArrow>
+            Access Series Funding
+          </Button>
+          <Button href="/contact" variant="glass" showArrow>
+            Speak to Our Team
+          </Button>
         </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0B0F1A] to-transparent" />
-      </section>
+      </PageHero>
 
       {/* ================================================================
           STATS BAR
           ================================================================ */}
-      <section className="relative z-[1] bg-[#0B0F1A]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <section className="relative bg-[#EEECEA]">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
-                className="relative text-center backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 overflow-hidden group hover:bg-white/[0.06] transition-all duration-500"
+                className="relative text-center bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                 initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
                 <div
-                  className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}00)` }}
-                />
-                <div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full blur-[40px] opacity-20 group-hover:opacity-30 transition-opacity duration-500"
-                  style={{ background: stat.color }}
+                  className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
+                  style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }}
                 />
                 <p
-                  className="relative font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl mb-1"
+                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
                   style={{ color: stat.color }}
                 >
                   {stat.value}
                 </p>
-                <p className="relative text-white/50 text-xs sm:text-sm font-medium uppercase tracking-wider">
+                <p className="text-[#5A5F72] text-sm">
                   {stat.label}
                 </p>
               </motion.div>
@@ -258,23 +191,7 @@ export default function SeriesFundingPage() {
       <section className="relative bg-[#EEECEA] overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />
-                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
-                  For Scaling Companies
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-5">
-                Scale Your Business with{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
-                  Strategic Funding
-                </span>
-              </h2>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                Access the capital, connections, and guidance needed to take your company from growth-stage to market leader.
-              </p>
-            </div>
+            <SectionHeader label="For Scaling Companies" title="Scale Your Business with Strategic Funding" subtitle="Access the capital, connections, and guidance needed to take your company from growth-stage to market leader." color="blue" />
 
             <div className="grid md:grid-cols-2 gap-7">
               {scalingBenefits.map((item, i) => {
@@ -325,23 +242,7 @@ export default function SeriesFundingPage() {
       <section className="relative bg-white overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/5 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E]" />
-                <span className="text-[#22C55E] text-xs font-semibold uppercase tracking-wider">
-                  For Investors
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                Invest in{" "}
-                <span className="bg-gradient-to-r from-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
-                  Growth-Stage Winners
-                </span>
-              </h2>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                Access curated, high-growth technology companies that have proven their market fit and are ready for significant scale.
-              </p>
-            </div>
+            <SectionHeader label="For Investors" title="Invest in Growth-Stage Winners" subtitle="Access curated, high-growth technology companies that have proven their market fit and are ready for significant scale." color="green" />
 
             <div className="grid md:grid-cols-3 gap-6">
               {investorBenefits.map((item, i) => {
@@ -362,7 +263,7 @@ export default function SeriesFundingPage() {
                     <div className="relative z-[1]">
                       <div className="relative mb-5">
                         <div
-                          className="relative w-13 h-13 rounded-xl flex items-center justify-center"
+                          className="relative w-12 h-12 rounded-xl flex items-center justify-center"
                           style={{ background: `${item.color}10`, border: `1px solid ${item.color}15` }}
                         >
                           <Icon className="w-6 h-6" style={{ color: item.color }} strokeWidth={1.5} />
@@ -390,23 +291,7 @@ export default function SeriesFundingPage() {
       <section className="relative bg-[#E8E6E3] overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5 mx-auto">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
-                <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">
-                  Process
-                </span>
-              </div>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                How We Help You{" "}
-                <span className="bg-gradient-to-r from-[#C41E3A] to-[#22C55E] bg-clip-text text-transparent">
-                  Close Your Round
-                </span>
-              </h2>
-              <p className="text-[#5A5F72] text-lg max-w-2xl mx-auto">
-                A structured pathway from assessment to closing your Series A or B funding round.
-              </p>
-            </div>
+            <SectionHeader label="Process" title="How We Help You Close Your Round" subtitle="A structured pathway from assessment to closing your Series A or B funding round." color="red" />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {fundingProcess.map((step, i) => (
@@ -471,18 +356,7 @@ export default function SeriesFundingPage() {
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C41E3A]/20 bg-[#C41E3A]/5 mb-5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#C41E3A]" />
-                  <span className="text-[#C41E3A] text-xs font-semibold uppercase tracking-wider">
-                    Why It Matters
-                  </span>
-                </div>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6">
-                  Critical Funding for{" "}
-                  <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">
-                    Rapid Growth
-                  </span>
-                </h2>
+                <SectionHeader label="Why It Matters" title="Critical Funding for Rapid Growth" color="red" />
                 <p className="text-[#5A5F72] text-lg leading-relaxed mb-6">
                   Series A and B funding is critical for companies moving beyond early-stage validation into rapid growth. By facilitating access to these funding rounds, the Council helps high-growth startups scale efficiently, strengthen their market position, and expand across borders.
                 </p>
@@ -566,7 +440,11 @@ export default function SeriesFundingPage() {
       {/* ================================================================
           CTA SECTION
           ================================================================ */}
-      <section className="relative bg-[#0E1221] overflow-hidden">
+      <section className="relative bg-[#0E1221]/80 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 -z-10">
+          <Image src="/image/london-images/innovation-ideas.jpg" alt="Series Funding background" fill className="object-cover" sizes="100vw" />
+        </div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none">
           <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#C41E3A]/10 rounded-full blur-[120px]" />
           <div className="absolute top-10 right-0 w-[350px] h-[350px] bg-[#2563EB]/8 rounded-full blur-[100px]" />

@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import { SectionHeader } from "@/components/SectionHeader";
+import { PageHero } from "@/components/PageHero";
 import { useState } from "react";
 import { ChevronDown, FileText, Mail } from "lucide-react";
 
@@ -265,71 +266,12 @@ export default function TermsPage() {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden min-h-[520px]">
-        <Image
-          src="/image/london-images/legal-documents.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div
-          className="absolute inset-0 z-[1]"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(10,14,30,0.92) 0%, rgba(10,14,30,0.72) 50%, rgba(10,14,30,0.50) 100%)",
-          }}
-        />
-        {/* Grid pattern overlay */}
-        <div
-          className="absolute inset-0 z-[2] opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-20 pb-16">
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
-              <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-white/60">
-                Legal
-              </span>
-            </div>
-          </motion.div>
-
-          <motion.h1
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] text-white mb-6 max-w-4xl"
-          >
-            Acceptance of Terms of Use for This{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#60a5fa]">
-              Website
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-lg text-white/50 max-w-3xl leading-relaxed"
-          >
-            These Terms and Conditions, together with any and all other documents
-            referred to herein, set out the terms of use under which you may use
-            this website, www.asaninsaf.co ({"\u201C"}Our Site{"\u201D"}).
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        label="Legal"
+        title="Acceptance of Terms of Use for This Website"
+        subtitle="These Terms and Conditions, together with any and all other documents referred to herein, set out the terms of use under which you may use this website."
+        image="/image/london-images/legal-documents.jpg"
+      />
 
       {/* ── Background Notice — Light section ──────────────────────── */}
       <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
@@ -338,15 +280,7 @@ export default function TermsPage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="max-w-4xl">
-              <div className="mb-8">
-                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
-                  Important Notice
-                </p>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                  Terms &amp; Conditions
-                </h2>
-                <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-6" />
-              </div>
+              <SectionHeader label="Important Notice" title="Terms & Conditions" color="blue" />
 
               <motion.div
                 initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
@@ -387,18 +321,7 @@ export default function TermsPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-3">
-                {termsSections.length} Sections
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Quick Navigation
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#2563EB] to-transparent mb-4" />
-              <p className="text-[#7A7E8F] text-base max-w-xl">
-                Click any section below to jump directly, or use the expand/collapse controls.
-              </p>
-            </div>
+            <SectionHeader label={`${termsSections.length} Sections`} title="Quick Navigation" subtitle="Click any section below to jump directly, or use the expand/collapse controls." color="blue" />
 
             {/* Expand / Collapse buttons */}
             <div className="flex flex-wrap gap-3 mb-8">
@@ -471,15 +394,7 @@ export default function TermsPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20py-10">
           <AnimatedSection>
-            <div className="mb-8">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E] mb-3">
-                Full Terms
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-tight mb-3">
-                Terms &amp; Conditions
-              </h2>
-              <div className="w-16 h-[2px] bg-gradient-to-r from-[#22C55E] to-transparent mb-4" />
-            </div>
+            <SectionHeader label="Full Terms" title="Terms & Conditions" color="green" />
 
             <div className="space-y-3 max-w-5xl">
               {termsSections.map((section, index) => {

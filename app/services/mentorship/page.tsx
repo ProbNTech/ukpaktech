@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { Lightbulb, Globe, Compass, CheckCircle2, ChevronDown, Users, Clock, Award, Target } from "lucide-react";
 import { useState } from "react";
@@ -92,128 +94,48 @@ export default function MentorshipPage() {
 
   return (
     <div>
-      {/* ================================================================
-          HERO SECTION - Custom full-width with dark gradient overlay
-          ================================================================ */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/image/london-images/coding-development.jpg"
-          alt="Mentorship programme"
-          fill
-          className="object-cover"
-          priority
-        />
-
-        {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F1A] via-[#0B0F1A]/90 to-[#0B0F1A]/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F1A] via-transparent to-[#0B0F1A]/40" />
-
-        {/* Grid pattern overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        {/* Decorative glow orbs */}
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#2563EB]/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-[#22C55E]/8 rounded-full blur-[100px] pointer-events-none" />
-
-        {/* Hero content */}
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 py-32">
-          <motion.div
-            className="max-w-3xl"
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {/* Label chip */}
-            <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 backdrop-blur-sm mb-6"
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse" />
-              <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">Mentorship Programme</span>
-            </motion.div>
-
-            {/* Gradient heading */}
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6">
-              <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-                Connecting Those Who{" "}
-              </span>
-              <span className="bg-gradient-to-r from-[#2563EB] via-[#C41E3A] to-[#22C55E] bg-clip-text text-transparent">
-                Made It
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-white via-white/80 to-white/60 bg-clip-text text-transparent">
-                With the Ones on Their Way
-              </span>
-            </h1>
-
-            {/* Subtitle in glass card */}
-            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-5 mb-8 max-w-2xl">
-              <p className="text-white/70 text-base sm:text-lg leading-relaxed">
-                We provide a pool of experts who will mentor the incubates and guide startups with their experience. Our domain-specific and generic network of mentors would acknowledge the challenges faced by the incubates and give them advice in their fields of expertise.
-              </p>
-            </div>
-
-            {/* CTA buttons */}
-            <motion.div
-              className="flex flex-wrap gap-4"
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <Button href="/membership" variant="glass" showArrow>Become a Mentor</Button>
-              <Button href="/contact" variant="ghost" className="!text-white/70 !decoration-white/30 hover:!text-[#2563EB]">Find a Mentor</Button>
-            </motion.div>
-          </motion.div>
+      {/* ── Hero Section ── */}
+      <PageHero
+        label="UPTECH Service"
+        title="Connecting Those Who Made It With the Ones on Their Way"
+        subtitle="We provide a pool of experts who will mentor the incubates and guide startups with their experience. Our domain-specific and generic network of mentors would acknowledge the challenges faced by the incubates and give them advice in their fields of expertise."
+        image="/image/london-images/coding-development.jpg"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <Button href="/membership" variant="glass" showArrow>Become a Mentor</Button>
+          <Button href="/contact" variant="glass" showArrow>Find a Mentor</Button>
         </div>
-
-        {/* Bottom fade into stats */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0E1221] to-transparent" />
-      </section>
+      </PageHero>
 
       {/* ================================================================
-          STATS BAR - Dark glass cards with colored top borders
+          STATS BAR
           ================================================================ */}
-      <section className="relative z-[1] bg-[#0E1221]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <section className="relative bg-[#EEECEA]">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => {
               const colors = ["#2563EB", "#C41E3A", "#22C55E", "#2563EB"];
               const color = colors[i % colors.length];
               return (
                 <motion.div
                   key={stat.label}
-                  className="relative text-center backdrop-blur-md bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 overflow-hidden group hover:bg-white/[0.06] transition-all duration-500"
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                 >
-                  {/* Colored top border */}
                   <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${color}, ${color}00)` }}
+                    className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
+                    style={{ background: `linear-gradient(to right, ${color}, ${color}60)` }}
                   />
-                  {/* Glow effect behind number */}
                   <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full blur-[40px] opacity-20 group-hover:opacity-30 transition-opacity duration-500"
-                    style={{ background: color }}
-                  />
-                  <p
-                    className="relative font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl mb-1"
+                    className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
                     style={{ color }}
                   >
                     {stat.value}
-                  </p>
-                  <p className="relative text-white/50 text-xs sm:text-sm font-medium uppercase tracking-wider">{stat.label}</p>
+                  </div>
+                  <p className="text-[#5A5F72] text-sm">{stat.label}</p>
                 </motion.div>
               );
             })}
@@ -237,13 +159,7 @@ export default function MentorshipPage() {
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-3">
-                <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Be The backbone of great startups</p>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-6">
-                  Shaping the Future by{" "}
-                  <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
-                    Empowering Innovators
-                  </span>
-                </h2>
+                <SectionHeader label="Be The backbone of great startups" title="Shaping the Future by Empowering Innovators" color="blue" />
                 <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                   Innovators are everywhere, but they need a little push from someone who knows what it takes to make their dreams come true. That&apos;s where our mentors come in shaping the future by empowering innovators around the world with their wisdom and experience. If you&apos;ve ever had the privilege of meeting a mentor who changed your life, you know how important mentors can be. Mentors help us find our path and shape us for the future by showing us what&apos;s possible.
                 </p>
@@ -302,17 +218,7 @@ export default function MentorshipPage() {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C41E3A]/5 rounded-full blur-[150px] pointer-events-none" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header - inline */}
-            <div className="text-center mb-8">
-              <p className="text-sm font-semibold text-[#C41E3A] uppercase tracking-wider mb-3">Benefits</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                Advantages of Being a{" "}
-                <span className="bg-gradient-to-r from-[#C41E3A] to-[#2563EB] bg-clip-text text-transparent">Mentor</span>
-              </h2>
-              <p className="text-[#7A7E8F] text-lg max-w-2xl mx-auto">
-                Mentoring isn&apos;t just about giving — it&apos;s about growing together.
-              </p>
-            </div>
+            <SectionHeader label="Benefits" title="Advantages of Being a Mentor" subtitle="Mentoring isn't just about giving — it's about growing together." color="red" />
 
             <div className="grid md:grid-cols-3 gap-6">
               {advantages.map((item, i) => {
@@ -375,17 +281,7 @@ export default function MentorshipPage() {
         />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="text-center mb-8">
-              <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Roles</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                How Mentors Work with{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">Startups</span>
-              </h2>
-              <p className="text-[#7A7E8F] text-lg max-w-2xl mx-auto">
-                As a mentor with us, you get to work closely with ambitious innovators. Many are building businesses for the first time and need guidance across different areas. This is where you step in. Whether you&apos;re a successful founder or an industry specialist, this is your chance to support the next generation of entrepreneurs and learn along the way.
-              </p>
-            </div>
+            <SectionHeader label="Roles" title="How Mentors Work with Startups" subtitle="As a mentor with us, you get to work closely with ambitious innovators. Many are building businesses for the first time and need guidance across different areas. This is where you step in. Whether you're a successful founder or an industry specialist, this is your chance to support the next generation of entrepreneurs and learn along the way." color="blue" />
 
             <div className="grid md:grid-cols-2 gap-6">
               {mentorRoles.map((role, i) => {
@@ -461,17 +357,7 @@ export default function MentorshipPage() {
         />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="text-center mb-8">
-              <p className="text-sm font-semibold text-[#22C55E] uppercase tracking-wider mb-3">Process</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                How to Become a{" "}
-                <span className="bg-gradient-to-r from-[#22C55E] to-[#2563EB] bg-clip-text text-transparent">Mentor</span>
-              </h2>
-              <p className="text-[#7A7E8F] text-lg max-w-2xl mx-auto">
-                A clear four-step pathway from application to impact.
-              </p>
-            </div>
+            <SectionHeader label="Process" title="How to Become a Mentor" subtitle="A clear four-step pathway from application to impact." color="green" />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {processSteps.map((step, i) => {
@@ -541,17 +427,7 @@ export default function MentorshipPage() {
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#22C55E]/5 rounded-full blur-[150px] pointer-events-none" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="text-center mb-8">
-              <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Profiles</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                Who We&apos;re{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">Looking For</span>
-              </h2>
-              <p className="text-[#7A7E8F] text-lg max-w-2xl mx-auto">
-                We welcome mentors from diverse backgrounds and disciplines.
-              </p>
-            </div>
+            <SectionHeader label="Profiles" title="Who We're Looking For" subtitle="We welcome mentors from diverse backgrounds and disciplines." color="blue" />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {mentorProfiles.map((item, i) => (
@@ -593,17 +469,7 @@ export default function MentorshipPage() {
         />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="text-center mb-8">
-              <p className="text-sm font-semibold text-[#C41E3A] uppercase tracking-wider mb-3">FAQ</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
-                Frequently Asked{" "}
-                <span className="bg-gradient-to-r from-[#2563EB] to-[#C41E3A] bg-clip-text text-transparent">Questions</span>
-              </h2>
-              <p className="text-[#7A7E8F] text-lg max-w-2xl mx-auto">
-                Common questions about our mentorship programme.
-              </p>
-            </div>
+            <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Common questions about our mentorship programme." color="red" />
 
             <div className="max-w-3xl mx-auto">
               <FAQSection faqs={faqs} />
@@ -615,7 +481,11 @@ export default function MentorshipPage() {
       {/* ================================================================
           CTA - Gradient glow effects on dark
           ================================================================ */}
-      <section className="relative bg-[#0B0F1A] overflow-hidden">
+      <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 -z-10">
+          <Image src="/image/london-images/mentoring-coaching.jpg" alt="Mentorship background" fill className="object-cover" sizes="100vw" />
+        </div>
         {/* Multi-color glow orbs */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none">
           <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#2563EB]/10 rounded-full blur-[120px]" />
