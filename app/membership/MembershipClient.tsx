@@ -2,6 +2,7 @@
 
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
+import { TubesCTA } from "@/components/TubesCTA";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   Users,
@@ -866,82 +867,23 @@ export default function MembershipClient() {
       {/* ═══════════════════════════════════════════════════════════════
           CTA SECTION
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative bg-white overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='black' stroke-width='0.5'/%3E%3C/svg%3E")`, backgroundSize: "40px 40px" }} />
-
-        {/* Central glow */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] opacity-[0.08]"
-          style={{
-            background:
-              "radial-gradient(ellipse, #2563EB, transparent 60%)",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div className="relative bg-white border border-[#D8D5CF] shadow-sm rounded-2xl p-10 lg:p-12 backdrop-blur-sm overflow-hidden">
-              {/* Card inner glows */}
-              <div
-                className="absolute top-0 left-0 w-64 h-64 opacity-[0.02]"
-                style={{
-                  background:
-                    "radial-gradient(circle at 0% 0%, #2563EB, transparent 50%)",
-                }}
-              />
-              <div
-                className="absolute bottom-0 right-0 w-64 h-64 opacity-[0.02]"
-                style={{
-                  background:
-                    "radial-gradient(circle at 100% 100%, #22C55E, transparent 50%)",
-                }}
-              />
-
-              {/* Top gradient bar */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-
-              <div className="relative max-w-2xl">
-                <div className="flex items-center gap-2.5 mb-5">
-                  <div className="w-7 h-7 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center">
-                    <Sparkles className="w-3.5 h-3.5 text-[#22C55E]" />
-                  </div>
-                  <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#22C55E]">
-                    Join Today
-                  </span>
-                </div>
-
-                <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] text-[#1C1F2E] mb-5">
-                  Ready to Join{" "}
-                  <span className="bg-gradient-to-r from-[#2563EB] to-[#22C55E] bg-clip-text text-transparent">
-                    UPTECH?
-                  </span>
-                </h2>
-
-                <div className="h-px bg-gradient-to-r from-[#D8D5CF] to-transparent mb-6" />
-
-                <p className="text-lg text-[#5A5F72] leading-relaxed mb-6 max-w-xl">
-                  Membership with the Council provides more than just networking, it&#39;s a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Join today. Connect, grow, and lead the future of UK-Pakistan technology.
-                </p>
-
-                <div className="flex flex-wrap gap-4">
-                  <Button
-                    href="/membership/apply"
-                    variant="primary"
-                    size="lg"
-                    showArrow
-                    className="!bg-gradient-to-r !from-[#2563EB] !to-[#1a4fd4] hover:!from-[#3b82f6] hover:!to-[#2563EB] !shadow-[0_4px_30px_rgba(37,99,235,0.3)] hover:!shadow-[0_8px_40px_rgba(37,99,235,0.45)]"
-                  >
-                    Apply for Membership
-                  </Button>
-                  <Button href="/contact" variant="glass" size="lg">
-                    Get in Touch
-                  </Button>
-                </div>
-              </div>
+      <TubesCTA>
+        <AnimatedSection>
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">Join Today</p>
+            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
+              Ready to Join UPTECH?
+            </h2>
+            <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+              Membership with the Council provides more than just networking, it&#39;s a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Join today. Connect, grow, and lead the future of UK-Pakistan technology.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/membership/apply" variant="primary" size="lg" showArrow>Apply for Membership</Button>
+              <Button href="/contact" variant="glass" size="lg">Get in Touch</Button>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </AnimatedSection>
+      </TubesCTA>
     </div>
   );
 }

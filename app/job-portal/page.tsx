@@ -4,6 +4,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { motion, useReducedMotion } from "framer-motion";
 import { PageHero } from "@/components/PageHero";
+import { TubesCTA } from "@/components/TubesCTA";
 import {
   Search,
   Building2,
@@ -490,46 +491,29 @@ export default function JobPortalPage() {
         </div>
       </section>
 
-      {/* ── CTA Section ── */}
-      <section className="relative bg-[#0E1221] overflow-hidden">
-        {/* Gradient glow effects */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#C41E3A]" />
-
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
-                The Future of Work
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                The Future of Cross-Border Tech Careers
-              </h2>
-              <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-                Empowering technology talent and fostering cross-border collaboration -- our Job Portal helps build the workforce of the future. Join the UPTECH network and unlock your next opportunity.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg" showArrow>
-                  Become a Member
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-          </AnimatedSection>
+      {/* ── CTA Section — TubesCursor ── */}
+      <TubesCTA>
+        <div className="max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[#4ade80] mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+            The Future of Work
+          </p>
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-none text-white mb-5 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
+            The Future of Cross-Border Tech Careers
+          </h2>
+          <div className="h-px bg-white/20 mb-6" />
+          <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+            Empowering technology talent and fostering cross-border collaboration — our Job Portal helps build the workforce of the future.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Button href="/membership" variant="primary" size="lg" showArrow>
+              Become a Member
+            </Button>
+            <Button href="/contact" variant="glass" size="lg">
+              Contact Us
+            </Button>
+          </div>
         </div>
-      </section>
+      </TubesCTA>
     </div>
   );
 }

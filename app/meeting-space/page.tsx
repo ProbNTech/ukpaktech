@@ -5,6 +5,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
+import { TubesCTA } from "@/components/TubesCTA";
 import {
   CheckCircle2,
   MapPin,
@@ -876,71 +877,29 @@ export default function MeetingSpacePage() {
         </div>
       </section>
 
-      {/* ── CTA — Access & Reservations ─────────────────────────────── */}
-      <section
-        className="relative overflow-hidden py-12"
-        style={{
-          background:
-            "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)",
-        }}
-      >
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-        {/* Glow orbs */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.02]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 50%)",
-          }}
-        />
-        <div
-          className="absolute top-0 right-0 w-96 h-96 opacity-[0.02]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 60%)",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">
-                Access &amp; Reservations
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Reserve Your Meeting{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#60a5fa]">
-                  Space
-                </span>
-              </h2>
-              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
-                Meeting facilities are available by advance booking and subject to membership tier allocations and availability.
-              </p>
-              <p className="text-white/50 text-base leading-relaxed mb-6 max-w-2xl">
-                Contact: Membership &amp; Operations Team | Email:{" "}
-                <a
-                  href="mailto:info@uptech.org.uk"
-                  className="text-[#60a5fa] hover:text-[#2563EB] transition-colors duration-200 underline underline-offset-2"
-                >
-                  info@uptech.org.uk
-                </a>
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button
-                  href="/membership"
-                  variant="primary"
-                  size="lg"
-                  showArrow
-                >
-                  Become a Member
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-          </AnimatedSection>
+      {/* ── CTA — TubesCursor ─────────────────────────────────────── */}
+      <TubesCTA>
+        <div className="max-w-2xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-[#4ade80] mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+            Access &amp; Reservations
+          </p>
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-none text-white mb-5 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
+            Reserve Your Meeting Space
+          </h2>
+          <div className="h-px bg-white/20 mb-6" />
+          <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+            Meeting facilities are available by advance booking and subject to membership tier allocations and availability.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Button href="/membership" variant="primary" size="lg" showArrow>
+              Become a Member
+            </Button>
+            <Button href="/contact" variant="glass" size="lg">
+              Contact Us
+            </Button>
+          </div>
         </div>
-      </section>
+      </TubesCTA>
     </div>
   );
 }
