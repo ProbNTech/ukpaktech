@@ -14,7 +14,8 @@
     "next": "^16.0.0",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "threejs-components": "^0.0.19"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

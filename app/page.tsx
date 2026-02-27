@@ -20,6 +20,10 @@ const ImpactStats = dynamic(() =>
   import("@/components/ImpactStats").then((m) => ({ default: m.ImpactStats })),
   { ssr: false }
 );
+const TubesCursorBg = dynamic(() =>
+  import("@/components/ui/tube-cursor").then((m) => ({ default: m.TubesCursor })),
+  { ssr: false }
+);
 
 /* Top 15 articles for the homepage news grid — 5 rows × 3 columns */
 const homepageArticles = articles.slice(0, 15);
@@ -595,39 +599,38 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-           JOIN CTA — dark section with animated background
-           Matches ukproptech's dark "BPF Futures" image section
+           JOIN CTA — animated tube cursor background
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[2] overflow-hidden bg-[#0B0F1A] text-white py-10 md:py-12">
-        <Image
-          src="/image/home/join_uptech_bg.jpg"
-          alt=""
-          fill
-          className="object-cover opacity-50"
-          sizes="100vw"
-        />
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection animation="blur-in">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-4">
-                Join UPTECH
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                UPTECH is a trusted network of over 120 members, shaping the future of UK–Pakistan technology.
-              </h2>
-              <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-                Membership opens access to bilateral investment introductions, exclusive summits, policy briefings, and the UK–Pakistan tech community.
-              </p>
-              <Link
-                href="/membership/apply"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-white text-white text-sm font-semibold hover:bg-white hover:text-[#1C1F2E] transition-colors duration-300"
-              >
-                Apply for Membership
-                <ChevronRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </AnimatedSection>
-        </div>
+      <section className="relative z-[2] overflow-hidden bg-[#0B0F1A] text-white">
+        <TubesCursorBg
+          initialColors={["#2563EB", "#22C55E", "#C41E3A"]}
+          lightColors={["#3b82f6", "#4ade80", "#E74C5E", "#60a5fa"]}
+          lightIntensity={220}
+          className="min-h-[420px] md:min-h-[480px]"
+        >
+          <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 md:py-20">
+            <AnimatedSection animation="blur-in">
+              <div className="max-w-3xl">
+                <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+                  Join UPTECH
+                </p>
+                <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
+                  UPTECH is a trusted network of over 120 members, shaping the future of UK–Pakistan technology.
+                </h2>
+                <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+                  Membership opens access to bilateral investment introductions, exclusive summits, policy briefings, and the UK–Pakistan tech community.
+                </p>
+                <Link
+                  href="/membership/apply"
+                  className="inline-flex items-center gap-2 px-7 py-3 rounded-full border-2 border-white/90 text-white text-sm font-semibold backdrop-blur-sm hover:bg-white hover:text-[#1C1F2E] transition-colors duration-300 drop-shadow-[0_0_10px_rgba(0,0,0,0.6)]"
+                >
+                  Apply for Membership
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </AnimatedSection>
+          </div>
+        </TubesCursorBg>
       </section>
     </div>
   );
