@@ -83,60 +83,46 @@ export default function ContactPage() {
       </PageHero>
 
       {/* ── Contact Info Cards ─────────────────────────────────────────── */}
-      <section className="relative z-20 -mt-1">
-        <div
-          className="border-y"
-          style={{
-            background: "linear-gradient(135deg, rgba(28,31,46,0.95) 0%, rgba(15,18,32,0.98) 100%)",
-            borderColor: "rgba(255,255,255,0.06)",
-          }}
-        >
-          <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-6">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {contactInfo.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.label}
-                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative bg-white/[0.04] backdrop-blur-md border border-white/[0.08] rounded-xl p-5 hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300 overflow-hidden"
-                  >
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `radial-gradient(circle at 50% 50%, ${item.glow}, transparent 70%)` }} />
-                    <div className="relative">
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-                        style={{ backgroundColor: `${item.color}15`, border: `1px solid ${item.color}25` }}
-                      >
-                        <Icon className="w-4.5 h-4.5" style={{ color: item.color }} strokeWidth={1.5} />
-                      </div>
-                      <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/30 mb-1">{item.label}</p>
-                      {item.href ? (
-                        <a href={item.href} className="font-heading font-bold text-sm text-white hover:text-[#2563EB] transition-colors inline-flex items-center gap-1">
-                          {item.value}
-                          <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </a>
-                      ) : (
-                        <p className="font-heading font-bold text-sm text-white">{item.value}</p>
-                      )}
+      <section className="relative z-20 bg-[#EEECEA] py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {contactInfo.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.label}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="group relative bg-white border border-[#D8D5CF] rounded-xl p-5 hover:shadow-lg hover:border-[#2563EB]/20 transition-all duration-300 overflow-hidden"
+                >
+                  <div className="relative">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+                      style={{ backgroundColor: `${item.color}10`, border: `1px solid ${item.color}20` }}
+                    >
+                      <Icon className="w-4.5 h-4.5" style={{ color: item.color }} strokeWidth={1.5} />
                     </div>
-                  </motion.div>
-                );
-              })}
-            </div>
+                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#7A7E8F] mb-1">{item.label}</p>
+                    {item.href ? (
+                      <a href={item.href} className="font-heading font-bold text-sm text-[#1C1F2E] hover:text-[#2563EB] transition-colors inline-flex items-center gap-1">
+                        {item.value}
+                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </a>
+                    ) : (
+                      <p className="font-heading font-bold text-sm text-[#1C1F2E]">{item.value}</p>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* ── Enquiry Types — Dark with glass cards ─────────────────────── */}
-      <section className="relative bg-[#0B0F1A] py-10 overflow-hidden">
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "40px 40px" }} />
-        {/* Top gradient accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-
+      {/* ── Enquiry Types ─────────────────────────────────────────────── */}
+      <section id="enquiry-types" className="relative bg-[#E8E6E3] py-10 overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -156,11 +142,11 @@ export default function ContactPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.06 }}
-                    className="group relative bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-300 overflow-hidden"
+                    className="group relative bg-white border border-[#D8D5CF] rounded-xl p-5 hover:shadow-lg hover:border-[#2563EB]/20 transition-all duration-300 overflow-hidden"
                   >
                     {/* Left accent */}
                     <div
-                      className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full transition-opacity duration-300 opacity-40 group-hover:opacity-100"
+                      className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full transition-opacity duration-300 opacity-0 group-hover:opacity-100"
                       style={{ background: `linear-gradient(to bottom, ${type.color}, ${type.color}40)` }}
                     />
 
@@ -171,8 +157,8 @@ export default function ContactPage() {
                       <Icon className="w-5 h-5" style={{ color: type.color }} strokeWidth={1.5} />
                     </div>
 
-                    <h3 className="font-heading font-bold text-sm text-white mb-1.5">{type.label}</h3>
-                    <p className="text-sm text-white/35 leading-relaxed">{type.desc}</p>
+                    <h3 className="font-heading font-bold text-sm text-[#1C1F2E] mb-1.5">{type.label}</h3>
+                    <p className="text-sm text-[#475569] leading-relaxed">{type.desc}</p>
                   </motion.div>
                 );
               })}
@@ -181,14 +167,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── Form + Sidebar — Dark tech section ────────────────────────── */}
-      <section className="relative py-10 overflow-hidden" style={{ backgroundColor: "#0E1221" }}>
-        {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")", backgroundSize: "60px 60px" }} />
-        {/* Glowing orb accents */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 opacity-[0.03]" style={{ background: "radial-gradient(circle, #2563EB, transparent 60%)" }} />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 opacity-[0.03]" style={{ background: "radial-gradient(circle, #2563EB, transparent 60%)" }} />
-
+      {/* ── Form + Sidebar ────────────────────────────────────────────── */}
+      <section className="relative py-10 overflow-hidden bg-[#EEECEA]">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -211,19 +191,16 @@ export default function ContactPage() {
 
               {/* Sidebar */}
               <div className="space-y-5">
-                {/* What happens next — glass card */}
+                {/* What happens next */}
                 <motion.div
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="relative bg-white/[0.03] border border-white/[0.06] rounded-2xl p-7 overflow-hidden"
+                  className="relative bg-white border border-[#D8D5CF] rounded-2xl p-7 overflow-hidden shadow-sm"
                 >
-                  {/* Subtle top border glow */}
-                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
-
-                  <h3 className="font-heading font-bold text-base text-white mb-5">What Happens Next?</h3>
-                  <div className="h-px bg-white/[0.06] mb-5" />
+                  <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-5">What Happens Next?</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-5" />
                   <div className="space-y-5">
                     {nextSteps.map((step) => {
                       const Icon = step.icon;
@@ -236,8 +213,8 @@ export default function ContactPage() {
                             <Icon className="w-4 h-4" style={{ color: step.color }} strokeWidth={1.5} />
                           </div>
                           <div>
-                            <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-white/30">{step.step}</span>
-                            <p className="text-sm text-white/50 leading-relaxed mt-0.5">{step.text}</p>
+                            <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#7A7E8F]">{step.step}</span>
+                            <p className="text-sm text-[#475569] leading-relaxed mt-0.5">{step.text}</p>
                           </div>
                         </div>
                       );
@@ -251,20 +228,20 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="relative bg-white/[0.03] border border-white/[0.06] rounded-2xl p-7 overflow-hidden"
+                  className="relative bg-white border border-[#D8D5CF] rounded-2xl p-7 overflow-hidden shadow-sm"
                 >
                   <div className="flex items-start gap-4 mb-5">
                     <div className="w-10 h-10 rounded-xl bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center flex-shrink-0">
                       <Mail className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-sm text-white">Prefer Email?</h3>
-                      <p className="text-xs text-white/30 mt-0.5">Reach us directly anytime</p>
+                      <h3 className="font-heading font-bold text-sm text-[#1C1F2E]">Prefer Email?</h3>
+                      <p className="text-xs text-[#7A7E8F] mt-0.5">Reach us directly anytime</p>
                     </div>
                   </div>
                   <a
                     href="mailto:info@uptech.org.uk"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] hover:text-[#60a5fa] transition-colors"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
                   >
                     info@uptech.org.uk
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -277,16 +254,13 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="relative bg-gradient-to-br from-[#2563EB]/10 to-[#2563EB]/10 border border-[#2563EB]/20 rounded-2xl p-7 overflow-hidden"
+                  className="relative bg-[#2563EB]/5 border border-[#2563EB]/15 rounded-2xl p-7 overflow-hidden"
                 >
-                  {/* Glow */}
-                  <div className="absolute top-0 right-0 w-32 h-32 opacity-20" style={{ background: "radial-gradient(circle, #2563EB, transparent 70%)" }} />
-
                   <div className="relative">
                     <Briefcase className="w-6 h-6 text-[#2563EB] mb-3" strokeWidth={1.5} />
-                    <h3 className="font-heading font-bold text-sm text-white mb-1">Ready to Join?</h3>
-                    <p className="text-xs text-white/40 mb-5 leading-relaxed">Become a member and unlock the full UPTECH network.</p>
-                    <Button href="/membership/apply" variant="glass" size="sm" showArrow>
+                    <h3 className="font-heading font-bold text-sm text-[#1C1F2E] mb-1">Ready to Join?</h3>
+                    <p className="text-xs text-[#475569] mb-5 leading-relaxed">Become a member and unlock the full UPTECH network.</p>
+                    <Button href="/membership/apply" variant="primary" size="sm" showArrow>
                       Apply Now
                     </Button>
                   </div>
@@ -297,26 +271,21 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── CTA — Gradient dark section ──────────────────────────────── */}
-      <section className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
-        {/* Animated gradient line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-        {/* Glow orbs */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
-
+      {/* ── CTA ──────────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden py-12 bg-[#E8E6E3]">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Connect with Us</p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Let&apos;s Build the Future Together
               </h2>
-              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+              <p className="text-[#475569] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
                 Whether you represent a startup, corporation, government body, or academic institution — UPTECH is your gateway to the UK–Pakistan technology partnership.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button href="/membership/apply" variant="primary" size="lg" showArrow>Apply for Membership</Button>
-                <Button href="/about" variant="glass" size="lg" showArrow>About UPTECH</Button>
+                <Button href="/about" variant="secondary" size="lg" showArrow>About UPTECH</Button>
               </div>
             </div>
           </AnimatedSection>

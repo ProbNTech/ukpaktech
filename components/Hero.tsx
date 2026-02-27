@@ -119,14 +119,8 @@ export function Hero() {
         }}
       />
 
-      {/* Dot-grid texture overlay */}
-      <div
-        className="absolute inset-0 z-[11] pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-        }}
-      />
+      {/* Subtle overlay — non-repeating */}
+      <div className="absolute inset-0 z-[11] pointer-events-none opacity-[0.04] bg-gradient-to-br from-white/5 via-transparent to-white/5" />
 
       {/* Content wrapper */}
       <div className="relative z-20 flex items-center lg:h-screen px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-14 sm:pt-16 lg:pt-0 pb-14 lg:pb-0">

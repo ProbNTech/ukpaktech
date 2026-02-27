@@ -48,14 +48,8 @@ export function PageHero({
         }}
       />
 
-      {/* Dot-grid texture overlay */}
-      <div
-        className="absolute inset-0 z-[11] pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-        }}
-      />
+      {/* Subtle noise overlay — non-repeating */}
+      <div className="absolute inset-0 z-[11] pointer-events-none opacity-[0.04] bg-gradient-to-br from-white/5 via-transparent to-white/5" />
 
       {/* Floating gradient orbs */}
       <motion.div

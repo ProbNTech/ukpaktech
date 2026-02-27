@@ -40,10 +40,9 @@ const itemFade = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
-/* ─── Grid pattern background ─── */
+/* ─── Grid pattern background (unused — kept for reference) ─── */
 const gridPatternStyle = {
-  backgroundImage:
-    "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
+  backgroundImage: "none",
   backgroundSize: "40px 40px",
 };
 
@@ -146,14 +145,13 @@ export default function MembershipApplicationForm() {
       <section className="relative">
         <div className="absolute inset-0">
           <Image
-            src="/image/membership-banner.jpg"
+            src="/image/london-images/professional-networking.jpg"
             alt="UPTECH Membership Application"
             fill
             className="object-cover"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F1A]/80 via-[#0B0F1A]/70 to-[#EEECEA]" />
-          <div className="absolute inset-0 opacity-[0.03]" style={gridPatternStyle} />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 pt-28 pb-14 text-center">
