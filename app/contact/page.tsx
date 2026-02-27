@@ -6,6 +6,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { ContactForm } from "@/components/ContactForm";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
+import { TubesCTA } from "@/components/TubesCTA";
 import {
   Mail, MapPin, Clock, Globe2, Users, Briefcase,
   Handshake, HelpCircle, ArrowUpRight, Send,
@@ -272,25 +273,23 @@ export default function ContactPage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden py-12 bg-[#E8E6E3]">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Connect with Us</p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Let&apos;s Build the Future Together
-              </h2>
-              <p className="text-[#475569] text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-                Whether you represent a startup, corporation, government body, or academic institution — UPTECH is your gateway to the UK–Pakistan technology partnership.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/membership/apply" variant="primary" size="lg" showArrow>Apply for Membership</Button>
-                <Button href="/about" variant="secondary" size="lg" showArrow>About UPTECH</Button>
-              </div>
+      <TubesCTA>
+        <AnimatedSection>
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">Connect with Us</p>
+            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
+              Let&apos;s Build the Future Together
+            </h2>
+            <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+              Whether you represent a startup, corporation, government body, or academic institution — UPTECH is your gateway to the UK–Pakistan technology partnership.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/membership/apply" variant="primary" size="lg" showArrow>Apply for Membership</Button>
+              <Button href="/about" variant="glass" size="lg" showArrow>About UPTECH</Button>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </AnimatedSection>
+      </TubesCTA>
     </div>
   );
 }

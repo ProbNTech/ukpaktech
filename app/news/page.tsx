@@ -9,6 +9,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Section } from "@/components/Section";
 import { NewsCard } from "@/components/NewsCard";
 import { Button } from "@/components/Button";
+import { TubesCTA } from "@/components/TubesCTA";
 import { articles } from "@/data/articles";
 import {
   ChevronRight, Newspaper, TrendingUp, Globe2, BookOpen,
@@ -521,105 +522,28 @@ export default function NewsPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-           CTA — Futuristic dark section with gradient glow effects
+           CTA — Animated tube cursor background
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative z-[2] overflow-hidden py-12 lg:py-16">
-        {/* Deep dark background */}
-        <div className="absolute inset-0 bg-[#0B0F1A]" />
-
-        {/* Animated gradient blobs */}
-        <div
-          className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] pointer-events-none opacity-30"
-          style={{
-            background: "radial-gradient(circle, rgba(37,99,235,0.4) 0%, transparent 70%)",
-            filter: "blur(80px)",
-          }}
-        />
-        <div
-          className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] pointer-events-none opacity-25"
-          style={{
-            background: "radial-gradient(circle, rgba(34,197,94,0.35) 0%, transparent 70%)",
-            filter: "blur(80px)",
-          }}
-        />
-        <div
-          className="absolute top-[40%] left-[40%] w-[300px] h-[300px] pointer-events-none opacity-15"
-          style={{
-            background: "radial-gradient(circle, rgba(34,197,94,0.3) 0%, transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
-
-        {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.04] bg-gradient-to-br from-[#2563EB]/10 via-transparent to-[#22C55E]/10" />
-
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              {/* Glowing accent line */}
-              <div
-                className="w-16 h-[2px] mb-6"
-                style={{
-                  background: "linear-gradient(90deg, #2563EB, #C41E3A, transparent)",
-                  boxShadow: "0 0 15px rgba(37,99,235,0.5), 0 0 30px rgba(37,99,235,0.2)",
-                }}
-              />
-
-              <p
-                className="text-sm font-bold uppercase tracking-[0.2em] mb-4"
-                style={{
-                  background: "linear-gradient(90deg, #2563EB, #C41E3A)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Stay Connected
-              </p>
-
-              <h2
-                className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
-                style={{
-                  background: "linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #2563EB 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Never Miss an Update
-              </h2>
-
-              <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
-                Join the UPTECH community to receive the latest news, policy updates,
-                and investment insights from the UK--Pakistan technology corridor.
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/membership"
-                  className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-full text-white text-sm font-semibold overflow-hidden transition-all duration-300"
-                  style={{
-                    background: "linear-gradient(135deg, #2563EB, #1d4ed8)",
-                    boxShadow: "0 0 30px rgba(37,99,235,0.3), 0 0 60px rgba(37,99,235,0.15), inset 0 1px 0 rgba(255,255,255,0.1)",
-                  }}
-                >
-                  {/* Hover shimmer */}
-                  <span
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    style={{
-                      background: "linear-gradient(135deg, transparent, rgba(255,255,255,0.1), transparent)",
-                    }}
-                  />
-                  <span className="relative z-10">Become a Member</span>
-                  <ChevronRight className="w-4 h-4 relative z-10" />
-                </Link>
-
-                <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
-              </div>
+      <TubesCTA>
+        <AnimatedSection>
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+              Stay Connected
+            </p>
+            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
+              Never Miss an Update
+            </h2>
+            <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+              Join the UPTECH community to receive the latest news, policy updates,
+              and investment insights from the UK–Pakistan technology corridor.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/membership" variant="primary" size="lg" showArrow>Become a Member</Button>
+              <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </AnimatedSection>
+      </TubesCTA>
     </div>
   );
 }

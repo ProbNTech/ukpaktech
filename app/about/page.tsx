@@ -6,6 +6,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { PageHero } from "@/components/PageHero";
 import Image from "next/image";
+import { TubesCTA } from "@/components/TubesCTA";
 import { Shield, Globe2, Target, Lightbulb, Heart, CheckCircle2, Award, Network, Rocket, BookOpen, Users, Briefcase, GraduationCap, Handshake, TrendingUp, Zap, Cpu, Leaf, Radio, Microscope, Wheat } from "lucide-react";
 
 const brandColors = ["#2563EB", "#C41E3A", "#22C55E"];
@@ -282,45 +283,23 @@ export default function AboutPage() {
       </Section>
 
       {/* CTA */}
-      <section className="relative z-[2] overflow-hidden bg-[#0B0F1A] text-white py-14 md:py-20">
-        {/* Background image */}
-        <Image
-          src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2400&q=85&auto=format&fit=crop"
-          alt=""
-          fill
-          className="object-cover opacity-40"
-          sizes="100vw"
-        />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(135deg, rgba(10,14,30,0.85) 0%, rgba(10,14,30,0.60) 50%, rgba(10,14,30,0.80) 100%)" }} />
-        {/* Animated gradient orbs */}
-        <div className="absolute top-[-30%] left-[-10%] w-[500px] h-[500px] z-[2] pointer-events-none opacity-25 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, #2563EB 0%, transparent 70%)" }} />
-        <div className="absolute bottom-[-20%] right-[-5%] w-[400px] h-[400px] z-[2] pointer-events-none opacity-20 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, #22C55E 0%, transparent 70%)" }} />
-        <div className="absolute top-[20%] right-[20%] w-[300px] h-[300px] z-[2] pointer-events-none opacity-15 rounded-full blur-3xl" style={{ background: "radial-gradient(circle, #C41E3A 0%, transparent 70%)" }} />
-        {/* Grid pattern */}
-        <div className="absolute inset-0 z-[3] opacity-[0.03] pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
-
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold text-[#60a5fa] uppercase tracking-wider mb-4">Join Us</p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Ready to Be Part of the Movement?
-              </h2>
-              <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
-                Join UPTECH and connect with technology leaders, entrepreneurs, and innovators shaping the UK–Pakistan tech corridor.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
-              </div>
+      <TubesCTA>
+        <AnimatedSection>
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">Join Us</p>
+            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
+              Ready to Be Part of the Movement?
+            </h2>
+            <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+              Join UPTECH and connect with technology leaders, entrepreneurs, and innovators shaping the UK–Pakistan tech corridor.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
+              <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
             </div>
-          </AnimatedSection>
-        </div>
-
-        {/* Bottom accent line */}
-        <div className="absolute bottom-0 left-0 right-0 h-[3px] z-30 bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#E11D48]" />
-      </section>
+          </div>
+        </AnimatedSection>
+      </TubesCTA>
     </div>
   );
 }

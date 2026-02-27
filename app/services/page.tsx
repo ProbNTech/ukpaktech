@@ -4,6 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { ServiceGrid } from "@/components/ServiceGrid";
+import { TubesCTA } from "@/components/TubesCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -82,14 +83,14 @@ export default function ServicesPage() {
       </Section>
 
       {/* CTA */}
-      <Section variant="dark">
+      <TubesCTA>
         <AnimatedSection>
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-4">Get Started</p>
-            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+            <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">Get Started</p>
+            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
               Ready to Access Our Full Suite of Services?
             </h2>
-            <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+            <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
               Join UPTECH and unlock access to business networks, mentorship, investment support, marketing, employment, and more.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -98,7 +99,7 @@ export default function ServicesPage() {
             </div>
           </div>
         </AnimatedSection>
-      </Section>
+      </TubesCTA>
     </div>
   );
 }

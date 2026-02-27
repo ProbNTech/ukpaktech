@@ -5,6 +5,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
+import { TubesCTA } from "@/components/TubesCTA";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
@@ -330,45 +331,29 @@ export default function SkillDevelopmentCenterPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=2400&q=85&auto=format&fit=crop" alt="" fill className="object-cover" sizes="100vw" />
-        </div>
-        <div className="absolute inset-0 bg-[#0B0F1A]/80" />
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
-                Get Started
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Ready to Transform Your Career?
-              </h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl">
-                Join UPTECH&apos;s Skill Development Center and unlock your potential in the tech industry. Start your journey today with world-class training and mentorship.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-                  Apply for Training
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Partner with UPTECH
-                </Button>
-              </div>
+      <TubesCTA>
+        <AnimatedSection>
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-5 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+              Get Started
+            </p>
+            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
+              Ready to Transform Your Career?
+            </h2>
+            <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+              Join UPTECH&apos;s Skill Development Center and unlock your potential in the tech industry. Start your journey today with world-class training and mentorship.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/membership/apply" variant="primary" size="lg" showArrow>
+                Apply for Training
+              </Button>
+              <Button href="/contact" variant="glass" size="lg" showArrow>
+                Partner with UPTECH
+              </Button>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </AnimatedSection>
+      </TubesCTA>
     </div>
   );
 }
