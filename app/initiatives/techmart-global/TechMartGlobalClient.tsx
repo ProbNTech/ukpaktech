@@ -181,7 +181,7 @@ export default function TechMartGlobalClient() {
 
       {/* ── Stats Bar ──────────────────────────────────────────────── */}
       <section className="bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -208,7 +208,7 @@ export default function TechMartGlobalClient() {
 
       {/* ── What is TechMart Global ────────────────────────────────── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               {/* Text content - 3 cols */}
@@ -275,7 +275,7 @@ export default function TechMartGlobalClient() {
 
       {/* ── Who It's For ───────────────────────────────────────────── */}
       <section className="relative bg-white">
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader
               label="Who It's For"
@@ -334,7 +334,7 @@ export default function TechMartGlobalClient() {
 
       {/* ── What It Enables / Features ─────────────────────────────── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader
               label="Capabilities"
@@ -411,7 +411,7 @@ export default function TechMartGlobalClient() {
 
       {/* ── UK Market Access ───────────────────────────────────────── */}
       <section className="relative bg-white">
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               {/* Text content */}
@@ -487,7 +487,7 @@ export default function TechMartGlobalClient() {
 
       {/* ── How It Works ───────────────────────────────────────────── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader
               label="Process"
@@ -573,7 +573,7 @@ export default function TechMartGlobalClient() {
 
       {/* ── Council Alignment ──────────────────────────────────────── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader
               label="Official Initiative"
@@ -673,7 +673,7 @@ export default function TechMartGlobalClient() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto text-center">
               {/* Label */}

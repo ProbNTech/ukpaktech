@@ -82,7 +82,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── Stats Bar ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -112,7 +112,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── Trade Delegation Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="max-w-4xl mb-8">
               <SectionHeader
@@ -157,7 +157,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── Exhibition Events Section ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="max-w-4xl mb-8">
               <SectionHeader
@@ -212,7 +212,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── What We Offer ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
@@ -252,7 +252,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── Benefits & How It Works ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
@@ -310,7 +310,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── CEO at Summit ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               <div>
@@ -348,7 +348,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-10">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-5">

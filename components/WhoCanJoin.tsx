@@ -112,7 +112,7 @@ export function WhoCanJoin() {
 
   return (
     <section className="pt-10 pb-8 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
         {/* Header */}
         <div className="mb-14">
           <motion.span

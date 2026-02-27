@@ -98,7 +98,7 @@ export default function JobPortalPage() {
 
       {/* ── Stats Bar ── */}
       <section className="bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -125,7 +125,7 @@ export default function JobPortalPage() {
 
       {/* ── Who It's For ── */}
       <section id="who-its-for" className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-12 lg:py-18">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
           <AnimatedSection>
             {/* Section header */}
             <div className="mb-8">
@@ -237,7 +237,7 @@ export default function JobPortalPage() {
 
       {/* ── Portal Features ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-12 lg:py-18">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
           <AnimatedSection>
             {/* Section header */}
             <div className="mb-8">
@@ -314,7 +314,7 @@ export default function JobPortalPage() {
 
       {/* ── How It Works ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-12 lg:py-18">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
           <AnimatedSection>
             {/* Section header */}
             <div className="mb-8">
@@ -421,7 +421,7 @@ export default function JobPortalPage() {
 
       {/* ── Key Sectors ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-12 lg:py-18">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
           <AnimatedSection>
             {/* Section header */}
             <div className="mb-8">
@@ -506,7 +506,7 @@ export default function JobPortalPage() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 lg:py-18">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">

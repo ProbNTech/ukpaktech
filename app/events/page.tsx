@@ -112,7 +112,7 @@ export default function EventsPage() {
       {/*  STATS BAR                                                    */}
       {/* ============================================================ */}
       <section className="bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
             {stats.map((stat, i) => (
               <motion.div

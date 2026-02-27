@@ -68,7 +68,7 @@ export default function DigitalMarketingPage() {
 
       {/* ── Stats Bar ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -99,7 +99,7 @@ export default function DigitalMarketingPage() {
       {/* ── Intro Section ── */}
       <section className="relative bg-[#EEECEA]">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#C41E3A]" />
-        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div>
               <SectionHeader label="Capabilities" title="Practical, Results-Driven Marketing for Technology Companies" color="blue" />
@@ -118,7 +118,7 @@ export default function DigitalMarketingPage() {
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Services" title="What We Offer" subtitle="Five core marketing services tailored for tech SMEs, scale-ups, and established firms." color="green" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -155,7 +155,7 @@ export default function DigitalMarketingPage() {
       {/* ── How It Works ── */}
       <section className="relative bg-[#EEECEA]">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Process" title="How It Works" subtitle="From onboarding to measurable growth — a clear four-step process." color="blue" />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -193,7 +193,7 @@ export default function DigitalMarketingPage() {
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#C41E3A]" />
-        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Impact" title="Why It Matters" subtitle="The UK and Pakistan technology sectors present significant opportunities for collaboration, outsourcing, innovation partnerships, and product expansion. The Digital Product Marketing Hub helps members:" color="red" />
             <ul className="space-y-0 max-w-2xl">
@@ -211,7 +211,7 @@ export default function DigitalMarketingPage() {
       {/* ── FAQ ── */}
       <section className="relative bg-[#EEECEA]">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
             <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Common questions about the Digital Product Marketing Hub." color="red" />
             <FAQSection faqs={faqs} />
@@ -234,7 +234,7 @@ export default function DigitalMarketingPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Get Started</p>

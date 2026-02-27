@@ -73,7 +73,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Trust Strip ── */}
       <section className="relative bg-[#1C1F2E] border-b border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-6 py-5">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-5">
           <div className="flex flex-wrap gap-6 items-center">
             {trustItems.map((item) => (
               <div key={item} className="flex items-center gap-2 text-sm text-white/50">
@@ -87,7 +87,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
@@ -110,7 +110,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Programs Grid ── */}
       <section className="relative bg-white" id="programs">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <SectionHeader label="Training Programs" title="Our Programs" subtitle="Comprehensive skill development initiatives designed to accelerate your tech career." color="green" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -151,7 +151,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Learning Pathway ── */}
       <section className="relative bg-[#E8E6E3]" id="pathway">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <SectionHeader label="Your Journey" title="Learning Pathway" subtitle="A structured journey from assessment to career launch." color="blue" />
             <div className="grid md:grid-cols-4 gap-6">
@@ -207,7 +207,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Flagship Tracks ── */}
       <section className="relative bg-[#EEECEA]" id="tracks">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <SectionHeader label="Flagship Tracks" title="Intensive Training Tracks" subtitle="Intensive programs designed to build expertise in high-demand tech domains." color="red" />
             <div className="grid md:grid-cols-3 gap-6">
@@ -256,7 +256,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Outcomes / Stats Bar ── */}
       <section className="bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <AnimatedSection>
             <SectionHeader label="Results" title="Program Outcomes" subtitle="Measurable results that accelerate your career growth." color="blue" />
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -286,7 +286,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── FAQ ── */}
       <section className="relative bg-[#E8E6E3]" id="faq">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Everything you need to know about our programs." color="blue" />
             <div className="max-w-3xl">
@@ -345,7 +345,7 @@ export default function SkillDevelopmentCenterPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-10">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">

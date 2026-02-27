@@ -96,7 +96,7 @@ export default function AITechProgramsPage() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div>
               <SectionHeader
@@ -117,7 +117,7 @@ export default function AITechProgramsPage() {
 
       {/* ── Programs Grid ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <SectionHeader
               label="Our Programs"
@@ -163,7 +163,7 @@ export default function AITechProgramsPage() {
 
       {/* ── How It Works ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <SectionHeader
               label="Process"
@@ -212,7 +212,7 @@ export default function AITechProgramsPage() {
 
       {/* ── Technology Focus Areas ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <SectionHeader
               label="What We Do"
@@ -284,7 +284,7 @@ export default function AITechProgramsPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-10">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">

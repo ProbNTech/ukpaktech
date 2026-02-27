@@ -79,7 +79,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
@@ -115,7 +115,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── Who We Connect ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
@@ -155,7 +155,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── CEO at Conference ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-center">
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[#D8D5CF] shadow-md">
@@ -182,7 +182,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── Recognition ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
@@ -224,7 +224,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── Unlock Opportunities ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
@@ -264,7 +264,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── Membership & Attendees ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
@@ -306,7 +306,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── Partners ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
@@ -355,7 +355,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-10">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">

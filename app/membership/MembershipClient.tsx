@@ -315,7 +315,7 @@ export default function MembershipClient() {
       ═══════════════════════════════════════════════════════════════ */}
       <section className="relative bg-[#EEECEA] overflow-hidden">
 
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#D8D5CF] bg-white shadow-sm mb-5">
@@ -376,7 +376,7 @@ export default function MembershipClient() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader label="Who Should Join" title="Who Should Join" color="red" />
 
@@ -447,7 +447,7 @@ export default function MembershipClient() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader label="Membership Benefits" title="Membership Benefits" color="green" />
 
@@ -515,7 +515,7 @@ export default function MembershipClient() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader label="Membership Levels" title="Membership Tiers & Benefits" color="blue" subtitle="Choose the membership tier that best fits your organisation and goals." />
 
@@ -561,7 +561,7 @@ export default function MembershipClient() {
       <section className="relative bg-[#EEECEA] overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='black' stroke-width='0.5'/%3E%3C/svg%3E")`, backgroundSize: "40px 40px" }} />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader label="Eligibility" title="Eligibility Criteria" color="red" />
 
@@ -649,7 +649,7 @@ export default function MembershipClient() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-4xl mx-auto">
               <SectionHeader label="Membership Fees" title="Membership Fees" color="red" />
@@ -696,7 +696,7 @@ export default function MembershipClient() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader label="Discounts" title="Membership Discounts" color="green" />
 
@@ -770,7 +770,7 @@ export default function MembershipClient() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader label="Cross-Border Support" title="Cross-Border Market Entry" color="red" />
 
@@ -854,7 +854,7 @@ export default function MembershipClient() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="mx-auto">
               <SectionHeader label="Why It Matters" title="Why Membership Matters" color="green" subtitle="Membership with the Council provides more than just networking, it's a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Our members gain practical support, strategic connections, and market insights that accelerate business success and cross-border collaboration. Join today. Connect, grow, and lead the future of UK-Pakistan technology." />
@@ -878,7 +878,7 @@ export default function MembershipClient() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="relative bg-white border border-[#D8D5CF] shadow-sm rounded-2xl p-10 lg:p-12 backdrop-blur-sm overflow-hidden">
               {/* Card inner glows */}

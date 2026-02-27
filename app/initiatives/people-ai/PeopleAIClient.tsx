@@ -73,7 +73,7 @@ export default function PeopleAIClient() {
 
       {/* ── Stats Bar ── */}
       <section className="bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -100,7 +100,7 @@ export default function PeopleAIClient() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div>
               <SectionHeader
@@ -121,7 +121,7 @@ export default function PeopleAIClient() {
 
       {/* ── Platform Capabilities ── */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader
               label="Capabilities"
@@ -191,7 +191,7 @@ export default function PeopleAIClient() {
 
       {/* ── How It Works ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader
               label="Your Journey"
@@ -279,7 +279,7 @@ export default function PeopleAIClient() {
 
       {/* ── Use Cases ── */}
       <section className="relative bg-[#F5F4F2]">
-        <div className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader
               label="Impact"
@@ -361,7 +361,7 @@ export default function PeopleAIClient() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-14 lg:py-20">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
