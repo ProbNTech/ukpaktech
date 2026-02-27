@@ -89,7 +89,7 @@ export function Hero() {
 
   return (
     <section className="relative z-[2] w-full min-h-0 lg:h-screen overflow-hidden bg-[#0B0F1A]">
-      {/* Background videos — only preload current + next to save bandwidth */}
+      {/* Background videos */}
       {slides.map((s, index) => {
         const isActive = index === currentIndex;
         const isNext = index === (currentIndex + 1) % slides.length;
@@ -119,6 +119,15 @@ export function Hero() {
         }}
       />
 
+      {/* Dot-grid texture overlay */}
+      <div
+        className="absolute inset-0 z-[11] pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
+
       {/* Content wrapper */}
       <div className="relative z-20 flex items-center lg:h-screen px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-14 sm:pt-16 lg:pt-0 pb-14 lg:pb-0">
         <div className="w-full max-w-full lg:max-w-[55%]">
@@ -135,22 +144,38 @@ export function Hero() {
                 {slide.label}
               </p>
 
-              {/* Headline */}
+              {/* Headline — word-by-word blur-in */}
               <h1
                 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-5 sm:mb-7"
                 style={{ lineHeight: 1.25 }}
               >
-                {slide.headline}
+                {slide.headline.split(" ").map((word, i) => (
+                  <motion.span
+                    key={i}
+                    className="inline-block mr-[0.3em]"
+                    initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ duration: 0.35, delay: 0.15 + i * 0.035, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
               </h1>
 
               {/* Buttons */}
-              <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-6 mb-8 sm:mb-10">
+              <motion.div
+                className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-6 mb-8 sm:mb-10"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              >
                 <Link
                   href={slide.cta.href}
-                  className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#C41E3A] text-white font-bold text-sm sm:text-base hover:bg-[#A01830] transition-colors duration-200"
+                  className="relative overflow-hidden inline-flex items-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#C41E3A] text-white font-bold text-sm sm:text-base hover:bg-[#A01830] transition-all duration-300 group"
                 >
                   {slide.cta.text}
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" aria-hidden="true" />
                 </Link>
                 <Link
                   href={slide.secondary.href}
@@ -159,7 +184,7 @@ export function Hero() {
                   {slide.secondary.text}
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-              </div>
+              </motion.div>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -169,12 +194,12 @@ export function Hero() {
       <button
         onClick={togglePlayPause}
         aria-label={isPlaying ? "Pause video" : "Play video"}
-        className="absolute bottom-6 right-6 z-30 w-11 h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+        className="absolute bottom-6 right-6 z-30 w-11 h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/30 hover:scale-110 transition-all duration-300"
       >
         {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
       </button>
 
-      {/* Video indicator dots */}
+      {/* Video indicator dots — pill style with width animation */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
         {slides.map((_, index) => (
           <button
@@ -183,7 +208,7 @@ export function Hero() {
             aria-label={`Switch to slide ${index + 1}`}
             className={`h-2 rounded-full transition-all duration-500 ${
               index === currentIndex
-                ? "bg-[#22C55E] w-6"
+                ? "bg-[#22C55E] w-8"
                 : "bg-white/40 w-2 hover:bg-white/60"
             }`}
           />

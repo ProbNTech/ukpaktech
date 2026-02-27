@@ -52,11 +52,11 @@ export function ImpactStats() {
         return (
           <motion.div
             key={stat.label}
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-white border border-[#D8D5CF] rounded p-7 flex flex-col group hover:border-[#2563EB]/40 transition-colors duration-300"
+            transition={{ duration: 0.6, delay: index * 0.12 }}
+            className="bg-white border border-[#D8D5CF] rounded p-7 flex flex-col group hover:border-[#2563EB]/40 hover:shadow-lg transition-all duration-300"
           >
             <Icon className="h-5 w-5 mb-5" style={{ color: stat.color }} />
             <div
@@ -72,7 +72,14 @@ export function ImpactStats() {
               )}
             </div>
             <div className="text-xs font-bold uppercase tracking-[0.15em] text-[#1C1F2E] mb-3">{stat.label}</div>
-            <div className="h-px bg-[#1C1F2E]/15 mb-3" />
+            <motion.div
+              className="h-px mb-3"
+              style={{ background: `linear-gradient(90deg, ${stat.color}, ${stat.color}40)` }}
+              initial={{ scaleX: 0, originX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 + index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+            />
             <p className="text-sm leading-relaxed text-[#3D4152]">{stat.description}</p>
           </motion.div>
         );

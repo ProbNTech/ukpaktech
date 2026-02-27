@@ -62,7 +62,7 @@ export function Footer() {
                       <a
                         key={social.label}
                         href={social.href}
-                        className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:bg-[#22C55E]/30 hover:border-[#22C55E]/50 transition-all duration-300"
+                        className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:bg-[#22C55E]/30 hover:border-[#22C55E]/50 hover:shadow-[0_0_15px_rgba(34,197,94,0.3)] hover:scale-110 transition-all duration-300"
                         aria-label={social.label}
                       >
                         <Icon className="w-4 h-4" />

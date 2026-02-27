@@ -157,9 +157,9 @@ export default function UKPakistanTechnologyPartnershipClient() {
       <section className="relative bg-[#E8E6E3]">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[#D8D5CF] shadow-md">
-                <Image src="/image/ceo/khalil-choudhary-conference.jpg" alt="Khalil Choudhary at UK-Pakistan technology conference" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+            <div className="grid lg:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
+              <div className="relative aspect-[4/3] max-h-[480px] overflow-hidden rounded-xl border border-[#D8D5CF] shadow-md">
+                <Image src="/image/ceo/khalil-choudhary-conference.jpg" alt="Khalil Choudhary at UK-Pakistan technology conference" fill className="object-cover object-top" sizes="(max-width: 1024px) 100vw, 600px" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
               <div>

@@ -77,8 +77,8 @@ function InitiativeCard({ initiative, index, isInView }: { initiative: typeof in
   return (
     <motion.div
       ref={cardRef}
-      initial={{ opacity: 0, y: 50, scale: 0.95 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 50, scale: 0.95 }}
+      initial={{ opacity: 0, y: 50, scale: 0.95, filter: "blur(6px)" }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" } : { opacity: 0, y: 50, scale: 0.95, filter: "blur(6px)" }}
       transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -8, scale: 1.02 }}
       onMouseMove={handleMouseMove}
@@ -113,6 +113,8 @@ function InitiativeCard({ initiative, index, isInView }: { initiative: typeof in
               </div>
             )}
 
+            {/* Shimmer sweep on hover */}
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none z-10" />
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-transparent to-transparent group-hover:from-[#2563EB]/50 group-hover:via-[#22C55E]/50 group-hover:to-[#2563EB]/50 transition-all duration-500" />
           </div>
 

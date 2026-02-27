@@ -76,6 +76,8 @@
 
   html {
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #C5C2BE #E8E6E3;
   }
 
   body {
@@ -206,6 +208,54 @@
     animation: gradient-shift 4s ease infinite;
   }
 
+  /* Shimmer sweep for buttons and cards */
+  @keyframes shimmer-sweep {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Subtle floating for background orbs */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  /* Pulse glow for interactive elements */
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+    50% { box-shadow: 0 0 20px 4px rgba(37, 99, 235, 0.1); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #E8E6E3;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #C5C2BE;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A5A2A0;
+  }
+
   ::selection {
     background-color: rgba(37, 99, 235, 0.15);
     color: inherit;
@@ -228,7 +278,10 @@
     scroll-behavior: auto !important;
   }
 
-  .animate-scroll-smooth {
+  .animate-scroll-smooth,
+  .animate-float,
+  .animate-float-slow,
+  .animate-pulse-glow {
     animation: none !important;
   }
 }

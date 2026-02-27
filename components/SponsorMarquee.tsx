@@ -50,7 +50,7 @@ export function SponsorMarquee() {
           {duplicatedLogos.map((logo, index) => (
             <div
               key={`logo-${index}`}
-              className="flex items-center justify-center h-20 w-40 shrink-0 bg-[#1a2b5e] rounded-lg border border-[#2563eb]/30 p-4"
+              className="flex items-center justify-center h-20 w-40 shrink-0 bg-[#1a2b5e] rounded-lg border border-[#2563eb]/30 p-4 transition-all duration-300 hover:scale-105 hover:border-[#2563eb]/60 hover:shadow-[0_0_20px_rgba(37,99,235,0.2)]"
             >
               <Image src={logo.src} alt={logo.alt} width={160} height={80} className="object-contain h-full w-full" loading="lazy" />
             </div>

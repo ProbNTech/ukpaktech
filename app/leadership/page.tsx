@@ -215,8 +215,8 @@ function GovernanceSection({
       transition={{ duration: 0.5, delay: 0.1 }}
       className="relative"
     >
-      <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg" style={{ border: `2px solid ${color}30` }}>
-        <Image src={image} alt={imageAlt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+      <div className="relative aspect-[4/3] max-h-[420px] overflow-hidden rounded-lg shadow-lg" style={{ border: `2px solid ${color}30` }}>
+        <Image src={image} alt={imageAlt} fill className="object-cover object-top" sizes="(max-width: 1024px) 100vw, 560px" />
       </div>
       {/* Corner accent */}
       <div className="absolute -bottom-2 -z-10 w-20 h-20 rounded-lg" style={{ background: `${color}15`, [imageLeft ? 'right' : 'left']: '-8px' }} />
@@ -226,7 +226,7 @@ function GovernanceSection({
   return (
     <section id={id} className="scroll-mt-24">
       <Section variant={variant}>
-        <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
+        <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
           <div className={imageLeft ? "order-1" : "order-2 lg:order-1"}>{imageLeft ? imageContent : textContent}</div>
           <div className={imageLeft ? "order-2" : "order-1 lg:order-2"}>{imageLeft ? textContent : imageContent}</div>
         </div>

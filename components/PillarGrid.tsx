@@ -1,5 +1,9 @@
+"use client";
+
 import { Card } from "./Card";
 import { Network, Users, TrendingUp, Cpu, FileText } from "lucide-react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
 
 const pillars = [
   {
@@ -40,27 +44,45 @@ const pillars = [
 ];
 
 export function PillarGrid() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-80px" });
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+    <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
       {pillars.map((pillar, index) => {
         const Icon = pillar.icon;
         return (
-          <Card key={index} hover className="h-full group">
-            <div className="flex items-start justify-between mb-6">
-              <div
-                className="w-14 h-14 rounded-xl flex items-center justify-center border"
-                style={{
-                  backgroundColor: `${pillar.color}10`,
-                  borderColor: `${pillar.color}25`,
-                }}
-              >
-                <Icon className="w-7 h-7" style={{ color: pillar.color }} />
+          <motion.div
+            key={index}
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30, filter: "blur(6px)" }}
+            animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Card hover className="h-full group">
+              <div className="flex items-start justify-between mb-6">
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center border"
+                  style={{
+                    backgroundColor: `${pillar.color}10`,
+                    borderColor: `${pillar.color}25`,
+                  }}
+                >
+                  <Icon className="w-7 h-7" style={{ color: pillar.color }} />
+                </div>
+                <motion.span
+                  className="text-gray-200 font-heading font-bold text-3xl"
+                  initial={shouldReduceMotion ? {} : { opacity: 0, x: 10 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                >
+                  {pillar.number}
+                </motion.span>
               </div>
-              <span className="text-gray-200 font-heading font-bold text-3xl">{pillar.number}</span>
-            </div>
-            <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A] leading-tight">{pillar.title}</h3>
-            <p className="text-[#475569] leading-relaxed text-[15px]">{pillar.description}</p>
-          </Card>
+              <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A] leading-tight">{pillar.title}</h3>
+              <p className="text-[#475569] leading-relaxed text-[15px]">{pillar.description}</p>
+            </Card>
+          </motion.div>
         );
       })}
     </div>

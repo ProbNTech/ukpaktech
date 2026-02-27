@@ -312,7 +312,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
       <section className="relative bg-[#EEECEA]">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
               <div>
                 <SectionHeader
                   label="On the Ground"
@@ -323,8 +323,8 @@ export default function TradeDelegationsAndExhibitionsClient() {
                   UPTECH Founder &amp; CEO Khalil Choudhary personally leads trade delegations and represents the Council at international summits, ensuring our members have direct access to decision-makers and opportunities at the highest level.
                 </p>
               </div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-[#D8D5CF] shadow-md">
-                <Image src="/image/ceo/khalil-choudhary-summit.jpg" alt="Khalil Choudhary at international business summit" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+              <div className="relative aspect-[4/3] max-h-[480px] overflow-hidden rounded-xl border border-[#D8D5CF] shadow-md">
+                <Image src="/image/ceo/khalil-choudhary-summit.jpg" alt="Khalil Choudhary at international business summit" fill className="object-cover object-top" sizes="(max-width: 1024px) 100vw, 600px" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
             </div>

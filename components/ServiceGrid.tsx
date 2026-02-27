@@ -63,13 +63,15 @@ function ServiceCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 40, filter: "blur(6px)" }}
+      animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y: 40, filter: "blur(6px)" }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
       className="group"
     >
       <Link href={service.href} className="block h-full">
         <div className="relative h-full bg-white rounded border border-gray-100 overflow-hidden shadow-md hover:shadow-xl hover:border-[#2563EB]/20 hover:-translate-y-1 transition-all duration-500 p-6">
+          {/* Animated bottom border on hover */}
+          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#2563EB] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
           <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 border bg-[#2563EB]/5 border-[#2563EB]/15 group-hover:scale-110 transition-transform duration-500">
             <Icon className="w-6 h-6 text-[#2563EB]" />
           </div>

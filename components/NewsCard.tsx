@@ -23,8 +23,8 @@ export interface NewsCardProps {
 export function NewsCard({ slug, title, category, date, image, excerpt, index = 0 }: NewsCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
     >
@@ -35,13 +35,16 @@ export function NewsCard({ slug, title, category, date, image, excerpt, index = 
         {/* Image — 16:9, slight zoom on hover */}
         <div className="relative aspect-[16/9] overflow-hidden bg-[#1C1F2E] mb-5 flex items-center justify-center">
           {image ? (
-            <Image
-              src={image}
-              alt={title}
-              fill
-              className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
+            <>
+              <Image
+                src={image}
+                alt={title}
+                fill
+                className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-[#2563EB]/0 group-hover:bg-[#2563EB]/10 transition-colors duration-500 z-10" />
+            </>
           ) : (
             <div
               className="absolute inset-0 opacity-10"
@@ -74,8 +77,10 @@ export function NewsCard({ slug, title, category, date, image, excerpt, index = 
           </span>
         </div>
 
-        {/* Bottom rule — thin dark line, the signature editorial element */}
-        <div className="h-px w-full bg-[#1C1F2E]/20 group-hover:bg-[#2563EB]/60 transition-colors duration-300" />
+        {/* Bottom rule — animated fill on hover */}
+        <div className="h-px w-full bg-[#1C1F2E]/20 relative overflow-hidden">
+          <div className="absolute inset-y-0 left-0 bg-[#2563EB] w-0 group-hover:w-full transition-all duration-500" />
+        </div>
       </Link>
     </motion.div>
   );

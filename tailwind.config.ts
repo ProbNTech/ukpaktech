@@ -80,6 +80,26 @@ const config: Config = {
         "glow-primary": "var(--shadow-glow-primary)",
         "glow-hover": "var(--shadow-glow-hover)",
       },
+      keyframes: {
+        "shimmer-sweep": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-12px)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(37, 99, 235, 0)" },
+          "50%": { boxShadow: "0 0 20px 4px rgba(37, 99, 235, 0.1)" },
+        },
+      },
+      animation: {
+        shimmer: "shimmer-sweep 2s ease-in-out infinite",
+        float: "float 6s ease-in-out infinite",
+        "float-slow": "float 8s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+      },
     },
   },
   plugins: [],

@@ -235,7 +235,7 @@ export default function Home() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
+          <AnimatedSection animation="blur-in">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left — text content */}
               <div>
@@ -277,7 +277,7 @@ export default function Home() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#E8E6E3" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
+          <AnimatedSection animation="blur-in">
             <SectionHeader
               label="Membership"
               title="Who can join?"
@@ -330,7 +330,7 @@ export default function Home() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
+          <AnimatedSection animation="blur-in">
             <SectionHeader
               label="Explore our work"
               title="What We Do"
@@ -433,7 +433,7 @@ export default function Home() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#E8E6E3" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
+          <AnimatedSection animation="blur-in">
             <SectionHeader
               label="Discover more"
               title="More from UPTECH"
@@ -530,7 +530,7 @@ export default function Home() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#E8E6E3" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
+          <AnimatedSection animation="blur-in">
             <SectionHeader
               label="Stay informed"
               title="News &amp; Insights"
@@ -582,7 +582,7 @@ export default function Home() {
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
+          <AnimatedSection animation="blur-in">
             <SectionHeader
               label="Our impact"
               title="Impact Momentum"
@@ -607,7 +607,7 @@ export default function Home() {
           sizes="100vw"
         />
         <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
+          <AnimatedSection animation="blur-in">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-4">
                 Join UPTECH
