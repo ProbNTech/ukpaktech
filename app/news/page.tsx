@@ -450,7 +450,6 @@ export default function NewsPage() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
                   >
-                    <div className="h-[3px] w-full" style={{ background: `linear-gradient(90deg, ${topic.color}, ${topic.color}60)` }} />
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-4">
                         <div

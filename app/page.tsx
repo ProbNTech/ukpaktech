@@ -381,7 +381,6 @@ export default function Home() {
                   <div key={card.num} className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                   <Link href={card.href} className="group relative block bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
-                    <div className="h-[3px] w-full" style={{ background: `linear-gradient(90deg, ${card.color}, ${card.color}60)` }} />
                     <div className="p-6 lg:p-7">
                       <div className="flex items-center justify-between mb-5">
                         <div className="relative">
@@ -413,7 +412,6 @@ export default function Home() {
                   <div key={card.num} className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                   <Link href={card.href} className="group relative block bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
-                    <div className="h-[3px] w-full" style={{ background: `linear-gradient(90deg, ${card.color}, ${card.color}60)` }} />
                     <div className="p-6 lg:p-7 flex items-start gap-5">
                       <div className="relative flex-shrink-0">
                         <div className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500" style={{ background: card.color }} />

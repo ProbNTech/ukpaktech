@@ -180,11 +180,6 @@ export default function FundingAndGrantsClient() {
                   transition={{ duration: 0.4, delay: i * 0.08 }}
                   className="relative text-center bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                 >
-                  {/* Colored top border */}
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
-                    style={{ background: `linear-gradient(to right, ${color}, ${color}60)` }}
-                  />
                   <p
                     className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
                     style={{ color }}
@@ -228,11 +223,6 @@ export default function FundingAndGrantsClient() {
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative rounded-2xl bg-white shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg transition-all duration-500 overflow-hidden">
-                    {/* Gradient top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px]"
-                      style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}40)` }}
-                    />
                     {/* Icon */}
                     <div className="relative mb-5">
                       <div
@@ -281,11 +271,6 @@ export default function FundingAndGrantsClient() {
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative rounded-2xl bg-white shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg transition-all duration-500 overflow-hidden">
-                    {/* Gradient top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px]"
-                      style={{ background: `linear-gradient(to right, ${opp.color}, ${opp.color}40)` }}
-                    />
                     {/* Icon */}
                     <div className="relative mb-5">
                       <div
@@ -361,12 +346,6 @@ export default function FundingAndGrantsClient() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative rounded-2xl bg-white shadow-sm p-8 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 overflow-hidden"
                   >
-                    {/* Gradient top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px]"
-                      style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}40)` }}
-                    />
-
                     {/* Stage label + icon row */}
                     <div className="relative flex items-center gap-4 mb-6">
                       <div className="relative">
@@ -440,12 +419,6 @@ export default function FundingAndGrantsClient() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative rounded-2xl bg-white shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg transition-all duration-500 overflow-hidden"
                   >
-                    {/* Gradient top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px]"
-                      style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}40)` }}
-                    />
-
                     {/* Numbered glowing circle + icon */}
                     <div className="relative flex items-center gap-3 mb-5">
                       <div className="relative">
@@ -539,8 +512,6 @@ export default function FundingAndGrantsClient() {
               {/* Benefits Sidebar */}
               <div className="lg:col-span-2">
                 <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-md p-8 sticky top-8 overflow-hidden relative">
-                  {/* Subtle top glow */}
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
 
                   <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-5">Why Apply Through UPTECH</h3>
                   <div className="relative h-px bg-[#D8D5CF] mb-6" />

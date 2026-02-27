@@ -125,10 +125,6 @@ export default function BusinessSupportPage() {
                 className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
                 <div
-                  className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
-                  style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }}
-                />
-                <div
                   className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
                   style={{ color: stat.color }}
                 >
@@ -180,7 +176,6 @@ export default function BusinessSupportPage() {
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col flex-1">
-                    <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${service.color}, ${service.color}60)` }} />
                     <div className="p-6 flex flex-col flex-1">
                       <div className="relative mb-5">
                         <div className="relative w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${service.color}15`, border: `1px solid ${service.color}30` }}>
@@ -226,7 +221,6 @@ export default function BusinessSupportPage() {
                 >
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                   <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
-                  <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}60)` }} />
                   <div className="p-6">
                     <div className="relative mb-5">
                       <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold border" style={{ background: `${step.color}25`, borderColor: `${step.color}50` }}>
@@ -267,7 +261,6 @@ export default function BusinessSupportPage() {
                 >
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                   <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
-                  <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }} />
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{item.title}</h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />

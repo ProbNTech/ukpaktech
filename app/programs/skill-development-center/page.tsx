@@ -126,10 +126,6 @@ export default function SkillDevelopmentCenterPage() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: "linear-gradient(to right, #22C55E, #22C55E60)" }}
-                  />
                   <div className="p-6 flex flex-col h-full">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1 group-hover:text-[#22C55E] transition-colors duration-200">
                       {program.title}
@@ -170,10 +166,6 @@ export default function SkillDevelopmentCenterPage() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}60)` }}
-                  />
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-5">
                       <div className="relative">
@@ -229,10 +221,6 @@ export default function SkillDevelopmentCenterPage() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${track.color}, ${track.color}60)` }}
-                  />
                   <div className="p-6 flex flex-col h-full">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-4 group-hover:text-[#2563EB] transition-colors duration-200">
                       {track.title}
@@ -279,7 +267,6 @@ export default function SkillDevelopmentCenterPage() {
                   transition={{ duration: 0.4, delay: i * 0.08 }}
                   className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                 >
-                  <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl" style={{ background: `linear-gradient(to right, ${outcome.color}, ${outcome.color}60)` }} />
                   <div
                     className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
                     style={{ color: outcome.color }}

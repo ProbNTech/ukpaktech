@@ -138,10 +138,6 @@ export default function AITechProgramsPage() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: "linear-gradient(to right, #2563EB, #2563EB60)" }}
-                  />
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
                       {program.title}
@@ -238,10 +234,6 @@ export default function AITechProgramsPage() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                   >
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[3px]"
-                      style={{ background: `linear-gradient(to right, ${area.color}, ${area.color}60)` }}
-                    />
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-5">
                         <div className="relative">

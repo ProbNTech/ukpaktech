@@ -112,11 +112,11 @@ export function Hero() {
         );
       })}
 
-      {/* Subtle left-side gradient for text readability */}
+      {/* Dark overlay for text readability across all video slides */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
-          background: "linear-gradient(to right, rgba(5,10,20,0.45) 0%, rgba(5,10,20,0.15) 50%, rgba(5,10,20,0.0) 75%)",
+          background: "linear-gradient(to right, rgba(5,10,20,0.72) 0%, rgba(5,10,20,0.50) 45%, rgba(5,10,20,0.25) 70%, rgba(5,10,20,0.10) 100%)",
         }}
       />
 
@@ -135,14 +135,14 @@ export function Hero() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
               {/* Small label */}
-              <p className="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.18em] text-[#C41E3A] mb-4 sm:mb-5">
+              <p className="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.18em] text-[#C41E3A] mb-4 sm:mb-5" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.4)" }}>
                 {slide.label}
               </p>
 
               {/* Headline — word-by-word blur-in */}
               <h1
                 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-5 sm:mb-7"
-                style={{ lineHeight: 1.25 }}
+                style={{ lineHeight: 1.25, textShadow: "0 2px 8px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4)" }}
               >
                 {slide.headline.split(" ").map((word, i) => (
                   <motion.span

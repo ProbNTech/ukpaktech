@@ -138,10 +138,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${pillar.color}, ${pillar.color}60)` }}
-                  />
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
                       {pillar.title}
@@ -211,10 +207,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
-                  />
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2" style={{ color: item.color }}>
                       {item.title}
@@ -253,10 +245,6 @@ export default function UKPakistanTechnologyPartnershipClient() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${benefit.color}, ${benefit.color}60)` }}
-                  />
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
                       {benefit.title}

@@ -44,7 +44,7 @@ export function PageHero({
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to right, rgba(5,10,20,0.55) 0%, rgba(5,10,20,0.20) 50%, rgba(5,10,20,0.0) 75%)",
+            "linear-gradient(to right, rgba(5,10,20,0.72) 0%, rgba(5,10,20,0.50) 45%, rgba(5,10,20,0.25) 70%, rgba(5,10,20,0.10) 100%)",
         }}
       />
 
@@ -81,6 +81,7 @@ export function PageHero({
             {label && (
               <motion.p
                 className="text-lg sm:text-xl font-extrabold uppercase tracking-[0.18em] text-[#C41E3A] mb-4 sm:mb-5"
+                style={{ textShadow: "0 1px 6px rgba(0,0,0,0.4)" }}
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
@@ -93,7 +94,7 @@ export function PageHero({
             {typeof title === "string" ? (
               <h1
                 className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-5 sm:mb-6"
-                style={{ lineHeight: 1.25 }}
+                style={{ lineHeight: 1.25, textShadow: "0 2px 8px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4)" }}
               >
                 {title.split(" ").map((word, i) => (
                   <motion.span
@@ -127,7 +128,7 @@ export function PageHero({
                 transition={{ duration: 0.5, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
               >
                 {typeof subtitle === "string" ? (
-                  <p className="text-base sm:text-lg text-white/60 leading-relaxed max-w-2xl">{subtitle}</p>
+                  <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl">{subtitle}</p>
                 ) : (
                   subtitle
                 )}

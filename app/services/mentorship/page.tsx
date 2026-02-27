@@ -127,10 +127,6 @@ export default function MentorshipPage() {
                   className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                 >
                   <div
-                    className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
-                    style={{ background: `linear-gradient(to right, ${color}, ${color}60)` }}
-                  />
-                  <div
                     className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
                     style={{ color }}
                   >
@@ -235,11 +231,6 @@ export default function MentorshipPage() {
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
-                    {/* Gradient top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px]"
-                      style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}00)` }}
-                    />
 
                     <div className="relative z-[1] p-6">
                       {/* Icon container */}
@@ -301,11 +292,6 @@ export default function MentorshipPage() {
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
-                    {/* Gradient top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px]"
-                      style={{ background: `linear-gradient(to right, ${role.color}, transparent)` }}
-                    />
 
                     <div className="relative z-[1] p-8">
                       <div className="flex items-center gap-4 mb-4">
@@ -380,11 +366,6 @@ export default function MentorshipPage() {
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
-                    {/* Gradient top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px]"
-                      style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}00)` }}
-                    />
 
                     <div className="relative z-[1] p-6">
                       <div className="flex items-center gap-3 mb-5">

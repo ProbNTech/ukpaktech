@@ -42,12 +42,12 @@ export function Footer() {
                     UPTECH
                   </span>
                 </Link>
-                <p className="text-white/90 mb-7 max-w-sm leading-relaxed text-sm">
+                <p className="text-white/90 mb-7 max-w-sm leading-relaxed text-base">
                   UPTECH is the leading platform bringing together people, companies, and organizations from the UK and Pakistan to unlock the transformative potential of digital technology. With a diverse membership spanning startups, SMEs, corporates, and research institutions, the Council fosters a vibrant network for innovation, collaboration, and knowledge exchange across business, government, and stakeholders to create positive impact for society, the economy, and the wider world.
                 </p>
 
                 {/* Follow Us */}
-                <h3 className="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-4">
+                <h3 className="font-heading font-semibold text-white text-base uppercase tracking-wider mb-4">
                   Follow Us
                 </h3>
                 <div className="flex gap-3">
@@ -62,10 +62,10 @@ export function Footer() {
                       <a
                         key={social.label}
                         href={social.href}
-                        className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:bg-[#22C55E]/30 hover:border-[#22C55E]/50 hover:shadow-[0_0_15px_rgba(34,197,94,0.3)] hover:scale-110 transition-all duration-300"
+                        className="w-12 h-12 rounded-full bg-white/35 border border-white/50 flex items-center justify-center text-white hover:text-white hover:bg-[#22C55E]/50 hover:border-[#22C55E]/70 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 transition-all duration-300"
                         aria-label={social.label}
                       >
-                        <Icon className="w-4 h-4" />
+                        <Icon className="w-6 h-6" />
                       </a>
                     );
                   })}
@@ -123,7 +123,7 @@ export function Footer() {
 
                 {/* Quick Links */}
                 <div className="mt-8">
-                  <h3 className="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-4">
+                  <h3 className="font-heading font-semibold text-white text-base uppercase tracking-wider mb-4">
                     Quick Links
                   </h3>
                   <ul className="grid grid-cols-2 gap-2">
@@ -143,7 +143,7 @@ export function Footer() {
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className="text-white/80 hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1 text-sm"
+                          className="text-white/90 hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1 text-base"
                         >
                           <ChevronRight className="w-3 h-3" />
                           {link.label}
@@ -162,7 +162,7 @@ export function Footer() {
                   Copyright &copy; {new Date().getFullYear()} UK&ndash;Pakistan
                   Tech Council. All rights reserved.
                 </p>
-                <div className="flex flex-wrap gap-4 text-sm">
+                <div className="flex flex-wrap gap-4 text-base">
                   <Link href="/privacy" className="text-white hover:text-[#22C55E] transition-colors duration-300">Privacy Policy</Link>
                   <span className="text-white/40">|</span>
                   <Link href="/terms" className="text-white hover:text-[#22C55E] transition-colors duration-300">Terms</Link>

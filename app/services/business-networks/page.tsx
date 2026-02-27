@@ -96,10 +96,6 @@ export default function BusinessNetworksPage() {
                 className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
                 <div
-                  className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
-                  style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }}
-                />
-                <div
                   className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
                   style={{ color: stat.color }}
                 >
@@ -173,7 +169,6 @@ export default function BusinessNetworksPage() {
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
-                    <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }} />
                     <div className="p-6">
                       <div className="relative mb-5">
                         <div className="relative w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${item.color}15`, border: `1px solid ${item.color}30` }}>
@@ -213,7 +208,6 @@ export default function BusinessNetworksPage() {
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
-                    <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}60)` }} />
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-5">
                         <div className="relative">
@@ -264,7 +258,6 @@ export default function BusinessNetworksPage() {
                     >
                       <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                       <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
-                      <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: "linear-gradient(to right, #2563EB, #2563EB60)" }} />
                       <div className="p-5 flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
                         <div>

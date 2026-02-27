@@ -142,10 +142,6 @@ export default function TechExcellenceAwardsClient() {
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col h-full">
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[3px]"
-                      style={{ background: `linear-gradient(to right, ${tagColor}, ${tagColor}60)` }}
-                    />
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-start justify-between mb-3">
                         <h3 className="font-heading font-bold text-[#1C1F2E] text-sm flex-1 pr-3 group-hover:text-[#2563EB] transition-colors duration-200">
@@ -194,10 +190,6 @@ export default function TechExcellenceAwardsClient() {
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col h-full">
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[3px]"
-                      style={{ background: `linear-gradient(to right, ${tagColor}, ${tagColor}60)` }}
-                    />
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-start justify-between mb-3">
                         <h3 className="font-heading font-bold text-[#1C1F2E] text-sm flex-1 pr-3 group-hover:text-[#2563EB] transition-colors duration-200">
@@ -244,10 +236,6 @@ export default function TechExcellenceAwardsClient() {
                 >
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                   <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}60)` }}
-                  />
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-5">
                       <div className="relative">
@@ -309,7 +297,6 @@ export default function TechExcellenceAwardsClient() {
               </div>
               <div className="lg:col-span-1">
                 <div className="bg-white border border-[#D8D5CF] rounded-xl p-6 sticky top-8 relative overflow-hidden shadow-sm">
-                  <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl bg-gradient-to-r from-[#C41E3A] to-[#C41E3A60]" />
                   <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-3">Fellowship</h3>
                   <div className="h-px bg-[#D8D5CF] mb-4" />
                   <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">

@@ -95,10 +95,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
                 className="relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
                 <div
-                  className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
-                  style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }}
-                />
-                <div
                   className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
                   style={{ color: stat.color }}
                 >
@@ -140,10 +136,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
-                  />
                   <div className="p-6">
                     <h4 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2" style={{ color: item.color }}>
                       {item.title}
@@ -188,10 +180,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
-                  />
                   <div className="p-6">
                     <h4 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2" style={{ color: item.color }}>
                       {item.title}
@@ -206,7 +194,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
             {/* Why It Matters */}
             <div className="relative bg-white border border-[#D8D5CF] shadow-md rounded-2xl p-8 overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#C41E3A]" />
               <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-4">Why It Matters</h3>
               <div className="relative h-px bg-[#D8D5CF] mb-4" />
               <p className="relative text-[#5A5F72] text-lg leading-relaxed">
@@ -241,10 +228,6 @@ export default function TradeDelegationsAndExhibitionsClient() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
-                  />
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#22C55E] transition-colors duration-200">
                       {item.title}

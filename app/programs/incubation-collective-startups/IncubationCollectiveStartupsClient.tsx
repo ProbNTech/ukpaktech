@@ -99,10 +99,6 @@ export default function IncubationCollectiveStartupsClient() {
                 className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
                 <div
-                  className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
-                  style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }}
-                />
-                <div
                   className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
                   style={{ color: stat.color }}
                 >
@@ -172,10 +168,6 @@ export default function IncubationCollectiveStartupsClient() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${area.color}, ${area.color}60)` }}
-                  />
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
                       {area.title}
@@ -313,10 +305,6 @@ export default function IncubationCollectiveStartupsClient() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${card.color}, ${card.color}60)` }}
-                  />
                   <div className="p-6">
                     <span
                       className="text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded mb-3 inline-block"
@@ -368,10 +356,6 @@ export default function IncubationCollectiveStartupsClient() {
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col h-full"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{ background: `linear-gradient(to right, ${audience.color}, ${audience.color}60)` }}
-                  />
                   <div className="p-6 flex flex-col flex-1">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
                       {audience.title}
