@@ -6,8 +6,9 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { PageHero } from "@/components/PageHero";
 import Image from "next/image";
-import { TubesCTA } from "@/components/TubesCTA";
 import { Shield, Globe2, Target, Lightbulb, Heart, CheckCircle2, Award, Network, Rocket, BookOpen, Users, Briefcase, GraduationCap, Handshake, TrendingUp, Zap, Cpu, Leaf, Radio, Microscope, Wheat } from "lucide-react";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
 
 const brandColors = ["#2563EB", "#C41E3A", "#22C55E"];
 
@@ -21,7 +22,7 @@ export default function AboutPage() {
         image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership/apply" variant="glass" showArrow>Apply for Membership</Button>
+          <RainbowButton href="/membership/apply" showArrow>Apply for Membership</RainbowButton>
           <Button href="/ecosystem/uk-pakistan-technology-partnership" variant="glass" showArrow>UK–Pakistan Partnership</Button>
         </div>
       </PageHero>
@@ -283,23 +284,15 @@ export default function AboutPage() {
       </Section>
 
       {/* CTA */}
-      <TubesCTA>
-        <AnimatedSection>
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">Join Us</p>
-            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
-              Ready to Be Part of the Movement?
-            </h2>
-            <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-              Join UPTECH and connect with technology leaders, entrepreneurs, and innovators shaping the UK–Pakistan tech corridor.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
-              <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
-            </div>
-          </div>
-        </AnimatedSection>
-      </TubesCTA>
+      <GlobalCTA
+        label="Join Us"
+        title="Ready to Be Part of the Movement?"
+        subtitle="Join UPTECH and connect with technology leaders, entrepreneurs, and innovators shaping the UK–Pakistan tech corridor."
+        primaryButtonText="Apply for Membership"
+        primaryButtonLink="/membership/apply"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

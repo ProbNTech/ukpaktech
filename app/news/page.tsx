@@ -9,13 +9,14 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Section } from "@/components/Section";
 import { NewsCard } from "@/components/NewsCard";
 import { Button } from "@/components/Button";
-import { TubesCTA } from "@/components/TubesCTA";
 import { articles } from "@/data/articles";
+import { GlobalCTA } from "@/components/GlobalCTA";
 import {
   ChevronRight, Newspaper, TrendingUp, Globe2, BookOpen,
   Cpu, Shield, Award, Banknote, Landmark, Lightbulb,
   Zap, Radio, ArrowUpRight,
 } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 /* ── Extract unique categories ──────────────────────────────────── */
 const allCategories = ["All", ...Array.from(new Set(articles.map((a) => a.category)))];
@@ -445,7 +446,9 @@ export default function NewsPage() {
                       /* Scroll to filter section */
                       document.querySelector("#news-grid")?.scrollIntoView({ behavior: "smooth", block: "start" });
                     }}
-                    className="group relative bg-white rounded-xl border border-[#D8D5CF] overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg text-left"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px text-left">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
                   >
                     <div className="h-[3px] w-full" style={{ background: `linear-gradient(90deg, ${topic.color}, ${topic.color}60)` }} />
                     <div className="p-6">
@@ -467,6 +470,7 @@ export default function NewsPage() {
                       <span className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wide group-hover:text-[#2563EB] text-[#7A7E8F] transition-colors duration-200">
                         View articles <ArrowUpRight className="w-3.5 h-3.5" />
                       </span>
+                    </div>
                     </div>
                   </button>
                 );
@@ -524,26 +528,15 @@ export default function NewsPage() {
       {/* ══════════════════════════════════════════════════════════════
            CTA — Animated tube cursor background
       ═══════════════════════════════════════════════════════════════ */}
-      <TubesCTA>
-        <AnimatedSection>
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-              Stay Connected
-            </p>
-            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
-              Never Miss an Update
-            </h2>
-            <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-              Join the UPTECH community to receive the latest news, policy updates,
-              and investment insights from the UK–Pakistan technology corridor.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/membership" variant="primary" size="lg" showArrow>Become a Member</Button>
-              <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
-            </div>
-          </div>
-        </AnimatedSection>
-      </TubesCTA>
+      <GlobalCTA
+        label="Stay Connected"
+        title="Never Miss an Update"
+        subtitle="Join the UPTECH community to receive the latest news, policy updates, and investment insights from the UK–Pakistan technology corridor."
+        primaryButtonText="Become a Member"
+        primaryButtonLink="/membership"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

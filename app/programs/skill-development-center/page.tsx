@@ -5,10 +5,12 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
-import { TubesCTA } from "@/components/TubesCTA";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const trustItems = ["UK aligned curriculum", "Industry mentors", "Practical projects", "Career support", "Cross-border collaboration"];
 
@@ -63,9 +65,7 @@ export default function SkillDevelopmentCenterPage() {
         image="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-            Apply for Training
-          </Button>
+          <RainbowButton href="/membership/apply" showArrow>Apply for Training</RainbowButton>
           <Button href="/contact" variant="glass" size="lg" showArrow>
             Partner with UPTECH
           </Button>
@@ -122,7 +122,9 @@ export default function SkillDevelopmentCenterPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
                   <div
                     className="absolute top-0 left-0 right-0 h-[3px]"
@@ -142,6 +144,7 @@ export default function SkillDevelopmentCenterPage() {
                         </li>
                       ))}
                     </ul>
+                  </div>
                   </div>
                 </motion.div>
               ))}
@@ -163,7 +166,9 @@ export default function SkillDevelopmentCenterPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
                   <div
                     className="absolute top-0 left-0 right-0 h-[3px]"
@@ -199,6 +204,7 @@ export default function SkillDevelopmentCenterPage() {
                       </span>
                     </div>
                   </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -219,7 +225,9 @@ export default function SkillDevelopmentCenterPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
                   <div
                     className="absolute top-0 left-0 right-0 h-[3px]"
@@ -247,6 +255,7 @@ export default function SkillDevelopmentCenterPage() {
                       <p className="text-sm font-bold text-[#7A7E8F] uppercase tracking-wider mb-1">What you build</p>
                       <p className="text-[#5A5F72] text-base leading-relaxed">{track.build}</p>
                     </div>
+                  </div>
                   </div>
                 </motion.div>
               ))}
@@ -331,29 +340,15 @@ export default function SkillDevelopmentCenterPage() {
       </section>
 
       {/* ── CTA ── */}
-      <TubesCTA>
-        <AnimatedSection>
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-5 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-              Get Started
-            </p>
-            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
-              Ready to Transform Your Career?
-            </h2>
-            <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-              Join UPTECH&apos;s Skill Development Center and unlock your potential in the tech industry. Start your journey today with world-class training and mentorship.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-                Apply for Training
-              </Button>
-              <Button href="/contact" variant="glass" size="lg" showArrow>
-                Partner with UPTECH
-              </Button>
-            </div>
-          </div>
-        </AnimatedSection>
-      </TubesCTA>
+      <GlobalCTA
+        label="Get Started"
+        title="Ready to Transform Your Career?"
+        subtitle="Join UPTECH’s Skill Development Center and unlock your potential in the tech industry. Start your journey today with world-class training and mentorship."
+        primaryButtonText="Apply for Training"
+        primaryButtonLink="/membership/apply"
+        secondaryButtonText="Partner with UPTECH"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

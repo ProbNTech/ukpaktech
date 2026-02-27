@@ -5,6 +5,7 @@ import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { motion, useReducedMotion } from "framer-motion";
+import { GlobalCTA } from "@/components/GlobalCTA";
 import {
   Target, Users, Award, Trophy, Shield, Scale, Mail, CheckCircle2,
 } from "lucide-react";
@@ -141,22 +142,13 @@ export default function ExcellenceManagementTermsPage() {
       </Section>
 
       {/* Contact */}
-      <Section variant="dark">
-        <AnimatedSection>
-          <div className="max-w-3xl">
-            <Mail className="w-8 h-8 text-[#2563EB] mb-4" strokeWidth={1.5} />
-            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight mb-4">
-              Questions About These Terms?
-            </h2>
-            <p className="text-white/70 text-lg leading-relaxed">
-              For questions about these terms, contact us at{" "}
-              <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
-                info@uptech.org.uk
-              </a>.
-            </p>
-          </div>
-        </AnimatedSection>
-      </Section>
+      <GlobalCTA
+        label="Need Help?"
+        title="Questions About These Terms?"
+        subtitle="For questions about these terms, contact us at info@uptech.org.uk."
+        primaryButtonText="Contact Us"
+        primaryButtonLink="/contact"
+      />
     </div>
   );
 }

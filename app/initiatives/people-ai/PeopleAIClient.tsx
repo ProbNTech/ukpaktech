@@ -6,6 +6,8 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
 import {
   Brain,
   Cpu,
@@ -62,9 +64,7 @@ export default function PeopleAIClient() {
         image="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-            Get Started
-          </Button>
+          <RainbowButton href="/membership/apply" showArrow>Get Started</RainbowButton>
           <Button href="/contact" variant="glass" size="lg" showArrow>
             Learn More
           </Button>
@@ -342,49 +342,15 @@ export default function PeopleAIClient() {
       </section>
 
       {/* ── CTA Section ── */}
-      <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10">
-          <Image src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=2400&q=85&auto=format&fit=crop" alt="People and AI background" fill className="object-cover" sizes="100vw" />
-        </div>
-        {/* Gradient glow effects */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />
-
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
-                Get Started
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Join the People AI Platform
-              </h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl">
-                Be part of a transformative movement that&apos;s reshaping how people and organisations work with AI across the UK and Pakistan.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-                  Get Started
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <GlobalCTA
+        label="Get Started"
+        title="Join the People AI Platform"
+        subtitle="Be part of a transformative movement reshaping how people and organisations work with AI across the UK and Pakistan."
+        primaryButtonText="Get Started"
+        primaryButtonLink="/membership/apply"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

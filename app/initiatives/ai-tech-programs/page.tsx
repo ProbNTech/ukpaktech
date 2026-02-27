@@ -5,8 +5,8 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
-import { TubesCTA } from "@/components/TubesCTA";
 import { CheckCircle2 } from "lucide-react";
+import { GlobalCTA } from "@/components/GlobalCTA";
 
 const programs = [
   {
@@ -127,28 +127,15 @@ export default function AITechProgramsPage() {
       </Section>
 
       {/* CTA — TubesCursor */}
-      <TubesCTA>
-        <div className="max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#4ade80] mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-            Get Started
-          </p>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-none text-white mb-5 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
-            Ready to Transform Your Tech Career?
-          </h2>
-          <div className="h-px bg-white/20 mb-6" />
-          <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-            Join UPTECH&apos;s AI and Tech Programs and become part of a global network driving innovation between the UK and Pakistan.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Button href="/membership" variant="primary" size="lg" showArrow>
-              Become a Member
-            </Button>
-            <Button href="/membership" variant="glass" size="lg">
-              Access Portal
-            </Button>
-          </div>
-        </div>
-      </TubesCTA>
+      <GlobalCTA
+        label="Get Started"
+        title="Ready to Transform Your Tech Career?"
+        subtitle="Join UPTECH’s AI and Tech Programs and become part of a global network driving innovation between the UK and Pakistan."
+        primaryButtonText="Become a Member"
+        primaryButtonLink="/membership"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

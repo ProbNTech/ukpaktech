@@ -15,7 +15,6 @@ declare global {
   interface Window {
     __tubesCursorApp?: any;
     __tubesCursorCanvas?: HTMLCanvasElement;
-    __tubesCursorCtor?: any;
   }
 }
 
@@ -30,8 +29,8 @@ const TubesCursor = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Singleton: skip if already running (avoids React strict-mode WebGPU crash)
-    if (window.__tubesCursorApp) {
+    // Singleton: skip if already running (but NOT if stuck on "loading")
+    if (window.__tubesCursorApp && window.__tubesCursorApp !== "loading") {
       if (window.__tubesCursorCanvas && containerRef.current) {
         if (!containerRef.current.contains(window.__tubesCursorCanvas)) {
           containerRef.current.appendChild(window.__tubesCursorCanvas);
@@ -47,52 +46,49 @@ const TubesCursor = ({
     window.__tubesCursorCanvas = canvas;
     window.__tubesCursorApp = "loading";
 
-    const script = document.createElement("script");
-    script.type = "module";
-    script.textContent = `
-      import Ctor from "/scripts/tubes1.min.js";
-      window.__tubesCursorCtor = Ctor;
-      document.dispatchEvent(new CustomEvent("tubes-ctor-ready"));
-    `;
+    // Use Function constructor to bypass bundler static analysis for dynamic import
+    const dynamicImport = new Function("url", "return import(url)");
 
-    const onReady = () => {
-      const Ctor = window.__tubesCursorCtor;
-      if (!Ctor || !window.__tubesCursorCanvas) return;
+    dynamicImport("/scripts/tubes1.min.js")
+      .then((mod: any) => {
+        const Ctor = mod.default;
+        if (!Ctor || !window.__tubesCursorCanvas) return;
 
-      try {
-        // Hide WebGPU to force WebGL fallback (Windows 10 compat)
-        const gpu = (navigator as any).gpu;
-        Object.defineProperty(navigator, "gpu", {
-          value: undefined,
-          configurable: true,
-        });
-
-        const app = Ctor(window.__tubesCursorCanvas, {
-          tubes: {
-            colors: initialColors,
-            lights: {
-              intensity: lightIntensity,
-              colors: lightColors,
-            },
-          },
-        });
-
-        window.__tubesCursorApp = app;
-
-        if (gpu) {
+        try {
+          // Hide WebGPU to force WebGL fallback (Windows 10 compat)
+          const gpu = (navigator as any).gpu;
           Object.defineProperty(navigator, "gpu", {
-            value: gpu,
+            value: undefined,
             configurable: true,
           });
-        }
-      } catch (e) {
-        console.warn("[TubesCursor] Init failed:", e);
-        window.__tubesCursorApp = null;
-      }
-    };
 
-    document.addEventListener("tubes-ctor-ready", onReady, { once: true });
-    document.head.appendChild(script);
+          const app = Ctor(window.__tubesCursorCanvas, {
+            tubes: {
+              colors: initialColors,
+              lights: {
+                intensity: lightIntensity,
+                colors: lightColors,
+              },
+            },
+          });
+
+          window.__tubesCursorApp = app;
+
+          if (gpu) {
+            Object.defineProperty(navigator, "gpu", {
+              value: gpu,
+              configurable: true,
+            });
+          }
+        } catch (e) {
+          console.warn("[TubesCursor] Init failed:", e);
+          window.__tubesCursorApp = null;
+        }
+      })
+      .catch((e: any) => {
+        console.warn("[TubesCursor] Script load failed:", e);
+        window.__tubesCursorApp = null;
+      });
   }, [initialColors, lightColors, lightIntensity, enableRandomizeOnClick]);
 
   return (

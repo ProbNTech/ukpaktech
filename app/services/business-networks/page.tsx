@@ -8,6 +8,7 @@ import { Button } from "@/components/Button";
 import { CheckCircle2, Globe, Handshake, BarChart3, Users, Target, ChevronDown, Search, GitBranch, MessageSquare, TrendingUp } from "lucide-react";
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const stats = [
   { value: "60+", label: "Countries Connected", color: "#2563EB" },
@@ -168,8 +169,10 @@ export default function BusinessNetworksPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }} />
                     <div className="p-6">
                       <div className="relative mb-5">
@@ -180,6 +183,7 @@ export default function BusinessNetworksPage() {
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{item.title}</h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
                       <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
+                    </div>
                     </div>
                   </motion.div>
                 );
@@ -205,8 +209,10 @@ export default function BusinessNetworksPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}60)` }} />
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-5">
@@ -227,6 +233,7 @@ export default function BusinessNetworksPage() {
                         <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
                         <span className="text-sm font-semibold" style={{ color: step.color }}>{step.outcome}</span>
                       </div>
+                    </div>
                     </div>
                   </motion.div>
                 );
@@ -253,14 +260,17 @@ export default function BusinessNetworksPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-50px" }}
                       transition={{ duration: 0.4, delay: i * 0.08 }}
-                      className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                      className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                     >
+                      <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                      <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                       <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: "linear-gradient(to right, #2563EB, #2563EB60)" }} />
                       <div className="p-5 flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
                         <div>
                           <h4 className="font-heading font-bold text-[#1C1F2E] text-base">{partner.title}</h4>
                         </div>
+                      </div>
                       </div>
                     </motion.div>
                   ))}

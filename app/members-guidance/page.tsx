@@ -6,6 +6,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { motion, useReducedMotion } from "framer-motion";
+import { GlobalCTA } from "@/components/GlobalCTA";
 import {
   UserCheck, Briefcase, GraduationCap, Calendar, Banknote,
   Mail, CheckCircle2, Rocket,
@@ -116,27 +117,15 @@ export default function MembersGuidancePage() {
       </Section>
 
       {/* Communication & Support */}
-      <Section variant="dark">
-        <AnimatedSection>
-          <div className="max-w-3xl">
-            <Mail className="w-8 h-8 text-[#2563EB] mb-4" strokeWidth={1.5} />
-            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight mb-4">
-              Communication & Support
-            </h2>
-            <p className="text-white/70 text-lg leading-relaxed mb-8">
-              For any questions, support requests, or feedback, contact our membership team at{" "}
-              <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">
-                info@uptech.org.uk
-              </a>.
-              We aim to respond to all member enquiries within 2 business days.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/membership/apply" variant="primary" size="lg" showArrow>Apply for Membership</Button>
-              <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
-            </div>
-          </div>
-        </AnimatedSection>
-      </Section>
+      <GlobalCTA
+        label="Contact Us"
+        title="Communication & Support"
+        subtitle="For any questions, support requests, or feedback, contact our membership team at info@uptech.org.uk. We aim to respond to all member enquiries within 2 business days."
+        primaryButtonText="Apply for Membership"
+        primaryButtonLink="/membership/apply"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

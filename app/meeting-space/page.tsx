@@ -5,7 +5,8 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
-import { TubesCTA } from "@/components/TubesCTA";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
 import {
   CheckCircle2,
   MapPin,
@@ -148,7 +149,7 @@ export default function MeetingSpacePage() {
         image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership/apply" variant="glass" showArrow>Apply for Membership</Button>
+          <RainbowButton href="/membership/apply" showArrow>Apply for Membership</RainbowButton>
           <Button href="/contact" variant="glass" showArrow>Contact Us</Button>
         </div>
       </PageHero>
@@ -878,28 +879,15 @@ export default function MeetingSpacePage() {
       </section>
 
       {/* ── CTA — TubesCursor ─────────────────────────────────────── */}
-      <TubesCTA>
-        <div className="max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#4ade80] mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-            Access &amp; Reservations
-          </p>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-none text-white mb-5 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
-            Reserve Your Meeting Space
-          </h2>
-          <div className="h-px bg-white/20 mb-6" />
-          <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-            Meeting facilities are available by advance booking and subject to membership tier allocations and availability.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Button href="/membership" variant="primary" size="lg" showArrow>
-              Become a Member
-            </Button>
-            <Button href="/contact" variant="glass" size="lg">
-              Contact Us
-            </Button>
-          </div>
-        </div>
-      </TubesCTA>
+      <GlobalCTA
+        label="Access & Reservations"
+        title="Reserve Your Meeting Space"
+        subtitle="Meeting facilities are available by advance booking and subject to membership tier allocations and availability."
+        primaryButtonText="Become a Member"
+        primaryButtonLink="/membership"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

@@ -171,7 +171,7 @@ export default function MembershipApplicationForm() {
             </motion.h1>
             <motion.p
               variants={itemFade}
-              className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed"
+              className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
             >
               Complete the application form below. UPTECH reserves the right to review and approve
               all membership applications. Membership is valid for one year from the date of payment.

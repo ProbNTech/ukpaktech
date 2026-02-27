@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Network, Store, Megaphone, Plane, Users, Briefcase, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const services = [
   {
@@ -69,24 +70,34 @@ function ServiceCard({
       className="group"
     >
       <Link href={service.href} className="block h-full">
-        <div className="relative h-full bg-white rounded border border-gray-100 overflow-hidden shadow-md hover:shadow-xl hover:border-[#2563EB]/20 hover:-translate-y-1 transition-all duration-500 p-6">
-          {/* Animated bottom border on hover */}
-          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#2563EB] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 border bg-[#2563EB]/5 border-[#2563EB]/15 group-hover:scale-110 transition-transform duration-500">
-            <Icon className="w-6 h-6 text-[#2563EB]" />
-          </div>
+        <div className="relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px">
+          <GlowingEffect
+            spread={40}
+            glow
+            disabled={false}
+            proximity={64}
+            inactiveZone={0.01}
+            borderWidth={2}
+          />
+          <div className="relative h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 p-6">
+            {/* Animated bottom border on hover */}
+            <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#2563EB] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 border bg-[#2563EB]/5 border-[#2563EB]/15 group-hover:scale-110 transition-transform duration-500">
+              <Icon className="w-6 h-6 text-[#2563EB]" />
+            </div>
 
-          <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A] group-hover:text-[#2563EB] transition-colors duration-300">
-            {service.title}
-          </h3>
+            <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A] group-hover:text-[#2563EB] transition-colors duration-300">
+              {service.title}
+            </h3>
 
-          <p className="text-[#475569] mb-6 leading-relaxed text-sm">
-            {service.description}
-          </p>
+            <p className="text-[#475569] mb-6 leading-relaxed text-sm">
+              {service.description}
+            </p>
 
-          <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB]">
-            <span>Learn more</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB]">
+              <span>Learn more</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </div>
           </div>
         </div>
       </Link>

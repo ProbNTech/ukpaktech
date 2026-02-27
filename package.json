@@ -9,12 +9,15 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.400.0",
+    "motion": "^12.34.3",
     "next": "^16.0.0",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.5.0",
     "threejs-components": "^0.0.19"
   },
   "devDependencies": {

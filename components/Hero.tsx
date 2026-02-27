@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Play, Pause } from "lucide-react";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
@@ -163,14 +164,9 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
-                <Link
-                  href={slide.cta.href}
-                  className="relative overflow-hidden inline-flex items-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#C41E3A] text-white font-bold text-sm sm:text-base hover:bg-[#A01830] transition-all duration-300 group"
-                >
+                <RainbowButton href={slide.cta.href} showArrow>
                   {slide.cta.text}
-                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5" />
-                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" aria-hidden="true" />
-                </Link>
+                </RainbowButton>
                 <Link
                   href={slide.secondary.href}
                   className="inline-flex items-center gap-2.5 text-white font-semibold text-sm sm:text-base underline underline-offset-4 hover:text-white/75 transition-colors duration-200"

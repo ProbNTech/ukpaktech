@@ -5,6 +5,7 @@ import { motion, useInView, useMotionValue, useSpring, useTransform } from "fram
 import { Brain, Globe, GraduationCap, Award, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const initiatives = [
   {
@@ -86,7 +87,16 @@ function InitiativeCard({ initiative, index, isInView }: { initiative: typeof in
       className="group relative"
       style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
     >
-      <div className="relative h-full bg-white rounded border border-gray-100 overflow-hidden shadow-md hover:shadow-xl hover:border-[#2563EB]/20 transition-all duration-500">
+      <div className="relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px">
+        <GlowingEffect
+          spread={40}
+          glow
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+          borderWidth={2}
+        />
+        <div className="relative h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500">
         <motion.div
           style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
           className="relative"
@@ -135,6 +145,7 @@ function InitiativeCard({ initiative, index, isInView }: { initiative: typeof in
             </Link>
           </div>
         </motion.div>
+        </div>
       </div>
     </motion.div>
   );

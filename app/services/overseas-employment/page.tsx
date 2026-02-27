@@ -8,6 +8,7 @@ import { Button } from "@/components/Button";
 import { CheckCircle2, Building2, User, ChevronDown, Globe, Briefcase, Shield, TrendingUp, Clock, Award } from "lucide-react";
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const stats = [
   { value: "500+", label: "Placements Made", color: "#2563EB" },
@@ -137,8 +138,10 @@ export default function OverseasEmploymentPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
               >
+                <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: "linear-gradient(to right, #2563EB, #2563EB60)" }} />
                 <div className="p-8">
                   <div className="flex items-center gap-3 mb-5">
@@ -165,6 +168,7 @@ export default function OverseasEmploymentPage() {
                     ))}
                   </div>
                 </div>
+                </div>
               </motion.div>
 
               {/* Professionals */}
@@ -173,8 +177,10 @@ export default function OverseasEmploymentPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: 0.15, duration: 0.5, ease: "easeOut" }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
               >
+                <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: "linear-gradient(to right, #22C55E, #22C55E60)" }} />
                 <div className="p-8">
                   <div className="flex items-center gap-3 mb-5">
@@ -201,6 +207,7 @@ export default function OverseasEmploymentPage() {
                     ))}
                   </div>
                 </div>
+                </div>
               </motion.div>
             </div>
           </AnimatedSection>
@@ -221,8 +228,10 @@ export default function OverseasEmploymentPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                 >
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                   <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}60)` }} />
                   <div className="p-6">
                     <div className="relative mb-5">
@@ -236,6 +245,7 @@ export default function OverseasEmploymentPage() {
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
                       <span className="text-sm font-semibold" style={{ color: step.color }}>{step.outcome}</span>
                     </div>
+                  </div>
                   </div>
                 </motion.div>
               ))}
@@ -261,8 +271,10 @@ export default function OverseasEmploymentPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${sector.color}, ${sector.color}60)` }} />
                     <div className="p-6">
                       <div className="relative mb-4">
@@ -273,6 +285,7 @@ export default function OverseasEmploymentPage() {
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{sector.title}</h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
                       <p className="text-base text-[#5A5F72] leading-relaxed">{sector.description}</p>
+                    </div>
                     </div>
                   </motion.div>
                 );

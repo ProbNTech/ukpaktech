@@ -149,7 +149,7 @@ export function ContactForm() {
             <div className="w-6 h-6 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
               <User className="w-3 h-3 text-[#2563EB]" />
             </div>
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">
+            <span className="text-xs font-bold tracking-[0.15em] uppercase text-[#5A5F72]">
               Personal Details
             </span>
           </motion.div>
@@ -159,7 +159,7 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="name"
-                className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "name" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
+                className={`block text-xs font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "name" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
               >
                 Full Name <span className="text-[#C41E3A]">*</span>
               </label>
@@ -186,7 +186,7 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="email"
-                className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "email" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
+                className={`block text-xs font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "email" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
               >
                 Email Address <span className="text-[#C41E3A]">*</span>
               </label>
@@ -222,7 +222,7 @@ export function ContactForm() {
             <div className="w-6 h-6 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center">
               <Sparkles className="w-3 h-3 text-[#22C55E]" />
             </div>
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">
+            <span className="text-xs font-bold tracking-[0.15em] uppercase text-[#5A5F72]">
               Enquiry Details
             </span>
           </motion.div>
@@ -232,7 +232,7 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="phone"
-                className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "phone" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
+                className={`block text-xs font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "phone" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
               >
                 Phone
               </label>
@@ -257,7 +257,7 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="organisation"
-                className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "organisation" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
+                className={`block text-xs font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "organisation" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
               >
                 Organisation
               </label>
@@ -282,7 +282,7 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="enquiryType"
-                className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "enquiryType" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
+                className={`block text-xs font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "enquiryType" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
               >
                 Enquiry Type <span className="text-[#C41E3A]">*</span>
               </label>
@@ -325,7 +325,7 @@ export function ContactForm() {
             <div className="w-6 h-6 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
               <Send className="w-3 h-3 text-[#2563EB]" />
             </div>
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">
+            <span className="text-xs font-bold tracking-[0.15em] uppercase text-[#5A5F72]">
               Your Message
             </span>
           </motion.div>
@@ -333,7 +333,7 @@ export function ContactForm() {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="message"
-              className={`block text-[10px] font-bold tracking-[0.18em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "message" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
+              className={`block text-xs font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "message" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
             >
               Message <span className="text-[#C41E3A]">*</span>
             </label>

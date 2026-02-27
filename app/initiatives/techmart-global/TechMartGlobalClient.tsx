@@ -6,6 +6,8 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
 import {
   Rocket,
   Building2,
@@ -170,9 +172,7 @@ export default function TechMartGlobalClient() {
         image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-            Get Started
-          </Button>
+          <RainbowButton href="/membership/apply" showArrow>Get Started</RainbowButton>
           <Button href="/contact" variant="glass" size="lg" showArrow>
             Learn More
           </Button>
@@ -653,66 +653,15 @@ export default function TechMartGlobalClient() {
       </section>
 
       {/* ── CTA ────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10">
-          <Image src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop" alt="TechMart Global background" fill className="object-cover" sizes="100vw" />
-        </div>
-        {/* Gradient glow effects */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#2563EB]/8 blur-[150px] pointer-events-none" />
-        <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-[#22C55E]/6 blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-1/3 left-1/4 w-[300px] h-[300px] bg-[#22C55E]/5 blur-[100px] pointer-events-none" />
-
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div className="max-w-3xl mx-auto text-center">
-              {/* Label */}
-              <div className="inline-flex items-center gap-2 mb-6 justify-center">
-                <span className="inline-block w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-                <span className="text-sm font-semibold text-[#22C55E] uppercase tracking-widest">
-                  Join the Platform
-                </span>
-              </div>
-
-              {/* Gradient heading */}
-              <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
-                <span
-                  className="bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage: "linear-gradient(135deg, #ffffff 0%, #2563EB 60%, #22C55E 100%)",
-                  }}
-                >
-                  Join TechMart Global
-                </span>
-              </h2>
-
-              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-                Connect with the global technology marketplace and unlock new opportunities for growth and cross-border collaboration.
-              </p>
-
-              {/* CTA buttons */}
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-                  Get Started
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Learn About Membership
-                </Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <GlobalCTA
+        label="Join the Platform"
+        title="Join TechMart Global"
+        subtitle="Connect with the global technology marketplace and unlock new opportunities for growth and cross-border collaboration."
+        primaryButtonText="Get Started"
+        primaryButtonLink="/membership/apply"
+        secondaryButtonText="Learn About Membership"
+        secondaryButtonLink="/membership"
+      />
     </div>
   );
 }

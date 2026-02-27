@@ -24,6 +24,8 @@ import {
   Building2,
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
 
 /* ─── Data ──────────────────────────────────────────────────────────── */
 
@@ -149,9 +151,7 @@ export default function StartupFundingPage() {
         image="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership" variant="glass" showArrow>
-            Access Funding
-          </Button>
+          <RainbowButton href="/membership" showArrow>Access Funding</RainbowButton>
           <Button href="/contact" variant="glass" showArrow>
             Speak to Our Team
           </Button>
@@ -414,74 +414,15 @@ export default function StartupFundingPage() {
       {/* ================================================================
           CTA SECTION
           ================================================================ */}
-      <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10">
-          <Image src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85&auto=format&fit=crop" alt="Startup Funding background" fill className="object-cover" sizes="100vw" />
-        </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none">
-          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#22C55E]/10 rounded-full blur-[120px]" />
-          <div className="absolute top-10 right-0 w-[350px] h-[350px] bg-[#2563EB]/8 rounded-full blur-[100px]" />
-          <div className="absolute bottom-0 left-1/3 w-[300px] h-[300px] bg-[#C41E3A]/5 rounded-full blur-[80px]" />
-        </div>
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div className="text-center max-w-3xl mx-auto">
-              <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#22C55E]/30 bg-[#22C55E]/10 backdrop-blur-sm mb-6"
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
-              >
-                <div className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-                <span className="text-[#22C55E] text-xs font-semibold uppercase tracking-wider">
-                  Get Started
-                </span>
-              </motion.div>
-
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-5">
-                <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-                  Empowering Startups.{" "}
-                </span>
-                <span className="bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#C41E3A] bg-clip-text text-transparent">
-                  Connecting Investors.
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-white via-white/80 to-white/60 bg-clip-text text-transparent">
-                  Driving Cross-Border Growth.
-                </span>
-              </h2>
-
-              <p className="text-white/50 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
-                Whether you&apos;re a startup seeking investment or an investor looking for the next breakthrough, the UK-Pakistan Tech Council is your gateway to cross-border opportunity.
-              </p>
-
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button
-                  href="/membership/apply"
-                  variant="primary"
-                  size="lg"
-                  showArrow
-                  className="!bg-gradient-to-r !from-[#22C55E] !to-[#2563EB] hover:!shadow-[0_0_40px_rgba(34,197,94,0.3)]"
-                >
-                  Apply for Membership
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <GlobalCTA
+        label="Get Started"
+        title="Empowering Startups. Connecting Investors. Driving Cross-Border Growth."
+        subtitle="Whether you are a startup seeking investment or an investor looking for the next breakthrough, the UK–Pakistan Tech Council is your gateway to cross-border opportunity."
+        primaryButtonText="Apply for Membership"
+        primaryButtonLink="/membership/apply"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

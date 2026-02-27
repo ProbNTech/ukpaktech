@@ -12,6 +12,7 @@ import {
   Gavel, Ban, GraduationCap,
 } from "lucide-react";
 import { useState } from "react";
+import { GlobalCTA } from "@/components/GlobalCTA";
 
 const navSections = [
   { id: "principles", label: "Principles" },
@@ -401,30 +402,16 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      {/* ── CTA — Gradient dark section ──────────────────────────────── */}
-      <section className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-        {/* Glow orbs */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
-
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Questions?</p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Committed to the Highest Standards
-              </h2>
-              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-                If you have questions about the Code of Conduct or need to report a concern, please contact the governance team.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/contact" variant="primary" size="lg" showArrow>Contact Us</Button>
-                <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* ── CTA ──────────────────────────────────────────────────────── */}
+      <GlobalCTA
+        label="Questions?"
+        title="Committed to the Highest Standards"
+        subtitle="If you have questions about the Code of Conduct or need to report a concern, please contact the governance team."
+        primaryButtonText="Contact Us"
+        primaryButtonLink="/contact"
+        secondaryButtonText="Apply for Membership"
+        secondaryButtonLink="/membership/apply"
+      />
     </div>
   );
 }

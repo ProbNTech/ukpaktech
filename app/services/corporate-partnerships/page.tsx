@@ -25,6 +25,7 @@ import {
   Database,
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 /* ─── Data ──────────────────────────────────────────────────────────── */
 
@@ -236,17 +237,19 @@ export default function CorporatePartnershipsPage() {
                 return (
                   <motion.div
                     key={item.title}
-                    className="group relative bg-white rounded-2xl border border-[#D8D5CF] p-6 hover:-translate-y-1 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg hover:border-[#2563EB]/30"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                     initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     <div
                       className="absolute top-0 left-0 right-0 h-[2px]"
                       style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}00)` }}
                     />
-                    <div className="relative z-[1]">
+                    <div className="relative z-[1] p-6">
                       <div
                         className="relative w-12 h-12 rounded-xl flex items-center justify-center mb-4"
                         style={{ background: `${item.color}15`, border: `1px solid ${item.color}25` }}
@@ -260,6 +263,7 @@ export default function CorporatePartnershipsPage() {
                       <p className="text-base text-[#5A5F72] leading-relaxed">
                         {item.description}
                       </p>
+                    </div>
                     </div>
                   </motion.div>
                 );
@@ -338,12 +342,14 @@ export default function CorporatePartnershipsPage() {
                 return (
                   <motion.div
                     key={area.name}
-                    className="group relative bg-white rounded-2xl border border-[#D8D5CF] p-5 text-center hover:-translate-y-1 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg hover:border-[#2563EB]/30"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                     initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.06 }}
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm p-5 text-center">
                     <div
                       className="absolute top-0 left-0 right-0 h-[2px]"
                       style={{ background: `linear-gradient(to right, ${area.color}, ${area.color}00)` }}
@@ -355,6 +361,7 @@ export default function CorporatePartnershipsPage() {
                       <Icon className="w-5 h-5" style={{ color: area.color }} />
                     </div>
                     <p className="text-[#3D4152] text-base font-medium">{area.name}</p>
+                    </div>
                   </motion.div>
                 );
               })}
@@ -387,17 +394,19 @@ export default function CorporatePartnershipsPage() {
                 return (
                   <motion.div
                     key={item.title}
-                    className="group relative bg-white rounded-2xl border border-[#D8D5CF] p-7 hover:-translate-y-1 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg hover:border-[#2563EB]/30"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                     initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     <div
                       className="absolute top-0 left-0 right-0 h-[2px]"
                       style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}40)` }}
                     />
-                    <div className="relative z-[1]">
+                    <div className="relative z-[1] p-7">
                       <div className="relative mb-5">
                         <div
                           className="relative w-12 h-12 rounded-xl flex items-center justify-center"
@@ -413,6 +422,7 @@ export default function CorporatePartnershipsPage() {
                       <p className="text-[#5A5F72] text-base leading-relaxed">
                         {item.description}
                       </p>
+                    </div>
                     </div>
                   </motion.div>
                 );
@@ -562,17 +572,19 @@ export default function CorporatePartnershipsPage() {
                 return (
                   <motion.div
                     key={item.title}
-                    className="group relative bg-white rounded-2xl border border-[#D8D5CF] p-7 hover:-translate-y-1 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg hover:border-[#2563EB]/30"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                     initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     <div
                       className="absolute top-0 left-0 right-0 h-[2px]"
                       style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}40)` }}
                     />
-                    <div className="relative z-[1]">
+                    <div className="relative z-[1] p-7">
                       <div className="relative mb-5">
                         <div
                           className="relative w-12 h-12 rounded-xl flex items-center justify-center"
@@ -588,6 +600,7 @@ export default function CorporatePartnershipsPage() {
                       <p className="text-[#5A5F72] text-base leading-relaxed">
                         {item.description}
                       </p>
+                    </div>
                     </div>
                   </motion.div>
                 );

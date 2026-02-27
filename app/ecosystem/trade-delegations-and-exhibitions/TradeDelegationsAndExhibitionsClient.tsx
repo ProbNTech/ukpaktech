@@ -7,6 +7,9 @@ import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const tradeDelegationIntro = "The UK-Pakistan Tech Council organises trade delegations to connect technology companies with key stakeholders, potential partners, investors, and government representatives in both the UK and Pakistan. These delegations provide members with a strategic platform to explore new markets, forge partnerships, and drive business growth.";
 
@@ -71,9 +74,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
         image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/events" variant="glass" showArrow>
-            View Events
-          </Button>
+          <RainbowButton href="/events" showArrow>View Events</RainbowButton>
           <Button href="/contact" variant="glass" showArrow>
             Contact Us
           </Button>
@@ -135,7 +136,9 @@ export default function TradeDelegationsAndExhibitionsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] shadow-sm rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
                   <div
                     className="absolute top-0 left-0 right-0 h-[3px]"
@@ -147,6 +150,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
                     </h4>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
                     <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
+                  </div>
                   </div>
                 </motion.div>
               ))}
@@ -180,7 +184,9 @@ export default function TradeDelegationsAndExhibitionsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] shadow-sm rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
                   <div
                     className="absolute top-0 left-0 right-0 h-[3px]"
@@ -192,6 +198,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
                     </h4>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
                     <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
+                  </div>
                   </div>
                 </motion.div>
               ))}
@@ -230,7 +237,9 @@ export default function TradeDelegationsAndExhibitionsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] shadow-sm rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
                   <div
                     className="absolute top-0 left-0 right-0 h-[3px]"
@@ -242,6 +251,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
                     </h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
                     <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
+                  </div>
                   </div>
                 </motion.div>
               ))}
@@ -333,45 +343,15 @@ export default function TradeDelegationsAndExhibitionsClient() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative bg-[#0E1221]/80 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10">
-          <Image src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=2400&q=85&auto=format&fit=crop" alt="Trade Delegations background" fill className="object-cover" sizes="100vw" />
-        </div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#22C55E]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#2563EB]" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-5">
-                Get Involved
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-5">
-                Join Our Next Delegation
-              </h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl">
-                Connect with technology leaders and explore cross-border opportunities through UPTECH&apos;s trade delegations and exhibitions.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/events" variant="primary" size="lg" showArrow>
-                  View Events
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <GlobalCTA
+        label="Get Involved"
+        title="Join Our Next Delegation"
+        subtitle="Connect with technology leaders and explore cross-border opportunities through UPTECH trade delegations and exhibitions."
+        primaryButtonText="View Events"
+        primaryButtonLink="/events"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

@@ -8,7 +8,7 @@ import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { CheckCircle2, Users, Crown, Briefcase, Shield, Target, Award, Network, BookOpen, Building2, Layers, ArrowRight } from "lucide-react";
-import { TubesCTA } from "@/components/TubesCTA";
+import { GlobalCTA } from "@/components/GlobalCTA";
 
 const orgChart = [
   {
@@ -339,28 +339,15 @@ export default function StructurePage() {
       </section>
 
       {/* ── CTA — TubesCursor ──────────────────────────────────────── */}
-      <TubesCTA>
-        <div className="max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#4ade80] mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-            Get Involved
-          </p>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-none text-white mb-5 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
-            Transparent Governance, Collective Impact
-          </h2>
-          <div className="h-px bg-white/20 mb-6" />
-          <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-            Our structure ensures every member has a voice. Learn more about how you can contribute to UPTECH&apos;s mission.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Button href="/membership" variant="primary" size="lg" showArrow>
-              Become a Member
-            </Button>
-            <Button href="/leadership" variant="glass" size="lg">
-              Leadership &amp; Governance
-            </Button>
-          </div>
-        </div>
-      </TubesCTA>
+      <GlobalCTA
+        label="Get Involved"
+        title="Transparent Governance, Collective Impact"
+        subtitle="Our structure ensures every member has a voice. Learn more about how you can contribute to UPTECH’s mission."
+        primaryButtonText="Become a Member"
+        primaryButtonLink="/membership"
+        secondaryButtonText="Leadership & Governance"
+        secondaryButtonLink="/leadership"
+      />
     </div>
   );
 }

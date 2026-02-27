@@ -8,6 +8,7 @@ import { Button } from "@/components/Button";
 import { TrendingUp, Wallet, Users, Gift, CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const stats = [
   { value: "200+", label: "SMEs Supported", color: "#2563EB" },
@@ -159,8 +160,10 @@ export default function SMEHubPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${pillar.color}, ${pillar.color}60)` }} />
                     <div className="p-8">
                       <div className="flex items-center gap-3 mb-5">
@@ -181,6 +184,7 @@ export default function SMEHubPage() {
                           </li>
                         ))}
                       </ul>
+                    </div>
                     </div>
                   </motion.div>
                 );
@@ -204,8 +208,10 @@ export default function SMEHubPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm pl-7"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                 >
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm pl-7">
                   <div className="absolute top-4 bottom-4 left-0 w-1 rounded-r-full" style={{ background: `linear-gradient(to bottom, ${market.color}, ${market.color}30)` }} />
                   <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${market.color}, ${market.color}60)` }} />
                   <div className="p-6 pl-0">
@@ -213,6 +219,7 @@ export default function SMEHubPage() {
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{market.name}</h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
                     <p className="text-base text-[#5A5F72] leading-relaxed">{market.description}</p>
+                  </div>
                   </div>
                 </motion.div>
               ))}
@@ -238,8 +245,10 @@ export default function SMEHubPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${color}, ${color}60)` }} />
                     <div className="p-6">
                       <div className="relative mb-5">
@@ -253,6 +262,7 @@ export default function SMEHubPage() {
                         <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color }} strokeWidth={2} />
                         <span className="text-sm font-semibold" style={{ color }}>{step.outcome}</span>
                       </div>
+                    </div>
                     </div>
                   </motion.div>
                 );
@@ -278,13 +288,16 @@ export default function SMEHubPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     <div className="absolute top-0 left-0 right-0 h-[3px]" style={{ background: `linear-gradient(to right, ${color}, ${color}60)` }} />
                     <div className="p-6">
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{item.title}</h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
                       <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
+                    </div>
                     </div>
                   </motion.div>
                 );

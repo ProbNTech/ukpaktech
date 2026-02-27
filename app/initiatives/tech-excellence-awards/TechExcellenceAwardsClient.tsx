@@ -8,6 +8,9 @@ import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const companyAwards = [
   { title: "Excellence in IT Exports", tag: "Company", description: "Recognising outstanding achievement in IT export growth and international market development." },
@@ -70,9 +73,7 @@ export default function TechExcellenceAwardsClient() {
         image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-            Submit a Nomination
-          </Button>
+          <RainbowButton href="/membership/apply" showArrow>Submit a Nomination</RainbowButton>
           <Button href="/contact" variant="glass" size="lg" showArrow>
             Contact Us
           </Button>
@@ -137,8 +138,10 @@ export default function TechExcellenceAwardsClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.06 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm flex flex-col"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col h-full">
                     <div
                       className="absolute top-0 left-0 right-0 h-[3px]"
                       style={{ background: `linear-gradient(to right, ${tagColor}, ${tagColor}60)` }}
@@ -157,6 +160,7 @@ export default function TechExcellenceAwardsClient() {
                       </div>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
                       <p className="text-[#7A7E8F] text-base leading-relaxed flex-1">{category.description}</p>
+                    </div>
                     </div>
                   </motion.div>
                 );
@@ -186,8 +190,10 @@ export default function TechExcellenceAwardsClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.06 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm flex flex-col"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col h-full">
                     <div
                       className="absolute top-0 left-0 right-0 h-[3px]"
                       style={{ background: `linear-gradient(to right, ${tagColor}, ${tagColor}60)` }}
@@ -206,6 +212,7 @@ export default function TechExcellenceAwardsClient() {
                       </div>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
                       <p className="text-[#7A7E8F] text-base leading-relaxed flex-1">{category.description}</p>
+                    </div>
                     </div>
                   </motion.div>
                 );
@@ -233,8 +240,10 @@ export default function TechExcellenceAwardsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                 >
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                   <div
                     className="absolute top-0 left-0 right-0 h-[3px]"
                     style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}60)` }}
@@ -268,6 +277,7 @@ export default function TechExcellenceAwardsClient() {
                         {step.outcome}
                       </span>
                     </div>
+                  </div>
                   </div>
                 </motion.div>
               ))}
@@ -364,45 +374,15 @@ export default function TechExcellenceAwardsClient() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10">
-          <Image src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop" alt="Tech Excellence Awards background" fill className="object-cover" sizes="100vw" />
-        </div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#C41E3A]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#C41E3A]" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-5">
-                Submit a Nomination
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Nominate the Innovators Shaping the UK–Pakistan Tech Corridor
-              </h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl">
-                Help us recognise exceptional individuals and organisations driving technology excellence and cross-border collaboration.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-                  Submit a Nomination
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <GlobalCTA
+        label="Submit a Nomination"
+        title="Nominate the Innovators Shaping the UK–Pakistan Tech Corridor"
+        subtitle="Help us recognise exceptional individuals and organisations driving technology excellence and cross-border collaboration."
+        primaryButtonText="Submit a Nomination"
+        primaryButtonLink="/membership/apply"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

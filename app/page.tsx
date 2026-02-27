@@ -9,6 +9,7 @@ import { Hero } from "@/components/Hero";
 import { NewsCard } from "@/components/NewsCard";
 import { LiteYouTube } from "@/components/LiteYouTube";
 import { ChevronRight, ArrowUpRight, Cpu, Briefcase, GraduationCap, Globe2, Shield, Handshake, Users, Building2, MapPin } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { articles } from "@/data/articles";
 import { featuredEvents } from "@/data/featured-events";
 
@@ -20,10 +21,7 @@ const ImpactStats = dynamic(() =>
   import("@/components/ImpactStats").then((m) => ({ default: m.ImpactStats })),
   { ssr: false }
 );
-const TubesCursorBg = dynamic(() =>
-  import("@/components/ui/tube-cursor").then((m) => ({ default: m.TubesCursor })),
-  { ssr: false }
-);
+import { GlobalCTA } from "@/components/GlobalCTA";
 
 /* Top 15 articles for the homepage news grid — 5 rows × 3 columns */
 const homepageArticles = articles.slice(0, 15);
@@ -343,7 +341,9 @@ export default function Home() {
             />
 
             {/* Featured: AI & Tech Programs — full-width accent card */}
-            <Link href="/programs/ai-tech-programs" className="group block mb-5 relative rounded-xl overflow-hidden bg-gradient-to-r from-[#eef2ff] to-[#f0f9ff] border border-[#2563EB]/15 hover:border-[#2563EB]/30 hover:shadow-lg hover:shadow-[#2563EB]/8 transition-all duration-500">
+            <div className="relative rounded-2xl border border-[#D8D5CF]/60 p-px mb-5">
+              <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+            <Link href="/programs/ai-tech-programs" className="group block relative rounded-2xl overflow-hidden bg-gradient-to-r from-[#eef2ff] to-[#f0f9ff] border border-[#2563EB]/15 hover:border-[#2563EB]/30 hover:shadow-lg hover:shadow-[#2563EB]/8 transition-all duration-500">
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#2563EB] to-[#3b82f6]" />
               <div className="p-7 lg:p-9 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
                 <div className="flex items-center gap-5 flex-shrink-0">
@@ -367,6 +367,7 @@ export default function Home() {
                 </div>
               </div>
             </Link>
+            </div>
 
             {/* Row 1 — 3 cards with gradient top borders */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
@@ -377,7 +378,9 @@ export default function Home() {
               ].map((card) => {
                 const Icon = card.icon;
                 return (
-                  <Link key={card.num} href={card.href} className="group relative bg-white rounded-xl border border-[#D8D5CF] overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+                  <div key={card.num} className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <Link href={card.href} className="group relative block bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
                     <div className="h-[3px] w-full" style={{ background: `linear-gradient(90deg, ${card.color}, ${card.color}60)` }} />
                     <div className="p-6 lg:p-7">
                       <div className="flex items-center justify-between mb-5">
@@ -394,6 +397,7 @@ export default function Home() {
                       <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300" />
                     </div>
                   </Link>
+                  </div>
                 );
               })}
             </div>
@@ -406,7 +410,9 @@ export default function Home() {
               ].map((card) => {
                 const Icon = card.icon;
                 return (
-                  <Link key={card.num} href={card.href} className="group relative bg-white rounded-xl border border-[#D8D5CF] overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+                  <div key={card.num} className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <Link href={card.href} className="group relative block bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
                     <div className="h-[3px] w-full" style={{ background: `linear-gradient(90deg, ${card.color}, ${card.color}60)` }} />
                     <div className="p-6 lg:p-7 flex items-start gap-5">
                       <div className="relative flex-shrink-0">
@@ -425,6 +431,7 @@ export default function Home() {
                       <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300 flex-shrink-0 mt-1" />
                     </div>
                   </Link>
+                  </div>
                 );
               })}
             </div>
@@ -453,7 +460,9 @@ export default function Home() {
               ].map((card) => {
                 const Icon = card.icon;
                 return (
-                  <Link key={card.title} href={card.href} className="group relative bg-white rounded-xl border border-[#D8D5CF] overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+                  <div key={card.title} className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <Link href={card.href} className="group relative block bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
                     <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${card.color}, ${card.color}60)` }} />
                     <div className="p-6 lg:p-7">
                       <div className="flex items-center justify-between mb-5">
@@ -469,6 +478,7 @@ export default function Home() {
                       <p className="text-[#3D4152] text-base leading-relaxed">{card.desc}</p>
                     </div>
                   </Link>
+                  </div>
                 );
               })}
             </div>
@@ -598,40 +608,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════════════════════════
-           JOIN CTA — animated tube cursor background
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[2] overflow-hidden bg-[#0B0F1A] text-white">
-        <TubesCursorBg
-          initialColors={["#2563EB", "#22C55E", "#C41E3A"]}
-          lightColors={["#3b82f6", "#4ade80", "#E74C5E", "#60a5fa"]}
-          lightIntensity={220}
-          className="min-h-[420px] md:min-h-[480px]"
-        >
-          <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 md:py-20">
-            <AnimatedSection animation="blur-in">
-              <div className="max-w-3xl">
-                <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-                  Join UPTECH
-                </p>
-                <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
-                  UPTECH is a trusted network of over 120 members, shaping the future of UK–Pakistan technology.
-                </h2>
-                <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-                  Membership opens access to bilateral investment introductions, exclusive summits, policy briefings, and the UK–Pakistan tech community.
-                </p>
-                <Link
-                  href="/membership/apply"
-                  className="inline-flex items-center gap-2 px-7 py-3 rounded-full border-2 border-white/90 text-white text-sm font-semibold backdrop-blur-sm hover:bg-white hover:text-[#1C1F2E] transition-colors duration-300 drop-shadow-[0_0_10px_rgba(0,0,0,0.6)]"
-                >
-                  Apply for Membership
-                  <ChevronRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </AnimatedSection>
-          </div>
-        </TubesCursorBg>
-      </section>
+      <GlobalCTA
+        label="Join UPTECH"
+        title="UPTECH is a trusted network of over 120 members, shaping the future of UK–Pakistan technology."
+        subtitle="Membership opens access to bilateral investment introductions, exclusive summits, policy briefings, and the UK–Pakistan tech community."
+        primaryButtonText="Apply for Membership"
+        primaryButtonLink="/membership/apply"
+      />
     </div>
   );
 }

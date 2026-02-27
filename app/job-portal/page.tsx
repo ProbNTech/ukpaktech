@@ -4,7 +4,8 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { motion, useReducedMotion } from "framer-motion";
 import { PageHero } from "@/components/PageHero";
-import { TubesCTA } from "@/components/TubesCTA";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
 import {
   Search,
   Building2,
@@ -92,7 +93,7 @@ export default function JobPortalPage() {
         image="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="#who-its-for" variant="glass" showArrow>Browse Jobs</Button>
+          <RainbowButton href="#who-its-for" showArrow>Browse Jobs</RainbowButton>
           <Button href="/contact" variant="glass" showArrow>Post a Job</Button>
         </div>
       </PageHero>
@@ -492,28 +493,15 @@ export default function JobPortalPage() {
       </section>
 
       {/* ── CTA Section — TubesCursor ── */}
-      <TubesCTA>
-        <div className="max-w-2xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#4ade80] mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-            The Future of Work
-          </p>
-          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.6rem] leading-none text-white mb-5 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
-            The Future of Cross-Border Tech Careers
-          </h2>
-          <div className="h-px bg-white/20 mb-6" />
-          <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-            Empowering technology talent and fostering cross-border collaboration — our Job Portal helps build the workforce of the future.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Button href="/membership" variant="primary" size="lg" showArrow>
-              Become a Member
-            </Button>
-            <Button href="/contact" variant="glass" size="lg">
-              Contact Us
-            </Button>
-          </div>
-        </div>
-      </TubesCTA>
+      <GlobalCTA
+        label="The Future of Work"
+        title="The Future of Cross-Border Tech Careers"
+        subtitle="Empowering technology talent and fostering cross-border collaboration — our Job Portal helps build the workforce of the future."
+        primaryButtonText="Become a Member"
+        primaryButtonLink="/membership"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

@@ -10,6 +10,7 @@ import {
   GraduationCap,
   Landmark,
 } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const audiences = [
   { icon: Code, label: "IT and AI Professionals", brandColor: "#2563EB", description: "Tech experts driving innovation" },
@@ -52,29 +53,39 @@ function AudienceCard({ audience, index, isInView }: { audience: typeof audience
       className="group relative"
       style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
     >
-      <div className="relative h-full bg-white rounded border border-gray-100 overflow-hidden shadow-md hover:shadow-lg hover:border-[#2563EB]/20 transition-all duration-500 text-center p-8">
-        <motion.div
-          style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-          className="relative z-10"
-        >
-          <div
-            className="relative w-20 h-20 rounded-2xl mx-auto mb-6 flex items-center justify-center border group-hover:scale-110 transition-all duration-500"
-            style={{
-              backgroundColor: `${audience.brandColor}10`,
-              borderColor: `${audience.brandColor}20`,
-            }}
-          >
-            <Icon className="w-10 h-10" style={{ color: audience.brandColor }} />
-          </div>
-
-          <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A] group-hover:text-[#2563EB] transition-colors duration-300">{audience.label}</h3>
-          <p className="text-[#475569] text-sm leading-relaxed">{audience.description}</p>
-        </motion.div>
-
-        <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
-          style={{ background: `radial-gradient(circle at center, ${audience.brandColor}08 0%, transparent 70%)` }}
+      <div className="relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px">
+        <GlowingEffect
+          spread={40}
+          glow
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+          borderWidth={2}
         />
+        <div className="relative h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500 text-center p-8">
+          <motion.div
+            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+            className="relative z-10"
+          >
+            <div
+              className="relative w-20 h-20 rounded-2xl mx-auto mb-6 flex items-center justify-center border group-hover:scale-110 transition-all duration-500"
+              style={{
+                backgroundColor: `${audience.brandColor}10`,
+                borderColor: `${audience.brandColor}20`,
+              }}
+            >
+              <Icon className="w-10 h-10" style={{ color: audience.brandColor }} />
+            </div>
+
+            <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A] group-hover:text-[#2563EB] transition-colors duration-300">{audience.label}</h3>
+            <p className="text-[#475569] text-sm leading-relaxed">{audience.description}</p>
+          </motion.div>
+
+          <div
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
+            style={{ background: `radial-gradient(circle at center, ${audience.brandColor}08 0%, transparent 70%)` }}
+          />
+        </div>
       </div>
     </motion.div>
   );

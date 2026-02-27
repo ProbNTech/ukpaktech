@@ -22,6 +22,8 @@ import {
   Lightbulb,
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
 
 /* ─── Data ──────────────────────────────────────────────────────────── */
 
@@ -142,9 +144,7 @@ export default function SeriesFundingPage() {
         image="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership" variant="glass" showArrow>
-            Access Series Funding
-          </Button>
+          <RainbowButton href="/membership" showArrow>Access Series Funding</RainbowButton>
           <Button href="/contact" variant="glass" showArrow>
             Speak to Our Team
           </Button>
@@ -440,74 +440,15 @@ export default function SeriesFundingPage() {
       {/* ================================================================
           CTA SECTION
           ================================================================ */}
-      <section className="relative bg-[#0E1221]/80 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10">
-          <Image src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=2400&q=85&auto=format&fit=crop" alt="Series Funding background" fill className="object-cover" sizes="100vw" />
-        </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none">
-          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#C41E3A]/10 rounded-full blur-[120px]" />
-          <div className="absolute top-10 right-0 w-[350px] h-[350px] bg-[#2563EB]/8 rounded-full blur-[100px]" />
-          <div className="absolute bottom-0 left-1/3 w-[300px] h-[300px] bg-[#22C55E]/5 rounded-full blur-[80px]" />
-        </div>
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div className="text-center max-w-3xl mx-auto">
-              <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#2563EB]/30 bg-[#2563EB]/10 backdrop-blur-sm mb-6"
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
-              >
-                <div className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse" />
-                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
-                  Scale Now
-                </span>
-              </motion.div>
-
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-5">
-                <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-                  Fuel Growth.{" "}
-                </span>
-                <span className="bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
-                  Expand Markets.
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-white via-white/80 to-white/60 bg-clip-text text-transparent">
-                  Transform the Tech Ecosystem.
-                </span>
-              </h2>
-
-              <p className="text-white/50 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
-                Whether you&apos;re a scaling company seeking Series A or B funding, or an investor looking for growth-stage opportunities, the UK-Pakistan Tech Council is your partner in driving cross-border innovation.
-              </p>
-
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button
-                  href="/membership/apply"
-                  variant="primary"
-                  size="lg"
-                  showArrow
-                  className="!bg-gradient-to-r !from-[#2563EB] !to-[#22C55E] hover:!shadow-[0_0_40px_rgba(37,99,235,0.3)]"
-                >
-                  Apply for Membership
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <GlobalCTA
+        label="Scale Now"
+        title="Fuel Growth. Expand Markets. Transform the Tech Ecosystem."
+        subtitle="Whether you are a scaling company seeking Series A or B funding, or an investor looking for growth-stage opportunities, the UK–Pakistan Tech Council is your partner in driving cross-border innovation."
+        primaryButtonText="Apply for Membership"
+        primaryButtonLink="/membership/apply"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

@@ -24,6 +24,9 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 /* ─── Data ──────────────────────────────────────────────────────────── */
 
@@ -155,9 +158,7 @@ export default function FundingAndGrantsClient() {
         image="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership" variant="glass" showArrow>
-            Become a Member
-          </Button>
+          <RainbowButton href="/membership" showArrow>Become a Member</RainbowButton>
           <Button href="/contact" variant="glass" showArrow>
             Contact Us
           </Button>
@@ -223,8 +224,10 @@ export default function FundingAndGrantsClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
-                    className="group relative rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-500 overflow-hidden"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative rounded-2xl bg-white shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg transition-all duration-500 overflow-hidden">
                     {/* Gradient top border */}
                     <div
                       className="absolute top-0 left-0 right-0 h-[2px]"
@@ -242,6 +245,7 @@ export default function FundingAndGrantsClient() {
                     <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-3">{item.title}</h3>
                     <div className="relative h-px bg-[#D8D5CF] mb-3" />
                     <p className="relative text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
+                    </div>
                   </motion.div>
                 );
               })}
@@ -273,8 +277,10 @@ export default function FundingAndGrantsClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-500 overflow-hidden"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative rounded-2xl bg-white shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg transition-all duration-500 overflow-hidden">
                     {/* Gradient top border */}
                     <div
                       className="absolute top-0 left-0 right-0 h-[2px]"
@@ -301,6 +307,7 @@ export default function FundingAndGrantsClient() {
                     >
                       <span>Learn more</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
+                    </div>
                     </div>
                   </motion.div>
                 );
@@ -349,7 +356,10 @@ export default function FundingAndGrantsClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.5, delay: i * 0.12 }}
-                    className="group relative rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 flex flex-col hover:-translate-y-1.5 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-500 overflow-hidden"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                  >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative rounded-2xl bg-white shadow-sm p-8 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 overflow-hidden"
                   >
                     {/* Gradient top border */}
                     <div
@@ -393,6 +403,7 @@ export default function FundingAndGrantsClient() {
                         </li>
                       ))}
                     </ul>
+                    </div>
                   </motion.div>
                 );
               })}
@@ -424,7 +435,10 @@ export default function FundingAndGrantsClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
-                    className="group relative rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-500 overflow-hidden"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                  >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative rounded-2xl bg-white shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg transition-all duration-500 overflow-hidden"
                   >
                     {/* Gradient top border */}
                     <div
@@ -467,6 +481,7 @@ export default function FundingAndGrantsClient() {
                     >
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       <span>{step.outcome}</span>
+                    </div>
                     </div>
                   </motion.div>
                 );
@@ -586,53 +601,15 @@ export default function FundingAndGrantsClient() {
       </section>
 
       {/* ── CTA ────────────────────────────────────────────────────── */}
-      <section className="relative bg-[#131942]/80 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10">
-          <Image src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=2400&q=85&auto=format&fit=crop" alt="Funding and Grants background" fill className="object-cover" sizes="100vw" />
-        </div>
-        {/* Gradient glow effects */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full bg-[#2563EB]/8 blur-[200px] pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#C41E3A]/6 blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[#22C55E]/5 blur-[120px] pointer-events-none" />
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2563EB]/20 bg-[#2563EB]/5 mb-6">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse" />
-                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">Apply Now</span>
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-5">
-                <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
-                  Ready to Secure Funding for Your{" "}
-                </span>
-                <span className="bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] bg-clip-text text-transparent">
-                  Innovation?
-                </span>
-              </h2>
-              <p className="text-white/50 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
-                Explore funding opportunities and take your technology innovation to the next level with UPTECH&apos;s funding and grants programs.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/membership/apply" variant="primary" size="lg" showArrow className="!bg-[#2563EB] hover:!bg-[#1d4ed8]">
-                  Apply for Membership
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <GlobalCTA
+        label="Apply Now"
+        title="Ready to Secure Funding for Your Innovation?"
+        subtitle="Explore funding opportunities and take your technology innovation to the next level with UPTECH funding and grants programs."
+        primaryButtonText="Apply for Membership"
+        primaryButtonLink="/membership/apply"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

@@ -2,7 +2,6 @@
 
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
-import { TubesCTA } from "@/components/TubesCTA";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   Users,
@@ -28,6 +27,8 @@ import {
 import { siteConfig } from "@/config/site";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
 
 /* ─── Shared animation variants ─── */
 const containerVariants = {
@@ -306,7 +307,7 @@ export default function MembershipClient() {
         image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership/apply" variant="glass" showArrow>Apply Now</Button>
+          <RainbowButton href="/membership/apply" showArrow>Apply Now</RainbowButton>
           <Button href="#tiers" variant="glass" showArrow>View Tiers</Button>
         </div>
       </PageHero>
@@ -867,23 +868,15 @@ export default function MembershipClient() {
       {/* ═══════════════════════════════════════════════════════════════
           CTA SECTION
       ═══════════════════════════════════════════════════════════════ */}
-      <TubesCTA>
-        <AnimatedSection>
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">Join Today</p>
-            <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
-              Ready to Join UPTECH?
-            </h2>
-            <p className="text-white/80 text-lg leading-relaxed mb-8 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
-              Membership with the Council provides more than just networking, it&#39;s a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Join today. Connect, grow, and lead the future of UK-Pakistan technology.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/membership/apply" variant="primary" size="lg" showArrow>Apply for Membership</Button>
-              <Button href="/contact" variant="glass" size="lg">Get in Touch</Button>
-            </div>
-          </div>
-        </AnimatedSection>
-      </TubesCTA>
+      <GlobalCTA
+        label="Join Today"
+        title="Ready to Join UPTECH?"
+        subtitle="Membership with the Council provides more than just networking — it’s a gateway to growth, visibility, and influence in the UK–Pakistan technology corridor."
+        primaryButtonText="Apply for Membership"
+        primaryButtonLink="/membership/apply"
+        secondaryButtonText="Get in Touch"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

@@ -8,6 +8,7 @@ import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { ChevronDown, HelpCircle, Users, Briefcase, Banknote, Calendar, MessageCircle } from "lucide-react";
 import { useState } from "react";
+import { GlobalCTA } from "@/components/GlobalCTA";
 
 const categoryIcons: Record<string, typeof HelpCircle> = {
   General: HelpCircle,
@@ -194,30 +195,15 @@ export default function FAQsPage() {
       })}
 
       {/* CTA */}
-      <Section variant="dark">
-        <AnimatedSection>
-          <div className="grid lg:grid-cols-[1fr_auto] gap-8 items-center">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-[#2563EB]/20 flex items-center justify-center">
-                  <MessageCircle className="w-5 h-5 text-[#60a5fa]" strokeWidth={1.5} />
-                </div>
-                <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider">Still Have Questions?</p>
-              </div>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl leading-tight mb-4">
-                We&apos;re Here to Help
-              </h2>
-              <p className="text-white/70 text-lg leading-relaxed max-w-2xl">
-                Can&apos;t find the answer you&apos;re looking for? Our team is ready to assist with any questions about UPTECH, membership, programmes, or partnerships.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/contact" variant="primary" size="lg" showArrow>Contact Us</Button>
-              <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
-            </div>
-          </div>
-        </AnimatedSection>
-      </Section>
+      <GlobalCTA
+        label="Still Have Questions?"
+        title="We’re Here to Help"
+        subtitle="Can’t find the answer you’re looking for? Our team is ready to assist with any questions about UPTECH, membership, programmes, or partnerships."
+        primaryButtonText="Contact Us"
+        primaryButtonLink="/contact"
+        secondaryButtonText="Apply for Membership"
+        secondaryButtonLink="/membership/apply"
+      />
     </div>
   );
 }

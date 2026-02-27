@@ -8,6 +8,7 @@ import { Button } from "@/components/Button";
 import { Lightbulb, Globe, Compass, CheckCircle2, ChevronDown, Users, Clock, Award, Target } from "lucide-react";
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const stats = [
   { value: "75+", label: "Active Mentors" },
@@ -226,19 +227,21 @@ export default function MentorshipPage() {
                 return (
                   <motion.div
                     key={item.title}
-                    className="group relative bg-white rounded-2xl border border-[#D8D5CF] p-6 hover:-translate-y-1 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg hover:border-[#2563EB]/30"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                     initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     {/* Gradient top border */}
                     <div
                       className="absolute top-0 left-0 right-0 h-[2px]"
                       style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}00)` }}
                     />
 
-                    <div className="relative z-[1]">
+                    <div className="relative z-[1] p-6">
                       {/* Icon container */}
                       <div
                         className="relative w-12 h-12 rounded-xl flex items-center justify-center mb-4"
@@ -258,6 +261,7 @@ export default function MentorshipPage() {
                           </li>
                         ))}
                       </ul>
+                    </div>
                     </div>
                   </motion.div>
                 );
@@ -289,19 +293,21 @@ export default function MentorshipPage() {
                 return (
                   <motion.div
                     key={role.title}
-                    className="group relative bg-white rounded-2xl border border-[#D8D5CF] p-8 hover:-translate-y-1 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg hover:border-[#2563EB]/30"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                     initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     {/* Gradient top border */}
                     <div
                       className="absolute top-0 left-0 right-0 h-[2px]"
                       style={{ background: `linear-gradient(to right, ${role.color}, transparent)` }}
                     />
 
-                    <div className="relative z-[1]">
+                    <div className="relative z-[1] p-8">
                       <div className="flex items-center gap-4 mb-4">
                         {/* Icon */}
                         <div
@@ -334,6 +340,7 @@ export default function MentorshipPage() {
                         ))}
                       </ul>
                     </div>
+                    </div>
                   </motion.div>
                 );
               })}
@@ -365,19 +372,21 @@ export default function MentorshipPage() {
                 return (
                   <motion.div
                     key={step.number}
-                    className="group relative bg-white rounded-2xl border border-[#D8D5CF] p-6 hover:-translate-y-1 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg hover:border-[#2563EB]/30"
+                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                     initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                   >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     {/* Gradient top border */}
                     <div
                       className="absolute top-0 left-0 right-0 h-[2px]"
                       style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}00)` }}
                     />
 
-                    <div className="relative z-[1]">
+                    <div className="relative z-[1] p-6">
                       <div className="flex items-center gap-3 mb-5">
                         {/* Numbered circle */}
                         <div className="relative">
@@ -412,6 +421,7 @@ export default function MentorshipPage() {
                         <span className="text-xs font-semibold" style={{ color: step.color }}>{step.outcome}</span>
                       </div>
                     </div>
+                    </div>
                   </motion.div>
                 );
               })}
@@ -433,12 +443,14 @@ export default function MentorshipPage() {
               {mentorProfiles.map((item, i) => (
                 <motion.div
                   key={item.title}
-                  className="group relative bg-white rounded-2xl border border-[#D8D5CF] p-6 pl-8 hover:-translate-y-1 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-lg hover:border-[#2563EB]/30"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                 >
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm p-6 pl-8">
                   {/* Left accent border */}
                   <div
                     className="absolute top-4 bottom-4 left-0 w-1 rounded-r-full"
@@ -448,6 +460,7 @@ export default function MentorshipPage() {
                   <div className="relative z-[1]">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">{item.title}</h3>
                     <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
+                  </div>
                   </div>
                 </motion.div>
               ))}

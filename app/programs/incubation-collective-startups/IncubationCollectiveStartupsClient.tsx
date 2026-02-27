@@ -7,6 +7,9 @@ import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const focusAreas = [
   { title: "AI & Data Products", description: "Building intelligent solutions that transform industries through data-driven innovation.", color: "#2563EB" },
@@ -75,9 +78,7 @@ export default function IncubationCollectiveStartupsClient() {
         image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-            Apply for Incubation
-          </Button>
+          <RainbowButton href="/membership/apply" showArrow>Apply for Incubation</RainbowButton>
           <Button href="/contact" variant="glass" size="lg" showArrow>
             Partner With Us
           </Button>
@@ -167,7 +168,9 @@ export default function IncubationCollectiveStartupsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
                   <div
                     className="absolute top-0 left-0 right-0 h-[3px]"
@@ -179,6 +182,7 @@ export default function IncubationCollectiveStartupsClient() {
                     </h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
                     <p className="text-[#7A7E8F] text-base leading-relaxed">{area.description}</p>
+                  </div>
                   </div>
                 </motion.div>
               ))}
@@ -305,7 +309,9 @@ export default function IncubationCollectiveStartupsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
                 >
                   <div
                     className="absolute top-0 left-0 right-0 h-[3px]"
@@ -332,6 +338,7 @@ export default function IncubationCollectiveStartupsClient() {
                       ))}
                     </ul>
                   </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -357,7 +364,9 @@ export default function IncubationCollectiveStartupsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm flex flex-col"
+                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col h-full"
                 >
                   <div
                     className="absolute top-0 left-0 right-0 h-[3px]"
@@ -378,6 +387,7 @@ export default function IncubationCollectiveStartupsClient() {
                         </li>
                       ))}
                     </ul>
+                  </div>
                   </div>
                 </motion.div>
               ))}
@@ -412,45 +422,15 @@ export default function IncubationCollectiveStartupsClient() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85&auto=format&fit=crop" alt="" fill className="object-cover" sizes="100vw" />
-        </div>
-        <div className="absolute inset-0 bg-[#0B0F1A]/80" />
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#22C55E]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#2563EB]" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
-          <AnimatedSection>
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-5">
-                Get Involved
-              </p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Build, Scale, and Expand With UPTECH
-              </h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl">
-                Join our incubation program and become part of a collaborative ecosystem driving innovation across the UK and Pakistan.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/membership/apply" variant="primary" size="lg" showArrow>
-                  Apply for Incubation
-                </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
-                  Partner With Us
-                </Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <GlobalCTA
+        label="Get Involved"
+        title="Build, Scale, and Expand With UPTECH"
+        subtitle="Join our incubation program and become part of a collaborative ecosystem driving innovation across the UK and Pakistan."
+        primaryButtonText="Apply for Incubation"
+        primaryButtonLink="/membership/apply"
+        secondaryButtonText="Partner With Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }
