@@ -59,7 +59,7 @@ export default function PeopleAIClient() {
         label="UPTECH Initiative"
         title="People AI Platform"
         subtitle="Empowering people and organisations through human-centric AI support systems that integrate technology with professional services."
-        image="/image/london-images/ai-futuristic-tech.jpg"
+        image="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership/apply" variant="primary" size="lg" showArrow>
@@ -345,7 +345,7 @@ export default function PeopleAIClient() {
       <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image src="/image/london-images/human-ai-interaction.jpg" alt="People and AI background" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=2400&q=85&auto=format&fit=crop" alt="People and AI background" fill className="object-cover" sizes="100vw" />
         </div>
         {/* Gradient glow effects */}
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />

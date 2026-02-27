@@ -49,7 +49,7 @@ export default function LeadershipPage() {
         label="Governance"
         title="Leadership &amp; Governance"
         subtitle="UPTECH operates under a defined governance structure ensuring transparency, ethics, and accountability across all initiatives."
-        image="/image/london-images/corporate-office-building.jpg"
+        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap gap-4">
           {[

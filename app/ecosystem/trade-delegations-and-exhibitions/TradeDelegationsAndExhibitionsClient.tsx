@@ -68,7 +68,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
         label="UPTECH Ecosystem"
         title="Trade Delegations & Exhibitions"
         subtitle="Facilitating cross-border trade delegations and technology exhibitions to strengthen UK–Pakistan partnerships."
-        image="/image/london-images/professional-networking.jpg"
+        image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/events" variant="glass" showArrow>
@@ -336,7 +336,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
       <section className="relative bg-[#0E1221]/80 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image src="/image/london-images/business-networking-event.jpg" alt="Trade Delegations background" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=2400&q=85&auto=format&fit=crop" alt="Trade Delegations background" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#22C55E]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#2563EB]" />

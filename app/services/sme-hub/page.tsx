@@ -89,7 +89,7 @@ export default function SMEHubPage() {
         label="UPTECH Service"
         title="SME Hub"
         subtitle="Whether you're growing your business, entering new markets, securing public sector contracts, or boosting sales, SME Hub provides the support, connections, and insights you need. Our hub is your one-stop shop for overcoming challenges and unlocking new opportunities."
-        image="/image/london-images/entrepreneur-sme.jpg"
+        image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership" variant="glass" showArrow>Join the Hub</Button>
@@ -309,7 +309,7 @@ export default function SMEHubPage() {
       <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image src="/image/london-images/entrepreneur-sme.jpg" alt="SME Hub background" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=2400&q=85&auto=format&fit=crop" alt="SME Hub background" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#22C55E]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#2563EB]" />

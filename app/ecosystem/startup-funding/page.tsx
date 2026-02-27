@@ -146,7 +146,7 @@ export default function StartupFundingPage() {
         label="Ecosystem / Startup Funding"
         title="Startup Funding Opportunities"
         subtitle="The UK-Pakistan Tech Council supports early-stage technology startups in accessing funding, investment networks, and growth capital to turn innovative ideas into scalable businesses."
-        image="/image/london-images/investment-finance-meeting.jpg"
+        image="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership" variant="glass" showArrow>
@@ -417,7 +417,7 @@ export default function StartupFundingPage() {
       <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image src="/image/london-images/startup-coworking.jpg" alt="Startup Funding background" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85&auto=format&fit=crop" alt="Startup Funding background" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none">
           <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#22C55E]/10 rounded-full blur-[120px]" />

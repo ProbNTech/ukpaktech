@@ -166,7 +166,7 @@ export default function CorporatePartnershipsPage() {
         label="UPTECH Service"
         title="Corporate & Accelerator Partnerships"
         subtitle="The UK-Pakistan Tech Council fosters strategic partnerships between technology startups, scale-ups, corporates, and accelerator programs across the UK and Pakistan. These collaborations help members access resources, mentorship, market opportunities, and industry expertise to accelerate growth and innovation."
-        image="/image/london-images/partnership-collaboration.jpg"
+        image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership" variant="glass" showArrow>Become a Partner</Button>
@@ -603,7 +603,7 @@ export default function CorporatePartnershipsPage() {
       <section className="relative bg-[#131942]/80 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image src="/image/london-images/partnership-collaboration.jpg" alt="Corporate Partnerships background" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2400&q=85&auto=format&fit=crop" alt="Corporate Partnerships background" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full bg-[#2563EB]/8 blur-[200px] pointer-events-none" />
         <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#C41E3A]/6 blur-[150px] pointer-events-none" />

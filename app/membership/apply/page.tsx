@@ -40,11 +40,6 @@ const itemFade = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
-/* ─── Grid pattern background (unused — kept for reference) ─── */
-const gridPatternStyle = {
-  backgroundImage: "none",
-  backgroundSize: "40px 40px",
-};
 
 /* ─── Membership tiers data ─── */
 const membershipTiers = [
@@ -145,7 +140,7 @@ export default function MembershipApplicationForm() {
       <section className="relative">
         <div className="absolute inset-0">
           <Image
-            src="/image/london-images/professional-networking.jpg"
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=2400&q=85&auto=format&fit=crop"
             alt="UPTECH Membership Application"
             fill
             className="object-cover"

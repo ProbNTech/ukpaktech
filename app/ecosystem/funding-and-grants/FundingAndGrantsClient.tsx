@@ -152,7 +152,7 @@ export default function FundingAndGrantsClient() {
         label="Ecosystem / Funding & Grants"
         title="Funding and Grants"
         subtitle="Access funding opportunities to drive technology innovation and cross-border collaboration between the UK and Pakistan."
-        image="/image/london-images/investment-finance-meeting.jpg"
+        image="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership" variant="glass" showArrow>
@@ -589,7 +589,7 @@ export default function FundingAndGrantsClient() {
       <section className="relative bg-[#131942]/80 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image src="/image/london-images/investment-finance-meeting.jpg" alt="Funding and Grants background" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=2400&q=85&auto=format&fit=crop" alt="Funding and Grants background" fill className="object-cover" sizes="100vw" />
         </div>
         {/* Gradient glow effects */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] rounded-full bg-[#2563EB]/8 blur-[200px] pointer-events-none" />

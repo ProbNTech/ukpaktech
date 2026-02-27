@@ -65,7 +65,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
         label="UPTECH Ecosystem"
         title="UK–Pakistan Technology Partnership"
         subtitle="Strengthening bilateral technology collaboration between the United Kingdom and Pakistan."
-        image="/image/london-images/tower-bridge-wide.jpg"
+        image="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership" variant="glass" showArrow>
@@ -343,7 +343,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
       <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image src="/image/london-images/international-conference.jpg" alt="UK-Pakistan Technology Partnership background" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop" alt="UK-Pakistan Technology Partnership background" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />

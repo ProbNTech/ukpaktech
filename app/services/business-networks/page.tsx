@@ -73,7 +73,7 @@ export default function BusinessNetworksPage() {
         label="UPTECH Service"
         title="Business Networks"
         subtitle="The world's largest business network."
-        image="/image/london-images/business-networking-event.jpg"
+        image="https://images.unsplash.com/photo-1511578314322-379afb476865?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership" variant="glass" showArrow>Become a Member</Button>
@@ -315,7 +315,7 @@ export default function BusinessNetworksPage() {
       <section className="relative bg-[#131942]/80 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image src="/image/london-images/professional-networking.jpg" alt="Business Networks background" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=2400&q=85&auto=format&fit=crop" alt="Business Networks background" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />

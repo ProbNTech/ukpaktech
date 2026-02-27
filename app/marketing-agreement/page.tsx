@@ -239,7 +239,7 @@ export default function MarketingAgreementPage() {
       <PageHero
         title="Marketing Agreement"
         subtitle="Terms and conditions governing the promotion, marketing, and showcase of products through the UK\u2013Pakistan Technology Council network."
-        image="/image/london-images/data-security-privacy.jpg"
+        image="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=2400&q=85&auto=format&fit=crop"
       />
 
       {/* Parties */}

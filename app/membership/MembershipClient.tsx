@@ -302,7 +302,7 @@ export default function MembershipClient() {
         label="Membership"
         title="At UK Pakistan Tech Council, Membership Means Business"
         subtitle="Whether your priorities are to network with the industry and key stakeholders, to help shape policy, or to have access to insights that help your business to grow, UPTECH membership will positively impact your organisation in whatever way matters most to you."
-        image="/image/london-images/partnership-collaboration.jpg"
+        image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership/apply" variant="glass" showArrow>Apply Now</Button>

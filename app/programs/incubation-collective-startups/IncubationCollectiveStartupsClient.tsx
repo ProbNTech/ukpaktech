@@ -72,7 +72,7 @@ export default function IncubationCollectiveStartupsClient() {
         label="UPTECH Programs"
         title="Incubation & Startups"
         subtitle="Nurturing the next generation of tech startups and innovators through collaborative models and comprehensive support."
-        image="/image/london-images/startup-coworking.jpg"
+        image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership/apply" variant="primary" size="lg" showArrow>
@@ -414,7 +414,7 @@ export default function IncubationCollectiveStartupsClient() {
       {/* ── CTA ── */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/image/london-images/startup-coworking.jpg" alt="" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85&auto=format&fit=crop" alt="" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="absolute inset-0 bg-[#0B0F1A]/80" />
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#22C55E]" />

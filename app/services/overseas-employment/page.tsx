@@ -68,7 +68,7 @@ export default function OverseasEmploymentPage() {
         label="UPTECH Service"
         title="Overseas Contract Employment Opportunities"
         subtitle="The UK-Pakistan Tech Council facilitates skilled technology professionals with high-value overseas contract opportunities, helping both employers and talent thrive in global markets."
-        image="/image/london-images/global-workforce.jpg"
+        image="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership" variant="glass" showArrow>Get Connected</Button>
@@ -297,7 +297,7 @@ export default function OverseasEmploymentPage() {
       <section className="relative bg-[#131942]/80 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image src="/image/london-images/global-workforce.jpg" alt="Overseas Employment background" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=2400&q=85&auto=format&fit=crop" alt="Overseas Employment background" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />

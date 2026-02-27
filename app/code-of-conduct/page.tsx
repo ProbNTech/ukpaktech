@@ -80,7 +80,7 @@ export default function CodeOfConductPage() {
         label="Ethics & Standards"
         title="Code of Conduct"
         subtitle="UK-Pakistan Tech Council Code of Conduct"
-        image="/image/london-images/governance-ethics.jpg"
+        image="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=2400&q=85&auto=format&fit=crop"
       />
 
       {/* ── Summary + Quick Nav — Light section ──────────────────────── */}

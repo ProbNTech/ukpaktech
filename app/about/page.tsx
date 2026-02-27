@@ -17,7 +17,7 @@ export default function AboutPage() {
         label="About Us"
         title="About UPTECH"
         subtitle="Empowering Pakistan's Tech Leaders; innovation, entrepreneurship, investment, advocacy and visionary growth."
-        image="/image/london-images/international-conference.jpg"
+        image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership/apply" variant="glass" showArrow>Apply for Membership</Button>
@@ -285,7 +285,7 @@ export default function AboutPage() {
       <section className="relative z-[2] overflow-hidden bg-[#0B0F1A] text-white py-14 md:py-20">
         {/* Background image */}
         <Image
-          src="/image/london-images/partnership-collaboration.jpg"
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2400&q=85&auto=format&fit=crop"
           alt=""
           fill
           className="object-cover opacity-40"

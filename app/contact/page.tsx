@@ -74,7 +74,7 @@ export default function ContactPage() {
         label="Contact Us"
         title="Get in Touch"
         subtitle="Whether you're looking to partner, join, sponsor, or simply learn more — we'd love to hear from you."
-        image="/image/london-images/corporate-office-building.jpg"
+        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership/apply" variant="glass" showArrow>Apply for Membership</Button>

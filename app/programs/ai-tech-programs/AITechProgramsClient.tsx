@@ -82,7 +82,7 @@ export default function AITechProgramsPage() {
         label="UPTECH Programs"
         title="AI & Tech Programs"
         subtitle="Driving AI innovation and tech leadership between the UK and Pakistan through comprehensive training, certifications, and collaborative startup models."
-        image="/image/london-images/ai-futuristic-tech.jpg"
+        image="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership/apply" variant="primary" size="lg" showArrow>
@@ -271,7 +271,7 @@ export default function AITechProgramsPage() {
       {/* ── Next Steps / CTA ── */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/image/london-images/ai-futuristic-tech.jpg" alt="" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=2400&q=85&auto=format&fit=crop" alt="" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="absolute inset-0 bg-[#0B0F1A]/80" />
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />

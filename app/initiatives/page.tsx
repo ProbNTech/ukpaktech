@@ -15,7 +15,7 @@ export default function InitiativesPage() {
       <PageHero
         title="Initiatives"
         subtitle="UPTECH's flagship initiatives driving innovation and collaboration between the UK and Pakistan."
-        image="/image/london-images/innovation-ideas.jpg"
+        image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=2400&q=85&auto=format&fit=crop"
       />
       <Section>
         <SectionHeader label="Our work" title="All Initiatives" />

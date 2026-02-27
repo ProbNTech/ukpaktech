@@ -59,7 +59,7 @@ export default function SkillDevelopmentCenterPage() {
         label="UPTECH Programs"
         title="Skill Development Centre"
         subtitle="Comprehensive training programs designed to build world-class tech capabilities and accelerate your career."
-        image="/image/london-images/training-education.jpg"
+        image="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership/apply" variant="primary" size="lg" showArrow>
@@ -332,7 +332,7 @@ export default function SkillDevelopmentCenterPage() {
       {/* ── CTA ── */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/image/london-images/training-education.jpg" alt="" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=2400&q=85&auto=format&fit=crop" alt="" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="absolute inset-0 bg-[#0B0F1A]/80" />
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />

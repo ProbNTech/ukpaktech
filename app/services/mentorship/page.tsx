@@ -99,7 +99,7 @@ export default function MentorshipPage() {
         label="UPTECH Service"
         title="Connecting Those Who Made It With the Ones on Their Way"
         subtitle="We provide a pool of experts who will mentor the incubates and guide startups with their experience. Our domain-specific and generic network of mentors would acknowledge the challenges faced by the incubates and give them advice in their fields of expertise."
-        image="/image/london-images/coding-development.jpg"
+        image="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership" variant="glass" showArrow>Become a Mentor</Button>
@@ -484,7 +484,7 @@ export default function MentorshipPage() {
       <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image src="/image/london-images/mentoring-coaching.jpg" alt="Mentorship background" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=2400&q=85&auto=format&fit=crop" alt="Mentorship background" fill className="object-cover" sizes="100vw" />
         </div>
         {/* Multi-color glow orbs */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none">

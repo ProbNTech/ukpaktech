@@ -199,7 +199,7 @@ export default function JobPromotionAgreementPage() {
       <PageHero
         title="Job Promotion Agreement"
         subtitle="Terms and conditions governing the promotion of job opportunities through the UK\u2013Pakistan Technology Council network and channels."
-        image="/image/london-images/data-security-privacy.jpg"
+        image="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=2400&q=85&auto=format&fit=crop"
       />
 
       {/* Parties */}

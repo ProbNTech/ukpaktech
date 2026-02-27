@@ -144,7 +144,7 @@ export default function MeetingSpacePage() {
         label="Meeting Space"
         title="London Meeting Space Access — An Exclusive Member Privilege"
         subtitle="The UK-Pakistan Tech Council offers members access to professional meeting facilities in Central London, enabling high-level engagement within a credible and strategic business environment. This benefit supports our mission to strengthen bilateral Tech collaboration and provides members with the infrastructure required to conduct business effectively in the United Kingdom."
-        image="/image/london-images/executive-boardroom.jpg"
+        image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership/apply" variant="glass" showArrow>Apply for Membership</Button>

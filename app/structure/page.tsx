@@ -144,7 +144,7 @@ export default function StructurePage() {
         label="Governance Framework"
         title="Structure & Procedure"
         subtitle="A transparent governance framework that ensures accountability, effectiveness, and member representation at every level."
-        image="/image/london-images/business-operations-desk.jpg"
+        image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="grid grid-cols-4 gap-4">
           {stats.map((stat) => (
@@ -341,7 +341,7 @@ export default function StructurePage() {
       <section className="relative overflow-hidden py-12">
         {/* Background image */}
         <div className="absolute inset-0">
-          <Image src="/image/london-images/partnership-collaboration.jpg" alt="" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2400&q=85&auto=format&fit=crop" alt="" fill className="object-cover" sizes="100vw" />
         </div>
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-[#0B0F1A]/80" />

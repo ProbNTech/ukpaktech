@@ -46,7 +46,7 @@ export default function CookiesPage() {
         label="Data & Privacy"
         title="Cookies Policy"
         subtitle="How we use cookies and similar technologies on our website."
-        image="/image/london-images/data-security-privacy.jpg"
+        image="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=2400&q=85&auto=format&fit=crop"
       />
 
       {/* ── Introduction — Light section ───────────────────────────── */}

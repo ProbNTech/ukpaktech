@@ -53,7 +53,7 @@ export default function GDPRPage() {
         label="Data Protection"
         title="GDPR Compliance"
         subtitle="Our commitment to data protection and your rights under the General Data Protection Regulation."
-        image="/image/london-images/data-security-privacy.jpg"
+        image="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=2400&q=85&auto=format&fit=crop"
       />
 
       {/* ── Data Subject Rights — Light section ─────────────────────── */}

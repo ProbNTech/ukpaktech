@@ -56,7 +56,7 @@ export default function ProductsPage() {
       <PageHero
         title="Products"
         subtitle="Flagship technology platforms built by UPTECH to connect, empower, and scale the UK\u2013Pakistan tech ecosystem."
-        image="/image/london-images/techmart-exhibition.jpg"
+        image="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=2400&q=85&auto=format&fit=crop"
       />
 
       {/* Stats Bar */}

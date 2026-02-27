@@ -58,7 +58,7 @@ export default function DigitalMarketingPage() {
         label="UPTECH Service"
         title="Digital Product Marketing Hub"
         subtitle="The Digital Product Marketing Hub supports members in promoting their software solutions, platforms, and technology services across the UK, Europe, Middle East & African continents. We help technology companies strengthen their market presence, reach new audiences, and accelerate cross-border growth."
-        image="/image/london-images/digital-marketing-dashboard.jpg"
+        image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership" variant="glass" showArrow>Get Started</Button>
@@ -223,7 +223,7 @@ export default function DigitalMarketingPage() {
       <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image src="/image/london-images/digital-marketing-dashboard.jpg" alt="Digital Marketing background" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=2400&q=85&auto=format&fit=crop" alt="Digital Marketing background" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#C41E3A]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />

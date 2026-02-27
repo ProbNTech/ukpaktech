@@ -167,7 +167,7 @@ export default function TechMartGlobalClient() {
         label="UPTECH Initiative"
         title="TechMart Global"
         subtitle="A global B2B technology marketplace and collaboration platform connecting Pakistani tech companies with UK and international buyers, partners, investors, and institutions."
-        image="/image/london-images/techmart-exhibition.jpg"
+        image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership/apply" variant="primary" size="lg" showArrow>
@@ -656,7 +656,7 @@ export default function TechMartGlobalClient() {
       <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
         {/* Background image */}
         <div className="absolute inset-0 -z-10">
-          <Image src="/image/london-images/techmart-exhibition.jpg" alt="TechMart Global background" fill className="object-cover" sizes="100vw" />
+          <Image src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop" alt="TechMart Global background" fill className="object-cover" sizes="100vw" />
         </div>
         {/* Gradient glow effects */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#2563EB]/8 blur-[150px] pointer-events-none" />

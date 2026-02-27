@@ -55,7 +55,7 @@ export default function NewsPage() {
       <section className="relative overflow-hidden min-h-[540px]">
         {/* Background image */}
         <Image
-          src="/image/london-images/innovation-ideas.jpg"
+          src="https://images.unsplash.com/photo-1504711434969-e33886168d9c?w=2400&q=85&auto=format&fit=crop"
           alt=""
           fill
           priority
@@ -72,16 +72,6 @@ export default function NewsPage() {
           }}
         />
 
-        {/* Futuristic grid pattern overlay */}
-        <div
-          className="absolute inset-0 z-[2] pointer-events-none opacity-[0.07]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(37,99,235,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.3) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
         {/* Radial glow accents */}
         <div
           className="absolute top-0 right-0 w-[600px] h-[600px] z-[2] pointer-events-none opacity-20"
@@ -93,14 +83,6 @@ export default function NewsPage() {
           className="absolute bottom-0 left-0 w-[400px] h-[400px] z-[2] pointer-events-none opacity-15"
           style={{
             background: "radial-gradient(circle at center, rgba(34,197,94,0.3) 0%, transparent 70%)",
-          }}
-        />
-
-        {/* Scan line effect */}
-        <div
-          className="absolute inset-0 z-[3] pointer-events-none opacity-[0.03]"
-          style={{
-            backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)",
           }}
         />
 
@@ -568,23 +550,8 @@ export default function NewsPage() {
           }}
         />
 
-        {/* Grid overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(37,99,235,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.3) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
-          }}
-        />
-
-        {/* Scan lines */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.02]"
-          style={{
-            backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)",
-          }}
-        />
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.04] bg-gradient-to-br from-[#2563EB]/10 via-transparent to-[#22C55E]/10" />
 
         <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
