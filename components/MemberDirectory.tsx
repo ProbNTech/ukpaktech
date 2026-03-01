@@ -78,7 +78,12 @@ function MemberCard({ member }: { member: Member }) {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div className="group bg-white border border-[#D8D5CF] rounded-lg overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+    <a
+      href={member.website}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block bg-white border border-[#D8D5CF] rounded-lg overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+    >
       {/* Logo area */}
       <div className="h-40 bg-[#F8FAFC] flex items-center justify-center p-6 border-b border-[#EEECEA]">
         {member.logo && !imgError ? (
@@ -115,17 +120,12 @@ function MemberCard({ member }: { member: Member }) {
           <p className="text-xs text-[#6B7280] mb-4">{member.location}</p>
         )}
 
-        <a
-          href={member.website}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
-        >
+        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2563EB] group-hover:text-[#1D4ED8] transition-colors">
           Visit website
           <ExternalLink className="w-3.5 h-3.5" />
-        </a>
+        </span>
       </div>
-    </div>
+    </a>
   );
 }
 
