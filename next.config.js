@@ -16,6 +16,10 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000,
   },
+  redirects: async () => [
+    { source: '/leadership', destination: '/about/management-team', permanent: true },
+    { source: '/structure', destination: '/about/management-team', permanent: true },
+  ],
   headers: async () => [
     {
       source: '/image/:path*',

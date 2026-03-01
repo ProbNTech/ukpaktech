@@ -97,7 +97,7 @@ export default function AITechProgramsPage() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 pt-10 pb-4">
           <AnimatedSection>
             <div>
               <SectionHeader

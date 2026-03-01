@@ -404,7 +404,7 @@ export default function Home() {
             {/* Row 2 — 2 wider cards */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               {[
-                { href: "/leadership", icon: Shield, title: "Leadership & Governance", desc: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", color: "#C41E3A", num: "04" },
+                { href: "/about/management-team", icon: Shield, title: "Leadership & Governance", desc: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", color: "#C41E3A", num: "04" },
                 { href: "/ecosystem/trade-delegations-and-exhibitions", icon: Handshake, title: "Trade Delegations & Exhibitions", desc: "Curated business missions, international trade expos, and pavilion programmes placing our members on the world stage.", color: "#ef4444", num: "05" },
               ].map((card) => {
                 const Icon = card.icon;
@@ -454,7 +454,7 @@ export default function Home() {
                 { href: "/products", icon: Cpu, title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms connecting talent and enabling cross-border trade.", color: "#22c55e" },
                 { href: "/services/mentorship", icon: Users, title: "Mentorship", desc: "Connect with experienced mentors for guidance, career development, and business growth across both nations.", color: "#2563EB" },
                 { href: "/meeting-space", icon: MapPin, title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners.", color: "#C41E3A" },
-                { href: "/structure", icon: Building2, title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures.", color: "#1C1F2E" },
+                { href: "/about/management-team", icon: Building2, title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures.", color: "#1C1F2E" },
               ].map((card) => {
                 const Icon = card.icon;
                 return (

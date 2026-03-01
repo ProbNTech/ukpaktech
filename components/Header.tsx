@@ -38,10 +38,13 @@ const navItems: NavItem[] = [
       cta: { label: "Our story →", href: "/about" },
     },
     items: [
-      { label: "About UPTECH", href: "/about", desc: "Our founding mission, vision for bilateral tech growth, and the values that guide everything we do." },
-      { label: "Leadership & Governance", href: "/leadership", desc: "Meet the board, advisory council and executive team steering UPTECH's strategic direction." },
-      { label: "Structure & Procedure", href: "/structure", desc: "Organisational chart, key roles, and operating procedures governing UPTECH's operations." },
-      { label: "Code of Conduct", href: "/code-of-conduct", desc: "The ethics, accountability standards and community guidelines every member upholds." },
+      { label: "About Us", href: "/about", desc: "Who we are, our founding story, and the values that drive the UK-Pakistan Tech Council." },
+      { label: "Vision", href: "/about/vision", desc: "A connected innovation ecosystem bridging UK and Pakistan's technology sectors." },
+      { label: "Mission", href: "/about/mission", desc: "Our strategic mission to transform Pakistan into a thriving global tech hub." },
+      { label: "Objectives", href: "/about/objectives", desc: "Core values, key activities, and broader impact goals driving our work." },
+      { label: "Founder & CEO", href: "/about/founder", desc: "Meet Khalil Choudhary — the visionary behind the UK-Pakistan Tech Council." },
+      { label: "Management Team", href: "/about/management-team", desc: "Board of directors, advisory council, and executive leadership team." },
+      { label: "UK-Pakistan Partnership", href: "/ecosystem/uk-pakistan-technology-partnership", desc: "The bilateral framework for joint ventures, policy dialogue, and shared R&D." },
     ],
   },
   /* 2 — What We Do */

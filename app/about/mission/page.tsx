@@ -1,0 +1,98 @@
+"use client";
+
+import { Section } from "@/components/Section";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import { SectionHeader } from "@/components/SectionHeader";
+import { PageHero } from "@/components/PageHero";
+import { GlobalCTA } from "@/components/GlobalCTA";
+import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { Button } from "@/components/Button";
+import { Target, Award, Users, Globe2, Radio, Rocket, TrendingUp, Zap, Handshake, Briefcase } from "lucide-react";
+
+const missionPillars = [
+  { icon: Target, title: "Apex Organization", desc: "To be the Apex organization for IT professionals in business, government, and people.", color: "#2563EB" },
+  { icon: Award, title: "Represent Professionals", desc: "To represent IT professionals in all aspects of their profession and increase the value of the profession.", color: "#C41E3A" },
+  { icon: Users, title: "Inclusive Community", desc: "To be a place for anyone in the profession, representing all ages, career stages, demographics, and needs.", color: "#22C55E" },
+  { icon: Globe2, title: "Global Collaboration", desc: "To collaborate with Networks and organizations representing professionals in countries around the world to unify and advance the profession globally.", color: "#2563EB" },
+  { icon: Radio, title: "Timely Information", desc: "To provide relevant, consistent, and timely information to stakeholders.", color: "#C41E3A" },
+  { icon: Rocket, title: "Fuel Growth", desc: "Fuel business creation and expansion — address funding gaps for early-stage companies and increase opportunities for high-growth enterprises.", color: "#22C55E" },
+];
+
+const strategicFocus = [
+  { icon: TrendingUp, title: "Enhance Tech Adoption", desc: "Encourage the uptake of technology across Pakistani businesses to elevate productivity and competitiveness.", color: "#2563EB" },
+  { icon: Zap, title: "Incentivize Investment", desc: "Promote initiatives like R&D incentives, refining investor definitions, and broadening EIS/SEIS scope to stimulate business growth.", color: "#C41E3A" },
+  { icon: Handshake, title: "Connectivity", desc: "Bridging the gaps and providing lightning-fast connectivity across the nation.", color: "#22C55E" },
+  { icon: Briefcase, title: "Technical Support", desc: "To become the industry benchmark by providing one-stop solutions for all technical support and related services.", color: "#2563EB" },
+];
+
+export default function MissionPage() {
+  return (
+    <div>
+      <PageHero
+        label="Our Mission"
+        title="Mission"
+        subtitle="Our mission is to transform Pakistan into a thriving tech hub. By forging connections with global experts and harnessing diverse resources, we're setting the stage for a tech-driven future."
+        image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2400&q=85&auto=format&fit=crop"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <RainbowButton href="/membership/apply" showArrow>Join UPTECH</RainbowButton>
+          <Button href="/about/objectives" variant="glass" showArrow>Our Objectives</Button>
+        </div>
+      </PageHero>
+
+      {/* Mission Pillars */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader label="Our mission" title="Mission" color="green" subtitle="Our mission is to transform Pakistan into a thriving tech hub. By forging connections with global experts and harnessing diverse resources, we're setting the stage for a tech-driven future." />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {missionPillars.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="bg-white border border-[#D8D5CF] rounded-lg p-6 hover:shadow-md transition-all duration-300 group">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ background: `${item.color}10`, border: `1px solid ${item.color}25` }}>
+                    <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
+                  <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* Strategic Focus */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader label="Strategic Focus" title="How We Deliver" color="blue" subtitle="The tech sector stands as a cornerstone of Pakistan's economy. We collaborate with governments and the broader community to drive impact." />
+          <div className="grid md:grid-cols-2 gap-5">
+            {strategicFocus.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="flex items-start gap-4 bg-white border border-[#D8D5CF] rounded-lg p-5 hover:shadow-md transition-all duration-300">
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ background: `${item.color}10`, border: `1px solid ${item.color}25` }}>
+                    <Icon className="w-4 h-4" style={{ color: item.color }} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-[#1C1F2E] text-sm mb-1">{item.title}</h4>
+                    <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      <GlobalCTA
+        label="Join Our Mission"
+        title="Help Shape the Future of Tech"
+        subtitle="Join UPTECH and become part of the mission to transform the UK-Pakistan technology corridor into a global innovation powerhouse."
+        primaryButtonText="Apply for Membership"
+        primaryButtonLink="/membership/apply"
+        secondaryButtonText="Our Objectives"
+        secondaryButtonLink="/about/objectives"
+      />
+    </div>
+  );
+}
