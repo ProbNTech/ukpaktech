@@ -72,7 +72,7 @@ export function EventGrid({ events, hideBadge = false }: EventGridProps) {
           <div className="relative h-full bg-white border border-[#D8D5CF] rounded hover:border-[#2563EB]/40 transition-colors duration-300">
             {/* Tag badge */}
             {event.tag && !hideBadge && (
-              <div className="absolute top-3 left-3 z-10 px-2 py-1 bg-[#2563EB] text-white text-[10px] font-bold uppercase tracking-wider">
+              <div className="absolute top-3 left-3 z-10 px-2 py-1 bg-[#2563EB] text-white text-base font-bold uppercase tracking-wider">
                 {event.tag}
               </div>
             )}
@@ -106,7 +106,7 @@ export function EventGrid({ events, hideBadge = false }: EventGridProps) {
                       <path d="M145.032,348.467H262.46c10.193,0,18.436-10.179,18.436-22.759c0-12.579-8.248-22.758-18.436-22.758H145.032c-10.194,0-18.437,10.179-18.437,22.758C126.596,338.288,134.838,348.467,145.032,348.467z"/>
                     </svg>
                     {event.tag && (
-                      <span className="text-white/40 text-xs font-semibold uppercase tracking-widest">{event.tag}</span>
+                      <span className="text-white/40 text-base font-semibold uppercase tracking-widest">{event.tag}</span>
                     )}
                   </div>
                 </>
@@ -121,19 +121,19 @@ export function EventGrid({ events, hideBadge = false }: EventGridProps) {
               </h3>
 
               {/* Summary */}
-              <p className="text-sm mb-4 leading-relaxed line-clamp-2 text-[#3D4152]">
+              <p className="text-base mb-4 leading-relaxed line-clamp-2 text-[#3D4152]">
                 {event.summary}
               </p>
 
               {/* Date */}
-              <div className="flex items-center gap-2 text-sm font-semibold text-[#C41E3A] uppercase tracking-wide mb-3">
+              <div className="flex items-center gap-2 text-base font-semibold text-[#C41E3A] uppercase tracking-wide mb-3">
                 <CalendarIcon />
                 {event.date}
               </div>
 
               {/* Location */}
               {event.location && (
-                <div className="flex items-start gap-2 text-sm mb-5 text-[#3D4152]">
+                <div className="flex items-start gap-2 text-base mb-5 text-[#3D4152]">
                   <LocationIcon />
                   <span className="line-clamp-1">{event.location}</span>
                 </div>
@@ -142,7 +142,7 @@ export function EventGrid({ events, hideBadge = false }: EventGridProps) {
               <div className="h-px bg-[#D8D5CF] mb-4" />
 
               {/* Learn more */}
-              <div className="flex items-center gap-2 text-sm font-semibold text-[#2563EB] group-hover:gap-3 transition-all duration-200">
+              <div className="flex items-center gap-2 text-base font-semibold text-[#2563EB] group-hover:gap-3 transition-all duration-200">
                 <span>Learn more</span>
                 <ArrowRight className="w-4 h-4" />
               </div>

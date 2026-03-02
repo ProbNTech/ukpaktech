@@ -7,7 +7,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { GovernanceSection } from "@/components/GovernanceSection";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { Button } from "@/components/Button";
 import { motion, useReducedMotion } from "framer-motion";
 import {
@@ -206,7 +206,7 @@ export default function ManagementTeamPage() {
           {stats.map((stat) => (
             <div key={stat.label} className="backdrop-blur-md rounded-lg p-4 text-center relative overflow-hidden" style={{ background: `${stat.color}CC`, borderBottom: `3px solid ${stat.color}` }}>
               <p className="font-heading font-extrabold text-white text-2xl mb-0.5">{stat.value}</p>
-              <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-white/90">{stat.label}</p>
+              <p className="text-base font-bold tracking-[0.15em] uppercase text-white/90">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -232,10 +232,10 @@ export default function ManagementTeamPage() {
                 <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">Governance Model</h3>
               </div>
               <div className="h-px bg-[#D8D5CF] mb-5" />
-              <p className="text-[#3D4152] text-sm leading-relaxed mb-4">
+              <p className="text-[#3D4152] text-base leading-relaxed mb-4">
                 Our organisational structure combines strategic leadership with operational excellence. Each role has clearly defined responsibilities, and all office bearers are accountable to the Board and the membership through transparent reporting and regular review.
               </p>
-              <p className="text-[#3D4152] text-sm leading-relaxed">
+              <p className="text-[#3D4152] text-base leading-relaxed">
                 The structure ensures that decisions are made collaboratively, resources are managed responsibly, and every member has a voice in the direction of the Council.
               </p>
             </motion.div>
@@ -259,7 +259,7 @@ export default function ManagementTeamPage() {
                 {Object.entries(levelColors).map(([level, color]) => (
                   <div key={level} className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
-                    <span className="text-sm text-[#5A5F72] font-medium">{level}</span>
+                    <span className="text-base text-[#5A5F72] font-medium">{level}</span>
                   </div>
                 ))}
               </div>
@@ -286,10 +286,10 @@ export default function ManagementTeamPage() {
                     <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">{card.title}</h3>
                     <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200" style={{ color: brandColors[card.colorIdx] }} />
                   </div>
-                  <p className="text-[#3D4152] text-sm leading-relaxed mb-4">{card.desc}</p>
+                  <p className="text-[#3D4152] text-base leading-relaxed mb-4">{card.desc}</p>
                   <div className="flex gap-3">
                     {card.tags.map((tag) => (
-                      <span key={tag} className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full" style={{ color: brandColors[card.colorIdx], background: `${brandColors[card.colorIdx]}10` }}>{tag}</span>
+                      <span key={tag} className="text-base font-bold uppercase tracking-wider px-2.5 py-1 rounded-full" style={{ color: brandColors[card.colorIdx], background: `${brandColors[card.colorIdx]}10` }}>{tag}</span>
                     ))}
                   </div>
                 </div>
@@ -330,7 +330,7 @@ export default function ManagementTeamPage() {
                     </div>
                     <div>
                       <h3 className="font-heading font-bold text-base text-[#1C1F2E]">{role.title}</h3>
-                      <span className="text-[10px] font-bold tracking-[0.15em] uppercase" style={{ color }}>{role.level}</span>
+                      <span className="text-base font-bold tracking-[0.15em] uppercase" style={{ color }}>{role.level}</span>
                     </div>
                   </div>
                   <div className="h-px bg-[#D8D5CF] mb-4" />
@@ -397,7 +397,7 @@ export default function ManagementTeamPage() {
                 >
                   <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: `linear-gradient(to right, ${color}, ${color}40)` }} />
                   <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: `${color}10`, border: `1px solid ${color}20` }}>
-                    <span className="text-xs font-bold tabular-nums" style={{ color }}>{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-base font-bold tabular-nums" style={{ color }}>{String(i + 1).padStart(2, "0")}</span>
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
                   <div className="h-px bg-[#D8D5CF] mb-3" />

@@ -49,6 +49,7 @@ export default function CookiesPage() {
         image="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=2400&q=85&auto=format&fit=crop"
       />
 
+      <div className="content-body">
       {/* ── Introduction — Light section ───────────────────────────── */}
       <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
@@ -150,7 +151,7 @@ export default function CookiesPage() {
             <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4, delay: 0.3 }} className="mt-8 relative bg-gradient-to-br from-[#2563EB]/10 to-[#2563EB]/10 border border-[#2563EB]/20 rounded-xl p-6 overflow-hidden max-w-4xl">
               <div className="relative">
                 <Cookie className="w-5 h-5 text-[#2563EB] mb-3" strokeWidth={1.5} />
-                <p className="text-[#5A5F72] text-sm leading-relaxed">The specific names and types of cookies, web beacons, and other similar technologies we use may change from time to time. However, the cookies we use generally fall into one of the following categories:</p>
+                <p className="text-[#5A5F72] text-base leading-relaxed">The specific names and types of cookies, web beacons, and other similar technologies we use may change from time to time. However, the cookies we use generally fall into one of the following categories:</p>
               </div>
             </motion.div>
           </AnimatedSection>
@@ -252,6 +253,8 @@ export default function CookiesPage() {
         </div>
       </section>
 
+      </div>
+
       {/* ── Contact CTA — Gradient dark section ───────────────────── */}
       <section className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
@@ -259,12 +262,12 @@ export default function CookiesPage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Get in Touch</p>
+              <p className="text-base font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Get in Touch</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">Contact Information</h2>
               <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-4">For any questions about this Privacy Policy or our treatment of your Personal Information, please contact{" "}<a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a></p>
               <div className="flex flex-wrap gap-4 mt-10">
-                <Button href="/contact" variant="primary" size="lg" showArrow>Contact Us</Button>
-                <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
+                <Button href="/contact" variant="primary" size="lg">Contact Us</Button>
+                <Button href="/membership/apply" variant="glass" size="lg">Apply for Membership</Button>
               </div>
             </div>
           </AnimatedSection>

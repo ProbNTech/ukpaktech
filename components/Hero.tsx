@@ -3,7 +3,7 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Play, Pause } from "lucide-react";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
@@ -164,12 +164,12 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
-                <RainbowButton href={slide.cta.href} showArrow>
+                <ShinyButton href={slide.cta.href}>
                   {slide.cta.text}
-                </RainbowButton>
+                </ShinyButton>
                 <Link
                   href={slide.secondary.href}
-                  className="inline-flex items-center gap-2.5 text-white font-semibold text-sm sm:text-base underline underline-offset-4 hover:text-white/75 transition-colors duration-200"
+                  className="inline-flex items-center gap-2.5 text-white font-semibold text-base sm:text-base underline underline-offset-4 hover:text-white/75 transition-colors duration-200"
                 >
                   {slide.secondary.text}
                   <ArrowRight className="w-5 h-5" />

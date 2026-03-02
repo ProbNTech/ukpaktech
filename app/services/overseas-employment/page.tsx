@@ -72,8 +72,8 @@ export default function OverseasEmploymentPage() {
         image="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership" variant="glass" showArrow>Get Connected</Button>
-          <Button href="/contact" variant="glass" showArrow>Learn More</Button>
+          <Button href="/membership" variant="glass">Get Connected</Button>
+          <Button href="/contact" variant="glass">Learn More</Button>
         </div>
       </PageHero>
 
@@ -96,7 +96,7 @@ export default function OverseasEmploymentPage() {
                 >
                   {stat.value}
                 </div>
-                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -157,7 +157,7 @@ export default function OverseasEmploymentPage() {
                         <CheckCircle2 className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" />
                         <div>
                           <h4 className="font-semibold text-[#1C1F2E] text-base">{item.title}</h4>
-                          <p className="text-sm text-[#7A7E8F] leading-relaxed mt-0.5">{item.description}</p>
+                          <p className="text-base text-[#7A7E8F] leading-relaxed mt-0.5">{item.description}</p>
                         </div>
                       </div>
                     ))}
@@ -195,7 +195,7 @@ export default function OverseasEmploymentPage() {
                         <CheckCircle2 className="w-5 h-5 text-[#2563EB] flex-shrink-0 mt-0.5" />
                         <div>
                           <h4 className="font-semibold text-[#1C1F2E] text-base">{item.title}</h4>
-                          <p className="text-sm text-[#7A7E8F] leading-relaxed mt-0.5">{item.description}</p>
+                          <p className="text-base text-[#7A7E8F] leading-relaxed mt-0.5">{item.description}</p>
                         </div>
                       </div>
                     ))}
@@ -228,7 +228,7 @@ export default function OverseasEmploymentPage() {
                   <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                   <div className="p-6">
                     <div className="relative mb-5">
-                      <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold border" style={{ background: `${step.color}25`, borderColor: `${step.color}50` }}>
+                      <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border" style={{ background: `${step.color}25`, borderColor: `${step.color}50` }}>
                         {step.number}
                       </div>
                     </div>
@@ -236,7 +236,7 @@ export default function OverseasEmploymentPage() {
                     <p className="text-[#5A5F72] text-base leading-relaxed mb-4">{step.description}</p>
                     <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
-                      <span className="text-sm font-semibold" style={{ color: step.color }}>{step.outcome}</span>
+                      <span className="text-base font-semibold" style={{ color: step.color }}>{step.outcome}</span>
                     </div>
                   </div>
                   </div>
@@ -316,7 +316,7 @@ export default function OverseasEmploymentPage() {
         <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Get Started</p>
+              <p className="text-base font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Get Started</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Get connected. Access opportunities. Grow your impact.
               </h2>
@@ -324,8 +324,8 @@ export default function OverseasEmploymentPage() {
                 Overseas contract employment through the Council provides a trusted, compliant, and efficient way to connect talent with opportunity. Our goal is to accelerate growth, enhance careers, and strengthen the UK-Pakistan tech ecosystem through high-quality contract placements.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg" showArrow>Get Connected</Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
+                <Button href="/membership" variant="primary" size="lg">Get Connected</Button>
+                <Button href="/contact" variant="glass" size="lg">Contact Us</Button>
               </div>
             </div>
           </AnimatedSection>
@@ -362,7 +362,7 @@ function FAQSection({ faqs }: { faqs: { question: string; answer: string }[] }) 
               className="w-full flex items-center gap-4 p-5 lg:p-6 text-left"
             >
               <span
-                className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold transition-colors duration-300"
+                className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-base font-bold transition-colors duration-300"
                 style={isOpen ? { background: color, color: "#fff" } : { background: `${color}15`, color }}
               >
                 {String(index + 1).padStart(2, "0")}

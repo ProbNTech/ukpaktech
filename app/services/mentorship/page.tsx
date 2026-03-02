@@ -103,8 +103,8 @@ export default function MentorshipPage() {
         image="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership" variant="glass" showArrow>Become a Mentor</Button>
-          <Button href="/contact" variant="glass" showArrow>Find a Mentor</Button>
+          <Button href="/membership" variant="glass">Become a Mentor</Button>
+          <Button href="/contact" variant="glass">Find a Mentor</Button>
         </div>
       </PageHero>
 
@@ -132,7 +132,7 @@ export default function MentorshipPage() {
                   >
                     {stat.value}
                   </div>
-                  <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                  <p className="text-[#5A5F72] text-base">{stat.label}</p>
                 </motion.div>
               );
             })}
@@ -195,7 +195,7 @@ export default function MentorshipPage() {
                         </div>
                         <div>
                           <span className="font-semibold text-[#1C1F2E] text-base">{item.title}</span>
-                          <p className="text-[#7A7E8F] text-sm leading-relaxed mt-0.5">{item.desc}</p>
+                          <p className="text-[#7A7E8F] text-base leading-relaxed mt-0.5">{item.desc}</p>
                         </div>
                       </motion.li>
                     ))}
@@ -246,7 +246,7 @@ export default function MentorshipPage() {
                       <p className="text-base text-[#5A5F72] leading-relaxed mb-4">{item.description}</p>
                       <ul className="space-y-2">
                         {item.features.map((f) => (
-                          <li key={f} className="flex items-start gap-2 text-sm text-[#5A5F72]">
+                          <li key={f} className="flex items-start gap-2 text-base text-[#5A5F72]">
                             <CheckCircle2 className="w-3.5 h-3.5 text-[#22C55E] flex-shrink-0 mt-0.5" />
                             <span>{f}</span>
                           </li>
@@ -305,7 +305,7 @@ export default function MentorshipPage() {
                         <div>
                           <h3 className="font-heading font-bold text-xl text-[#1C1F2E]">{role.title}</h3>
                           <div
-                            className="inline-flex items-center gap-1.5 mt-1 text-xs font-medium"
+                            className="inline-flex items-center gap-1.5 mt-1 text-base font-medium"
                             style={{ color: `${role.color}CC` }}
                           >
                             <Clock className="w-3 h-3" />
@@ -372,7 +372,7 @@ export default function MentorshipPage() {
                         {/* Numbered circle */}
                         <div className="relative">
                           <div
-                            className="relative w-12 h-12 rounded-full flex items-center justify-center text-white text-sm font-bold border-2"
+                            className="relative w-12 h-12 rounded-full flex items-center justify-center text-white text-base font-bold border-2"
                             style={{
                               background: `linear-gradient(135deg, ${step.color}30, ${step.color}10)`,
                               borderColor: `${step.color}60`,
@@ -399,7 +399,7 @@ export default function MentorshipPage() {
                         style={{ background: `${step.color}12`, border: `1px solid ${step.color}25` }}
                       >
                         <CheckCircle2 className="w-3.5 h-3.5" style={{ color: step.color }} />
-                        <span className="text-xs font-semibold" style={{ color: step.color }}>{step.outcome}</span>
+                        <span className="text-base font-semibold" style={{ color: step.color }}>{step.outcome}</span>
                       </div>
                     </div>
                     </div>
@@ -505,7 +505,7 @@ export default function MentorshipPage() {
                 transition={{ duration: 0.4 }}
               >
                 <div className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse" />
-                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">Make an Impact</span>
+                <span className="text-[#2563EB] text-base font-semibold uppercase tracking-wider">Make an Impact</span>
               </motion.div>
 
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
@@ -525,7 +525,7 @@ export default function MentorshipPage() {
                 <Button href="/membership" variant="primary" size="lg" showArrow className="!bg-gradient-to-r !from-[#2563EB] !to-[#22C55E] hover:!shadow-[0_0_40px_rgba(37,99,235,0.3)]">
                   Join as a Mentor
                 </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
+                <Button href="/contact" variant="glass" size="lg">Contact Us</Button>
               </div>
             </div>
           </AnimatedSection>
@@ -572,7 +572,7 @@ function FAQSection({ faqs }: { faqs: { question: string; answer: string }[] }) 
             >
               {/* Numbered badge - colored */}
               <span
-                className="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold transition-all duration-300"
+                className="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center text-base font-bold transition-all duration-300"
                 style={
                   isOpen
                     ? { background: color, color: "#fff", boxShadow: `0 0 20px ${color}40` }

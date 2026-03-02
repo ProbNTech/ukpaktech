@@ -130,7 +130,7 @@ export default function EventsPage() {
                 >
                   {stat.value}
                 </div>
-                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -164,7 +164,7 @@ export default function EventsPage() {
                     onClick={() => setActiveFilter(tab)}
                     whileHover={shouldReduceMotion ? {} : { scale: 1.03 }}
                     whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
-                    className="relative px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg border transition-all duration-300 cursor-pointer"
+                    className="relative px-5 py-2.5 text-base font-bold uppercase tracking-wider rounded-lg border transition-all duration-300 cursor-pointer"
                     style={{
                       background: isActive
                         ? `linear-gradient(135deg, ${color}15 0%, ${color}08 100%)`
@@ -190,7 +190,7 @@ export default function EventsPage() {
                     <span className="relative z-10 flex items-center gap-2">
                       {tab}
                       <span
-                        className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded text-[10px] font-bold"
+                        className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded text-base font-bold"
                         style={{
                           background: isActive
                             ? `${color}18`
@@ -240,7 +240,7 @@ export default function EventsPage() {
                 </p>
                 <button
                   onClick={() => setActiveFilter("All")}
-                  className="mt-4 text-sm font-semibold transition-colors duration-200"
+                  className="mt-4 text-base font-semibold transition-colors duration-200"
                   style={{ color: "#2563EB" }}
                 >
                   View all events

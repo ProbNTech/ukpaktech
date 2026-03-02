@@ -9,7 +9,7 @@ import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const trustItems = ["UK aligned curriculum", "Industry mentors", "Practical projects", "Career support", "Cross-border collaboration"];
@@ -65,8 +65,8 @@ export default function SkillDevelopmentCenterPage() {
         image="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Apply for Training</RainbowButton>
-          <Button href="/contact" variant="glass" size="lg" showArrow>
+          <ShinyButton href="/membership/apply">Apply for Training</ShinyButton>
+          <Button href="/contact" variant="glass" size="lg">
             Partner with UPTECH
           </Button>
         </div>
@@ -77,7 +77,7 @@ export default function SkillDevelopmentCenterPage() {
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-5">
           <div className="flex flex-wrap gap-6 items-center">
             {trustItems.map((item) => (
-              <div key={item} className="flex items-center gap-2 text-sm text-white/50">
+              <div key={item} className="flex items-center gap-2 text-base text-white/50">
                 <CheckCircle2 className="w-4 h-4 text-[#2563EB] flex-shrink-0" strokeWidth={2} />
                 {item}
               </div>
@@ -91,7 +91,7 @@ export default function SkillDevelopmentCenterPage() {
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
+              <p className="text-base font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
                 Our Mission
               </p>
               <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-5">
@@ -130,7 +130,7 @@ export default function SkillDevelopmentCenterPage() {
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1 group-hover:text-[#22C55E] transition-colors duration-200">
                       {program.title}
                     </h3>
-                    <p className="text-[#7A7E8F] text-sm mb-3">{program.subtitle}</p>
+                    <p className="text-[#7A7E8F] text-base mb-3">{program.subtitle}</p>
                     <div className="h-px bg-[#D8D5CF] mb-4" />
                     <ul className="space-y-2 flex-1">
                       {program.bullets.map((bullet) => (
@@ -174,7 +174,7 @@ export default function SkillDevelopmentCenterPage() {
                           style={{ background: step.color }}
                         />
                         <div
-                          className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold border"
+                          className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border"
                           style={{
                             background: `${step.color}25`,
                             borderColor: `${step.color}50`,
@@ -191,7 +191,7 @@ export default function SkillDevelopmentCenterPage() {
                     <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">{step.description}</p>
                     <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
-                      <span className="text-xs font-semibold" style={{ color: step.color }}>
+                      <span className="text-base font-semibold" style={{ color: step.color }}>
                         {step.outcome}
                       </span>
                     </div>
@@ -226,21 +226,21 @@ export default function SkillDevelopmentCenterPage() {
                       {track.title}
                     </h3>
                     <div className="space-y-2 mb-5">
-                      <div className="flex justify-between text-sm border-b border-[#D8D5CF] pb-2">
+                      <div className="flex justify-between text-base border-b border-[#D8D5CF] pb-2">
                         <span className="text-[#7A7E8F]">Duration</span>
                         <span className="text-[#3D4152] font-medium">{track.duration}</span>
                       </div>
-                      <div className="flex justify-between text-sm border-b border-[#D8D5CF] pb-2">
+                      <div className="flex justify-between text-base border-b border-[#D8D5CF] pb-2">
                         <span className="text-[#7A7E8F]">Level</span>
                         <span className="text-[#3D4152] font-medium">{track.level}</span>
                       </div>
-                      <div className="flex justify-between text-sm border-b border-[#D8D5CF] pb-2">
+                      <div className="flex justify-between text-base border-b border-[#D8D5CF] pb-2">
                         <span className="text-[#7A7E8F]">Commitment</span>
                         <span className="text-[#3D4152] font-medium">{track.commitment}</span>
                       </div>
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-bold text-[#7A7E8F] uppercase tracking-wider mb-1">What you build</p>
+                      <p className="text-base font-bold text-[#7A7E8F] uppercase tracking-wider mb-1">What you build</p>
                       <p className="text-[#5A5F72] text-base leading-relaxed">{track.build}</p>
                     </div>
                   </div>
@@ -273,7 +273,7 @@ export default function SkillDevelopmentCenterPage() {
                   >
                     {outcome.value}
                   </div>
-                  <p className="text-[#5A5F72] text-sm">{outcome.label}</p>
+                  <p className="text-[#5A5F72] text-base">{outcome.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -297,7 +297,7 @@ export default function SkillDevelopmentCenterPage() {
                     className="w-full flex items-center justify-between py-5 text-left gap-4"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-xs font-bold text-[#2563EB] bg-[#2563EB]/10 px-2 py-0.5 rounded flex-shrink-0">
+                      <span className="text-base font-bold text-[#2563EB] bg-[#2563EB]/10 px-2 py-0.5 rounded flex-shrink-0">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <span className="font-heading font-semibold text-[#1C1F2E] text-base">{faq.question}</span>

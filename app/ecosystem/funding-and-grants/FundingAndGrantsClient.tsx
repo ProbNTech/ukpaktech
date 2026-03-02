@@ -25,7 +25,7 @@ import {
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 /* ─── Data ──────────────────────────────────────────────────────────── */
@@ -158,8 +158,8 @@ export default function FundingAndGrantsClient() {
         image="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership" showArrow>Become a Member</RainbowButton>
-          <Button href="/contact" variant="glass" showArrow>
+          <ShinyButton href="/membership">Become a Member</ShinyButton>
+          <Button href="/contact" variant="glass">
             Contact Us
           </Button>
         </div>
@@ -186,7 +186,7 @@ export default function FundingAndGrantsClient() {
                   >
                     {stat.value}
                   </p>
-                  <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                  <p className="text-[#5A5F72] text-base">{stat.label}</p>
                 </motion.div>
               );
             })}
@@ -287,7 +287,7 @@ export default function FundingAndGrantsClient() {
                     <p className="relative text-[#5A5F72] text-base leading-relaxed">{opp.description}</p>
                     {/* Arrow hint on hover */}
                     <div
-                      className="relative mt-5 flex items-center gap-1.5 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="relative mt-5 flex items-center gap-1.5 text-base font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       style={{ color: opp.color }}
                     >
                       <span>Learn more</span>
@@ -359,7 +359,7 @@ export default function FundingAndGrantsClient() {
                       <div>
                         {/* Glowing badge */}
                         <span
-                          className="inline-block text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-1.5"
+                          className="inline-block text-base font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-1.5"
                           style={{
                             background: `${item.color}15`,
                             color: item.color,
@@ -423,7 +423,7 @@ export default function FundingAndGrantsClient() {
                     <div className="relative flex items-center gap-3 mb-5">
                       <div className="relative">
                         <div
-                          className="relative w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
+                          className="relative w-11 h-11 rounded-full flex items-center justify-center text-base font-bold text-white flex-shrink-0"
                           style={{
                             background: `linear-gradient(135deg, ${step.color}, ${step.color}90)`,
                             boxShadow: `0 0 20px -5px ${step.color}50`,
@@ -445,7 +445,7 @@ export default function FundingAndGrantsClient() {
 
                     {/* Outcome badge */}
                     <div
-                      className="relative inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full"
+                      className="relative inline-flex items-center gap-1.5 text-base font-semibold px-3 py-1.5 rounded-full"
                       style={{
                         background: `${step.color}10`,
                         color: step.color,
@@ -540,7 +540,7 @@ export default function FundingAndGrantsClient() {
                           </div>
                           <div>
                             <span className="font-semibold text-[#1C1F2E] text-base">{benefit.title}</span>
-                            <p className="text-[#7A7E8F] text-sm leading-relaxed mt-1">{benefit.description}</p>
+                            <p className="text-[#7A7E8F] text-base leading-relaxed mt-1">{benefit.description}</p>
                           </div>
                         </motion.li>
                       );
@@ -620,7 +620,7 @@ function FAQSection({
               className="w-full flex items-center gap-4 p-5 lg:p-6 text-left"
             >
               <span
-                className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold transition-all duration-300"
+                className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-base font-bold transition-all duration-300"
                 style={
                   isOpen
                     ? {

@@ -18,7 +18,7 @@ const sections = [
     title: "Purpose",
     accent: "border-[#2563EB]",
     content: (
-      <p className="text-[#3D4152] text-sm leading-relaxed">
+      <p className="text-[#3D4152] text-base leading-relaxed">
         This Agreement sets out the terms under which the Council will promote the Employer&apos;s job opportunities to its network of members, stakeholders, and partners in the UK, Europe, Middle East, African continent and Pakistan.
       </p>
     ),
@@ -31,7 +31,7 @@ const sections = [
     accent: "border-[#2563EB]",
     content: (
       <div>
-        <p className="text-[#3D4152] text-sm leading-relaxed mb-4">The Council agrees to:</p>
+        <p className="text-[#3D4152] text-base leading-relaxed mb-4">The Council agrees to:</p>
         <ul className="space-y-3 mb-6">
           {[
             "Publish and promote the Employer\u2019s job openings through the Council\u2019s website, newsletters, social media, events, and other marketing channels.",
@@ -41,11 +41,11 @@ const sections = [
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
               <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-              <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+              <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>
-        <p className="text-[#3D4152] text-sm leading-relaxed">
+        <p className="text-[#3D4152] text-base leading-relaxed">
           The Employer agrees to provide accurate job descriptions, requirements, and relevant materials for promotion.
         </p>
       </div>
@@ -59,11 +59,11 @@ const sections = [
     accent: "border-[#C41E3A]",
     content: (
       <div>
-        <p className="text-[#3D4152] text-sm leading-relaxed mb-6">
+        <p className="text-[#3D4152] text-base leading-relaxed mb-6">
           The Employer agrees to pay the Council the following fees for promotion services:
         </p>
         <div className="overflow-x-auto mb-6">
-          <table className="w-full text-sm border-collapse">
+          <table className="w-full text-base border-collapse">
             <thead>
               <tr className="bg-[#1C1F2E] text-white">
                 <th className="text-left py-3 px-4 font-semibold">Service</th>
@@ -92,8 +92,8 @@ const sections = [
         <div className="bg-[#FEF3C7] border border-[#F59E0B]/30 rounded p-4 flex items-start gap-3">
           <AlertTriangle className="w-5 h-5 text-[#F59E0B] flex-shrink-0 mt-0.5" strokeWidth={2} />
           <div>
-            <h4 className="font-heading font-bold text-[#1C1F2E] text-sm mb-1">Binding Payment Clause</h4>
-            <p className="text-[#3D4152] text-xs leading-relaxed">
+            <h4 className="font-heading font-bold text-[#1C1F2E] text-base mb-1">Binding Payment Clause</h4>
+            <p className="text-[#3D4152] text-base leading-relaxed">
               Fees are legally binding once services are delivered. Non-payment constitutes a breach of this Agreement.
             </p>
           </div>
@@ -109,7 +109,7 @@ const sections = [
     accent: "border-[#22C55E]",
     content: (
       <div>
-        <p className="text-[#3D4152] text-sm leading-relaxed mb-4">The Employer shall:</p>
+        <p className="text-[#3D4152] text-base leading-relaxed mb-4">The Employer shall:</p>
         <ul className="space-y-3">
           {[
             "Provide complete and accurate job information, including title, description, qualifications, salary, location, and contact details.",
@@ -118,7 +118,7 @@ const sections = [
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
               <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-              <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+              <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>
@@ -132,7 +132,7 @@ const sections = [
     title: "Confidentiality",
     accent: "border-[#22C55E]",
     content: (
-      <p className="text-[#3D4152] text-sm leading-relaxed">
+      <p className="text-[#3D4152] text-base leading-relaxed">
         Both parties agree to keep confidential any proprietary, candidate, or business information obtained during the execution of this Agreement.
       </p>
     ),
@@ -151,7 +151,7 @@ const sections = [
         ].map((item) => (
           <li key={item} className="flex items-start gap-3">
             <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-            <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+            <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
           </li>
         ))}
       </ul>
@@ -171,7 +171,7 @@ const sections = [
         ].map((item) => (
           <li key={item} className="flex items-start gap-3">
             <AlertTriangle className="w-4 h-4 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
-            <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+            <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
           </li>
         ))}
       </ul>
@@ -184,7 +184,7 @@ const sections = [
     title: "Governing Law",
     accent: "border-[#2563EB]",
     content: (
-      <p className="text-[#3D4152] text-sm leading-relaxed">
+      <p className="text-[#3D4152] text-base leading-relaxed">
         This Agreement shall be governed by and construed in accordance with the laws of <strong>England and Wales, United Kingdom</strong>.
       </p>
     ),
@@ -206,23 +206,23 @@ export default function JobPromotionAgreementPage() {
       <Section variant="light">
         <AnimatedSection>
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-widest mb-6">Agreement</p>
+            <p className="text-base font-semibold text-[#2563EB] uppercase tracking-widest mb-6">Agreement</p>
             <div className="bg-white border border-[#D8D5CF] rounded p-8">
               <h2 className="font-heading font-bold text-[#1C1F2E] text-xl mb-6">Job Promotion Agreement</h2>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="border-l-4 border-[#2563EB] pl-4">
-                  <p className="text-xs text-[#7A7E8F] uppercase tracking-wider mb-1">Party A</p>
+                  <p className="text-base text-[#7A7E8F] uppercase tracking-wider mb-1">Party A</p>
                   <p className="font-heading font-bold text-[#1C1F2E]">[Employer Name]</p>
-                  <p className="text-sm text-[#3D4152]">&ldquo;Employer&rdquo;</p>
+                  <p className="text-base text-[#3D4152]">&ldquo;Employer&rdquo;</p>
                 </div>
                 <div className="border-l-4 border-[#22C55E] pl-4">
-                  <p className="text-xs text-[#7A7E8F] uppercase tracking-wider mb-1">Party B</p>
+                  <p className="text-base text-[#7A7E8F] uppercase tracking-wider mb-1">Party B</p>
                   <p className="font-heading font-bold text-[#1C1F2E]">UK&ndash;Pakistan Technology Council</p>
-                  <p className="text-sm text-[#3D4152]">&ldquo;Council&rdquo;</p>
+                  <p className="text-base text-[#3D4152]">&ldquo;Council&rdquo;</p>
                 </div>
               </div>
               <div className="mt-6 pt-4 border-t border-[#D8D5CF]">
-                <p className="text-sm text-[#7A7E8F]">Effective Date: <span className="text-[#1C1F2E] font-medium">[Insert Date]</span></p>
+                <p className="text-base text-[#7A7E8F]">Effective Date: <span className="text-[#1C1F2E] font-medium">[Insert Date]</span></p>
               </div>
             </div>
           </div>
@@ -255,7 +255,7 @@ export default function JobPromotionAgreementPage() {
                       <Icon className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <span className="text-xs text-[#7A7E8F] font-semibold">Section {section.number}</span>
+                      <span className="text-base text-[#7A7E8F] font-semibold">Section {section.number}</span>
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">{section.title}</h3>
                     </div>
                   </div>
@@ -293,7 +293,7 @@ export default function JobPromotionAgreementPage() {
                 <div className="space-y-4">
                   {["Name", "Title", "Signature", "Date"].map((field) => (
                     <div key={field}>
-                      <p className="text-xs text-[#7A7E8F] mb-1">{field}</p>
+                      <p className="text-base text-[#7A7E8F] mb-1">{field}</p>
                       <div className="border-b-2 border-dotted border-[#D8D5CF] pb-3" />
                     </div>
                   ))}

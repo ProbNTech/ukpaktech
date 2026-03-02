@@ -23,7 +23,7 @@ export function GovernanceBadges() {
             viewport={{ once: true, margin: "-20px" }}
             transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
             whileHover={shouldReduceMotion ? {} : { scale: 1.05, y: -3 }}
-            className={`relative flex items-center gap-2.5 px-6 py-3.5 rounded-full border ${badge.bg} text-[#1F2937] text-sm font-semibold transition-all duration-300 group cursor-default`}
+            className={`relative flex items-center gap-2.5 px-6 py-3.5 rounded-full border ${badge.bg} text-[#1F2937] text-base font-semibold transition-all duration-300 group cursor-default`}
           >
             <Icon className="w-4 h-4" style={{ color: badge.color }} />
             <span className="relative z-10">{badge.label}</span>

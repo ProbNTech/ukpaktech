@@ -7,7 +7,7 @@ import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import {
   Rocket,
   Building2,
@@ -172,8 +172,8 @@ export default function TechMartGlobalClient() {
         image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Get Started</RainbowButton>
-          <Button href="/contact" variant="glass" size="lg" showArrow>
+          <ShinyButton href="/membership/apply">Get Started</ShinyButton>
+          <Button href="/contact" variant="glass" size="lg">
             Learn More
           </Button>
         </div>
@@ -199,7 +199,7 @@ export default function TechMartGlobalClient() {
                 >
                   {stat.value}
                 </div>
-                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -387,7 +387,7 @@ export default function TechMartGlobalClient() {
                             {feature.title}
                           </h3>
                           <span
-                            className="text-xs font-semibold px-2.5 py-1 rounded-full flex-shrink-0"
+                            className="text-base font-semibold px-2.5 py-1 rounded-full flex-shrink-0"
                             style={{
                               color: feature.color,
                               background: `${feature.color}15`,
@@ -519,7 +519,7 @@ export default function TechMartGlobalClient() {
                             style={{ background: step.color }}
                           />
                           <div
-                            className="relative w-11 h-11 rounded-full flex items-center justify-center font-heading font-extrabold text-sm text-white"
+                            className="relative w-11 h-11 rounded-full flex items-center justify-center font-heading font-extrabold text-base text-white"
                             style={{
                               background: `linear-gradient(135deg, ${step.color}, ${step.color}90)`,
                               boxShadow: `0 0 20px ${step.color}20`,
@@ -558,7 +558,7 @@ export default function TechMartGlobalClient() {
                           style={{ color: step.color }}
                           strokeWidth={2}
                         />
-                        <span className="text-xs font-semibold" style={{ color: step.color }}>
+                        <span className="text-base font-semibold" style={{ color: step.color }}>
                           {step.outcome}
                         </span>
                       </div>

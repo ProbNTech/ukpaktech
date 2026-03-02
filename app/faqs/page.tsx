@@ -91,20 +91,22 @@ export default function FAQsPage() {
   return (
     <div>
       <PageHero
+        label="Help Centre"
         title="Frequently Asked Questions"
         subtitle="Find answers to common questions about UPTECH, membership, programmes, funding, and more."
         image="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=2400&q=85&auto=format&fit=crop"
       />
 
+      <div className="content-body">
       {/* Stats Bar */}
       <Section variant="light">
         <AnimatedSection>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { value: String(faqCategories.length), label: "Categories" },
-              { value: String(totalQuestions), label: "Questions Answered" },
-              { value: "24/7", label: "Online Access" },
-              { value: "5–10", label: "Days Response Time" },
+              { value: String(faqCategories.length), label: "Categories", color: "#2563EB" },
+              { value: String(totalQuestions), label: "Questions Answered", color: "#22C55E" },
+              { value: "24/7", label: "Online Access", color: "#C41E3A" },
+              { value: "5–10", label: "Days Response Time", color: "#2563EB" },
             ].map((stat) => (
               <motion.div
                 key={stat.label}
@@ -112,9 +114,9 @@ export default function FAQsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4 }}
-                className="text-center"
+                className="text-center flex flex-col items-center"
               >
-                <p className="font-heading font-extrabold text-3xl text-[#1C1F2E]">{stat.value}</p>
+                <p className="font-heading font-extrabold text-3xl" style={{ color: stat.color }}>{stat.value}</p>
                 <p className="text-base text-[#7A7E8F]">{stat.label}</p>
               </motion.div>
             ))}
@@ -143,9 +145,9 @@ export default function FAQsPage() {
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: `${meta.color}10`, border: `1px solid ${meta.color}15` }}>
                     <Icon className="w-5 h-5" style={{ color: meta.color }} strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-sm mb-1 group-hover:text-[#2563EB] transition-colors duration-200">{cat.category}</h3>
-                  <p className="text-sm text-[#7A7E8F] leading-relaxed hidden sm:block">{meta.desc}</p>
-                  <p className="text-[10px] font-bold text-[#D8D5CF] uppercase tracking-wider mt-2">{cat.faqs.length} questions</p>
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1 group-hover:text-[#2563EB] transition-colors duration-200">{cat.category}</h3>
+                  <p className="text-base text-[#7A7E8F] leading-relaxed hidden sm:block">{meta.desc}</p>
+                  <p className="text-base font-bold text-[#D8D5CF] uppercase tracking-wider mt-2">{cat.faqs.length} questions</p>
                 </motion.button>
               );
             })}
@@ -174,11 +176,11 @@ export default function FAQsPage() {
                   <div>
                     <div className="flex items-center gap-3 mb-1">
                       <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl">{cat.category}</h2>
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full text-white" style={{ background: meta.color }}>
+                      <span className="text-base font-bold uppercase tracking-wider px-2.5 py-1 rounded-full text-white" style={{ background: meta.color }}>
                         {cat.faqs.length} Q&A
                       </span>
                     </div>
-                    <p className="text-sm text-[#7A7E8F] leading-relaxed">{meta.desc}</p>
+                    <p className="text-base text-[#7A7E8F] leading-relaxed">{meta.desc}</p>
                   </div>
                 </div>
 
@@ -193,6 +195,8 @@ export default function FAQsPage() {
           </section>
         );
       })}
+
+      </div>
 
       {/* CTA */}
       <GlobalCTA
@@ -240,7 +244,7 @@ function FAQAccordion({
               className="w-full flex items-center gap-4 p-5 lg:p-6 text-left"
             >
               <span
-                className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold transition-colors duration-300"
+                className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-base font-bold transition-colors duration-300"
                 style={
                   isOpen
                     ? { background: color, color: "#fff" }

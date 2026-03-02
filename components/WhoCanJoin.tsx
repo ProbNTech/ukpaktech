@@ -120,7 +120,7 @@ export function WhoCanJoin() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="text-sm font-semibold text-[#1F2937] mb-2 block"
+            className="text-base font-semibold text-[#1F2937] mb-2 block"
           >
             Membership
           </motion.span>
@@ -207,7 +207,7 @@ export function WhoCanJoin() {
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#2563EB]/10 to-[#22C55E]/10">
-                        <span className="text-sm font-medium text-[#4B5563]">Image</span>
+                        <span className="text-base font-medium text-[#4B5563]">Image</span>
                       </div>
                     )}
                   </div>
@@ -217,7 +217,7 @@ export function WhoCanJoin() {
                     <h3 className="font-heading font-semibold text-lg mb-2 text-[#1F2937] group-hover:text-[#2563EB] transition-colors duration-300 leading-snug">
                       {cat.title}
                     </h3>
-                    <p className="text-[#4B5563] text-sm leading-relaxed">
+                    <p className="text-[#4B5563] text-base leading-relaxed">
                       {cat.description}
                     </p>
 

@@ -9,7 +9,7 @@ import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const companyAwards = [
@@ -73,8 +73,8 @@ export default function TechExcellenceAwardsClient() {
         image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Submit a Nomination</RainbowButton>
-          <Button href="/contact" variant="glass" size="lg" showArrow>
+          <ShinyButton href="/membership/apply">Submit a Nomination</ShinyButton>
+          <Button href="/contact" variant="glass" size="lg">
             Contact Us
           </Button>
         </div>
@@ -144,11 +144,11 @@ export default function TechExcellenceAwardsClient() {
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col h-full">
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-start justify-between mb-3">
-                        <h3 className="font-heading font-bold text-[#1C1F2E] text-sm flex-1 pr-3 group-hover:text-[#2563EB] transition-colors duration-200">
+                        <h3 className="font-heading font-bold text-[#1C1F2E] text-base flex-1 pr-3 group-hover:text-[#2563EB] transition-colors duration-200">
                           {category.title}
                         </h3>
                         <span
-                          className="text-xs font-semibold px-2 py-0.5 flex-shrink-0 rounded"
+                          className="text-base font-semibold px-2 py-0.5 flex-shrink-0 rounded"
                           style={{ color: tagColor, background: `${tagColor}15` }}
                         >
                           {category.tag}
@@ -192,11 +192,11 @@ export default function TechExcellenceAwardsClient() {
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col h-full">
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-start justify-between mb-3">
-                        <h3 className="font-heading font-bold text-[#1C1F2E] text-sm flex-1 pr-3 group-hover:text-[#2563EB] transition-colors duration-200">
+                        <h3 className="font-heading font-bold text-[#1C1F2E] text-base flex-1 pr-3 group-hover:text-[#2563EB] transition-colors duration-200">
                           {category.title}
                         </h3>
                         <span
-                          className="text-xs font-semibold px-2 py-0.5 flex-shrink-0 rounded"
+                          className="text-base font-semibold px-2 py-0.5 flex-shrink-0 rounded"
                           style={{ color: tagColor, background: `${tagColor}15` }}
                         >
                           {category.tag}
@@ -244,7 +244,7 @@ export default function TechExcellenceAwardsClient() {
                           style={{ background: step.color }}
                         />
                         <div
-                          className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold border"
+                          className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border"
                           style={{
                             background: `${step.color}25`,
                             borderColor: `${step.color}50`,
@@ -261,7 +261,7 @@ export default function TechExcellenceAwardsClient() {
                     <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">{step.description}</p>
                     <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
-                      <span className="text-xs font-semibold" style={{ color: step.color }}>
+                      <span className="text-base font-semibold" style={{ color: step.color }}>
                         {step.outcome}
                       </span>
                     </div>
@@ -302,7 +302,7 @@ export default function TechExcellenceAwardsClient() {
                   <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">
                     Members with many years of significant contribution to the IT industry are made Fellows of the Council. It is regarded as one of the most prestigious titles that an IT professional can receive in the country today.
                   </p>
-                  <p className="text-xs text-[#7A7E8F] italic">Honorary awards presented at the annual Black Tie Gala dinner</p>
+                  <p className="text-base text-[#7A7E8F] italic">Honorary awards presented at the annual Black Tie Gala dinner</p>
                 </div>
               </div>
             </div>
@@ -331,7 +331,7 @@ export default function TechExcellenceAwardsClient() {
                     className="w-full flex items-center justify-between py-5 text-left gap-4"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="text-xs font-bold text-[#C41E3A] bg-[#C41E3A]/10 px-2 py-0.5 rounded flex-shrink-0">
+                      <span className="text-base font-bold text-[#C41E3A] bg-[#C41E3A]/10 px-2 py-0.5 rounded flex-shrink-0">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <span className="font-heading font-semibold text-[#1C1F2E] text-base">{faq.question}</span>

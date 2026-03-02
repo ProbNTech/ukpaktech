@@ -72,7 +72,7 @@ export function ResourcesSection() {
               </div>
 
               {/* Date */}
-              <p className="text-sm text-[#94A3B8] mb-2">{item.date}</p>
+              <p className="text-base text-[#94A3B8] mb-2">{item.date}</p>
 
               {/* Title */}
               <h3 className="font-heading font-bold text-lg text-[#1F2937] leading-snug mb-3 group-hover:text-[#2563EB] transition-colors duration-300">
@@ -85,7 +85,7 @@ export function ResourcesSection() {
                   <span key={cat}>
                     <a
                       href="#"
-                      className="text-sm font-medium text-[#2563EB] hover:underline transition-all duration-200"
+                      className="text-base font-medium text-[#2563EB] hover:underline transition-all duration-200"
                     >
                       {cat}
                     </a>

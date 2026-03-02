@@ -273,6 +273,7 @@ export default function TermsPage() {
         image="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=2400&q=85&auto=format&fit=crop"
       />
 
+      <div className="content-body">
       {/* ── Background Notice — Light section ──────────────────────── */}
       <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
@@ -327,13 +328,13 @@ export default function TermsPage() {
             <div className="flex flex-wrap gap-3 mb-8">
               <button
                 onClick={expandAll}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2563EB]/10 border border-[#2563EB]/20 text-[#2563EB] text-sm font-semibold hover:bg-[#2563EB]/20 transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2563EB]/10 border border-[#2563EB]/20 text-[#2563EB] text-base font-semibold hover:bg-[#2563EB]/20 transition-colors duration-200"
               >
                 Expand All
               </button>
               <button
                 onClick={collapseAll}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#5A5F72] text-sm font-semibold hover:bg-[#EEECEA] transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#5A5F72] text-base font-semibold hover:bg-[#EEECEA] transition-colors duration-200"
               >
                 Collapse All
               </button>
@@ -372,12 +373,12 @@ export default function TermsPage() {
                     className="group text-left bg-white border border-[#D8D5CF] rounded-xl p-4 hover:shadow-md hover:border-[#D8D5CF] transition-all duration-300 shadow-sm"
                   >
                     <span
-                      className="text-xs font-bold tabular-nums block mb-1.5"
+                      className="text-base font-bold tabular-nums block mb-1.5"
                       style={{ color }}
                     >
                       {section.number.padStart(2, "0")}
                     </span>
-                    <h3 className="font-heading font-semibold text-[#3D4152] text-sm sm:text-base leading-snug group-hover:text-[#1C1F2E] transition-colors duration-200 line-clamp-2">
+                    <h3 className="font-heading font-semibold text-[#3D4152] text-base sm:text-base leading-snug group-hover:text-[#1C1F2E] transition-colors duration-200 line-clamp-2">
                       {section.title}
                     </h3>
                   </motion.button>
@@ -430,7 +431,7 @@ export default function TermsPage() {
                       className="w-full flex items-center gap-4 p-5 lg:p-6 text-left"
                     >
                       <span
-                        className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold transition-colors duration-300"
+                        className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold transition-colors duration-300"
                         style={
                           isOpen
                             ? {
@@ -527,7 +528,7 @@ export default function TermsPage() {
                                         className="flex items-start gap-3 text-base text-[#7A7E8F] leading-[1.8]"
                                       >
                                         <span
-                                          className="text-xs font-bold tabular-nums pt-1 flex-shrink-0 min-w-[20px]"
+                                          className="text-base font-bold tabular-nums pt-1 flex-shrink-0 min-w-[20px]"
                                           style={{ color }}
                                         >
                                           {lIdx + 1}.
@@ -548,7 +549,7 @@ export default function TermsPage() {
                                     return (
                                       <p
                                         key={`after-${aIdx}`}
-                                        className="text-sm leading-[1.8] text-[#7A7E8F] mt-3"
+                                        className="text-base leading-[1.8] text-[#7A7E8F] mt-3"
                                       >
                                         {isSubClause && (
                                           <span
@@ -580,6 +581,8 @@ export default function TermsPage() {
         </div>
       </section>
 
+      </div>
+
       {/* ── CTA — Gradient dark section ──────────────────────────── */}
       <section
         className="relative overflow-hidden py-12"
@@ -608,7 +611,7 @@ export default function TermsPage() {
                       strokeWidth={1.5}
                     />
                   </div>
-                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB]">
+                  <p className="text-base font-bold tracking-[0.2em] uppercase text-[#2563EB]">
                     Questions?
                   </p>
                 </div>

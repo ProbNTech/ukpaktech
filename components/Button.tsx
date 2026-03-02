@@ -22,8 +22,8 @@ export function Button({
   const baseStyles = "relative overflow-hidden inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 rounded-full group";
 
   const sizes = {
-    sm: "px-5 py-2 text-sm",
-    md: "px-7 py-3 text-sm",
+    sm: "px-5 py-2 text-base",
+    md: "px-7 py-3 text-base",
     lg: "px-8 py-3.5 text-base",
   };
 

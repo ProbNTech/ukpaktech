@@ -8,7 +8,7 @@ import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const tradeDelegationIntro = "The UK-Pakistan Tech Council organises trade delegations to connect technology companies with key stakeholders, potential partners, investors, and government representatives in both the UK and Pakistan. These delegations provide members with a strategic platform to explore new markets, forge partnerships, and drive business growth.";
@@ -74,8 +74,8 @@ export default function TradeDelegationsAndExhibitionsClient() {
         image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/events" showArrow>View Events</RainbowButton>
-          <Button href="/contact" variant="glass" showArrow>
+          <ShinyButton href="/events">View Events</ShinyButton>
+          <Button href="/contact" variant="glass">
             Contact Us
           </Button>
         </div>
@@ -100,7 +100,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
                 >
                   {stat.value}
                 </div>
-                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -276,7 +276,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
                     <div key={step.number} className="group flex gap-6 py-5 border-t border-[#D8D5CF] last:border-b">
                       <div className="relative flex-shrink-0">
                         <div
-                          className="relative w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold border"
+                          className="relative w-10 h-10 rounded-full flex items-center justify-center text-base font-bold border"
                           style={{
                             background: `${step.color}15`,
                             borderColor: `${step.color}50`,

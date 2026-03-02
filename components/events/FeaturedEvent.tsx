@@ -41,13 +41,13 @@ export function FeaturedEvent({ event }: FeaturedEventProps) {
             {/* Badges */}
             <div className="flex items-center gap-3 mb-6">
               <div className="px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/20 shadow-sm">
-                <span className="text-xs font-bold text-white tracking-wide uppercase">
+                <span className="text-base font-bold text-white tracking-wide uppercase">
                   Featured Event
                 </span>
               </div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2563EB]/20 border border-[#2563EB]/30">
                 <Calendar className="w-3.5 h-3.5 text-[#2563EB]" />
-                <span className="text-xs font-semibold text-[#2563EB]">
+                <span className="text-base font-semibold text-[#2563EB]">
                   {event.date}
                 </span>
               </div>
@@ -64,13 +64,13 @@ export function FeaturedEvent({ event }: FeaturedEventProps) {
             </p>
 
             {/* Location */}
-            <div className="flex items-start gap-2 text-sm text-[#475569] mb-6">
+            <div className="flex items-start gap-2 text-base text-[#475569] mb-6">
               <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#2563EB]" />
               <span>{event.location}</span>
             </div>
 
             {/* CTA */}
-            <div className="flex items-center gap-2 text-sm font-semibold text-[#2563EB] group-hover:gap-3 transition-all duration-300">
+            <div className="flex items-center gap-2 text-base font-semibold text-[#2563EB] group-hover:gap-3 transition-all duration-300">
               <span>Learn more</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </div>
@@ -91,7 +91,7 @@ export function FeaturedEvent({ event }: FeaturedEventProps) {
               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#2563EB]/20 to-[#22C55E]/15">
                 <div className="text-center">
                   <Calendar className="w-12 h-12 text-[#2563EB]/50 mx-auto mb-2" />
-                  <span className="text-sm font-medium text-[#475569]">
+                  <span className="text-base font-medium text-[#475569]">
                     Event Image
                   </span>
                 </div>

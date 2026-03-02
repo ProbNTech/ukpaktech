@@ -7,6 +7,13 @@
     --font-inter: 'Inter', system-ui, sans-serif;
     --font-manrope: 'Manrope', system-ui, sans-serif;
 
+    /* Rainbow button colors */
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+
     /* ─── Editorial palette (inspired by ukproptech.com) ─── */
     /* Warm off-white backgrounds — the signature look */
     --bg-default: #EEECEA;
@@ -266,6 +273,17 @@
   .section-transition {
     transition: background-color 0.4s ease, color 0.4s ease;
   }
+
+  /* Long-form content justification — About, Terms, GDPR, Code of Conduct, FAQs, Privacy, etc. */
+  .content-body p {
+    text-align: justify;
+  }
+
+  @media (max-width: 768px) {
+    .content-body p {
+      text-align: left;
+    }
+  }
 }
 
 /* ─── Shiny CTA Button ─── */
@@ -466,7 +484,7 @@
   color: #ffffff;
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.4;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.3s ease;

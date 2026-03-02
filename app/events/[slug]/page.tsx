@@ -82,7 +82,7 @@ export async function generateMetadata({
 function InlineHeading({ label, title }: { label: string; title: string }) {
   return (
     <div className="mb-8">
-      <p className="text-xs font-bold uppercase tracking-widest text-[#2563EB] mb-2">{label}</p>
+      <p className="text-base font-bold uppercase tracking-widest text-[#2563EB] mb-2">{label}</p>
       <div className="flex items-center gap-5 mb-0">
         <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-[#1C1F2E] shrink-0 whitespace-nowrap">
           {title}
@@ -157,7 +157,7 @@ export default async function EventDetailPage({
                       target={s.label !== "Email" ? "_blank" : undefined}
                       rel={s.label !== "Email" ? "noopener noreferrer" : undefined}
                       aria-label={`Share on ${s.label}`}
-                      className="w-9 h-9 border border-[#D8D5CF] flex items-center justify-center text-[#3D4152] hover:text-[#2563EB] hover:border-[#2563EB] transition-colors duration-200 text-[10px] font-bold uppercase"
+                      className="w-9 h-9 border border-[#D8D5CF] flex items-center justify-center text-[#3D4152] hover:text-[#2563EB] hover:border-[#2563EB] transition-colors duration-200 text-base font-bold uppercase"
                     >
                       {s.label.slice(0, 2)}
                     </a>
@@ -178,7 +178,7 @@ export default async function EventDetailPage({
                     <div className="flex items-center gap-4">
                       <CalendarIcon size={26} />
                       <div>
-                        <span className="text-[10px] uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Date</span>
+                        <span className="text-base uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Date</span>
                         <span className="text-[#1C1F2E] font-bold text-base leading-snug">{formattedDate}</span>
                       </div>
                     </div>
@@ -186,7 +186,7 @@ export default async function EventDetailPage({
                       <div className="flex items-center gap-4">
                         <ClockIcon size={26} />
                         <div>
-                          <span className="text-[10px] uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Time</span>
+                          <span className="text-base uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Time</span>
                           <span className="text-[#1C1F2E] font-bold text-base leading-snug">{event.time}</span>
                         </div>
                       </div>
@@ -194,7 +194,7 @@ export default async function EventDetailPage({
                     <div className="flex items-center gap-4">
                       <LocationIcon size={26} />
                       <div>
-                        <span className="text-[10px] uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Location</span>
+                        <span className="text-base uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Location</span>
                         <span className="text-[#1C1F2E] font-bold text-base leading-snug">{event.location}</span>
                       </div>
                     </div>
@@ -202,7 +202,7 @@ export default async function EventDetailPage({
                       <div className="flex items-center gap-4">
                         <PriceIcon size={26} />
                         <div>
-                          <span className="text-[10px] uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Price</span>
+                          <span className="text-base uppercase tracking-widest text-[#7A7E8F] font-bold block mb-1">Price</span>
                           <span className="text-[#1C1F2E] font-bold text-base leading-snug">{event.price}</span>
                         </div>
                       </div>
@@ -214,14 +214,14 @@ export default async function EventDetailPage({
                         href={event.officialLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-base uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
                       >
                         Visit Official Site
                       </a>
                     ) : (
                       <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-base uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
                       >
                         Register Interest
                       </Link>
@@ -267,11 +267,11 @@ export default async function EventDetailPage({
                         className="flex gap-4 sm:gap-6 px-6 py-4 border-b border-[#D8D5CF] last:border-b-0 hover:bg-[#EEECEA] transition-colors duration-200"
                       >
                         <div className="shrink-0 w-36 sm:w-44">
-                          <span className="text-sm font-semibold text-[#2563EB]">{item.time}</span>
+                          <span className="text-base font-semibold text-[#2563EB]">{item.time}</span>
                         </div>
                         <div className="flex items-center gap-3 min-w-0">
                           <CheckCircle2 className="w-4 h-4 text-[#22C55E] shrink-0" />
-                          <span className="text-[#1C1F2E] font-medium text-sm sm:text-base">{item.title}</span>
+                          <span className="text-[#1C1F2E] font-medium text-base sm:text-base">{item.title}</span>
                         </div>
                       </div>
                     ))}
@@ -301,10 +301,10 @@ export default async function EventDetailPage({
                             </div>
                           )}
                         </div>
-                        <h4 className="font-heading font-semibold text-sm text-[#1C1F2E] mb-1 group-hover:text-[#2563EB] transition-colors duration-200">
+                        <h4 className="font-heading font-semibold text-base text-[#1C1F2E] mb-1 group-hover:text-[#2563EB] transition-colors duration-200">
                           {speaker.name}
                         </h4>
-                        <p className="text-xs leading-snug text-[#3D4152]">{speaker.title}</p>
+                        <p className="text-base leading-snug text-[#3D4152]">{speaker.title}</p>
                       </div>
                     ))}
                   </div>
@@ -328,14 +328,14 @@ export default async function EventDetailPage({
                         href={event.officialLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-base uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
                       >
                         Visit Official Site
                       </a>
                     ) : (
                       <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-sm uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#C41E3A] text-white font-bold text-base uppercase tracking-wide hover:bg-[#a8172f] transition-colors duration-200"
                       >
                         Register Interest
                       </Link>
@@ -363,13 +363,13 @@ export default async function EventDetailPage({
                               className="object-cover group-hover:scale-105 transition-transform duration-500"
                               sizes="(max-width: 640px) 100vw, 300px"
                             />
-                            <div className="absolute top-3 left-3 px-2 py-1 bg-[#2563EB] text-white text-[10px] font-bold uppercase tracking-wider">
+                            <div className="absolute top-3 left-3 px-2 py-1 bg-[#2563EB] text-white text-base font-bold uppercase tracking-wider">
                               {rel.tag}
                             </div>
                           </div>
                           <div className="p-4">
-                            <p className="text-xs text-[#2563EB] font-semibold mb-1">{rel.date}</p>
-                            <h4 className="font-heading font-semibold text-sm text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 line-clamp-2">
+                            <p className="text-base text-[#2563EB] font-semibold mb-1">{rel.date}</p>
+                            <h4 className="font-heading font-semibold text-base text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 line-clamp-2">
                               {rel.title}
                             </h4>
                           </div>

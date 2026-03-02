@@ -40,7 +40,7 @@ function CountdownBlock({ value, label }: { value: number; label: string }) {
       <span className="text-3xl sm:text-4xl font-bold text-white tabular-nums leading-none">
         {String(value).padStart(2, "0")}
       </span>
-      <span className="text-xs text-white/60 uppercase tracking-wider mt-2 font-semibold">
+      <span className="text-base text-white/60 uppercase tracking-wider mt-2 font-semibold">
         {label}
       </span>
     </div>
@@ -76,7 +76,7 @@ export function EventDetailClient({ title, dateISO, category, tag, status }: Eve
           transition={{ duration: 0.4 }}
           className="mb-8"
         >
-          <ol className="flex items-center gap-2 text-sm text-white/60">
+          <ol className="flex items-center gap-2 text-base text-white/60">
             <li>
               <Link href="/" className="hover:text-white transition-colors">
                 Home
@@ -100,17 +100,17 @@ export function EventDetailClient({ title, dateISO, category, tag, status }: Eve
           transition={{ duration: 0.4, delay: 0.05 }}
           className="flex flex-wrap items-center gap-3 mb-4"
         >
-          <span className="text-xs font-bold uppercase tracking-widest text-[#22C55E]">
+          <span className="text-base font-bold uppercase tracking-widest text-[#22C55E]">
             {category}
           </span>
           <span className="w-px h-4 bg-white/30" />
-          <span className="text-xs font-semibold uppercase tracking-wide text-white/60">
+          <span className="text-base font-semibold uppercase tracking-wide text-white/60">
             {tag}
           </span>
           {status === "past" && (
             <>
               <span className="w-px h-4 bg-white/30" />
-              <span className="text-xs font-semibold uppercase tracking-wide text-white/40">
+              <span className="text-base font-semibold uppercase tracking-wide text-white/40">
                 Past Event
               </span>
             </>

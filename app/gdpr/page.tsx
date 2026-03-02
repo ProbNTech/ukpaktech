@@ -56,6 +56,7 @@ export default function GDPRPage() {
         image="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=2400&q=85&auto=format&fit=crop"
       />
 
+      <div className="content-body">
       {/* ── Data Subject Rights — Light section ─────────────────────── */}
       <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
@@ -109,8 +110,8 @@ export default function GDPRPage() {
             <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4, delay: 0.3 }} className="mt-8 relative bg-gradient-to-br from-[#22C55E]/10 to-[#2563EB]/10 border border-[#22C55E]/20 rounded-xl p-6 overflow-hidden max-w-4xl">
               <div className="relative">
                 <Mail className="w-5 h-5 text-[#22C55E] mb-3" strokeWidth={1.5} />
-                <p className="text-[#5A5F72] text-sm leading-relaxed">If you want to exercise any of the above rights, please email us at{" "}<a href="mailto:info@uptech.org.uk" className="text-[#22C55E] hover:text-[#4ade80] transition-colors">info@uptech.org.uk</a>{" "}and clearly state in the email subject line: RIGHTS REQUEST. We may be required to ask for further information and/or evidence of identity. We will endeavor to respond fully to all requests within 10 working days of your request, however if we are unable to do so we will contact you with reasons for the delay.</p>
-                <p className="text-[#7A7E8F] text-sm leading-relaxed mt-4">Please note that exceptions apply to a number of these rights, and not all rights will be applicable in all circumstances. For more details we recommend you consult the guidance published by the UK{"\u2019"}s Information Commissioner{"\u2019"}s Office,{" "}<a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#22C55E] hover:text-[#4ade80] transition-colors">https://ico.org.uk</a>.</p>
+                <p className="text-[#5A5F72] text-base leading-relaxed">If you want to exercise any of the above rights, please email us at{" "}<a href="mailto:info@uptech.org.uk" className="text-[#22C55E] hover:text-[#4ade80] transition-colors">info@uptech.org.uk</a>{" "}and clearly state in the email subject line: RIGHTS REQUEST. We may be required to ask for further information and/or evidence of identity. We will endeavor to respond fully to all requests within 10 working days of your request, however if we are unable to do so we will contact you with reasons for the delay.</p>
+                <p className="text-[#7A7E8F] text-base leading-relaxed mt-4">Please note that exceptions apply to a number of these rights, and not all rights will be applicable in all circumstances. For more details we recommend you consult the guidance published by the UK{"\u2019"}s Information Commissioner{"\u2019"}s Office,{" "}<a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#22C55E] hover:text-[#4ade80] transition-colors">https://ico.org.uk</a>.</p>
               </div>
             </motion.div>
           </AnimatedSection>
@@ -152,8 +153,8 @@ export default function GDPRPage() {
             <SectionHeader label="Retention Policy" title="Data Retention" subtitle="We keep your information for no longer than is necessary for the purposes it was collected for. The length of time we retain your personal information is determined by operational and legal considerations." color="red" />
             <div className="max-w-4xl">
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4 }} className="grid grid-cols-[1fr_2fr] gap-4 px-6 py-4 mb-2">
-                <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A]">Category</div>
-                <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C41E3A]">Retention Period</div>
+                <div className="text-base font-bold tracking-[0.2em] uppercase text-[#C41E3A]">Category</div>
+                <div className="text-base font-bold tracking-[0.2em] uppercase text-[#C41E3A]">Retention Period</div>
               </motion.div>
               {retentionPeriods.map((item, i) => (
                 <motion.div key={item.category} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4, delay: i * 0.05 }} className="group grid grid-cols-[1fr_2fr] gap-4 relative bg-white border border-[#D8D5CF] rounded-xl px-6 py-5 mb-3 hover:shadow-md transition-all duration-300 overflow-hidden shadow-sm">
@@ -162,7 +163,7 @@ export default function GDPRPage() {
                     <div className="w-8 h-8 rounded-lg bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
                       <Clock className="w-4 h-4 text-[#C41E3A]" strokeWidth={1.5} />
                     </div>
-                    <span className="font-heading font-bold text-sm text-[#1C1F2E]">{item.category}</span>
+                    <span className="font-heading font-bold text-base text-[#1C1F2E]">{item.category}</span>
                   </div>
                   <div className="flex items-center">
                     <span className="text-base text-[#7A7E8F] leading-relaxed">{item.period}</span>
@@ -197,6 +198,8 @@ export default function GDPRPage() {
         </div>
       </section>
 
+      </div>
+
       {/* ── Contact CTA — Gradient dark section ───────────────────── */}
       <section className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
@@ -204,12 +207,12 @@ export default function GDPRPage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Get in Touch</p>
+              <p className="text-base font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Get in Touch</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">Contact Us</h2>
               <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-4">For any questions about this Privacy Policy or our treatment of your Personal Information, please contact{" "}<a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a></p>
               <div className="flex flex-wrap gap-4 mt-10">
-                <Button href="/contact" variant="primary" size="lg" showArrow>Contact Us</Button>
-                <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
+                <Button href="/contact" variant="primary" size="lg">Contact Us</Button>
+                <Button href="/membership/apply" variant="glass" size="lg">Apply for Membership</Button>
               </div>
             </div>
           </AnimatedSection>

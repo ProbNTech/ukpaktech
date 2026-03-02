@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { Button } from "@/components/Button";
 import { CheckCircle2, Globe2, Handshake, TrendingUp, Zap } from "lucide-react";
 
@@ -37,8 +37,8 @@ export default function ObjectivesPage() {
         image="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Join UPTECH</RainbowButton>
-          <Button href="/about/founder" variant="glass" showArrow>Meet Our Founder</Button>
+          <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>
+          <Button href="/about/founder" variant="glass">Meet Our Founder</Button>
         </div>
       </PageHero>
 
@@ -109,7 +109,7 @@ export default function ObjectivesPage() {
                     <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
                   </div>
                   <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{item.title}</h3>
-                  <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-[#3D4152] text-base leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}
@@ -118,7 +118,7 @@ export default function ObjectivesPage() {
             {additionalObjectives.map((item, i) => (
               <div key={item} className="flex items-start gap-3 bg-white border border-[#D8D5CF] rounded-lg p-5 hover:shadow-sm transition-shadow duration-300">
                 <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: brandColors[i % 3] }} strokeWidth={2} />
-                <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+                <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
               </div>
             ))}
           </div>

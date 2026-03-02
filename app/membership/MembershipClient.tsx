@@ -28,7 +28,7 @@ import { siteConfig } from "@/config/site";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 
 /* ─── Shared animation variants ─── */
 const containerVariants = {
@@ -307,8 +307,8 @@ export default function MembershipClient() {
         image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Apply Now</RainbowButton>
-          <Button href="#tiers" variant="glass" showArrow>View Tiers</Button>
+          <ShinyButton href="/membership/apply">Apply Now</ShinyButton>
+          <Button href="#tiers" variant="glass">View Tiers</Button>
         </div>
       </PageHero>
 
@@ -322,7 +322,7 @@ export default function MembershipClient() {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-[#D8D5CF] bg-white shadow-sm mb-5">
                 <Globe className="w-3.5 h-3.5 text-[#2563EB]" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">
+                <span className="text-base font-bold tracking-[0.2em] uppercase text-[#5A5F72]">
                   About UPTECH Membership
                 </span>
               </div>
@@ -804,7 +804,7 @@ export default function MembershipClient() {
                 </p>
                 <ul className="space-y-3">
                   {pakistanToUkServices.map((service, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-sm">
+                    <li key={idx} className="flex items-start gap-2.5 text-base">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#22C55E]" />
                       <span className="text-[#3D4152]">{service}</span>
                     </li>
@@ -948,15 +948,15 @@ function TierCard({
             : "bg-white border border-[#D8D5CF] shadow-sm hover:shadow-md hover:border-[#D8D5CF]"
         }`}
       >
-        {/* Top accent bar */}
-        <div
-          className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl"
-          style={{
-            background: tier.highlight
-              ? `linear-gradient(90deg, #2563EB, #C41E3A, #22C55E)`
-              : `linear-gradient(90deg, transparent, ${color}40, transparent)`,
-          }}
-        />
+        {/* Top accent bar — non-highlighted tiers only */}
+        {!tier.highlight && (
+          <div
+            className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl"
+            style={{
+              background: `linear-gradient(90deg, transparent, ${color}40, transparent)`,
+            }}
+          />
+        )}
 
         {/* Highlight badge */}
         {tier.highlight && (
@@ -974,7 +974,7 @@ function TierCard({
         >
           {tier.name}
         </h3>
-        <p className="text-base text-[#5A5F72] mb-5 leading-relaxed">
+        <p className={`text-base mb-5 leading-relaxed ${tier.highlight ? "text-white/60" : "text-[#5A5F72]"}`}>
           {tier.description}
         </p>
 
@@ -990,12 +990,12 @@ function TierCard({
         {tier.features.length > 0 && (
           <ul className="space-y-3 flex-1 mb-7">
             {tier.features.map((feature, idx) => (
-              <li key={idx} className="flex items-start gap-2.5 text-sm">
+              <li key={idx} className="flex items-start gap-2.5 text-base">
                 <CheckCircle2
                   className="w-4 h-4 flex-shrink-0 mt-0.5"
                   style={{ color: tier.highlight ? "#22C55E" : color }}
                 />
-                <span className="text-[#3D4152]">{feature}</span>
+                <span className={tier.highlight ? "text-white/70" : "text-[#3D4152]"}>{feature}</span>
               </li>
             ))}
           </ul>
@@ -1006,7 +1006,7 @@ function TierCard({
         {tier.highlight ? (
           <a
             href="/membership/apply"
-            className="group/btn relative inline-flex items-center justify-center gap-2.5 w-full px-7 py-3.5 rounded-xl font-heading font-bold text-sm text-white bg-gradient-to-r from-[#2563EB] to-[#1a4fd4] hover:from-[#3b82f6] hover:to-[#2563EB] transition-all duration-300 shadow-[0_4px_20px_rgba(37,99,235,0.25)] hover:shadow-[0_8px_30px_rgba(37,99,235,0.4)]"
+            className="group/btn relative inline-flex items-center justify-center gap-2.5 w-full px-7 py-3.5 rounded-xl font-heading font-bold text-base text-white bg-gradient-to-r from-[#2563EB] to-[#1a4fd4] hover:from-[#3b82f6] hover:to-[#2563EB] transition-all duration-300 shadow-[0_4px_20px_rgba(37,99,235,0.25)] hover:shadow-[0_8px_30px_rgba(37,99,235,0.4)]"
           >
             Apply Now
             <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
@@ -1014,7 +1014,7 @@ function TierCard({
         ) : (
           <a
             href="/membership/apply"
-            className="inline-flex items-center justify-center gap-2.5 w-full px-7 py-3.5 rounded-xl font-heading font-bold text-sm border border-[#D8D5CF] text-[#3D4152] bg-[#F5F4F2] hover:bg-[#EEECEA] hover:text-[#1C1F2E] hover:border-[#D8D5CF] transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2.5 w-full px-7 py-3.5 rounded-xl font-heading font-bold text-base border border-[#D8D5CF] text-[#3D4152] bg-[#F5F4F2] hover:bg-[#EEECEA] hover:text-[#1C1F2E] hover:border-[#D8D5CF] transition-all duration-300"
           >
             Apply Now
           </a>

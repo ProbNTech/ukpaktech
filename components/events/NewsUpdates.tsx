@@ -32,7 +32,7 @@ export function NewsUpdates({ items }: NewsUpdatesProps) {
             {/* Category */}
             <div className="flex items-center gap-1.5 mb-4">
               <Tag className="w-3 h-3 text-[#2563EB]" />
-              <span className="text-xs font-bold text-[#2563EB] uppercase tracking-wide">
+              <span className="text-base font-bold text-[#2563EB] uppercase tracking-wide">
                 {item.category}
               </span>
             </div>
@@ -43,14 +43,14 @@ export function NewsUpdates({ items }: NewsUpdatesProps) {
             </h3>
 
             {/* Summary */}
-            <p className="text-sm mb-5 leading-relaxed line-clamp-3 text-[#3D4152] flex-1">
+            <p className="text-base mb-5 leading-relaxed line-clamp-3 text-[#3D4152] flex-1">
               {item.summary}
             </p>
 
             <div className="h-px bg-[#D8D5CF] mb-4" />
 
             {/* Date */}
-            <div className="flex items-center gap-2 text-xs text-[#7A7E8F]">
+            <div className="flex items-center gap-2 text-base text-[#7A7E8F]">
               <Calendar className="w-3.5 h-3.5" />
               <span>{item.date}</span>
             </div>

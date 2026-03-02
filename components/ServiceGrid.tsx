@@ -90,11 +90,11 @@ function ServiceCard({
               {service.title}
             </h3>
 
-            <p className="text-[#475569] mb-6 leading-relaxed text-sm">
+            <p className="text-[#475569] mb-6 leading-relaxed text-base">
               {service.description}
             </p>
 
-            <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB]">
+            <div className="inline-flex items-center gap-2 text-base font-semibold text-[#2563EB]">
               <span>Learn more</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </div>

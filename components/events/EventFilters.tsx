@@ -49,7 +49,7 @@ export function EventFilters({
           placeholder="Search events..."
           value={searchQuery}
           onChange={handleSearchChange}
-          className="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-100 bg-white focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20 focus:border-[#2563EB]/40 transition-all text-sm"
+          className="w-full pl-11 pr-4 py-3 rounded-xl border border-gray-100 bg-white focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20 focus:border-[#2563EB]/40 transition-all text-base"
         />
       </div>
 
@@ -67,7 +67,7 @@ export function EventFilters({
             key={filter.id}
             onClick={() => handleFilterClick(filter.id)}
             disabled={filter.id === "news"}
-            className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+            className={`px-4 py-2 rounded-xl text-base font-medium transition-all ${
               activeFilter === filter.id
                 ? "bg-[#2563EB] text-white shadow-sm"
                 : "bg-white border border-gray-100 text-[#475569] hover:border-[#2563EB]/30"
@@ -86,7 +86,7 @@ export function EventFilters({
       <div className="relative">
         <button
           onClick={() => setIsSortOpen(!isSortOpen)}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-100 bg-white text-sm font-medium text-[#475569] hover:border-[#2563EB]/30 hover:bg-[#2563EB]/5 transition-all"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-100 bg-white text-base font-medium text-[#475569] hover:border-[#2563EB]/30 hover:bg-[#2563EB]/5 transition-all"
         >
           <span>Sort: {sortBy === "newest" ? "Newest" : "Oldest"}</span>
           <ChevronDown
@@ -105,7 +105,7 @@ export function EventFilters({
             <div className="absolute top-full right-0 mt-2 w-40 bg-white rounded-xl border border-gray-100 shadow-lg z-20 overflow-hidden">
               <button
                 onClick={() => handleSortChange("newest")}
-                className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                className={`w-full text-left px-4 py-2 text-base transition-colors ${
                   sortBy === "newest"
                     ? "bg-[#2563EB]/5 text-[#2563EB] font-medium"
                     : "text-[#475569] hover:bg-gray-50"
@@ -115,7 +115,7 @@ export function EventFilters({
               </button>
               <button
                 onClick={() => handleSortChange("oldest")}
-                className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                className={`w-full text-left px-4 py-2 text-base transition-colors ${
                   sortBy === "oldest"
                     ? "bg-[#2563EB]/5 text-[#2563EB] font-medium"
                     : "text-[#475569] hover:bg-gray-50"

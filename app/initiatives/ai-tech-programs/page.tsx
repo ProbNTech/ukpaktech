@@ -87,13 +87,13 @@ export default function AITechProgramsPage() {
             {programs.map((program) => (
               <div key={program.title} className="bg-white border border-[#D8D5CF] p-6 flex flex-col hover:border-[#2563EB]/40 transition-colors duration-300">
                 <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1">{program.title}</h3>
-                <p className="text-[#7A7E8F] text-xs mb-3">{program.subtitle}</p>
+                <p className="text-[#7A7E8F] text-base mb-3">{program.subtitle}</p>
                 <div className="h-px bg-[#1C1F2E]/15 mb-4" />
                 <ul className="space-y-2 flex-1">
                   {program.bullets.map((bullet) => (
                     <li key={bullet} className="flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-[#3D4152] text-sm">{bullet}</span>
+                      <span className="text-[#3D4152] text-base">{bullet}</span>
                     </li>
                   ))}
                 </ul>
@@ -114,11 +114,11 @@ export default function AITechProgramsPage() {
           <div className="space-y-0">
             {timelineSteps.map((step) => (
               <div key={step.number} className="flex gap-8 py-6 border-t border-[#1C1F2E]/15 last:border-b">
-                <span className="text-sm font-semibold text-[#2563EB] tabular-nums w-8 flex-shrink-0 pt-0.5">{step.number}</span>
+                <span className="text-base font-semibold text-[#2563EB] tabular-nums w-8 flex-shrink-0 pt-0.5">{step.number}</span>
                 <div className="flex-1">
                   <h3 className="font-heading font-bold text-[#1C1F2E] text-base sm:text-lg mb-2">{step.title}</h3>
-                  <p className="text-[#3D4152] text-sm leading-relaxed mb-3">{step.description}</p>
-                  <span className="text-xs font-semibold text-[#2563EB]">→ {step.outcome}</span>
+                  <p className="text-[#3D4152] text-base leading-relaxed mb-3">{step.description}</p>
+                  <span className="text-base font-semibold text-[#2563EB]">→ {step.outcome}</span>
                 </div>
               </div>
             ))}

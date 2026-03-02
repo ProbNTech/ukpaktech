@@ -139,7 +139,7 @@ function InitiativeCard({ initiative, index, isInView }: { initiative: typeof in
             <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A] group-hover:text-[#2563EB] transition-colors duration-300">{initiative.title}</h3>
             <p className="text-[#475569] mb-6 leading-relaxed">{initiative.description}</p>
 
-            <Link href={initiative.href} className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] hover:text-[#1D4ED8] transition-colors duration-300">
+            <Link href={initiative.href} className="inline-flex items-center gap-2 text-base font-semibold text-[#2563EB] hover:text-[#1D4ED8] transition-colors duration-300">
               <span>Learn more</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>

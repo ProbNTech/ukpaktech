@@ -18,7 +18,7 @@ const sections = [
     title: "Purpose",
     accent: "border-[#2563EB]",
     content: (
-      <p className="text-[#3D4152] text-sm leading-relaxed">
+      <p className="text-[#3D4152] text-base leading-relaxed">
         The purpose of this Agreement is to define the terms under which the Council will promote, market, and showcase the Product Owner&apos;s products, solutions, or services to its network of members, stakeholders, and partners in the UK, Europe, Middle East and African continent.
       </p>
     ),
@@ -31,7 +31,7 @@ const sections = [
     accent: "border-[#2563EB]",
     content: (
       <div>
-        <p className="text-[#3D4152] text-sm leading-relaxed mb-4">The Council agrees to provide the following marketing services:</p>
+        <p className="text-[#3D4152] text-base leading-relaxed mb-4">The Council agrees to provide the following marketing services:</p>
         <ul className="space-y-3">
           {[
             "Promotion of the Product Owner\u2019s products through the Council\u2019s website, newsletters, social media, and events.",
@@ -41,7 +41,7 @@ const sections = [
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
               <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-              <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+              <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>
@@ -56,7 +56,7 @@ const sections = [
     accent: "border-[#22C55E]",
     content: (
       <div>
-        <p className="text-[#3D4152] text-sm leading-relaxed mb-4">The Product Owner agrees to:</p>
+        <p className="text-[#3D4152] text-base leading-relaxed mb-4">The Product Owner agrees to:</p>
         <ul className="space-y-3">
           {[
             "Provide accurate and complete product information, images, branding, and promotional materials.",
@@ -67,7 +67,7 @@ const sections = [
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
               <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-              <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+              <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>
@@ -89,7 +89,7 @@ const sections = [
         ].map((item) => (
           <li key={item} className="flex items-start gap-3">
             <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-            <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+            <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
           </li>
         ))}
       </ul>
@@ -103,11 +103,11 @@ const sections = [
     accent: "border-[#C41E3A]",
     content: (
       <div>
-        <p className="text-[#3D4152] text-sm leading-relaxed mb-6">
+        <p className="text-[#3D4152] text-base leading-relaxed mb-6">
           The Product Owner agrees to pay the Council the following fees for marketing services:
         </p>
         <div className="overflow-x-auto mb-6">
-          <table className="w-full text-sm border-collapse">
+          <table className="w-full text-base border-collapse">
             <thead>
               <tr className="bg-[#1C1F2E] text-white">
                 <th className="text-left py-3 px-4 font-semibold">Service</th>
@@ -136,7 +136,7 @@ const sections = [
 
         <div className="space-y-4">
           <div>
-            <h4 className="font-heading font-bold text-[#1C1F2E] text-sm mb-2">Payment Terms</h4>
+            <h4 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">Payment Terms</h4>
             <ul className="space-y-2">
               {[
                 "Fees are due within 30 days of invoice.",
@@ -144,8 +144,8 @@ const sections = [
                 "Additional services outside this fee schedule will require written approval.",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
-                  <span className="text-[#3D4152] text-xs mt-1">&bull;</span>
-                  <span className="text-[#3D4152] text-sm">{item}</span>
+                  <span className="text-[#3D4152] text-base mt-1">&bull;</span>
+                  <span className="text-[#3D4152] text-base">{item}</span>
                 </li>
               ))}
             </ul>
@@ -154,8 +154,8 @@ const sections = [
           <div className="bg-[#FEF3C7] border border-[#F59E0B]/30 rounded p-4 flex items-start gap-3">
             <AlertTriangle className="w-5 h-5 text-[#F59E0B] flex-shrink-0 mt-0.5" strokeWidth={2} />
             <div>
-              <h4 className="font-heading font-bold text-[#1C1F2E] text-sm mb-1">Binding Payment Clause</h4>
-              <p className="text-[#3D4152] text-xs leading-relaxed">
+              <h4 className="font-heading font-bold text-[#1C1F2E] text-base mb-1">Binding Payment Clause</h4>
+              <p className="text-[#3D4152] text-base leading-relaxed">
                 The Product Owner unconditionally agrees to pay all fees as invoiced by the Council. Fees are due within 30 days of invoice, and non-payment constitutes a breach of this Agreement. The Council may suspend or terminate marketing services if payment is not received on time. Late payments incur interest at 4% per month until paid in full. This clause is legally binding and enforceable under the governing law specified in Section 8.
               </p>
             </div>
@@ -171,7 +171,7 @@ const sections = [
     title: "Confidentiality",
     accent: "border-[#22C55E]",
     content: (
-      <p className="text-[#3D4152] text-sm leading-relaxed">
+      <p className="text-[#3D4152] text-base leading-relaxed">
         Both parties shall maintain the confidentiality of proprietary information and shall not disclose such information without prior written consent.
       </p>
     ),
@@ -191,7 +191,7 @@ const sections = [
         ].map((item) => (
           <li key={item} className="flex items-start gap-3">
             <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-            <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+            <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
           </li>
         ))}
       </ul>
@@ -211,7 +211,7 @@ const sections = [
         ].map((item) => (
           <li key={item} className="flex items-start gap-3">
             <AlertTriangle className="w-4 h-4 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
-            <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+            <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
           </li>
         ))}
       </ul>
@@ -224,7 +224,7 @@ const sections = [
     title: "Governing Law",
     accent: "border-[#2563EB]",
     content: (
-      <p className="text-[#3D4152] text-sm leading-relaxed">
+      <p className="text-[#3D4152] text-base leading-relaxed">
         This Agreement shall be governed by and construed in accordance with the laws of <strong>England and Wales, United Kingdom</strong>.
       </p>
     ),
@@ -246,23 +246,23 @@ export default function MarketingAgreementPage() {
       <Section variant="light">
         <AnimatedSection>
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-widest mb-6">Agreement</p>
+            <p className="text-base font-semibold text-[#2563EB] uppercase tracking-widest mb-6">Agreement</p>
             <div className="bg-white border border-[#D8D5CF] rounded p-8">
               <h2 className="font-heading font-bold text-[#1C1F2E] text-xl mb-6">Marketing Agreement</h2>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="border-l-4 border-[#2563EB] pl-4">
-                  <p className="text-xs text-[#7A7E8F] uppercase tracking-wider mb-1">Party A</p>
+                  <p className="text-base text-[#7A7E8F] uppercase tracking-wider mb-1">Party A</p>
                   <p className="font-heading font-bold text-[#1C1F2E]">[Product Owner Name]</p>
-                  <p className="text-sm text-[#3D4152]">&ldquo;Product Owner&rdquo;</p>
+                  <p className="text-base text-[#3D4152]">&ldquo;Product Owner&rdquo;</p>
                 </div>
                 <div className="border-l-4 border-[#22C55E] pl-4">
-                  <p className="text-xs text-[#7A7E8F] uppercase tracking-wider mb-1">Party B</p>
+                  <p className="text-base text-[#7A7E8F] uppercase tracking-wider mb-1">Party B</p>
                   <p className="font-heading font-bold text-[#1C1F2E]">UK&ndash;Pakistan Technology Council</p>
-                  <p className="text-sm text-[#3D4152]">&ldquo;Council&rdquo;</p>
+                  <p className="text-base text-[#3D4152]">&ldquo;Council&rdquo;</p>
                 </div>
               </div>
               <div className="mt-6 pt-4 border-t border-[#D8D5CF]">
-                <p className="text-sm text-[#7A7E8F]">Effective Date: <span className="text-[#1C1F2E] font-medium">[Insert Date]</span></p>
+                <p className="text-base text-[#7A7E8F]">Effective Date: <span className="text-[#1C1F2E] font-medium">[Insert Date]</span></p>
               </div>
             </div>
           </div>
@@ -295,7 +295,7 @@ export default function MarketingAgreementPage() {
                       <Icon className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <span className="text-xs text-[#7A7E8F] font-semibold">Section {section.number}</span>
+                      <span className="text-base text-[#7A7E8F] font-semibold">Section {section.number}</span>
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">{section.title}</h3>
                     </div>
                   </div>
@@ -333,7 +333,7 @@ export default function MarketingAgreementPage() {
                 <div className="space-y-4">
                   {["Name", "Title", "Signature", "Date"].map((field) => (
                     <div key={field}>
-                      <p className="text-xs text-[#7A7E8F] mb-1">{field}</p>
+                      <p className="text-base text-[#7A7E8F] mb-1">{field}</p>
                       <div className="border-b-2 border-dotted border-[#D8D5CF] pb-3" />
                     </div>
                   ))}

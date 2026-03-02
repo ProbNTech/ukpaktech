@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { Button } from "@/components/Button";
 import { Lightbulb, Globe2, Handshake, TrendingUp, Network } from "lucide-react";
 
@@ -46,13 +46,13 @@ export default function VisionPage() {
         image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Join UPTECH</RainbowButton>
-          <Button href="/about/mission" variant="glass" showArrow>Our Mission</Button>
+          <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>
+          <Button href="/about/mission" variant="glass">Our Mission</Button>
         </div>
       </PageHero>
 
       {/* Vision Statement */}
-      <Section variant="light">
+      <Section variant="light" className="content-body">
         <AnimatedSection>
           <SectionHeader label="Our purpose" title="Vision" color="red" />
           <div className="grid lg:grid-cols-2 gap-8">
@@ -96,7 +96,7 @@ export default function VisionPage() {
                     <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
                   </div>
                   <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{item.title}</h3>
-                  <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-[#3D4152] text-base leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}

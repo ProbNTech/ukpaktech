@@ -7,7 +7,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import {
   Mail, MapPin, Clock, Globe2, Users, Briefcase,
   Handshake, HelpCircle, ArrowUpRight, Send,
@@ -79,8 +79,8 @@ export default function ContactPage() {
         image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Apply for Membership</RainbowButton>
-          <Button href="#enquiry-types" variant="glass" showArrow>Enquiry Types</Button>
+          <ShinyButton href="/membership/apply">Apply for Membership</ShinyButton>
+          <Button href="#enquiry-types" variant="glass">Enquiry Types</Button>
         </div>
       </PageHero>
 
@@ -106,14 +106,14 @@ export default function ContactPage() {
                     >
                       <Icon className="w-4.5 h-4.5" style={{ color: item.color }} strokeWidth={1.5} />
                     </div>
-                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#7A7E8F] mb-1">{item.label}</p>
+                    <p className="text-base font-bold tracking-[0.2em] uppercase text-[#7A7E8F] mb-1">{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} className="font-heading font-bold text-sm text-[#1C1F2E] hover:text-[#2563EB] transition-colors inline-flex items-center gap-1">
+                      <a href={item.href} className="font-heading font-bold text-base text-[#1C1F2E] hover:text-[#2563EB] transition-colors inline-flex items-center gap-1">
                         {item.value}
                         <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     ) : (
-                      <p className="font-heading font-bold text-sm text-[#1C1F2E]">{item.value}</p>
+                      <p className="font-heading font-bold text-base text-[#1C1F2E]">{item.value}</p>
                     )}
                   </div>
                 </motion.div>
@@ -159,8 +159,8 @@ export default function ContactPage() {
                       <Icon className="w-5 h-5" style={{ color: type.color }} strokeWidth={1.5} />
                     </div>
 
-                    <h3 className="font-heading font-bold text-sm text-[#1C1F2E] mb-1.5">{type.label}</h3>
-                    <p className="text-sm text-[#475569] leading-relaxed">{type.desc}</p>
+                    <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-1.5">{type.label}</h3>
+                    <p className="text-base text-[#475569] leading-relaxed">{type.desc}</p>
                   </motion.div>
                 );
               })}
@@ -215,8 +215,8 @@ export default function ContactPage() {
                             <Icon className="w-4 h-4" style={{ color: step.color }} strokeWidth={1.5} />
                           </div>
                           <div>
-                            <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#7A7E8F]">{step.step}</span>
-                            <p className="text-sm text-[#475569] leading-relaxed mt-0.5">{step.text}</p>
+                            <span className="text-base font-bold tracking-[0.15em] uppercase text-[#7A7E8F]">{step.step}</span>
+                            <p className="text-base text-[#475569] leading-relaxed mt-0.5">{step.text}</p>
                           </div>
                         </div>
                       );
@@ -237,13 +237,13 @@ export default function ContactPage() {
                       <Mail className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-sm text-[#1C1F2E]">Prefer Email?</h3>
-                      <p className="text-xs text-[#7A7E8F] mt-0.5">Reach us directly anytime</p>
+                      <h3 className="font-heading font-bold text-base text-[#1C1F2E]">Prefer Email?</h3>
+                      <p className="text-base text-[#7A7E8F] mt-0.5">Reach us directly anytime</p>
                     </div>
                   </div>
                   <a
                     href="mailto:info@uptech.org.uk"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
+                    className="inline-flex items-center gap-2 text-base font-semibold text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
                   >
                     info@uptech.org.uk
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -260,9 +260,9 @@ export default function ContactPage() {
                 >
                   <div className="relative">
                     <Briefcase className="w-6 h-6 text-[#2563EB] mb-3" strokeWidth={1.5} />
-                    <h3 className="font-heading font-bold text-sm text-[#1C1F2E] mb-1">Ready to Join?</h3>
-                    <p className="text-xs text-[#475569] mb-5 leading-relaxed">Become a member and unlock the full UPTECH network.</p>
-                    <Button href="/membership/apply" variant="primary" size="sm" showArrow>
+                    <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-1">Ready to Join?</h3>
+                    <p className="text-base text-[#475569] mb-5 leading-relaxed">Become a member and unlock the full UPTECH network.</p>
+                    <Button href="/membership/apply" variant="primary" size="sm">
                       Apply Now
                     </Button>
                   </div>

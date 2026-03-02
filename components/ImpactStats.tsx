@@ -71,7 +71,7 @@ export function ImpactStats() {
                 "0"
               )}
             </div>
-            <div className="text-xs font-bold uppercase tracking-[0.15em] text-[#1C1F2E] mb-3">{stat.label}</div>
+            <div className="text-base font-bold uppercase tracking-[0.15em] text-[#1C1F2E] mb-3">{stat.label}</div>
             <motion.div
               className="h-px mb-3"
               style={{ background: `linear-gradient(90deg, ${stat.color}, ${stat.color}40)` }}
@@ -80,7 +80,7 @@ export function ImpactStats() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 + index * 0.12, ease: [0.22, 1, 0.36, 1] }}
             />
-            <p className="text-sm leading-relaxed text-[#3D4152]">{stat.description}</p>
+            <p className="text-base leading-relaxed text-[#3D4152]">{stat.description}</p>
           </motion.div>
         );
       })}

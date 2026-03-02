@@ -45,7 +45,7 @@ export default function ServicesPage() {
                 >
                   {stat.value}
                 </div>
-                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -56,7 +56,7 @@ export default function ServicesPage() {
       <Section variant="light">
         <AnimatedSection>
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">What we offer</p>
+            <p className="text-base font-semibold text-[#2563EB] uppercase tracking-wider mb-3">What we offer</p>
             <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl leading-snug mb-6">
               End-to-End Support for the UK–Pakistan Tech Ecosystem
             </h2>

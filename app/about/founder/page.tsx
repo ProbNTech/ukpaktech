@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { Button } from "@/components/Button";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
@@ -24,13 +24,13 @@ export default function FounderPage() {
         image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Join UPTECH</RainbowButton>
-          <Button href="/about/management-team" variant="glass" showArrow>Management Team</Button>
+          <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>
+          <Button href="/about/management-team" variant="glass">Management Team</Button>
         </div>
       </PageHero>
 
       {/* Profile Section */}
-      <Section variant="light">
+      <Section variant="light" className="content-body">
         <AnimatedSection>
           <div className="grid lg:grid-cols-[300px_1fr] gap-10 items-center">
             <motion.div
@@ -51,7 +51,7 @@ export default function FounderPage() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-3" style={{ background: `${brandColors[0]}12`, color: brandColors[0] }}>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-base font-bold uppercase tracking-widest mb-3" style={{ background: `${brandColors[0]}12`, color: brandColors[0] }}>
                 Founder & CEO
               </div>
               <h2 className="font-heading font-extrabold text-3xl lg:text-4xl text-[#1C1F2E] mb-3">Khalil Choudhary</h2>
@@ -68,7 +68,7 @@ export default function FounderPage() {
       </Section>
 
       {/* CEO Message */}
-      <Section variant="alt">
+      <Section variant="alt" className="content-body">
         <AnimatedSection>
           <SectionHeader label="From the Founder" title="A Message from Our CEO" color="green" />
           <div className="grid lg:grid-cols-[1fr_2fr] gap-8 items-start">
@@ -83,9 +83,9 @@ export default function FounderPage() {
                 />
               </div>
               <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-1">Khalil Choudhary</h3>
-              <p className="text-sm text-[#C41E3A] font-semibold mb-3">Founder & CEO, UPTECH</p>
+              <p className="text-base text-[#C41E3A] font-semibold mb-3">Founder & CEO, UPTECH</p>
               <div className="h-px bg-[#D8D5CF] mb-3" />
-              <p className="text-xs text-[#7A7E8F] leading-relaxed">
+              <p className="text-base text-[#7A7E8F] leading-relaxed">
                 Visionary leader dedicated to strengthening the UK–Pakistan technology corridor through innovation, collaboration, and sustainable partnerships.
               </p>
             </div>

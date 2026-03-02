@@ -84,6 +84,7 @@ export default function CodeOfConductPage() {
         image="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=2400&q=85&auto=format&fit=crop"
       />
 
+      <div className="content-body">
       {/* ── Summary + Quick Nav — Light section ──────────────────────── */}
       <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
@@ -131,7 +132,7 @@ export default function CodeOfConductPage() {
                     <button
                       key={s.id}
                       onClick={() => scrollToSection(s.id)}
-                      className={`w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 border-l-2 rounded-r-lg ${
+                      className={`w-full text-left px-4 py-3 text-base font-medium transition-all duration-200 border-l-2 rounded-r-lg ${
                         activeSection === s.id
                           ? "border-[#2563EB] text-[#2563EB] bg-[#2563EB]/[0.08]"
                           : "border-transparent text-[#7A7E8F] hover:text-[#3D4152] hover:border-[#D8D5CF] hover:bg-[#F5F4F2]"
@@ -217,7 +218,7 @@ export default function CodeOfConductPage() {
                   </div>
                   <div>
                     <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">Group Communication Policy</h3>
-                    <p className="text-sm text-[#7A7E8F]">Applicable to all UPTECH WhatsApp groups and channels</p>
+                    <p className="text-base text-[#7A7E8F]">Applicable to all UPTECH WhatsApp groups and channels</p>
                   </div>
                 </motion.div>
                 <div className="space-y-3">
@@ -231,7 +232,7 @@ export default function CodeOfConductPage() {
                       className="group relative flex items-start gap-4 bg-white border border-[#D8D5CF] rounded-xl p-5 hover:shadow-md hover:border-[#D8D5CF] transition-all duration-300 shadow-sm"
                     >
                       <span
-                        className="text-xs font-bold tabular-nums pt-0.5 flex-shrink-0"
+                        className="text-base font-bold tabular-nums pt-0.5 flex-shrink-0"
                         style={{ color: "#22C55E" }}
                       >
                         {item.number}
@@ -252,7 +253,7 @@ export default function CodeOfConductPage() {
                     className="group relative flex items-start gap-4 bg-white border border-[#D8D5CF] rounded-xl p-5 hover:shadow-md hover:border-[#D8D5CF] transition-all duration-300 shadow-sm"
                   >
                     <span
-                      className="text-xs font-bold tabular-nums pt-0.5 flex-shrink-0"
+                      className="text-base font-bold tabular-nums pt-0.5 flex-shrink-0"
                       style={{ color: "#22C55E" }}
                     >
                       {item.number}
@@ -307,7 +308,7 @@ export default function CodeOfConductPage() {
                       className="w-10 h-10 rounded-xl flex items-center justify-center"
                       style={{ backgroundColor: `${color}14`, border: `1px solid ${color}25` }}
                     >
-                      <span className="text-sm font-bold tabular-nums" style={{ color }}>{item.step}</span>
+                      <span className="text-base font-bold tabular-nums" style={{ color }}>{item.step}</span>
                     </div>
                   </div>
                   <div className="py-6 pl-6 border-l border-[#D8D5CF]">
@@ -401,6 +402,8 @@ export default function CodeOfConductPage() {
           </AnimatedSection>
         </div>
       </section>
+
+      </div>
 
       {/* ── CTA ──────────────────────────────────────────────────────── */}
       <GlobalCTA

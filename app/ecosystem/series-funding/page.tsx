@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 
 /* ─── Data ──────────────────────────────────────────────────────────── */
 
@@ -144,8 +144,8 @@ export default function SeriesFundingPage() {
         image="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership" showArrow>Access Series Funding</RainbowButton>
-          <Button href="/contact" variant="glass" showArrow>
+          <ShinyButton href="/membership">Access Series Funding</ShinyButton>
+          <Button href="/contact" variant="glass">
             Speak to Our Team
           </Button>
         </div>
@@ -176,7 +176,7 @@ export default function SeriesFundingPage() {
                 >
                   {stat.value}
                 </p>
-                <p className="text-[#5A5F72] text-sm">
+                <p className="text-[#5A5F72] text-base">
                   {stat.label}
                 </p>
               </motion.div>
@@ -312,7 +312,7 @@ export default function SeriesFundingPage() {
                     <div className="flex items-center gap-3 mb-5">
                       <div className="relative">
                         <div
-                          className="relative w-12 h-12 rounded-full flex items-center justify-center text-white text-sm font-bold border-2"
+                          className="relative w-12 h-12 rounded-full flex items-center justify-center text-white text-base font-bold border-2"
                           style={{
                             background: `linear-gradient(135deg, ${step.color}30, ${step.color}10)`,
                             borderColor: `${step.color}60`,
@@ -336,7 +336,7 @@ export default function SeriesFundingPage() {
                       style={{ background: `${step.color}12`, border: `1px solid ${step.color}25` }}
                     >
                       <CheckCircle2 className="w-3.5 h-3.5" style={{ color: step.color }} />
-                      <span className="text-xs font-semibold" style={{ color: step.color }}>
+                      <span className="text-base font-semibold" style={{ color: step.color }}>
                         {step.outcome}
                       </span>
                     </div>
@@ -425,7 +425,7 @@ export default function SeriesFundingPage() {
                         </div>
                         <div>
                           <span className="font-semibold text-[#1C1F2E] text-base">{item.title}</span>
-                          <p className="text-[#7A7E8F] text-sm leading-relaxed mt-1">{item.desc}</p>
+                          <p className="text-[#7A7E8F] text-base leading-relaxed mt-1">{item.desc}</p>
                         </div>
                       </motion.li>
                     ))}

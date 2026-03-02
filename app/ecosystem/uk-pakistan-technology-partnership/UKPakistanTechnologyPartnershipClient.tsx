@@ -8,7 +8,7 @@ import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const pillars = [
@@ -71,8 +71,8 @@ export default function UKPakistanTechnologyPartnershipClient() {
         image="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership" showArrow>Become a Member</RainbowButton>
-          <Button href="/contact" variant="glass" showArrow>
+          <ShinyButton href="/membership">Become a Member</ShinyButton>
+          <Button href="/contact" variant="glass">
             Contact Us
           </Button>
         </div>

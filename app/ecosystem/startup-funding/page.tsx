@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 
 /* ─── Data ──────────────────────────────────────────────────────────── */
 
@@ -151,8 +151,8 @@ export default function StartupFundingPage() {
         image="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership" showArrow>Access Funding</RainbowButton>
-          <Button href="/contact" variant="glass" showArrow>
+          <ShinyButton href="/membership">Access Funding</ShinyButton>
+          <Button href="/contact" variant="glass">
             Speak to Our Team
           </Button>
         </div>
@@ -183,7 +183,7 @@ export default function StartupFundingPage() {
                 >
                   {stat.value}
                 </p>
-                <p className="text-[#5A5F72] text-sm">
+                <p className="text-[#5A5F72] text-base">
                   {stat.label}
                 </p>
               </motion.div>
@@ -399,7 +399,7 @@ export default function StartupFundingPage() {
                         </div>
                         <div>
                           <span className="font-semibold text-[#1C1F2E] text-base">{item.title}</span>
-                          <p className="text-[#7A7E8F] text-sm leading-relaxed mt-1">{item.desc}</p>
+                          <p className="text-[#7A7E8F] text-base leading-relaxed mt-1">{item.desc}</p>
                         </div>
                       </motion.li>
                     ))}

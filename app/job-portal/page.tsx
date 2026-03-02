@@ -1,11 +1,12 @@
 "use client";
 
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { motion, useReducedMotion } from "framer-motion";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import {
   Search,
   Building2,
@@ -93,8 +94,8 @@ export default function JobPortalPage() {
         image="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="#who-its-for" showArrow>Browse Jobs</RainbowButton>
-          <Button href="/contact" variant="glass" showArrow>Post a Job</Button>
+          <ShinyButton href="#who-its-for">Browse Jobs</ShinyButton>
+          <Button href="/contact" variant="glass">Post a Job</Button>
         </div>
       </PageHero>
 
@@ -118,7 +119,7 @@ export default function JobPortalPage() {
                 >
                   {stat.value}
                 </div>
-                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -129,18 +130,12 @@ export default function JobPortalPage() {
       <section id="who-its-for" className="relative bg-[#EEECEA]">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">
-                Who It&apos;s For
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Connecting Talent with Technology
-              </h2>
-              <p className="text-[#3D4152] text-base sm:text-lg max-w-2xl leading-relaxed">
-                Our Job Portal is designed to connect skilled professionals with leading technology organisations across the UK-Pakistan corridor.
-              </p>
-            </div>
+            <SectionHeader
+              label="Who It's For"
+              title="Connecting Talent with Technology"
+              subtitle="Our Job Portal is designed to connect skilled professionals with leading technology organisations across the UK-Pakistan corridor."
+              color="blue"
+            />
 
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Employers Card */}
@@ -158,15 +153,12 @@ export default function JobPortalPage() {
                 />
 
                 <div className="p-8">
-                  {/* Icon with glow */}
-                  <div className="relative mb-6">
-                    <div className="absolute inset-[-8px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500 bg-[#2563EB]" />
+                  <div className="mb-6">
                     <div
-                      className="relative w-14 h-14 rounded-xl flex items-center justify-center"
+                      className="w-14 h-14 rounded-xl flex items-center justify-center"
                       style={{
                         background: "#2563EB15",
                         border: "1px solid #2563EB30",
-                        boxShadow: "0 0 20px #2563EB10",
                       }}
                     >
                       <Building2 className="w-6 h-6 text-[#2563EB]" strokeWidth={1.5} />
@@ -203,15 +195,12 @@ export default function JobPortalPage() {
                 />
 
                 <div className="p-8">
-                  {/* Icon with glow */}
-                  <div className="relative mb-6">
-                    <div className="absolute inset-[-8px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500 bg-[#22C55E]" />
+                  <div className="mb-6">
                     <div
-                      className="relative w-14 h-14 rounded-xl flex items-center justify-center"
+                      className="w-14 h-14 rounded-xl flex items-center justify-center"
                       style={{
                         background: "#22C55E15",
                         border: "1px solid #22C55E30",
-                        boxShadow: "0 0 20px #22C55E10",
                       }}
                     >
                       <Users className="w-6 h-6 text-[#22C55E]" strokeWidth={1.5} />
@@ -241,18 +230,12 @@ export default function JobPortalPage() {
       <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#22C55E] mb-4">
-                Platform Features
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Why UPTECH Job Portal
-              </h2>
-              <p className="text-[#3D4152] text-base sm:text-lg max-w-2xl leading-relaxed">
-                A purpose-built platform empowering cross-border technology careers and workforce development.
-              </p>
-            </div>
+            <SectionHeader
+              label="Platform Features"
+              title="Why UPTECH Job Portal"
+              subtitle="A purpose-built platform empowering cross-border technology careers and workforce development."
+              color="green"
+            />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {portalFeatures.map((item, i) => {
@@ -274,26 +257,18 @@ export default function JobPortalPage() {
 
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-5">
-                        {/* Icon with colored glow */}
-                        <div className="relative">
-                          <div
-                            className="absolute inset-[-8px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500"
-                            style={{ background: item.color }}
-                          />
-                          <div
-                            className="relative w-12 h-12 rounded-xl flex items-center justify-center"
-                            style={{
-                              background: `${item.color}15`,
-                              border: `1px solid ${item.color}30`,
-                              boxShadow: `0 0 20px ${item.color}10`,
-                            }}
-                          >
-                            <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
-                          </div>
+                        <div
+                          className="w-12 h-12 rounded-xl flex items-center justify-center"
+                          style={{
+                            background: `${item.color}15`,
+                            border: `1px solid ${item.color}30`,
+                          }}
+                        >
+                          <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
                         </div>
                         {/* Numbered label */}
                         <span
-                          className="text-[10px] font-bold tracking-[0.2em] uppercase"
+                          className="text-base font-bold tracking-[0.2em] uppercase"
                           style={{ color: `${item.color}60` }}
                         >
                           {item.num}
@@ -318,18 +293,12 @@ export default function JobPortalPage() {
       <section className="relative bg-[#E8E6E3]">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
-                Process
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                How It Works
-              </h2>
-              <p className="text-[#3D4152] text-base sm:text-lg max-w-2xl leading-relaxed">
-                A streamlined journey from registration to hire -- connecting talent with opportunity in four simple steps.
-              </p>
-            </div>
+            <SectionHeader
+              label="Process"
+              title="How It Works"
+              subtitle="A streamlined journey from registration to hire — connecting talent with opportunity in four simple steps."
+              color="red"
+            />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {howItWorks.map((item, i) => {
@@ -352,38 +321,23 @@ export default function JobPortalPage() {
                     <div className="p-6">
                       {/* Number circle and icon */}
                       <div className="flex items-center justify-between mb-5">
-                        <div className="relative">
-                          {/* Glow behind circle */}
-                          <div
-                            className="absolute inset-[-4px] rounded-full opacity-30 group-hover:opacity-60 blur-md transition-opacity duration-500"
-                            style={{ background: item.color }}
-                          />
-                          <div
-                            className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold border"
-                            style={{
-                              background: `${item.color}25`,
-                              borderColor: `${item.color}50`,
-                              boxShadow: `0 0 20px ${item.color}30`,
-                            }}
-                          >
-                            {item.step}
-                          </div>
+                        <div
+                          className="w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border"
+                          style={{
+                            background: `${item.color}25`,
+                            borderColor: `${item.color}50`,
+                          }}
+                        >
+                          {item.step}
                         </div>
-                        {/* Icon with glow */}
-                        <div className="relative">
-                          <div
-                            className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500"
-                            style={{ background: item.color }}
-                          />
-                          <div
-                            className="relative w-10 h-10 rounded-xl flex items-center justify-center"
-                            style={{
-                              background: `${item.color}15`,
-                              border: `1px solid ${item.color}30`,
-                            }}
-                          >
-                            <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
-                          </div>
+                        <div
+                          className="w-10 h-10 rounded-xl flex items-center justify-center"
+                          style={{
+                            background: `${item.color}15`,
+                            border: `1px solid ${item.color}30`,
+                          }}
+                        >
+                          <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
                         </div>
                       </div>
 
@@ -395,7 +349,7 @@ export default function JobPortalPage() {
                       {/* Outcome */}
                       <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
                         <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: item.color }} strokeWidth={2} />
-                        <span className="text-xs font-semibold" style={{ color: item.color }}>
+                        <span className="text-base font-semibold" style={{ color: item.color }}>
                           {item.outcome}
                         </span>
                       </div>
@@ -410,8 +364,8 @@ export default function JobPortalPage() {
               {["Register", "Browse / Post", "Apply / Review", "Connect & Hire"].map((label, i) => (
                 <div key={label} className="flex items-center gap-3">
                   <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F4F2] border border-[#D8D5CF]">
-                    <span className="text-xs font-bold text-[#5A5F72]">{String(i + 1).padStart(2, "0")}</span>
-                    <span className="text-xs font-semibold text-[#3D4152]">{label}</span>
+                    <span className="text-base font-bold text-[#5A5F72]">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-base font-semibold text-[#3D4152]">{label}</span>
                   </div>
                   {i < 3 && <ArrowRight className="w-4 h-4 text-[#D8D5CF]" />}
                 </div>
@@ -425,18 +379,12 @@ export default function JobPortalPage() {
       <section className="relative bg-[#EEECEA]">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
           <AnimatedSection>
-            {/* Section header */}
-            <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A] mb-4">
-                Industries
-              </p>
-              <h2 className="font-heading font-extrabold text-[#1C1F2E] text-3xl sm:text-4xl lg:text-5xl leading-tight mb-4">
-                Key Sectors
-              </h2>
-              <p className="text-[#3D4152] text-base sm:text-lg max-w-2xl leading-relaxed">
-                Explore high-demand technology sectors where cross-border talent is driving innovation and growth.
-              </p>
-            </div>
+            <SectionHeader
+              label="Industries"
+              title="Key Sectors"
+              subtitle="Explore high-demand technology sectors where cross-border talent is driving innovation and growth."
+              color="red"
+            />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {keySectors.map((sector, i) => {
@@ -458,22 +406,14 @@ export default function JobPortalPage() {
 
                     <div className="p-6 pl-7">
                       <div className="flex items-start gap-4">
-                        {/* Icon with glow */}
-                        <div className="relative flex-shrink-0">
-                          <div
-                            className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500"
-                            style={{ background: sector.color }}
-                          />
-                          <div
-                            className="relative w-12 h-12 rounded-xl flex items-center justify-center"
-                            style={{
-                              background: `${sector.color}15`,
-                              border: `1px solid ${sector.color}30`,
-                              boxShadow: `0 0 20px ${sector.color}10`,
-                            }}
-                          >
-                            <Icon className="w-5 h-5" style={{ color: sector.color }} strokeWidth={1.5} />
-                          </div>
+                        <div
+                          className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
+                          style={{
+                            background: `${sector.color}15`,
+                            border: `1px solid ${sector.color}30`,
+                          }}
+                        >
+                          <Icon className="w-5 h-5" style={{ color: sector.color }} strokeWidth={1.5} />
                         </div>
 
                         <div className="flex-1 min-w-0">

@@ -49,7 +49,7 @@ export function TrustCards() {
                 </div>
                 <div className="relative z-10">
                   <h3 className="font-heading font-semibold text-lg mb-2 text-[#1F2937]">{item.title}</h3>
-                  <p className="text-[#4B5563] text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-[#4B5563] text-base leading-relaxed">{item.description}</p>
                 </div>
               </div>
             </div>

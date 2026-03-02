@@ -79,7 +79,7 @@ export default function ExcellenceManagementTermsPage() {
       <Section variant="light">
         <AnimatedSection>
           <div className="max-w-3xl mb-8">
-            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-widest">Last updated: 2025</p>
+            <p className="text-base font-semibold text-[#2563EB] uppercase tracking-widest">Last updated: 2025</p>
           </div>
           <div className="space-y-6 max-w-4xl">
             {terms.map((term, i) => {
@@ -98,7 +98,7 @@ export default function ExcellenceManagementTermsPage() {
                       <Icon className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <span className="text-xs text-[#7A7E8F] font-semibold">{term.number}</span>
+                      <span className="text-base text-[#7A7E8F] font-semibold">{term.number}</span>
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">{term.title}</h3>
                     </div>
                   </div>
@@ -128,7 +128,7 @@ export default function ExcellenceManagementTermsPage() {
                 transition={{ duration: 0.3, delay: i * 0.06 }}
                 className="flex gap-4 py-4 border-t border-[#D8D5CF] last:border-b"
               >
-                <span className="text-sm font-bold text-[#2563EB] tabular-nums w-6 flex-shrink-0 pt-0.5">
+                <span className="text-base font-bold text-[#2563EB] tabular-nums w-6 flex-shrink-0 pt-0.5">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="flex items-center gap-3">

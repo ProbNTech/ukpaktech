@@ -90,7 +90,7 @@ export function PillarGrid() {
                   </motion.span>
                 </div>
                 <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A] leading-tight">{pillar.title}</h3>
-                <p className="text-[#475569] leading-relaxed text-[15px]">{pillar.description}</p>
+                <p className="text-[#475569] leading-relaxed text-base">{pillar.description}</p>
               </Card>
             </div>
           </motion.div>

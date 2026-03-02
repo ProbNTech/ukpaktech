@@ -52,7 +52,7 @@ export function EventPreview() {
                   />
                 )}
 
-                <div className="absolute left-4 top-4 z-10 rounded-full bg-[#2563EB] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-sm">
+                <div className="absolute left-4 top-4 z-10 rounded-full bg-[#2563EB] px-3 py-1 text-base font-semibold uppercase tracking-wide text-white shadow-sm">
                   <span>EVENT</span>
                 </div>
 
@@ -60,7 +60,7 @@ export function EventPreview() {
                   <div className="absolute inset-0 flex items-center justify-center bg-[#F8FAFC]">
                     <div className="text-center">
                       <Calendar className="w-10 h-10 text-gray-300 mx-auto mb-2" />
-                      <span className="text-xs font-medium text-gray-400">Event Image</span>
+                      <span className="text-base font-medium text-gray-400">Event Image</span>
                     </div>
                   </div>
                 )}
@@ -69,18 +69,18 @@ export function EventPreview() {
               <div className="p-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2563EB]/5 border border-[#2563EB]/15 mb-4">
                   <Calendar className="w-3.5 h-3.5 text-[#2563EB]" />
-                  <span className="text-xs font-semibold text-[#2563EB]">{event.date}</span>
+                  <span className="text-base font-semibold text-[#2563EB]">{event.date}</span>
                 </div>
 
                 <h3 className="font-heading font-semibold text-xl mb-2 text-[#1F2937] group-hover:text-[#2563EB] transition-colors duration-300 line-clamp-2">{event.title}</h3>
-                <p className="text-sm text-[#4B5563] mb-4 leading-relaxed line-clamp-2">{event.summary}</p>
+                <p className="text-base text-[#4B5563] mb-4 leading-relaxed line-clamp-2">{event.summary}</p>
 
-                <div className="flex items-start gap-2 text-sm text-[#4B5563] mb-4">
+                <div className="flex items-start gap-2 text-base text-[#4B5563] mb-4">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#2563EB]" />
                   <span className="line-clamp-2">{event.location}</span>
                 </div>
 
-                <div className="flex items-center gap-2 text-sm font-semibold text-[#2563EB] group-hover:gap-3 transition-all duration-300">
+                <div className="flex items-center gap-2 text-base font-semibold text-[#2563EB] group-hover:gap-3 transition-all duration-300">
                   <span>Learn more</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </div>

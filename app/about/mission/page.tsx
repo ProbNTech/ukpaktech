@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { Button } from "@/components/Button";
 import { Target, Award, Users, Globe2, Radio, Rocket, TrendingUp, Zap, Handshake, Briefcase } from "lucide-react";
 
@@ -35,8 +35,8 @@ export default function MissionPage() {
         image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Join UPTECH</RainbowButton>
-          <Button href="/about/objectives" variant="glass" showArrow>Our Objectives</Button>
+          <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>
+          <Button href="/about/objectives" variant="glass">Our Objectives</Button>
         </div>
       </PageHero>
 
@@ -53,7 +53,7 @@ export default function MissionPage() {
                     <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
-                  <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-[#3D4152] text-base leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}
@@ -74,8 +74,8 @@ export default function MissionPage() {
                     <Icon className="w-4 h-4" style={{ color: item.color }} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#1C1F2E] text-sm mb-1">{item.title}</h4>
-                    <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
+                    <h4 className="font-semibold text-[#1C1F2E] text-base mb-1">{item.title}</h4>
+                    <p className="text-[#3D4152] text-base leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               );

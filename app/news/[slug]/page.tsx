@@ -56,7 +56,7 @@ export default async function ArticleDetailPage({ params }: Props) {
           <div className="w-full px-8 sm:px-12 lg:px-16 xl:px-20 pb-12 pt-28">
             {/* Breadcrumb */}
             <nav className="mb-5">
-              <ol className="flex items-center flex-wrap gap-1.5 text-sm text-white/60">
+              <ol className="flex items-center flex-wrap gap-1.5 text-base text-white/60">
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">Home</Link>
                 </li>
@@ -73,7 +73,7 @@ export default async function ArticleDetailPage({ params }: Props) {
             <div className="mb-4">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 border border-white/30 text-white/80">
                 <Tag className="w-3 h-3 text-[#22C55E]" />
-                <span className="text-xs font-bold uppercase tracking-wider">
+                <span className="text-base font-bold uppercase tracking-wider">
                   {article.category}
                 </span>
               </span>
@@ -100,13 +100,13 @@ export default async function ArticleDetailPage({ params }: Props) {
                     <User className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-[#1C1F2E]">{article.author}</p>
-                    <p className="text-xs text-[#7A7E8F]">{article.authorRole}</p>
+                    <p className="text-base font-semibold text-[#1C1F2E]">{article.author}</p>
+                    <p className="text-base text-[#7A7E8F]">{article.authorRole}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-[#7A7E8F]" />
-                  <span className="text-sm text-[#7A7E8F]">{article.date}</span>
+                  <span className="text-base text-[#7A7E8F]">{article.date}</span>
                 </div>
               </div>
 
@@ -128,7 +128,7 @@ export default async function ArticleDetailPage({ params }: Props) {
               <div className="mt-12 pt-8 border-t border-[#D8D5CF]">
                 <Link
                   href="/events"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#1C1F2E] hover:text-[#2563EB] transition-colors duration-200"
+                  className="inline-flex items-center gap-2 text-base font-semibold text-[#1C1F2E] hover:text-[#2563EB] transition-colors duration-200"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   Back to News &amp; Events
@@ -144,12 +144,12 @@ export default async function ArticleDetailPage({ params }: Props) {
                   About UPTECH
                 </h3>
                 <div className="h-px bg-[#D8D5CF] mb-4" />
-                <p className="text-sm text-[#3D4152] leading-relaxed mb-5">
+                <p className="text-base text-[#3D4152] leading-relaxed mb-5">
                   The UK–Pakistan Tech Council is a bilateral technology platform established to strengthen innovation, digital trade, and institutional collaboration between the two nations.
                 </p>
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2563EB] hover:gap-2.5 transition-all duration-200"
+                  className="inline-flex items-center gap-1.5 text-base font-semibold text-[#2563EB] hover:gap-2.5 transition-all duration-200"
                 >
                   Learn more
                   <ChevronRight className="w-4 h-4" />
@@ -158,19 +158,19 @@ export default async function ArticleDetailPage({ params }: Props) {
 
               {/* Become a member CTA */}
               <div className="bg-[#1C1F2E] p-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#22C55E] mb-3">
+                <p className="text-base font-bold uppercase tracking-widest text-[#22C55E] mb-3">
                   Join us
                 </p>
                 <h3 className="font-heading font-bold text-base text-white mb-2">
                   Become a Member
                 </h3>
                 <div className="h-px bg-white/20 mb-4" />
-                <p className="text-sm text-white/70 leading-relaxed mb-5">
+                <p className="text-base text-white/70 leading-relaxed mb-5">
                   Join UPTECH to access exclusive research, events, and the bilateral network.
                 </p>
                 <Link
                   href="/membership"
-                  className="block text-center py-2.5 px-4 bg-white text-[#1C1F2E] text-sm font-semibold hover:bg-[#EEECEA] transition-colors duration-200"
+                  className="block text-center py-2.5 px-4 bg-white text-[#1C1F2E] text-base font-semibold hover:bg-[#EEECEA] transition-colors duration-200"
                 >
                   Apply now →
                 </Link>
@@ -185,7 +185,7 @@ export default async function ArticleDetailPage({ params }: Props) {
         <section className="bg-[#E8E6E3] py-16 lg:py-20">
           <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
             <div className="mb-10">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#2563EB] mb-2">
+              <p className="text-base font-bold uppercase tracking-widest text-[#2563EB] mb-2">
                 Continue reading
               </p>
               <div className="flex items-center gap-5 mb-0">

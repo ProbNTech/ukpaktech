@@ -6,7 +6,7 @@ import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import {
   CheckCircle2,
   MapPin,
@@ -149,8 +149,8 @@ export default function MeetingSpacePage() {
         image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Apply for Membership</RainbowButton>
-          <Button href="/contact" variant="glass" showArrow>Contact Us</Button>
+          <ShinyButton href="/membership/apply">Apply for Membership</ShinyButton>
+          <Button href="/contact" variant="glass">Contact Us</Button>
         </div>
       </PageHero>
 
@@ -174,7 +174,7 @@ export default function MeetingSpacePage() {
                 >
                   {stat.value}
                 </div>
-                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -248,7 +248,7 @@ export default function MeetingSpacePage() {
                       strokeWidth={1.5}
                     />
                   </div>
-                  <span className="text-[#3D4152] font-semibold text-sm">
+                  <span className="text-[#3D4152] font-semibold text-base">
                     Central London location with excellent transport links
                   </span>
                 </div>
@@ -511,7 +511,7 @@ export default function MeetingSpacePage() {
                     </h3>
                   </div>
                   <div className="h-px bg-[#D8D5CF] mb-5" />
-                  <p className="text-[#5A5F72] text-sm leading-relaxed mb-5">
+                  <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
                     Eligible members may receive:
                   </p>
                   <ul className="space-y-4">
@@ -599,12 +599,12 @@ export default function MeetingSpacePage() {
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-[#D8D5CF]">
-                        <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">Tier</th>
-                        <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">Annual Hours</th>
-                        <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">Booking Priority</th>
-                        <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">Event Access</th>
-                        <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">Policy Engagement</th>
-                        <th className="text-left px-6 py-4 text-[10px] font-bold tracking-[0.2em] uppercase text-[#5A5F72]">Brand Visibility</th>
+                        <th className="text-left px-6 py-4 text-base font-bold tracking-[0.2em] uppercase text-[#5A5F72]">Tier</th>
+                        <th className="text-left px-6 py-4 text-base font-bold tracking-[0.2em] uppercase text-[#5A5F72]">Annual Hours</th>
+                        <th className="text-left px-6 py-4 text-base font-bold tracking-[0.2em] uppercase text-[#5A5F72]">Booking Priority</th>
+                        <th className="text-left px-6 py-4 text-base font-bold tracking-[0.2em] uppercase text-[#5A5F72]">Event Access</th>
+                        <th className="text-left px-6 py-4 text-base font-bold tracking-[0.2em] uppercase text-[#5A5F72]">Policy Engagement</th>
+                        <th className="text-left px-6 py-4 text-base font-bold tracking-[0.2em] uppercase text-[#5A5F72]">Brand Visibility</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -632,18 +632,18 @@ export default function MeetingSpacePage() {
                                 />
                               )}
                               <span
-                                className="font-heading font-bold text-sm"
+                                className="font-heading font-bold text-base"
                                 style={{ color: row.color }}
                               >
                                 {row.tier}
                               </span>
                             </div>
                           </td>
-                          <td className="px-6 py-4 text-sm text-[#5A5F72] font-semibold">{row.annualHours}</td>
-                          <td className="px-6 py-4 text-sm text-[#3D4152]">{row.bookingPriority}</td>
-                          <td className="px-6 py-4 text-sm text-[#3D4152]">{row.eventAccess}</td>
-                          <td className="px-6 py-4 text-sm text-[#3D4152]">{row.policyEngagement}</td>
-                          <td className="px-6 py-4 text-sm text-[#3D4152]">{row.brandVisibility}</td>
+                          <td className="px-6 py-4 text-base text-[#5A5F72] font-semibold">{row.annualHours}</td>
+                          <td className="px-6 py-4 text-base text-[#3D4152]">{row.bookingPriority}</td>
+                          <td className="px-6 py-4 text-base text-[#3D4152]">{row.eventAccess}</td>
+                          <td className="px-6 py-4 text-base text-[#3D4152]">{row.policyEngagement}</td>
+                          <td className="px-6 py-4 text-base text-[#3D4152]">{row.brandVisibility}</td>
                         </motion.tr>
                       ))}
                     </tbody>
@@ -714,10 +714,10 @@ export default function MeetingSpacePage() {
                         { label: "Brand Visibility", value: row.brandVisibility },
                       ].map((field) => (
                         <div key={field.label}>
-                          <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#7A7E8F] mb-1">
+                          <p className="text-base font-bold tracking-[0.15em] uppercase text-[#7A7E8F] mb-1">
                             {field.label}
                           </p>
-                          <p className="text-sm text-[#3D4152]">
+                          <p className="text-base text-[#3D4152]">
                             {field.value}
                           </p>
                         </div>

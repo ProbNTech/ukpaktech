@@ -40,7 +40,7 @@ export function GovernanceSection({
       animate={shouldReduceMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-3" style={{ background: `${color}12`, color }}>
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-base font-bold uppercase tracking-widest mb-3" style={{ background: `${color}12`, color }}>
         {title}
       </div>
       <h2 className="font-heading font-extrabold text-3xl text-[#1C1F2E] mb-2 leading-tight">{title}</h2>
@@ -48,12 +48,12 @@ export function GovernanceSection({
       <p className="text-[#3D4152] leading-relaxed mb-7">{desc}</p>
       <div className="rounded-lg p-6 relative overflow-hidden" style={{ background: `${color}06`, border: `1px solid ${color}20` }}>
         <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full" style={{ background: color }} />
-        <h4 className="font-heading font-bold text-sm uppercase tracking-wide mb-4 pl-3" style={{ color }}>Key Responsibilities</h4>
+        <h4 className="font-heading font-bold text-base uppercase tracking-wide mb-4 pl-3" style={{ color }}>Key Responsibilities</h4>
         <ul className="space-y-3 pl-3">
           {responsibilities.map((item, i) => (
             <li key={i} className="flex items-start gap-3">
               <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" strokeWidth={2.5} style={{ color }} />
-              <span className="text-[#3D4152] text-sm leading-relaxed">{item}</span>
+              <span className="text-[#3D4152] text-base leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>

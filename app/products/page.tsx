@@ -77,13 +77,13 @@ export default function ProductsPage() {
                 >
                   <Icon className="w-6 h-6 text-[#2563EB] mx-auto mb-2" strokeWidth={1.5} />
                   <p className="font-heading font-extrabold text-3xl text-[#1C1F2E]">{stat.value}</p>
-                  <p className="text-sm text-[#7A7E8F]">{stat.label}</p>
+                  <p className="text-base text-[#7A7E8F]">{stat.label}</p>
                 </motion.div>
               );
             })}
           </div>
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Our Platforms</p>
+            <p className="text-base font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Our Platforms</p>
             <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl leading-snug mb-6">
               Technology Products Driving Cross-Border Innovation
             </h2>
@@ -108,11 +108,11 @@ export default function ProductsPage() {
                   transition={{ duration: 0.5 }}
                 >
                   <ProductIcon className="w-8 h-8 text-[#2563EB] mb-4" strokeWidth={1.5} />
-                  <p className="text-xs font-bold text-[#2563EB] uppercase tracking-wider mb-3">{product.label}</p>
+                  <p className="text-base font-bold text-[#2563EB] uppercase tracking-wider mb-3">{product.label}</p>
                   <h2 className="font-heading font-extrabold text-3xl text-[#1C1F2E] mb-4">{product.title}</h2>
                   <div className="h-px bg-[#1C1F2E]/20 mb-5" />
                   <p className="text-[#3D4152] text-base leading-relaxed mb-6">{product.description}</p>
-                  <Button href={product.cta.href} variant="primary" showArrow>{product.cta.label}</Button>
+                  <Button href={product.cta.href} variant="primary">{product.cta.label}</Button>
                 </motion.div>
                 <motion.div
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 16 }}
@@ -121,13 +121,13 @@ export default function ProductsPage() {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   className="bg-white border border-[#D8D5CF] rounded p-8"
                 >
-                  <h3 className="font-heading font-bold text-sm text-[#1C1F2E] uppercase tracking-wide mb-5">Key Features</h3>
+                  <h3 className="font-heading font-bold text-base text-[#1C1F2E] uppercase tracking-wide mb-5">Key Features</h3>
                   <div className="h-px bg-[#D8D5CF] mb-5" />
                   <div className="grid sm:grid-cols-2 gap-3">
                     {product.features.map((f) => (
                       <div key={f} className="flex items-start gap-3">
                         <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                        <span className="text-[#3D4152] text-sm leading-relaxed">{f}</span>
+                        <span className="text-[#3D4152] text-base leading-relaxed">{f}</span>
                       </div>
                     ))}
                   </div>

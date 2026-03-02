@@ -43,7 +43,7 @@ export function SectionHeader({ title, label, subtitle, className = "", color = 
         <div className="py-5 px-7 sm:px-10 pl-8 sm:pl-12">
           {label && (
             <motion.p
-              className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5"
+              className="text-base font-bold uppercase tracking-[0.2em] mb-1.5"
               style={{ color: theme.label }}
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 6 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}

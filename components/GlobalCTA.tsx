@@ -28,7 +28,7 @@ export function GlobalCTA({
     <TubesCTA>
       <AnimatedSection>
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold text-[#4ade80] uppercase tracking-wider mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+          <p className="text-base font-semibold text-[#4ade80] uppercase tracking-wider mb-4 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
             {label}
           </p>
           <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
@@ -42,7 +42,7 @@ export function GlobalCTA({
               {primaryButtonText}
             </ShinyButton>
             {secondaryButtonText && secondaryButtonLink && (
-              <Button href={secondaryButtonLink} variant="glass" size="lg" showArrow>
+              <Button href={secondaryButtonLink} variant="glass" size="lg">
                 {secondaryButtonText}
               </Button>
             )}

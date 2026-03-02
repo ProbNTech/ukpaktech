@@ -110,7 +110,7 @@ export function ContactForm() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45, duration: 0.4 }}
-                className="text-[#5A5F72] text-sm leading-relaxed max-w-sm mx-auto"
+                className="text-[#5A5F72] text-base leading-relaxed max-w-sm mx-auto"
               >
                 Thank you for reaching out. A member of our team will be in touch within 2-3 business days.
               </motion.p>
@@ -149,7 +149,7 @@ export function ContactForm() {
             <div className="w-6 h-6 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
               <User className="w-3 h-3 text-[#2563EB]" />
             </div>
-            <span className="text-xs font-bold tracking-[0.15em] uppercase text-[#5A5F72]">
+            <span className="text-base font-bold tracking-[0.15em] uppercase text-[#5A5F72]">
               Personal Details
             </span>
           </motion.div>
@@ -159,7 +159,7 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="name"
-                className={`block text-xs font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "name" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
+                className={`block text-base font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "name" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
               >
                 Full Name <span className="text-[#C41E3A]">*</span>
               </label>
@@ -177,7 +177,7 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("name")}
                   onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#2563EB]/50 focus:bg-white focus:ring-1 focus:ring-[#2563EB]/20"
+                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#2563EB]/50 focus:bg-white focus:ring-1 focus:ring-[#2563EB]/20"
                 />
               </div>
             </motion.div>
@@ -186,7 +186,7 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="email"
-                className={`block text-xs font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "email" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
+                className={`block text-base font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "email" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
               >
                 Email Address <span className="text-[#C41E3A]">*</span>
               </label>
@@ -204,7 +204,7 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("email")}
                   onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#2563EB]/50 focus:bg-white focus:ring-1 focus:ring-[#2563EB]/20"
+                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#2563EB]/50 focus:bg-white focus:ring-1 focus:ring-[#2563EB]/20"
                 />
               </div>
             </motion.div>
@@ -222,7 +222,7 @@ export function ContactForm() {
             <div className="w-6 h-6 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center">
               <Sparkles className="w-3 h-3 text-[#22C55E]" />
             </div>
-            <span className="text-xs font-bold tracking-[0.15em] uppercase text-[#5A5F72]">
+            <span className="text-base font-bold tracking-[0.15em] uppercase text-[#5A5F72]">
               Enquiry Details
             </span>
           </motion.div>
@@ -232,7 +232,7 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="phone"
-                className={`block text-xs font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "phone" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
+                className={`block text-base font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "phone" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
               >
                 Phone
               </label>
@@ -248,7 +248,7 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("phone")}
                   onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white focus:ring-1 focus:ring-[#22C55E]/20"
+                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white focus:ring-1 focus:ring-[#22C55E]/20"
                 />
               </div>
             </motion.div>
@@ -257,7 +257,7 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="organisation"
-                className={`block text-xs font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "organisation" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
+                className={`block text-base font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "organisation" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
               >
                 Organisation
               </label>
@@ -273,7 +273,7 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("organisation")}
                   onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white focus:ring-1 focus:ring-[#22C55E]/20"
+                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white focus:ring-1 focus:ring-[#22C55E]/20"
                 />
               </div>
             </motion.div>
@@ -282,7 +282,7 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="enquiryType"
-                className={`block text-xs font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "enquiryType" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
+                className={`block text-base font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "enquiryType" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
               >
                 Enquiry Type <span className="text-[#C41E3A]">*</span>
               </label>
@@ -298,7 +298,7 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("enquiryType")}
                   onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] text-sm pl-11 pr-10 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white focus:ring-1 focus:ring-[#22C55E]/20 appearance-none cursor-pointer [&>option]:bg-white [&>option]:text-[#1C1F2E]"
+                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] text-base pl-11 pr-10 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white focus:ring-1 focus:ring-[#22C55E]/20 appearance-none cursor-pointer [&>option]:bg-white [&>option]:text-[#1C1F2E]"
                 >
                   <option value="" disabled className="text-[#9A9EAF]">
                     Select a topic
@@ -325,7 +325,7 @@ export function ContactForm() {
             <div className="w-6 h-6 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
               <Send className="w-3 h-3 text-[#2563EB]" />
             </div>
-            <span className="text-xs font-bold tracking-[0.15em] uppercase text-[#5A5F72]">
+            <span className="text-base font-bold tracking-[0.15em] uppercase text-[#5A5F72]">
               Your Message
             </span>
           </motion.div>
@@ -333,7 +333,7 @@ export function ContactForm() {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="message"
-              className={`block text-xs font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "message" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
+              className={`block text-base font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "message" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
             >
               Message <span className="text-[#C41E3A]">*</span>
             </label>
@@ -351,7 +351,7 @@ export function ContactForm() {
                 onChange={handleChange}
                 onFocus={() => setFocusedField("message")}
                 onBlur={() => setFocusedField(null)}
-                className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-sm pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#2563EB]/50 focus:bg-white focus:ring-1 focus:ring-[#2563EB]/20 resize-none"
+                className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#2563EB]/50 focus:bg-white focus:ring-1 focus:ring-[#2563EB]/20 resize-none"
               />
             </div>
           </motion.div>
@@ -362,13 +362,13 @@ export function ContactForm() {
           variants={itemVariants}
           className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[#D8D5CF] bg-[#FAFAF9] px-7 py-5"
         >
-          <p className="text-[11px] text-[#5A5F72] leading-relaxed max-w-xs">
+          <p className="text-base text-[#5A5F72] leading-relaxed max-w-xs">
             We respond to all enquiries within 2-3 business days.
           </p>
           <button
             type="submit"
             disabled={state === "submitting"}
-            className="group relative shrink-0 inline-flex items-center gap-2.5 px-7 py-3 rounded-xl font-heading font-bold text-sm text-white bg-gradient-to-r from-[#2563EB] to-[#1a4fd4] hover:from-[#3b82f6] hover:to-[#2563EB] transition-all duration-300 shadow-[0_4px_20px_rgba(37,99,235,0.25)] hover:shadow-[0_8px_30px_rgba(37,99,235,0.35)] disabled:opacity-50 disabled:cursor-not-allowed"
+            className="group relative shrink-0 inline-flex items-center gap-2.5 px-7 py-3 rounded-xl font-heading font-bold text-base text-white bg-gradient-to-r from-[#2563EB] to-[#1a4fd4] hover:from-[#3b82f6] hover:to-[#2563EB] transition-all duration-300 shadow-[0_4px_20px_rgba(37,99,235,0.25)] hover:shadow-[0_8px_30px_rgba(37,99,235,0.35)] disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {state === "submitting" ? (
               <span className="flex items-center gap-2">

@@ -10,6 +10,7 @@ import { NewsCard } from "@/components/NewsCard";
 import { LiteYouTube } from "@/components/LiteYouTube";
 import { ChevronRight, ArrowUpRight, Cpu, Briefcase, GraduationCap, Globe2, Shield, Handshake, Users, Building2, MapPin } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { TechMeshBackground } from "@/components/TechMeshBackground";
 import { articles } from "@/data/articles";
 import { featuredEvents } from "@/data/featured-events";
 
@@ -54,7 +55,7 @@ function SectionHeader({
         <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${theme.accent}, ${theme.accentTo})` }} />
         <div className="absolute top-0 right-0 w-40 h-full opacity-[0.06]" style={{ background: "radial-gradient(circle at 80% 30%, white 0%, transparent 70%)" }} />
         <div className="py-5 px-7 sm:px-10 pl-8 sm:pl-12">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1.5" style={{ color: theme.label }}>{label}</p>
+          <p className="text-base font-bold uppercase tracking-[0.2em] mb-1.5" style={{ color: theme.label }}>{label}</p>
           <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl lg:text-[2.2rem] leading-tight">
             {title}
           </h2>
@@ -72,7 +73,7 @@ function PillButton({ href, children }: { href: string; children: React.ReactNod
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#1C1F2E] text-white text-sm font-semibold hover:bg-[#2563EB] transition-colors duration-300"
+      className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#1C1F2E] text-white text-base font-semibold hover:bg-[#2563EB] transition-colors duration-300"
     >
       {children}
       <ChevronRight className="w-4 h-4" />
@@ -137,7 +138,7 @@ function HomeEventsSection() {
   }, [filterEvent]);
 
   return (
-    <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#EEECEA" }}>
+    <section className="relative z-[1] py-6 lg:py-8">
       <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
         <AnimatedSection>
           <SectionHeader
@@ -153,7 +154,7 @@ function HomeEventsSection() {
               <button
                 key={tab}
                 onClick={() => setFilter(tab)}
-                className={`px-4 py-2 text-xs font-bold uppercase tracking-wide border transition-colors duration-200 rounded-sm ${
+                className={`px-4 py-2 text-base font-bold uppercase tracking-wide border transition-colors duration-200 rounded-sm ${
                   filter === tab
                     ? "bg-[#1a2b5e] text-white border-[#1a2b5e]"
                     : "bg-white text-[#3D4152] border-[#D8D5CF] hover:border-[#1a2b5e] hover:text-[#1a2b5e]"
@@ -180,13 +181,13 @@ function HomeEventsSection() {
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-white/25 text-[10px] font-semibold uppercase tracking-widest">{event.tag}</span>
+                        <span className="text-white/25 text-base font-semibold uppercase tracking-widest">{event.tag}</span>
                       </div>
                     )}
-                    <span className="absolute top-3 left-3 px-3 py-1 bg-[#1C1F2E]/80 backdrop-blur-sm text-white text-xs font-semibold rounded-full">{event.tag}</span>
+                    <span className="absolute top-3 left-3 px-3 py-1 bg-[#1C1F2E]/80 backdrop-blur-sm text-white text-base font-semibold rounded-full">{event.tag}</span>
                   </div>
                   <div className="flex flex-col flex-1 p-5">
-                    <div className="flex items-center gap-2 text-xs text-[#7A7E8F] mb-3">
+                    <div className="flex items-center gap-2 text-base text-[#7A7E8F] mb-3">
                       <time className="font-medium">{event.date}</time>
                       {event.location && (
                         <>
@@ -198,7 +199,7 @@ function HomeEventsSection() {
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base leading-snug mb-3 line-clamp-2 group-hover:text-[#2563EB] transition-colors duration-200">{event.title}</h3>
                     <p className="text-[#3D4152] text-base leading-relaxed line-clamp-3 mb-4">{event.shortDescription}</p>
                     <div className="mt-auto pt-3 border-t border-[#D8D5CF]">
-                      <span className="text-sm font-semibold text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 inline-flex items-center gap-1">
+                      <span className="text-base font-semibold text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 inline-flex items-center gap-1">
                         Learn more <ChevronRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
@@ -223,7 +224,8 @@ function HomeEventsSection() {
 
 export default function Home() {
   return (
-    <div>
+    <div className="relative">
+      {/* <TechMeshBackground /> */}
       {/* ──────────────────────────────────────────────────────────── */}
       {/*  HERO                                                        */}
       {/* ──────────────────────────────────────────────────────────── */}
@@ -235,22 +237,24 @@ export default function Home() {
            Layout: full-width text paragraph + About Us button
            Matches ukproptech.com "intro" section structure exactly
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#EEECEA" }}>
+      <section className="relative z-[1] py-6 lg:py-8">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left — text content */}
               <div>
-                <p className="text-sm font-semibold text-[#2563EB] uppercase tracking-wider mb-3">About the Council</p>
+                <p className="text-base font-semibold text-[#2563EB] uppercase tracking-wider mb-3">About the Council</p>
                 <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-[2.2rem] leading-[1.3] mb-6">
                   The UK–Pakistan Tech Council is a bilateral technology platform established in 2026.
                 </h2>
-                <p className="text-[#3D4152] text-base sm:text-lg leading-[1.75] mb-5 text-justify">
+                <div className="content-body">
+                <p className="text-[#3D4152] text-base sm:text-lg leading-[1.75] mb-5">
                   UPTECH bridges the United Kingdom and Pakistan through structured programmes of investment facilitation, policy dialogue, innovation partnership, and cross-border trade. The Council brings together technology companies, venture capital, government bodies, academic institutions, and enterprise leaders to drive long-term bilateral growth.
                 </p>
-                <p className="text-[#3D4152] text-base sm:text-lg leading-[1.75] mb-8 text-justify">
+                <p className="text-[#3D4152] text-base sm:text-lg leading-[1.75] mb-8">
                   From flagship summits to regulatory frameworks, from AI innovation hubs to seed investment programmes — our work creates the institutional infrastructure that bilateral tech collaboration requires.
                 </p>
+                </div>
                 <PillButton href="/about">About Us</PillButton>
               </div>
 
@@ -277,7 +281,7 @@ export default function Home() {
            WHO CAN JOIN — horizontal scroll of member types
            Matches the ukproptech "Who can join?" horizontal card row
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#E8E6E3" }}>
+      <section className="relative z-[1] py-6 lg:py-8">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
             <SectionHeader
@@ -316,7 +320,7 @@ export default function Home() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                   </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-sm sm:text-base leading-snug group-hover:text-[#2563EB] transition-colors duration-200 mb-3">
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-base sm:text-base leading-snug group-hover:text-[#2563EB] transition-colors duration-200 mb-3">
                     {item.title}
                   </h3>
                   <div className="h-px bg-[#1C1F2E]/20 group-hover:bg-[#2563EB]/50 transition-colors duration-300" />
@@ -330,7 +334,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            WHAT WE DO — Elevated Card Grid
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#EEECEA" }}>
+      <section className="relative z-[1] py-6 lg:py-8">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
             <SectionHeader
@@ -354,13 +358,13 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#2563EB]/50 block mb-1">Featured Programme</span>
+                    <span className="text-base font-bold uppercase tracking-[0.2em] text-[#2563EB]/50 block mb-1">Featured Programme</span>
                     <h3 className="font-heading font-extrabold text-[#1C1F2E] text-2xl lg:text-3xl leading-tight">AI & Tech Programs</h3>
                   </div>
                 </div>
-                <p className="text-[#3D4152] text-sm sm:text-base leading-relaxed flex-1 max-w-xl">Driving AI innovation through training, certifications, and collaborative startup models across key sectors including energy, smart buildings, and agriculture.</p>
+                <p className="text-[#3D4152] text-base sm:text-base leading-relaxed flex-1 max-w-xl">Driving AI innovation through training, certifications, and collaborative startup models across key sectors including energy, smart buildings, and agriculture.</p>
                 <div className="flex items-center gap-3 flex-shrink-0">
-                  <span className="text-sm font-semibold text-[#3D4152] group-hover:text-[#2563EB] transition-colors duration-300 hidden sm:inline">Explore</span>
+                  <span className="text-base font-semibold text-[#3D4152] group-hover:text-[#2563EB] transition-colors duration-300 hidden sm:inline">Explore</span>
                   <div className="w-10 h-10 rounded-full border border-[#2563EB]/20 group-hover:border-[#2563EB] group-hover:bg-[#2563EB] flex items-center justify-center transition-all duration-300">
                     <ArrowUpRight className="w-5 h-5 text-[#2563EB] group-hover:text-white transition-colors duration-300" />
                   </div>
@@ -389,7 +393,7 @@ export default function Home() {
                             <Icon className="w-5 h-5" style={{ color: card.color }} strokeWidth={1.5} />
                           </div>
                         </div>
-                        <span className="text-[10px] font-bold tracking-[0.2em] text-[#D8D5CF]">{card.num}</span>
+                        <span className="text-base font-bold tracking-[0.2em] text-[#D8D5CF]">{card.num}</span>
                       </div>
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{card.title}</h3>
                       <p className="text-[#3D4152] text-base leading-relaxed mb-4">{card.desc}</p>
@@ -422,7 +426,7 @@ export default function Home() {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between mb-2">
                           <h3 className="font-heading font-bold text-[#1C1F2E] text-lg group-hover:text-[#2563EB] transition-colors duration-200">{card.title}</h3>
-                          <span className="text-[10px] font-bold tracking-[0.2em] text-[#D8D5CF] flex-shrink-0 ml-3">{card.num}</span>
+                          <span className="text-base font-bold tracking-[0.2em] text-[#D8D5CF] flex-shrink-0 ml-3">{card.num}</span>
                         </div>
                         <p className="text-[#3D4152] text-base leading-relaxed">{card.desc}</p>
                       </div>
@@ -440,7 +444,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            MORE FROM UPTECH — 2×2 Card Grid
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#E8E6E3" }}>
+      <section className="relative z-[1] py-6 lg:py-8">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
             <SectionHeader
@@ -487,7 +491,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            EVENT HIGHLIGHTS — YouTube video embeds
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#EEECEA" }}>
+      <section className="relative z-[1] py-6 lg:py-8">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -540,7 +544,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            RESOURCES / NEWS & INSIGHTS — 3 column editorial cards
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#E8E6E3" }}>
+      <section className="relative z-[1] py-6 lg:py-8">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
             <SectionHeader
@@ -592,7 +596,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            IMPACT NUMBERS — 4 stat cards on white bg
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8" style={{ backgroundColor: "#EEECEA" }}>
+      <section className="relative z-[1] py-6 lg:py-8">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
             <SectionHeader

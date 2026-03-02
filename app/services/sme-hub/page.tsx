@@ -93,8 +93,8 @@ export default function SMEHubPage() {
         image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership" variant="glass" showArrow>Join the Hub</Button>
-          <Button href="/contact" variant="glass" showArrow>Learn More</Button>
+          <Button href="/membership" variant="glass">Join the Hub</Button>
+          <Button href="/contact" variant="glass">Learn More</Button>
         </div>
       </PageHero>
 
@@ -117,7 +117,7 @@ export default function SMEHubPage() {
                 >
                   {stat.value}
                 </div>
-                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -245,7 +245,7 @@ export default function SMEHubPage() {
                     <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
                     <div className="p-6">
                       <div className="relative mb-5">
-                        <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold border" style={{ background: `${color}25`, borderColor: `${color}50` }}>
+                        <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border" style={{ background: `${color}25`, borderColor: `${color}50` }}>
                           {step.number}
                         </div>
                       </div>
@@ -253,7 +253,7 @@ export default function SMEHubPage() {
                       <p className="text-[#5A5F72] text-base leading-relaxed mb-4">{step.description}</p>
                       <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
                         <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color }} strokeWidth={2} />
-                        <span className="text-sm font-semibold" style={{ color }}>{step.outcome}</span>
+                        <span className="text-base font-semibold" style={{ color }}>{step.outcome}</span>
                       </div>
                     </div>
                     </div>
@@ -328,7 +328,7 @@ export default function SMEHubPage() {
         <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Start Growing</p>
+              <p className="text-base font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Start Growing</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Ready to Accelerate Your SME&apos;s Growth?
               </h2>
@@ -336,8 +336,8 @@ export default function SMEHubPage() {
                 Join the SME Hub and gain access to sales insights, finance opportunities, talent networks, and exclusive member benefits across four key global markets.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg" showArrow>Join the Hub</Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>Contact Us</Button>
+                <Button href="/membership" variant="primary" size="lg">Join the Hub</Button>
+                <Button href="/contact" variant="glass" size="lg">Contact Us</Button>
               </div>
             </div>
           </AnimatedSection>
@@ -374,7 +374,7 @@ function FAQSection({ faqs }: { faqs: { question: string; answer: string }[] }) 
               className="w-full flex items-center gap-4 p-5 lg:p-6 text-left"
             >
               <span
-                className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold transition-colors duration-300"
+                className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-base font-bold transition-colors duration-300"
                 style={isOpen ? { background: color, color: "#fff" } : { background: `${color}15`, color }}
               >
                 {String(index + 1).padStart(2, "0")}

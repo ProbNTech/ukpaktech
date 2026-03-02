@@ -78,7 +78,7 @@ function AudienceCard({ audience, index, isInView }: { audience: typeof audience
             </div>
 
             <h3 className="font-heading font-semibold text-xl mb-3 text-[#0F172A] group-hover:text-[#2563EB] transition-colors duration-300">{audience.label}</h3>
-            <p className="text-[#475569] text-sm leading-relaxed">{audience.description}</p>
+            <p className="text-[#475569] text-base leading-relaxed">{audience.description}</p>
           </motion.div>
 
           <div

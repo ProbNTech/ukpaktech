@@ -153,7 +153,7 @@ export default function MembershipApplicationForm() {
           <motion.div initial="hidden" animate="visible" variants={stagger}>
             <motion.p
               variants={itemFade}
-              className="text-sm font-medium uppercase tracking-[0.2em] text-blue-400 mb-4"
+              className="text-base font-medium uppercase tracking-[0.2em] text-blue-400 mb-4"
             >
               Membership Application
             </motion.p>
@@ -255,14 +255,14 @@ export default function MembershipApplicationForm() {
                       required
                     />
                     <div>
-                      <span className="block text-sm font-semibold text-[#1C1F2E]">{tier.label}</span>
-                      <span className="block text-xs text-[#7A7E8F] mt-0.5">{tier.fee}</span>
+                      <span className="block text-base font-semibold text-[#1C1F2E]">{tier.label}</span>
+                      <span className="block text-base text-[#7A7E8F] mt-0.5">{tier.fee}</span>
                     </div>
                   </label>
                 ))}
               </div>
 
-              <p className="text-xs text-[#7A7E8F] mt-4">
+              <p className="text-base text-[#7A7E8F] mt-4">
                 Membership fees will be confirmed upon application review. All fees exclude applicable taxes.
               </p>
             </motion.div>
@@ -420,7 +420,7 @@ export default function MembershipApplicationForm() {
                       onChange={(e) => setWebsiteLink(e.target.checked)}
                       className="accent-blue-500"
                     />
-                    <span className="text-sm text-[#5A5F72] group-hover:text-[#3D4152]">
+                    <span className="text-base text-[#5A5F72] group-hover:text-[#3D4152]">
                       Link my website on the UPTECH website
                     </span>
                   </label>
@@ -431,7 +431,7 @@ export default function MembershipApplicationForm() {
                       onChange={(e) => setPubliclyListed(e.target.checked)}
                       className="accent-blue-500"
                     />
-                    <span className="text-sm text-[#5A5F72] group-hover:text-[#3D4152]">
+                    <span className="text-base text-[#5A5F72] group-hover:text-[#3D4152]">
                       Are you publicly listed?
                     </span>
                   </label>
@@ -442,7 +442,7 @@ export default function MembershipApplicationForm() {
                       onChange={(e) => setMemberDirectory(e.target.checked)}
                       className="accent-blue-500"
                     />
-                    <span className="text-sm text-[#5A5F72] group-hover:text-[#3D4152]">
+                    <span className="text-base text-[#5A5F72] group-hover:text-[#3D4152]">
                       List on UPTECH member directory
                     </span>
                   </label>
@@ -453,7 +453,7 @@ export default function MembershipApplicationForm() {
                       onChange={(e) => setMailingList(e.target.checked)}
                       className="accent-blue-500"
                     />
-                    <span className="text-sm text-[#5A5F72] group-hover:text-[#3D4152]">
+                    <span className="text-base text-[#5A5F72] group-hover:text-[#3D4152]">
                       Receive UPTECH updates and notices
                     </span>
                   </label>
@@ -484,7 +484,7 @@ export default function MembershipApplicationForm() {
                   <label
                     key={sector}
                     className={`
-                      flex items-center gap-2 px-3 py-2.5 rounded-lg border cursor-pointer transition-all text-xs
+                      flex items-center gap-2 px-3 py-2.5 rounded-lg border cursor-pointer transition-all text-base
                       ${selectedSectors.includes(sector)
                         ? "bg-green-500/10 border-green-500/30 text-green-300"
                         : "bg-white/[0.02] border-white/[0.06] text-[#5A5F72] hover:border-[#3D4152] hover:text-[#3D4152]"
@@ -539,7 +539,7 @@ export default function MembershipApplicationForm() {
 
               {/* UK Offices */}
               <div className="mb-8">
-                <p className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-3">
+                <p className="text-base font-semibold text-blue-400 uppercase tracking-wider mb-3">
                   United Kingdom
                 </p>
                 <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-2">
@@ -547,7 +547,7 @@ export default function MembershipApplicationForm() {
                     <label
                       key={city}
                       className={`
-                        flex items-center justify-center px-3 py-2 rounded-lg border cursor-pointer transition-all text-xs text-center
+                        flex items-center justify-center px-3 py-2 rounded-lg border cursor-pointer transition-all text-base text-center
                         ${ukOffices.includes(city)
                           ? "bg-blue-500/10 border-blue-500/30 text-blue-300"
                           : "bg-[#F5F4F2] border-[#D8D5CF] text-[#5A5F72] hover:border-[#3D4152]"
@@ -568,14 +568,14 @@ export default function MembershipApplicationForm() {
                   <input
                     type="text"
                     placeholder="Other UK city"
-                    className="w-full sm:w-64 px-4 py-2.5 rounded-lg bg-white border border-[#D8D5CF] text-[#1C1F2E] text-sm placeholder:text-[#9A9EAF] focus:outline-none focus:border-blue-500/50 transition-all"
+                    className="w-full sm:w-64 px-4 py-2.5 rounded-lg bg-white border border-[#D8D5CF] text-[#1C1F2E] text-base placeholder:text-[#9A9EAF] focus:outline-none focus:border-blue-500/50 transition-all"
                   />
                 </div>
               </div>
 
               {/* Pakistan Offices */}
               <div className="mb-8">
-                <p className="text-sm font-semibold text-green-400 uppercase tracking-wider mb-3">
+                <p className="text-base font-semibold text-green-400 uppercase tracking-wider mb-3">
                   Pakistan
                 </p>
                 <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-2">
@@ -583,7 +583,7 @@ export default function MembershipApplicationForm() {
                     <label
                       key={city}
                       className={`
-                        flex items-center justify-center px-3 py-2 rounded-lg border cursor-pointer transition-all text-xs text-center
+                        flex items-center justify-center px-3 py-2 rounded-lg border cursor-pointer transition-all text-base text-center
                         ${pakOffices.includes(city)
                           ? "bg-green-500/10 border-green-500/30 text-green-300"
                           : "bg-[#F5F4F2] border-[#D8D5CF] text-[#5A5F72] hover:border-[#3D4152]"
@@ -604,7 +604,7 @@ export default function MembershipApplicationForm() {
                   <input
                     type="text"
                     placeholder="Other Pakistan city"
-                    className="w-full sm:w-64 px-4 py-2.5 rounded-lg bg-white border border-[#D8D5CF] text-[#1C1F2E] text-sm placeholder:text-[#9A9EAF] focus:outline-none focus:border-green-500/50 transition-all"
+                    className="w-full sm:w-64 px-4 py-2.5 rounded-lg bg-white border border-[#D8D5CF] text-[#1C1F2E] text-base placeholder:text-[#9A9EAF] focus:outline-none focus:border-green-500/50 transition-all"
                   />
                 </div>
               </div>
@@ -660,7 +660,7 @@ export default function MembershipApplicationForm() {
                 placeholder="Provide a brief description of your organisation, its mission, and key activities..."
                 className="w-full px-4 py-3 rounded-lg bg-white border border-[#D8D5CF] text-[#1C1F2E] placeholder:text-[#9A9EAF] focus:outline-none focus:border-blue-500/50 focus:bg-[#F5F4F2] transition-all resize-none"
               />
-              <p className="text-xs text-[#7A7E8F] mt-2">
+              <p className="text-base text-[#7A7E8F] mt-2">
                 UPTECH reserves the right to edit profiles that exceed 100 words.
                 Please send your high-resolution logo to{" "}
                 <a href="mailto:info@uptechcouncil.org" className="text-blue-400 hover:underline">
@@ -1045,7 +1045,7 @@ export default function MembershipApplicationForm() {
             >
               <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-2xl font-bold text-[#1C1F2E] mb-4">Submit Your Application</h2>
-                <p className="text-[#5A5F72] mb-8 text-sm leading-relaxed">
+                <p className="text-[#5A5F72] mb-8 text-base leading-relaxed">
                   By submitting this form, you confirm that the information provided is accurate and agree
                   to UPTECH&apos;s{" "}
                   <Link href="/terms" className="text-blue-400 hover:underline">Terms &amp; Conditions</Link>,{" "}
@@ -1060,7 +1060,7 @@ export default function MembershipApplicationForm() {
                     required
                     className="mt-1 accent-blue-500"
                   />
-                  <span className="text-sm text-[#3D4152]">
+                  <span className="text-base text-[#3D4152]">
                     I confirm the above information is accurate and I agree to UPTECH&apos;s Terms &amp; Conditions,
                     Privacy Policy, and Code of Conduct. <span className="text-red-400">*</span>
                   </span>
@@ -1075,7 +1075,7 @@ export default function MembershipApplicationForm() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
 
-                <p className="text-xs text-[#7A7E8F] mt-6">
+                <p className="text-base text-[#7A7E8F] mt-6">
                   Our membership team will review your application and respond within 5 business days.
                   For enquiries, contact{" "}
                   <a href="mailto:membership@uptechcouncil.org" className="text-blue-400 hover:underline">

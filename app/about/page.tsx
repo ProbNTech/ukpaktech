@@ -5,7 +5,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { Button } from "@/components/Button";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,13 +32,13 @@ export default function AboutPage() {
         image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Apply for Membership</RainbowButton>
-          <Button href="/ecosystem/uk-pakistan-technology-partnership" variant="glass" showArrow>UK–Pakistan Partnership</Button>
+          <ShinyButton href="/membership/apply">Apply for Membership</ShinyButton>
+          <Button href="/ecosystem/uk-pakistan-technology-partnership" variant="glass">UK–Pakistan Partnership</Button>
         </div>
       </PageHero>
 
       {/* About Us */}
-      <Section variant="light">
+      <Section variant="light" className="content-body">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           <AnimatedSection>
             <SectionHeader
@@ -99,7 +99,7 @@ export default function AboutPage() {
                       <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200" style={{ color: item.color }} />
                     </div>
                     <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2">{item.title}</h3>
-                    <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-[#3D4152] text-base leading-relaxed">{item.desc}</p>
                   </div>
                 </Link>
               );

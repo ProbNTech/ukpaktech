@@ -7,7 +7,7 @@ import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import {
   CheckCircle2,
   BookOpen,
@@ -88,8 +88,8 @@ export default function AITechProgramsPage() {
         image="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Become a Member</RainbowButton>
-          <Button href="/contact" variant="glass" size="lg" showArrow>
+          <ShinyButton href="/membership/apply">Become a Member</ShinyButton>
+          <Button href="/contact" variant="glass" size="lg">
             Get in Touch
           </Button>
         </div>
@@ -187,7 +187,7 @@ export default function AITechProgramsPage() {
                       style={{ background: step.color }}
                     />
                     <div
-                      className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold border"
+                      className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border"
                       style={{
                         background: `${step.color}25`,
                         borderColor: `${step.color}50`,

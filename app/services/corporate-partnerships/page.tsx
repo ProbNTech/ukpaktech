@@ -170,8 +170,8 @@ export default function CorporatePartnershipsPage() {
         image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership" variant="glass" showArrow>Become a Partner</Button>
-          <Button href="/contact" variant="glass" showArrow>Get in Touch</Button>
+          <Button href="/membership" variant="glass">Become a Partner</Button>
+          <Button href="/contact" variant="glass">Get in Touch</Button>
         </div>
       </PageHero>
 
@@ -196,7 +196,7 @@ export default function CorporatePartnershipsPage() {
                 >
                   {stat.value}
                 </div>
-                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -618,7 +618,7 @@ export default function CorporatePartnershipsPage() {
                 transition={{ duration: 0.4 }}
               >
                 <div className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse" />
-                <span className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider">
+                <span className="text-[#2563EB] text-base font-semibold uppercase tracking-wider">
                   Partner With Us
                 </span>
               </motion.div>
@@ -646,7 +646,7 @@ export default function CorporatePartnershipsPage() {
                 >
                   Become a Member
                 </Button>
-                <Button href="/contact" variant="glass" size="lg" showArrow>
+                <Button href="/contact" variant="glass" size="lg">
                   Contact Us
                 </Button>
               </div>

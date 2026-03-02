@@ -57,7 +57,7 @@ export function NewsCard({ slug, title, category, date, image, excerpt, index = 
         </div>
 
         {/* Date */}
-        <p className="text-sm text-[#7A7E8F] mb-2">{date}</p>
+        <p className="text-base text-[#7A7E8F] mb-2">{date}</p>
 
         {/* Title */}
         <h3 className="font-heading font-bold text-[1.05rem] leading-snug text-[#1C1F2E] mb-3 line-clamp-3 group-hover:text-[#2563EB] transition-colors duration-200">
@@ -65,13 +65,13 @@ export function NewsCard({ slug, title, category, date, image, excerpt, index = 
         </h3>
 
         {/* Excerpt — shown on hover/always, 2 lines */}
-        <p className="text-sm text-[#3D4152] leading-relaxed line-clamp-2 mb-4 flex-1">
+        <p className="text-base text-[#3D4152] leading-relaxed line-clamp-2 mb-4 flex-1">
           {excerpt}
         </p>
 
         {/* Category tag — orange-red style matching reference */}
         <div className="flex flex-wrap items-center gap-2 mb-4">
-          <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#2563EB] group-hover:text-[#1D4ED8] transition-colors duration-200">
+          <span className="inline-flex items-center gap-1 text-base font-semibold text-[#2563EB] group-hover:text-[#1D4ED8] transition-colors duration-200">
             <ChevronRight className="w-3 h-3" />
             {category}
           </span>

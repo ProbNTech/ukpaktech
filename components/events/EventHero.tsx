@@ -98,7 +98,7 @@ export function EventHero() {
                     delay: 0.9 + index * 0.1,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="px-4 py-1.5 rounded-full bg-white backdrop-blur-sm border border-gray-100 text-sm font-medium text-[#0F172A]"
+                  className="px-4 py-1.5 rounded-full bg-white backdrop-blur-sm border border-gray-100 text-base font-medium text-[#0F172A]"
                 >
                   {chip}
                 </motion.div>

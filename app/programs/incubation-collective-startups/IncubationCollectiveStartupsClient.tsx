@@ -8,7 +8,7 @@ import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const focusAreas = [
@@ -78,8 +78,8 @@ export default function IncubationCollectiveStartupsClient() {
         image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Apply for Incubation</RainbowButton>
-          <Button href="/contact" variant="glass" size="lg" showArrow>
+          <ShinyButton href="/membership/apply">Apply for Incubation</ShinyButton>
+          <Button href="/contact" variant="glass" size="lg">
             Partner With Us
           </Button>
         </div>
@@ -104,7 +104,7 @@ export default function IncubationCollectiveStartupsClient() {
                 >
                   {stat.value}
                 </div>
-                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -209,7 +209,7 @@ export default function IncubationCollectiveStartupsClient() {
                       style={{ background: step.color }}
                     />
                     <div
-                      className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold border"
+                      className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border"
                       style={{
                         background: `${step.color}25`,
                         borderColor: `${step.color}50`,
@@ -307,7 +307,7 @@ export default function IncubationCollectiveStartupsClient() {
                 >
                   <div className="p-6">
                     <span
-                      className="text-xs font-semibold uppercase tracking-wide px-2 py-0.5 rounded mb-3 inline-block"
+                      className="text-base font-semibold uppercase tracking-wide px-2 py-0.5 rounded mb-3 inline-block"
                       style={{ color: card.color, background: `${card.color}15` }}
                     >
                       {card.tag}
@@ -362,7 +362,7 @@ export default function IncubationCollectiveStartupsClient() {
                     </h3>
                     <div className="h-px bg-[#D8D5CF] mb-4" />
                     <p className="text-[#7A7E8F] text-base leading-relaxed mb-5 flex-1">{audience.description}</p>
-                    <p className="text-sm font-bold text-[#7A7E8F] uppercase tracking-wider mb-3">What they gain</p>
+                    <p className="text-base font-bold text-[#7A7E8F] uppercase tracking-wider mb-3">What they gain</p>
                     <ul className="space-y-2">
                       {audience.gains.map((gain) => (
                         <li key={gain} className="flex items-start gap-2.5">
@@ -394,13 +394,13 @@ export default function IncubationCollectiveStartupsClient() {
               {resources.map((resource) => (
                 <div key={resource.label} className="flex items-center justify-between py-4 border-b border-[#D8D5CF]">
                   <span className="text-[#3D4152] text-base font-medium">{resource.label}</span>
-                  <span className="text-xs font-semibold text-[#2563EB] bg-[#2563EB]/10 px-3 py-1 rounded">
+                  <span className="text-base font-semibold text-[#2563EB] bg-[#2563EB]/10 px-3 py-1 rounded">
                     {resource.badge}
                   </span>
                 </div>
               ))}
             </div>
-            <p className="text-xs text-[#7A7E8F] mt-6">Metrics shown are indicative and updated as programs scale.</p>
+            <p className="text-base text-[#7A7E8F] mt-6">Metrics shown are indicative and updated as programs scale.</p>
           </AnimatedSection>
         </div>
       </section>

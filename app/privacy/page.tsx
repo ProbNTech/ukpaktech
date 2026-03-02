@@ -59,6 +59,7 @@ export default function PrivacyPage() {
         image="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=2400&q=85&auto=format&fit=crop"
       />
 
+      <div className="content-body">
       {/* ── Introduction + Quick Nav ─────────────────────────────────── */}
       <section id="introduction" className="relative bg-[#EEECEA] py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
@@ -109,7 +110,7 @@ export default function PrivacyPage() {
                     <button
                       key={s.id}
                       onClick={() => scrollToSection(s.id)}
-                      className="w-full text-left px-3 py-2.5 text-xs font-medium transition-all duration-200 border-l-2 border-transparent text-[#7A7E8F] hover:text-[#3D4152] hover:border-[#D8D5CF] hover:bg-[#F5F4F2] rounded-r-lg"
+                      className="w-full text-left px-3 py-2.5 text-base font-medium transition-all duration-200 border-l-2 border-transparent text-[#7A7E8F] hover:text-[#3D4152] hover:border-[#D8D5CF] hover:bg-[#F5F4F2] rounded-r-lg"
                     >
                       {s.label}
                     </button>
@@ -471,11 +472,11 @@ export default function PrivacyPage() {
                 <p className="text-base text-[#7A7E8F] leading-relaxed mb-5">We may use your contact details to provide you with information about the vital work we do for the UK and Pakistan business community and additional opportunities to support us or to work together on projects, if we think it may be of interest to you.</p>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-xs font-bold tracking-[0.1em] uppercase text-[#C41E3A] mb-2">Email</h4>
+                    <h4 className="text-base font-bold tracking-[0.1em] uppercase text-[#C41E3A] mb-2">Email</h4>
                     <p className="text-base text-[#7A7E8F] leading-relaxed">You may opt out of our marketing communications at any time by clicking the unsubscribed link at the end of our marketing emails.</p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold tracking-[0.1em] uppercase text-[#C41E3A] mb-2">Post</h4>
+                    <h4 className="text-base font-bold tracking-[0.1em] uppercase text-[#C41E3A] mb-2">Post</h4>
                     <p className="text-base text-[#7A7E8F] leading-relaxed">We may occasionally send you marketing communications by post unless you have told us that you would prefer not to hear from us, under your access rights request (details listed below).</p>
                   </div>
                 </div>
@@ -590,6 +591,8 @@ export default function PrivacyPage() {
         </div>
       </section>
 
+      </div>
+
       {/* ── Contact CTA — Gradient dark section ──────────────────────── */}
       <section id="contact" className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
@@ -598,15 +601,15 @@ export default function PrivacyPage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="max-w-3xl">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Get in Touch</p>
+              <p className="text-base font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Get in Touch</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">Contact Information</h2>
               <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
                 For any questions about this Privacy Policy or our treatment of your Personal Information, please contact{" "}
                 <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a>
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button href="/contact" variant="primary" size="lg" showArrow>Contact Us</Button>
-                <Button href="/membership/apply" variant="glass" size="lg" showArrow>Apply for Membership</Button>
+                <Button href="/contact" variant="primary" size="lg">Contact Us</Button>
+                <Button href="/membership/apply" variant="glass" size="lg">Apply for Membership</Button>
               </div>
             </div>
           </AnimatedSection>

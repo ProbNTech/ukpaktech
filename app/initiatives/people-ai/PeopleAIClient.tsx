@@ -7,7 +7,7 @@ import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { RainbowButton } from "@/components/ui/rainbow-borders-button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import {
   Brain,
   Cpu,
@@ -64,8 +64,8 @@ export default function PeopleAIClient() {
         image="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <RainbowButton href="/membership/apply" showArrow>Get Started</RainbowButton>
-          <Button href="/contact" variant="glass" size="lg" showArrow>
+          <ShinyButton href="/membership/apply">Get Started</ShinyButton>
+          <Button href="/contact" variant="glass" size="lg">
             Learn More
           </Button>
         </div>
@@ -91,7 +91,7 @@ export default function PeopleAIClient() {
                 >
                   {stat.value}
                 </div>
-                <p className="text-[#5A5F72] text-sm">{stat.label}</p>
+                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -168,7 +168,7 @@ export default function PeopleAIClient() {
                         </div>
                         {/* Numbered label */}
                         <span
-                          className="text-[10px] font-bold tracking-[0.2em] uppercase"
+                          className="text-base font-bold tracking-[0.2em] uppercase"
                           style={{ color: `${cap.color}60` }}
                         >
                           {cap.num}
@@ -228,7 +228,7 @@ export default function PeopleAIClient() {
                             style={{ background: step.color }}
                           />
                           <div
-                            className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold border"
+                            className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border"
                             style={{
                               background: `${step.color}25`,
                               borderColor: `${step.color}50`,
@@ -264,7 +264,7 @@ export default function PeopleAIClient() {
                       {/* Outcome */}
                       <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
                         <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
-                        <span className="text-xs font-semibold" style={{ color: step.color }}>
+                        <span className="text-base font-semibold" style={{ color: step.color }}>
                           {step.outcome}
                         </span>
                       </div>
