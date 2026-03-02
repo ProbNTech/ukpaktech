@@ -78,10 +78,10 @@ export default function ExcellenceManagementTermsPage() {
       {/* Terms */}
       <Section variant="light">
         <AnimatedSection>
-          <div className="max-w-3xl mb-8">
+          <div className="mb-8">
             <p className="text-base font-semibold text-[#2563EB] uppercase tracking-widest">Last updated: 2025</p>
           </div>
-          <div className="space-y-6 max-w-4xl">
+          <div className="space-y-6">
             {terms.map((term, i) => {
               const Icon = term.icon;
               return (
@@ -118,7 +118,7 @@ export default function ExcellenceManagementTermsPage() {
             title="Awards Process"
             subtitle="The step-by-step journey from nomination to recognition."
           />
-          <div className="max-w-3xl">
+          <div>
             {processSteps.map((step, i) => (
               <motion.div
                 key={step}

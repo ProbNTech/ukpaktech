@@ -56,7 +56,7 @@ export default function CookiesPage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Overview" title="About Our Cookies" color="blue" />
-            <div className="max-w-4xl space-y-6">
+            <div className="space-y-6">
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
@@ -85,7 +85,7 @@ export default function CookiesPage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="External Links" title="Links to Other Websites" color="green" />
-            <div className="max-w-4xl">
+            <div>
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
@@ -148,7 +148,7 @@ export default function CookiesPage() {
                 </motion.div>
               ))}
             </div>
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4, delay: 0.3 }} className="mt-8 relative bg-gradient-to-br from-[#2563EB]/10 to-[#2563EB]/10 border border-[#2563EB]/20 rounded-xl p-6 overflow-hidden max-w-4xl">
+            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4, delay: 0.3 }} className="mt-8 relative bg-gradient-to-br from-[#2563EB]/10 to-[#2563EB]/10 border border-[#2563EB]/20 rounded-xl p-6 overflow-hidden">
               <div className="relative">
                 <Cookie className="w-5 h-5 text-[#2563EB] mb-3" strokeWidth={1.5} />
                 <p className="text-[#5A5F72] text-base leading-relaxed">The specific names and types of cookies, web beacons, and other similar technologies we use may change from time to time. However, the cookies we use generally fall into one of the following categories:</p>
@@ -164,7 +164,7 @@ export default function CookiesPage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Cookie Management" title="Browser Settings" color="red" />
-            <div className="max-w-4xl">
+            <div>
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
@@ -261,7 +261,7 @@ export default function CookiesPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="max-w-3xl">
+            <div>
               <p className="text-base font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Get in Touch</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">Contact Information</h2>
               <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-4">For any questions about this Privacy Policy or our treatment of your Personal Information, please contact{" "}<a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a></p>

@@ -141,7 +141,7 @@ export function WhoCanJoin() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-[#4B5563] max-w-3xl leading-relaxed"
+            className="text-lg text-[#4B5563] leading-relaxed"
           >
             UPTECH brings together a cross-border ecosystem of innovators, investors, enterprises, and institutions.
           </motion.p>

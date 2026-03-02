@@ -8,6 +8,7 @@ import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import {
   Mail, MapPin, Clock, Globe2, Users, Briefcase,
   Handshake, HelpCircle, ArrowUpRight, Send,
@@ -87,7 +88,7 @@ export default function ContactPage() {
       {/* ── Contact Info Cards ─────────────────────────────────────────── */}
       <section className="relative z-20 bg-[#EEECEA] py-10">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((item, i) => {
               const Icon = item.icon;
               return (
@@ -97,24 +98,26 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl p-5 hover:shadow-lg hover:border-[#2563EB]/20 transition-all duration-300 overflow-hidden"
                 >
-                  <div className="relative">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
-                      style={{ backgroundColor: `${item.color}10`, border: `1px solid ${item.color}20` }}
-                    >
-                      <Icon className="w-4.5 h-4.5" style={{ color: item.color }} strokeWidth={1.5} />
+                  <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="relative h-full bg-white rounded-xl p-6">
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+                        style={{ backgroundColor: `${item.color}10`, border: `1px solid ${item.color}20` }}
+                      >
+                        <Icon className="w-4.5 h-4.5" style={{ color: item.color }} strokeWidth={1.5} />
+                      </div>
+                      <p className="text-base font-bold tracking-[0.2em] uppercase text-[#7A7E8F] mb-1">{item.label}</p>
+                      {item.href ? (
+                        <a href={item.href} className="font-heading font-bold text-base text-[#1C1F2E] hover:text-[#2563EB] transition-colors inline-flex items-center gap-1">
+                          {item.value}
+                          <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </a>
+                      ) : (
+                        <p className="font-heading font-bold text-base text-[#1C1F2E]">{item.value}</p>
+                      )}
                     </div>
-                    <p className="text-base font-bold tracking-[0.2em] uppercase text-[#7A7E8F] mb-1">{item.label}</p>
-                    {item.href ? (
-                      <a href={item.href} className="font-heading font-bold text-base text-[#1C1F2E] hover:text-[#2563EB] transition-colors inline-flex items-center gap-1">
-                        {item.value}
-                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </a>
-                    ) : (
-                      <p className="font-heading font-bold text-base text-[#1C1F2E]">{item.value}</p>
-                    )}
                   </div>
                 </motion.div>
               );

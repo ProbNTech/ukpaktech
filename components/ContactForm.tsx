@@ -110,7 +110,7 @@ export function ContactForm() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45, duration: 0.4 }}
-                className="text-[#5A5F72] text-base leading-relaxed max-w-sm mx-auto"
+                className="text-[#5A5F72] text-base leading-relaxed mx-auto"
               >
                 Thank you for reaching out. A member of our team will be in touch within 2-3 business days.
               </motion.p>
@@ -362,7 +362,7 @@ export function ContactForm() {
           variants={itemVariants}
           className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[#D8D5CF] bg-[#FAFAF9] px-7 py-5"
         >
-          <p className="text-base text-[#5A5F72] leading-relaxed max-w-xs">
+          <p className="text-base text-[#5A5F72] leading-relaxed">
             We respond to all enquiries within 2-3 business days.
           </p>
           <button

@@ -134,9 +134,9 @@ export default function UKPakistanTechnologyPartnershipClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm"
                 >
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
@@ -192,7 +192,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 subtitle="Celebrating Pakistan's contributions to the UK tech sector through prestigious recognition."
               />
             </div>
-            <p className="text-[#3D4152] text-lg leading-relaxed mb-6 max-w-3xl">
+            <p className="text-[#3D4152] text-lg leading-relaxed mb-6">
               Our recognition program celebrates exceptional achievements in technology innovation, cross-border collaboration, and leadership that strengthens the UK–Pakistan tech corridor.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
@@ -203,9 +203,9 @@ export default function UKPakistanTechnologyPartnershipClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm"
                 >
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2" style={{ color: item.color }}>
@@ -241,9 +241,9 @@ export default function UKPakistanTechnologyPartnershipClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm"
                 >
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
@@ -314,7 +314,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
                 subtitle="Collaborating with leading organisations to drive innovation and strengthen the UK–Pakistan tech corridor."
               />
             </div>
-            <p className="text-[#3D4152] text-lg leading-relaxed mb-6 max-w-3xl">
+            <p className="text-[#3D4152] text-lg leading-relaxed mb-6">
               Our strategic partnerships with governments, enterprises, investors, and academic institutions enable us to create meaningful impact and drive sustainable growth across both nations.
             </p>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-4">

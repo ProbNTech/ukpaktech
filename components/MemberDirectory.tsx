@@ -292,7 +292,7 @@ export function MemberDirectory() {
           <h2 className="font-heading font-bold text-[#1C1F2E] text-xl mb-3">
             Want to be listed here?
           </h2>
-          <p className="text-[#4B5563] text-base leading-relaxed max-w-lg mx-auto mb-6">
+          <p className="text-[#4B5563] text-base leading-relaxed mx-auto mb-6">
             Join our growing network of technology companies, investors, and
             professionals driving UK–Pakistan bilateral growth.
           </p>

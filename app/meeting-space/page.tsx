@@ -7,6 +7,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import {
   CheckCircle2,
   MapPin,
@@ -27,10 +28,10 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { value: "Central", label: "London Location" },
-  { value: "5+", label: "Membership Tiers" },
-  { value: "40hrs", label: "Top Tier Annual" },
-  { value: "Flexible", label: "Booking Options" },
+  { value: "Central", label: "London Location", color: "#2563EB" },
+  { value: "5+", label: "Membership Tiers", color: "#22C55E" },
+  { value: "40hrs", label: "Top Tier Annual", color: "#C41E3A" },
+  { value: "Flexible", label: "Booking Options", color: "#2563EB" },
 ];
 
 const uses = [
@@ -165,16 +166,19 @@ export default function MeetingSpacePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl" style={{ background: `linear-gradient(to right, #2563EB, #2563EB60)` }} />
-                <div
-                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
-                  style={{ color: "#2563EB" }}
-                >
-                  {stat.value}
+                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-xl p-6">
+                    <div
+                      className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                      style={{ color: stat.color }}
+                    >
+                      {stat.value}
+                    </div>
+                    <p className="text-[#5A5F72] text-base">{stat.label}</p>
+                  </div>
                 </div>
-                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -186,169 +190,85 @@ export default function MeetingSpacePage() {
         className="relative py-10 overflow-hidden"
         style={{ backgroundColor: "#EEECEA" }}
       >
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        {/* Glow orbs */}
-        <div
-          className="absolute top-0 left-1/4 w-96 h-96 opacity-[0.02]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 60%)",
-          }}
-        />
-        <div
-          className="absolute bottom-0 right-1/4 w-96 h-96 opacity-[0.02]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 60%)",
-          }}
-        />
-
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-10 items-start">
-              <div>
-                <SectionHeader label="Meeting Facility Uses" title="Designated Meeting Facilities" color="blue" />
-                <p className="text-[#3D4152] text-base leading-relaxed mb-6">
-                  As part of our commitment to strengthening bilateral engagement and fostering high-level dialogue, members may utilise designated meeting facilities for:
-                </p>
-                <ul className="space-y-4">
-                  {uses.map((item, i) => (
-                    <motion.li
-                      key={item}
-                      initial={
-                        shouldReduceMotion
-                          ? { opacity: 1 }
-                          : { opacity: 0, x: -12 }
-                      }
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 0.4, delay: i * 0.08 }}
-                      className="flex items-start gap-3"
-                    >
-                      <CheckCircle2
-                        className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0"
-                        strokeWidth={2}
-                      />
-                      <span className="text-base text-[#3D4152] leading-relaxed">
-                        {item}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
-                <div className="flex items-center gap-3 mt-8">
-                  <div className="w-9 h-9 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
-                    <MapPin
-                      className="w-4.5 h-4.5 text-[#2563EB]"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-                  <span className="text-[#3D4152] font-semibold text-base">
-                    Central London location with excellent transport links
-                  </span>
-                </div>
-              </div>
+            <SectionHeader label="Meeting Facility Uses" title="Designated Meeting Facilities" color="blue" />
+            <p className="text-[#3D4152] text-base leading-relaxed mb-8">
+              As part of our commitment to strengthening bilateral engagement and fostering high-level dialogue, members may utilise designated meeting facilities for:
+            </p>
 
-              {/* Booking Info Card — dark glass */}
-              <div className="relative bg-white border border-[#D8D5CF] rounded-2xl shadow-sm overflow-hidden">
-                {/* Top gradient accent */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{
-                    background:
-                      "linear-gradient(to right, #2563EB, #2563EB)",
-                  }}
-                />
-                <div className="p-8">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="relative">
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center"
-                        style={{
-                          backgroundColor: "#2563EB15",
-                          border: "1px solid #2563EB25",
-                        }}
-                      >
-                        <DoorOpen
-                          className="w-5 h-5 text-[#2563EB]"
-                          strokeWidth={1.5}
-                        />
+            {/* Uses as GlowingEffect cards */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              {uses.map((item, i) => (
+                <motion.div
+                  key={item}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                >
+                  <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="relative h-full bg-white rounded-xl p-6 flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                      <span className="text-base text-[#3D4152] leading-relaxed">{item}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+              {/* Location card */}
+              <motion.div
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: uses.length * 0.08 }}
+              >
+                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-xl p-6 flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-4 h-4 text-[#2563EB]" strokeWidth={1.5} />
+                    </div>
+                    <span className="text-[#3D4152] font-semibold text-base">Central London location with excellent transport links</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Access & Reservations — full-width info cards */}
+            <div className="grid sm:grid-cols-2 gap-6">
+              {bookingChecklist.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={item.text}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5, delay: i * 0.08 }}
+                  >
+                    <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                      <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                      <div className="relative h-full bg-white rounded-xl p-6 flex items-start gap-4">
+                        <div
+                          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                          style={{ backgroundColor: i === 0 ? "#2563EB10" : "#22C55E10", border: `1px solid ${i === 0 ? "#2563EB20" : "#22C55E20"}` }}
+                        >
+                          <Icon className="w-5 h-5" style={{ color: i === 0 ? "#2563EB" : "#22C55E" }} strokeWidth={1.5} />
+                        </div>
+                        <span className="text-base text-[#3D4152] leading-relaxed">{item.text}</span>
                       </div>
                     </div>
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base">
-                      Access &amp; Reservations
-                    </h3>
-                  </div>
-                  <div className="h-px bg-[#D8D5CF] mb-5" />
-                  <ul className="space-y-4">
-                    {bookingChecklist.map((item, i) => {
-                      const Icon = item.icon;
-                      return (
-                        <motion.li
-                          key={item.text}
-                          initial={
-                            shouldReduceMotion
-                              ? { opacity: 1 }
-                              : { opacity: 0, x: -12 }
-                          }
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true, margin: "-50px" }}
-                          transition={{ duration: 0.4, delay: i * 0.08 }}
-                          className="flex items-start gap-3"
-                        >
-                          <div
-                            className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                            style={{
-                              backgroundColor: "#22C55E10",
-                              border: "1px solid #22C55E20",
-                            }}
-                          >
-                            <Icon
-                              className="w-3.5 h-3.5 text-[#22C55E]"
-                              strokeWidth={2}
-                            />
-                          </div>
-                          <span className="text-base text-[#3D4152] leading-relaxed">
-                            {item.text}
-                          </span>
-                        </motion.li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ── Facilities — Dark bg with glass cards ─────────────────── */}
+      {/* ── Facilities ─────────────────────────────────────────────── */}
       <section className="relative py-10 overflow-hidden bg-white">
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-        {/* Subtle grid */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        {/* Glow orb */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-[0.02]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 50%)",
-          }}
-        />
-
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Our Facilities" title="Facilities & Amenities" subtitle="Our London meeting spaces provide a professional and secure environment equipped with:" color="blue" />
@@ -359,59 +279,24 @@ export default function MeetingSpacePage() {
                 return (
                   <motion.div
                     key={item.title}
-                    initial={
-                      shouldReduceMotion
-                        ? { opacity: 1 }
-                        : { opacity: 0, y: 20 }
-                    }
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group relative bg-white rounded-xl border border-[#D8D5CF] shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                   >
-                    {/* Colored glow top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px]"
-                      style={{
-                        background: `linear-gradient(to right, ${item.color}, ${item.color}60)`,
-                      }}
-                    />
-                    {/* Hover glow effect */}
-                    <div
-                      className="absolute top-0 left-1/4 right-1/4 h-16 opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500"
-                      style={{ background: item.color }}
-                    />
-
-                    <div className="relative p-6 lg:p-7">
-                      <div className="flex items-center justify-between mb-5">
-                        <div className="relative">
-                          {/* Icon glow on hover */}
-                          <div
-                            className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500"
-                            style={{ background: item.color }}
-                          />
-                          <div
-                            className="relative w-11 h-11 rounded-xl flex items-center justify-center"
-                            style={{
-                              background: `${item.color}10`,
-                              border: `1px solid ${item.color}20`,
-                            }}
-                          >
-                            <Icon
-                              className="w-5 h-5"
-                              style={{ color: item.color }}
-                              strokeWidth={1.5}
-                            />
-                          </div>
+                    <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                      <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                      <div className="relative h-full bg-white rounded-xl p-6">
+                        <div
+                          className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
+                          style={{ background: `${item.color}10`, border: `1px solid ${item.color}20` }}
+                        >
+                          <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
                         </div>
+                        <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
+                        <div className="h-px bg-[#D8D5CF] mb-3" />
+                        <p className="text-base text-[#5A5F72] leading-relaxed">{item.desc}</p>
                       </div>
-                      <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">
-                        {item.title}
-                      </h3>
-                      <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-base text-[#5A5F72] leading-relaxed">
-                        {item.desc}
-                      </p>
                     </div>
                   </motion.div>
                 );
@@ -426,128 +311,59 @@ export default function MeetingSpacePage() {
         className="relative py-10 overflow-hidden"
         style={{ backgroundColor: "#EEECEA" }}
       >
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        {/* Glow orbs */}
-        <div
-          className="absolute top-0 right-1/4 w-96 h-96 opacity-[0.02]"
-          style={{
-            background: "radial-gradient(circle, #2563EB, transparent 60%)",
-          }}
-        />
-
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-10 items-start">
-              <div>
-                <SectionHeader label="Bilateral Collaboration" title="Supporting Bilateral Collaboration" color="blue" />
-                <p className="text-[#3D4152] text-base leading-relaxed mb-6">
-                  These facilities are designed to support our members in conducting business, hosting visiting delegations from Pakistan or the UK, and engaging with policymakers and investors in a credible and professional setting. By facilitating access to centrally located meeting infrastructure, the Council enables:
-                </p>
-                <ul className="space-y-4">
-                  {bilateralBenefits.map((item, i) => (
-                    <motion.li
-                      key={item}
-                      initial={
-                        shouldReduceMotion
-                          ? { opacity: 1 }
-                          : { opacity: 0, x: -12 }
-                      }
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 0.4, delay: i * 0.08 }}
-                      className="flex items-start gap-3"
-                    >
-                      <CheckCircle2
-                        className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0"
-                        strokeWidth={2}
-                      />
-                      <span className="text-base text-[#3D4152] leading-relaxed">
-                        {item}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
+            <SectionHeader label="Bilateral Collaboration" title="Supporting Bilateral Collaboration" color="blue" />
+            <p className="text-[#3D4152] text-base leading-relaxed mb-8">
+              These facilities are designed to support our members in conducting business, hosting visiting delegations from Pakistan or the UK, and engaging with policymakers and investors in a credible and professional setting. By facilitating access to centrally located meeting infrastructure, the Council enables:
+            </p>
 
-              {/* Member Benefits Card */}
-              <div className="relative bg-white border border-[#D8D5CF] rounded-2xl shadow-sm overflow-hidden">
-                {/* Top gradient accent */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{
-                    background:
-                      "linear-gradient(to right, #2563EB, #2563EB)",
-                  }}
-                />
-                <div className="p-8">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="relative">
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center"
-                        style={{
-                          backgroundColor: "#2563EB15",
-                          border: "1px solid #2563EB25",
-                        }}
-                      >
-                        <BadgeCheck
-                          className="w-5 h-5 text-[#2563EB]"
-                          strokeWidth={1.5}
-                        />
-                      </div>
+            {/* Bilateral benefits as GlowingEffect cards */}
+            <div className="grid sm:grid-cols-2 gap-6 mb-8">
+              {bilateralBenefits.map((item, i) => (
+                <motion.div
+                  key={item}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                >
+                  <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="relative h-full bg-white rounded-xl p-6 flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                      <span className="text-base text-[#3D4152] leading-relaxed">{item}</span>
                     </div>
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base">
-                      Member Benefits
-                    </h3>
                   </div>
-                  <div className="h-px bg-[#D8D5CF] mb-5" />
-                  <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
-                    Eligible members may receive:
-                  </p>
-                  <ul className="space-y-4">
-                    {memberBenefits.map((item, i) => (
-                      <motion.li
-                        key={item}
-                        initial={
-                          shouldReduceMotion
-                            ? { opacity: 1 }
-                            : { opacity: 0, x: -12 }
-                        }
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-50px" }}
-                        transition={{ duration: 0.4, delay: i * 0.08 }}
-                        className="flex items-start gap-3"
-                      >
-                        <div
-                          className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                          style={{
-                            backgroundColor: "#2563EB10",
-                            border: "1px solid #2563EB20",
-                          }}
-                        >
-                          <CheckCircle2
-                            className="w-3.5 h-3.5 text-[#2563EB]"
-                            strokeWidth={2}
-                          />
-                        </div>
-                        <span className="text-base text-[#3D4152] leading-relaxed">
-                          {item}
-                        </span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Member Benefits as GlowingEffect cards */}
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: "#2563EB10", border: "1px solid #2563EB20" }}>
+                <BadgeCheck className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
               </div>
+              <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Eligible members may receive:</h3>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {memberBenefits.map((item, i) => (
+                <motion.div
+                  key={item}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                >
+                  <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="relative h-full bg-white rounded-xl p-6 flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                      <span className="text-base text-[#3D4152] leading-relaxed">{item}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </AnimatedSection>
         </div>
@@ -736,63 +552,28 @@ export default function MeetingSpacePage() {
         className="relative py-10 overflow-hidden"
         style={{ backgroundColor: "#EEECEA" }}
       >
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/30 to-transparent" />
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M0 60V0h60' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Terms & Conditions" title="Meeting Space Terms" color="red" />
 
-            <div className="relative bg-white border border-[#D8D5CF] rounded-2xl shadow-sm overflow-hidden max-w-3xl">
-              <div
-                className="absolute top-0 left-0 right-0 h-[2px]"
-                style={{
-                  background: "linear-gradient(to right, #C41E3A, #C41E3A60)",
-                }}
-              />
-              <div className="p-8">
-                <ul className="space-y-4">
-                  {meetingSpaceTerms.map((term, i) => (
-                    <motion.li
-                      key={term}
-                      initial={
-                        shouldReduceMotion
-                          ? { opacity: 1 }
-                          : { opacity: 0, x: -12 }
-                      }
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
-                      transition={{ duration: 0.4, delay: i * 0.08 }}
-                      className="flex items-start gap-3"
-                    >
-                      <div
-                        className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                        style={{
-                          backgroundColor: "#C41E3A10",
-                          border: "1px solid #C41E3A20",
-                        }}
-                      >
-                        <CheckCircle2
-                          className="w-3.5 h-3.5 text-[#C41E3A]"
-                          strokeWidth={2}
-                        />
-                      </div>
-                      <span className="text-base text-[#3D4152] leading-relaxed">
-                        {term}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {meetingSpaceTerms.map((term, i) => (
+                <motion.div
+                  key={term}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                >
+                  <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="relative h-full bg-white rounded-xl p-6 flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                      <span className="text-base text-[#3D4152] leading-relaxed">{term}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </AnimatedSection>
         </div>
@@ -800,18 +581,6 @@ export default function MeetingSpacePage() {
 
       {/* ── Optional Add-On Services (Member Rates) ────────────────── */}
       <section className="relative py-10 overflow-hidden bg-white">
-        {/* Top accent line */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/30 to-transparent" />
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 40V0h40' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E\")",
-            backgroundSize: "40px 40px",
-          }}
-        />
-
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Member Rates" title="Optional Add-On Services" color="green" />
@@ -822,52 +591,24 @@ export default function MeetingSpacePage() {
                 return (
                   <motion.div
                     key={item.title}
-                    initial={
-                      shouldReduceMotion
-                        ? { opacity: 1 }
-                        : { opacity: 0, y: 20 }
-                    }
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.5, delay: index * 0.08 }}
-                    className="group relative bg-white rounded-xl border border-[#D8D5CF] shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                   >
-                    {/* Left accent */}
-                    <div
-                      className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{
-                        background: `linear-gradient(to bottom, ${item.color}, ${item.color}40)`,
-                      }}
-                    />
-
-                    <div className="relative p-6 lg:p-7 flex items-start gap-5">
-                      <div className="relative flex-shrink-0">
-                        {/* Icon glow on hover */}
+                    <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                      <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                      <div className="relative h-full bg-white rounded-xl p-6 flex items-start gap-5">
                         <div
-                          className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500"
-                          style={{ background: item.color }}
-                        />
-                        <div
-                          className="relative w-11 h-11 rounded-xl flex items-center justify-center"
-                          style={{
-                            background: `${item.color}10`,
-                            border: `1px solid ${item.color}20`,
-                          }}
+                          className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                          style={{ background: `${item.color}10`, border: `1px solid ${item.color}20` }}
                         >
-                          <Icon
-                            className="w-5 h-5"
-                            style={{ color: item.color }}
-                            strokeWidth={1.5}
-                          />
+                          <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
                         </div>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-base text-[#5A5F72] leading-relaxed">
-                          {item.desc}
-                        </p>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
+                          <p className="text-base text-[#5A5F72] leading-relaxed">{item.desc}</p>
+                        </div>
                       </div>
                     </div>
                   </motion.div>

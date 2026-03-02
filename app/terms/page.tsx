@@ -280,7 +280,7 @@ export default function TermsPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="max-w-4xl">
+            <div>
               <SectionHeader label="Important Notice" title="Terms & Conditions" color="blue" />
 
               <motion.div
@@ -618,7 +618,7 @@ export default function TermsPage() {
                 <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                   Need Clarification?
                 </h2>
-                <p className="text-white/40 text-base sm:text-lg leading-relaxed max-w-2xl">
+                <p className="text-white/40 text-base sm:text-lg leading-relaxed">
                   To contact Us, please email Us at{" "}
                   <a
                     href="mailto:info@uptech.org.uk"

@@ -61,7 +61,7 @@ export default function AITechProgramsPage() {
       {/* Intro */}
       <Section variant="light">
         <AnimatedSection>
-          <div className="max-w-3xl">
+          <div>
             <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl leading-snug mb-6">
               UPTECH&apos;s AI and Tech Programs bridge the UK and Pakistan through cutting-edge AI services, collective company models, and innovative startup ecosystems that empower the next generation of tech leaders.
             </p>

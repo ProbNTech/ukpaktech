@@ -124,15 +124,19 @@ export default function MentorshipPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                 >
-                  <div
-                    className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
-                    style={{ color }}
-                  >
-                    {stat.value}
+                  <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="relative h-full bg-white rounded-xl p-6">
+                      <div
+                        className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                        style={{ color }}
+                      >
+                        {stat.value}
+                      </div>
+                      <p className="text-[#5A5F72] text-base">{stat.label}</p>
+                    </div>
                   </div>
-                  <p className="text-[#5A5F72] text-base">{stat.label}</p>
                 </motion.div>
               );
             })}
@@ -223,14 +227,14 @@ export default function MentorshipPage() {
                 return (
                   <motion.div
                     key={item.title}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                     initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
 
                     <div className="relative z-[1] p-6">
                       {/* Icon container */}
@@ -284,14 +288,14 @@ export default function MentorshipPage() {
                 return (
                   <motion.div
                     key={role.title}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                     initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
 
                     <div className="relative z-[1] p-8">
                       <div className="flex items-center gap-4 mb-4">
@@ -358,14 +362,14 @@ export default function MentorshipPage() {
                 return (
                   <motion.div
                     key={step.number}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                     initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
 
                     <div className="relative z-[1] p-6">
                       <div className="flex items-center gap-3 mb-5">
@@ -424,14 +428,14 @@ export default function MentorshipPage() {
               {mentorProfiles.map((item, i) => (
                 <motion.div
                   key={item.title}
-                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                 >
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm p-6 pl-8">
+                  <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm p-6 pl-8">
                   {/* Left accent border */}
                   <div
                     className="absolute top-4 bottom-4 left-0 w-1 rounded-r-full"
@@ -465,7 +469,7 @@ export default function MentorshipPage() {
           <AnimatedSection>
             <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Common questions about our mentorship programme." color="red" />
 
-            <div className="max-w-3xl mx-auto">
+            <div>
               <FAQSection faqs={faqs} />
             </div>
           </AnimatedSection>
@@ -517,7 +521,7 @@ export default function MentorshipPage() {
                 </span>
               </h2>
 
-              <p className="text-white/50 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
+              <p className="text-white/50 text-lg sm:text-xl leading-relaxed mb-8 mx-auto">
                 Whether you&apos;re an experienced founder or an industry specialist, this is your chance to support ambitious entrepreneurs and learn along the way.
               </p>
 

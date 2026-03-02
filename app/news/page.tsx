@@ -1,18 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Section } from "@/components/Section";
 import { NewsCard } from "@/components/NewsCard";
 import { Button } from "@/components/Button";
+import { PageHero } from "@/components/PageHero";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { articles } from "@/data/articles";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import {
-  ChevronRight, Newspaper, TrendingUp, Globe2, BookOpen,
+  Newspaper, TrendingUp, Globe2, BookOpen,
   Cpu, Shield, Award, Banknote, Landmark, Lightbulb,
   Zap, Radio, ArrowUpRight,
 } from "lucide-react";
@@ -50,204 +50,71 @@ export default function NewsPage() {
       : articles.filter((a) => a.category === activeCategory);
 
   return (
-    <div className="bg-[#EEECEA]">
-      {/* ══════════════════════════════════════════════════════════════
-           HERO — Futuristic Dark Glass with Grid Overlay
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden min-h-[540px]">
-        {/* Background image */}
-        <Image
-          src="https://images.unsplash.com/photo-1504711434969-e33886168d9c?w=2400&q=85&auto=format&fit=crop"
-          alt=""
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+    <div>
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <PageHero
+        label="News & Updates"
+        title="News & Updates"
+        subtitle="Stay informed with the latest news, insights, and announcements from the UK–Pakistan technology corridor."
+        image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <ShinyButton href="/membership">Become a Member</ShinyButton>
+          <Button href="#news-grid" variant="glass">Browse Articles</Button>
+        </div>
 
-        {/* Dark cinematic overlay */}
-        <div
-          className="absolute inset-0 z-[1] pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(10,14,30,0.92) 0%, rgba(10,14,30,0.75) 40%, rgba(10,14,30,0.60) 70%, rgba(10,14,30,0.85) 100%)",
-          }}
-        />
+        {/* Glassmorphism stat chips */}
+        <div className="flex flex-wrap gap-3 mt-6">
+          {[
+            { label: `${articles.length} Articles`, icon: Newspaper, color: "#2563EB" },
+            { label: `${new Set(articles.map((a) => a.category)).size} Categories`, icon: Radio, color: "#C41E3A" },
+            { label: "UK & Pakistan Coverage", icon: Globe2, color: "#22C55E" },
+          ].map((chip) => {
+            const Icon = chip.icon;
+            return (
+              <span
+                key={chip.label}
+                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/80 rounded-lg"
+                style={{
+                  background: "rgba(255,255,255,0.08)",
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                }}
+              >
+                <Icon className="w-3.5 h-3.5" style={{ color: chip.color }} />
+                {chip.label}
+              </span>
+            );
+          })}
+        </div>
+      </PageHero>
 
-        {/* Radial glow accents */}
-        <div
-          className="absolute top-0 right-0 w-[600px] h-[600px] z-[2] pointer-events-none opacity-20"
-          style={{
-            background: "radial-gradient(circle at center, rgba(37,99,235,0.4) 0%, transparent 70%)",
-          }}
-        />
-        <div
-          className="absolute bottom-0 left-0 w-[400px] h-[400px] z-[2] pointer-events-none opacity-15"
-          style={{
-            background: "radial-gradient(circle at center, rgba(34,197,94,0.3) 0%, transparent 70%)",
-          }}
-        />
-
-        {/* Content */}
-        <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 xl:px-20 pt-20 pb-20">
-          {/* Breadcrumb */}
-          <motion.nav
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="mb-8"
-          >
-            <ol className="flex items-center gap-2 text-sm text-white/40">
-              <li>
-                <Link href="/" className="hover:text-[#2563EB] transition-colors duration-300">Home</Link>
-              </li>
-              <ChevronRight className="w-3.5 h-3.5" />
-              <li className="text-[#2563EB] font-medium">News &amp; Updates</li>
-            </ol>
-          </motion.nav>
-
-          {/* Glowing accent line */}
-          <motion.div
-            initial={shouldReduceMotion ? {} : { scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.05 }}
-            className="w-20 h-[2px] mb-6 origin-left"
-            style={{
-              background: "linear-gradient(90deg, #2563EB, #C41E3A, transparent)",
-              boxShadow: "0 0 12px rgba(37,99,235,0.4)",
-            }}
-          />
-
-          {/* Title with gradient text */}
-          <motion.h1
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.08] mb-5 max-w-3xl"
-            style={{
-              background: "linear-gradient(135deg, #ffffff 0%, #e2e8f0 30%, #2563EB 70%, #C41E3A 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            News &amp; Updates
-          </motion.h1>
-
-          {/* Decorative divider */}
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, scaleX: 0 }}
-            animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full h-px mb-6 origin-left"
-            style={{
-              background: "linear-gradient(90deg, rgba(37,99,235,0.5), rgba(34,197,94,0.3), transparent)",
-            }}
-          />
-
-          <motion.p
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-lg text-white/60 max-w-2xl leading-relaxed mb-8"
-          >
-            Stay informed with the latest news, insights, and announcements from
-            the UK--Pakistan technology corridor.
-          </motion.p>
-
-          {/* Glass morphism stat chips */}
-          <motion.div
-            initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="flex flex-wrap gap-3"
-          >
+      {/* ── Stats ────────────────────────────────────────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { label: `${articles.length} Articles`, icon: Newspaper, color: "#2563EB" },
-              { label: `${new Set(articles.map((a) => a.category)).size} Categories`, icon: Radio, color: "#C41E3A" },
-              { label: "UK & Pakistan Coverage", icon: Globe2, color: "#22C55E" },
-            ].map((chip) => {
-              const Icon = chip.icon;
-              return (
-                <span
-                  key={chip.label}
-                  className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white/70 rounded-lg"
-                  style={{
-                    background: "rgba(255,255,255,0.05)",
-                    backdropFilter: "blur(12px)",
-                    WebkitBackdropFilter: "blur(12px)",
-                    border: `1px solid rgba(255,255,255,0.08)`,
-                    boxShadow: `inset 0 1px 0 rgba(255,255,255,0.05), 0 0 20px rgba(${chip.color === "#2563EB" ? "37,99,235" : chip.color === "#C41E3A" ? "196,30,58" : "34,197,94"},0.08)`,
-                  }}
-                >
-                  <Icon className="w-3.5 h-3.5" style={{ color: chip.color }} />
-                  {chip.label}
-                </span>
-              );
-            })}
-          </motion.div>
-        </div>
-
-        {/* Bottom fade to content */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-24 z-[5] pointer-events-none"
-          style={{
-            background: "linear-gradient(to top, #0E1221, transparent)",
-          }}
-        />
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════════
-           QUICK STATS — Dark glassmorphism stat strip
-      ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] -mt-6 bg-[#0E1221] py-8">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-              {[
-                { value: `${articles.length}+`, label: "Published Articles", color: "#2563EB", icon: Newspaper },
-                { value: `${new Set(articles.map((a) => a.category)).size}`, label: "Topic Categories", color: "#C41E3A", icon: Radio },
-                { value: "UK-PK", label: "Bilateral Coverage", color: "#22C55E", icon: Globe2 },
-                { value: "Live", label: "Real-time Updates", color: "#2563EB", icon: Zap },
-              ].map((stat) => {
-                const Icon = stat.icon;
-                return (
-                  <div
-                    key={stat.label}
-                    className="relative overflow-hidden rounded-xl p-5 group"
-                    style={{
-                      background: "rgba(28,31,46,0.8)",
-                      backdropFilter: "blur(16px)",
-                      WebkitBackdropFilter: "blur(16px)",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                    }}
-                  >
-                    {/* Hover glow */}
-                    <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      style={{
-                        background: `radial-gradient(circle at 50% 50%, ${stat.color}10, transparent 70%)`,
-                      }}
-                    />
-                    <div className="relative flex items-start gap-3">
-                      <div
-                        className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                        style={{ background: `${stat.color}15`, border: `1px solid ${stat.color}25` }}
-                      >
-                        <Icon className="w-5 h-5" style={{ color: stat.color }} />
-                      </div>
-                      <div>
-                        <p className="font-heading font-extrabold text-xl text-white leading-none mb-1">{stat.value}</p>
-                        <p className="text-xs text-white/40 uppercase tracking-wider font-medium">{stat.label}</p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+              { value: `${articles.length}+`, label: "Published Articles", color: "#2563EB" },
+              { value: `${new Set(articles.map((a) => a.category)).size}`, label: "Topic Categories", color: "#C41E3A" },
+              { value: "UK-PK", label: "Bilateral Coverage", color: "#22C55E" },
+              { value: "Live", label: "Real-time Updates", color: "#2563EB" },
+            ].map((stat) => (
+              <motion.div
+                key={stat.label}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4 }}
+                className="text-center flex flex-col items-center"
+              >
+                <p className="font-heading font-extrabold text-3xl" style={{ color: stat.color }}>{stat.value}</p>
+                <p className="text-base text-[#7A7E8F]">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
 
       {/* ══════════════════════════════════════════════════════════════
            CATEGORY FILTERS — Futuristic Dark Glass Tabs
@@ -387,7 +254,7 @@ export default function NewsPage() {
             <SectionHeader
               label="Featured coverage"
               title="Trending Topics"
-              subtitle="The themes shaping the UK--Pakistan technology corridor right now."
+              subtitle="The themes shaping the UK-Pakistan technology corridor right now."
               color="green"
             />
 
@@ -446,9 +313,9 @@ export default function NewsPage() {
                       /* Scroll to filter section */
                       document.querySelector("#news-grid")?.scrollIntoView({ behavior: "smooth", block: "start" });
                     }}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px text-left">
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px text-left h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg"
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-500"
                   >
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-4">
@@ -488,7 +355,7 @@ export default function NewsPage() {
             <SectionHeader
               label="Just published"
               title="Latest Articles"
-              subtitle="The most recent coverage from the UK--Pakistan technology corridor."
+              subtitle="The most recent coverage from the UK-Pakistan technology corridor."
               color="red"
             />
 

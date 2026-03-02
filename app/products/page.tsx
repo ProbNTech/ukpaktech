@@ -82,7 +82,7 @@ export default function ProductsPage() {
               );
             })}
           </div>
-          <div className="max-w-3xl">
+          <div>
             <p className="text-base font-semibold text-[#2563EB] uppercase tracking-wider mb-3">Our Platforms</p>
             <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl leading-snug mb-6">
               Technology Products Driving Cross-Border Innovation

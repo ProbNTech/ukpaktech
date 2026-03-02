@@ -62,7 +62,7 @@ function SectionHeader({
         </div>
       </div>
       {body && (
-        <p className="text-[#3D4152] text-base sm:text-lg leading-relaxed max-w-3xl">{body}</p>
+        <p className="text-[#3D4152] text-base sm:text-lg leading-relaxed">{body}</p>
       )}
     </div>
   );
@@ -169,7 +169,7 @@ function HomeEventsSection() {
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
               {filtered.map((event) => (
-                <Link key={event.id} href="/events" className="group flex flex-col bg-white border border-[#D8D5CF] rounded overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                <Link key={event.id} href="/events" className="flex flex-col bg-white border border-[#D8D5CF] rounded overflow-hidden transition-all duration-300 h-full">
                   <div className="aspect-[16/9] bg-[#1C1F2E] relative overflow-hidden">
                     {event.image ? (
                       <Image
@@ -345,7 +345,7 @@ export default function Home() {
             />
 
             {/* Featured: AI & Tech Programs — full-width accent card */}
-            <div className="relative rounded-2xl border border-[#D8D5CF]/60 p-px mb-5">
+            <div className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px mb-5 h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
               <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
             <Link href="/programs/ai-tech-programs" className="group block relative rounded-2xl overflow-hidden bg-gradient-to-r from-[#eef2ff] to-[#f0f9ff] border border-[#2563EB]/15 hover:border-[#2563EB]/30 hover:shadow-lg hover:shadow-[#2563EB]/8 transition-all duration-500">
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#2563EB] to-[#3b82f6]" />
@@ -362,7 +362,7 @@ export default function Home() {
                     <h3 className="font-heading font-extrabold text-[#1C1F2E] text-2xl lg:text-3xl leading-tight">AI & Tech Programs</h3>
                   </div>
                 </div>
-                <p className="text-[#3D4152] text-base sm:text-base leading-relaxed flex-1 max-w-xl">Driving AI innovation through training, certifications, and collaborative startup models across key sectors including energy, smart buildings, and agriculture.</p>
+                <p className="text-[#3D4152] text-base sm:text-base leading-relaxed flex-1">Driving AI innovation through training, certifications, and collaborative startup models across key sectors including energy, smart buildings, and agriculture.</p>
                 <div className="flex items-center gap-3 flex-shrink-0">
                   <span className="text-base font-semibold text-[#3D4152] group-hover:text-[#2563EB] transition-colors duration-300 hidden sm:inline">Explore</span>
                   <div className="w-10 h-10 rounded-full border border-[#2563EB]/20 group-hover:border-[#2563EB] group-hover:bg-[#2563EB] flex items-center justify-center transition-all duration-300">
@@ -382,9 +382,9 @@ export default function Home() {
               ].map((card) => {
                 const Icon = card.icon;
                 return (
-                  <div key={card.num} className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                  <div key={card.num} className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <Link href={card.href} className="group relative block bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+                  <Link href={card.href} className="relative h-full block bg-white rounded-2xl overflow-hidden transition-all duration-500">
                     <div className="p-6 lg:p-7">
                       <div className="flex items-center justify-between mb-5">
                         <div className="relative">
@@ -413,9 +413,9 @@ export default function Home() {
               ].map((card) => {
                 const Icon = card.icon;
                 return (
-                  <div key={card.num} className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                  <div key={card.num} className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <Link href={card.href} className="group relative block bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+                  <Link href={card.href} className="relative h-full block bg-white rounded-2xl overflow-hidden transition-all duration-500">
                     <div className="p-6 lg:p-7 flex items-start gap-5">
                       <div className="relative flex-shrink-0">
                         <div className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500" style={{ background: card.color }} />
@@ -462,9 +462,9 @@ export default function Home() {
               ].map((card) => {
                 const Icon = card.icon;
                 return (
-                  <div key={card.title} className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                  <div key={card.title} className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <Link href={card.href} className="group relative block bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-lg">
+                  <Link href={card.href} className="relative h-full block bg-white rounded-2xl overflow-hidden transition-all duration-500">
                     <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${card.color}, ${card.color}60)` }} />
                     <div className="p-6 lg:p-7">
                       <div className="flex items-center justify-between mb-5">

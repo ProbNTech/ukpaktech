@@ -600,10 +600,10 @@ export default function PrivacyPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="max-w-3xl">
+            <div>
               <p className="text-base font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Get in Touch</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">Contact Information</h2>
-              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+              <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-8">
                 For any questions about this Privacy Policy or our treatment of your Personal Information, please contact{" "}
                 <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a>
               </p>

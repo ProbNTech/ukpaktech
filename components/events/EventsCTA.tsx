@@ -15,7 +15,7 @@ export function EventsCTA() {
           Join UPTECH Today
         </h2>
         <div className="h-px bg-white/20 mb-6" />
-        <p className="text-lg text-white/80 leading-relaxed mb-10 max-w-xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+        <p className="text-lg text-white/80 leading-relaxed mb-10 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
           Become part of a trusted network shaping the future of UK–Pakistan technology collaboration.
         </p>
         <div className="flex flex-wrap gap-4">

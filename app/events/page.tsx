@@ -8,6 +8,7 @@ import { EventsCTA } from "@/components/events/EventsCTA";
 import { events } from "@/data/events";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 /* ------------------------------------------------------------------ */
 /*  Filter tabs                                                        */
@@ -121,16 +122,19 @@ export default function EventsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl" style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }} />
-                <div
-                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
-                  style={{ color: stat.color }}
-                >
-                  {stat.value}
+                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-xl p-6">
+                    <div
+                      className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                      style={{ color: stat.color }}
+                    >
+                      {stat.value}
+                    </div>
+                    <p className="text-[#5A5F72] text-base">{stat.label}</p>
+                  </div>
                 </div>
-                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>

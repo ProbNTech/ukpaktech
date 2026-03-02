@@ -64,7 +64,7 @@ export function SectionHeader({ title, label, subtitle, className = "", color = 
       </div>
       {subtitle && (
         <motion.p
-          className="text-[#3D4152] text-base sm:text-lg leading-relaxed max-w-3xl"
+          className="text-[#3D4152] text-base sm:text-lg leading-relaxed"
           initial={shouldReduceMotion ? {} : { opacity: 0, y: 10 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}

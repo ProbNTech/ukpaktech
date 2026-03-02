@@ -138,10 +138,10 @@ export default function TechExcellenceAwardsClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.06 }}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col h-full">
+                    <div className="relative bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm flex flex-col h-full">
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-start justify-between mb-3">
                         <h3 className="font-heading font-bold text-[#1C1F2E] text-base flex-1 pr-3 group-hover:text-[#2563EB] transition-colors duration-200">
@@ -186,10 +186,10 @@ export default function TechExcellenceAwardsClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.06 }}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col h-full">
+                    <div className="relative bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm flex flex-col h-full">
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-start justify-between mb-3">
                         <h3 className="font-heading font-bold text-[#1C1F2E] text-base flex-1 pr-3 group-hover:text-[#2563EB] transition-colors duration-200">
@@ -232,10 +232,10 @@ export default function TechExcellenceAwardsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 >
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
+                  <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-5">
                       <div className="relative">
@@ -320,7 +320,7 @@ export default function TechExcellenceAwardsClient() {
               subtitle="Common questions about the UK–Pakistan Tech Excellence Awards."
               color="blue"
             />
-            <div className="max-w-3xl">
+            <div>
               {faqs.map((faq, index) => (
                 <div
                   key={faq.question}

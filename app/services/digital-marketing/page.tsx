@@ -78,15 +78,19 @@ export default function DigitalMarketingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                <div
-                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
-                  style={{ color: stat.color }}
-                >
-                  {stat.value}
+                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-xl p-6">
+                    <div
+                      className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                      style={{ color: stat.color }}
+                    >
+                      {stat.value}
+                    </div>
+                    <p className="text-[#5A5F72] text-base">{stat.label}</p>
+                  </div>
                 </div>
-                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -100,10 +104,10 @@ export default function DigitalMarketingPage() {
           <AnimatedSection>
             <div>
               <SectionHeader label="Capabilities" title="Practical, Results-Driven Marketing for Technology Companies" color="blue" />
-              <p className="max-w-3xl text-[#5A5F72] text-lg sm:text-xl leading-relaxed mb-4">
+              <p className="text-[#5A5F72] text-lg sm:text-xl leading-relaxed mb-4">
                 The Digital Product Marketing Hub supports members in promoting their software solutions, platforms, and technology services across the UK, Europe, Middle East &amp; African continents. We help technology companies strengthen their market presence, reach new audiences, and accelerate cross-border growth.
               </p>
-              <p className="max-w-3xl text-[#5A5F72] text-lg sm:text-xl leading-relaxed">
+              <p className="text-[#5A5F72] text-lg sm:text-xl leading-relaxed">
                 Our Hub is designed to provide practical, results-driven marketing support tailored to the needs of tech SMEs, scale-ups, and established firms looking to expand into new markets.
               </p>
             </div>
@@ -128,10 +132,10 @@ export default function DigitalMarketingPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px flex flex-col"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px flex flex-col h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col flex-1">
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm flex flex-col flex-1">
                     <div className="p-6 flex flex-col flex-1">
                       <div className="relative mb-5">
                         <div className="relative w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${item.color}15`, border: `1px solid ${item.color}30` }}>
@@ -165,10 +169,10 @@ export default function DigitalMarketingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 >
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
+                  <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
                   <div className="p-6">
                     <div className="relative mb-5">
                       <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border" style={{ background: `${step.color}25`, borderColor: `${step.color}50` }}>
@@ -197,7 +201,7 @@ export default function DigitalMarketingPage() {
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Impact" title="Why It Matters" subtitle="The UK and Pakistan technology sectors present significant opportunities for collaboration, outsourcing, innovation partnerships, and product expansion. The Digital Product Marketing Hub helps members:" color="red" />
-            <ul className="space-y-0 max-w-2xl">
+            <ul className="space-y-0">
               {whyItMatters.map((item) => (
                 <li key={item} className="flex items-start gap-3 py-4 border-b border-[#D8D5CF] last:border-b-0">
                   <CheckCircle2 className="w-4 h-4 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
@@ -237,12 +241,12 @@ export default function DigitalMarketingPage() {
         />
         <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl">
+            <div>
               <p className="text-base font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Get Started</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Ready to Grow Your Market Presence Globally?
               </h2>
-              <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
+              <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-8">
                 Whether you are launching a new software solution, scaling into new territories, or seeking strategic partnerships, the Digital Product Marketing Hub provides the platform and support to help you grow.
               </p>
               <div className="flex flex-wrap gap-4">

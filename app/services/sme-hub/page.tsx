@@ -109,15 +109,19 @@ export default function SMEHubPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                <div
-                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
-                  style={{ color: stat.color }}
-                >
-                  {stat.value}
+                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-xl p-6">
+                    <div
+                      className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                      style={{ color: stat.color }}
+                    >
+                      {stat.value}
+                    </div>
+                    <p className="text-[#5A5F72] text-base">{stat.label}</p>
+                  </div>
                 </div>
-                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -131,7 +135,7 @@ export default function SMEHubPage() {
           <AnimatedSection>
             <div>
               <SectionHeader label="Your one-stop shop" title="Comprehensive Support for Growing Technology SMEs" color="blue" />
-              <p className="max-w-3xl text-[#5A5F72] text-lg sm:text-xl leading-relaxed">
+              <p className="text-[#5A5F72] text-lg sm:text-xl leading-relaxed">
                 Whether you&apos;re growing your business, entering new markets, securing public sector contracts, or boosting sales, SME Hub provides the support, connections, and insights you need. Our hub is your one-stop shop for overcoming challenges and unlocking new opportunities.
               </p>
             </div>
@@ -156,10 +160,10 @@ export default function SMEHubPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
                     <div className="p-8">
                       <div className="flex items-center gap-3 mb-5">
                         <div className="relative">
@@ -203,10 +207,10 @@ export default function SMEHubPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 >
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm pl-7">
+                  <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm pl-7">
                   <div className="absolute top-4 bottom-4 left-0 w-1 rounded-r-full" style={{ background: `linear-gradient(to bottom, ${market.color}, ${market.color}30)` }} />
                   <div className="p-6 pl-0">
                     <p className="text-3xl mb-3">{market.flag}</p>
@@ -239,10 +243,10 @@ export default function SMEHubPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
                     <div className="p-6">
                       <div className="relative mb-5">
                         <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border" style={{ background: `${color}25`, borderColor: `${color}50` }}>
@@ -281,10 +285,10 @@ export default function SMEHubPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
                     <div className="p-6">
                       <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{item.title}</h3>
                       <div className="h-px bg-[#D8D5CF] mb-3" />
@@ -327,12 +331,12 @@ export default function SMEHubPage() {
         />
         <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl">
+            <div>
               <p className="text-base font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Start Growing</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Ready to Accelerate Your SME&apos;s Growth?
               </h2>
-              <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
+              <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-8">
                 Join the SME Hub and gain access to sales insights, finance opportunities, talent networks, and exclusive member benefits across four key global markets.
               </p>
               <div className="flex flex-wrap gap-4">

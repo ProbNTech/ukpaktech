@@ -319,7 +319,7 @@ export default async function EventDetailPage({
                     Interested in Attending?
                   </h3>
                   <div className="h-px bg-white/20 mb-5" />
-                  <p className="text-base text-white/70 max-w-xl mb-8 leading-relaxed">
+                  <p className="text-base text-white/70 mb-8 leading-relaxed">
                     Visit the official event page for registration details, agenda updates, and delegate information.
                   </p>
                   <div className="flex flex-wrap gap-4">

@@ -128,7 +128,7 @@ export function PageHero({
                 transition={{ duration: 0.5, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
               >
                 {typeof subtitle === "string" ? (
-                  <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl">{subtitle}</p>
+                  <p className="text-base sm:text-lg text-white/90 leading-relaxed">{subtitle}</p>
                 ) : (
                   subtitle
                 )}

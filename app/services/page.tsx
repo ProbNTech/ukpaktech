@@ -55,7 +55,7 @@ export default function ServicesPage() {
       {/* Intro */}
       <Section variant="light">
         <AnimatedSection>
-          <div className="max-w-3xl">
+          <div>
             <p className="text-base font-semibold text-[#2563EB] uppercase tracking-wider mb-3">What we offer</p>
             <h2 className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl leading-snug mb-6">
               End-to-End Support for the UK–Pakistan Tech Ecosystem

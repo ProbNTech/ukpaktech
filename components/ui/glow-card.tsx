@@ -23,7 +23,7 @@ interface GlowCardProps {
  */
 export function GlowCard({ children, className = "", rounded = "rounded-2xl" }: GlowCardProps) {
   return (
-    <div className={`relative ${rounded} border border-[#D8D5CF]/60 p-px ${className}`}>
+    <div className={`group relative ${rounded} border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300 ${className}`}>
       <GlowingEffect
         spread={40}
         glow

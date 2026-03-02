@@ -4,6 +4,16 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import {
+  Building2, Eye, Target, CheckCircle2, Award, Users, Globe2,
+  Cpu, GraduationCap, Rocket, Trophy, Handshake, Plane,
+  Network, Store, Megaphone, Briefcase, Scale, UserCheck, Building,
+  Brain, ShoppingCart,
+  Banknote, Coins, TrendingUp,
+  CreditCard, FileText, MapPin, Send,
+  BriefcaseBusiness, CalendarDays, Newspaper, HelpCircle, Mail,
+  type LucideIcon,
+} from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────────────
    Navigation types & data
@@ -13,8 +23,9 @@ type NavGroup = {
   label: string;
   displayLabel?: string;
   tagline: string;
+  color: string;
   editorial: { headline: string; body: string; cta: { label: string; href: string } };
-  items: { label: string; href: string; desc: string }[];
+  items: { label: string; href: string; desc: string; icon: LucideIcon }[];
 };
 
 type NavLink = {
@@ -32,19 +43,20 @@ const navItems: NavItem[] = [
     kind: "group",
     label: "About",
     tagline: "Who we are",
+    color: "#2563EB",
     editorial: {
       headline: "Built on partnership,\ndriven by purpose.",
       body: "UPTECH is the strategic bridge between UK and Pakistan's technology ecosystems — forging alliances that create lasting impact.",
       cta: { label: "Our story →", href: "/about" },
     },
     items: [
-      { label: "About Us", href: "/about", desc: "Who we are, our founding story, and the values that drive the UK-Pakistan Tech Council." },
-      { label: "Vision", href: "/about/vision", desc: "A connected innovation ecosystem bridging UK and Pakistan's technology sectors." },
-      { label: "Mission", href: "/about/mission", desc: "Our strategic mission to transform Pakistan into a thriving global tech hub." },
-      { label: "Objectives", href: "/about/objectives", desc: "Core values, key activities, and broader impact goals driving our work." },
-      { label: "Founder & CEO", href: "/about/founder", desc: "Meet Khalil Choudhary — the visionary behind the UK-Pakistan Tech Council." },
-      { label: "Management Team", href: "/about/management-team", desc: "Board of directors, advisory council, and executive leadership team." },
-      { label: "UK-Pakistan Partnership", href: "/ecosystem/uk-pakistan-technology-partnership", desc: "The bilateral framework for joint ventures, policy dialogue, and shared R&D." },
+      { label: "About Us", href: "/about", desc: "Who we are, our founding story, and the values that drive the UK-Pakistan Tech Council.", icon: Building2 },
+      { label: "Vision", href: "/about/vision", desc: "A connected innovation ecosystem bridging UK and Pakistan's technology sectors.", icon: Eye },
+      { label: "Mission", href: "/about/mission", desc: "Our strategic mission to transform Pakistan into a thriving global tech hub.", icon: Target },
+      { label: "Objectives", href: "/about/objectives", desc: "Core values, key activities, and broader impact goals driving our work.", icon: CheckCircle2 },
+      { label: "Founder & CEO", href: "/about/founder", desc: "Meet Khalil Choudhary — the visionary behind the UK-Pakistan Tech Council.", icon: Award },
+      { label: "Management Team", href: "/about/management-team", desc: "Board of directors, advisory council, and executive leadership team.", icon: Users },
+      { label: "UK-Pakistan Partnership", href: "/ecosystem/uk-pakistan-technology-partnership", desc: "The bilateral framework for joint ventures, policy dialogue, and shared R&D.", icon: Globe2 },
     ],
   },
   /* 2 — What We Do */
@@ -52,18 +64,19 @@ const navItems: NavItem[] = [
     kind: "group",
     label: "What We Do",
     tagline: "Our work",
+    color: "#C41E3A",
     editorial: {
       headline: "From classroom\nto cutting edge.",
       body: "Our programmes, initiatives, and partnerships equip individuals and organisations with the skills, networks and capital to compete on the global stage.",
       cta: { label: "Explore programmes →", href: "/programs/ai-tech-programs" },
     },
     items: [
-      { label: "AI & Tech Programs", href: "/programs/ai-tech-programs", desc: "Structured initiatives in artificial intelligence, cloud, cybersecurity and emerging technology." },
-      { label: "Skill Development Centre", href: "/programs/skill-development-center", desc: "Practical training pathways, certification tracks and mentorship for the modern tech workforce." },
-      { label: "Incubation & Startups", href: "/programs/incubation-collective-startups", desc: "Early-stage support, co-working access, investor introductions and go-to-market acceleration." },
-      { label: "Tech Excellence Awards", href: "/initiatives/tech-excellence-awards", desc: "Annual recognition celebrating the individuals and organisations driving extraordinary innovation." },
-      { label: "UK–Pakistan Partnership", href: "/ecosystem/uk-pakistan-technology-partnership", desc: "The bilateral framework underpinning joint ventures, policy dialogue and shared R&D investment." },
-      { label: "Trade Delegations", href: "/ecosystem/trade-delegations-and-exhibitions", desc: "Curated business missions, trade expos and pavilion programmes placing members on the world stage." },
+      { label: "AI & Tech Programs", href: "/programs/ai-tech-programs", desc: "Structured initiatives in artificial intelligence, cloud, cybersecurity and emerging technology.", icon: Cpu },
+      { label: "Skill Development Centre", href: "/programs/skill-development-center", desc: "Practical training pathways, certification tracks and mentorship for the modern tech workforce.", icon: GraduationCap },
+      { label: "Incubation & Startups", href: "/programs/incubation-collective-startups", desc: "Early-stage support, co-working access, investor introductions and go-to-market acceleration.", icon: Rocket },
+      { label: "Tech Excellence Awards", href: "/initiatives/tech-excellence-awards", desc: "Annual recognition celebrating the individuals and organisations driving extraordinary innovation.", icon: Trophy },
+      { label: "UK–Pakistan Partnership", href: "/ecosystem/uk-pakistan-technology-partnership", desc: "The bilateral framework underpinning joint ventures, policy dialogue and shared R&D investment.", icon: Handshake },
+      { label: "Trade Delegations", href: "/ecosystem/trade-delegations-and-exhibitions", desc: "Curated business missions, trade expos and pavilion programmes placing members on the world stage.", icon: Plane },
     ],
   },
   /* 3 — Services */
@@ -71,19 +84,20 @@ const navItems: NavItem[] = [
     kind: "group",
     label: "Services",
     tagline: "How we support you",
+    color: "#22C55E",
     editorial: {
       headline: "Grow faster.\nGo further.",
       body: "From business networks to marketing support and legal infrastructure — everything your tech business needs to scale.",
       cta: { label: "Explore services →", href: "/services" },
     },
     items: [
-      { label: "Business Networks", href: "/services/business-networks", desc: "Strategic connections, market advice, and access to the Enterprise Europe Network." },
-      { label: "SME Hub", href: "/services/sme-hub", desc: "Sales insights, finance access, talent support, and exclusive member offers for growing tech SMEs." },
-      { label: "Digital Marketing Hub", href: "/services/digital-marketing", desc: "Promote your tech products and services across the UK, Europe, Middle East and Africa." },
-      { label: "Overseas Employment", href: "/services/overseas-employment", desc: "Contract employment connecting skilled tech professionals with international opportunities." },
-      { label: "Business Support", href: "/services/business-support", desc: "Company registration, legal, IP protection, investment documents, and data rooms." },
-      { label: "Mentorship", href: "/services/mentorship", desc: "One-to-one guidance from experienced UK and Pakistan tech leaders and entrepreneurs." },
-      { label: "Corporate Partnerships", href: "/services/corporate-partnerships", desc: "Strategic partnerships connecting founders, startups, accelerators, investors, and corporate partners." },
+      { label: "Business Networks", href: "/services/business-networks", desc: "Strategic connections, market advice, and access to the Enterprise Europe Network.", icon: Network },
+      { label: "SME Hub", href: "/services/sme-hub", desc: "Sales insights, finance access, talent support, and exclusive member offers for growing tech SMEs.", icon: Store },
+      { label: "Digital Marketing Hub", href: "/services/digital-marketing", desc: "Promote your tech products and services across the UK, Europe, Middle East and Africa.", icon: Megaphone },
+      { label: "Overseas Employment", href: "/services/overseas-employment", desc: "Contract employment connecting skilled tech professionals with international opportunities.", icon: Briefcase },
+      { label: "Business Support", href: "/services/business-support", desc: "Company registration, legal, IP protection, investment documents, and data rooms.", icon: Scale },
+      { label: "Mentorship", href: "/services/mentorship", desc: "One-to-one guidance from experienced UK and Pakistan tech leaders and entrepreneurs.", icon: UserCheck },
+      { label: "Corporate Partnerships", href: "/services/corporate-partnerships", desc: "Strategic partnerships connecting founders, startups, accelerators, investors, and corporate partners.", icon: Building },
     ],
   },
   /* 4 — Products */
@@ -91,14 +105,15 @@ const navItems: NavItem[] = [
     kind: "group",
     label: "Products",
     tagline: "Our platforms",
+    color: "#2563EB",
     editorial: {
       headline: "Platforms that\nchange industries.",
       body: "From AI talent matching to cross-border digital marketplaces — our products are creating new infrastructure for the digital economy.",
       cta: { label: "View products →", href: "/products" },
     },
     items: [
-      { label: "People AI Platform", href: "/initiatives/people-ai", desc: "A human-centric AI ecosystem connecting talent, tools and opportunity at national scale." },
-      { label: "TechMart Global", href: "/initiatives/techmart-global", desc: "A cross-border digital marketplace enabling UK and Pakistani tech firms to trade and collaborate." },
+      { label: "People AI Platform", href: "/initiatives/people-ai", desc: "A human-centric AI ecosystem connecting talent, tools and opportunity at national scale.", icon: Brain },
+      { label: "TechMart Global", href: "/initiatives/techmart-global", desc: "A cross-border digital marketplace enabling UK and Pakistani tech firms to trade and collaborate.", icon: ShoppingCart },
     ],
   },
   /* 5 — Funding */
@@ -106,15 +121,16 @@ const navItems: NavItem[] = [
     kind: "group",
     label: "Funding",
     tagline: "Investment & grants",
+    color: "#22C55E",
     editorial: {
       headline: "Fuelling growth\nat every stage.",
       body: "From pre-seed grants to Series A & B investment — access the capital, networks, and strategic guidance your tech business needs to scale globally.",
       cta: { label: "Explore funding →", href: "/ecosystem/funding-and-grants" },
     },
     items: [
-      { label: "Funding & Grants", href: "/ecosystem/funding-and-grants", desc: "Government grants, R&D incentives, sophisticated investor access, and funding strategy support." },
-      { label: "Startup Funding", href: "/ecosystem/startup-funding", desc: "Angel and VC access, pitch events, investor matchmaking, and funding strategy for early-stage startups." },
-      { label: "Series A & B Funding", href: "/ecosystem/series-funding", desc: "Growth-stage investment, cross-border expansion capital, and VC/PE partner introductions." },
+      { label: "Funding & Grants", href: "/ecosystem/funding-and-grants", desc: "Government grants, R&D incentives, sophisticated investor access, and funding strategy support.", icon: Banknote },
+      { label: "Startup Funding", href: "/ecosystem/startup-funding", desc: "Angel and VC access, pitch events, investor matchmaking, and funding strategy for early-stage startups.", icon: Coins },
+      { label: "Series A & B Funding", href: "/ecosystem/series-funding", desc: "Growth-stage investment, cross-border expansion capital, and VC/PE partner introductions.", icon: TrendingUp },
     ],
   },
   /* 6 — Membership */
@@ -122,16 +138,17 @@ const navItems: NavItem[] = [
     kind: "group",
     label: "Membership",
     tagline: "Join the council",
+    color: "#C41E3A",
     editorial: {
       headline: "Be part of\nthe movement.",
       body: "Join a growing network of technology companies, investors, and professionals driving UK–Pakistan bilateral growth.",
       cta: { label: "Become a member →", href: "/membership" },
     },
     items: [
-      { label: "Membership Overview", href: "/membership", desc: "Explore membership tiers, benefits, and how to join the UPTECH community." },
-      { label: "Apply for Membership", href: "/membership/apply", desc: "Complete the membership application form to join the UK–Pakistan Tech Council." },
-      { label: "Membership Directory", href: "/membership/directory", desc: "Browse our corporate and individual members shaping the UK–Pakistan technology corridor." },
-      { label: "London Meeting Space", href: "/meeting-space", desc: "Professional meeting and event facilities in central London for UPTECH members." },
+      { label: "Membership Overview", href: "/membership", desc: "Explore membership tiers, benefits, and how to join the UPTECH community.", icon: CreditCard },
+      { label: "Apply for Membership", href: "/membership/apply", desc: "Complete the membership application form to join the UK–Pakistan Tech Council.", icon: Send },
+      { label: "Membership Directory", href: "/membership/directory", desc: "Browse our corporate and individual members shaping the UK–Pakistan technology corridor.", icon: FileText },
+      { label: "London Meeting Space", href: "/meeting-space", desc: "Professional meeting and event facilities in central London for UPTECH members.", icon: MapPin },
     ],
   },
   /* 7 — Job Portal (direct link) */
@@ -347,20 +364,22 @@ export function Header() {
                   {/* ── LEFT: Section identity ──────────────────── */}
                   <div className="py-10 pr-10 flex flex-col justify-between">
                     <div>
-                      <p className="font-sans text-panel-eyebrow uppercase text-[#C41E3A] mb-3">
+                      <p className="font-sans text-panel-eyebrow uppercase mb-3" style={{ color: activeGroup.color }}>
                         {activeGroup.tagline}
                       </p>
                       <h2 className="font-heading font-bold text-panel-title text-[#0A0A0A]">
                         {activeGroup.label}
                       </h2>
-                      <span className="block w-8 h-[2px] bg-[#C41E3A] mt-4" />
+                      <span className="block w-8 h-[2px] mt-4" style={{ backgroundColor: activeGroup.color }} />
                     </div>
                     <p className="font-sans text-panel-desc text-[#6B6B6B] mt-6">
                       Navigate with the links to the right, or{" "}
                       <Link
                         href={activeGroup.editorial.cta.href}
                         onClick={() => setOpenGroup(null)}
-                        className="text-[#0A0A0A] underline underline-offset-2 hover:text-[#C41E3A] transition-colors duration-150"
+                        className="text-[#0A0A0A] underline underline-offset-2 transition-colors duration-150"
+                        onMouseEnter={(e) => e.currentTarget.style.color = activeGroup.color}
+                        onMouseLeave={(e) => e.currentTarget.style.color = '#0A0A0A'}
                       >
                         go to overview
                       </Link>
@@ -374,35 +393,44 @@ export function Header() {
                       Section index
                     </p>
                     <ul className="space-y-0">
-                      {activeGroup.items.map((item, i) => (
-                        <li key={item.href}>
-                          <Link
-                            href={item.href}
-                            onClick={() => setOpenGroup(null)}
-                            className="
-                              group/item flex items-start gap-5 py-4
-                              border-b border-[#E4E1DC] last:border-0
-                              hover:bg-[#FAFAFA] -mx-4 px-4
-                              transition-colors duration-150
-                            "
-                          >
-                            <span className="font-sans text-panel-index text-[#C5C2BE] tabular-nums mt-0.5 flex-shrink-0 w-4">
-                              {String(i + 1).padStart(2, "0")}
-                            </span>
-                            <div className="flex-1 min-w-0">
-                              <span className="block font-heading font-semibold text-panel-item text-[#0A0A0A] group-hover/item:text-[#C41E3A] transition-colors duration-150 leading-snug mb-1">
-                                {item.label}
+                      {activeGroup.items.map((item) => {
+                        const ItemIcon = item.icon;
+                        return (
+                          <li key={item.href}>
+                            <Link
+                              href={item.href}
+                              onClick={() => setOpenGroup(null)}
+                              className="
+                                group/item flex items-start gap-4 py-4
+                                border-b border-[#E4E1DC] last:border-0
+                                hover:bg-[#FAFAFA] -mx-4 px-4
+                                transition-colors duration-150
+                              "
+                            >
+                              <div
+                                className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 transition-all duration-200 group-hover/item:scale-110"
+                                style={{ backgroundColor: `${activeGroup.color}12`, border: `1px solid ${activeGroup.color}20` }}
+                              >
+                                <ItemIcon className="w-5 h-5" style={{ color: activeGroup.color }} strokeWidth={1.5} />
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <span className="block font-heading font-semibold text-panel-item text-[#0A0A0A] transition-colors duration-150 leading-snug mb-1">
+                                  {item.label}
+                                </span>
+                                <span className="block font-sans text-panel-desc text-[#6B6B6B]">
+                                  {item.desc}
+                                </span>
+                              </div>
+                              <span
+                                className="flex-shrink-0 font-sans text-panel-desc opacity-0 group-hover/item:opacity-100 transition-all duration-150 mt-0.5 group-hover/item:translate-x-0.5"
+                                style={{ color: activeGroup.color }}
+                              >
+                                →
                               </span>
-                              <span className="block font-sans text-panel-desc text-[#6B6B6B]">
-                                {item.desc}
-                              </span>
-                            </div>
-                            <span className="flex-shrink-0 font-sans text-panel-desc text-[#C41E3A] opacity-0 group-hover/item:opacity-100 transition-opacity duration-150 mt-0.5">
-                              →
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
 
@@ -428,9 +456,10 @@ export function Header() {
                         inline-flex items-center gap-2 mt-8
                         font-sans text-nav-label uppercase font-medium
                         text-[#0A0A0A] border-b border-[#0A0A0A] pb-px
-                        hover:text-[#C41E3A] hover:border-[#C41E3A]
                         transition-colors duration-150 self-start
                       "
+                      onMouseEnter={(e) => { e.currentTarget.style.color = activeGroup.color; e.currentTarget.style.borderColor = activeGroup.color; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = '#0A0A0A'; e.currentTarget.style.borderColor = '#0A0A0A'; }}
                     >
                       {activeGroup.editorial.cta.label}
                     </Link>
@@ -560,22 +589,33 @@ export function Header() {
                             transition={{ duration: 0.2 }}
                             className="overflow-hidden"
                           >
-                            {item.items.map((subItem) => (
-                              <li key={subItem.href} className="border-t border-[#E4E1DC]">
-                                <Link
-                                  href={subItem.href}
-                                  onClick={() => setIsMobileOpen(false)}
-                                  className="block px-8 py-3.5"
-                                >
-                                  <span className="block font-sans text-mobile-item font-medium text-[#0A0A0A] hover:text-[#C41E3A] transition-colors duration-150 mb-0.5">
-                                    {subItem.label}
-                                  </span>
-                                  <span className="block font-sans text-mobile-desc text-[#6B6B6B]">
-                                    {subItem.desc}
-                                  </span>
-                                </Link>
-                              </li>
-                            ))}
+                            {item.items.map((subItem) => {
+                              const SubIcon = subItem.icon;
+                              return (
+                                <li key={subItem.href} className="border-t border-[#E4E1DC]">
+                                  <Link
+                                    href={subItem.href}
+                                    onClick={() => setIsMobileOpen(false)}
+                                    className="flex items-start gap-3 px-6 py-3.5"
+                                  >
+                                    <div
+                                      className="w-8 h-8 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5"
+                                      style={{ backgroundColor: `${item.color}12`, border: `1px solid ${item.color}20` }}
+                                    >
+                                      <SubIcon className="w-4 h-4" style={{ color: item.color }} strokeWidth={1.5} />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                      <span className="block font-sans text-mobile-item font-medium text-[#0A0A0A] transition-colors duration-150 mb-0.5">
+                                        {subItem.label}
+                                      </span>
+                                      <span className="block font-sans text-mobile-desc text-[#6B6B6B]">
+                                        {subItem.desc}
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                              );
+                            })}
                           </motion.ul>
                         )}
                       </AnimatePresence>

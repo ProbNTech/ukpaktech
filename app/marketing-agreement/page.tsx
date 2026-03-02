@@ -245,7 +245,7 @@ export default function MarketingAgreementPage() {
       {/* Parties */}
       <Section variant="light">
         <AnimatedSection>
-          <div className="max-w-3xl">
+          <div>
             <p className="text-base font-semibold text-[#2563EB] uppercase tracking-widest mb-6">Agreement</p>
             <div className="bg-white border border-[#D8D5CF] rounded p-8">
               <h2 className="font-heading font-bold text-[#1C1F2E] text-xl mb-6">Marketing Agreement</h2>
@@ -277,7 +277,7 @@ export default function MarketingAgreementPage() {
             title="Agreement Clauses"
             subtitle="Complete terms governing marketing services, fees, responsibilities, and obligations."
           />
-          <div className="space-y-6 max-w-4xl">
+          <div className="space-y-6">
             {sections.map((section, i) => {
               const Icon = section.icon;
               return (
@@ -315,7 +315,7 @@ export default function MarketingAgreementPage() {
             title="Signatures"
             subtitle="This Agreement is executed by the authorised representatives of both parties."
           />
-          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl">
+          <div className="grid sm:grid-cols-2 gap-8">
             {[
               { party: "UK\u2013Pakistan Technology Council", role: "Council" },
               { party: "Product Owner", role: "Product Owner" },

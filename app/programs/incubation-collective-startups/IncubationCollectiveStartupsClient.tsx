@@ -96,15 +96,19 @@ export default function IncubationCollectiveStartupsClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                <div
-                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
-                  style={{ color: stat.color }}
-                >
-                  {stat.value}
+                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-xl p-6">
+                    <div
+                      className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                      style={{ color: stat.color }}
+                    >
+                      {stat.value}
+                    </div>
+                    <p className="text-[#5A5F72] text-base">{stat.label}</p>
+                  </div>
                 </div>
-                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -164,9 +168,9 @@ export default function IncubationCollectiveStartupsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm"
                 >
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
@@ -250,10 +254,10 @@ export default function IncubationCollectiveStartupsClient() {
                 color="red"
                 subtitle="A model that transforms how startups collaborate, share resources, and scale together."
               />
-              <p className="max-w-3xl text-[#5A5F72] text-lg leading-relaxed mb-5">
+              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                 Our collective startup model emphasises collaboration over competition, enabling entrepreneurs to pool resources, share infrastructure, and reduce individual risk while amplifying collective success.
               </p>
-              <p className="max-w-3xl text-[#5A5F72] text-lg leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 By combining expertise, networks, and market access, collective startups can tackle larger opportunities, enter new markets faster, and build sustainable ventures that benefit from sector-driven solutions and cross-border partnerships.
               </p>
             </div>
@@ -301,9 +305,9 @@ export default function IncubationCollectiveStartupsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm"
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm"
                 >
                   <div className="p-6">
                     <span
@@ -352,9 +356,9 @@ export default function IncubationCollectiveStartupsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px">
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm flex flex-col h-full"
+                    <div className="relative bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm flex flex-col h-full"
                 >
                   <div className="p-6 flex flex-col flex-1">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">

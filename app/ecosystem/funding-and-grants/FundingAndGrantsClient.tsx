@@ -178,15 +178,19 @@ export default function FundingAndGrantsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="relative text-center bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                 >
-                  <p
-                    className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
-                    style={{ color }}
-                  >
-                    {stat.value}
-                  </p>
-                  <p className="text-[#5A5F72] text-base">{stat.label}</p>
+                  <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="relative h-full bg-white rounded-xl p-6">
+                      <p
+                        className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                        style={{ color }}
+                      >
+                        {stat.value}
+                      </p>
+                      <p className="text-[#5A5F72] text-base">{stat.label}</p>
+                    </div>
+                  </div>
                 </motion.div>
               );
             })}
@@ -205,7 +209,7 @@ export default function FundingAndGrantsClient() {
                 color="blue"
                 subtitle="UPTECH provides access to funding opportunities and grants designed to support technology innovation, startup growth, and cross-border collaboration between the UK and Pakistan."
               />
-              <p className="text-[#5A5F72] text-lg leading-relaxed max-w-3xl">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Our funding programs enable entrepreneurs, researchers, and organisations to turn innovative ideas into reality. Whether you&apos;re a startup seeking seed funding, a researcher looking for grant support, or an enterprise exploring partnership opportunities, we connect you with the right funding sources and resources.
               </p>
             </div>
@@ -219,10 +223,10 @@ export default function FundingAndGrantsClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative rounded-2xl bg-white shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg transition-all duration-500 overflow-hidden">
+                    <div className="relative h-full rounded-2xl bg-white shadow-sm p-7 transition-all duration-500 overflow-hidden">
                     {/* Icon */}
                     <div className="relative mb-5">
                       <div
@@ -267,10 +271,10 @@ export default function FundingAndGrantsClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative rounded-2xl bg-white shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg transition-all duration-500 overflow-hidden">
+                    <div className="relative h-full rounded-2xl bg-white shadow-sm p-7 transition-all duration-500 overflow-hidden">
                     {/* Icon */}
                     <div className="relative mb-5">
                       <div
@@ -341,10 +345,10 @@ export default function FundingAndGrantsClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.5, delay: i * 0.12 }}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative rounded-2xl bg-white shadow-sm p-8 flex flex-col hover:-translate-y-1.5 hover:shadow-lg transition-all duration-500 overflow-hidden"
+                    <div className="relative h-full rounded-2xl bg-white shadow-sm p-8 flex flex-col transition-all duration-500 overflow-hidden"
                   >
                     {/* Stage label + icon row */}
                     <div className="relative flex items-center gap-4 mb-6">
@@ -414,10 +418,10 @@ export default function FundingAndGrantsClient() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative rounded-2xl bg-white shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg transition-all duration-500 overflow-hidden"
+                    <div className="relative h-full rounded-2xl bg-white shadow-sm p-7 transition-all duration-500 overflow-hidden"
                   >
                     {/* Numbered glowing circle + icon */}
                     <div className="relative flex items-center gap-3 mb-5">

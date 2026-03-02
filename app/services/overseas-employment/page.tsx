@@ -88,15 +88,19 @@ export default function OverseasEmploymentPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                <div
-                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
-                  style={{ color: stat.color }}
-                >
-                  {stat.value}
+                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-xl p-6">
+                    <div
+                      className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                      style={{ color: stat.color }}
+                    >
+                      {stat.value}
+                    </div>
+                    <p className="text-[#5A5F72] text-base">{stat.label}</p>
+                  </div>
                 </div>
-                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -110,10 +114,10 @@ export default function OverseasEmploymentPage() {
           <AnimatedSection>
             <div>
               <SectionHeader label="Overview" title="Our Focus" color="blue" />
-              <p className="max-w-3xl text-[#5A5F72] text-lg sm:text-xl leading-relaxed mb-4">
+              <p className="text-[#5A5F72] text-lg sm:text-xl leading-relaxed mb-4">
                 We support ethical, compliant, and commercially viable pathways that connect skilled professionals with long-term, short-term and project-based opportunities across UK, Europe, Middle East and Pakistan.
               </p>
-              <p className="max-w-3xl text-[#5A5F72] text-lg sm:text-xl leading-relaxed">
+              <p className="text-[#5A5F72] text-lg sm:text-xl leading-relaxed">
                 We prioritise transparency, compliance, and long-term relationship building. Our goal is to create structured, sustainable talent mobility between the UK, Europe, Middle East and Pakistan&apos;s technology sectors. By enabling overseas contract employment, we strengthen collaboration, accelerate knowledge exchange, and support innovation across both ecosystems.
               </p>
             </div>
@@ -134,10 +138,10 @@ export default function OverseasEmploymentPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
               >
                 <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
+                <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
                 <div className="p-8">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="relative">
@@ -172,10 +176,10 @@ export default function OverseasEmploymentPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: 0.15, duration: 0.5, ease: "easeOut" }}
-                className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
               >
                 <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
+                <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
                 <div className="p-8">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="relative">
@@ -222,10 +226,10 @@ export default function OverseasEmploymentPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 >
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
+                  <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
                   <div className="p-6">
                     <div className="relative mb-5">
                       <div className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border" style={{ background: `${step.color}25`, borderColor: `${step.color}50` }}>
@@ -264,10 +268,10 @@ export default function OverseasEmploymentPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="relative rounded-2xl border border-[#D8D5CF]/60 p-px"
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="group relative bg-white rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-lg transition-all duration-300 shadow-sm">
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
                     <div className="p-6">
                       <div className="relative mb-4">
                         <div className="relative w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${sector.color}15`, border: `1px solid ${sector.color}30` }}>
@@ -315,12 +319,12 @@ export default function OverseasEmploymentPage() {
         />
         <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-3xl">
+            <div>
               <p className="text-base font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Get Started</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
                 Get connected. Access opportunities. Grow your impact.
               </h2>
-              <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
+              <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-8">
                 Overseas contract employment through the Council provides a trusted, compliant, and efficient way to connect talent with opportunity. Our goal is to accelerate growth, enhance careers, and strengthen the UK-Pakistan tech ecosystem through high-quality contract placements.
               </p>
               <div className="flex flex-wrap gap-4">

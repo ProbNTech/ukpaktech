@@ -8,6 +8,7 @@ import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import {
   Brain,
   Cpu,
@@ -82,16 +83,19 @@ export default function PeopleAIClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl" style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }} />
-                <div
-                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
-                  style={{ color: stat.color }}
-                >
-                  {stat.value}
+                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-xl p-6">
+                    <div
+                      className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                      style={{ color: stat.color }}
+                    >
+                      {stat.value}
+                    </div>
+                    <p className="text-[#5A5F72] text-base">{stat.label}</p>
+                  </div>
                 </div>
-                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -108,10 +112,10 @@ export default function PeopleAIClient() {
                 title="People AI Platform"
                 color="blue"
               />
-              <p className="max-w-3xl text-[#5A5F72] text-lg leading-relaxed mb-5">
+              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                 We focus on creating inclusive AI solutions that support workforce enablement, skills development, and cross-border collaboration between the UK and Pakistan.
               </p>
-              <p className="max-w-3xl text-[#5A5F72] text-lg leading-relaxed">
+              <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Through a human-centric approach, we bridge technology and professional services to enable sustainable workforce transformation across sectors.
               </p>
             </div>

@@ -34,7 +34,7 @@ export function GlobalCTA({
           <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 drop-shadow-[0_0_15px_rgba(0,0,0,0.9)]">
             {title}
           </h2>
-          <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
+          <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]">
             {subtitle}
           </p>
           <div className="flex flex-wrap items-center gap-4">

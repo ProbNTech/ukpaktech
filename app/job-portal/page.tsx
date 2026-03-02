@@ -7,6 +7,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import {
   Search,
   Building2,
@@ -85,7 +86,7 @@ export default function JobPortalPage() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#EEECEA]">
+    <div>
       {/* ── Hero Section ── */}
       <PageHero
         label="UPTECH Careers"
@@ -110,16 +111,19 @@ export default function JobPortalPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl" style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }} />
-                <div
-                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
-                  style={{ color: stat.color }}
-                >
-                  {stat.value}
+                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-xl p-6">
+                    <div
+                      className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                      style={{ color: stat.color }}
+                    >
+                      {stat.value}
+                    </div>
+                    <p className="text-[#5A5F72] text-base">{stat.label}</p>
+                  </div>
                 </div>
-                <p className="text-[#5A5F72] text-base">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -128,7 +132,7 @@ export default function JobPortalPage() {
 
       {/* ── Who It's For ── */}
       <section id="who-its-for" className="relative bg-[#EEECEA]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-16">
           <AnimatedSection>
             <SectionHeader
               label="Who It's For"
@@ -144,39 +148,35 @@ export default function JobPortalPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5 }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                {/* Colored top border */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{ background: "linear-gradient(to right, #2563EB, #2563EB60)" }}
-                />
-
-                <div className="p-8">
-                  <div className="mb-6">
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center"
-                      style={{
-                        background: "#2563EB15",
-                        border: "1px solid #2563EB30",
-                      }}
-                    >
-                      <Building2 className="w-6 h-6 text-[#2563EB]" strokeWidth={1.5} />
+                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-xl overflow-hidden p-8">
+                    <div className="mb-6">
+                      <div
+                        className="w-14 h-14 rounded-xl flex items-center justify-center"
+                        style={{
+                          background: "#2563EB15",
+                          border: "1px solid #2563EB30",
+                        }}
+                      >
+                        <Building2 className="w-6 h-6 text-[#2563EB]" strokeWidth={1.5} />
+                      </div>
                     </div>
-                  </div>
 
-                  <h3 className="font-heading font-bold text-xl text-[#1C1F2E] mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
-                    For Employers
-                  </h3>
-                  <div className="h-px bg-[#D8D5CF] mb-5" />
-                  <ul className="space-y-3">
-                    {forEmployers.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                        <span className="text-base text-[#5A5F72] leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    <h3 className="font-heading font-bold text-xl text-[#1C1F2E] mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
+                      For Employers
+                    </h3>
+                    <div className="h-px bg-[#D8D5CF] mb-5" />
+                    <ul className="space-y-3">
+                      {forEmployers.map((item) => (
+                        <li key={item} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                          <span className="text-base text-[#5A5F72] leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
 
@@ -186,39 +186,35 @@ export default function JobPortalPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                {/* Colored top border */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px]"
-                  style={{ background: "linear-gradient(to right, #22C55E, #22C55E60)" }}
-                />
-
-                <div className="p-8">
-                  <div className="mb-6">
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center"
-                      style={{
-                        background: "#22C55E15",
-                        border: "1px solid #22C55E30",
-                      }}
-                    >
-                      <Users className="w-6 h-6 text-[#22C55E]" strokeWidth={1.5} />
+                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-xl overflow-hidden p-8">
+                    <div className="mb-6">
+                      <div
+                        className="w-14 h-14 rounded-xl flex items-center justify-center"
+                        style={{
+                          background: "#22C55E15",
+                          border: "1px solid #22C55E30",
+                        }}
+                      >
+                        <Users className="w-6 h-6 text-[#22C55E]" strokeWidth={1.5} />
+                      </div>
                     </div>
-                  </div>
 
-                  <h3 className="font-heading font-bold text-xl text-[#1C1F2E] mb-2 group-hover:text-[#22C55E] transition-colors duration-200">
-                    For Job Seekers
-                  </h3>
-                  <div className="h-px bg-[#D8D5CF] mb-5" />
-                  <ul className="space-y-3">
-                    {forJobSeekers.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                        <span className="text-base text-[#5A5F72] leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    <h3 className="font-heading font-bold text-xl text-[#1C1F2E] mb-2 group-hover:text-[#22C55E] transition-colors duration-200">
+                      For Job Seekers
+                    </h3>
+                    <div className="h-px bg-[#D8D5CF] mb-5" />
+                    <ul className="space-y-3">
+                      {forJobSeekers.map((item) => (
+                        <li key={item} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                          <span className="text-base text-[#5A5F72] leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -228,7 +224,7 @@ export default function JobPortalPage() {
 
       {/* ── Portal Features ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-16">
           <AnimatedSection>
             <SectionHeader
               label="Platform Features"
@@ -247,39 +243,34 @@ export default function JobPortalPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                   >
-                    {/* Colored top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[3px]"
-                      style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
-                    />
-
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-5">
-                        <div
-                          className="w-12 h-12 rounded-xl flex items-center justify-center"
-                          style={{
-                            background: `${item.color}15`,
-                            border: `1px solid ${item.color}30`,
-                          }}
-                        >
-                          <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
+                    <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                      <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                      <div className="relative h-full bg-white rounded-xl overflow-hidden p-6">
+                        <div className="flex items-center justify-between mb-5">
+                          <div
+                            className="w-12 h-12 rounded-xl flex items-center justify-center"
+                            style={{
+                              background: `${item.color}15`,
+                              border: `1px solid ${item.color}30`,
+                            }}
+                          >
+                            <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
+                          </div>
+                          <span
+                            className="text-base font-bold tracking-[0.2em] uppercase"
+                            style={{ color: `${item.color}60` }}
+                          >
+                            {item.num}
+                          </span>
                         </div>
-                        {/* Numbered label */}
-                        <span
-                          className="text-base font-bold tracking-[0.2em] uppercase"
-                          style={{ color: `${item.color}60` }}
-                        >
-                          {item.num}
-                        </span>
-                      </div>
 
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
-                        {item.title}
-                      </h3>
-                      <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#3D4152] text-base leading-relaxed">{item.desc}</p>
+                        <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
+                          {item.title}
+                        </h3>
+                        <div className="h-px bg-[#D8D5CF] mb-3" />
+                        <p className="text-[#3D4152] text-base leading-relaxed">{item.desc}</p>
+                      </div>
                     </div>
                   </motion.div>
                 );
@@ -291,7 +282,7 @@ export default function JobPortalPage() {
 
       {/* ── How It Works ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-16">
           <AnimatedSection>
             <SectionHeader
               label="Process"
@@ -310,48 +301,43 @@ export default function JobPortalPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                   >
-                    {/* Colored top border */}
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[3px]"
-                      style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}60)` }}
-                    />
-
-                    <div className="p-6">
-                      {/* Number circle and icon */}
-                      <div className="flex items-center justify-between mb-5">
-                        <div
-                          className="w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border"
-                          style={{
-                            background: `${item.color}25`,
-                            borderColor: `${item.color}50`,
-                          }}
-                        >
-                          {item.step}
+                    <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                      <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                      <div className="relative h-full bg-white rounded-xl overflow-hidden p-6">
+                        <div className="flex items-center justify-between mb-5">
+                          <div
+                            className="w-10 h-10 rounded-full flex items-center justify-center text-base font-bold border"
+                            style={{
+                              background: `${item.color}25`,
+                              borderColor: `${item.color}50`,
+                              color: item.color,
+                            }}
+                          >
+                            {item.step}
+                          </div>
+                          <div
+                            className="w-10 h-10 rounded-xl flex items-center justify-center"
+                            style={{
+                              background: `${item.color}15`,
+                              border: `1px solid ${item.color}30`,
+                            }}
+                          >
+                            <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
+                          </div>
                         </div>
-                        <div
-                          className="w-10 h-10 rounded-xl flex items-center justify-center"
-                          style={{
-                            background: `${item.color}15`,
-                            border: `1px solid ${item.color}30`,
-                          }}
-                        >
-                          <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
+
+                        <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
+                          {item.title}
+                        </h3>
+                        <p className="text-[#3D4152] text-base leading-relaxed mb-4">{item.desc}</p>
+
+                        <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
+                          <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: item.color }} strokeWidth={2} />
+                          <span className="text-base font-semibold" style={{ color: item.color }}>
+                            {item.outcome}
+                          </span>
                         </div>
-                      </div>
-
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
-                        {item.title}
-                      </h3>
-                      <p className="text-[#3D4152] text-base leading-relaxed mb-4">{item.desc}</p>
-
-                      {/* Outcome */}
-                      <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
-                        <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: item.color }} strokeWidth={2} />
-                        <span className="text-base font-semibold" style={{ color: item.color }}>
-                          {item.outcome}
-                        </span>
                       </div>
                     </div>
                   </motion.div>
@@ -377,7 +363,7 @@ export default function JobPortalPage() {
 
       {/* ── Key Sectors ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-18">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-16">
           <AnimatedSection>
             <SectionHeader
               label="Industries"
@@ -396,31 +382,27 @@ export default function JobPortalPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                   >
-                    {/* Colored left accent */}
-                    <div
-                      className="absolute top-4 bottom-4 left-0 w-1 rounded-r-full"
-                      style={{ background: `linear-gradient(to bottom, ${sector.color}, ${sector.color}30)` }}
-                    />
+                    <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                      <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                      <div className="relative h-full bg-white rounded-xl overflow-hidden p-6">
+                        <div className="flex items-start gap-4">
+                          <div
+                            className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
+                            style={{
+                              background: `${sector.color}15`,
+                              border: `1px solid ${sector.color}30`,
+                            }}
+                          >
+                            <Icon className="w-5 h-5" style={{ color: sector.color }} strokeWidth={1.5} />
+                          </div>
 
-                    <div className="p-6 pl-7">
-                      <div className="flex items-start gap-4">
-                        <div
-                          className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center"
-                          style={{
-                            background: `${sector.color}15`,
-                            border: `1px solid ${sector.color}30`,
-                          }}
-                        >
-                          <Icon className="w-5 h-5" style={{ color: sector.color }} strokeWidth={1.5} />
-                        </div>
-
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1 group-hover:text-[#2563EB] transition-colors duration-200">
-                            {sector.title}
-                          </h3>
-                          <p className="text-[#3D4152] text-base leading-relaxed">{sector.desc}</p>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1 group-hover:text-[#2563EB] transition-colors duration-200">
+                              {sector.title}
+                            </h3>
+                            <p className="text-[#3D4152] text-base leading-relaxed">{sector.desc}</p>
+                          </div>
                         </div>
                       </div>
                     </div>

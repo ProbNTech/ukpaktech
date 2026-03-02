@@ -107,7 +107,7 @@ export default function GDPRPage() {
                 );
               })}
             </div>
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4, delay: 0.3 }} className="mt-8 relative bg-gradient-to-br from-[#22C55E]/10 to-[#2563EB]/10 border border-[#22C55E]/20 rounded-xl p-6 overflow-hidden max-w-4xl">
+            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4, delay: 0.3 }} className="mt-8 relative bg-gradient-to-br from-[#22C55E]/10 to-[#2563EB]/10 border border-[#22C55E]/20 rounded-xl p-6 overflow-hidden">
               <div className="relative">
                 <Mail className="w-5 h-5 text-[#22C55E] mb-3" strokeWidth={1.5} />
                 <p className="text-[#5A5F72] text-base leading-relaxed">If you want to exercise any of the above rights, please email us at{" "}<a href="mailto:info@uptech.org.uk" className="text-[#22C55E] hover:text-[#4ade80] transition-colors">info@uptech.org.uk</a>{" "}and clearly state in the email subject line: RIGHTS REQUEST. We may be required to ask for further information and/or evidence of identity. We will endeavor to respond fully to all requests within 10 working days of your request, however if we are unable to do so we will contact you with reasons for the delay.</p>
@@ -124,7 +124,7 @@ export default function GDPRPage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Legal Basis" title="Lawful Processing" subtitle="Data protection law requires us to rely on one or more lawful grounds to process your personal information. We consider the following grounds to be relevant:" color="blue" />
-            <div className="grid md:grid-cols-2 gap-5 max-w-5xl">
+            <div className="grid md:grid-cols-2 gap-5">
               {lawfulBases.map((basis, i) => {
                 const Icon = basis.icon;
                 return (
@@ -151,7 +151,7 @@ export default function GDPRPage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Retention Policy" title="Data Retention" subtitle="We keep your information for no longer than is necessary for the purposes it was collected for. The length of time we retain your personal information is determined by operational and legal considerations." color="red" />
-            <div className="max-w-4xl">
+            <div>
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4 }} className="grid grid-cols-[1fr_2fr] gap-4 px-6 py-4 mb-2">
                 <div className="text-base font-bold tracking-[0.2em] uppercase text-[#C41E3A]">Category</div>
                 <div className="text-base font-bold tracking-[0.2em] uppercase text-[#C41E3A]">Retention Period</div>
@@ -181,7 +181,7 @@ export default function GDPRPage() {
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Data Security" title="Security Measures" color="green" />
-            <div className="max-w-4xl">
+            <div>
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
@@ -206,7 +206,7 @@ export default function GDPRPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <div className="max-w-3xl">
+            <div>
               <p className="text-base font-bold tracking-[0.2em] uppercase text-[#2563EB] mb-4">Get in Touch</p>
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">Contact Us</h2>
               <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-4">For any questions about this Privacy Policy or our treatment of your Personal Information, please contact{" "}<a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a></p>

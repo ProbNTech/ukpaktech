@@ -60,7 +60,7 @@ export function PillarGrid() {
             animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
             transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full">
+            <div className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
               <GlowingEffect
                 spread={40}
                 glow
@@ -69,7 +69,7 @@ export function PillarGrid() {
                 inactiveZone={0.01}
                 borderWidth={2}
               />
-              <Card hover className="h-full group rounded-2xl">
+              <Card className="h-full rounded-2xl">
                 <div className="flex items-start justify-between mb-6">
                   <div
                     className="w-14 h-14 rounded-xl flex items-center justify-center border"
