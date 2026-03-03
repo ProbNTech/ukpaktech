@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface NewsCardProps {
   slug: string;
@@ -15,36 +16,65 @@ export interface NewsCardProps {
   index?: number;
 }
 
-/**
- * Editorial news card — flat style matching ukproptech.com pattern:
- * image → date (muted) → bold title → category tags → thin rule at bottom
- * No card borders, no box shadows, no rounded corners on the card itself.
- */
+/* Brand-color mapping for category badges */
+const categoryColors: Record<string, string> = {
+  Policy: "#2563EB",
+  Events: "#C41E3A",
+  Investment: "#22C55E",
+  Leadership: "#1C1F2E",
+  Technology: "#2563EB",
+  Industry: "#EAB308",
+  Innovation: "#22C55E",
+  Cybersecurity: "#C41E3A",
+  Funding: "#EAB308",
+  Research: "#2563EB",
+  Awards: "#EAB308",
+  Regulation: "#C41E3A",
+};
+
+function getCategoryColor(category: string): string {
+  return categoryColors[category] || "#2563EB";
+}
+
 export function NewsCard({ slug, title, category, date, image, excerpt, index = 0 }: NewsCardProps) {
+  const [isHovered, setIsHovered] = useState(false);
+  const color = getCategoryColor(category);
+
+  const detailVariants = {
+    hidden: { opacity: 0, height: 0, marginTop: 0 },
+    visible: {
+      opacity: 1,
+      height: "auto",
+      marginTop: "0.75rem",
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
+  };
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
+      initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      whileHover={{ y: -6 }}
+      className="cursor-pointer"
     >
       <Link
         href={`/news/${slug}`}
-        className="group flex flex-col h-full"
+        className="group block h-full overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl border border-[#D8D5CF]/40"
       >
-        {/* Image — 16:9, slight zoom on hover */}
-        <div className="relative aspect-[16/9] overflow-hidden bg-[#1C1F2E] mb-5 flex items-center justify-center">
+        {/* Image with gradient overlay */}
+        <div className="relative h-44 w-full overflow-hidden bg-[#1C1F2E]">
           {image ? (
-            <>
-              <Image
-                src={image}
-                alt={title}
-                fill
-                className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
-              <div className="absolute inset-0 bg-[#2563EB]/0 group-hover:bg-[#2563EB]/10 transition-colors duration-500 z-10" />
-            </>
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
           ) : (
             <div
               className="absolute inset-0 opacity-10"
@@ -54,32 +84,68 @@ export function NewsCard({ slug, title, category, date, image, excerpt, index = 
               }}
             />
           )}
-        </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
 
-        {/* Date */}
-        <p className="text-base text-[#7A7E8F] mb-2">{date}</p>
-
-        {/* Title */}
-        <h3 className="font-heading font-bold text-[1.05rem] leading-snug text-[#1C1F2E] mb-3 line-clamp-3 group-hover:text-[#2563EB] transition-colors duration-200">
-          {title}
-        </h3>
-
-        {/* Excerpt — shown on hover/always, 2 lines */}
-        <p className="text-base text-[#3D4152] leading-relaxed line-clamp-2 mb-4 flex-1">
-          {excerpt}
-        </p>
-
-        {/* Category tag — orange-red style matching reference */}
-        <div className="flex flex-wrap items-center gap-2 mb-4">
-          <span className="inline-flex items-center gap-1 text-base font-semibold text-[#2563EB] group-hover:text-[#1D4ED8] transition-colors duration-200">
-            <ChevronRight className="w-3 h-3" />
+          {/* Category badge on image */}
+          <span
+            className="absolute top-3 left-3 px-3 py-1 text-white text-xs font-bold uppercase tracking-wider rounded-full backdrop-blur-sm"
+            style={{ background: `${color}CC` }}
+          >
             {category}
           </span>
         </div>
 
-        {/* Bottom rule — animated fill on hover */}
-        <div className="h-px w-full bg-[#1C1F2E]/20 relative overflow-hidden">
-          <div className="absolute inset-y-0 left-0 bg-[#2563EB] w-0 group-hover:w-full transition-all duration-500" />
+        {/* Card body */}
+        <div className="p-5">
+          {/* Date + status row */}
+          <div className="flex items-center gap-2 text-xs text-[#7A7E8F] mb-2">
+            <span>{date}</span>
+            <span>&bull;</span>
+            <div className="flex items-center gap-1.5">
+              <span className="h-2 w-2 rounded-full bg-[#22C55E]" />
+              <span>Published</span>
+            </div>
+          </div>
+
+          {/* Title */}
+          <h3 className="font-heading font-bold text-[1.05rem] leading-snug text-[#1C1F2E] line-clamp-2 group-hover:text-[#2563EB] transition-colors duration-200">
+            {title}
+          </h3>
+
+          {/* Animated excerpt reveal on hover */}
+          <AnimatePresence>
+            {isHovered && (
+              <motion.div
+                key="excerpt"
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={detailVariants}
+                className="overflow-hidden"
+              >
+                <p className="text-sm text-[#3D4152] leading-relaxed line-clamp-3">{excerpt}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <span
+                    className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold"
+                    style={{ background: `${color}15`, color, borderColor: `${color}30` }}
+                  >
+                    {category}
+                  </span>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Footer */}
+        <div className="flex items-center justify-between border-t border-[#D8D5CF]/60 px-5 py-3">
+          <span className="text-xs font-semibold text-[#2563EB] inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+            Read article <ChevronRight className="w-3.5 h-3.5" />
+          </span>
+          <div
+            className="h-1.5 w-1.5 rounded-full"
+            style={{ background: color }}
+          />
         </div>
       </Link>
     </motion.div>

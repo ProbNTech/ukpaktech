@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,13 +12,13 @@ import { LiteYouTube } from "@/components/LiteYouTube";
 import { ChevronRight, ArrowUpRight, Cpu, Briefcase, GraduationCap, Globe2, Shield, Handshake, Users, Building2, MapPin, Scale, Lightbulb, TrendingUp } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { TechMeshBackground } from "@/components/TechMeshBackground";
+const RadialOrbitalTimeline = dynamic(() => import("@/components/ui/radial-orbital-timeline"), { ssr: false });
+const Particles = dynamic(() => import("@/components/ui/particles").then(m => ({ default: m.Particles })), { ssr: false });
 import { articles } from "@/data/articles";
 import { featuredEvents } from "@/data/featured-events";
 
-const SponsorMarquee = dynamic(() =>
-  import("@/components/SponsorMarquee").then((m) => ({ default: m.SponsorMarquee })),
-  { ssr: false }
-);
+import { LogoCarousel } from "@/components/ui/logo-carousel";
+import { sponsorLogos } from "@/data/sponsor-logos";
 const ImpactStats = dynamic(() =>
   import("@/components/ImpactStats").then((m) => ({ default: m.ImpactStats })),
   { ssr: false }
@@ -29,6 +30,13 @@ const homepageArticles = articles.slice(0, 15);
 
 /* 9 events — 3 rows × 3 columns on the homepage */
 const homepageEvents = featuredEvents.slice(0, 9);
+
+/* Sponsor logos adapted for the LogoCarousel component */
+const sponsorCarouselLogos = sponsorLogos.map((logo, i) => ({
+  name: logo.alt,
+  id: i + 1,
+  src: logo.src,
+}));
 
 /* ─── Shared section header: label + large title + full-width rule ─── */
 const bannerThemes = {
@@ -84,6 +92,147 @@ function PillButton({ href, children }: { href: string; children: React.ReactNod
 /* ─── Event filter tabs for homepage ─── */
 type EventFilter = "All" | "London" | "Pakistan" | "Summit" | "Expo" | "Conference" | "Past Events";
 const EVENT_FILTERS: EventFilter[] = ["All", "London", "Pakistan", "Summit", "Expo", "Conference", "Past Events"];
+
+/* ─── Brand-color mapping for event tags ─── */
+const tagColors: Record<string, string> = {
+  Summit: "#2563EB",
+  Expo: "#22C55E",
+  Conference: "#C41E3A",
+  Workshop: "#EAB308",
+  Webinar: "#2563EB",
+  Forum: "#22C55E",
+};
+
+function getTagColor(tag: string): string {
+  return tagColors[tag] || "#2563EB";
+}
+
+/* ─── What We Do — orbital timeline wrapper ─── */
+const whatWeDoData = [
+  { id: 1, title: "AI & Tech Programs", content: "Driving AI innovation through training, certifications, and collaborative startup models across key sectors.", icon: Cpu, href: "/programs/ai-tech-programs", color: "#2563EB", relatedIds: [2, 3], status: "completed" as const, energy: 95 },
+  { id: 2, title: "Services", content: "Business networks, SME hub, digital marketing, overseas employment, and business support for your tech venture.", icon: Briefcase, href: "/services", color: "#22C55E", relatedIds: [1, 3], status: "completed" as const, energy: 85 },
+  { id: 3, title: "Skill Development", content: "Practical training pathways, professional certifications, and mentorship for the modern tech workforce.", icon: GraduationCap, href: "/programs/skill-development-center", color: "#EAB308", relatedIds: [1, 2], status: "in-progress" as const, energy: 70 },
+  { id: 4, title: "UK–Pakistan Technology Partnership", content: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", icon: Globe2, href: "/ecosystem/uk-pakistan-technology-partnership", color: "#C41E3A", relatedIds: [5, 6], status: "completed" as const, energy: 90 },
+  { id: 5, title: "Leadership & Governance", content: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", icon: Shield, href: "/about/management-team", color: "#2563EB", relatedIds: [4, 6], status: "completed" as const, energy: 80 },
+  { id: 6, title: "Trade Delegations", content: "Curated business missions, international trade expos, and pavilion programmes placing members on the world stage.", icon: Handshake, href: "/ecosystem/trade-delegations-and-exhibitions", color: "#22C55E", relatedIds: [4, 5], status: "in-progress" as const, energy: 65 },
+];
+
+function WhatWeDoOrbital() {
+  return <RadialOrbitalTimeline timelineData={whatWeDoData} />;
+}
+
+/* ─── Workflow-style event card for homepage ─── */
+function HomeEventCard({ event }: { event: typeof homepageEvents[0] }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const color = getTagColor(event.tag);
+
+  const detailVariants = {
+    hidden: { opacity: 0, height: 0, marginTop: 0 },
+    visible: {
+      opacity: 1,
+      height: "auto",
+      marginTop: "0.75rem",
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
+  };
+
+  return (
+    <motion.div
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
+      className="cursor-pointer"
+    >
+      <Link href="/events" className="group block h-full overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl border border-[#D8D5CF]/40">
+        {/* Image with gradient overlay */}
+        <div className="relative h-40 w-full overflow-hidden bg-[#1C1F2E]">
+          {event.image ? (
+            <Image
+              src={event.image}
+              alt={event.title}
+              fill
+              className="object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-white/25 text-base font-semibold uppercase tracking-widest">{event.tag}</span>
+            </div>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+
+          {/* Tag badge on image */}
+          <span
+            className="absolute top-3 left-3 px-3 py-1 text-white text-xs font-bold uppercase tracking-wider rounded-full backdrop-blur-sm"
+            style={{ background: `${color}CC` }}
+          >
+            {event.tag}
+          </span>
+        </div>
+
+        {/* Card body */}
+        <div className="p-4">
+          {/* Date + location row */}
+          <div className="flex items-center gap-2 text-xs text-[#7A7E8F] mb-2">
+            <time className="font-medium">{event.date}</time>
+            {event.location && (
+              <>
+                <span>&bull;</span>
+                <span>{event.location}</span>
+              </>
+            )}
+          </div>
+
+          {/* Title */}
+          <h3 className="font-heading font-bold text-[#1C1F2E] text-base leading-snug line-clamp-2 group-hover:text-[#2563EB] transition-colors duration-200">
+            {event.title}
+          </h3>
+
+          {/* Animated description reveal on hover */}
+          <AnimatePresence>
+            {isHovered && (
+              <motion.div
+                key="details"
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={detailVariants}
+                className="overflow-hidden"
+              >
+                <p className="text-sm text-[#3D4152] leading-relaxed line-clamp-3">{event.shortDescription}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <span
+                    className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold"
+                    style={{ background: `${color}15`, color, borderColor: `${color}30` }}
+                  >
+                    {event.tag}
+                  </span>
+                  {event.location && (
+                    <span className="inline-flex items-center rounded-full border border-[#D8D5CF] bg-[#F5F5F4] px-2.5 py-0.5 text-xs font-semibold text-[#3D4152]">
+                      {event.location.split(",")[0]}
+                    </span>
+                  )}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Footer */}
+        <div className="flex items-center justify-between border-t border-[#D8D5CF]/60 px-4 py-3">
+          <span className="text-xs font-semibold text-[#2563EB] inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+            Learn more <ChevronRight className="w-3.5 h-3.5" />
+          </span>
+          <div
+            className="h-1.5 w-1.5 rounded-full"
+            style={{ background: color }}
+          />
+        </div>
+      </Link>
+    </motion.div>
+  );
+}
 
 /* Helper to check if an event date is in the past */
 function isEventPast(dateStr: string): boolean {
@@ -169,42 +318,7 @@ function HomeEventsSection() {
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
               {filtered.map((event) => (
-                <Link key={event.id} href="/events" className="flex flex-col bg-white border border-[#D8D5CF] rounded overflow-hidden transition-all duration-300 h-full">
-                  <div className="aspect-[16/9] bg-[#1C1F2E] relative overflow-hidden">
-                    {event.image ? (
-                      <Image
-                        src={event.image}
-                        alt={event.title}
-                        fill
-                        className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-white/25 text-base font-semibold uppercase tracking-widest">{event.tag}</span>
-                      </div>
-                    )}
-                    <span className="absolute top-3 left-3 px-3 py-1 bg-[#1C1F2E]/80 backdrop-blur-sm text-white text-base font-semibold rounded-full">{event.tag}</span>
-                  </div>
-                  <div className="flex flex-col flex-1 p-5">
-                    <div className="flex items-center gap-2 text-base text-[#7A7E8F] mb-3">
-                      <time className="font-medium">{event.date}</time>
-                      {event.location && (
-                        <>
-                          <span className="w-1 h-1 rounded-full bg-[#7A7E8F]" />
-                          <span>{event.location}</span>
-                        </>
-                      )}
-                    </div>
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base leading-snug mb-3 line-clamp-2 group-hover:text-[#2563EB] transition-colors duration-200">{event.title}</h3>
-                    <p className="text-[#3D4152] text-base leading-relaxed line-clamp-3 mb-4">{event.shortDescription}</p>
-                    <div className="mt-auto pt-3 border-t border-[#D8D5CF]">
-                      <span className="text-base font-semibold text-[#1C1F2E] group-hover:text-[#2563EB] transition-colors duration-200 inline-flex items-center gap-1">
-                        Learn more <ChevronRight className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-                  </div>
-                </Link>
+                <HomeEventCard key={event.id} event={event} />
               ))}
             </div>
           ) : (
@@ -278,8 +392,7 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-           WHO CAN JOIN — horizontal scroll of member types
-           Matches the ukproptech "Who can join?" horizontal card row
+           WHO CAN JOIN — overlay image cards
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-6 lg:py-8">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -290,42 +403,66 @@ export default function Home() {
               body="We offer different memberships based on whether you are a technology company, investor, institution, or individual professional."
             />
 
-            {/* Horizontal scrollable cards — 4 columns on desktop */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 {
                   title: "IT Companies",
+                  desc: "Software houses, SaaS providers, and tech service firms from both nations.",
                   image: "/image/Who%20can%20join/IT_Companies.webp",
+                  icon: Cpu,
+                  color: "#2563EB",
                 },
                 {
                   title: "Investors & VCs",
+                  desc: "Venture capital funds, angel investors, and private equity firms seeking cross-border deals.",
                   image: "/image/Who%20can%20join/Investors_VCs.webp",
+                  icon: TrendingUp,
+                  color: "#22C55E",
                 },
                 {
                   title: "Academic & Research",
+                  desc: "Universities, research centres, and academic institutions driving tech innovation.",
                   image: "/image/Who%20can%20join/Academic_Research.webp",
+                  icon: GraduationCap,
+                  color: "#EAB308",
                 },
                 {
                   title: "Individual Professionals",
+                  desc: "Engineers, founders, consultants, and tech leaders building their careers.",
                   image: "/image/Who%20can%20join/Individual_Professionals.webp",
+                  icon: Users,
+                  color: "#C41E3A",
                 },
-              ].map((item) => (
-                <Link key={item.title} href="/membership" className="group flex flex-col">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-[#D8D5CF] mb-3">
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link key={item.title} href="/membership" className="group relative block rounded-2xl overflow-hidden h-[340px]">
+                    {/* Background image */}
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                      className="object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
-                  </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-base sm:text-base leading-snug group-hover:text-[#2563EB] transition-colors duration-200 mb-3">
-                    {item.title}
-                  </h3>
-                  <div className="h-px bg-[#1C1F2E]/20 group-hover:bg-[#2563EB]/50 transition-colors duration-300" />
-                </Link>
-              ))}
+                    {/* White gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent" />
+
+                    {/* Content overlay */}
+                    <div className="absolute inset-0 flex flex-col justify-end p-5">
+                      <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ background: `${item.color}15`, border: `1px solid ${item.color}25` }}>
+                        <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
+                      </div>
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg leading-snug mb-1.5">{item.title}</h3>
+                      <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
+                      <div className="mt-3 flex items-center gap-1 text-xs font-semibold uppercase tracking-wider" style={{ color: item.color }}>
+                        <span>Learn more</span>
+                        <ChevronRight className="w-3 h-3" />
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </AnimatedSection>
         </div>
@@ -343,7 +480,7 @@ export default function Home() {
               body="We work across three strategic pillars to build a stronger, more connected UK-Pakistan technology ecosystem."
               color="red"
             />
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {[
                 {
                   icon: Scale,
@@ -366,14 +503,25 @@ export default function Home() {
               ].map((card) => {
                 const Icon = card.icon;
                 return (
-                  <div key={card.title} className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="relative bg-white rounded-2xl p-6 lg:p-7 h-full">
-                      <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style={{ background: `${card.color}10`, border: `1px solid ${card.color}20` }}>
-                        <Icon className="w-5 h-5" style={{ color: card.color }} strokeWidth={1.5} />
+                  <div key={card.title} className="group rounded-lg border border-[#D8D5CF]/60 bg-white shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 text-center">
+                    <div className="flex flex-col space-y-1.5 p-6 pb-3">
+                      {/* Grid-dot decorator */}
+                      <div aria-hidden className="relative mx-auto size-36 [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]">
+                        <div
+                          className="absolute inset-0 opacity-10"
+                          style={{
+                            backgroundImage: `linear-gradient(to right, ${card.color} 1px, transparent 1px), linear-gradient(to bottom, ${card.color} 1px, transparent 1px)`,
+                            backgroundSize: "24px 24px",
+                          }}
+                        />
+                        <div className="absolute inset-0 m-auto flex size-12 items-center justify-center border-t border-l bg-white" style={{ borderColor: `${card.color}30` }}>
+                          <Icon className="size-6" style={{ color: card.color }} strokeWidth={1.5} />
+                        </div>
                       </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-3">{card.title}</h3>
-                      <p className="text-[#3D4152] text-base leading-relaxed">{card.desc}</p>
+                      <h3 className="mt-6 font-heading font-bold text-[#1C1F2E] text-lg">{card.title}</h3>
+                    </div>
+                    <div className="p-6 pt-0">
+                      <p className="text-sm text-[#3D4152] leading-relaxed">{card.desc}</p>
                     </div>
                   </div>
                 );
@@ -384,10 +532,14 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-           WHAT WE DO — Elevated Card Grid
+           WHAT WE DO — Radial Orbital Timeline
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+      <section className="relative z-[1] py-6 lg:py-8 overflow-hidden">
+        {/* Brand-colored particles background */}
+        <Particles className="absolute inset-0 z-0" quantity={60} size={0.6} ease={80} color="#2563EB" staticity={40} />
+        <Particles className="absolute inset-0 z-0" quantity={40} size={0.5} ease={90} color="#22C55E" staticity={50} />
+        <Particles className="absolute inset-0 z-0" quantity={30} size={0.4} ease={100} color="#C41E3A" staticity={60} />
+        <div className="relative z-[1] px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
             <SectionHeader
               label="Explore our work"
@@ -395,109 +547,16 @@ export default function Home() {
               body="From AI innovation to bilateral trade, from startup incubation to skill development — discover how UPTECH is building the future."
               color="blue"
             />
-
-            {/* Featured: AI & Tech Programs — full-width accent card */}
-            <div className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px mb-5 h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-              <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-            <Link href="/programs/ai-tech-programs" className="group block relative rounded-2xl overflow-hidden bg-gradient-to-r from-[#eef2ff] to-[#f0f9ff] border border-[#2563EB]/15 hover:border-[#2563EB]/30 hover:shadow-lg hover:shadow-[#2563EB]/8 transition-all duration-500">
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#2563EB] to-[#3b82f6]" />
-              <div className="p-7 lg:p-9 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
-                <div className="flex items-center gap-5 flex-shrink-0">
-                  <div className="relative">
-                    <div className="absolute inset-[-4px] rounded-2xl bg-[#2563EB]/10 blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative w-14 h-14 rounded-2xl bg-[#2563EB]/10 border border-[#2563EB]/15 flex items-center justify-center">
-                      <Cpu className="w-7 h-7 text-[#2563EB]" strokeWidth={1.5} />
-                    </div>
-                  </div>
-                  <div>
-                    <span className="text-base font-bold uppercase tracking-[0.2em] text-[#2563EB]/50 block mb-1">Featured Programme</span>
-                    <h3 className="font-heading font-extrabold text-[#1C1F2E] text-2xl lg:text-3xl leading-tight">AI & Tech Programs</h3>
-                  </div>
-                </div>
-                <p className="text-[#3D4152] text-base sm:text-base leading-relaxed flex-1">Driving AI innovation through training, certifications, and collaborative startup models across key sectors including energy, smart buildings, and agriculture.</p>
-                <div className="flex items-center gap-3 flex-shrink-0">
-                  <span className="text-base font-semibold text-[#3D4152] group-hover:text-[#2563EB] transition-colors duration-300 hidden sm:inline">Explore</span>
-                  <div className="w-10 h-10 rounded-full border border-[#2563EB]/20 group-hover:border-[#2563EB] group-hover:bg-[#2563EB] flex items-center justify-center transition-all duration-300">
-                    <ArrowUpRight className="w-5 h-5 text-[#2563EB] group-hover:text-white transition-colors duration-300" />
-                  </div>
-                </div>
-              </div>
-            </Link>
-            </div>
-
-            {/* Row 1 — 3 cards with gradient top borders */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
-              {[
-                { href: "/services", icon: Briefcase, title: "Services", desc: "Business networks, SME hub, digital marketing, overseas employment, and business support for your tech venture.", color: "#2563EB", num: "01" },
-                { href: "/programs/skill-development-center", icon: GraduationCap, title: "Skill Development", desc: "Practical training pathways, professional certifications, and mentorship for the modern tech workforce.", color: "#22c55e", num: "02" },
-                { href: "/ecosystem/uk-pakistan-technology-partnership", icon: Globe2, title: "UK–Pakistan Partnership", desc: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", color: "#C41E3A", num: "03" },
-              ].map((card) => {
-                const Icon = card.icon;
-                return (
-                  <div key={card.num} className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <Link href={card.href} className="relative h-full block bg-white rounded-2xl overflow-hidden transition-all duration-500">
-                    <div className="p-6 lg:p-7">
-                      <div className="flex items-center justify-between mb-5">
-                        <div className="relative">
-                          <div className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500" style={{ background: card.color }} />
-                          <div className="relative w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: `${card.color}10`, border: `1px solid ${card.color}20` }}>
-                            <Icon className="w-5 h-5" style={{ color: card.color }} strokeWidth={1.5} />
-                          </div>
-                        </div>
-                        <span className="text-base font-bold tracking-[0.2em] text-[#D8D5CF]">{card.num}</span>
-                      </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{card.title}</h3>
-                      <p className="text-[#3D4152] text-base leading-relaxed mb-4">{card.desc}</p>
-                      <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300" />
-                    </div>
-                  </Link>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Row 2 — 2 wider cards */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              {[
-                { href: "/about/management-team", icon: Shield, title: "Leadership & Governance", desc: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", color: "#C41E3A", num: "04" },
-                { href: "/ecosystem/trade-delegations-and-exhibitions", icon: Handshake, title: "Trade Delegations & Exhibitions", desc: "Curated business missions, international trade expos, and pavilion programmes placing our members on the world stage.", color: "#ef4444", num: "05" },
-              ].map((card) => {
-                const Icon = card.icon;
-                return (
-                  <div key={card.num} className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <Link href={card.href} className="relative h-full block bg-white rounded-2xl overflow-hidden transition-all duration-500">
-                    <div className="p-6 lg:p-7 flex items-start gap-5">
-                      <div className="relative flex-shrink-0">
-                        <div className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500" style={{ background: card.color }} />
-                        <div className="relative w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: `${card.color}10`, border: `1px solid ${card.color}20` }}>
-                          <Icon className="w-5 h-5" style={{ color: card.color }} strokeWidth={1.5} />
-                        </div>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="font-heading font-bold text-[#1C1F2E] text-lg group-hover:text-[#2563EB] transition-colors duration-200">{card.title}</h3>
-                          <span className="text-base font-bold tracking-[0.2em] text-[#D8D5CF] flex-shrink-0 ml-3">{card.num}</span>
-                        </div>
-                        <p className="text-[#3D4152] text-base leading-relaxed">{card.desc}</p>
-                      </div>
-                      <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300 flex-shrink-0 mt-1" />
-                    </div>
-                  </Link>
-                  </div>
-                );
-              })}
-            </div>
+            <WhatWeDoOrbital />
           </AnimatedSection>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════════════════════
-           MORE FROM UPTECH — 2×2 Card Grid
+           MORE FROM UPTECH — 4-column Card Grid
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-6 lg:py-8">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
             <SectionHeader
               label="Discover more"
@@ -505,33 +564,28 @@ export default function Home() {
               body="Explore our platforms, meeting facilities, organisational structure, and flagship initiatives."
               color="green"
             />
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
-                { href: "/products", icon: Cpu, title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms connecting talent and enabling cross-border trade.", color: "#22c55e" },
+                { href: "/products", icon: Cpu, title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms connecting talent and enabling cross-border trade.", color: "#22C55E" },
                 { href: "/services/mentorship", icon: Users, title: "Mentorship", desc: "Connect with experienced mentors for guidance, career development, and business growth across both nations.", color: "#2563EB" },
                 { href: "/meeting-space", icon: MapPin, title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners.", color: "#C41E3A" },
                 { href: "/about/management-team", icon: Building2, title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures.", color: "#1C1F2E" },
               ].map((card) => {
                 const Icon = card.icon;
                 return (
-                  <div key={card.title} className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <Link href={card.href} className="relative h-full block bg-white rounded-2xl overflow-hidden transition-all duration-500">
-                    <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: `linear-gradient(to bottom, ${card.color}, ${card.color}60)` }} />
-                    <div className="p-6 lg:p-7">
-                      <div className="flex items-center justify-between mb-5">
-                        <div className="relative">
-                          <div className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500" style={{ background: card.color }} />
-                          <div className="relative w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${card.color}10`, border: `1px solid ${card.color}15` }}>
+                  <div key={card.title} className="relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full">
+                    <Link href={card.href} className="relative h-full block bg-white rounded-2xl overflow-hidden">
+                      <div className="p-6 lg:p-7">
+                        <div className="flex items-center justify-between mb-5">
+                          <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${card.color}10`, border: `1px solid ${card.color}15` }}>
                             <Icon className="w-6 h-6" style={{ color: card.color }} strokeWidth={1.5} />
                           </div>
+                          <ArrowUpRight className="w-4 h-4 text-[#D8D5CF]" />
                         </div>
-                        <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300" />
+                        <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">{card.title}</h3>
+                        <p className="text-[#3D4152] text-base leading-relaxed">{card.desc}</p>
                       </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{card.title}</h3>
-                      <p className="text-[#3D4152] text-base leading-relaxed">{card.desc}</p>
-                    </div>
-                  </Link>
+                    </Link>
                   </div>
                 );
               })}
@@ -634,14 +688,17 @@ export default function Home() {
       <HomeEventsSection />
 
       {/* ════════════════════════════════════════════════════════════
-           PARTNER / MEMBER LOGOS — slim marquee strip
+           PARTNER / MEMBER LOGOS — animated carousel
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6" style={{ background: "linear-gradient(135deg, #15803d 0%, #22C55E 100%)" }}>
+      <section className="relative z-[1] py-10 lg:py-14" style={{ background: "linear-gradient(135deg, #0f1a3a 0%, #1a2b5e 100%)" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <h2 className="text-center text-lg sm:text-xl font-bold uppercase tracking-[0.2em] text-white/80 mb-4">
-            Leading Organisations
-          </h2>
-          <SponsorMarquee />
+          <div className="text-center mb-8">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#2563EB]/70 mb-2">Trusted by</p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+              Leading Organisations
+            </h2>
+          </div>
+          <LogoCarousel columnCount={5} logos={sponsorCarouselLogos} />
         </div>
       </section>
 
