@@ -51,7 +51,7 @@ const timelineSteps = [
 
 export default function AITechProgramsPage() {
   return (
-    <div>
+    <div className="content-body">
       <PageHero
         title="AI and Tech Programs"
         subtitle="Driving AI innovation and tech leadership between the UK and Pakistan through comprehensive training, certifications, and collaborative startup models."

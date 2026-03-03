@@ -141,7 +141,7 @@ export default function MeetingSpacePage() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div>
+    <div className="content-body">
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <PageHero
         label="Meeting Space"

@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { ShinyButton } from "@/components/ui/shiny-button";
+import { GlobalCTA } from "@/components/GlobalCTA";
 import { TrendingUp, Wallet, Users, Gift, CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
@@ -93,8 +94,8 @@ export default function SMEHubPage() {
         image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership" variant="glass">Join the Hub</Button>
-          <Button href="/contact" variant="glass">Learn More</Button>
+          <ShinyButton href="/membership">Join the Hub</ShinyButton>
+          <Button href="/contact" variant="glass" size="lg">Learn More</Button>
         </div>
       </PageHero>
 
@@ -315,38 +316,15 @@ export default function SMEHubPage() {
       </section>
 
       {/* ── CTA Section ── */}
-      <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10">
-          <Image src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=2400&q=85&auto=format&fit=crop" alt="SME Hub background" fill className="object-cover" sizes="100vw" />
-        </div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#22C55E]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#2563EB]" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div>
-              <p className="text-base font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Start Growing</p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Ready to Accelerate Your SME&apos;s Growth?
-              </h2>
-              <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-8">
-                Join the SME Hub and gain access to sales insights, finance opportunities, talent networks, and exclusive member benefits across four key global markets.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg">Join the Hub</Button>
-                <Button href="/contact" variant="glass" size="lg">Contact Us</Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <GlobalCTA
+        label="Start Growing"
+        title="Ready to Accelerate Your SME's Growth?"
+        subtitle="Join the SME Hub and gain access to sales insights, finance opportunities, talent networks, and exclusive member benefits across four key global markets."
+        primaryButtonText="Join the Hub"
+        primaryButtonLink="/membership"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

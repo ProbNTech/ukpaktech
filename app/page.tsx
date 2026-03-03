@@ -8,7 +8,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Hero } from "@/components/Hero";
 import { NewsCard } from "@/components/NewsCard";
 import { LiteYouTube } from "@/components/LiteYouTube";
-import { ChevronRight, ArrowUpRight, Cpu, Briefcase, GraduationCap, Globe2, Shield, Handshake, Users, Building2, MapPin } from "lucide-react";
+import { ChevronRight, ArrowUpRight, Cpu, Briefcase, GraduationCap, Globe2, Shield, Handshake, Users, Building2, MapPin, Scale, Lightbulb, TrendingUp } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { TechMeshBackground } from "@/components/TechMeshBackground";
 import { articles } from "@/data/articles";
@@ -326,6 +326,58 @@ export default function Home() {
                   <div className="h-px bg-[#1C1F2E]/20 group-hover:bg-[#2563EB]/50 transition-colors duration-300" />
                 </Link>
               ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════
+           OUR FOCUS — 3 Strategic Pillars
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative z-[1] py-6 lg:py-8">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+          <AnimatedSection animation="blur-in">
+            <SectionHeader
+              label="Our Focus"
+              title="What Drives Us"
+              body="We work across three strategic pillars to build a stronger, more connected UK-Pakistan technology ecosystem."
+              color="red"
+            />
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              {[
+                {
+                  icon: Scale,
+                  title: "Shaping Policy & Regulation",
+                  desc: "We work at the intersection of technology and government to help develop supportive policies for bilateral tech trade, digital economy agreements, and tech-friendly regulations. Our council advocates for frameworks that enable efficient trade, protect data, and encourage investment.",
+                  color: "#2563EB",
+                },
+                {
+                  icon: Lightbulb,
+                  title: "Accelerating Innovation",
+                  desc: "We champion emerging technologies including AI, cloud computing, cybersecurity, fintech, and green tech by convening research partnerships, innovation hubs, and collaborative initiatives that harness the best of UK and Pakistani tech talent.",
+                  color: "#22C55E",
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Developing Markets",
+                  desc: "We identify sectors where technology can drive progress — from health and education to financial services, smart infrastructure, and digital government. We help our members understand market needs, build competitive offerings, and enter new international markets.",
+                  color: "#C41E3A",
+                },
+              ].map((card) => {
+                const Icon = card.icon;
+                return (
+                  <div key={card.title} className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="relative bg-white rounded-2xl p-6 lg:p-7 h-full">
+                      <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style={{ background: `${card.color}10`, border: `1px solid ${card.color}20` }}>
+                        <Icon className="w-5 h-5" style={{ color: card.color }} strokeWidth={1.5} />
+                      </div>
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-3">{card.title}</h3>
+                      <p className="text-[#3D4152] text-base leading-relaxed">{card.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </AnimatedSection>
         </div>

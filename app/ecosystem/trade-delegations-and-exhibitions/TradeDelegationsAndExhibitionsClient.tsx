@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Plane, Users, Building2, Handshake, Presentation, Mic2, Monitor, Camera } from "lucide-react";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
@@ -65,7 +65,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#EEECEA]">
+    <div className="bg-[#EEECEA] content-body">
       {/* ── Hero Section ── */}
       <PageHero
         label="UPTECH Ecosystem"
@@ -113,15 +113,46 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── Trade Delegation Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-4xl mb-8">
-              <SectionHeader
-                label="Trade Delegations"
-                title="Connecting Technology Companies Across Borders"
-                color="blue"
-                subtitle={tradeDelegationIntro}
-              />
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start mb-10">
+              <div className="lg:col-span-3">
+                <SectionHeader
+                  label="Trade Delegations"
+                  title="Connecting Technology Companies Across Borders"
+                  color="blue"
+                />
+                <p className="text-[#5A5F72] text-lg leading-relaxed">
+                  {tradeDelegationIntro}
+                </p>
+              </div>
+              <div className="lg:col-span-2">
+                <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 sticky top-8">
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-5">Delegation Highlights</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-5" />
+                  <ul className="space-y-4">
+                    {[
+                      { text: "Government-backed introductions", icon: Building2, color: "#2563EB" },
+                      { text: "Curated B2B meetings", icon: Handshake, color: "#22C55E" },
+                      { text: "Market intelligence briefings", icon: Presentation, color: "#C41E3A" },
+                      { text: "Post-delegation follow-up", icon: Users, color: "#2563EB" },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <li key={item.text} className="flex items-center gap-3.5">
+                          <div
+                            className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                            style={{ background: `${item.color}10`, border: `1px solid ${item.color}20` }}
+                          >
+                            <Icon className="w-4.5 h-4.5" style={{ color: item.color }} strokeWidth={1.5} />
+                          </div>
+                          <span className="text-[#3D4152] text-base font-medium">{item.text}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
             </div>
 
             {/* Trade Delegation For Members */}
@@ -136,17 +167,17 @@ export default function TradeDelegationsAndExhibitionsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm"
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="p-6">
-                    <h4 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2" style={{ color: item.color }}>
-                      {item.title}
-                    </h4>
-                    <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
-                  </div>
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
+                    <div className="p-6">
+                      <h4 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2" style={{ color: item.color }}>
+                        {item.title}
+                      </h4>
+                      <div className="h-px bg-[#D8D5CF] mb-3" />
+                      <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -157,15 +188,46 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── Exhibition Events Section ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-4xl mb-8">
-              <SectionHeader
-                label="Exhibition Events"
-                title="High-Impact Exhibition Events"
-                color="green"
-                subtitle={exhibitionIntro}
-              />
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start mb-10">
+              <div className="lg:col-span-3">
+                <SectionHeader
+                  label="Exhibition Events"
+                  title="High-Impact Exhibition Events"
+                  color="green"
+                />
+                <p className="text-[#5A5F72] text-lg leading-relaxed">
+                  {exhibitionIntro}
+                </p>
+              </div>
+              <div className="lg:col-span-2">
+                <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 sticky top-8">
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-5">Exhibition Features</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-5" />
+                  <ul className="space-y-4">
+                    {[
+                      { text: "Booth & demo support", icon: Monitor, color: "#2563EB" },
+                      { text: "Speaker opportunities", icon: Mic2, color: "#22C55E" },
+                      { text: "Media coverage", icon: Camera, color: "#C41E3A" },
+                      { text: "Lead generation", icon: Users, color: "#2563EB" },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <li key={item.text} className="flex items-center gap-3.5">
+                          <div
+                            className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                            style={{ background: `${item.color}10`, border: `1px solid ${item.color}20` }}
+                          >
+                            <Icon className="w-4.5 h-4.5" style={{ color: item.color }} strokeWidth={1.5} />
+                          </div>
+                          <span className="text-[#3D4152] text-base font-medium">{item.text}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
             </div>
 
             {/* Exhibition For Members */}
@@ -180,17 +242,17 @@ export default function TradeDelegationsAndExhibitionsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm"
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="p-6">
-                    <h4 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2" style={{ color: item.color }}>
-                      {item.title}
-                    </h4>
-                    <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
-                  </div>
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
+                    <div className="p-6">
+                      <h4 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2" style={{ color: item.color }}>
+                        {item.title}
+                      </h4>
+                      <div className="h-px bg-[#D8D5CF] mb-3" />
+                      <p className="text-[#5A5F72] text-base leading-relaxed">{item.description}</p>
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -307,22 +369,44 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
       {/* ── CEO at Summit ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="grid lg:grid-cols-2 gap-10 items-center max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
               <div>
                 <SectionHeader
                   label="On the Ground"
                   title="Leading From the Front"
                   color="blue"
                 />
-                <p className="text-[#3D4152] text-lg leading-relaxed">
+                <p className="text-[#3D4152] text-lg leading-relaxed mb-4">
                   UPTECH Founder &amp; CEO Khalil Choudhary personally leads trade delegations and represents the Council at international summits, ensuring our members have direct access to decision-makers and opportunities at the highest level.
                 </p>
+                <p className="text-[#5A5F72] text-lg leading-relaxed mb-6">
+                  His hands-on leadership ensures that every delegation delivers tangible outcomes for participating members.
+                </p>
+                <ul className="space-y-3">
+                  {[
+                    { text: "Direct government engagement", color: "#2563EB" },
+                    { text: "High-level investor introductions", color: "#22C55E" },
+                    { text: "Strategic partnership facilitation", color: "#C41E3A" },
+                  ].map((item) => (
+                    <li key={item.text} className="flex items-center gap-3">
+                      <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: item.color }} strokeWidth={2} />
+                      <span className="text-[#3D4152] text-base font-medium">{item.text}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="relative aspect-[4/3] max-h-[480px] overflow-hidden rounded-xl border border-[#D8D5CF] shadow-md">
-                <Image src="/image/ceo/khalil-choudhary-summit.jpg" alt="Khalil Choudhary at international business summit" fill className="object-cover object-top" sizes="(max-width: 1024px) 100vw, 600px" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+              <div className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px hover:shadow-xl transition-all duration-300">
+                <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                  <Image src="/image/ceo/khalil-choudhary-summit.jpg" alt="Khalil Choudhary at international business summit" fill className="object-cover object-top" sizes="(max-width: 1024px) 100vw, 600px" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <p className="text-white font-heading font-bold text-base">Khalil Choudhary</p>
+                    <p className="text-white/70 text-sm">Founder &amp; CEO, UPTECH</p>
+                  </div>
+                </div>
               </div>
             </div>
           </AnimatedSection>

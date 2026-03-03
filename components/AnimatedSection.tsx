@@ -1,7 +1,7 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { ReactNode } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 const animationVariants = {
   "fade-up": {
@@ -41,23 +41,19 @@ export function AnimatedSection({
   animation = "fade-up",
   delay,
 }: AnimatedSectionProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
   const shouldReduceMotion = useReducedMotion();
 
   const variant = animationVariants[animation];
 
   return (
     <motion.div
-      ref={ref}
-      initial={shouldReduceMotion ? { opacity: 1 } : variant.hidden}
-      animate={
-        shouldReduceMotion
-          ? { opacity: 1 }
-          : isInView
-            ? variant.visible
-            : variant.hidden
-      }
+      initial={shouldReduceMotion ? false : "hidden"}
+      whileInView="visible"
+      viewport={{ once: true, margin: "-60px" }}
+      variants={{
+        hidden: shouldReduceMotion ? { opacity: 1 } : variant.hidden,
+        visible: shouldReduceMotion ? { opacity: 1 } : variant.visible,
+      }}
       transition={
         shouldReduceMotion
           ? { duration: 0 }

@@ -1,29 +1,25 @@
 "use client";
 
-import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { Section } from "@/components/Section";
 import { PageHero } from "@/components/PageHero";
 import {
-  Rocket,
-  TrendingUp,
-  Globe,
   Target,
   CheckCircle2,
   ArrowUpRight,
   Shield,
   Sparkles,
-  Building2,
-  BarChart3,
   Users,
-  Briefcase,
+  Globe,
   Eye,
   Lightbulb,
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 /* ─── Data ──────────────────────────────────────────────────────────── */
 
@@ -133,10 +129,8 @@ export default function SeriesFundingPage() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#EEECEA]">
-      {/* ================================================================
-          HERO SECTION
-          ================================================================ */}
+    <div className="content-body">
+      {/* ── Hero ── */}
       <PageHero
         label="Ecosystem / Series Funding"
         title="Series A & B Funding Opportunities"
@@ -151,25 +145,20 @@ export default function SeriesFundingPage() {
         </div>
       </PageHero>
 
-      {/* ================================================================
-          STATS BAR
-          ================================================================ */}
-      <section className="relative bg-[#EEECEA]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                className="relative text-center bg-white border border-[#D8D5CF] rounded-xl p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-              >
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
-                  style={{ background: `linear-gradient(to right, ${stat.color}, ${stat.color}60)` }}
-                />
+      {/* ── Stats ── */}
+      <Section variant="light">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+            >
+              <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+              <div className="relative h-full text-center bg-white rounded-xl p-6">
                 <p
                   className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
                   style={{ color: stat.color }}
@@ -179,267 +168,225 @@ export default function SeriesFundingPage() {
                 <p className="text-[#5A5F72] text-base">
                   {stat.label}
                 </p>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </Section>
 
-      {/* ================================================================
-          FOR SCALING COMPANIES
-          ================================================================ */}
-      <section className="relative bg-[#EEECEA] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <SectionHeader label="For Scaling Companies" title="Scale Your Business with Strategic Funding" subtitle="Access the capital, connections, and guidance needed to take your company from growth-stage to market leader." color="blue" />
+      {/* ── For Scaling Companies ── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader label="For Scaling Companies" title="Scale Your Business with Strategic Funding" subtitle="Access the capital, connections, and guidance needed to take your company from growth-stage to market leader." color="blue" />
 
-            <div className="grid md:grid-cols-2 gap-7">
-              {scalingBenefits.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.title}
-                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.12 }}
-                    className="group relative rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 flex flex-col hover:-translate-y-1.5 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-500 overflow-hidden"
-                  >
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px]"
-                      style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}40)` }}
-                    />
-
-                    <div className="relative flex items-center gap-4 mb-6">
-                      <div className="relative">
-                        <div
-                          className="relative w-14 h-14 rounded-xl flex items-center justify-center"
-                          style={{ background: `${item.color}12`, border: `1px solid ${item.color}20` }}
-                        >
-                          <Icon className="w-7 h-7" style={{ color: item.color }} strokeWidth={1.5} />
-                        </div>
+          <div className="grid md:grid-cols-2 gap-7">
+            {scalingBenefits.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.12 }}
+                  className="group relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                >
+                  <GlowingEffect
+                    spread={40}
+                    glow
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={2}
+                  />
+                  <div className="relative h-full bg-white rounded-2xl p-8 flex flex-col">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div
+                        className="w-14 h-14 rounded-xl flex items-center justify-center"
+                        style={{ background: `${item.color}12`, border: `1px solid ${item.color}25` }}
+                      >
+                        <Icon className="w-7 h-7" style={{ color: item.color }} strokeWidth={1.5} />
                       </div>
                       <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">
                         {item.title}
                       </h3>
                     </div>
 
-                    <div className="relative h-px bg-[#D8D5CF] mb-5" />
-                    <p className="relative text-base text-[#5A5F72] leading-relaxed">
+                    <div className="h-px bg-[#D8D5CF] mb-5" />
+                    <p className="text-base text-[#5A5F72] leading-relaxed">
                       {item.description}
                     </p>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
 
-      {/* ================================================================
-          FOR INVESTORS
-          ================================================================ */}
-      <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <SectionHeader label="For Investors" title="Invest in Growth-Stage Winners" subtitle="Access curated, high-growth technology companies that have proven their market fit and are ready for significant scale." color="green" />
+      {/* ── For Investors ── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader label="For Investors" title="Invest in Growth-Stage Winners" subtitle="Access curated, high-growth technology companies that have proven their market fit and are ready for significant scale." color="green" />
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {investorBenefits.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <motion.div
-                    key={item.title}
-                    className="group relative bg-white rounded-2xl border border-[#D8D5CF] shadow-sm p-7 hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-500 overflow-hidden"
-                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
-                  >
-                    <div
-                      className="absolute top-0 left-0 right-0 h-[2px]"
-                      style={{ background: `linear-gradient(to right, ${item.color}, ${item.color}40)` }}
-                    />
-                    <div className="relative z-[1]">
-                      <div className="relative mb-5">
-                        <div
-                          className="relative w-12 h-12 rounded-xl flex items-center justify-center"
-                          style={{ background: `${item.color}10`, border: `1px solid ${item.color}15` }}
-                        >
-                          <Icon className="w-6 h-6" style={{ color: item.color }} strokeWidth={1.5} />
-                        </div>
-                      </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-3">
-                        {item.title}
-                      </h3>
-                      <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#5A5F72] text-base leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ================================================================
-          FUNDING PROCESS
-          ================================================================ */}
-      <section className="relative bg-[#E8E6E3] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <SectionHeader label="Process" title="How We Help You Close Your Round" subtitle="A structured pathway from assessment to closing your Series A or B funding round." color="red" />
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {fundingProcess.map((step, i) => (
+          <div className="grid md:grid-cols-3 gap-6">
+            {investorBenefits.map((item, i) => {
+              const Icon = item.icon;
+              return (
                 <motion.div
-                  key={step.number}
-                  className="group relative bg-white rounded-2xl border border-[#D8D5CF] shadow-sm p-6 hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-500 overflow-hidden"
+                  key={item.title}
+                  className="relative h-full bg-white rounded-2xl border border-[#D8D5CF] shadow-sm p-7 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                 >
                   <div
-                    className="absolute top-0 left-0 right-0 h-[2px]"
-                    style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}00)` }}
-                  />
-
-                  <div className="relative z-[1]">
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className="relative">
-                        <div
-                          className="relative w-12 h-12 rounded-full flex items-center justify-center text-white text-base font-bold border-2"
-                          style={{
-                            background: `linear-gradient(135deg, ${step.color}30, ${step.color}10)`,
-                            borderColor: `${step.color}60`,
-                            color: step.color,
-                          }}
-                        >
-                          {step.number}
-                        </div>
-                      </div>
-                    </div>
-
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">
-                      {step.title}
-                    </h3>
-                    <p className="text-[#5A5F72] text-base leading-relaxed mb-4">
-                      {step.description}
-                    </p>
-
-                    <div
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full"
-                      style={{ background: `${step.color}12`, border: `1px solid ${step.color}25` }}
-                    >
-                      <CheckCircle2 className="w-3.5 h-3.5" style={{ color: step.color }} />
-                      <span className="text-base font-semibold" style={{ color: step.color }}>
-                        {step.outcome}
-                      </span>
-                    </div>
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                    style={{ background: `${item.color}12`, border: `1px solid ${item.color}25` }}
+                  >
+                    <Icon className="w-6 h-6" style={{ color: item.color }} strokeWidth={1.5} />
                   </div>
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-3">
+                    {item.title}
+                  </h3>
+                  <div className="h-px bg-[#D8D5CF] mb-3" />
+                  <p className="text-[#5A5F72] text-base leading-relaxed">
+                    {item.description}
+                  </p>
                 </motion.div>
-              ))}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
 
-      {/* ================================================================
-          WHY IT MATTERS
-          ================================================================ */}
-      <section className="relative bg-[#EEECEA] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
-              <div className="lg:col-span-3">
-                <SectionHeader label="Why It Matters" title="Critical Funding for Rapid Growth" color="red" />
-                <p className="text-[#5A5F72] text-lg leading-relaxed mb-6">
-                  Series A and B funding is critical for companies moving beyond early-stage validation into rapid growth. By facilitating access to these funding rounds, the Council helps high-growth startups scale efficiently, strengthen their market position, and expand across borders.
+      {/* ── Funding Process ── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader label="Process" title="How We Help You Close Your Round" subtitle="A structured pathway from assessment to closing your Series A or B funding round." color="red" />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {fundingProcess.map((step, i) => (
+              <motion.div
+                key={step.number}
+                className="relative h-full bg-white rounded-2xl border border-[#D8D5CF] shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+              >
+                <div className="flex items-center gap-3 mb-5">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold border-2"
+                    style={{
+                      background: `linear-gradient(135deg, ${step.color}30, ${step.color}10)`,
+                      borderColor: `${step.color}60`,
+                      color: step.color,
+                    }}
+                  >
+                    {step.number}
+                  </div>
+                </div>
+
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-[#5A5F72] text-base leading-relaxed mb-4">
+                  {step.description}
                 </p>
 
-                <div className="space-y-4">
-                  {whyItMattersPoints.map((point, i) => (
-                    <motion.div
-                      key={point.text}
-                      className="group relative rounded-xl border border-[#D8D5CF] bg-white shadow-sm p-5 flex items-start gap-4 hover:-translate-y-0.5 hover:shadow-md hover:border-[#2563EB]/30 transition-all duration-500 overflow-hidden"
-                      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -12 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.35, delay: i * 0.07 }}
+                <div
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full"
+                  style={{ background: `${step.color}12`, border: `1px solid ${step.color}25` }}
+                >
+                  <CheckCircle2 className="w-3.5 h-3.5" style={{ color: step.color }} />
+                  <span className="text-base font-semibold" style={{ color: step.color }}>
+                    {step.outcome}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Why It Matters ── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+            <div className="lg:col-span-3">
+              <SectionHeader label="Why It Matters" title="Critical Funding for Rapid Growth" color="red" />
+              <p className="text-[#5A5F72] text-lg leading-relaxed mb-6">
+                Series A and B funding is critical for companies moving beyond early-stage validation into rapid growth. By facilitating access to these funding rounds, the Council helps high-growth startups scale efficiently, strengthen their market position, and expand across borders.
+              </p>
+
+              <div className="space-y-4">
+                {whyItMattersPoints.map((point, i) => (
+                  <motion.div
+                    key={point.text}
+                    className="flex items-start gap-4 bg-white border border-[#D8D5CF] rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300"
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.35, delay: i * 0.07 }}
+                  >
+                    <div
+                      className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                      style={{ background: `${point.color}10`, border: `1px solid ${point.color}20` }}
                     >
-                      <div
-                        className="absolute top-3 bottom-3 left-0 w-1 rounded-r-full"
-                        style={{ background: `linear-gradient(to bottom, ${point.color}, ${point.color}40)` }}
-                      />
-                      <div
-                        className="relative flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ml-2"
-                        style={{ background: `${point.color}10`, border: `1px solid ${point.color}15` }}
-                      >
-                        <CheckCircle2 className="w-5 h-5" style={{ color: point.color }} strokeWidth={1.5} />
-                      </div>
-                      <span className="relative text-[#3D4152] text-base leading-relaxed pt-2">
-                        {point.text}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Sidebar */}
-              <div className="lg:col-span-2">
-                <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-md p-8 sticky top-8 overflow-hidden relative">
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
-
-                  <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-5">
-                    UPTECH Advantage
-                  </h3>
-                  <div className="relative h-px bg-[#D8D5CF] mb-6" />
-                  <ul className="relative space-y-5">
-                    {[
-                      { title: "VC & PE Networks", desc: "Direct access to venture capital and private equity firms specializing in growth-stage investment.", color: "#2563EB" },
-                      { title: "Cross-Border Funding", desc: "Investment networks spanning UK, Pakistan, Europe, and beyond.", color: "#22C55E" },
-                      { title: "Strategic Guidance", desc: "Expert advisory on valuation, deal structuring, and investor engagement.", color: "#C41E3A" },
-                      { title: "Market Expansion", desc: "Support for cross-border market entry alongside your funding round.", color: "#2563EB" },
-                    ].map((item, i) => (
-                      <motion.li
-                        key={item.title}
-                        className="relative flex items-start gap-3.5 pl-4"
-                        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: i * 0.08 }}
-                      >
-                        <div
-                          className="absolute top-1 bottom-1 left-0 w-1 rounded-r-full"
-                          style={{ background: `linear-gradient(to bottom, ${item.color}, ${item.color}30)` }}
-                        />
-                        <div
-                          className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center mt-0.5"
-                          style={{ background: `${item.color}10`, border: `1px solid ${item.color}15` }}
-                        >
-                          <ArrowUpRight className="w-4 h-4" style={{ color: item.color }} strokeWidth={1.5} />
-                        </div>
-                        <div>
-                          <span className="font-semibold text-[#1C1F2E] text-base">{item.title}</span>
-                          <p className="text-[#7A7E8F] text-base leading-relaxed mt-1">{item.desc}</p>
-                        </div>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
+                      <CheckCircle2 className="w-5 h-5" style={{ color: point.color }} strokeWidth={1.5} />
+                    </div>
+                    <span className="text-[#3D4152] text-base leading-relaxed pt-2">
+                      {point.text}
+                    </span>
+                  </motion.div>
+                ))}
               </div>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
-      {/* ================================================================
-          CTA SECTION
-          ================================================================ */}
+            {/* Sidebar */}
+            <div className="lg:col-span-2">
+              <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 sticky top-8">
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-5">
+                  UPTECH Advantage
+                </h3>
+                <div className="h-px bg-[#D8D5CF] mb-6" />
+                <ul className="space-y-5">
+                  {[
+                    { title: "VC & PE Networks", desc: "Direct access to venture capital and private equity firms specializing in growth-stage investment.", color: "#2563EB" },
+                    { title: "Cross-Border Funding", desc: "Investment networks spanning UK, Pakistan, Europe, and beyond.", color: "#22C55E" },
+                    { title: "Strategic Guidance", desc: "Expert advisory on valuation, deal structuring, and investor engagement.", color: "#C41E3A" },
+                    { title: "Market Expansion", desc: "Support for cross-border market entry alongside your funding round.", color: "#2563EB" },
+                  ].map((item, i) => (
+                    <motion.li
+                      key={item.title}
+                      className="flex items-start gap-3.5"
+                      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: i * 0.08 }}
+                    >
+                      <div
+                        className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center mt-0.5"
+                        style={{ background: `${item.color}10`, border: `1px solid ${item.color}20` }}
+                      >
+                        <ArrowUpRight className="w-4 h-4" style={{ color: item.color }} strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <span className="font-semibold text-[#1C1F2E] text-base">{item.title}</span>
+                        <p className="text-[#5A5F72] text-base leading-relaxed mt-1">{item.desc}</p>
+                      </div>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── CTA ── */}
       <GlobalCTA
         label="Scale Now"
         title="Fuel Growth. Expand Markets. Transform the Tech Ecosystem."

@@ -27,7 +27,7 @@ const techFocusAreas = [
   { icon: Zap, title: "Energy Solutions", desc: "Leveraging technology to develop renewable energy solutions, smart grids, and efficient power management systems for Pakistan's growing energy needs.", color: "#22C55E" },
   { icon: Cpu, title: "Fusion Technology", desc: "Exploring cutting-edge fusion technology research and development through UK–Pakistan academic and industry collaboration.", color: "#C41E3A" },
   { icon: Building2, title: "Smart Buildings & Infrastructure", desc: "Developing IoT-enabled smart building solutions, sustainable construction technology, and intelligent infrastructure management systems.", color: "#2563EB" },
-  { icon: Car, title: "Electric Vehicles & Mobility", desc: "Supporting the electric vehicle ecosystem through technology transfer, charging infrastructure development, and sustainable mobility solutions.", color: "#C41E3A" },
+  { icon: Car, title: "Precision Lasers & Electric Vehicles", desc: "Innovating transportation with state-of-the-art laser technology and electric vehicles, supporting the EV ecosystem through technology transfer, charging infrastructure, and sustainable mobility solutions.", color: "#C41E3A" },
   { icon: Globe2, title: "Internet Access & Connectivity", desc: "Bridging connectivity gaps with broadband expansion, satellite internet solutions, and digital infrastructure development across underserved regions.", color: "#ef4444" },
   { icon: Microscope, title: "Microchip & Biotech", desc: "Advancing semiconductor design, microchip manufacturing capabilities, and biotechnology research through bilateral partnerships and knowledge exchange.", color: "#06b6d4" },
   { icon: HeartPulse, title: "Body Mapping & Health Tech", desc: "Pioneering digital health solutions including AI-powered body mapping, telemedicine platforms, and health data analytics for improved patient outcomes.", color: "#22C55E" },
@@ -79,7 +79,7 @@ export default function AITechProgramsPage() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#EEECEA]">
+    <div className="bg-[#EEECEA] content-body">
       {/* ── Hero Section ── */}
       <PageHero
         label="UPTECH Programs"

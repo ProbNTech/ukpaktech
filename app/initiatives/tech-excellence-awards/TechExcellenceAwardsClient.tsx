@@ -64,7 +64,7 @@ export default function TechExcellenceAwardsClient() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="bg-[#EEECEA]">
+    <div className="bg-[#EEECEA] content-body">
       {/* ── Hero Section ── */}
       <PageHero
         label="UPTECH Initiative"

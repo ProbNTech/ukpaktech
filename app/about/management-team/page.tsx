@@ -7,6 +7,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { GovernanceSection } from "@/components/GovernanceSection";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { Button } from "@/components/Button";
 import { motion, useReducedMotion } from "framer-motion";
@@ -23,6 +24,10 @@ import {
   Building2,
   Layers,
   ArrowRight,
+  FileText,
+  Wallet,
+  Settings,
+  Megaphone,
 } from "lucide-react";
 
 /* ── Data ───────────────────────────────────────────────────────── */
@@ -56,26 +61,26 @@ const orgChart = [
     ],
   },
   {
-    title: "Senior Vice President (SVP)",
+    title: "Senior Vice Chairman",
     icon: Award,
     level: "Senior Management",
     responsibilities: [
-      "Support the CEO in strategic planning and execution",
-      "Oversee multiple departments and cross-functional initiatives",
-      "Lead special projects and bilateral programme delivery",
-      "Deputise for the CEO when required",
+      "Act as a key leader and deputy to the Chairman",
+      "Support the Chairman in their duties and represent the organisation",
+      "Chair meetings and ensure effective governance",
+      "Take on specific responsibilities including overseeing bilateral programmes",
       "Ensure alignment between departments and strategic objectives",
     ],
   },
   {
-    title: "Vice President (VP)",
+    title: "Vice Chairman",
     icon: Briefcase,
     level: "Senior Management",
     responsibilities: [
+      "Assist the Chairman in providing strategic direction and vision",
+      "Guide Council activities toward fulfilling its mission and goals",
       "Manage specific functional areas and departmental operations",
-      "Lead team development and capacity building",
       "Drive innovation and process improvement within departments",
-      "Coordinate with other VPs for cross-departmental collaboration",
       "Report on departmental performance and milestones",
     ],
   },
@@ -125,6 +130,50 @@ const orgChart = [
       "Identify and develop regional partnerships and opportunities",
       "Report on regional performance and member feedback",
       "Represent UPTECH at regional forums and conferences",
+    ],
+  },
+  {
+    title: "Joint Secretary",
+    icon: FileText,
+    level: "Operations",
+    responsibilities: [
+      "Manage all types of administrative matters for assigned areas",
+      "Handle internal communications and correspondence",
+      "Arrange meetings, documentation, and logistics",
+      "Support the General Secretary in cross-organisational coordination",
+    ],
+  },
+  {
+    title: "Finance Secretary",
+    icon: Wallet,
+    level: "Operations",
+    responsibilities: [
+      "Plan, manage, execute, and record all organisational financial matters",
+      "Prepare financial reports and budget forecasts",
+      "Coordinate with the Treasurer on audit and compliance",
+      "Manage expense approvals and financial documentation",
+    ],
+  },
+  {
+    title: "Operations Secretary",
+    icon: Settings,
+    level: "Operations",
+    responsibilities: [
+      "Execute functional operations by leading teams across channels",
+      "Coordinate day-to-day operational workflows and deliverables",
+      "Ensure alignment between operational teams and strategic goals",
+      "Monitor and report on operational performance metrics",
+    ],
+  },
+  {
+    title: "Media Coordinator",
+    icon: Megaphone,
+    level: "Operations",
+    responsibilities: [
+      "Maintain and manage social media channels and online presence",
+      "Coordinate with external media teams for coverage and PR",
+      "Create and curate content for digital platforms",
+      "Support event promotion and communications campaigns",
     ],
   },
 ];
@@ -314,34 +363,32 @@ export default function ManagementTeamPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 >
-                  <div
-                    className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full transition-opacity duration-300 opacity-40 group-hover:opacity-100"
-                    style={{ background: `linear-gradient(to bottom, ${color}, ${color}40)` }}
-                  />
-                  <div className="flex items-center gap-3 mb-4">
-                    <div
-                      className="relative w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: `${color}10`, border: `1px solid ${color}20` }}
-                    >
-                      <div className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500" style={{ backgroundColor: color }} />
-                      <Icon className="relative z-10 w-5 h-5" style={{ color }} strokeWidth={1.5} />
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative bg-white rounded-2xl p-6 h-full">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div
+                        className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                        style={{ backgroundColor: `${color}10`, border: `1px solid ${color}20` }}
+                      >
+                        <Icon className="w-5 h-5" style={{ color }} strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <h3 className="font-heading font-bold text-base text-[#1C1F2E]">{role.title}</h3>
+                        <span className="text-xs font-bold tracking-[0.15em] uppercase" style={{ color }}>{role.level}</span>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-heading font-bold text-base text-[#1C1F2E]">{role.title}</h3>
-                      <span className="text-base font-bold tracking-[0.15em] uppercase" style={{ color }}>{role.level}</span>
-                    </div>
+                    <div className="h-px bg-[#D8D5CF] mb-4" />
+                    <ul className="space-y-2.5">
+                      {role.responsibilities.map((item) => (
+                        <li key={item} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color }} strokeWidth={2} />
+                          <span className="text-base text-[#3D4152] leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="h-px bg-[#D8D5CF] mb-4" />
-                  <ul className="space-y-2.5">
-                    {role.responsibilities.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                        <span className="text-base text-[#3D4152] leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </motion.div>
               );
             })}
@@ -393,15 +440,19 @@ export default function ManagementTeamPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
-                  className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: `linear-gradient(to right, ${color}, ${color}40)` }} />
-                  <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: `${color}10`, border: `1px solid ${color}20` }}>
-                    <span className="text-base font-bold tabular-nums" style={{ color }}>{String(i + 1).padStart(2, "0")}</span>
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative bg-white rounded-2xl p-6 h-full">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${color}10`, border: `1px solid ${color}20` }}>
+                        <span className="text-sm font-bold tabular-nums" style={{ color }}>{String(i + 1).padStart(2, "0")}</span>
+                      </div>
+                      <h3 className="font-heading font-bold text-base text-[#1C1F2E]">{item.title}</h3>
+                    </div>
+                    <div className="h-px bg-[#D8D5CF] mb-4" />
+                    <p className="text-base text-[#5A5F72] leading-relaxed">{item.desc}</p>
                   </div>
-                  <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{item.title}</h3>
-                  <div className="h-px bg-[#D8D5CF] mb-3" />
-                  <p className="text-base text-[#5A5F72] leading-relaxed">{item.desc}</p>
                 </motion.div>
               );
             })}

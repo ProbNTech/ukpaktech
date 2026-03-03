@@ -86,7 +86,7 @@ export default function JobPortalPage() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div>
+    <div className="content-body">
       {/* ── Hero Section ── */}
       <PageHero
         label="UPTECH Careers"

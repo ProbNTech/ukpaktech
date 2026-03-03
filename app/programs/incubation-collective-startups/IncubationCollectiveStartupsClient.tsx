@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Users, Shield, Rocket, Globe2 } from "lucide-react";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
@@ -69,7 +69,7 @@ export default function IncubationCollectiveStartupsClient() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#EEECEA]">
+    <div className="bg-[#EEECEA] content-body">
       {/* ── Hero Section ── */}
       <PageHero
         label="UPTECH Programs"
@@ -244,22 +244,50 @@ export default function IncubationCollectiveStartupsClient() {
       </section>
 
       {/* ── Collective Startup Approach ── */}
-      <section className="relative bg-[#F5F4F2]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+      <section className="relative bg-[#EEECEA]">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div>
-              <SectionHeader
-                label="Collective Model"
-                title="The Collective Startup Approach"
-                color="red"
-                subtitle="A model that transforms how startups collaborate, share resources, and scale together."
-              />
-              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
-                Our collective startup model emphasises collaboration over competition, enabling entrepreneurs to pool resources, share infrastructure, and reduce individual risk while amplifying collective success.
-              </p>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                By combining expertise, networks, and market access, collective startups can tackle larger opportunities, enter new markets faster, and build sustainable ventures that benefit from sector-driven solutions and cross-border partnerships.
-              </p>
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+              <div className="lg:col-span-3">
+                <SectionHeader
+                  label="Collective Model"
+                  title="The Collective Startup Approach"
+                  color="red"
+                />
+                <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
+                  Our collective startup model emphasises collaboration over competition, enabling entrepreneurs to pool resources, share infrastructure, and reduce individual risk while amplifying collective success.
+                </p>
+                <p className="text-[#5A5F72] text-lg leading-relaxed">
+                  By combining expertise, networks, and market access, collective startups can tackle larger opportunities, enter new markets faster, and build sustainable ventures that benefit from sector-driven solutions and cross-border partnerships.
+                </p>
+              </div>
+              <div className="lg:col-span-2">
+                <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 sticky top-8">
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-5">Collective Benefits</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-5" />
+                  <ul className="space-y-4">
+                    {[
+                      { text: "Shared resources & infrastructure", icon: Users, color: "#2563EB" },
+                      { text: "Reduced individual risk", icon: Shield, color: "#22C55E" },
+                      { text: "Amplified collective success", icon: Rocket, color: "#C41E3A" },
+                      { text: "Cross-border market access", icon: Globe2, color: "#2563EB" },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <li key={item.text} className="flex items-center gap-3.5">
+                          <div
+                            className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                            style={{ background: `${item.color}10`, border: `1px solid ${item.color}20` }}
+                          >
+                            <Icon className="w-4.5 h-4.5" style={{ color: item.color }} strokeWidth={1.5} />
+                          </div>
+                          <span className="text-[#3D4152] text-base font-medium">{item.text}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
             </div>
           </AnimatedSection>
         </div>
@@ -385,7 +413,7 @@ export default function IncubationCollectiveStartupsClient() {
       </section>
 
       {/* ── Resources ── */}
-      <section className="relative bg-[#F5F4F2]">
+      <section className="relative bg-[#EEECEA]">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <SectionHeader

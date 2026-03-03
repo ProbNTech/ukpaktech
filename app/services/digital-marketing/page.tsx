@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { ShinyButton } from "@/components/ui/shiny-button";
+import { GlobalCTA } from "@/components/GlobalCTA";
 import { CheckCircle2, ChevronDown, Megaphone, Globe, PenTool, Calendar, Mail } from "lucide-react";
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
@@ -62,8 +63,8 @@ export default function DigitalMarketingPage() {
         image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership" variant="glass">Get Started</Button>
-          <Button href="/contact" variant="glass">Learn More</Button>
+          <ShinyButton href="/membership">Get Started</ShinyButton>
+          <Button href="/contact" variant="glass" size="lg">Learn More</Button>
         </div>
       </PageHero>
 
@@ -225,38 +226,15 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* ── CTA Section ── */}
-      <section className="relative bg-[#0B0F1A]/80 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10">
-          <Image src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=2400&q=85&auto=format&fit=crop" alt="Digital Marketing background" fill className="object-cover" sizes="100vw" />
-        </div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#C41E3A]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div>
-              <p className="text-base font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Get Started</p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Ready to Grow Your Market Presence Globally?
-              </h2>
-              <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-8">
-                Whether you are launching a new software solution, scaling into new territories, or seeking strategic partnerships, the Digital Product Marketing Hub provides the platform and support to help you grow.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg">Join the Hub</Button>
-                <Button href="/contact" variant="glass" size="lg">Contact Us</Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <GlobalCTA
+        label="Get Started"
+        title="Ready to Grow Your Market Presence Globally?"
+        subtitle="Whether you are launching a new software solution, scaling into new territories, or seeking strategic partnerships, the Digital Product Marketing Hub provides the platform and support to help you grow."
+        primaryButtonText="Join the Hub"
+        primaryButtonLink="/membership"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }

@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { Section } from "@/components/Section";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import { GlobalCTA } from "@/components/GlobalCTA";
@@ -16,7 +16,6 @@ import {
   Users,
   Shield,
   Zap,
-  ArrowUpRight,
   CheckCircle2,
   Lightbulb,
   Globe2,
@@ -56,7 +55,7 @@ export default function PeopleAIClient() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#EEECEA]">
+    <div className="bg-[#EEECEA] content-body">
       {/* ── Hero Section ── */}
       <PageHero
         label="UPTECH Initiative"
@@ -73,277 +72,192 @@ export default function PeopleAIClient() {
       </PageHero>
 
       {/* ── Stats Bar ── */}
-      <section className="bg-[#EEECEA]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-              >
-                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="relative h-full bg-white rounded-xl p-6">
-                    <div
-                      className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
-                      style={{ color: stat.color }}
-                    >
-                      {stat.value}
-                    </div>
-                    <p className="text-[#5A5F72] text-base">{stat.label}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+      <Section variant="light">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+            >
+              <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+              <div className="relative h-full text-center bg-white rounded-xl p-6">
+                <p
+                  className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                  style={{ color: stat.color }}
+                >
+                  {stat.value}
+                </p>
+                <p className="text-[#5A5F72] text-base">{stat.label}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </Section>
 
       {/* ── Intro Section ── */}
-      <section className="relative bg-[#EEECEA]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div>
-              <SectionHeader
-                label="Our Vision"
-                title="People AI Platform"
-                color="blue"
-              />
-              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
-                We focus on creating inclusive AI solutions that support workforce enablement, skills development, and cross-border collaboration between the UK and Pakistan.
-              </p>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                Through a human-centric approach, we bridge technology and professional services to enable sustainable workforce transformation across sectors.
-              </p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Our Vision"
+            title="People AI Platform"
+            color="blue"
+          />
+          <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
+            We focus on creating inclusive AI solutions that support workforce enablement, skills development, and cross-border collaboration between the UK and Pakistan.
+          </p>
+          <p className="text-[#5A5F72] text-lg leading-relaxed">
+            Through a human-centric approach, we bridge technology and professional services to enable sustainable workforce transformation across sectors.
+          </p>
+        </AnimatedSection>
+      </Section>
 
       {/* ── Platform Capabilities ── */}
-      <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <SectionHeader
-              label="Capabilities"
-              title="Platform Capabilities"
-              subtitle="Comprehensive AI-powered tools and services designed to transform how people work, learn, and collaborate."
-              color="green"
-            />
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Capabilities"
+            title="Platform Capabilities"
+            subtitle="Comprehensive AI-powered tools and services designed to transform how people work, learn, and collaborate."
+            color="green"
+          />
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {capabilities.map((cap, i) => {
-                const Icon = cap.icon;
-                return (
-                  <motion.div
-                    key={cap.title}
-                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
-                  >
-                    {/* Colored top border */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {capabilities.map((cap, i) => {
+              const Icon = cap.icon;
+              return (
+                <motion.div
+                  key={cap.title}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="group relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                >
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-2xl p-7">
                     <div
-                      className="absolute top-0 left-0 right-0 h-[3px]"
-                      style={{ background: `linear-gradient(to right, ${cap.color}, ${cap.color}60)` }}
-                    />
-
-                    <div className="p-6">
-                      <div className="flex items-center justify-between mb-5">
-                        {/* Icon with colored glow */}
-                        <div className="relative">
-                          <div
-                            className="absolute inset-[-8px] rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"
-                            style={{ background: cap.color }}
-                          />
-                          <div
-                            className="relative w-12 h-12 rounded-xl flex items-center justify-center"
-                            style={{
-                              background: `${cap.color}15`,
-                              border: `1px solid ${cap.color}30`,
-                            }}
-                          >
-                            <Icon className="w-5 h-5" style={{ color: cap.color }} strokeWidth={1.5} />
-                          </div>
-                        </div>
-                        {/* Numbered label */}
-                        <span
-                          className="text-base font-bold tracking-[0.2em] uppercase"
-                          style={{ color: `${cap.color}60` }}
-                        >
-                          {cap.num}
-                        </span>
-                      </div>
-
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
-                        {cap.title}
-                      </h3>
-                      <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#7A7E8F] text-base leading-relaxed">{cap.description}</p>
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                      style={{ background: `${cap.color}12`, border: `1px solid ${cap.color}25` }}
+                    >
+                      <Icon className="w-6 h-6" style={{ color: cap.color }} strokeWidth={1.5} />
                     </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">
+                      {cap.title}
+                    </h3>
+                    <div className="h-px bg-[#D8D5CF] mb-3" />
+                    <p className="text-[#5A5F72] text-base leading-relaxed">{cap.description}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
 
       {/* ── How It Works ── */}
-      <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <SectionHeader
-              label="Your Journey"
-              title="How It Works"
-              subtitle="A simple, structured approach to integrating AI into your organisation and workflows."
-              color="blue"
-            />
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Your Journey"
+            title="How It Works"
+            subtitle="A simple, structured approach to integrating AI into your organisation and workflows."
+            color="blue"
+          />
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {howItWorks.map((step, i) => {
-                const Icon = step.icon;
-                return (
-                  <motion.div
-                    key={step.number}
-                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
-                  >
-                    {/* Colored top border */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {howItWorks.map((step, i) => (
+                <motion.div
+                  key={step.number}
+                  className="relative h-full bg-white rounded-2xl border border-[#D8D5CF] shadow-sm p-6 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                >
+                  <div className="flex items-center gap-3 mb-5">
                     <div
-                      className="absolute top-0 left-0 right-0 h-[3px]"
-                      style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}60)` }}
-                    />
-
-                    <div className="p-6">
-                      {/* Glowing number circle and icon */}
-                      <div className="flex items-center justify-between mb-5">
-                        <div className="relative">
-                          {/* Glow behind circle */}
-                          <div
-                            className="absolute inset-[-4px] rounded-full opacity-20 group-hover:opacity-40 blur-md transition-opacity duration-500"
-                            style={{ background: step.color }}
-                          />
-                          <div
-                            className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border"
-                            style={{
-                              background: `${step.color}25`,
-                              borderColor: `${step.color}50`,
-                              boxShadow: `0 0 20px ${step.color}20`,
-                            }}
-                          >
-                            {step.number}
-                          </div>
-                        </div>
-                        {/* Icon with glow */}
-                        <div className="relative">
-                          <div
-                            className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"
-                            style={{ background: step.color }}
-                          />
-                          <div
-                            className="relative w-10 h-10 rounded-xl flex items-center justify-center"
-                            style={{
-                              background: `${step.color}15`,
-                              border: `1px solid ${step.color}30`,
-                            }}
-                          >
-                            <Icon className="w-5 h-5" style={{ color: step.color }} strokeWidth={1.5} />
-                          </div>
-                        </div>
-                      </div>
-
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
-                        {step.title}
-                      </h3>
-                      <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">{step.description}</p>
-
-                      {/* Outcome */}
-                      <div className="flex items-center gap-2 pt-3 border-t border-[#D8D5CF]">
-                        <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
-                        <span className="text-base font-semibold" style={{ color: step.color }}>
-                          {step.outcome}
-                        </span>
-                      </div>
+                      className="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold border-2"
+                      style={{
+                        background: `linear-gradient(135deg, ${step.color}30, ${step.color}10)`,
+                        borderColor: `${step.color}60`,
+                        color: step.color,
+                      }}
+                    >
+                      {step.number}
                     </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+                  </div>
+
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-[#5A5F72] text-base leading-relaxed mb-4">{step.description}</p>
+
+                  <div
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full"
+                    style={{ background: `${step.color}12`, border: `1px solid ${step.color}25` }}
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5" style={{ color: step.color }} />
+                    <span className="text-base font-semibold" style={{ color: step.color }}>
+                      {step.outcome}
+                    </span>
+                  </div>
+                </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
 
       {/* ── Use Cases ── */}
-      <section className="relative bg-[#F5F4F2]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <SectionHeader
-              label="Impact"
-              title="Use Cases"
-              subtitle="Real-world applications driving transformation across industries and sectors."
-              color="red"
-            />
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Impact"
+            title="Use Cases"
+            subtitle="Real-world applications driving transformation across industries and sectors."
+            color="red"
+          />
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {useCases.map((useCase, i) => {
-                const Icon = useCase.icon;
-                return (
-                  <motion.div
-                    key={useCase.title}
-                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="group relative bg-white border border-[#D8D5CF] rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-lg hover:border-[#2563EB]/30 transition-all duration-300 shadow-sm"
-                  >
-                    {/* Colored left accent */}
-                    <div
-                      className="absolute top-4 bottom-4 left-0 w-1 rounded-r-full"
-                      style={{ background: `linear-gradient(to bottom, ${useCase.color}, ${useCase.color}30)` }}
-                    />
-
-                    <div className="p-6 pl-7 flex items-start gap-5">
-                      {/* Icon with glow */}
-                      <div className="relative flex-shrink-0">
-                        <div
-                          className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"
-                          style={{ background: useCase.color }}
-                        />
-                        <div
-                          className="relative w-12 h-12 rounded-xl flex items-center justify-center"
-                          style={{
-                            background: `${useCase.color}15`,
-                            border: `1px solid ${useCase.color}30`,
-                          }}
-                        >
-                          <Icon className="w-5 h-5" style={{ color: useCase.color }} strokeWidth={1.5} />
-                        </div>
+          <div className="grid md:grid-cols-2 gap-7">
+            {useCases.map((useCase, i) => {
+              const Icon = useCase.icon;
+              return (
+                <motion.div
+                  key={useCase.title}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.12 }}
+                  className="group relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                >
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-2xl p-8 flex flex-col">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div
+                        className="w-14 h-14 rounded-xl flex items-center justify-center"
+                        style={{ background: `${useCase.color}12`, border: `1px solid ${useCase.color}25` }}
+                      >
+                        <Icon className="w-7 h-7" style={{ color: useCase.color }} strokeWidth={1.5} />
                       </div>
-
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1 group-hover:text-[#2563EB] transition-colors duration-200">
-                          {useCase.title}
-                        </h3>
-                        <p className="text-[#7A7E8F] text-base leading-relaxed">{useCase.description}</p>
-                      </div>
-
-                      <ArrowUpRight className="w-4 h-4 text-[#D8D5CF] group-hover:text-[#2563EB] transition-colors duration-300 flex-shrink-0 mt-1" />
+                      <h3 className="font-heading font-bold text-lg text-[#1C1F2E]">
+                        {useCase.title}
+                      </h3>
                     </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+
+                    <div className="h-px bg-[#D8D5CF] mb-5" />
+                    <p className="text-base text-[#5A5F72] leading-relaxed">
+                      {useCase.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
 
       {/* ── CTA Section ── */}
       <GlobalCTA

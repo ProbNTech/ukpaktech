@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, ChevronDown } from "lucide-react";
+import { CheckCircle2, ChevronDown, Award, BookOpen, Briefcase, Globe2 } from "lucide-react";
 import { useState } from "react";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
@@ -56,7 +56,7 @@ export default function SkillDevelopmentCenterPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="bg-[#EEECEA]">
+    <div className="bg-[#EEECEA] content-body">
       {/* ── Hero Section ── */}
       <PageHero
         label="UPTECH Programs"
@@ -88,22 +88,49 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-[#EEECEA]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div>
-              <p className="text-base font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-5">
-                Our Mission
-              </p>
-              <p className="font-heading font-extrabold text-[#1C1F2E] text-xl sm:text-2xl lg:text-3xl leading-snug mb-5">
-                UPTECH&apos;s Skill Development Center provides comprehensive training programs designed to build world-class tech capabilities across the UK and Pakistan.
-              </p>
-              <div className="h-px bg-gradient-to-r from-[#2563EB]/40 via-[#22C55E]/20 to-transparent mb-5" />
-              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
-                Our Skill Development Center offers industry-recognised certifications, specialised training, and personalised mentorship to empower individuals and organisations with cutting-edge technology skills.
-              </p>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                Through strategic partnerships with leading tech companies and educational institutions, we deliver programs that bridge the skills gap and create pathways for career advancement.
-              </p>
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+              <div className="lg:col-span-3">
+                <SectionHeader
+                  label="Our Mission"
+                  title="Building World-Class Tech Capabilities Across the UK and Pakistan"
+                  color="blue"
+                />
+                <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
+                  Our Skill Development Center offers industry-recognised certifications, specialised training, and personalised mentorship to empower individuals and organisations with cutting-edge technology skills.
+                </p>
+                <p className="text-[#5A5F72] text-lg leading-relaxed">
+                  Through strategic partnerships with leading tech companies and educational institutions, we deliver programs that bridge the skills gap and create pathways for career advancement.
+                </p>
+              </div>
+              <div className="lg:col-span-2">
+                <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 sticky top-8">
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-5">Program Highlights</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-5" />
+                  <ul className="space-y-4">
+                    {[
+                      { text: "Industry-recognised certifications", icon: Award, color: "#2563EB" },
+                      { text: "Specialised training tracks", icon: BookOpen, color: "#22C55E" },
+                      { text: "Career support & internships", icon: Briefcase, color: "#C41E3A" },
+                      { text: "Cross-border collaboration", icon: Globe2, color: "#2563EB" },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <li key={item.text} className="flex items-center gap-3.5">
+                          <div
+                            className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                            style={{ background: `${item.color}10`, border: `1px solid ${item.color}20` }}
+                          >
+                            <Icon className="w-4.5 h-4.5" style={{ color: item.color }} strokeWidth={1.5} />
+                          </div>
+                          <span className="text-[#3D4152] text-base font-medium">{item.text}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
             </div>
           </AnimatedSection>
         </div>

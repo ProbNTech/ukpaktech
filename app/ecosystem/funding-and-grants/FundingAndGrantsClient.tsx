@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { Section } from "@/components/Section";
 import { PageHero } from "@/components/PageHero";
 import {
   Rocket,
@@ -149,7 +150,7 @@ export default function FundingAndGrantsClient() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#EEECEA]">
+    <div className="bg-[#EEECEA] content-body">
       {/* ── HERO ──────────────────────────────────────────────────── */}
       <PageHero
         label="Ecosystem / Funding & Grants"
@@ -306,32 +307,16 @@ export default function FundingAndGrantsClient() {
         </div>
       </section>
 
-      {/* ── FUNDING GRANTS INTRO ────────────────────────────────────── */}
-      <section className="relative bg-[#EEECEA] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div className="max-w-4xl">
-              <SectionHeader
-                label="Funding Grants"
-                title={fundingGrantsIntro.heading}
-                color="red"
-                subtitle={fundingGrantsIntro.description}
-              />
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ── FUNDING STAGES — PREMIUM ──────────────────────────────── */}
+      {/* ── FUNDING STAGES ──────────────────────────────────────── */}
       <section className="relative bg-[#E8E6E3] overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
-                label="Stages"
-                title="Funding by Growth Stage"
-                color="blue"
-                subtitle="Tailored funding support from pre-seed through to Series B and R&D incentives."
+                label="Funding Grants"
+                title="Bridging the Funding Gap for Early-Stage Companies"
+                color="red"
+                subtitle="Pakistan's policy framework already offers vital support for early-stage companies, but we can enhance this further. Explore our tailored funding support from pre-seed through to Series B and R&D incentives."
               />
             </div>
 
@@ -469,111 +454,91 @@ export default function FundingAndGrantsClient() {
       </section>
 
       {/* ── ELIGIBILITY + BENEFITS SIDEBAR ─────────────────────────── */}
-      <section className="relative bg-[#EEECEA] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
-              {/* Eligibility */}
-              <div className="lg:col-span-3">
-                <div className="mb-6">
-                  <SectionHeader
-                    label="Eligibility"
-                    title="Eligibility Criteria"
-                    color="red"
-                    subtitle="Understanding the requirements for funding and grant applications."
-                  />
-                </div>
-                <div className="space-y-4">
-                  {eligibilityCriteria.map((item, i) => {
-                    const Icon = item.icon;
-                    return (
-                      <motion.div
-                        key={item.text}
-                        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -12 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-30px" }}
-                        transition={{ duration: 0.35, delay: i * 0.07 }}
-                        className="group relative rounded-xl border border-[#D8D5CF] bg-white shadow-sm p-5 flex items-start gap-4 hover:-translate-y-0.5 hover:shadow-md hover:border-[#2563EB]/30 transition-all duration-500 overflow-hidden"
+      <Section variant="light">
+        <AnimatedSection>
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+            {/* Eligibility */}
+            <div className="lg:col-span-3">
+              <SectionHeader
+                label="Eligibility"
+                title="Eligibility Criteria"
+                color="red"
+                subtitle="Understanding the requirements for funding and grant applications."
+              />
+              <div className="space-y-4">
+                {eligibilityCriteria.map((item, i) => {
+                  const Icon = item.icon;
+                  return (
+                    <motion.div
+                      key={item.text}
+                      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -12 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-30px" }}
+                      transition={{ duration: 0.35, delay: i * 0.07 }}
+                      className="flex items-start gap-4 bg-white border border-[#D8D5CF] rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300"
+                    >
+                      <div
+                        className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
+                        style={{ background: `${item.color}10`, border: `1px solid ${item.color}20` }}
                       >
-                        {/* Left accent border */}
+                        <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
+                      </div>
+                      <span className="text-[#3D4152] text-base leading-relaxed pt-2">{item.text}</span>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Benefits Sidebar */}
+            <div className="lg:col-span-2">
+              <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 sticky top-8">
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-5">Why Apply Through UPTECH</h3>
+                <div className="h-px bg-[#D8D5CF] mb-6" />
+                <ul className="space-y-5">
+                  {benefits.map((benefit, i) => {
+                    const Icon = benefit.icon;
+                    return (
+                      <motion.li
+                        key={benefit.title}
+                        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-30px" }}
+                        transition={{ duration: 0.3, delay: i * 0.08 }}
+                        className="flex items-start gap-3.5"
+                      >
                         <div
-                          className="absolute top-3 bottom-3 left-0 w-1 rounded-r-full"
-                          style={{ background: `linear-gradient(to bottom, ${item.color}, ${item.color}40)` }}
-                        />
-                        <div
-                          className="relative flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ml-2"
-                          style={{ background: `${item.color}10`, border: `1px solid ${item.color}15` }}
+                          className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center mt-0.5"
+                          style={{ background: `${benefit.color}10`, border: `1px solid ${benefit.color}20` }}
                         >
-                          <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
+                          <Icon className="w-4 h-4" style={{ color: benefit.color }} strokeWidth={1.5} />
                         </div>
-                        <span className="relative text-[#3D4152] text-base leading-relaxed pt-2">{item.text}</span>
-                      </motion.div>
+                        <div>
+                          <span className="font-semibold text-[#1C1F2E] text-base">{benefit.title}</span>
+                          <p className="text-[#5A5F72] text-base leading-relaxed mt-1">{benefit.description}</p>
+                        </div>
+                      </motion.li>
                     );
                   })}
-                </div>
-              </div>
-
-              {/* Benefits Sidebar */}
-              <div className="lg:col-span-2">
-                <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-md p-8 sticky top-8 overflow-hidden relative">
-
-                  <h3 className="relative font-heading font-bold text-[#1C1F2E] text-lg mb-5">Why Apply Through UPTECH</h3>
-                  <div className="relative h-px bg-[#D8D5CF] mb-6" />
-                  <ul className="relative space-y-5">
-                    {benefits.map((benefit, i) => {
-                      const Icon = benefit.icon;
-                      return (
-                        <motion.li
-                          key={benefit.title}
-                          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 10 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true, margin: "-30px" }}
-                          transition={{ duration: 0.3, delay: i * 0.08 }}
-                          className="relative flex items-start gap-3.5 pl-4"
-                        >
-                          {/* Left accent */}
-                          <div
-                            className="absolute top-1 bottom-1 left-0 w-1 rounded-r-full"
-                            style={{ background: `linear-gradient(to bottom, ${benefit.color}, ${benefit.color}30)` }}
-                          />
-                          <div
-                            className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center mt-0.5"
-                            style={{ background: `${benefit.color}10`, border: `1px solid ${benefit.color}15` }}
-                          >
-                            <Icon className="w-4.5 h-4.5" style={{ color: benefit.color }} strokeWidth={1.5} />
-                          </div>
-                          <div>
-                            <span className="font-semibold text-[#1C1F2E] text-base">{benefit.title}</span>
-                            <p className="text-[#7A7E8F] text-base leading-relaxed mt-1">{benefit.description}</p>
-                          </div>
-                        </motion.li>
-                      );
-                    })}
-                  </ul>
-                </div>
+                </ul>
               </div>
             </div>
-          </AnimatedSection>
-        </div>
-      </section>
+          </div>
+        </AnimatedSection>
+      </Section>
 
       {/* ── FAQ ────────────────────────────────────────────────────── */}
-      <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div className="mb-8">
-              <SectionHeader
-                label="FAQ"
-                title="Frequently Asked Questions"
-                color="blue"
-                subtitle="Common questions about funding and grants."
-              />
-            </div>
-
-            <FAQSection faqs={faqs} shouldReduceMotion={shouldReduceMotion} />
-          </AnimatedSection>
-        </div>
-      </section>
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="FAQ"
+            title="Frequently Asked Questions"
+            color="blue"
+            subtitle="Common questions about funding and grants."
+          />
+          <FAQSection faqs={faqs} shouldReduceMotion={shouldReduceMotion} />
+        </AnimatedSection>
+      </Section>
 
       {/* ── CTA ────────────────────────────────────────────────────── */}
       <GlobalCTA

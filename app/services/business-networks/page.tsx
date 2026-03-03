@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { ShinyButton } from "@/components/ui/shiny-button";
+import { GlobalCTA } from "@/components/GlobalCTA";
 import { CheckCircle2, Globe, Handshake, BarChart3, Users, Target, ChevronDown, Search, GitBranch, MessageSquare, TrendingUp } from "lucide-react";
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
@@ -77,8 +78,8 @@ export default function BusinessNetworksPage() {
         image="https://images.unsplash.com/photo-1511578314322-379afb476865?w=2400&q=85&auto=format&fit=crop"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership" variant="glass">Become a Member</Button>
-          <Button href="/contact" variant="glass">Get in Touch</Button>
+          <ShinyButton href="/membership">Become a Member</ShinyButton>
+          <Button href="/contact" variant="glass" size="lg">Get in Touch</Button>
         </div>
       </PageHero>
 
@@ -319,38 +320,15 @@ export default function BusinessNetworksPage() {
       </section>
 
       {/* ── CTA Section ── */}
-      <section className="relative bg-[#131942]/80 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10">
-          <Image src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=2400&q=85&auto=format&fit=crop" alt="Business Networks background" fill className="object-cover" sizes="100vw" />
-        </div>
-        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#2563EB]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-[120px] opacity-15 bg-[#22C55E]" />
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
-          <AnimatedSection>
-            <div>
-              <p className="text-base font-semibold uppercase tracking-[0.25em] text-[#2563EB] mb-4">Join the Network</p>
-              <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
-                Ready to Expand Your Network Across Continents?
-              </h2>
-              <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-8">
-                Join the UPTECH business network and unlock strategic connections, market insights, and partnership opportunities across the UK, Pakistan, Europe, Middle East, and Africa.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button href="/membership" variant="primary" size="lg">Become a Member</Button>
-                <Button href="/contact" variant="glass" size="lg">Contact Us</Button>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+      <GlobalCTA
+        label="Join the Network"
+        title="Ready to Expand Your Network Across Continents?"
+        subtitle="Join the UPTECH business network and unlock strategic connections, market insights, and partnership opportunities across the UK, Pakistan, Europe, Middle East, and Africa."
+        primaryButtonText="Become a Member"
+        primaryButtonLink="/membership"
+        secondaryButtonText="Contact Us"
+        secondaryButtonLink="/contact"
+      />
     </div>
   );
 }
