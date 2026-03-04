@@ -1,3 +1,4 @@
+// UPTECH Council - Main application layout
 import type { Metadata } from "next";
 import { Lato, Montserrat } from "next/font/google";
 import "./globals.css";
