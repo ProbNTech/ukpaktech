@@ -1,3 +1,4 @@
+// UPTECH Council - Home page
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
