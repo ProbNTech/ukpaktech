@@ -34,7 +34,7 @@ export default function ObjectivesPage() {
         label="Objectives & Values"
         title="Our Objectives"
         subtitle="We provide a platform to all Pakistani IT professionals residing in the United Kingdom working across various levels and industry sectors."
-        image="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=2400&q=85&auto=format&fit=crop"
+        threeBg
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>

@@ -249,7 +249,7 @@ export default function ManagementTeamPage() {
         label="Management Team"
         title="Leadership &amp; Management"
         subtitle="A transparent governance framework that ensures accountability, effectiveness, and member representation at every level."
-        image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85&auto=format&fit=crop"
+        threeBg
       >
         <div className="grid grid-cols-4 gap-4">
           {stats.map((stat) => (

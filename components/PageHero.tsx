@@ -1,8 +1,25 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "framer-motion";
+
+const FuturisticHeroBg = dynamic(
+  () => import("@/components/ui/futuristic-hero-bg").then((m) => m.FuturisticHeroBg),
+  { ssr: false }
+);
+
+const FloatingIconsBg = dynamic(
+  () => import("@/components/ui/floating-icons-hero-section").then((m) => m.FloatingIconsBg),
+  { ssr: false }
+);
+
+interface FloatingIcon {
+  id: number;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  className: string;
+}
 
 interface PageHeroProps {
   title: string | ReactNode;
@@ -12,6 +29,10 @@ interface PageHeroProps {
   className?: string;
   label?: string;
   image?: string;
+  video?: string;
+  videoSpeed?: number;
+  threeBg?: boolean;
+  floatingIcons?: FloatingIcon[];
 }
 
 export function PageHero({
@@ -22,8 +43,19 @@ export function PageHero({
   className = "",
   label,
   image,
+  video,
+  videoSpeed = 1,
+  threeBg = false,
+  floatingIcons,
 }: PageHeroProps) {
   const shouldReduceMotion = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current && videoSpeed !== 1) {
+      videoRef.current.playbackRate = videoSpeed;
+    }
+  }, [videoSpeed]);
 
   return (
     <section className={`relative z-[2] w-full overflow-hidden bg-[#0B0F1A] ${className}`}>
@@ -37,6 +69,31 @@ export function PageHero({
           className="object-cover object-center"
           sizes="100vw"
         />
+      )}
+
+      {/* Background video */}
+      {video && (
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-[0]"
+          src={video}
+        />
+      )}
+
+      {/* 3D animated background */}
+      {threeBg && (
+        <div className="absolute inset-0 z-[1]">
+          <FuturisticHeroBg />
+        </div>
+      )}
+
+      {/* Floating icons background */}
+      {floatingIcons && floatingIcons.length > 0 && (
+        <FloatingIconsBg icons={floatingIcons} />
       )}
 
       {/* Subtle left-side gradient for text readability */}
@@ -93,8 +150,13 @@ export function PageHero({
             {/* Title — word-by-word blur-in for strings */}
             {typeof title === "string" ? (
               <h1
-                className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-5 sm:mb-6"
-                style={{ lineHeight: 1.25, textShadow: "0 2px 8px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4)" }}
+                className={`font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-5 sm:mb-6 ${threeBg ? "uppercase tracking-wider" : ""}`}
+                style={{
+                  lineHeight: 1.25,
+                  textShadow: threeBg
+                    ? "0 0 10px rgba(37,99,235,0.9), 0 0 20px rgba(37,99,235,0.7), 0 0 40px rgba(37,99,235,0.5), 0 0 80px rgba(37,99,235,0.3)"
+                    : "0 2px 8px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4)",
+                }}
               >
                 {title.split(" ").map((word, i) => (
                   <motion.span
@@ -110,8 +172,11 @@ export function PageHero({
               </h1>
             ) : (
               <motion.div
-                className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-5 sm:mb-6"
-                style={{ lineHeight: 1.25 }}
+                className={`font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-5 sm:mb-6 ${threeBg ? "uppercase tracking-wider" : ""}`}
+                style={{
+                  lineHeight: 1.25,
+                  ...(threeBg && { textShadow: "0 0 10px rgba(37,99,235,0.9), 0 0 20px rgba(37,99,235,0.7), 0 0 40px rgba(37,99,235,0.5), 0 0 80px rgba(37,99,235,0.3)" }),
+                }}
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}

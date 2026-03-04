@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { ChevronRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { LazyImage } from "@/components/ui/lazy-image";
 
 export interface NewsCardProps {
   slug: string;
@@ -16,7 +14,7 @@ export interface NewsCardProps {
   index?: number;
 }
 
-/* Brand-color mapping for category badges */
+/* Brand-color mapping for category dots */
 const categoryColors: Record<string, string> = {
   Policy: "#2563EB",
   Events: "#C41E3A",
@@ -37,18 +35,7 @@ function getCategoryColor(category: string): string {
 }
 
 export function NewsCard({ slug, title, category, date, image, excerpt, index = 0 }: NewsCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
   const color = getCategoryColor(category);
-
-  const detailVariants = {
-    hidden: { opacity: 0, height: 0, marginTop: 0 },
-    visible: {
-      opacity: 1,
-      height: "auto",
-      marginTop: "0.75rem",
-      transition: { duration: 0.3, ease: "easeInOut" },
-    },
-  };
 
   return (
     <motion.div
@@ -56,96 +43,32 @@ export function NewsCard({ slug, title, category, date, image, excerpt, index = 
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      whileHover={{ y: -6 }}
-      className="cursor-pointer"
     >
       <Link
         href={`/news/${slug}`}
-        className="group block h-full overflow-hidden rounded-xl bg-white shadow-md transition-shadow duration-300 hover:shadow-xl border border-[#D8D5CF]/40"
+        className="group flex flex-col gap-2 rounded-lg p-2 duration-75 hover:bg-[#E8E6E3]/60 active:bg-[#E8E6E3]"
       >
-        {/* Image with gradient overlay */}
-        <div className="relative h-44 w-full overflow-hidden bg-[#1C1F2E]">
-          {image ? (
-            <Image
-              src={image}
-              alt={title}
-              fill
-              className="object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-          ) : (
-            <div
-              className="absolute inset-0 opacity-10"
-              style={{
-                backgroundImage: "repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)",
-                backgroundSize: "12px 12px",
-              }}
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-
-          {/* Category badge on image */}
-          <span
-            className="absolute top-3 left-3 px-3 py-1 text-white text-xs font-bold uppercase tracking-wider rounded-full backdrop-blur-sm"
-            style={{ background: `${color}CC` }}
-          >
-            {category}
-          </span>
-        </div>
-
-        {/* Card body */}
-        <div className="p-5">
-          {/* Date + status row */}
-          <div className="flex items-center gap-2 text-xs text-[#7A7E8F] mb-2">
-            <span>{date}</span>
-            <span>&bull;</span>
-            <div className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-[#22C55E]" />
-              <span>Published</span>
-            </div>
+        <LazyImage
+          src={image}
+          fallback="/image/placeholder.webp"
+          inView={true}
+          alt={title}
+          ratio={16 / 9}
+          className="transition-all duration-500 group-hover:scale-105"
+          AspectRatioClassName="border-[#D8D5CF]"
+        />
+        <div className="space-y-2 px-2 pb-2">
+          <div className="flex items-center gap-2 text-[11px] sm:text-xs text-[#7A7E8F]">
+            <p>{category}</p>
+            <div className="size-1 rounded-full" style={{ background: color }} />
+            <p>{date}</p>
           </div>
-
-          {/* Title */}
-          <h3 className="font-heading font-bold text-[1.05rem] leading-snug text-[#1C1F2E] line-clamp-2 group-hover:text-[#2563EB] transition-colors duration-200">
+          <h2 className="line-clamp-2 text-lg leading-5 font-semibold tracking-tight text-[#1C1F2E]">
             {title}
-          </h3>
-
-          {/* Animated excerpt reveal on hover */}
-          <AnimatePresence>
-            {isHovered && (
-              <motion.div
-                key="excerpt"
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                variants={detailVariants}
-                className="overflow-hidden"
-              >
-                <p className="text-sm text-[#3D4152] leading-relaxed line-clamp-3">{excerpt}</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <span
-                    className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold"
-                    style={{ background: `${color}15`, color, borderColor: `${color}30` }}
-                  >
-                    {category}
-                  </span>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-
-        {/* Footer */}
-        <div className="flex items-center justify-between border-t border-[#D8D5CF]/60 px-5 py-3">
-          <span className="text-xs font-semibold text-[#2563EB] inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
-            Read article <ChevronRight className="w-3.5 h-3.5" />
-          </span>
-          <div
-            className="h-1.5 w-1.5 rounded-full"
-            style={{ background: color }}
-          />
+          </h2>
+          <p className="line-clamp-3 text-sm text-[#3D4152]/70">
+            {excerpt}
+          </p>
         </div>
       </Link>
     </motion.div>

@@ -285,7 +285,7 @@ export function Header() {
               <Link
                 href="/"
                 onMouseEnter={handleLeave}
-                className="relative h-full px-2.5 xl:px-3 flex items-center font-sans text-base font-semibold tracking-[0.02em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150"
+                className="relative h-full px-2.5 xl:px-3 flex items-center font-sans text-[13px] font-semibold tracking-[0.04em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150"
               >
                 HOME
               </Link>
@@ -297,7 +297,7 @@ export function Header() {
                       key={item.label}
                       href={item.href}
                       onMouseEnter={handleLeave}
-                      className="relative h-full px-2.5 xl:px-3 flex items-center font-sans text-base font-semibold tracking-[0.02em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150 whitespace-nowrap"
+                      className="relative h-full px-2.5 xl:px-3 flex items-center font-sans text-[13px] font-semibold tracking-[0.04em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150 whitespace-nowrap"
                     >
                       {(item.displayLabel ?? item.label).toUpperCase()}
                     </Link>
@@ -314,7 +314,7 @@ export function Header() {
                     onMouseEnter={() => handleGroupEnter(item.label)}
                     className={`
                       relative h-full px-2.5 xl:px-3 flex items-center gap-1
-                      font-sans text-base font-semibold tracking-[0.02em]
+                      font-sans text-[13px] font-semibold tracking-[0.04em]
                       transition-colors duration-150 cursor-default select-none whitespace-nowrap
                       ${isActive
                         ? "text-[#0F172A]"

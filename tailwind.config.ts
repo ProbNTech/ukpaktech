@@ -33,8 +33,8 @@ const config: Config = {
         "color-5": "hsl(var(--color-5))",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        heading: ["var(--font-manrope)", "system-ui", "sans-serif"],
+        sans: ["var(--font-montserrat)", "system-ui", "sans-serif"],
+        heading: ["var(--font-lato)", "system-ui", "sans-serif"],
       },
       fontSize: {
         // ─── Header / Navigation ───────────────────────────────────

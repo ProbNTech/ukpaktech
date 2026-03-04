@@ -85,7 +85,8 @@ export default function AITechProgramsPage() {
         label="UPTECH Programs"
         title="AI & Tech Programs"
         subtitle="Driving AI innovation and tech leadership between the UK and Pakistan through comprehensive training, certifications, and collaborative startup models."
-        image="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=2400&q=85&auto=format&fit=crop"
+        video="/image/Ai and program/854323-hd_1920_1080_25fps.mp4"
+        videoSpeed={2}
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Become a Member</ShinyButton>

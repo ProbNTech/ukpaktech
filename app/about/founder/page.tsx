@@ -21,7 +21,7 @@ export default function FounderPage() {
         label="Founder & CEO"
         title="Khalil Choudhary"
         subtitle="Visionary leader dedicated to strengthening the UK-Pakistan technology corridor through innovation, collaboration, and sustainable partnerships."
-        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=85&auto=format&fit=crop"
+        threeBg
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>

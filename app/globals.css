@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --font-inter: 'Inter', system-ui, sans-serif;
-    --font-manrope: 'Manrope', system-ui, sans-serif;
+    --font-montserrat: 'Montserrat', system-ui, sans-serif;
+    --font-lato: 'Lato', system-ui, sans-serif;
 
     /* Rainbow button colors */
     --color-1: 0 100% 63%;
@@ -90,7 +90,7 @@
   body {
     background-color: var(--bg-default);
     color: var(--text-secondary);
-    font-family: var(--font-inter), system-ui, sans-serif;
+    font-family: var(--font-montserrat), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -331,7 +331,7 @@
   cursor: pointer;
   outline-offset: 4px;
   padding: 0.875rem 2rem;
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   line-height: 1.2;
   font-weight: 500;
