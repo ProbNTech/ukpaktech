@@ -1,15 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
-import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
 import { CheckCircle2, Landmark, Building2, GraduationCap } from "lucide-react";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
+
+const WireframeDottedGlobe = dynamic(
+  () => import("@/components/ui/wireframe-dotted-globe").then((m) => m.WireframeDottedGlobe),
+  { ssr: false }
+);
 
 const pillars = [
   { title: "Governments", description: "Facilitating policy alignment and bilateral technology cooperation between UK and Pakistani government bodies.", color: "#2563EB" },
@@ -63,20 +68,110 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
   return (
     <div className="bg-[#EEECEA] content-body">
-      {/* ── Hero Section ── */}
-      <PageHero
-        label="UPTECH Ecosystem"
-        title="UK–Pakistan Technology Partnership"
-        subtitle="Strengthening bilateral technology collaboration between the United Kingdom and Pakistan."
-        image="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=2400&q=85&auto=format&fit=crop"
-      >
-        <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership">Become a Member</ShinyButton>
-          <Button href="/contact" variant="glass">
-            Contact Us
-          </Button>
+      {/* ── Hero Section — split layout with globe ── */}
+      <section className="relative z-[2] w-full overflow-hidden bg-[#0B0F1A]">
+        {/* Subtle left-side gradient */}
+        <div
+          className="absolute inset-0 z-10 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(5,10,20,0.72) 0%, rgba(5,10,20,0.50) 45%, rgba(5,10,20,0.25) 70%, rgba(5,10,20,0.10) 100%)",
+          }}
+        />
+        {/* Noise overlay */}
+        <div className="absolute inset-0 z-[11] pointer-events-none opacity-[0.04] bg-gradient-to-br from-white/5 via-transparent to-white/5" />
+
+        {/* Floating gradient orbs */}
+        <motion.div
+          className="absolute right-[10%] top-[20%] w-[400px] h-[400px] rounded-full pointer-events-none z-[5]"
+          style={{ background: "radial-gradient(circle, rgba(37,99,235,0.12), transparent 70%)" }}
+          animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute left-[60%] bottom-[15%] w-[250px] h-[250px] rounded-full pointer-events-none z-[5]"
+          style={{ background: "radial-gradient(circle, rgba(34,197,94,0.08), transparent 70%)" }}
+          animate={{ y: [0, 15, 0], x: [0, -10, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Content: text left, globe right */}
+        <div className="relative z-20 flex flex-col lg:flex-row items-center min-h-[420px] lg:min-h-[560px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-20 gap-8 lg:gap-0">
+          {/* Left — text */}
+          <div className="w-full lg:w-[55%]">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.p
+                className="text-lg sm:text-xl font-extrabold uppercase tracking-[0.18em] text-[#C41E3A] mb-4 sm:mb-5"
+                style={{ textShadow: "0 1px 6px rgba(0,0,0,0.4)" }}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+              >
+                UPTECH Ecosystem
+              </motion.p>
+
+              <h1
+                className="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-5 sm:mb-6"
+                style={{ lineHeight: 1.25, textShadow: "0 2px 8px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4)" }}
+              >
+                {"UK–Pakistan Technology Partnership".split(" ").map((word, i) => (
+                  <motion.span
+                    key={i}
+                    className="inline-block mr-[0.3em]"
+                    initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    transition={{ duration: 0.4, delay: 0.1 + i * 0.04, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </h1>
+
+              <motion.p
+                className="text-base sm:text-lg text-white/90 leading-relaxed"
+                initial={{ opacity: 0, y: 14, filter: "blur(4px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.5, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              >
+                Strengthening bilateral technology collaboration between the United Kingdom and Pakistan.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                className="mt-6 sm:mt-8"
+              >
+                <div className="flex flex-wrap items-center gap-4">
+                  <ShinyButton href="/membership">Become a Member</ShinyButton>
+                  <Button href="/contact" variant="glass">
+                    Contact Us
+                  </Button>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Right — interactive globe */}
+          <div className="w-full lg:w-[50%] flex items-center justify-center lg:-mr-8 xl:-mr-12">
+            <motion.div
+              className="w-full max-w-[600px] xl:max-w-[680px] aspect-square"
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <WireframeDottedGlobe size={680} />
+            </motion.div>
+          </div>
         </div>
-      </PageHero>
+
+        {/* Bottom accent line */}
+        <div className="absolute bottom-0 left-0 right-0 h-[3px] z-30 bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#E11D48]" />
+      </section>
 
       {/* ── Intro Section ── */}
       <section className="relative bg-white">

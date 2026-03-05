@@ -12,9 +12,14 @@
     "@radix-ui/react-aspect-ratio": "^1.1.8",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-slot": "^1.2.4",
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^1.12.67",
+    "@types/d3": "^7.4.3",
     "@types/three": "^0.183.1",
+    "@types/topojson-client": "^3.1.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "d3": "^7.9.0",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.400.0",
     "motion": "^12.34.3",
@@ -25,7 +30,9 @@
     "react-use-measure": "^2.1.7",
     "tailwind-merge": "^3.5.0",
     "three": "^0.183.2",
-    "threejs-components": "^0.0.19"
+    "threejs-components": "^0.0.19",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

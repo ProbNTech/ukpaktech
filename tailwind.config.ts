@@ -10,14 +10,35 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        background: "var(--bg-default)",
+        foreground: "var(--text-primary)",
+        card: "var(--bg-white)",
+        "card-foreground": "var(--text-primary)",
+        popover: "var(--bg-white)",
+        "popover-foreground": "var(--text-primary)",
+        muted: "var(--bg-alt)",
+        "muted-foreground": "var(--text-muted)",
+        border: "var(--border-default)",
+        input: "var(--border-default)",
+        ring: "var(--primary)",
         primary: {
           DEFAULT: "#2563EB",
           hover: "#1D4ED8",
           foreground: "#FFFFFF",
         },
+        secondary: {
+          DEFAULT: "var(--bg-alt)",
+          foreground: "var(--text-primary)",
+        },
         accent: {
+          DEFAULT: "var(--bg-alt)",
+          foreground: "var(--text-primary)",
           green: "#22C55E",
           "green-hover": "#16A34A",
+        },
+        destructive: {
+          DEFAULT: "#DC2626",
+          foreground: "#FFFFFF",
         },
         /* Editorial palette tokens */
         editorial: {

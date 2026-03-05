@@ -70,7 +70,8 @@ export default function TechExcellenceAwardsClient() {
         label="UPTECH Initiative"
         title="Tech Excellence Awards"
         subtitle="Celebrating outstanding achievements in technology innovation, digital leadership, and cross-border collaboration across the UK–Pakistan tech corridor."
-        image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
+        video="/image/Awards/2792370-hd_1920_1080_30fps.mp4"
+        videoSpeed={2}
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Submit a Nomination</ShinyButton>

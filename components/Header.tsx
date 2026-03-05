@@ -56,7 +56,6 @@ const navItems: NavItem[] = [
       { label: "Objectives", href: "/about/objectives", desc: "Core values, key activities, and broader impact goals driving our work.", icon: CheckCircle2 },
       { label: "Founder & CEO", href: "/about/founder", desc: "Meet Khalil Choudhary — the visionary behind the UK-Pakistan Tech Council.", icon: Award },
       { label: "Management Team", href: "/about/management-team", desc: "Board of directors, advisory council, and executive leadership team.", icon: Users },
-      { label: "UK-Pakistan Partnership", href: "/ecosystem/uk-pakistan-technology-partnership", desc: "The bilateral framework for joint ventures, policy dialogue, and shared R&D.", icon: Globe2 },
     ],
   },
   /* 2 — What We Do */
@@ -356,7 +355,7 @@ export function Header() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15 }}
               onMouseEnter={() => handlePanelEnter(activeGroup.label)}
-              className="hidden lg:block border-b-[2px] border-[#0A0A0A] bg-white"
+              className="hidden lg:block absolute left-0 right-0 top-full border-b-[2px] border-[#0A0A0A] bg-white shadow-xl"
             >
               <div className="px-6 sm:px-10 lg:px-14 xl:px-18">
                 <div className="grid grid-cols-[200px_1fr_260px] gap-0 divide-x divide-[#E4E1DC]">

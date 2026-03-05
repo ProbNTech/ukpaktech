@@ -9,7 +9,7 @@ import { ShinyButton } from "@/components/ui/shiny-button";
 import { Button } from "@/components/Button";
 import Image from "next/image";
 import Link from "next/link";
-import { Lightbulb, Target, CheckCircle2, Award, Users, Globe2, ArrowRight } from "lucide-react";
+import { Lightbulb, Target, CheckCircle2, Award, Users, ArrowRight } from "lucide-react";
 
 const brandColors = ["#2563EB", "#C41E3A", "#22C55E"];
 
@@ -19,7 +19,6 @@ const exploreItems = [
   { icon: CheckCircle2, title: "Objectives & Values", desc: "Core values, key activities, and broader impact goals driving our work.", href: "/about/objectives", color: "#2563EB" },
   { icon: Award, title: "Founder & CEO", desc: "Meet Khalil Choudhary — the visionary behind the UK-Pakistan Tech Council.", href: "/about/founder", color: "#C41E3A" },
   { icon: Users, title: "Management Team", desc: "Board of directors, advisory council, and executive leadership team.", href: "/about/management-team", color: "#22C55E" },
-  { icon: Globe2, title: "UK-Pakistan Partnership", desc: "The bilateral framework for joint ventures, policy dialogue, and shared R&D.", href: "/ecosystem/uk-pakistan-technology-partnership", color: "#2563EB" },
 ];
 
 export default function AboutPage() {
@@ -33,7 +32,7 @@ export default function AboutPage() {
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Apply for Membership</ShinyButton>
-          <Button href="/ecosystem/uk-pakistan-technology-partnership" variant="glass">UK–Pakistan Partnership</Button>
+          <Button href="/contact" variant="glass">Contact Us</Button>
         </div>
       </PageHero>
 

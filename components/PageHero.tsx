@@ -15,6 +15,26 @@ const FloatingIconsBg = dynamic(
   { ssr: false }
 );
 
+const ElegantShapesBg = dynamic(
+  () => import("@/components/ui/shape-landing-hero").then((m) => m.ElegantShapesBg),
+  { ssr: false }
+);
+
+const ParticleNetworkBg = dynamic(
+  () => import("@/components/ui/particle-network-bg").then((m) => m.ParticleNetworkBg),
+  { ssr: false }
+);
+
+const SplineHeroBg = dynamic(
+  () => import("@/components/ui/3d-hero-section-boxes").then((m) => m.SplineHeroBg),
+  { ssr: false }
+);
+
+const FloatingBoxesBg = dynamic(
+  () => import("@/components/ui/floating-boxes-bg").then((m) => m.FloatingBoxesBg),
+  { ssr: false }
+);
+
 interface FloatingIcon {
   id: number;
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -33,6 +53,11 @@ interface PageHeroProps {
   videoSpeed?: number;
   threeBg?: boolean;
   floatingIcons?: FloatingIcon[];
+  floatingShapes?: boolean;
+  particleNetwork?: boolean;
+  lightOverlay?: boolean;
+  splineBg?: boolean;
+  floatingBoxes?: boolean;
 }
 
 export function PageHero({
@@ -47,6 +72,11 @@ export function PageHero({
   videoSpeed = 1,
   threeBg = false,
   floatingIcons,
+  floatingShapes = false,
+  particleNetwork = false,
+  lightOverlay = false,
+  splineBg = false,
+  floatingBoxes = false,
 }: PageHeroProps) {
   const shouldReduceMotion = useReducedMotion();
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -60,7 +90,7 @@ export function PageHero({
   return (
     <section className={`relative z-[2] w-full overflow-hidden bg-[#0B0F1A] ${className}`}>
       {/* Background image */}
-      {image && (
+      {image && !video && (
         <Image
           src={image}
           alt=""
@@ -79,6 +109,8 @@ export function PageHero({
           muted
           loop
           playsInline
+          preload="metadata"
+          poster={image}
           className="absolute inset-0 w-full h-full object-cover z-[0]"
           src={video}
         />
@@ -96,12 +128,25 @@ export function PageHero({
         <FloatingIconsBg icons={floatingIcons} />
       )}
 
+      {/* Floating geometric shapes background */}
+      {floatingShapes && <ElegantShapesBg />}
+
+      {/* Particle network background */}
+      {particleNetwork && <ParticleNetworkBg />}
+
+      {/* Spline 3D background */}
+      {splineBg && <SplineHeroBg />}
+
+      {/* Floating 3D boxes background */}
+      {floatingBoxes && <FloatingBoxesBg />}
+
       {/* Subtle left-side gradient for text readability */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
-          background:
-            "linear-gradient(to right, rgba(5,10,20,0.72) 0%, rgba(5,10,20,0.50) 45%, rgba(5,10,20,0.25) 70%, rgba(5,10,20,0.10) 100%)",
+          background: lightOverlay
+            ? "linear-gradient(to right, rgba(5,10,20,0.50) 0%, rgba(5,10,20,0.30) 45%, rgba(5,10,20,0.12) 70%, rgba(5,10,20,0.05) 100%)"
+            : "linear-gradient(to right, rgba(5,10,20,0.72) 0%, rgba(5,10,20,0.50) 45%, rgba(5,10,20,0.25) 70%, rgba(5,10,20,0.10) 100%)",
         }}
       />
 

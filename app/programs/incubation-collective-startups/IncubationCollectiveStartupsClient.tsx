@@ -75,7 +75,8 @@ export default function IncubationCollectiveStartupsClient() {
         label="UPTECH Programs"
         title="Incubation & Startups"
         subtitle="Nurturing the next generation of tech startups and innovators through collaborative models and comprehensive support."
-        image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85&auto=format&fit=crop"
+        video="/image/Incubation and Collective Startups/3129957-uhd_3840_2160_25fps.mp4"
+        videoSpeed={2}
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Apply for Incubation</ShinyButton>

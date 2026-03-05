@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
@@ -66,12 +66,13 @@ export default function TradeDelegationsAndExhibitionsClient() {
 
   return (
     <div className="bg-[#EEECEA] content-body">
-      {/* ── Hero Section ── */}
+      {/* â”€â”€ Hero Section â”€â”€ */}
       <PageHero
         label="UPTECH Ecosystem"
         title="Trade Delegations & Exhibitions"
         subtitle="Facilitating cross-border trade delegations and technology exhibitions to strengthen UK–Pakistan partnerships."
-        image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2400&q=85&auto=format&fit=crop"
+        image="/image/Trade%20Delegations%20and%20Exhibitions/banner1.webp"
+        video="/image/Trade%20Delegations%20and%20Exhibitions/12174926-uhd_3840_2160_30fps.mp4"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/events">View Events</ShinyButton>
@@ -81,7 +82,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
         </div>
       </PageHero>
 
-      {/* ── Stats Bar ── */}
+      {/* â”€â”€ Stats Bar â”€â”€ */}
       <section className="relative bg-[#EEECEA]">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -111,7 +112,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
         </div>
       </section>
 
-      {/* ── Trade Delegation Section ── */}
+      {/* â”€â”€ Trade Delegation Section â”€â”€ */}
       <section className="relative bg-[#EEECEA]">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
@@ -186,7 +187,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
         </div>
       </section>
 
-      {/* ── Exhibition Events Section ── */}
+      {/* â”€â”€ Exhibition Events Section â”€â”€ */}
       <section className="relative bg-[#E8E6E3]">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
@@ -270,7 +271,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
         </div>
       </section>
 
-      {/* ── What We Offer ── */}
+      {/* â”€â”€ What We Offer â”€â”€ */}
       <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
@@ -309,7 +310,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
         </div>
       </section>
 
-      {/* ── Benefits & How It Works ── */}
+      {/* â”€â”€ Benefits & How It Works â”€â”€ */}
       <section className="relative bg-[#E8E6E3]">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
@@ -367,7 +368,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
         </div>
       </section>
 
-      {/* ── CEO at Summit ── */}
+      {/* â”€â”€ CEO at Summit â”€â”€ */}
       <section className="relative bg-[#EEECEA]">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
@@ -413,7 +414,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
+      {/* â”€â”€ CTA â”€â”€ */}
       <GlobalCTA
         label="Get Involved"
         title="Join Our Next Delegation"

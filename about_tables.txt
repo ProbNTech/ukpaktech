@@ -1,0 +1,40 @@
+
+=== TABLE 1 ===
+ |  | 
+Chairman | CEO | Senior Vice Chairman
+
+=== TABLE 2 ===
+Service | Description | Fee (GBP) | Frequency
+Product Listing | Placement on Member Product Portal | £[Amount] | Annual / Per Product
+Featured Campaign | Inclusion in newsletters, social media, and events | £[Amount] | Per Campaign
+Trade Mission / Exhibition Support | Access to Council-facilitated events | £[Amount] | Per Event
+Custom Marketing Services | Content creation, design, or promotional campaigns | £[Amount] | As Agreed
+
+=== TABLE 3 ===
+UK–Pakistan Tech Council | Product Owner
+Name: | Name:
+Title: | Title:
+Signature: | Signature:
+Date: | Date:
+
+=== TABLE 4 ===
+Service | Description | Fee (GBP) | Frequency
+Job Posting | Placement on Council Job Portal | £[Amount] | Payable within 30 days of after getting job
+Featured Campaign | Promotion via newsletter, social media, or events | £[Amount] | Payable within 30 days of after getting job
+Recruitment Support | Candidate introduction, event participation | £[Amount] | Payable within 30 days of after getting job
+
+=== TABLE 5 ===
+UK–Pakistan Tech Council | Employer / Employee
+Name: | Name:
+Title: | Title:
+Signature: | Signature:
+Date: | Date:
+
+=== TABLE 6 ===
+Type of Data Set | Retention Period
+Members | Through the contract period & up to 24 months after this has ended
+Prospects | Up to 24 months from last contact
+Statutory Board Members | Whilst serving and up to 6 months after term
+Advisory Board Members | Whilst serving and up to 6 months after term
+Stakeholders | Whilst serving and up to 6 months after term
+Suppliers | Through the contract period & up to 24 months after this has ended
