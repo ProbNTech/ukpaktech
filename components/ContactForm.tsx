@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/Button";
-import { Send, User, Mail, Building2, MessageSquare, ChevronDown, CheckCircle2, Sparkles, Phone } from "lucide-react";
+import { useState, useRef } from "react";
+import {
+  Send, User, Mail, Building2, MessageSquare,
+  ChevronDown, CheckCircle2, Sparkles, Phone,
+  AlertCircle, ArrowRight,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type FormState = "idle" | "submitting" | "success" | "error";
@@ -20,19 +23,16 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.06, delayChildren: 0.08 },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 14 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] },
   },
 };
 
@@ -49,6 +49,7 @@ export function ContactForm() {
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [apiError, setApiError] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -67,13 +68,25 @@ export function ContactForm() {
   const validate = (): boolean => {
     const newErrors: Record<string, string> = {};
     if (!form.name.trim()) newErrors.name = "Full name is required";
-    if (!form.email.trim()) newErrors.email = "Email is required";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = "Please enter a valid email";
+    if (!form.email.trim()) newErrors.email = "Email address is required";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+      newErrors.email = "Please enter a valid email address";
     if (!form.enquiryType) newErrors.enquiryType = "Please select an enquiry type";
     if (!form.message.trim()) newErrors.message = "Message is required";
     setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) {
+      // Scroll to first error
+      const firstKey = Object.keys(newErrors)[0];
+      const el = document.getElementById(firstKey);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
     return Object.keys(newErrors).length === 0;
   };
+
+  const filledFields = [form.name, form.email, form.enquiryType, form.message].filter(
+    (v) => v.trim().length > 0
+  ).length;
+  const progress = Math.round((filledFields / 4) * 100);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -92,26 +105,41 @@ export function ContactForm() {
       }
       setState("success");
     } catch (err) {
-      setApiError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      setApiError(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
       setState("error");
-      setTimeout(() => setState("idle"), 4000);
+      setTimeout(() => setState("idle"), 5000);
     }
   };
 
-  /* ─── Success state ─── */
+  const errorCount = Object.keys(errors).length;
+
+  const inputBase = (field: string, accent: string) => {
+    const hasErr = !!errors[field];
+    const isFocused = focusedField === field;
+    return `relative w-full bg-[#F8F8F7] border text-[#1C1F2E] placeholder-[#9A9EAF] text-[15px] pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none ${
+      hasErr
+        ? "border-[#C41E3A] bg-[#C41E3A]/[0.02] focus:border-[#C41E3A]/60 focus:ring-2 focus:ring-[#C41E3A]/10 focus:bg-white"
+        : isFocused
+        ? `border-${accent}/40 bg-white ring-2 ring-${accent}/10`
+        : `border-[#D8D5CF] hover:border-[#B0B3BE] focus:border-${accent}/40 focus:bg-white focus:ring-2 focus:ring-${accent}/10`
+    }`;
+  };
+
+  /* ─── Success State ─── */
   if (state === "success") {
     return (
       <AnimatePresence>
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.96, y: 8 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="relative overflow-hidden"
         >
-          {/* Light card */}
-          <div className="relative bg-white rounded-2xl border border-[#D8D5CF] overflow-hidden shadow-xl">
-            {/* Animated top gradient */}
-            <div className="h-1 w-full bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#22C55E]" />
+          <div className="relative bg-white rounded-2xl border border-[#D8D5CF] overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.06)]">
+            {/* Animated gradient top bar */}
+            <div className="h-1.5 w-full bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#22C55E] animate-[shimmer_3s_ease-in-out_infinite]" />
 
             <div className="relative px-10 py-20 text-center">
               {/* Animated checkmark */}
@@ -121,16 +149,15 @@ export function ContactForm() {
                 transition={{ delay: 0.2, duration: 0.6, type: "spring", stiffness: 200, damping: 15 }}
                 className="relative inline-flex items-center justify-center mb-8"
               >
-                {/* Outer glow ring */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: [0, 0.6, 0.3], scale: [0.5, 1.2, 1] }}
+                  animate={{ opacity: [0, 0.6, 0.3], scale: [0.5, 1.4, 1] }}
                   transition={{ delay: 0.4, duration: 1.2 }}
-                  className="absolute w-24 h-24 rounded-full"
-                  style={{ background: "radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%)" }}
+                  className="absolute w-28 h-28 rounded-full"
+                  style={{ background: "radial-gradient(circle, rgba(34,197,94,0.15) 0%, transparent 70%)" }}
                 />
-                <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#22C55E]/15 to-[#22C55E]/5 flex items-center justify-center border border-[#22C55E]/25 shadow-[0_0_30px_rgba(34,197,94,0.1)]">
-                  <CheckCircle2 className="w-8 h-8 text-[#22C55E]" strokeWidth={1.8} />
+                <div className="relative w-18 h-18 w-[72px] h-[72px] rounded-2xl bg-gradient-to-br from-[#22C55E] to-[#16A34A] flex items-center justify-center shadow-[0_8px_32px_rgba(34,197,94,0.3)]">
+                  <CheckCircle2 className="w-9 h-9 text-white" strokeWidth={2} />
                 </div>
               </motion.div>
 
@@ -138,25 +165,25 @@ export function ContactForm() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 0.4 }}
-                className="font-heading font-bold text-2xl text-[#1C1F2E] mb-3"
+                className="font-heading font-extrabold text-2xl text-[#1C1F2E] mb-3"
               >
-                Message Received
+                Message Sent Successfully
               </motion.h3>
 
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45, duration: 0.4 }}
-                className="text-[#5A5F72] text-base leading-relaxed mx-auto"
+                className="text-[#5A5F72] text-base leading-relaxed max-w-md mx-auto"
               >
-                Thank you for reaching out. A member of our team will be in touch within 2-3 business days.
+                Thank you for reaching out. A member of our team will be in touch within 2–3 business days.
               </motion.p>
 
               <motion.div
                 initial={{ opacity: 0, scaleX: 0 }}
                 animate={{ opacity: 1, scaleX: 1 }}
                 transition={{ delay: 0.6, duration: 0.5 }}
-                className="mt-8 mx-auto w-16 h-px bg-gradient-to-r from-transparent via-[#22C55E]/30 to-transparent"
+                className="mt-8 mx-auto w-20 h-px bg-gradient-to-r from-transparent via-[#22C55E]/40 to-transparent"
               />
             </div>
           </div>
@@ -165,25 +192,34 @@ export function ContactForm() {
     );
   }
 
-  /* ─── Error state ─── */
+  /* ─── Error State ─── */
   if (state === "error") {
     return (
-      <div className="relative bg-white rounded-2xl border border-[#D8D5CF] overflow-hidden shadow-xl">
-        <div className="h-1 w-full bg-gradient-to-r from-[#C41E3A] via-[#C41E3A] to-[#C41E3A]" />
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="relative bg-white rounded-2xl border border-[#D8D5CF] overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.06)]"
+      >
+        <div className="h-1.5 w-full bg-gradient-to-r from-[#C41E3A] via-[#E11D48] to-[#C41E3A]" />
         <div className="px-10 py-16 text-center">
-          <div className="w-16 h-16 rounded-2xl bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center mx-auto mb-6">
-            <Send className="w-8 h-8 text-[#C41E3A]" />
+          <div className="w-[72px] h-[72px] rounded-2xl bg-gradient-to-br from-[#C41E3A] to-[#E11D48] flex items-center justify-center mx-auto mb-6 shadow-[0_8px_32px_rgba(196,30,58,0.3)]">
+            <AlertCircle className="w-9 h-9 text-white" strokeWidth={2} />
           </div>
-          <h3 className="font-heading font-bold text-2xl text-[#1C1F2E] mb-3">Something went wrong</h3>
-          <p className="text-[#5A5F72] text-base">{apiError || "Please try again in a moment."}</p>
+          <h3 className="font-heading font-extrabold text-2xl text-[#1C1F2E] mb-3">
+            Something went wrong
+          </h3>
+          <p className="text-[#5A5F72] text-base max-w-sm mx-auto">
+            {apiError || "Please try again in a moment."}
+          </p>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
-  /* ─── Form state ─── */
+  /* ─── Form State ─── */
   return (
     <motion.form
+      ref={formRef}
       onSubmit={handleSubmit}
       noValidate
       variants={containerVariants}
@@ -191,20 +227,54 @@ export function ContactForm() {
       animate="visible"
       className="relative overflow-hidden"
     >
-      {/* Light card container */}
-      <div className="relative bg-white rounded-2xl border border-[#D8D5CF] overflow-hidden shadow-xl">
-        {/* Animated top gradient accent */}
-        <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] via-[#2563EB] to-[#2563EB]" />
+      <div className="relative bg-white rounded-2xl border border-[#D8D5CF] overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.08)] transition-shadow duration-500">
+        {/* Animated gradient top accent */}
+        <div className="h-1.5 w-full bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#2563EB]" />
 
-        {/* ─── Personal Details Section ─── */}
+        {/* Progress bar */}
+        <div className="h-[2px] bg-[#F0EFED]">
+          <motion.div
+            className="h-full bg-gradient-to-r from-[#2563EB] to-[#22C55E]"
+            initial={{ width: "0%" }}
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          />
+        </div>
+
+        {/* Validation summary */}
+        <AnimatePresence>
+          {errorCount > 0 && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden"
+            >
+              <div className="flex items-center gap-3 px-7 py-3.5 bg-[#C41E3A]/[0.04] border-b border-[#C41E3A]/10">
+                <AlertCircle className="w-4 h-4 text-[#C41E3A] flex-shrink-0" />
+                <p className="text-sm font-medium text-[#C41E3A]">
+                  {errorCount === 1
+                    ? "Please complete the required field below."
+                    : `Please complete ${errorCount} required fields below.`}
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* ─── Personal Details ─── */}
         <div className="relative px-7 pt-8 pb-2">
-          <motion.div variants={itemVariants} className="flex items-center gap-2.5 mb-6">
-            <div className="w-6 h-6 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
-              <User className="w-3 h-3 text-[#2563EB]" />
+          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-7">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#2563EB]/15 to-[#2563EB]/5 border border-[#2563EB]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(37,99,235,0.08)]">
+              <User className="w-4 h-4 text-[#2563EB]" />
             </div>
-            <span className="text-base font-bold tracking-[0.15em] uppercase text-[#5A5F72]">
-              Personal Details
-            </span>
+            <div>
+              <span className="text-xs font-bold tracking-[0.18em] uppercase text-[#7A7E8F]">
+                Step 1
+              </span>
+              <h3 className="text-sm font-bold text-[#1C1F2E] leading-tight">Personal Details</h3>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -212,14 +282,19 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="name"
-                className={`block text-base font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "name" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
+                className={`block text-[13px] font-bold tracking-[0.12em] uppercase mb-2 transition-colors duration-300 ${
+                  errors.name ? "text-[#C41E3A]" : focusedField === "name" ? "text-[#2563EB]" : "text-[#3D4152]"
+                }`}
               >
                 Full Name <span className="text-[#C41E3A]">*</span>
               </label>
               <div className="relative group">
-                <div className={`absolute inset-0 rounded-xl transition-all duration-500 ${focusedField === "name" ? "shadow-[0_0_20px_rgba(37,99,235,0.1)]" : ""}`} />
-                <div className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${focusedField === "name" ? "bg-[#2563EB] opacity-100" : "bg-transparent opacity-0"}`} />
-                <User className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${focusedField === "name" ? "text-[#2563EB]" : "text-[#9A9EAF]"}`} />
+                <div className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-full transition-all duration-300 ${
+                  errors.name ? "bg-[#C41E3A] opacity-100" : focusedField === "name" ? "bg-[#2563EB] opacity-100" : "bg-transparent opacity-0"
+                }`} />
+                <User className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] transition-colors duration-300 ${
+                  errors.name ? "text-[#C41E3A]" : focusedField === "name" ? "text-[#2563EB]" : "text-[#9A9EAF]"
+                }`} />
                 <input
                   id="name"
                   name="name"
@@ -230,24 +305,45 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("name")}
                   onBlur={() => setFocusedField(null)}
-                  className={`relative w-full bg-[#F5F4F2] border text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:bg-white ${errors.name ? "border-[#C41E3A] focus:border-[#C41E3A]/50 focus:ring-1 focus:ring-[#C41E3A]/20" : "border-[#D8D5CF] focus:border-[#2563EB]/50 focus:ring-1 focus:ring-[#2563EB]/20"}`}
+                  className={`relative w-full bg-[#F8F8F7] border text-[#1C1F2E] placeholder-[#9A9EAF] text-[15px] pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none hover:border-[#B0B3BE] ${
+                    errors.name
+                      ? "border-[#C41E3A] bg-[#C41E3A]/[0.02] focus:border-[#C41E3A]/60 focus:ring-2 focus:ring-[#C41E3A]/10 focus:bg-white"
+                      : "border-[#D8D5CF] focus:border-[#2563EB]/40 focus:bg-white focus:ring-2 focus:ring-[#2563EB]/10"
+                  }`}
                 />
               </div>
-              {errors.name && <p className="mt-1.5 text-sm text-[#C41E3A]">{errors.name}</p>}
+              <AnimatePresence>
+                {errors.name && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    className="flex items-center gap-1.5 mt-2 text-[13px] font-medium text-[#C41E3A]"
+                  >
+                    <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                    {errors.name}
+                  </motion.p>
+                )}
+              </AnimatePresence>
             </motion.div>
 
             {/* Email */}
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="email"
-                className={`block text-base font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "email" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
+                className={`block text-[13px] font-bold tracking-[0.12em] uppercase mb-2 transition-colors duration-300 ${
+                  errors.email ? "text-[#C41E3A]" : focusedField === "email" ? "text-[#2563EB]" : "text-[#3D4152]"
+                }`}
               >
                 Email Address <span className="text-[#C41E3A]">*</span>
               </label>
               <div className="relative group">
-                <div className={`absolute inset-0 rounded-xl transition-all duration-500 ${focusedField === "email" ? "shadow-[0_0_20px_rgba(37,99,235,0.1)]" : ""}`} />
-                <div className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${focusedField === "email" ? "bg-[#2563EB] opacity-100" : "bg-transparent opacity-0"}`} />
-                <Mail className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${focusedField === "email" ? "text-[#2563EB]" : "text-[#9A9EAF]"}`} />
+                <div className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-full transition-all duration-300 ${
+                  errors.email ? "bg-[#C41E3A] opacity-100" : focusedField === "email" ? "bg-[#2563EB] opacity-100" : "bg-transparent opacity-0"
+                }`} />
+                <Mail className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] transition-colors duration-300 ${
+                  errors.email ? "text-[#C41E3A]" : focusedField === "email" ? "text-[#2563EB]" : "text-[#9A9EAF]"
+                }`} />
                 <input
                   id="email"
                   name="email"
@@ -258,28 +354,47 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("email")}
                   onBlur={() => setFocusedField(null)}
-                  className={`relative w-full bg-[#F5F4F2] border text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:bg-white ${errors.email ? "border-[#C41E3A] focus:border-[#C41E3A]/50 focus:ring-1 focus:ring-[#C41E3A]/20" : "border-[#D8D5CF] focus:border-[#2563EB]/50 focus:ring-1 focus:ring-[#2563EB]/20"}`}
+                  className={`relative w-full bg-[#F8F8F7] border text-[#1C1F2E] placeholder-[#9A9EAF] text-[15px] pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none hover:border-[#B0B3BE] ${
+                    errors.email
+                      ? "border-[#C41E3A] bg-[#C41E3A]/[0.02] focus:border-[#C41E3A]/60 focus:ring-2 focus:ring-[#C41E3A]/10 focus:bg-white"
+                      : "border-[#D8D5CF] focus:border-[#2563EB]/40 focus:bg-white focus:ring-2 focus:ring-[#2563EB]/10"
+                  }`}
                 />
               </div>
-              {errors.email && <p className="mt-1.5 text-sm text-[#C41E3A]">{errors.email}</p>}
+              <AnimatePresence>
+                {errors.email && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    className="flex items-center gap-1.5 mt-2 text-[13px] font-medium text-[#C41E3A]"
+                  >
+                    <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                    {errors.email}
+                  </motion.p>
+                )}
+              </AnimatePresence>
             </motion.div>
           </div>
         </div>
 
-        {/* Section divider */}
-        <div className="mx-7 my-5">
+        {/* Divider */}
+        <div className="mx-7 my-6">
           <div className="h-px bg-gradient-to-r from-[#D8D5CF] via-[#E8E6E3] to-transparent" />
         </div>
 
-        {/* ─── Enquiry Details Section ─── */}
+        {/* ─── Enquiry Details ─── */}
         <div className="relative px-7 pb-2">
-          <motion.div variants={itemVariants} className="flex items-center gap-2.5 mb-6">
-            <div className="w-6 h-6 rounded-lg bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center">
-              <Sparkles className="w-3 h-3 text-[#22C55E]" />
+          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-7">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#22C55E]/15 to-[#22C55E]/5 border border-[#22C55E]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(34,197,94,0.08)]">
+              <Sparkles className="w-4 h-4 text-[#22C55E]" />
             </div>
-            <span className="text-base font-bold tracking-[0.15em] uppercase text-[#5A5F72]">
-              Enquiry Details
-            </span>
+            <div>
+              <span className="text-xs font-bold tracking-[0.18em] uppercase text-[#7A7E8F]">
+                Step 2
+              </span>
+              <h3 className="text-sm font-bold text-[#1C1F2E] leading-tight">Enquiry Details</h3>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -287,13 +402,15 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="phone"
-                className={`block text-base font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "phone" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
+                className={`block text-[13px] font-bold tracking-[0.12em] uppercase mb-2 transition-colors duration-300 ${
+                  focusedField === "phone" ? "text-[#22C55E]" : "text-[#3D4152]"
+                }`}
               >
-                Phone
+                Phone <span className="text-[#9A9EAF] text-[11px] normal-case tracking-normal font-normal">(optional)</span>
               </label>
               <div className="relative group">
-                <div className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${focusedField === "phone" ? "bg-[#22C55E] opacity-100" : "bg-transparent opacity-0"}`} />
-                <Phone className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${focusedField === "phone" ? "text-[#22C55E]" : "text-[#9A9EAF]"}`} />
+                <div className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-full transition-all duration-300 ${focusedField === "phone" ? "bg-[#22C55E] opacity-100" : "bg-transparent opacity-0"}`} />
+                <Phone className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] transition-colors duration-300 ${focusedField === "phone" ? "text-[#22C55E]" : "text-[#9A9EAF]"}`} />
                 <input
                   id="phone"
                   name="phone"
@@ -303,7 +420,7 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("phone")}
                   onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white focus:ring-1 focus:ring-[#22C55E]/20"
+                  className="relative w-full bg-[#F8F8F7] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-[15px] pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none hover:border-[#B0B3BE] focus:border-[#22C55E]/40 focus:bg-white focus:ring-2 focus:ring-[#22C55E]/10"
                 />
               </div>
             </motion.div>
@@ -312,13 +429,15 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="organisation"
-                className={`block text-base font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "organisation" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
+                className={`block text-[13px] font-bold tracking-[0.12em] uppercase mb-2 transition-colors duration-300 ${
+                  focusedField === "organisation" ? "text-[#22C55E]" : "text-[#3D4152]"
+                }`}
               >
-                Organisation
+                Organisation <span className="text-[#9A9EAF] text-[11px] normal-case tracking-normal font-normal">(optional)</span>
               </label>
               <div className="relative group">
-                <div className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${focusedField === "organisation" ? "bg-[#22C55E] opacity-100" : "bg-transparent opacity-0"}`} />
-                <Building2 className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${focusedField === "organisation" ? "text-[#22C55E]" : "text-[#9A9EAF]"}`} />
+                <div className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-full transition-all duration-300 ${focusedField === "organisation" ? "bg-[#22C55E] opacity-100" : "bg-transparent opacity-0"}`} />
+                <Building2 className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] transition-colors duration-300 ${focusedField === "organisation" ? "text-[#22C55E]" : "text-[#9A9EAF]"}`} />
                 <input
                   id="organisation"
                   name="organisation"
@@ -328,7 +447,7 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("organisation")}
                   onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white focus:ring-1 focus:ring-[#22C55E]/20"
+                  className="relative w-full bg-[#F8F8F7] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-[15px] pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none hover:border-[#B0B3BE] focus:border-[#22C55E]/40 focus:bg-white focus:ring-2 focus:ring-[#22C55E]/10"
                 />
               </div>
             </motion.div>
@@ -337,14 +456,22 @@ export function ContactForm() {
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="enquiryType"
-                className={`block text-base font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "enquiryType" ? "text-[#22C55E]" : "text-[#1C1F2E]"}`}
+                className={`block text-[13px] font-bold tracking-[0.12em] uppercase mb-2 transition-colors duration-300 ${
+                  errors.enquiryType ? "text-[#C41E3A]" : focusedField === "enquiryType" ? "text-[#22C55E]" : "text-[#3D4152]"
+                }`}
               >
                 Enquiry Type <span className="text-[#C41E3A]">*</span>
               </label>
               <div className="relative group">
-                <div className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${focusedField === "enquiryType" ? "bg-[#22C55E] opacity-100" : "bg-transparent opacity-0"}`} />
-                <MessageSquare className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors duration-300 ${focusedField === "enquiryType" ? "text-[#22C55E]" : "text-[#9A9EAF]"}`} />
-                <ChevronDown className={`absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none transition-colors duration-300 ${focusedField === "enquiryType" ? "text-[#22C55E]" : "text-[#9A9EAF]"}`} />
+                <div className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-full transition-all duration-300 ${
+                  errors.enquiryType ? "bg-[#C41E3A] opacity-100" : focusedField === "enquiryType" ? "bg-[#22C55E] opacity-100" : "bg-transparent opacity-0"
+                }`} />
+                <MessageSquare className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] transition-colors duration-300 ${
+                  errors.enquiryType ? "text-[#C41E3A]" : focusedField === "enquiryType" ? "text-[#22C55E]" : "text-[#9A9EAF]"
+                }`} />
+                <ChevronDown className={`absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none transition-colors duration-300 ${
+                  errors.enquiryType ? "text-[#C41E3A]" : focusedField === "enquiryType" ? "text-[#22C55E]" : "text-[#9A9EAF]"
+                }`} />
                 <select
                   id="enquiryType"
                   name="enquiryType"
@@ -353,7 +480,11 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("enquiryType")}
                   onBlur={() => setFocusedField(null)}
-                  className={`relative w-full bg-[#F5F4F2] border text-[#1C1F2E] text-base pl-11 pr-10 py-3.5 rounded-xl transition-all duration-300 outline-none focus:bg-white appearance-none cursor-pointer [&>option]:bg-white [&>option]:text-[#1C1F2E] ${errors.enquiryType ? "border-[#C41E3A] focus:border-[#C41E3A]/50 focus:ring-1 focus:ring-[#C41E3A]/20" : "border-[#D8D5CF] focus:border-[#22C55E]/50 focus:ring-1 focus:ring-[#22C55E]/20"}`}
+                  className={`relative w-full bg-[#F8F8F7] border text-[#1C1F2E] text-[15px] pl-11 pr-10 py-3.5 rounded-xl transition-all duration-300 outline-none appearance-none cursor-pointer hover:border-[#B0B3BE] [&>option]:bg-white [&>option]:text-[#1C1F2E] ${
+                    errors.enquiryType
+                      ? "border-[#C41E3A] bg-[#C41E3A]/[0.02] focus:border-[#C41E3A]/60 focus:ring-2 focus:ring-[#C41E3A]/10 focus:bg-white"
+                      : "border-[#D8D5CF] focus:border-[#22C55E]/40 focus:bg-white focus:ring-2 focus:ring-[#22C55E]/10"
+                  }`}
                 >
                   <option value="" disabled className="text-[#9A9EAF]">
                     Select a topic
@@ -365,38 +496,63 @@ export function ContactForm() {
                   ))}
                 </select>
               </div>
-              {errors.enquiryType && <p className="mt-1.5 text-sm text-[#C41E3A]">{errors.enquiryType}</p>}
+              <AnimatePresence>
+                {errors.enquiryType && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    className="flex items-center gap-1.5 mt-2 text-[13px] font-medium text-[#C41E3A]"
+                  >
+                    <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                    {errors.enquiryType}
+                  </motion.p>
+                )}
+              </AnimatePresence>
             </motion.div>
           </div>
         </div>
 
-        {/* Section divider */}
-        <div className="mx-7 my-5">
+        {/* Divider */}
+        <div className="mx-7 my-6">
           <div className="h-px bg-gradient-to-r from-[#D8D5CF] via-[#E8E6E3] to-transparent" />
         </div>
 
         {/* ─── Message Section ─── */}
         <div className="relative px-7 pb-7">
-          <motion.div variants={itemVariants} className="flex items-center gap-2.5 mb-6">
-            <div className="w-6 h-6 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center">
-              <Send className="w-3 h-3 text-[#2563EB]" />
+          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-7">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#2563EB]/15 to-[#2563EB]/5 border border-[#2563EB]/20 flex items-center justify-center shadow-[0_2px_8px_rgba(37,99,235,0.08)]">
+              <Send className="w-4 h-4 text-[#2563EB]" />
             </div>
-            <span className="text-base font-bold tracking-[0.15em] uppercase text-[#5A5F72]">
-              Your Message
-            </span>
+            <div>
+              <span className="text-xs font-bold tracking-[0.18em] uppercase text-[#7A7E8F]">
+                Step 3
+              </span>
+              <h3 className="text-sm font-bold text-[#1C1F2E] leading-tight">Your Message</h3>
+            </div>
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <label
-              htmlFor="message"
-              className={`block text-base font-bold tracking-[0.15em] uppercase mb-2.5 transition-colors duration-300 ${focusedField === "message" ? "text-[#2563EB]" : "text-[#1C1F2E]"}`}
-            >
-              Message <span className="text-[#C41E3A]">*</span>
-            </label>
+            <div className="flex items-center justify-between mb-2">
+              <label
+                htmlFor="message"
+                className={`block text-[13px] font-bold tracking-[0.12em] uppercase transition-colors duration-300 ${
+                  errors.message ? "text-[#C41E3A]" : focusedField === "message" ? "text-[#2563EB]" : "text-[#3D4152]"
+                }`}
+              >
+                Message <span className="text-[#C41E3A]">*</span>
+              </label>
+              <span className={`text-xs transition-colors ${form.message.length > 0 ? "text-[#7A7E8F]" : "text-transparent"}`}>
+                {form.message.length} characters
+              </span>
+            </div>
             <div className="relative group">
-              <div className={`absolute inset-0 rounded-xl transition-all duration-500 ${focusedField === "message" ? "shadow-[0_0_20px_rgba(37,99,235,0.08)]" : ""}`} />
-              <div className={`absolute left-0 top-0 bottom-0 w-[2px] rounded-full transition-all duration-300 ${focusedField === "message" ? "bg-[#2563EB] opacity-100" : "bg-transparent opacity-0"}`} />
-              <MessageSquare className={`absolute left-3.5 top-4 w-4 h-4 transition-colors duration-300 ${focusedField === "message" ? "text-[#2563EB]" : "text-[#9A9EAF]"}`} />
+              <div className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-full transition-all duration-300 ${
+                errors.message ? "bg-[#C41E3A] opacity-100" : focusedField === "message" ? "bg-[#2563EB] opacity-100" : "bg-transparent opacity-0"
+              }`} />
+              <MessageSquare className={`absolute left-3.5 top-4 w-[18px] h-[18px] transition-colors duration-300 ${
+                errors.message ? "text-[#C41E3A]" : focusedField === "message" ? "text-[#2563EB]" : "text-[#9A9EAF]"
+              }`} />
               <textarea
                 id="message"
                 name="message"
@@ -407,39 +563,69 @@ export function ContactForm() {
                 onChange={handleChange}
                 onFocus={() => setFocusedField("message")}
                 onBlur={() => setFocusedField(null)}
-                className={`relative w-full bg-[#F5F4F2] border text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:bg-white resize-none ${errors.message ? "border-[#C41E3A] focus:border-[#C41E3A]/50 focus:ring-1 focus:ring-[#C41E3A]/20" : "border-[#D8D5CF] focus:border-[#2563EB]/50 focus:ring-1 focus:ring-[#2563EB]/20"}`}
+                className={`relative w-full bg-[#F8F8F7] border text-[#1C1F2E] placeholder-[#9A9EAF] text-[15px] pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none resize-none hover:border-[#B0B3BE] ${
+                  errors.message
+                    ? "border-[#C41E3A] bg-[#C41E3A]/[0.02] focus:border-[#C41E3A]/60 focus:ring-2 focus:ring-[#C41E3A]/10 focus:bg-white"
+                    : "border-[#D8D5CF] focus:border-[#2563EB]/40 focus:bg-white focus:ring-2 focus:ring-[#2563EB]/10"
+                }`}
               />
             </div>
-            {errors.message && <p className="mt-1.5 text-sm text-[#C41E3A]">{errors.message}</p>}
+            <AnimatePresence>
+              {errors.message && (
+                <motion.p
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  className="flex items-center gap-1.5 mt-2 text-[13px] font-medium text-[#C41E3A]"
+                >
+                  <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                  {errors.message}
+                </motion.p>
+              )}
+            </AnimatePresence>
           </motion.div>
         </div>
 
         {/* ─── Footer ─── */}
         <motion.div
           variants={itemVariants}
-          className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[#D8D5CF] bg-[#FAFAF9] px-7 py-5"
+          className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[#D8D5CF] bg-gradient-to-r from-[#FAFAF9] to-[#F5F4F2] px-7 py-5"
         >
-          <p className="text-base text-[#5A5F72] leading-relaxed">
-            We respond to all enquiries within 2-3 business days.
-          </p>
+          <div className="flex items-center gap-3">
+            <div className="flex gap-1">
+              {[0, 1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    i < filledFields ? "bg-[#22C55E] scale-100" : "bg-[#D8D5CF] scale-75"
+                  }`}
+                />
+              ))}
+            </div>
+            <p className="text-sm text-[#7A7E8F]">
+              {filledFields === 4 ? "Ready to send" : `${4 - filledFields} required field${4 - filledFields !== 1 ? "s" : ""} remaining`}
+            </p>
+          </div>
           <button
             type="submit"
             disabled={state === "submitting"}
-            className="group relative shrink-0 inline-flex items-center gap-2.5 px-7 py-3 rounded-xl font-heading font-bold text-base text-white bg-gradient-to-r from-[#2563EB] to-[#1a4fd4] hover:from-[#3b82f6] hover:to-[#2563EB] transition-all duration-300 shadow-[0_4px_20px_rgba(37,99,235,0.25)] hover:shadow-[0_8px_30px_rgba(37,99,235,0.35)] disabled:opacity-50 disabled:cursor-not-allowed"
+            className="group relative shrink-0 inline-flex items-center gap-2.5 px-8 py-3.5 rounded-xl font-heading font-bold text-[15px] text-white bg-gradient-to-r from-[#2563EB] to-[#1a4fd4] hover:from-[#3b82f6] hover:to-[#2563EB] transition-all duration-300 shadow-[0_4px_20px_rgba(37,99,235,0.25)] hover:shadow-[0_8px_30px_rgba(37,99,235,0.35)] hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 overflow-hidden"
           >
+            {/* Shine effect */}
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             {state === "submitting" ? (
               <span className="flex items-center gap-2">
                 <motion.span
                   animate={{ rotate: 360 }}
                   transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-                  className="inline-block w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full"
+                  className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
                 />
                 Sending...
               </span>
             ) : (
               <>
                 Send Message
-                <Send className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-200" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
               </>
             )}
           </button>

@@ -88,8 +88,8 @@ const pakistanCities = [
 ];
 
 /* ─── Shared styles ─── */
-const baseInputClass = "w-full px-4 py-3 rounded-lg bg-white border text-[#1C1F2E] placeholder:text-[#9A9EAF] focus:outline-none focus:bg-[#F5F4F2] transition-all";
-const baseSelectClass = "w-full px-4 py-3 rounded-lg bg-white border text-[#1C1F2E] focus:outline-none focus:bg-[#F5F4F2] transition-all appearance-none";
+const baseInputClass = "w-full px-4 py-3.5 rounded-xl bg-[#F8F8F7] border text-[#1C1F2E] text-[15px] placeholder:text-[#9A9EAF] focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#2563EB]/10 hover:border-[#B0B3BE] transition-all duration-300";
+const baseSelectClass = "w-full px-4 py-3.5 rounded-xl bg-[#F8F8F7] border text-[#1C1F2E] text-[15px] focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#2563EB]/10 hover:border-[#B0B3BE] transition-all duration-300 appearance-none cursor-pointer";
 
 /* ─── Form data type ─── */
 interface FormData {
@@ -413,10 +413,10 @@ export default function MembershipApplicationForm() {
 
   /* ─── Dynamic class helpers ─── */
   const inputClass = (field: string) =>
-    `${baseInputClass} ${errors[field] ? "border-[#C41E3A] focus:border-[#C41E3A]" : "border-[#D8D5CF] focus:border-[#2563EB]/50"}`;
+    `${baseInputClass} ${errors[field] ? "border-[#C41E3A] bg-[#C41E3A]/[0.02] focus:border-[#C41E3A]/60 focus:ring-2 focus:ring-[#C41E3A]/10" : "border-[#D8D5CF] focus:border-[#2563EB]/40"}`;
 
   const selectClassFn = (field: string) =>
-    `${baseSelectClass} ${errors[field] ? "border-[#C41E3A] focus:border-[#C41E3A]" : "border-[#D8D5CF] focus:border-[#2563EB]/50"}`;
+    `${baseSelectClass} ${errors[field] ? "border-[#C41E3A] bg-[#C41E3A]/[0.02] focus:border-[#C41E3A]/60 focus:ring-2 focus:ring-[#C41E3A]/10" : "border-[#D8D5CF] focus:border-[#2563EB]/40"}`;
 
   /* ─── Error message component ─── */
   const FieldError = ({ field }: { field: string }) => {
@@ -425,7 +425,7 @@ export default function MembershipApplicationForm() {
       <motion.p
         initial={{ opacity: 0, y: -4 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex items-center gap-1.5 mt-1.5 text-sm text-[#C41E3A]"
+        className="flex items-center gap-1.5 mt-2 text-[13px] font-medium text-[#C41E3A]"
       >
         <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
         {errors[field]}
@@ -440,13 +440,17 @@ export default function MembershipApplicationForm() {
     return (
       <div className="flex items-center gap-4 mb-8">
         <div
-          className="w-12 h-12 rounded-xl flex items-center justify-center"
-          style={{ backgroundColor: `${step.color}15` }}
+          className="w-12 h-12 rounded-xl flex items-center justify-center border shadow-sm"
+          style={{
+            background: `linear-gradient(135deg, ${step.color}15, ${step.color}08)`,
+            borderColor: `${step.color}25`,
+            boxShadow: `0 2px 8px ${step.color}12`,
+          }}
         >
-          <Icon className="w-6 h-6" style={{ color: step.color }} strokeWidth={1.5} />
+          <Icon className="w-6 h-6" style={{ color: step.color }} strokeWidth={1.8} />
         </div>
         <div>
-          <p className="text-sm font-bold uppercase tracking-wider" style={{ color: step.color }}>
+          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: step.color }}>
             Step {stepIndex + 1} of {steps.length}
           </p>
           <h2 className="font-heading font-extrabold text-2xl text-[#1C1F2E]">{step.label}</h2>
@@ -463,13 +467,15 @@ export default function MembershipApplicationForm() {
       <motion.div
         initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex items-center gap-3 p-4 mb-6 rounded-xl bg-amber-50 border border-amber-200"
+        className="flex items-center gap-3 p-4 mb-6 rounded-xl bg-[#C41E3A]/[0.04] border border-[#C41E3A]/15"
       >
-        <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
-        <p className="text-sm text-amber-800 font-medium">
+        <div className="w-8 h-8 rounded-lg bg-[#C41E3A]/10 flex items-center justify-center flex-shrink-0">
+          <AlertCircle className="w-4 h-4 text-[#C41E3A]" />
+        </div>
+        <p className="text-sm text-[#C41E3A] font-medium">
           {count === 1
-            ? "Please complete the required field highlighted below to continue."
-            : `Please complete the ${count} required fields highlighted below to continue.`}
+            ? "Please complete the required field highlighted below."
+            : `Please complete the ${count} required fields highlighted below.`}
         </p>
       </motion.div>
     );
@@ -477,14 +483,14 @@ export default function MembershipApplicationForm() {
 
   /* ─── Navigation buttons ─── */
   const StepNav = ({ showSkip = false }: { showSkip?: boolean }) => (
-    <div className="flex items-center justify-between mt-10 pt-8 border-t border-[#D8D5CF]">
+    <div className="flex items-center justify-between mt-10 pt-8 border-t border-[#E8E6E3]">
       <button
         type="button"
         onClick={prevStep}
-        className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
+        className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-[15px] transition-all duration-300 ${
           currentStep === 0
-            ? "text-[#9A9EAF] cursor-not-allowed"
-            : "text-[#3D4152] hover:bg-[#E8E6E3] border border-[#D8D5CF]"
+            ? "text-[#B0B3BE] cursor-not-allowed"
+            : "text-[#3D4152] hover:bg-[#F0EFED] border border-[#D8D5CF] hover:border-[#B0B3BE] hover:-translate-y-0.5"
         }`}
         disabled={currentStep === 0}
       >
@@ -496,7 +502,7 @@ export default function MembershipApplicationForm() {
           <button
             type="button"
             onClick={skipStep}
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-[#7A7E8F] hover:text-[#3D4152] hover:bg-[#E8E6E3] transition-all"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-[15px] text-[#7A7E8F] hover:text-[#3D4152] hover:bg-[#F0EFED] transition-all duration-300"
           >
             Skip
             <SkipForward className="w-4 h-4" />
@@ -508,13 +514,14 @@ export default function MembershipApplicationForm() {
             onClick={nextStep}
             animate={shake ? { x: [0, -8, 8, -6, 6, -3, 3, 0] } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-xl font-bold text-white transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="group relative inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-[15px] text-white transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 overflow-hidden"
             style={{
               background: `linear-gradient(135deg, ${steps[currentStep].color}, ${steps[currentStep].color}dd)`,
             }}
           >
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             Continue
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </motion.button>
         )}
       </div>
@@ -541,10 +548,18 @@ export default function MembershipApplicationForm() {
             transition={{ duration: 0.5 }}
             className="max-w-2xl mx-auto text-center"
           >
-            <div className="bg-white border border-[#D8D5CF] rounded-2xl p-10 sm:p-14 shadow-sm">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[#22C55E]/10 flex items-center justify-center">
-                <CheckCircle2 className="w-10 h-10 text-[#22C55E]" />
-              </div>
+            <div className="bg-white border border-[#D8D5CF] rounded-2xl p-10 sm:p-14 shadow-[0_8px_40px_rgba(0,0,0,0.06)]">
+              <motion.div
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ delay: 0.2, duration: 0.6, type: "spring", stiffness: 200, damping: 15 }}
+                className="relative w-20 h-20 mx-auto mb-6"
+              >
+                <div className="absolute inset-0 rounded-full bg-[#22C55E]/10 animate-ping opacity-20" />
+                <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-[#22C55E] to-[#16A34A] flex items-center justify-center shadow-[0_8px_32px_rgba(34,197,94,0.3)]">
+                  <CheckCircle2 className="w-10 h-10 text-white" strokeWidth={2} />
+                </div>
+              </motion.div>
               <h2 className="font-heading font-extrabold text-2xl text-[#1C1F2E] mb-3">
                 Application Submitted Successfully
               </h2>
@@ -686,7 +701,7 @@ export default function MembershipApplicationForm() {
 
           {/* Form card */}
           <form onSubmit={handleSubmit} noValidate>
-            <div className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-sm min-h-[400px]">
+            <div className="bg-white border border-[#D8D5CF] rounded-2xl p-8 sm:p-10 shadow-[0_8px_40px_rgba(0,0,0,0.06)] min-h-[400px]">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={currentStep}
@@ -708,28 +723,41 @@ export default function MembershipApplicationForm() {
                       <p className="text-[#5A5F72] text-base mb-6">
                         Select the membership category that best fits your organisation.
                       </p>
-                      <div className={`grid sm:grid-cols-2 gap-3 ${errors.membershipType ? "ring-1 ring-[#C41E3A]/30 rounded-xl p-1" : ""}`}>
+                      <div className={`grid sm:grid-cols-2 gap-3 ${errors.membershipType ? "ring-2 ring-[#C41E3A]/20 rounded-2xl p-1" : ""}`}>
                         {membershipTiers.map((tier) => (
                           <label
                             key={tier.value}
                             className={`
-                              relative flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all duration-200
+                              relative flex items-start gap-3.5 p-5 rounded-xl border-2 cursor-pointer transition-all duration-300
                               ${formData.membershipType === tier.value
-                                ? "bg-[#2563EB]/5 border-[#2563EB]/30 shadow-sm"
-                                : "bg-[#F5F4F2] border-[#D8D5CF] hover:border-[#3D4152]"
+                                ? "bg-[#2563EB]/[0.04] border-[#2563EB]/40 shadow-[0_4px_16px_rgba(37,99,235,0.08)]"
+                                : "bg-[#F8F8F7] border-[#E8E6E3] hover:border-[#B0B3BE] hover:bg-white"
                               }
                             `}
                           >
+                            <div className={`mt-0.5 w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                              formData.membershipType === tier.value
+                                ? "border-[#2563EB] bg-[#2563EB]"
+                                : "border-[#D8D5CF]"
+                            }`}>
+                              {formData.membershipType === tier.value && (
+                                <motion.div
+                                  initial={{ scale: 0 }}
+                                  animate={{ scale: 1 }}
+                                  className="w-2 h-2 rounded-full bg-white"
+                                />
+                              )}
+                            </div>
                             <input
                               type="radio"
                               name="membershipType"
                               value={tier.value}
                               checked={formData.membershipType === tier.value}
                               onChange={(e) => updateField("membershipType", e.target.value)}
-                              className="mt-1 accent-[#2563EB]"
+                              className="sr-only"
                             />
                             <div>
-                              <span className="block text-base font-semibold text-[#1C1F2E]">{tier.label}</span>
+                              <span className="block text-[15px] font-bold text-[#1C1F2E]">{tier.label}</span>
                               <span className="block text-sm text-[#7A7E8F] mt-0.5">{tier.fee}</span>
                             </div>
                           </label>
@@ -1542,14 +1570,16 @@ export default function MembershipApplicationForm() {
                           )}
 
                           {submitError && (
-                            <motion.p
+                            <motion.div
                               initial={{ opacity: 0, y: -4 }}
                               animate={{ opacity: 1, y: 0 }}
-                              className="flex items-center justify-center gap-1.5 mb-4 text-sm text-[#C41E3A]"
+                              className="flex items-center gap-3 p-4 mb-6 rounded-xl bg-[#C41E3A]/[0.04] border border-[#C41E3A]/15"
                             >
-                              <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
-                              {submitError}
-                            </motion.p>
+                              <div className="w-8 h-8 rounded-lg bg-[#C41E3A]/10 flex items-center justify-center flex-shrink-0">
+                                <AlertCircle className="w-4 h-4 text-[#C41E3A]" />
+                              </div>
+                              <p className="text-sm font-medium text-[#C41E3A]">{submitError}</p>
+                            </motion.div>
                           )}
 
                           <motion.button
@@ -1557,8 +1587,9 @@ export default function MembershipApplicationForm() {
                             disabled={submitting}
                             animate={shake ? { x: [0, -8, 8, -6, 6, -3, 3, 0] } : {}}
                             transition={{ duration: 0.5 }}
-                            className="group inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-[#2563EB] to-[#22C55E] text-white font-bold rounded-xl hover:shadow-xl hover:-translate-y-0.5 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="group relative inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-[#2563EB] to-[#22C55E] text-white font-bold text-[15px] rounded-xl hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300 shadow-[0_4px_20px_rgba(37,99,235,0.2)] disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden"
                           >
+                            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                             {submitting ? (
                               <>
                                 <motion.span
