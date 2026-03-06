@@ -2,20 +2,20 @@
 
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
+import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/Button";
-import HeroSection from "@/components/ui/hero-section-9";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { CheckCircle2, Globe, Handshake, BarChart3, Users, Target, ChevronDown, Search, GitBranch, MessageSquare, TrendingUp } from "lucide-react";
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { useRouter } from "next/navigation";
 
-const heroStats = [
-  { value: "60+", label: "Countries Connected", icon: <Globe className="h-5 w-5 text-muted-foreground" /> },
-  { value: "500+", label: "Partner Organisations", icon: <Users className="h-5 w-5 text-muted-foreground" /> },
-  { value: "3,000+", label: "Business Introductions", icon: <MessageSquare className="h-5 w-5 text-muted-foreground" /> },
-  { value: "\u00A350M+", label: "Deals Facilitated", icon: <BarChart3 className="h-5 w-5 text-muted-foreground" /> },
+const stats = [
+  { value: "60+", label: "Countries Connected", color: "#2563EB" },
+  { value: "500+", label: "Partner Organisations", color: "#22C55E" },
+  { value: "3,000+", label: "Business Introductions", color: "#C41E3A" },
+  { value: "\u00A350M+", label: "Deals Facilitated", color: "#2563EB" },
 ];
 
 const whyChooseUs = [
@@ -66,35 +66,52 @@ const faqs = [
 const faqColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB"];
 
 export default function BusinessNetworksPage() {
-  const router = useRouter();
   const shouldReduceMotion = useReducedMotion();
 
   return (
     <div>
       {/* â”€â”€ Hero Section â”€â”€ */}
-      <HeroSection
-        title={
-          <>
-            Business <span className="text-primary">Networks</span>
-          </>
-        }
+      <PageHero
+        label="UPTECH Service"
+        title="Business Networks"
         subtitle="The world's largest business network."
-        description="Connect with vetted founders, corporates, investors, and ecosystem partners through curated introductions, high-impact events, and cross-border programmes designed to turn conversations into partnerships."
-        actions={[
-          { text: "Become a Member", onClick: () => router.push("/membership"), variant: "default" },
-          { text: "Get in Touch", onClick: () => router.push("/contact"), variant: "outline" },
-        ]}
-        stats={heroStats}
-        images={[
-          "/image/services/business-networks/collage-1.webp",
-          "/image/services/business-networks/collage-2.webp",
-          "/image/services/business-networks/collage-3.webp",
-          "/image/services/business-networks/collage-4.webp",
-          "/image/services/business-networks/collage-5.webp",
-          "/image/services/business-networks/collage-6.webp",
-        ]}
-        className="bg-[var(--bg-default)]"
-      />
+        image="https://images.unsplash.com/photo-1511578314322-379afb476865?w=2400&q=85&auto=format&fit=crop"
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <ShinyButton href="/membership">Become a Member</ShinyButton>
+          <Button href="/contact" variant="glass" size="lg">Get in Touch</Button>
+        </div>
+      </PageHero>
+
+      {/* â”€â”€ Stats Bar â”€â”€ */}
+      <section className="relative bg-[#EEECEA]">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+              >
+                <div className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-xl p-6">
+                    <div
+                      className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                      style={{ color: stat.color }}
+                    >
+                      {stat.value}
+                    </div>
+                    <p className="text-[#5A5F72] text-base">{stat.label}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* â”€â”€ Intro Section with Sidebar â”€â”€ */}
       <section className="relative bg-[#EEECEA]">
