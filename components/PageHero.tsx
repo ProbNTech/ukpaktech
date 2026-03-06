@@ -96,8 +96,9 @@ export function PageHero({
           alt=""
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-[center_20%]"
           sizes="100vw"
+          quality={90}
         />
       )}
 
@@ -145,8 +146,8 @@ export function PageHero({
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background: lightOverlay
-            ? "linear-gradient(to right, rgba(5,10,20,0.50) 0%, rgba(5,10,20,0.30) 45%, rgba(5,10,20,0.12) 70%, rgba(5,10,20,0.05) 100%)"
-            : "linear-gradient(to right, rgba(5,10,20,0.72) 0%, rgba(5,10,20,0.50) 45%, rgba(5,10,20,0.25) 70%, rgba(5,10,20,0.10) 100%)",
+            ? "linear-gradient(to right, rgba(5,10,20,0.45) 0%, rgba(5,10,20,0.22) 40%, rgba(5,10,20,0.08) 65%, rgba(5,10,20,0.02) 100%)"
+            : "linear-gradient(to right, rgba(5,10,20,0.62) 0%, rgba(5,10,20,0.38) 40%, rgba(5,10,20,0.15) 65%, rgba(5,10,20,0.04) 100%)",
         }}
       />
 
@@ -169,7 +170,7 @@ export function PageHero({
 
       {/* Content */}
       <div
-        className={`relative z-20 flex items-center min-h-[420px] lg:min-h-[480px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-20 ${
+        className={`relative z-20 flex items-center min-h-[480px] md:min-h-[520px] lg:min-h-[560px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-20 ${
           align === "center" ? "justify-center" : ""
         }`}
       >
