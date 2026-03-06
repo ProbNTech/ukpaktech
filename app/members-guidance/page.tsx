@@ -54,7 +54,7 @@ export default function MembersGuidancePage() {
       <PageHero
         title="Members Guidance"
         subtitle="A guide for UPTECH members on how to access services, participate in programmes, and make the most of your membership."
-        image="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner27.jpg"
       />
 
       {/* Getting Started */}

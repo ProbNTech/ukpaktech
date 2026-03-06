@@ -61,7 +61,7 @@ export default function PeopleAIClient() {
         label="UPTECH Initiative"
         title="People AI Platform"
         subtitle="Empowering people and organisations through human-centric AI support systems that integrate technology with professional services."
-        image="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner17.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Get Started</ShinyButton>

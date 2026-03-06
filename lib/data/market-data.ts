@@ -17,13 +17,20 @@ export interface CountryOpportunity {
   description: string;
 }
 
+export interface CountryProjection {
+  label: string;
+  value: string;
+}
+
 export interface CountryMarketData {
   name: string;
   slug: string;
   flag: string;
+  countryCode: string;
   tagline: string;
   overview: string;
   highlights: CountryHighlight[];
+  projections: CountryProjection[];
   sectors: MarketSector[];
   growthDrivers: string[];
   marketStrengths: string[];
@@ -99,6 +106,7 @@ export const countryData: Record<string, CountryMarketData> = {
     name: "United Kingdom",
     slug: "uk",
     flag: "🇬🇧",
+    countryCode: "GB",
     tagline: "Europe's AI & IT Services Hub",
     overview:
       "The UK is one of Europe's most advanced digital economies and a global leader in artificial intelligence adoption.",
@@ -109,6 +117,10 @@ export const countryData: Record<string, CountryMarketData> = {
       { label: "AI Sector", value: "£23.9B (2024)" },
       { label: "Managed Services", value: "$23.3B (2025)" },
       { label: "Data Centre", value: "$3.22B (2025)" },
+    ],
+    projections: [
+      { label: "AI Economy", value: "£1T by 2035" },
+      { label: "Cloud Market", value: "$55B by 2030" },
     ],
     sectors: [
       {
@@ -215,6 +227,7 @@ export const countryData: Record<string, CountryMarketData> = {
     name: "Germany",
     slug: "germany",
     flag: "🇩🇪",
+    countryCode: "DE",
     tagline: "Europe's Engineering & Enterprise IT Powerhouse",
     overview:
       "Germany is Europe's largest economy and a leader in Industry 4.0 and enterprise technology.",
@@ -222,6 +235,10 @@ export const countryData: Record<string, CountryMarketData> = {
       { label: "IT Services", value: "$79.6B (2025)" },
       { label: "AI Market", value: "€9.04B (2025)" },
       { label: "Forecast IT Services", value: "$130.5B by 2031" },
+    ],
+    projections: [
+      { label: "IT Services", value: "$130.5B by 2031" },
+      { label: "AI Market", value: "€23B by 2030" },
     ],
     sectors: [
       {
@@ -317,6 +334,7 @@ export const countryData: Record<string, CountryMarketData> = {
     name: "France",
     slug: "france",
     flag: "🇫🇷",
+    countryCode: "FR",
     tagline: "Industrial AI & Deep Tech Growth",
     overview:
       "France is investing heavily in AI, Industry 4.0, and digital transformation across public and private sectors.",
@@ -325,6 +343,10 @@ export const countryData: Record<string, CountryMarketData> = {
       { label: "AI Market", value: "$9.48B (2024)" },
       { label: "Forecast IT", value: "$230.1B by 2033" },
       { label: "AI Forecast", value: "$77.68B by 2032" },
+    ],
+    projections: [
+      { label: "IT Services", value: "$230.1B by 2033" },
+      { label: "AI Market", value: "$77.68B by 2032" },
     ],
     sectors: [
       {
@@ -407,6 +429,7 @@ export const countryData: Record<string, CountryMarketData> = {
     name: "Spain",
     slug: "spain",
     flag: "🇪🇸",
+    countryCode: "ES",
     tagline: "Rapid Digital Adoption & Cloud Growth",
     overview:
       "Spain's ICT market is experiencing rapid growth driven by strong public-private digital investment and infrastructure expansion.",
@@ -415,6 +438,10 @@ export const countryData: Record<string, CountryMarketData> = {
       { label: "IT Services", value: "$53.2B (2025)" },
       { label: "Digital Transform.", value: "$49B (2026)" },
       { label: "Cybersecurity", value: "$5.3B (2025)" },
+    ],
+    projections: [
+      { label: "ICT Market", value: "$95B by 2030" },
+      { label: "Cybersecurity", value: "$9.8B by 2030" },
     ],
     sectors: [
       {
@@ -518,6 +545,7 @@ export const countryData: Record<string, CountryMarketData> = {
     name: "Netherlands",
     slug: "netherlands",
     flag: "🇳🇱",
+    countryCode: "NL",
     tagline: "Europe's Digital Hub & Data Centre Gateway",
     overview:
       "The Netherlands is a highly connected digital ecosystem with strong cloud adoption across enterprise and public sectors.",
@@ -528,6 +556,10 @@ export const countryData: Record<string, CountryMarketData> = {
       { label: "Cybersecurity", value: "$2.35B (2025)" },
       { label: "Data Centre", value: "$1.23B (2024)" },
       { label: "Cloud Revenue", value: "$11.66B (2024)" },
+    ],
+    projections: [
+      { label: "Cloud Market", value: "$18B by 2030" },
+      { label: "Data Centre", value: "$3.5B by 2030" },
     ],
     sectors: [
       {
@@ -639,6 +671,7 @@ export const countryData: Record<string, CountryMarketData> = {
     name: "Switzerland",
     slug: "switzerland",
     flag: "🇨🇭",
+    countryCode: "CH",
     tagline: "Secure & High-Compliance IT Market",
     overview:
       "Switzerland's stable economy and strong regulatory environment create demand for secure, high-quality IT solutions.",
@@ -647,6 +680,10 @@ export const countryData: Record<string, CountryMarketData> = {
       { label: "IT/AI Services", value: "$2.6B (2025)" },
       { label: "Cybersecurity", value: "$1.04B (2026)" },
       { label: "Data Centre", value: "$1.02B (2024)" },
+    ],
+    projections: [
+      { label: "ICT Market", value: "$58.8B by 2030" },
+      { label: "Cybersecurity", value: "$1.8B by 2030" },
     ],
     sectors: [
       {
@@ -738,6 +775,7 @@ export const countryData: Record<string, CountryMarketData> = {
     name: "Poland",
     slug: "poland",
     flag: "🇵🇱",
+    countryCode: "PL",
     tagline: "Central Europe's Fastest-Growing IT Market",
     overview:
       "Poland's IT and ICT sector is one of Central Europe's fastest-growing technology markets.",
@@ -746,6 +784,10 @@ export const countryData: Record<string, CountryMarketData> = {
       { label: "IT Exports", value: "$16.85B (2023)" },
       { label: "Data Centre", value: "$1.16B (2024)" },
       { label: "Cybersecurity", value: "~$1B (2025)" },
+    ],
+    projections: [
+      { label: "ICT Market", value: "$42B by 2030" },
+      { label: "IT Exports", value: "$25B by 2028" },
     ],
     sectors: [
       {
@@ -850,6 +892,7 @@ export const countryData: Record<string, CountryMarketData> = {
     name: "Baltic States",
     slug: "baltic-states",
     flag: "🇪🇪🇱🇹🇱🇻",
+    countryCode: "EE",
     tagline: "Digital Leaders of Northern Europe",
     overview:
       "The Baltic states — Estonia, Lithuania, and Latvia — are among Europe's most digitally advanced economies with strong IT export orientation.",
@@ -857,6 +900,10 @@ export const countryData: Record<string, CountryMarketData> = {
       { label: "Estonia ICT", value: "€10B (2024)" },
       { label: "Lithuania Software", value: "€3.5B (2025)" },
       { label: "Latvia ICT", value: "$6.5B (2024)" },
+    ],
+    projections: [
+      { label: "Estonia Cloud", value: "$499M by 2030" },
+      { label: "Lithuania IT", value: "€5.5B by 2030" },
     ],
     sectors: [
       {

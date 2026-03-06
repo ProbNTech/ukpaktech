@@ -14,7 +14,7 @@ import { LiteYouTube } from "@/components/LiteYouTube";
 import { ChevronRight, ArrowUpRight, Cpu, Briefcase, GraduationCap, Globe2, Shield, Handshake, Users, Building2, MapPin, Scale, Lightbulb, TrendingUp } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { TechMeshBackground } from "@/components/TechMeshBackground";
-const RadialOrbitalTimeline = dynamic(() => import("@/components/ui/radial-orbital-timeline"), { ssr: false });
+const WhatWeDoCards = dynamic(() => import("@/components/WhatWeDoCards"), { ssr: false });
 const Particles = dynamic(() => import("@/components/ui/particles").then(m => ({ default: m.Particles })), { ssr: false });
 import { articles } from "@/data/articles";
 import { featuredEvents } from "@/data/featured-events";
@@ -26,6 +26,8 @@ const ImpactStats = dynamic(() =>
   { ssr: false }
 );
 import { GlobalCTA } from "@/components/GlobalCTA";
+import { CountryCard } from "@/components/tech-market/CountryCard";
+import { countryData } from "@/lib/data/market-data";
 
 /* Top 15 articles for the homepage news grid — 5 rows × 3 columns */
 const homepageArticles = articles.slice(0, 15);
@@ -109,19 +111,15 @@ function getTagColor(tag: string): string {
   return tagColors[tag] || "#2563EB";
 }
 
-/* ─── What We Do — orbital timeline wrapper ─── */
+/* ─── What We Do — 3D card grid data ─── */
 const whatWeDoData = [
-  { id: 1, title: "AI & Tech Programs", content: "Driving AI innovation through training, certifications, and collaborative startup models across key sectors.", icon: Cpu, href: "/programs/ai-tech-programs", color: "#2563EB", relatedIds: [2, 3], status: "completed" as const, energy: 95 },
-  { id: 2, title: "Services", content: "Business networks, SME hub, digital marketing, overseas employment, and business support for your tech venture.", icon: Briefcase, href: "/services", color: "#22C55E", relatedIds: [1, 3], status: "completed" as const, energy: 85 },
-  { id: 3, title: "Skill Development", content: "Practical training pathways, professional certifications, and mentorship for the modern tech workforce.", icon: GraduationCap, href: "/programs/skill-development-center", color: "#EAB308", relatedIds: [1, 2], status: "in-progress" as const, energy: 70 },
-  { id: 4, title: "UK–Pakistan Technology Partnership", content: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", icon: Globe2, href: "/ecosystem/uk-pakistan-technology-partnership", color: "#C41E3A", relatedIds: [5, 6], status: "completed" as const, energy: 90 },
-  { id: 5, title: "Leadership & Governance", content: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", icon: Shield, href: "/about/management-team", color: "#2563EB", relatedIds: [4, 6], status: "completed" as const, energy: 80 },
-  { id: 6, title: "Trade Delegations", content: "Curated business missions, international trade expos, and pavilion programmes placing members on the world stage.", icon: Handshake, href: "/ecosystem/trade-delegations-and-exhibitions", color: "#22C55E", relatedIds: [4, 5], status: "in-progress" as const, energy: 65 },
+  { id: 1, title: "AI & Tech Programs", content: "Driving AI innovation through training, certifications, and collaborative startup models across key sectors.", icon: Cpu, href: "/programs/ai-tech-programs", color: "#2563EB" },
+  { id: 2, title: "Services", content: "Business networks, SME hub, digital marketing, overseas employment, and business support for your tech venture.", icon: Briefcase, href: "/services", color: "#22C55E" },
+  { id: 3, title: "Skill Development", content: "Practical training pathways, professional certifications, and mentorship for the modern tech workforce.", icon: GraduationCap, href: "/programs/skill-development-center", color: "#EAB308" },
+  { id: 4, title: "UK-Pakistan Tech Partnership", content: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", icon: Globe2, href: "/ecosystem/uk-pakistan-technology-partnership", color: "#C41E3A" },
+  { id: 5, title: "Leadership & Governance", content: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", icon: Shield, href: "/about/management-team", color: "#6366F1" },
+  { id: 6, title: "Trade Delegations", content: "Curated business missions, international trade expos, and pavilion programmes placing members on the world stage.", icon: Handshake, href: "/ecosystem/trade-delegations-and-exhibitions", color: "#0EA5E9" },
 ];
-
-function WhatWeDoOrbital() {
-  return <RadialOrbitalTimeline timelineData={whatWeDoData} />;
-}
 
 /* ─── Workflow-style event card for homepage ─── */
 function HomeEventCard({ event }: { event: typeof homepageEvents[0] }) {
@@ -319,6 +317,87 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════
+           TECH MARKET OVERVIEW — country cards showcase
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative z-[1] py-6 lg:py-8">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+          <AnimatedSection animation="blur-in">
+            <SectionHeader
+              label="Market Intelligence"
+              title="UK & European Tech Markets"
+              color="green"
+            />
+
+            {/* Intro text */}
+            <div className="mb-5">
+              <p className="text-[#3D4152] text-base sm:text-lg leading-[1.75] mb-4">
+                UPTECH provides Pakistani IT companies with deep market intelligence across Europe&apos;s most dynamic technology economies. Our research covers sector-level data, regulatory landscapes, growth forecasts, and actionable entry strategies — everything needed to expand internationally with confidence.
+              </p>
+              <p className="text-[#3D4152] text-base sm:text-lg leading-[1.75]">
+                From the UK&apos;s AI-driven economy to Germany&apos;s enterprise IT powerhouse, from France&apos;s deep-tech growth to Poland&apos;s rapidly expanding outsourcing market — each country profile includes current market valuations, future projections, high-demand sectors, and specific opportunities for Pakistani firms.
+              </p>
+            </div>
+
+            {/* Aggregate stats — horizontal strip */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+              {[
+                { value: "10", label: "Countries Covered", color: "#2563EB" },
+                { value: "$500B+", label: "Combined IT Market", color: "#22C55E" },
+                { value: "40+", label: "Sectors Analysed", color: "#C41E3A" },
+                { value: "2030", label: "Forecast Horizon", color: "#d97706" },
+              ].map((stat) => (
+                <div key={stat.label} className="relative bg-white rounded-xl border border-gray-200 px-5 py-4 shadow-sm overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-[3px]" style={{ background: `linear-gradient(to right, ${stat.color}, transparent)` }} />
+                  <p className="font-heading font-extrabold text-2xl sm:text-3xl leading-tight" style={{ color: stat.color }}>{stat.value}</p>
+                  <p className="text-[#6b7280] text-sm mt-1">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Top 4 countries */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {Object.values(countryData).slice(0, 4).map((country, i) => (
+                <CountryCard key={country.slug} country={country} index={i} />
+              ))}
+            </div>
+
+            {/* Bottom 4 countries */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-5">
+              {Object.values(countryData).slice(4, 8).map((country, i) => (
+                <CountryCard key={country.slug} country={country} index={i + 4} />
+              ))}
+            </div>
+
+            {/* CTA banner */}
+            <AnimatedSection animation="fade-up">
+              <div className="mt-8 relative overflow-hidden rounded-xl bg-gradient-to-r from-[#1a2b5e] via-[#1e3a6e] to-[#2563EB]">
+                <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, white 0%, transparent 50%), radial-gradient(circle at 80% 50%, white 0%, transparent 50%)" }} />
+                <div className="relative px-8 py-7 sm:py-6">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+                    <div className="max-w-2xl">
+                      <h3 className="font-heading font-bold text-white text-xl sm:text-2xl leading-snug">
+                        Explore the full market intelligence platform
+                      </h3>
+                      <p className="text-blue-200 text-sm sm:text-base mt-2 leading-relaxed">
+                        Access our interactive European map, detailed sector breakdowns, Pakistan IT scope analysis, talent statistics, and country-level deep dives — all in one place.
+                      </p>
+                    </div>
+                    <Link
+                      href="/ecosystem/tech-market-overview"
+                      className="flex-shrink-0 inline-flex items-center gap-2.5 px-7 py-3.5 rounded-lg bg-white text-[#1a2b5e] text-base font-bold hover:bg-[#22C55E] hover:text-white transition-colors duration-300 shadow-lg"
+                    >
+                      Explore All Markets
+                      <ArrowUpRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════
            WHO CAN JOIN — overlay image cards
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-6 lg:py-8">
@@ -361,27 +440,33 @@ export default function Home() {
                   color: "#C41E3A",
                 },
               ].map((item) => {
+                const Icon = item.icon;
                 return (
-                  <Link key={item.title} href="/membership" className="group relative block rounded-2xl overflow-hidden h-[340px]">
-                    {/* Background image */}
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      quality={95}
-                      className="object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    />
-                    {/* White gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
+                  <Link key={item.title} href="/membership" className="group block rounded-xl overflow-hidden border border-gray-200/80 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+                    {/* Image */}
+                    <div className="relative h-[200px] overflow-hidden">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        quality={95}
+                        className="object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                    </div>
 
-                    {/* Content overlay */}
-                    <div className="absolute inset-0 flex flex-col justify-end p-5">
-                      <h3 className="font-heading font-bold text-[#2563EB] text-lg leading-snug mb-1.5">{item.title}</h3>
-                      <p className="text-[#3D4152] text-sm leading-relaxed">{item.desc}</p>
-                      <div className="mt-3 flex items-center gap-1 text-xs font-semibold uppercase tracking-wider" style={{ color: item.color }}>
+                    {/* Text content */}
+                    <div className="p-5">
+                      <div className="flex items-center gap-2.5 mb-2">
+                        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${item.color}12`, border: `1px solid ${item.color}20` }}>
+                          <Icon className="w-4 h-4" style={{ color: item.color }} strokeWidth={1.8} />
+                        </div>
+                        <h3 className="font-heading font-bold text-[#1C1F2E] text-lg leading-snug">{item.title}</h3>
+                      </div>
+                      <p className="text-[#4B5563] text-sm leading-relaxed mb-3">{item.desc}</p>
+                      <div className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider" style={{ color: item.color }}>
                         <span>Learn more</span>
-                        <ChevronRight className="w-3 h-3" />
+                        <ChevronRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
                       </div>
                     </div>
                   </Link>
@@ -458,12 +543,12 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════
            WHAT WE DO — Radial Orbital Timeline
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8 overflow-hidden">
+      <section className="relative z-[1] py-14 lg:py-20 overflow-hidden">
         {/* Brand-colored particles background */}
         <Particles className="absolute inset-0 z-0" quantity={60} size={0.6} ease={80} color="#2563EB" staticity={40} />
         <Particles className="absolute inset-0 z-0" quantity={40} size={0.5} ease={90} color="#22C55E" staticity={50} />
         <Particles className="absolute inset-0 z-0" quantity={30} size={0.4} ease={100} color="#C41E3A" staticity={60} />
-        <div className="relative z-[1] px-8 sm:px-12 lg:px-16 xl:px-20">
+        <div className="relative z-[1] px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
             <SectionHeader
               label="Explore our work"
@@ -471,7 +556,7 @@ export default function Home() {
               body="From AI innovation to bilateral trade, from startup incubation to skill development — discover how UPTECH is building the future."
               color="blue"
             />
-            <WhatWeDoOrbital />
+            <WhatWeDoCards items={whatWeDoData} />
           </AnimatedSection>
         </div>
       </section>

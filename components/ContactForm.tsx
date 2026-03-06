@@ -47,18 +47,55 @@ export function ContactForm() {
     message: "",
   });
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [apiError, setApiError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next[name];
+        return next;
+      });
+    }
+  };
+
+  const validate = (): boolean => {
+    const newErrors: Record<string, string> = {};
+    if (!form.name.trim()) newErrors.name = "Full name is required";
+    if (!form.email.trim()) newErrors.email = "Email is required";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = "Please enter a valid email";
+    if (!form.enquiryType) newErrors.enquiryType = "Please select an enquiry type";
+    if (!form.message.trim()) newErrors.message = "Message is required";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setApiError("");
+    if (!validate()) return;
     setState("submitting");
-    await new Promise((r) => setTimeout(r, 1200));
-    setState("success");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Submission failed");
+      }
+      setState("success");
+    } catch (err) {
+      setApiError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      setState("error");
+      setTimeout(() => setState("idle"), 4000);
+    }
   };
 
   /* ─── Success state ─── */
@@ -128,6 +165,22 @@ export function ContactForm() {
     );
   }
 
+  /* ─── Error state ─── */
+  if (state === "error") {
+    return (
+      <div className="relative bg-white rounded-2xl border border-[#D8D5CF] overflow-hidden shadow-xl">
+        <div className="h-1 w-full bg-gradient-to-r from-[#C41E3A] via-[#C41E3A] to-[#C41E3A]" />
+        <div className="px-10 py-16 text-center">
+          <div className="w-16 h-16 rounded-2xl bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center mx-auto mb-6">
+            <Send className="w-8 h-8 text-[#C41E3A]" />
+          </div>
+          <h3 className="font-heading font-bold text-2xl text-[#1C1F2E] mb-3">Something went wrong</h3>
+          <p className="text-[#5A5F72] text-base">{apiError || "Please try again in a moment."}</p>
+        </div>
+      </div>
+    );
+  }
+
   /* ─── Form state ─── */
   return (
     <motion.form
@@ -177,9 +230,10 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("name")}
                   onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#2563EB]/50 focus:bg-white focus:ring-1 focus:ring-[#2563EB]/20"
+                  className={`relative w-full bg-[#F5F4F2] border text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:bg-white ${errors.name ? "border-[#C41E3A] focus:border-[#C41E3A]/50 focus:ring-1 focus:ring-[#C41E3A]/20" : "border-[#D8D5CF] focus:border-[#2563EB]/50 focus:ring-1 focus:ring-[#2563EB]/20"}`}
                 />
               </div>
+              {errors.name && <p className="mt-1.5 text-sm text-[#C41E3A]">{errors.name}</p>}
             </motion.div>
 
             {/* Email */}
@@ -204,9 +258,10 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("email")}
                   onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#2563EB]/50 focus:bg-white focus:ring-1 focus:ring-[#2563EB]/20"
+                  className={`relative w-full bg-[#F5F4F2] border text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:bg-white ${errors.email ? "border-[#C41E3A] focus:border-[#C41E3A]/50 focus:ring-1 focus:ring-[#C41E3A]/20" : "border-[#D8D5CF] focus:border-[#2563EB]/50 focus:ring-1 focus:ring-[#2563EB]/20"}`}
                 />
               </div>
+              {errors.email && <p className="mt-1.5 text-sm text-[#C41E3A]">{errors.email}</p>}
             </motion.div>
           </div>
         </div>
@@ -298,7 +353,7 @@ export function ContactForm() {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("enquiryType")}
                   onBlur={() => setFocusedField(null)}
-                  className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] text-base pl-11 pr-10 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#22C55E]/50 focus:bg-white focus:ring-1 focus:ring-[#22C55E]/20 appearance-none cursor-pointer [&>option]:bg-white [&>option]:text-[#1C1F2E]"
+                  className={`relative w-full bg-[#F5F4F2] border text-[#1C1F2E] text-base pl-11 pr-10 py-3.5 rounded-xl transition-all duration-300 outline-none focus:bg-white appearance-none cursor-pointer [&>option]:bg-white [&>option]:text-[#1C1F2E] ${errors.enquiryType ? "border-[#C41E3A] focus:border-[#C41E3A]/50 focus:ring-1 focus:ring-[#C41E3A]/20" : "border-[#D8D5CF] focus:border-[#22C55E]/50 focus:ring-1 focus:ring-[#22C55E]/20"}`}
                 >
                   <option value="" disabled className="text-[#9A9EAF]">
                     Select a topic
@@ -310,6 +365,7 @@ export function ContactForm() {
                   ))}
                 </select>
               </div>
+              {errors.enquiryType && <p className="mt-1.5 text-sm text-[#C41E3A]">{errors.enquiryType}</p>}
             </motion.div>
           </div>
         </div>
@@ -351,9 +407,10 @@ export function ContactForm() {
                 onChange={handleChange}
                 onFocus={() => setFocusedField("message")}
                 onBlur={() => setFocusedField(null)}
-                className="relative w-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:border-[#2563EB]/50 focus:bg-white focus:ring-1 focus:ring-[#2563EB]/20 resize-none"
+                className={`relative w-full bg-[#F5F4F2] border text-[#1C1F2E] placeholder-[#9A9EAF] text-base pl-11 pr-4 py-3.5 rounded-xl transition-all duration-300 outline-none focus:bg-white resize-none ${errors.message ? "border-[#C41E3A] focus:border-[#C41E3A]/50 focus:ring-1 focus:ring-[#C41E3A]/20" : "border-[#D8D5CF] focus:border-[#2563EB]/50 focus:ring-1 focus:ring-[#2563EB]/20"}`}
               />
             </div>
+            {errors.message && <p className="mt-1.5 text-sm text-[#C41E3A]">{errors.message}</p>}
           </motion.div>
         </div>
 

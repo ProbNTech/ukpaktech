@@ -270,7 +270,7 @@ export default function TermsPage() {
         label="Legal"
         title="Acceptance of Terms of Use for This Website"
         subtitle="These Terms and Conditions, together with any and all other documents referred to herein, set out the terms of use under which you may use this website."
-        image="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner21.jpg"
       />
 
       <div className="content-body">

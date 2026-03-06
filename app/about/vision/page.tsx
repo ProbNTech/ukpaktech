@@ -43,7 +43,7 @@ export default function VisionPage() {
         label="Our Vision"
         title="Vision"
         subtitle="A connected innovation ecosystem where UK and Pakistani technology sectors collaborate to create world-leading digital solutions that improve lives, strengthen economies, and solve global challenges."
-        threeBg
+        image="/image/banners/banner15.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>

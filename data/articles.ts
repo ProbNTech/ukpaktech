@@ -42,7 +42,7 @@ export const articles: Article[] = [
     date: "9 February 2026",
     author: "UPTECH Editorial Team",
     authorRole: "UK–Pakistan Tech Council",
-    image: "/image/Indus-AI-week-2026.webp",
+    image: "/image/news/Indus-AI-week-2026.webp",
     excerpt:
       "Pakistan launched Indus AI Week 2026, a five-day national platform on artificial intelligence, opening with the Indus AI Summit in Islamabad and announcing a USD 1 billion commitment to AI by 2030.",
     body: [
@@ -65,7 +65,7 @@ export const articles: Article[] = [
     date: "21 February 2026",
     author: "UPTECH Editorial Team",
     authorRole: "UK–Pakistan Tech Council",
-    image: "/image/indus_london.webp",
+    image: "/image/news/indus_london.webp",
     excerpt:
       "The AI Indus Week Pakistan event was held in London, hosted by SK Hub UK, bringing together AI experts, industry leaders, investors, Commonwealth representatives, and British Pakistani diaspora for high-level dialogue on UK–Pakistan digital collaboration.",
     body: [

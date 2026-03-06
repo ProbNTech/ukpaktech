@@ -207,6 +207,8 @@ export default function MembershipApplicationForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [shake, setShake] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const formRef = useRef<HTMLDivElement>(null);
 
   /* ─── Field update helper ─── */
@@ -357,7 +359,7 @@ export default function MembershipApplicationForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateStep(9)) {
       setShake(true);
@@ -365,8 +367,35 @@ export default function MembershipApplicationForm() {
       scrollToForm();
       return;
     }
-    setFormSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setSubmitting(true);
+    setSubmitError("");
+    try {
+      const payload = {
+        ...formData,
+        selectedSectors,
+        ukOffices,
+        pakOffices,
+        mailingList,
+        memberDirectory,
+        websiteLink,
+        publiclyListed,
+      };
+      const res = await fetch("/api/membership", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Submission failed");
+      }
+      setFormSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   /* ─── Step transition variants ─── */
@@ -500,7 +529,7 @@ export default function MembershipApplicationForm() {
         label="Membership Application"
         title="Join the UK-Pakistan Tech Council"
         subtitle="Complete the application form below. UPTECH reserves the right to review and approve all membership applications. Membership is valid for one year from the date of payment."
-        image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner16.jpg"
       />
 
       {/* ── Success Message ── */}
@@ -1512,15 +1541,40 @@ export default function MembershipApplicationForm() {
                             </motion.p>
                           )}
 
+                          {submitError && (
+                            <motion.p
+                              initial={{ opacity: 0, y: -4 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              className="flex items-center justify-center gap-1.5 mb-4 text-sm text-[#C41E3A]"
+                            >
+                              <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                              {submitError}
+                            </motion.p>
+                          )}
+
                           <motion.button
                             type="submit"
+                            disabled={submitting}
                             animate={shake ? { x: [0, -8, 8, -6, 6, -3, 3, 0] } : {}}
                             transition={{ duration: 0.5 }}
-                            className="group inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-[#2563EB] to-[#22C55E] text-white font-bold rounded-xl hover:shadow-xl hover:-translate-y-0.5 transition-all shadow-lg"
+                            className="group inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-[#2563EB] to-[#22C55E] text-white font-bold rounded-xl hover:shadow-xl hover:-translate-y-0.5 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                           >
-                            <Send className="w-5 h-5" />
-                            Submit Application
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            {submitting ? (
+                              <>
+                                <motion.span
+                                  animate={{ rotate: 360 }}
+                                  transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+                                  className="inline-block w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
+                                />
+                                Submitting...
+                              </>
+                            ) : (
+                              <>
+                                <Send className="w-5 h-5" />
+                                Submit Application
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                              </>
+                            )}
                           </motion.button>
 
                           <p className="text-sm text-[#7A7E8F] mt-6">

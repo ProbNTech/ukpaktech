@@ -76,7 +76,6 @@ const navItems: NavItem[] = [
       { label: "Tech Excellence Awards", href: "/initiatives/tech-excellence-awards", desc: "Annual recognition celebrating the individuals and organisations driving extraordinary innovation.", icon: Trophy },
       { label: "UK–Pakistan Partnership", href: "/ecosystem/uk-pakistan-technology-partnership", desc: "The bilateral framework underpinning joint ventures, policy dialogue and shared R&D investment.", icon: Handshake },
       { label: "Trade Delegations", href: "/ecosystem/trade-delegations-and-exhibitions", desc: "Curated business missions, trade expos and pavilion programmes placing members on the world stage.", icon: Plane },
-      { label: "Tech Market Overview", href: "/ecosystem/tech-market-overview", desc: "Market intelligence across 8+ European countries — sector data, forecasts, and opportunities for Pakistani IT firms.", icon: Globe2 },
     ],
   },
   /* 3 — Services */
@@ -100,6 +99,8 @@ const navItems: NavItem[] = [
       { label: "Corporate Partnerships", href: "/services/corporate-partnerships", desc: "Strategic partnerships connecting founders, startups, accelerators, investors, and corporate partners.", icon: Building },
     ],
   },
+  /* — Tech Markets (direct link, promoted from What We Do) */
+  { kind: "link", label: "Tech Markets", href: "/ecosystem/tech-market-overview" },
   /* 4 — Products */
   {
     kind: "group",
@@ -279,13 +280,13 @@ export function Header() {
         <div className="hidden lg:block border-t border-gray-100">
           <div className="px-5 sm:px-8 lg:px-8 xl:px-12">
             <nav
-              className="flex items-center h-[46px]"
+              className="flex items-center h-[52px]"
               aria-label="Main navigation"
             >
               <Link
                 href="/"
                 onMouseEnter={handleLeave}
-                className="relative h-full px-2.5 xl:px-3 flex items-center font-sans text-[13px] font-semibold tracking-[0.04em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150"
+                className="relative h-full px-3 xl:px-4 flex items-center font-sans text-[14px] font-semibold tracking-[0.04em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150"
               >
                 HOME
               </Link>
@@ -297,7 +298,7 @@ export function Header() {
                       key={item.label}
                       href={item.href}
                       onMouseEnter={handleLeave}
-                      className="relative h-full px-2.5 xl:px-3 flex items-center font-sans text-[13px] font-semibold tracking-[0.04em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150 whitespace-nowrap"
+                      className="relative h-full px-3 xl:px-4 flex items-center font-sans text-[14px] font-semibold tracking-[0.04em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150 whitespace-nowrap"
                     >
                       {(item.displayLabel ?? item.label).toUpperCase()}
                     </Link>
@@ -313,8 +314,8 @@ export function Header() {
                     aria-haspopup="true"
                     onMouseEnter={() => handleGroupEnter(item.label)}
                     className={`
-                      relative h-full px-2.5 xl:px-3 flex items-center gap-1
-                      font-sans text-[13px] font-semibold tracking-[0.04em]
+                      relative h-full px-3 xl:px-4 flex items-center gap-1
+                      font-sans text-[14px] font-semibold tracking-[0.04em]
                       transition-colors duration-150 cursor-default select-none whitespace-nowrap
                       ${isActive
                         ? "text-[#0F172A]"

@@ -38,6 +38,18 @@ const brandColors = ["#2563EB", "#C41E3A", "#22C55E"];
 
 const orgChart = [
   {
+    title: "Chairman",
+    icon: Crown,
+    level: "Executive Leadership",
+    responsibilities: [
+      "Provide strategic oversight and governance for UPTECH",
+      "Chair Board meetings and ensure effective governance",
+      "Approve major partnerships, initiatives, and strategic decisions",
+      "Ensure compliance with the Constitution and governance policies",
+      "Serve as a senior ambassador for UPTECH in formal settings",
+    ],
+  },
+  {
     title: "President",
     icon: Shield,
     level: "Executive Leadership",
@@ -60,18 +72,6 @@ const orgChart = [
       "Support the President in day-to-day strategic execution",
       "Bridge communication between executive leadership and operational teams",
       "Drive key initiatives and functional programmes forward",
-    ],
-  },
-  {
-    title: "Chairman",
-    icon: Crown,
-    level: "Executive Leadership",
-    responsibilities: [
-      "Provide strategic oversight and governance for UPTECH",
-      "Chair Board meetings and ensure effective governance",
-      "Approve major partnerships, initiatives, and strategic decisions",
-      "Ensure compliance with the Constitution and governance policies",
-      "Serve as a senior ambassador for UPTECH in formal settings",
     ],
   },
   {
@@ -266,7 +266,7 @@ export default function ManagementTeamPage() {
         label="Management Team"
         title="Leadership &amp; Management"
         subtitle="A transparent governance framework that ensures accountability, effectiveness, and member representation at every level."
-        threeBg
+        image="/image/banners/leadership14.jpg"
       >
         <div className="grid grid-cols-4 gap-4">
           {stats.map((stat) => (

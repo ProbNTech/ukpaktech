@@ -72,7 +72,7 @@ export default function ExcellenceManagementTermsPage() {
       <PageHero
         title="Excellence Management Terms & Conditions"
         subtitle="Terms governing participation in UPTECH's excellence management programmes, awards, and recognition initiatives."
-        image="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner31.jpg"
       />
 
       {/* Terms */}

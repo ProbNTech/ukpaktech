@@ -56,7 +56,7 @@ export default function PrivacyPage() {
         label="Data Protection"
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your personal information."
-        image="https://images.unsplash.com/photo-1563986768609-322da13575f2?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner23.jpg"
       />
 
       <div className="content-body">

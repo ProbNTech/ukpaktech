@@ -60,7 +60,7 @@ export default function DigitalMarketingPage() {
         label="UPTECH Service"
         title="Digital Product Marketing Hub"
         subtitle="The Digital Product Marketing Hub supports members in promoting their software solutions, platforms, and technology services across the UK, Europe, Middle East & African continents. We help technology companies strengthen their market presence, reach new audiences, and accelerate cross-border growth."
-        image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner22.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership">Get Started</ShinyButton>

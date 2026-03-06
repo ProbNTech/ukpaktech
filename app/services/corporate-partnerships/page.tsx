@@ -167,7 +167,7 @@ export default function CorporatePartnershipsPage() {
         label="UPTECH Service"
         title="Corporate & Accelerator Partnerships"
         subtitle="The UK-Pakistan Tech Council fosters strategic partnerships between technology startups, scale-ups, corporates, and accelerator programs across the UK and Pakistan. These collaborations help members access resources, mentorship, market opportunities, and industry expertise to accelerate growth and innovation."
-        image="https://images.unsplash.com/photo-1552664730-d307ca884978?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/leadership2.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <Button href="/membership" variant="glass">Become a Partner</Button>

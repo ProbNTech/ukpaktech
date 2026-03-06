@@ -75,7 +75,7 @@ export default function BusinessNetworksPage() {
         label="UPTECH Service"
         title="Business Networks"
         subtitle="The world's largest business network."
-        image="https://images.unsplash.com/photo-1511578314322-379afb476865?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner28.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership">Become a Member</ShinyButton>

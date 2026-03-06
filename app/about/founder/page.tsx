@@ -21,7 +21,7 @@ export default function LeadershipPage() {
         label="Leadership"
         title="Our Leadership"
         subtitle="Meet the leaders driving the UK-Pakistan technology corridor through innovation, collaboration, and sustainable partnerships."
-        threeBg
+        image="/image/banners/leadership1.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>
@@ -29,46 +29,8 @@ export default function LeadershipPage() {
         </div>
       </PageHero>
 
-      {/* President Profile Section */}
-      <Section variant="light" className="content-body">
-        <AnimatedSection>
-          <div className="grid lg:grid-cols-[300px_1fr] gap-10 items-center">
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
-              className="relative"
-            >
-              <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
-                <Image src="/image/ceo/khalil-choudhary-headshot.jpg" alt="Khalil Choudhary — President, UPTECH" fill className="object-cover" sizes="300px" />
-              </div>
-              <div className="absolute -bottom-3 -right-3 w-24 h-24 rounded-lg -z-10" style={{ background: `linear-gradient(135deg, ${brandColors[0]}20, ${brandColors[2]}20)` }} />
-            </motion.div>
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-base font-bold uppercase tracking-widest mb-3" style={{ background: `${brandColors[0]}12`, color: brandColors[0] }}>
-                President
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl lg:text-4xl text-[#1C1F2E] mb-3">Khalil Choudhary</h2>
-              <div className="h-1 w-16 rounded-full mb-5" style={{ background: `linear-gradient(to right, ${brandColors[0]}, ${brandColors[1]}, ${brandColors[2]})` }} />
-              <p className="text-[#3D4152] leading-relaxed mb-4">
-                A visionary leader dedicated to strengthening the UK–Pakistan technology corridor through innovation, collaboration, and sustainable partnerships. Under his leadership, UPTECH has grown into a strategic platform connecting technology professionals, entrepreneurs, and organisations across both nations.
-              </p>
-              <p className="text-[#3D4152] leading-relaxed">
-                With deep expertise in technology strategy, bilateral trade, and community building, Khalil Choudhary drives UPTECH&apos;s mission to champion Pakistan&apos;s soft image globally while creating pathways for prosperity through digital innovation.
-              </p>
-            </motion.div>
-          </div>
-        </AnimatedSection>
-      </Section>
-
       {/* Chairman Profile Section */}
-      <Section variant="alt" className="content-body">
+      <Section variant="light" className="content-body">
         <AnimatedSection>
           <div className="grid lg:grid-cols-[300px_1fr] gap-10 items-center">
             <motion.div
@@ -99,6 +61,44 @@ export default function LeadershipPage() {
               </p>
               <p className="text-[#3D4152] leading-relaxed">
                 With extensive experience in technology leadership and cross-border partnerships, Hussnain Kazmi plays a pivotal role in shaping UPTECH&apos;s strategic direction and strengthening its position as the premier platform for UK-Pakistan tech collaboration.
+              </p>
+            </motion.div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* President Profile Section */}
+      <Section variant="alt" className="content-body">
+        <AnimatedSection>
+          <div className="grid lg:grid-cols-[300px_1fr] gap-10 items-center">
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5 }}
+              className="relative"
+            >
+              <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
+                <Image src="/image/ceo/khalil-choudhary-headshot.jpg" alt="Khalil Choudhary — President, UPTECH" fill className="object-cover" sizes="300px" />
+              </div>
+              <div className="absolute -bottom-3 -right-3 w-24 h-24 rounded-lg -z-10" style={{ background: `linear-gradient(135deg, ${brandColors[0]}20, ${brandColors[2]}20)` }} />
+            </motion.div>
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-base font-bold uppercase tracking-widest mb-3" style={{ background: `${brandColors[0]}12`, color: brandColors[0] }}>
+                President
+              </div>
+              <h2 className="font-heading font-extrabold text-3xl lg:text-4xl text-[#1C1F2E] mb-3">Khalil Choudhary</h2>
+              <div className="h-1 w-16 rounded-full mb-5" style={{ background: `linear-gradient(to right, ${brandColors[0]}, ${brandColors[1]}, ${brandColors[2]})` }} />
+              <p className="text-[#3D4152] leading-relaxed mb-4">
+                A visionary leader dedicated to strengthening the UK–Pakistan technology corridor through innovation, collaboration, and sustainable partnerships. Under his leadership, UPTECH has grown into a strategic platform connecting technology professionals, entrepreneurs, and organisations across both nations.
+              </p>
+              <p className="text-[#3D4152] leading-relaxed">
+                With deep expertise in technology strategy, bilateral trade, and community building, Khalil Choudhary drives UPTECH&apos;s mission to champion Pakistan&apos;s soft image globally while creating pathways for prosperity through digital innovation.
               </p>
             </motion.div>
           </div>
