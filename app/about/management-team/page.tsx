@@ -28,6 +28,8 @@ import {
   Wallet,
   Settings,
   Megaphone,
+  Zap,
+  UserCheck,
 } from "lucide-react";
 
 /* ── Data ───────────────────────────────────────────────────────── */
@@ -36,28 +38,40 @@ const brandColors = ["#2563EB", "#C41E3A", "#22C55E"];
 
 const orgChart = [
   {
-    title: "Chairman",
-    icon: Crown,
+    title: "President",
+    icon: Shield,
     level: "Executive Leadership",
     responsibilities: [
       "Provide strategic direction and vision for UPTECH",
-      "Chair Board meetings and ensure effective governance",
+      "Lead day-to-day operations and strategic execution",
       "Represent UPTECH at the highest levels with governments and international bodies",
-      "Approve major partnerships, initiatives, and strategic decisions",
+      "Drive membership growth and stakeholder engagement",
+      "Oversee programme delivery and service quality",
       "Serve as the principal ambassador for the Council",
     ],
   },
   {
-    title: "Chief Executive Officer (CEO)",
-    icon: Target,
+    title: "Vice President",
+    icon: UserCheck,
     level: "Executive Leadership",
     responsibilities: [
-      "Lead day-to-day operations and strategic execution",
-      "Manage organisational resources and financial performance",
-      "Drive membership growth and stakeholder engagement",
-      "Oversee programme delivery and service quality",
-      "Report to the Board on organisational performance and progress",
-      "Build and maintain key relationships with partners and sponsors",
+      "Direct and execute strategic and functional strategies domestically",
+      "Achieve organisational goals through tactical leadership",
+      "Support the President in day-to-day strategic execution",
+      "Bridge communication between executive leadership and operational teams",
+      "Drive key initiatives and functional programmes forward",
+    ],
+  },
+  {
+    title: "Chairman",
+    icon: Crown,
+    level: "Executive Leadership",
+    responsibilities: [
+      "Provide strategic oversight and governance for UPTECH",
+      "Chair Board meetings and ensure effective governance",
+      "Approve major partnerships, initiatives, and strategic decisions",
+      "Ensure compliance with the Constitution and governance policies",
+      "Serve as a senior ambassador for UPTECH in formal settings",
     ],
   },
   {
@@ -85,15 +99,15 @@ const orgChart = [
     ],
   },
   {
-    title: "President",
-    icon: Shield,
-    level: "Governance",
+    title: "Chief Operating Officer (CEO)",
+    icon: Zap,
+    level: "Executive Leadership",
     responsibilities: [
-      "Preside over general meetings and member assemblies",
-      "Ensure compliance with the Constitution and governance policies",
-      "Facilitate democratic decision-making processes",
-      "Mediate disputes and ensure fair representation",
-      "Serve as a senior ambassador for UPTECH in formal settings",
+      "Responsible for overall operations and company performance",
+      "Implement the goals, targets, and strategic objectives and direction",
+      "Motivate employees and drive change within the organisation",
+      "Report to the Board of Directors on organisational performance",
+      "Oversee cross-functional coordination and operational excellence",
     ],
   },
   {
@@ -179,23 +193,26 @@ const orgChart = [
 ];
 
 const operatingProcedures = [
-  { title: "Board Meetings", desc: "The Board of Directors meets quarterly to review performance, approve budgets, and set strategic direction. Emergency meetings may be called by the Chairman or CEO." },
+  { title: "Board Meetings", desc: "Regular meetings shall be held bi-weekly to review performance, approve budgets, and set strategic direction. Meetings will be documented for record purposes." },
   { title: "General Assembly", desc: "An Annual General Meeting (AGM) is held for all members to review the year's progress, elect officers, and vote on major resolutions." },
   { title: "Committee Formation", desc: "Standing and ad-hoc committees are formed for specific functions such as events, membership, technology, and governance. Each committee has a defined terms of reference." },
   { title: "Decision Making", desc: "Decisions at Board level require a simple majority. Constitutional amendments require a two-thirds majority at a General Assembly." },
   { title: "Financial Procedures", desc: "All expenditures above a defined threshold require dual authorisation. Annual accounts are independently audited and presented at the AGM." },
   { title: "Membership Processes", desc: "Applications are reviewed within 5 working days. Approved members receive onboarding materials, access to the portal, and are assigned to relevant committees and regional groups." },
+  { title: "Management Committee", desc: "The Management Committee is composed of the Vice President, General Secretary, Joint Secretary, and Operational Executive. Other members shall be brought on board based on mutual consent per requirement." },
+  { title: "Special Meetings", desc: "Special meetings may be called by the Chairman or President with the approval of the Executive Committee." },
+  { title: "Quorum", desc: "A quorum shall consist of top officials and two-thirds (2/3) of the members." },
 ];
 
 const levelColors: Record<string, string> = {
   "Executive Leadership": "#2563EB",
   "Senior Management": "#22C55E",
-  Governance: "#C41E3A",
+  "Governance": "#C41E3A",
   Operations: "#2563EB",
   "Regional Leadership": "#22C55E",
 };
 
-const procedureColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E", "#C41E3A"];
+const procedureColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E", "#C41E3A"];
 
 const governanceCards = [
   { id: "governance-structure", title: "Governance Structure", desc: "Our framework for accountability, transparency, and ethical oversight.", tags: ["Ethics", "Accountability"], colorIdx: 0 },
@@ -205,9 +222,9 @@ const governanceCards = [
 ];
 
 const stats = [
-  { value: "8", label: "Leadership Roles", color: "#2563EB" },
+  { value: "13", label: "Leadership Roles", color: "#2563EB" },
   { value: "5", label: "Governance Levels", color: "#C41E3A" },
-  { value: "6", label: "Operating Procedures", color: "#22C55E" },
+  { value: "9", label: "Operating Procedures", color: "#22C55E" },
   { value: "100%", label: "Transparency", color: "#2563EB" },
 ];
 
@@ -407,7 +424,7 @@ export default function ManagementTeamPage() {
       <GovernanceSection
         id="board-of-directors" variant="light" title="Board of Directors"
         desc="Strategic oversight and governance at the highest level, ensuring UPTECH's mission and values guide all decisions."
-        image="/image/Leadership%20Governance/Board_Directors.webp" imageAlt="UPTECH Board of Directors" imageLeft={true}
+        image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=90&auto=format&fit=crop" imageAlt="UPTECH Board of Directors in a professional boardroom meeting" imageLeft={true}
         responsibilities={["Approve strategic plans and major initiatives", "Oversee financial management and resources", "Appoint and evaluate executive leadership", "Ensure compliance with governance policies", "Review and approve annual reports", "Provide strategic guidance on partnerships"]}
         colorIdx={1}
       />
@@ -421,7 +438,7 @@ export default function ManagementTeamPage() {
       <GovernanceSection
         id="executive-leadership" variant="light" title="Executive Leadership"
         desc="Day-to-day operations and strategic execution of UPTECH's programs, initiatives, and member services."
-        image="/image/Leadership%20Governance/Executive_Leadership.webp" imageAlt="UPTECH Executive Leadership" imageLeft={true}
+        image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=90&auto=format&fit=crop" imageAlt="UPTECH Executive Leadership team collaborating" imageLeft={true}
         responsibilities={["Execute strategic plans and initiatives", "Manage day-to-day operations and delivery", "Build and maintain stakeholder partnerships", "Oversee financial management and resources", "Provide regular reporting to the Board", "Ensure compliance with policies and procedures"]}
         colorIdx={0}
       />

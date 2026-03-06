@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Founder & CEO",
+  title: "Leadership",
   description:
-    "Meet Khalil Choudhary, Founder and CEO of the UK-Pakistan Technology Council, and his vision for bilateral tech collaboration.",
+    "Meet Khalil Choudhary, President, and Hussnain Kazmi, Chairman of the UK-Pakistan Technology Council, and their vision for bilateral tech collaboration.",
   openGraph: {
-    title: "Founder & CEO | UPTECH",
+    title: "Leadership | UPTECH",
     description:
-      "Meet Khalil Choudhary, Founder and CEO of the UK-Pakistan Technology Council, and his vision for bilateral tech collaboration.",
+      "Meet Khalil Choudhary, President, and Hussnain Kazmi, Chairman of the UK-Pakistan Technology Council, and their vision for bilateral tech collaboration.",
   },
 };
 

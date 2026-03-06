@@ -30,7 +30,7 @@ const yourRights = [
 const lawfulBases = [
   { icon: FileText, title: "Performance of a Contract", color: "#2563EB", desc: "Where we are entering into a contract with you or performing our obligations under it, for example when you became a \u2018paying\u2019 member of our network." },
   { icon: Scale, title: "Legal Obligation", color: "#22C55E", desc: "Where necessary, we can comply with a legal or regulatory obligation to which we are subject." },
-  { icon: CheckCircle2, title: "Legitimate Interests", color: "#C41E3A", desc: "Where it is reasonably necessary to achieve our legitimate interests, i.e. those required for running UPTIB as a B2B strategic networking organization in pursuit of our shared aims and ideals." },
+  { icon: CheckCircle2, title: "Legitimate Interests", color: "#C41E3A", desc: "Where it is reasonably necessary to achieve our legitimate interests, i.e. those required for running UPTECH as a B2B strategic networking organization in pursuit of our shared aims and ideals." },
   { icon: Mail, title: "Specific Consent", color: "#2563EB", desc: "Where you have provided specific consent to us using your personal information in a certain way, such as to send you email, text and/or contact via telephone." },
 ];
 

@@ -7,7 +7,7 @@ import { PageHero } from "@/components/PageHero";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { Button } from "@/components/Button";
-import { Target, Award, Users, Globe2, Radio, Rocket, TrendingUp, Zap, Handshake, Briefcase } from "lucide-react";
+import { Target, Award, Users, Globe2, Radio, Rocket, TrendingUp, Zap, Handshake, Briefcase, Database, GraduationCap, FlaskConical } from "lucide-react";
 
 const missionPillars = [
   { icon: Target, title: "Apex Organization", desc: "To be the Apex organization for IT professionals in business, government, and people.", color: "#2563EB" },
@@ -16,6 +16,7 @@ const missionPillars = [
   { icon: Globe2, title: "Global Collaboration", desc: "To collaborate with Networks and organizations representing professionals in countries around the world to unify and advance the profession globally.", color: "#2563EB" },
   { icon: Radio, title: "Timely Information", desc: "To provide relevant, consistent, and timely information to stakeholders.", color: "#C41E3A" },
   { icon: Rocket, title: "Fuel Growth", desc: "Fuel business creation and expansion — address funding gaps for early-stage companies and increase opportunities for high-growth enterprises.", color: "#22C55E" },
+  { icon: Database, title: "Information Management", desc: "Complete management of client information with easy access and updates for professionals, employers, trainers and businesses so they can benefit from the most accurate and timely information available.", color: "#2563EB" },
 ];
 
 const strategicFocus = [
@@ -80,6 +81,33 @@ export default function MissionPage() {
                 </div>
               );
             })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* Broader Mission Commitments */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader label="Broader Commitments" title="Investing in the Future" color="green" subtitle="Beyond our core pillars, UPTECH is committed to nurturing talent and inspiring the next generation of technology leaders." />
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="flex items-start gap-4 bg-white border border-[#D8D5CF] rounded-lg p-6 hover:shadow-md transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: "#22C55E10", border: "1px solid #22C55E25" }}>
+                <FlaskConical className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">STEM Careers Promotion</h4>
+                <p className="text-[#3D4152] text-base leading-relaxed">Promote careers in Science, Technology, Engineering and Mathematics to inspire the next generation of tech leaders.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 bg-white border border-[#D8D5CF] rounded-lg p-6 hover:shadow-md transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: "#2563EB10", border: "1px solid #2563EB25" }}>
+                <GraduationCap className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">Student Scholarships</h4>
+                <p className="text-[#3D4152] text-base leading-relaxed">Provide scholarships to outstanding students in Pakistan, ensuring access to quality education and fostering the next wave of technology talent.</p>
+              </div>
+            </div>
           </div>
         </AnimatedSection>
       </Section>

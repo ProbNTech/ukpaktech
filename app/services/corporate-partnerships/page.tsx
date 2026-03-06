@@ -47,27 +47,27 @@ const founderBenefits = [
   {
     icon: Users,
     title: "Continuous Support from Experienced Entrepreneurs",
-    description: "Get advice from people who\u2019ve actually done it.",
+    description: "Get advice from people who\u2019ve actually done it. We\u2019ll share the lessons, shortcuts, and hard truths that help you move faster and avoid common pitfalls.",
     color: "#22C55E",
   },
   {
     icon: Handshake,
     title: "Holistic Growth Support",
-    description: "Our investment comes with hands-on help.",
+    description: "Our investment comes with hands-on help. We support everything from product validation and marketing to hiring and growth strategy. Plus, you\u2019ll tap into a network of founders, advisors, and investors who\u2019ve been there before.",
     color: "#C41E3A",
   },
   {
     icon: Lightbulb,
     title: "Expert Mentorship",
     description:
-      "You\u2019ll be guided by experienced entrepreneurs and advisors who have built and exited high-growth companies.",
+      "You\u2019ll be guided by experienced entrepreneurs and advisors who have built and exited high-growth companies. We ensure thorough due diligence at every step, identifying areas of improvement and growth potential while offering tailored mentorship to help you navigate challenges.",
     color: "#2563EB",
   },
   {
     icon: TrendingUp,
     title: "Pathway to Fast Growth",
     description:
-      "Our aim is to invest in companies that demonstrate potential to 10x their growth.",
+      "Our aim is to invest in companies that demonstrate potential to 10x their growth. By aligning with our expertise, network, and capital, your startup will be well-positioned to scale rapidly, both in terms of revenue and market presence.",
     color: "#C41E3A",
   },
 ];
@@ -88,21 +88,21 @@ const acceleratorBenefits = [
     icon: Globe,
     title: "Global Expansion Made Easy",
     description:
-      "Get access to all the resources you need to reach new horizons.",
+      "Get access to all the resources you need to reach new horizons: funding, introductions, expertise, and global offices for your startup\u2019s international growth.",
     color: "#2563EB",
   },
   {
     icon: Users,
     title: "A Network Beyond What Money Can Buy",
     description:
-      "Our industry focus allows founders to get valuable introductions.",
+      "Our industry focus allows founders to get valuable introductions to the most relevant people in their industry such as investors, partners, mentors, and more.",
     color: "#22C55E",
   },
   {
     icon: Building2,
     title: "Corporate Partnerships",
     description:
-      "Access to leading innovators in the world\u2019s most influential companies.",
+      "Access to leading innovators in the world\u2019s most influential companies is what we call our unfair advantage. Fast-track your company with proprietary access to IP, market intelligence, distribution channels, relationships, credibility and capital.",
     color: "#C41E3A",
   },
 ];
@@ -122,11 +122,11 @@ const investorBenefits = [
     color: "#2563EB",
   },
   {
-    text: "Each investment gives access to a portfolio of startups with leading edge technologies.",
+    text: "Each investment gives access to a portfolio of startups with leading edge technologies and business models. The portfolio approach helps de-risk your investment compared to investing in individual startups.",
     color: "#22C55E",
   },
   {
-    text: "We back AI-first companies solving real problems in sectors like FinTech, MedTech, Agri Tech and beyond.",
+    text: "We back AI-first companies solving real problems in sectors like FinTech, MedTech, Agri Tech and beyond \u2014 and we don\u2019t just fund them, we get stuck in. From MVP to Series A, we work closely with founders, helping them build faster and smarter with deep technical and strategic support.",
     color: "#C41E3A",
   },
 ];
@@ -136,21 +136,21 @@ const partnerOfferings = [
     icon: Lightbulb,
     title: "Engage and Position Yourself at the Heart of Innovation",
     description:
-      "Work directly with early-stage startups and learn from top change makers.",
+      "Corporate partners have the unique opportunity to actively engage with our portfolio startups. Discover emerging technologies, understand their applications, and explore unique collaboration and investment opportunities that align with your corporate goals.",
     color: "#2563EB",
   },
   {
     icon: Cpu,
     title: "Work with Tech Visionaries",
     description:
-      "Collaborate with founders building the future of technology.",
+      "Our corporate partners are given a chance to work directly with tech pioneers. This interaction not only fosters strategic partnerships but also provides a glimpse into the future of technology, offering an advantage in adapting to the rapidly evolving tech landscape.",
     color: "#22C55E",
   },
   {
     icon: Target,
     title: "Invest in Startups with Proven Technology and Business Models",
     description:
-      "Identify high-potential ventures with validated products and market fit.",
+      "For partners running a CVC arm within a large company, looking to make smart investments, or acquisitions into one of your business units. Our selected portfolio offers a great opportunity to access the leading technologies and business models of tomorrow.",
     color: "#C41E3A",
   },
 ];
@@ -221,14 +221,30 @@ export default function CorporatePartnershipsPage() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[150px] pointer-events-none" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-4xl mb-8">
-              <SectionHeader label="For Founders" title="Start Your Journey with a Unique Advantage" color="blue" />
-              <p className="text-[#5A5F72] text-lg leading-relaxed mb-4">
-                We provide entrepreneurs with pre-seed capital, support from a dedicated team, access to our corporate partners and membership to our global founder community.
-              </p>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                You&apos;ll be part of a network of founders, investors, and partners who are all building the future of AI/IT Globally.
-              </p>
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start mb-10">
+              <div className="lg:col-span-3">
+                <SectionHeader label="For Founders" title="Start Your Journey with a Unique Advantage" color="blue" />
+                <p className="text-[#5A5F72] text-lg leading-relaxed mb-4">
+                  We provide entrepreneurs with pre-seed capital, support from a dedicated team, access to our corporate partners and membership to our global founder community.
+                </p>
+                <p className="text-[#5A5F72] text-lg leading-relaxed">
+                  You&apos;ll be part of a network of founders, investors, and partners who are all building the future of AI/IT Globally.
+                </p>
+              </div>
+              <div className="lg:col-span-2">
+                <div className="bg-white border border-[#D8D5CF] rounded-2xl p-8 shadow-md sticky top-8">
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-5">Founder Highlights</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-5" />
+                  <ul className="space-y-3">
+                    {["Pre-seed capital investment", "Dedicated team support", "Corporate partner access", "Global founder community"].map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 text-base text-[#5A5F72]">
+                        <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -283,43 +299,81 @@ export default function CorporatePartnershipsPage() {
         />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-4xl mb-8">
-              <SectionHeader label="For Startups" title="Elevate Your Startup with the Backing of Our Team" subtitle="Elevate your startup with the backing of our team and partners. We're co-pilots on your entrepreneurial journey." color="green" />
+            <SectionHeader label="For Startups" title="Elevate Your Startup with the Backing of Our Team" subtitle="Elevate your startup with the backing of our team and partners. We're co-pilots on your entrepreneurial journey." color="green" />
 
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-white border border-[#D8D5CF] rounded-2xl p-6 shadow-sm">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ background: "#22C55E15", border: "1px solid #22C55E25" }}
-                    >
-                      <BarChart3 className="w-5 h-5 text-[#22C55E]" />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+              <motion.div
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+              >
+                <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
+                  <div className="h-1 rounded-t-2xl bg-gradient-to-r from-[#22C55E] to-[#22C55E]/60" />
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: "#22C55E15", border: "1px solid #22C55E25" }}>
+                        <BarChart3 className="w-6 h-6 text-[#22C55E]" />
+                      </div>
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Raise Capital</h3>
                     </div>
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base">
-                      Raise Capital
-                    </h3>
+                    <div className="h-px bg-[#D8D5CF] mb-3" />
+                    <p className="text-[#5A5F72] text-base leading-relaxed">
+                      We invest capital together with a program of hands-on operational support to help you scale faster. During the program, you&apos;ll be given the opportunity to pitch at our flagship investor day, along with warm introductions to our network of top tier funds.
+                    </p>
                   </div>
-                  <p className="text-[#5A5F72] text-base leading-relaxed">
-                    We invest capital together with a program of hands-on operational support.
-                  </p>
                 </div>
-                <div className="bg-white border border-[#D8D5CF] rounded-2xl p-6 shadow-sm">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ background: "#C41E3A15", border: "1px solid #C41E3A25" }}
-                    >
-                      <Briefcase className="w-5 h-5 text-[#C41E3A]" />
+              </motion.div>
+              <motion.div
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.08 }}
+                className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+              >
+                <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
+                  <div className="h-1 rounded-t-2xl bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/60" />
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: "#C41E3A15", border: "1px solid #C41E3A25" }}>
+                        <Briefcase className="w-6 h-6 text-[#C41E3A]" />
+                      </div>
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Operational Support</h3>
                     </div>
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base">
-                      Operational Support
-                    </h3>
+                    <div className="h-px bg-[#D8D5CF] mb-3" />
+                    <p className="text-[#5A5F72] text-base leading-relaxed">
+                      Receive six months of dedicated 1:1 support from a team of experienced experts across all operational areas — from strategy, product and data science to fundraising, marketing and operations.
+                    </p>
                   </div>
-                  <p className="text-[#5A5F72] text-base leading-relaxed">
-                    Receive six months 1:1 support from a dedicated team of experts.
-                  </p>
                 </div>
-              </div>
+              </motion.div>
+              <motion.div
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.16 }}
+                className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+              >
+                <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
+                  <div className="h-1 rounded-t-2xl bg-gradient-to-r from-[#2563EB] to-[#2563EB]/60" />
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: "#2563EB15", border: "1px solid #2563EB25" }}>
+                        <Globe className="w-6 h-6 text-[#2563EB]" />
+                      </div>
+                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Market Access</h3>
+                    </div>
+                    <div className="h-px bg-[#D8D5CF] mb-3" />
+                    <p className="text-[#5A5F72] text-base leading-relaxed">
+                      Pitch at flagship investor days with warm introductions to top-tier funds and cross-border opportunities.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
             </div>
 
             {/* WE ARE HERE TO HELP YOU headline */}
@@ -329,6 +383,9 @@ export default function CorporatePartnershipsPage() {
                   WE ARE HERE TO HELP YOU GO FURTHER, FASTER
                 </span>
               </h3>
+              <p className="text-[#5A5F72] text-lg leading-relaxed mt-4 max-w-3xl mx-auto">
+                We know the unknown is part of the thrill, but it doesn&apos;t have to be a guessing game. With our knowledge and expertise, you&apos;ll get a clearer path, backed by founders who&apos;ve walked it before. We will use that experience to help you succeed.
+              </p>
             </div>
 
             {/* Operational areas grid */}
@@ -376,9 +433,7 @@ export default function CorporatePartnershipsPage() {
         />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-4xl mb-8">
-              <SectionHeader label="Accelerators" title="Designed to Help Ambitious Founders Scale Beyond Limits" subtitle="Accelerators are designed with one goal in mind to help ambitious founders scale beyond limits." color="red" />
-            </div>
+            <SectionHeader label="Accelerators" title="Designed to Help Ambitious Founders Scale Beyond Limits" subtitle="Accelerators are designed with one goal in mind to help ambitious founders scale beyond limits." color="red" />
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               {acceleratorBenefits.map((item, i) => {
@@ -541,17 +596,7 @@ export default function CorporatePartnershipsPage() {
         />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
-            <div className="max-w-4xl mb-8">
-              <SectionHeader label="For Partners" title="Learn, Engage, Work with the Tech of Tomorrow, Today" color="red" />
-              <div className="bg-white border border-[#D8D5CF] rounded-2xl p-6 mb-6 shadow-sm">
-                <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-3 uppercase tracking-wide">
-                  Harness the Power of Early-Stage Startups &amp; Learn from Top Change Makers
-                </h3>
-                <p className="text-[#5A5F72] text-base leading-relaxed">
-                  Our goal is to foster an inclusive ecosystem where everyone can partake in and reap the rewards from entrepreneurial successes.
-                </p>
-              </div>
-            </div>
+            <SectionHeader label="For Partners" title="Learn, Engage, Work with the Tech of Tomorrow, Today" subtitle="Our goal is to foster an inclusive ecosystem where everyone can partake in and reap the rewards from entrepreneurial successes. By forging impactful connections between innovative startups and corporates, as well as global organizations, we are deeply committed to sparking progress and addressing the world's most pressing challenges. By becoming an integral part of this vibrant ecosystem, corporate clients and partners gain invaluable insights from accomplished entrepreneurs and early-stage startups, empowering them with the knowledge to propel their own innovation journey forward." color="red" />
 
             <div className="grid md:grid-cols-3 gap-6">
               {partnerOfferings.map((item, i) => {

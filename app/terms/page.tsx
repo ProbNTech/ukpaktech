@@ -28,7 +28,7 @@ const termsSections = [
     number: "2",
     title: "Information About Us",
     content: [
-      "2.1 Our Site, www.asaninsaf.co, is owned and operated by UK-PAKISTAN TECH COUNCIL LTD (UPTECH), a company registered in England under ____, whose registered address is, 134 Westbourne Terrace, London W2 6QB, United Kingdom",
+      "2.1 Our Site, www.ukpaktech.org.uk, is owned and operated by UK-PAKISTAN TECH COUNCIL LTD (UPTECH), a company registered in England under ____, whose registered address is, 134 Westbourne Terrace, London W2 6QB, United Kingdom",
     ],
   },
   {
@@ -301,7 +301,7 @@ export default function TermsPage() {
                   <p className="text-[#5A5F72] text-base leading-relaxed pt-2">
                     These Terms and Conditions, together with any and all other
                     documents referred to herein, set out the terms of use under
-                    which you may use this website, www.asaninsaf.co ({"\u201C"}Our
+                    which you may use this website, www.ukpaktech.org.uk ({"\u201C"}Our
                     Site{"\u201D"}). Please read these Terms and Conditions
                     carefully and ensure that you understand them. Your agreement
                     to comply with and be bound by these Terms and Conditions is

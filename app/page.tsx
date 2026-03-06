@@ -368,11 +368,12 @@ export default function Home() {
                       src={item.image}
                       alt={item.title}
                       fill
+                      quality={95}
                       className="object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                     {/* White gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
 
                     {/* Content overlay */}
                     <div className="absolute inset-0 flex flex-col justify-end p-5">

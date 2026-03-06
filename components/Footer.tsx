@@ -155,8 +155,15 @@ export function Footer() {
               </div>
             </div>
 
+            {/* Disclaimer */}
+            <div className="border-t border-white/20 pt-7 mb-7">
+              <p className="text-white/70 text-sm leading-relaxed">
+                <span className="font-semibold text-white/90">Disclaimer:</span> The UK&ndash;Pakistan Technology Council (UPTECH) provides information on this website for general informational purposes only. While we endeavour to keep all content accurate and up to date, UPTECH makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or suitability of the information, products, services, or related materials contained on this website. Any reliance you place on such information is strictly at your own risk. UPTECH shall not be liable for any loss or damage arising from the use of this website. External links are provided for convenience and do not signify endorsement. All intellectual property rights in the content of this website are owned by or licensed to UPTECH unless otherwise stated.
+              </p>
+            </div>
+
             {/* Bottom Bar */}
-            <div className="border-t border-white pt-7">
+            <div className="border-t border-white/20 pt-7">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-base text-white">
                 <p style={{ color: "#FFFFFF" }}>
                   Copyright &copy; {new Date().getFullYear()} UK&ndash;Pakistan

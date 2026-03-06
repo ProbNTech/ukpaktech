@@ -224,7 +224,7 @@ export default function CookiesPage() {
                 </div>
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-3">Changes to this Policy</h3>
                 <div className="h-px bg-[#D8D5CF] mb-3" />
-                <p className="text-base text-[#7A7E8F] leading-relaxed">UPTIB reserves the right to modify or amend the Privacy Policy at any time and for any reason, as permitted by applicable law. If there are material changes to the Privacy Policy, we will post those changes here.</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed">UPTECH reserves the right to modify or amend the Privacy Policy at any time and for any reason, as permitted by applicable law. If there are material changes to the Privacy Policy, we will post those changes here.</p>
               </motion.div>
               <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.08 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />

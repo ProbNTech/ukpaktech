@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -70,7 +70,7 @@ export default function BusinessNetworksPage() {
 
   return (
     <div>
-      {/* â”€â”€ Hero Section â”€â”€ */}
+      {/* Hero Section */}
       <PageHero
         label="UPTECH Service"
         title="Business Networks"
@@ -83,7 +83,7 @@ export default function BusinessNetworksPage() {
         </div>
       </PageHero>
 
-      {/* â”€â”€ Stats Bar â”€â”€ */}
+      {/* Stats Bar */}
       <section className="relative bg-[#EEECEA]">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -113,7 +113,7 @@ export default function BusinessNetworksPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Intro Section with Sidebar â”€â”€ */}
+      {/* Intro Section with Sidebar */}
       <section className="relative bg-[#EEECEA]">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
@@ -153,7 +153,7 @@ export default function BusinessNetworksPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Why Choose Us â”€â”€ */}
+      {/* Why Choose Us */}
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
@@ -193,7 +193,7 @@ export default function BusinessNetworksPage() {
         </div>
       </section>
 
-      {/* â”€â”€ How It Works â”€â”€ */}
+      {/* How It Works */}
       <section className="relative bg-[#EEECEA]">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
@@ -242,7 +242,7 @@ export default function BusinessNetworksPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Partners & Target Market â”€â”€ */}
+      {/* Partners and Target Market */}
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#22C55E]" />
@@ -290,25 +290,45 @@ export default function BusinessNetworksPage() {
         </div>
       </section>
 
-      {/* â”€â”€ Revenue Model â”€â”€ */}
+      {/* Revenue Model */}
       <section className="relative bg-[#EEECEA]">
         <div className="absolute top-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#C41E3A]" />
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
-            <SectionHeader label="Revenue" title="Revenue Model" color="red" />
-            <ul className="space-y-0">
-              {revenueModel.map((item) => (
-                <li key={item} className="flex items-start gap-3 py-4 border-b border-[#D8D5CF] last:border-b-0">
-                  <CheckCircle2 className="w-4 h-4 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                  <span className="text-[#5A5F72] text-base leading-relaxed">{item}</span>
-                </li>
+            <SectionHeader label="Revenue" title="Revenue Model" color="red" subtitle="How we sustain our network and deliver value to members and partners." />
+            <div className="grid md:grid-cols-2 gap-6">
+              {revenueModel.map((item, i) => (
+                <motion.div
+                  key={item}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                >
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
+                    <div className="h-1 rounded-t-2xl" style={{ background: `linear-gradient(to right, ${["#C41E3A", "#2563EB", "#22C55E", "#C41E3A"][i]}, ${["#C41E3A", "#2563EB", "#22C55E", "#C41E3A"][i]}80)` }} />
+                    <div className="p-6 flex items-start gap-4">
+                      <div
+                        className="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold"
+                        style={{ background: `${["#C41E3A", "#2563EB", "#22C55E", "#C41E3A"][i]}15`, color: ["#C41E3A", "#2563EB", "#22C55E", "#C41E3A"][i] }}
+                      >
+                        {String(i + 1).padStart(2, "0")}
+                      </div>
+                      <div>
+                        <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">{item}</h3>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
-            </ul>
+            </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* â”€â”€ FAQ â”€â”€ */}
+      {/* FAQ */}
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
@@ -319,7 +339,7 @@ export default function BusinessNetworksPage() {
         </div>
       </section>
 
-      {/* â”€â”€ CTA Section â”€â”€ */}
+      {/* CTA Section */}
       <GlobalCTA
         label="Join the Network"
         title="Ready to Expand Your Network Across Continents?"

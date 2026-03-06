@@ -380,7 +380,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
                   color="blue"
                 />
                 <p className="text-[#3D4152] text-lg leading-relaxed mb-4">
-                  UPTECH Founder &amp; CEO Khalil Choudhary personally leads trade delegations and represents the Council at international summits, ensuring our members have direct access to decision-makers and opportunities at the highest level.
+                  UPTECH President Khalil Choudhary personally leads trade delegations and represents the Council at international summits, ensuring our members have direct access to decision-makers and opportunities at the highest level.
                 </p>
                 <p className="text-[#5A5F72] text-lg leading-relaxed mb-6">
                   His hands-on leadership ensures that every delegation delivers tangible outcomes for participating members.
@@ -405,7 +405,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <p className="text-white font-heading font-bold text-base">Khalil Choudhary</p>
-                    <p className="text-white/70 text-sm">Founder &amp; CEO, UPTECH</p>
+                    <p className="text-white/70 text-sm">President, UPTECH</p>
                   </div>
                 </div>
               </div>

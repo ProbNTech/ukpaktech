@@ -275,7 +275,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <p className="text-white font-heading font-bold text-base">Khalil Choudhary</p>
-                    <p className="text-white/70 text-sm">Founder &amp; CEO, UPTECH</p>
+                    <p className="text-white/70 text-sm">President, UPTECH</p>
                   </div>
                 </div>
               </div>
@@ -286,7 +286,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
                   color="blue"
                 />
                 <p className="text-[#3D4152] text-lg leading-relaxed mb-4">
-                  UPTECH Founder &amp; CEO Khalil Choudhary actively engages with government officials, industry leaders, and international organisations to strengthen the UK–Pakistan technology corridor.
+                  UPTECH President Khalil Choudhary actively engages with government officials, industry leaders, and international organisations to strengthen the UK–Pakistan technology corridor.
                 </p>
                 <p className="text-[#5A5F72] text-lg leading-relaxed mb-6">
                   Through conferences, trade missions, and bilateral summits, UPTECH creates high-level networking opportunities that drive meaningful partnerships and collaboration.
@@ -431,8 +431,8 @@ export default function UKPakistanTechnologyPartnershipClient() {
         </div>
       </section>
 
-      {/* ── Partners ── */}
-      <section className="relative bg-white">
+      {/* ── Partners (hidden until real logos are available) ── */}
+      {/* <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="mb-8">
@@ -464,7 +464,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
             </div>
           </AnimatedSection>
         </div>
-      </section>
+      </section> */}
 
       {/* ── CTA ── */}
       <GlobalCTA

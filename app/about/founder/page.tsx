@@ -12,15 +12,15 @@ import Image from "next/image";
 
 const brandColors = ["#2563EB", "#C41E3A", "#22C55E"];
 
-export default function FounderPage() {
+export default function LeadershipPage() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
     <div>
       <PageHero
-        label="Founder & CEO"
-        title="Khalil Choudhary"
-        subtitle="Visionary leader dedicated to strengthening the UK-Pakistan technology corridor through innovation, collaboration, and sustainable partnerships."
+        label="Leadership"
+        title="Our Leadership"
+        subtitle="Meet the leaders driving the UK-Pakistan technology corridor through innovation, collaboration, and sustainable partnerships."
         threeBg
       >
         <div className="flex flex-wrap items-center gap-4">
@@ -29,7 +29,7 @@ export default function FounderPage() {
         </div>
       </PageHero>
 
-      {/* Profile Section */}
+      {/* President Profile Section */}
       <Section variant="light" className="content-body">
         <AnimatedSection>
           <div className="grid lg:grid-cols-[300px_1fr] gap-10 items-center">
@@ -41,7 +41,7 @@ export default function FounderPage() {
               className="relative"
             >
               <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
-                <Image src="/image/ceo/khalil-choudhary-headshot.jpg" alt="Khalil Choudhary — Founder & CEO, UPTECH" fill className="object-cover" sizes="300px" />
+                <Image src="/image/ceo/khalil-choudhary-headshot.jpg" alt="Khalil Choudhary — President, UPTECH" fill className="object-cover" sizes="300px" />
               </div>
               <div className="absolute -bottom-3 -right-3 w-24 h-24 rounded-lg -z-10" style={{ background: `linear-gradient(135deg, ${brandColors[0]}20, ${brandColors[2]}20)` }} />
             </motion.div>
@@ -52,7 +52,7 @@ export default function FounderPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-base font-bold uppercase tracking-widest mb-3" style={{ background: `${brandColors[0]}12`, color: brandColors[0] }}>
-                Founder & CEO
+                President
               </div>
               <h2 className="font-heading font-extrabold text-3xl lg:text-4xl text-[#1C1F2E] mb-3">Khalil Choudhary</h2>
               <div className="h-1 w-16 rounded-full mb-5" style={{ background: `linear-gradient(to right, ${brandColors[0]}, ${brandColors[1]}, ${brandColors[2]})` }} />
@@ -67,23 +67,61 @@ export default function FounderPage() {
         </AnimatedSection>
       </Section>
 
-      {/* CEO Message */}
+      {/* Chairman Profile Section */}
       <Section variant="alt" className="content-body">
         <AnimatedSection>
-          <SectionHeader label="From the Founder" title="A Message from Our CEO" color="green" />
+          <div className="grid lg:grid-cols-[300px_1fr] gap-10 items-center">
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5 }}
+              className="relative"
+            >
+              <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
+                <Image src="/image/chairman/hussnain-kazmi.jpg" alt="Hussnain Kazmi — Chairman, UPTECH" fill className="object-cover object-top" quality={95} sizes="300px" />
+              </div>
+              <div className="absolute -bottom-3 -right-3 w-24 h-24 rounded-lg -z-10" style={{ background: `linear-gradient(135deg, ${brandColors[1]}20, ${brandColors[0]}20)` }} />
+            </motion.div>
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-base font-bold uppercase tracking-widest mb-3" style={{ background: `${brandColors[1]}12`, color: brandColors[1] }}>
+                Chairman
+              </div>
+              <h2 className="font-heading font-extrabold text-3xl lg:text-4xl text-[#1C1F2E] mb-3">Hussnain Kazmi</h2>
+              <div className="h-1 w-16 rounded-full mb-5" style={{ background: `linear-gradient(to right, ${brandColors[1]}, ${brandColors[2]}, ${brandColors[0]})` }} />
+              <p className="text-[#3D4152] leading-relaxed mb-4">
+                As Chairman of UPTECH, Hussnain Kazmi provides strategic oversight and governance to the UK-Pakistan Technology Council. His leadership ensures that UPTECH remains focused on its mission of fostering bilateral technology cooperation and creating meaningful impact across both nations.
+              </p>
+              <p className="text-[#3D4152] leading-relaxed">
+                With extensive experience in technology leadership and cross-border partnerships, Hussnain Kazmi plays a pivotal role in shaping UPTECH&apos;s strategic direction and strengthening its position as the premier platform for UK-Pakistan tech collaboration.
+              </p>
+            </motion.div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* President Message */}
+      <Section variant="light" className="content-body">
+        <AnimatedSection>
+          <SectionHeader label="From the President" title="A Message from Our President" color="green" />
           <div className="grid lg:grid-cols-[1fr_2fr] gap-8 items-start">
             <div className="bg-white border border-[#D8D5CF] rounded-lg p-8 border-t-4 border-t-[#C41E3A]">
               <div className="w-24 h-24 rounded-full overflow-hidden mb-5 ring-2 ring-[#C41E3A]/20 ring-offset-2">
                 <Image
                   src="/image/ceo/khalil-choudhary-portrait.jpg"
-                  alt="Khalil Choudhary — Founder & CEO, UPTECH"
+                  alt="Khalil Choudhary — President, UPTECH"
                   width={96}
                   height={96}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-1">Khalil Choudhary</h3>
-              <p className="text-base text-[#C41E3A] font-semibold mb-3">Founder & CEO, UPTECH</p>
+              <p className="text-base text-[#C41E3A] font-semibold mb-3">President, UPTECH</p>
               <div className="h-px bg-[#D8D5CF] mb-3" />
               <p className="text-base text-[#7A7E8F] leading-relaxed">
                 Visionary leader dedicated to strengthening the UK–Pakistan technology corridor through innovation, collaboration, and sustainable partnerships.
@@ -110,7 +148,7 @@ export default function FounderPage() {
       <GlobalCTA
         label="Join the Movement"
         title="Be Part of the UPTECH Story"
-        subtitle="Join Khalil Choudhary and thousands of technology leaders building the future of UK-Pakistan tech collaboration."
+        subtitle="Join our leadership and thousands of technology leaders building the future of UK-Pakistan tech collaboration."
         primaryButtonText="Apply for Membership"
         primaryButtonLink="/membership/apply"
         secondaryButtonText="Management Team"

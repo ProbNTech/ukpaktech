@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlobalCTA } from "@/components/GlobalCTA";
-import { CheckCircle2, ChevronDown, Megaphone, Globe, PenTool, Calendar, Mail } from "lucide-react";
+import { CheckCircle2, ChevronDown, Megaphone, Globe, PenTool, Calendar, Mail, Target, Handshake, TrendingUp } from "lucide-react";
 import { useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
@@ -202,14 +202,34 @@ export default function DigitalMarketingPage() {
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Impact" title="Why It Matters" subtitle="The UK and Pakistan technology sectors present significant opportunities for collaboration, outsourcing, innovation partnerships, and product expansion. The Digital Product Marketing Hub helps members:" color="red" />
-            <ul className="space-y-0">
-              {whyItMatters.map((item) => (
-                <li key={item} className="flex items-start gap-3 py-4 border-b border-[#D8D5CF] last:border-b-0">
-                  <CheckCircle2 className="w-4 h-4 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                  <span className="text-[#5A5F72] text-base leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {whyItMatters.map((item, i) => {
+                const colors = ["#C41E3A", "#2563EB", "#22C55E", "#C41E3A", "#2563EB"];
+                const icons = [Target, Globe, Handshake, TrendingUp, Globe];
+                const Icon = icons[i];
+                return (
+                  <motion.div
+                    key={item}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                    className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                  >
+                    <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                    <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
+                      <div className="h-1 rounded-t-2xl" style={{ background: `linear-gradient(to right, ${colors[i]}, ${colors[i]}80)` }} />
+                      <div className="p-6">
+                        <div className="relative w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: `${colors[i]}15`, border: `1px solid ${colors[i]}30` }}>
+                          <Icon className="w-5 h-5" style={{ color: colors[i] }} strokeWidth={1.5} />
+                        </div>
+                        <h3 className="font-heading font-bold text-[#1C1F2E] text-lg group-hover:text-[#2563EB] transition-colors duration-200">{item}</h3>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </AnimatedSection>
         </div>
       </section>

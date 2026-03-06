@@ -147,7 +147,7 @@ export default function PrivacyPage() {
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] pt-2">Information You Give Us Directly</h3>
                 </div>
                 <p className="text-base text-[#7A7E8F] leading-relaxed">
-                  For example, we may obtain information about you when you decide to become a member, partner or key stakeholder of UPTIB or take part in one of our events, or when you register to receive one of our newsletters. UPTIB collects information directly from individuals or from the parent companies of the individuals. The information could be collected through emails, phone calls, online registration forms, event registration forms and face-to-face meetings. UPTIB collects personal data about individuals when there is a legitimate basis, a contract or when such information is provided on a voluntary basis.
+                  For example, we may obtain information about you when you decide to become a member, partner or key stakeholder of UPTECH or take part in one of our events, or when you register to receive one of our newsletters. UPTECH collects information directly from individuals or from the parent companies of the individuals. The information could be collected through emails, phone calls, online registration forms, event registration forms and face-to-face meetings. UPTECH collects personal data about individuals when there is a legitimate basis, a contract or when such information is provided on a voluntary basis.
                 </p>
               </motion.div>
 
@@ -422,7 +422,7 @@ export default function PrivacyPage() {
                   </div>
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] pt-2">Legitimate Interests</h3>
                 </div>
-                <p className="text-base text-[#7A7E8F] leading-relaxed mb-4">Where it is reasonably necessary to achieve our legitimate interests, i.e. those required for running UPTIB as a B2B strategic networking organization in pursuit of our shared aims and ideals. For example, to:</p>
+                <p className="text-base text-[#7A7E8F] leading-relaxed mb-4">Where it is reasonably necessary to achieve our legitimate interests, i.e. those required for running UPTECH as a B2B strategic networking organization in pursuit of our shared aims and ideals. For example, to:</p>
                 <ul className="space-y-3 mb-5">
                   {["broker connections where there is mutual benefit in doing so","send postal communications which we think will be of interest to you;","conduct research to better understand the priorities of our membership and to represent accurately the UK and Pakistan business community.","contact you to seek your views or comments on emerging political or economic issues.","enhance, modify, personalize, or otherwise improve our services /communications for the benefit of our members, partners and stakeholders; and understand better how people interact with our website.","invite you to event(s) that we may think are relevant to you in your professional capacity."].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">

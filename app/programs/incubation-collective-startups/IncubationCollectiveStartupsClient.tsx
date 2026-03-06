@@ -198,7 +198,7 @@ export default function IncubationCollectiveStartupsClient() {
               color="blue"
               subtitle="A structured pathway from concept to market-ready venture with comprehensive support at every stage."
             />
-            <div className="space-y-0">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {timelineSteps.map((step, i) => (
                 <motion.div
                   key={step.number}
@@ -206,36 +206,44 @@ export default function IncubationCollectiveStartupsClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="group flex gap-8 py-6 border-t border-[#D8D5CF] last:border-b"
+                  className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="relative flex-shrink-0">
-                    <div
-                      className="absolute inset-[-4px] rounded-full opacity-20 group-hover:opacity-40 blur-md transition-opacity duration-500"
-                      style={{ background: step.color }}
-                    />
-                    <div
-                      className="relative w-10 h-10 rounded-full flex items-center justify-center text-white text-base font-bold border"
-                      style={{
-                        background: `${step.color}25`,
-                        borderColor: `${step.color}50`,
-                        boxShadow: `0 0 20px ${step.color}20`,
-                      }}
-                    >
-                      {step.number}
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-2xl overflow-hidden transition-all duration-300 shadow-sm">
+                    <div className="h-1 rounded-t-2xl" style={{ background: `linear-gradient(to right, ${step.color}, ${step.color}80)` }} />
+                    <div className="p-6">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="relative flex-shrink-0">
+                          <div
+                            className="absolute inset-[-4px] rounded-full opacity-20 group-hover:opacity-40 blur-md transition-opacity duration-500"
+                            style={{ background: step.color }}
+                          />
+                          <div
+                            className="relative w-12 h-12 rounded-full flex items-center justify-center text-base font-bold border-2"
+                            style={{
+                              background: `${step.color}15`,
+                              borderColor: `${step.color}40`,
+                              color: step.color,
+                              boxShadow: `0 0 20px ${step.color}15`,
+                            }}
+                          >
+                            {step.number}
+                          </div>
+                        </div>
+                        <h3 className="font-heading font-bold text-[#1C1F2E] text-base sm:text-lg group-hover:text-[#2563EB] transition-colors duration-200">
+                          {step.title}
+                        </h3>
+                      </div>
+                      <div className="h-px bg-[#D8D5CF] mb-4" />
+                      <ul className="space-y-2">
+                        {step.outcomes.map((outcome) => (
+                          <li key={outcome} className="flex items-start gap-2.5">
+                            <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
+                            <span className="text-[#5A5F72] text-base leading-relaxed">{outcome}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base sm:text-lg mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
-                      {step.title}
-                    </h3>
-                    <ul className="space-y-1">
-                      {step.outcomes.map((outcome) => (
-                        <li key={outcome} className="flex items-start gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
-                          <span className="text-[#5A5F72] text-base leading-relaxed">{outcome}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </motion.div>
               ))}
