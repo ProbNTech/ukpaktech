@@ -92,7 +92,7 @@ export default function JobPortalPage() {
         label="UPTECH Careers"
         title="Job Portal"
         subtitle="Connecting UK-Pakistan tech talent with world-class opportunities. Explore, apply, and build your career across borders with the UPTECH Job Portal."
-        image="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner9.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="#who-its-for">Browse Jobs</ShinyButton>

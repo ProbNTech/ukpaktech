@@ -156,7 +156,7 @@ export default function FundingAndGrantsClient() {
         label="Ecosystem / Funding & Grants"
         title="Funding and Grants"
         subtitle="Access funding opportunities to drive technology innovation and cross-border collaboration between the UK and Pakistan."
-        image="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner11.png"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership">Become a Member</ShinyButton>

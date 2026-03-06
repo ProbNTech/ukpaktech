@@ -77,7 +77,7 @@ export default function ContactPage() {
         label="Contact Us"
         title="Get in Touch"
         subtitle="Whether you're looking to partner, join, sponsor, or simply learn more — we'd love to hear from you."
-        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner2.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Apply for Membership</ShinyButton>

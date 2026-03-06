@@ -94,7 +94,7 @@ export default function FAQsPage() {
         label="Help Centre"
         title="Frequently Asked Questions"
         subtitle="Find answers to common questions about UPTECH, membership, programmes, funding, and more."
-        image="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner7.jpg"
       />
 
       <div className="content-body">

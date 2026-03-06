@@ -76,6 +76,7 @@ const navItems: NavItem[] = [
       { label: "Tech Excellence Awards", href: "/initiatives/tech-excellence-awards", desc: "Annual recognition celebrating the individuals and organisations driving extraordinary innovation.", icon: Trophy },
       { label: "UK–Pakistan Partnership", href: "/ecosystem/uk-pakistan-technology-partnership", desc: "The bilateral framework underpinning joint ventures, policy dialogue and shared R&D investment.", icon: Handshake },
       { label: "Trade Delegations", href: "/ecosystem/trade-delegations-and-exhibitions", desc: "Curated business missions, trade expos and pavilion programmes placing members on the world stage.", icon: Plane },
+      { label: "Tech Market Overview", href: "/ecosystem/tech-market-overview", desc: "Market intelligence across 8+ European countries — sector data, forecasts, and opportunities for Pakistani IT firms.", icon: Globe2 },
     ],
   },
   /* 3 — Services */

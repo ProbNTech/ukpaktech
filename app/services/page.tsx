@@ -24,7 +24,7 @@ export default function ServicesPage() {
       <PageHero
         title="Our Services"
         subtitle="Comprehensive support to help technology companies, startups, and professionals connect, grow, and succeed across the UK–Pakistan corridor."
-        image="https://images.unsplash.com/photo-1497366216548-37526070297c?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner.jpg"
       />
 
       {/* Stats Bar */}

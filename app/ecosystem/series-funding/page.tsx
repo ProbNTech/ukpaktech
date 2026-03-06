@@ -135,7 +135,7 @@ export default function SeriesFundingPage() {
         label="Ecosystem / Series Funding"
         title="Series A & B Funding Opportunities"
         subtitle="The UK-Pakistan Tech Council supports high-growth technology companies in securing Series A and B funding to scale operations, expand into new markets, and accelerate innovation."
-        image="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=2400&q=85&auto=format&fit=crop"
+        image="/image/banners/banner13.png"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership">Access Series Funding</ShinyButton>
