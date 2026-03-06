@@ -346,7 +346,7 @@ export default function RadialOrbitalTimeline({
         </div>
       </div>
 
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes gentleBounce {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-6px); }
@@ -357,7 +357,7 @@ export default function RadialOrbitalTimeline({
             100% { transform: rotate(${ball.offset + 360}deg) translateX(278px) rotate(-${ball.offset + 360}deg); }
           }
         `).join("")}
-      `}</style>
+      ` }} />
     </div>
   );
 }
