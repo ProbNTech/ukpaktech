@@ -28,7 +28,7 @@ export default function PakistanITScopeClient() {
           </>
         }
         subtitle="6 high-growth sectors where Pakistani technology companies can deliver exceptional value across European markets."
-        particleNetwork
+        image="/image/banners/banner33.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="#sectors">Explore Sectors</ShinyButton>

@@ -117,7 +117,7 @@ export default function TechMarketOverviewClient() {
           </>
         }
         subtitle="Your gateway to market data, sector forecasts, and partnership opportunities across 8+ European countries."
-        particleNetwork
+        image="/image/banners/banner30.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="#countries">Explore Markets</ShinyButton>

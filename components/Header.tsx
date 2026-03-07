@@ -229,8 +229,8 @@ export function Header() {
         onMouseLeave={handleLeave}
       >
         {/* ── Tier 1: Brand bar ──────────────────────────────── */}
-        <div className="px-5 sm:px-8 lg:px-12 xl:px-16">
-          <div className="flex items-center justify-between h-[90px]">
+        <div className="px-5 sm:px-8 lg:px-12 xl:px-8 2xl:px-16">
+          <div className="flex items-center justify-between h-[70px] sm:h-[80px] lg:h-[90px]">
 
             {/* ── Left: Logo + name ────────────────────────────── */}
             <Link
@@ -243,16 +243,16 @@ export function Header() {
                 alt="UPTECH Council logo"
                 width={72}
                 height={72}
-                className="h-[68px] w-auto object-contain"
+                className="h-[48px] sm:h-[56px] lg:h-[68px] w-auto object-contain"
                 priority
               />
-              <span className="hidden sm:inline font-heading font-black text-[28px] sm:text-[34px] lg:text-[42px] xl:text-[48px] tracking-[0.01em] leading-none text-[#1a2b5e] uppercase">
+              <span className="hidden sm:inline font-heading font-black text-[20px] sm:text-[24px] md:text-[28px] lg:text-[34px] xl:text-[38px] 2xl:text-[48px] tracking-[0.01em] leading-none text-[#1a2b5e] uppercase">
                 UK–PAKISTAN TECH COUNCIL <span className="text-[#C41E3A]">(UPTECH)</span>
               </span>
             </Link>
 
             {/* ── Right: CTA ────────────────────────── */}
-            <div className="hidden lg:flex items-center gap-5">
+            <div className="hidden xl:flex items-center gap-5">
               <Link
                 href="/membership"
                 onMouseEnter={handleLeave}
@@ -264,7 +264,7 @@ export function Header() {
 
             {/* ── Mobile hamburger ─────────────────────────────── */}
             <button
-              className="lg:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px]"
+              className="xl:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px]"
               onClick={() => setIsMobileOpen(true)}
               aria-label="Open menu"
               aria-expanded={isMobileOpen}
@@ -277,8 +277,8 @@ export function Header() {
         </div>
 
         {/* ── Tier 2: Navigation bar ─────────────────────────── */}
-        <div className="hidden lg:block border-t border-gray-100">
-          <div className="px-5 sm:px-8 lg:px-8 xl:px-12">
+        <div className="hidden xl:block border-t border-gray-100">
+          <div className="px-5 sm:px-8 xl:px-8 2xl:px-12">
             <nav
               className="flex items-center h-[52px]"
               aria-label="Main navigation"
@@ -286,7 +286,7 @@ export function Header() {
               <Link
                 href="/"
                 onMouseEnter={handleLeave}
-                className="relative h-full px-3 xl:px-4 flex items-center font-sans text-[14px] font-semibold tracking-[0.04em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150"
+                className="relative h-full px-2 2xl:px-3.5 flex items-center font-sans text-[12px] 2xl:text-[14px] font-semibold tracking-[0.04em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150"
               >
                 HOME
               </Link>
@@ -298,7 +298,7 @@ export function Header() {
                       key={item.label}
                       href={item.href}
                       onMouseEnter={handleLeave}
-                      className="relative h-full px-3 xl:px-4 flex items-center font-sans text-[14px] font-semibold tracking-[0.04em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150 whitespace-nowrap"
+                      className="relative h-full px-2 2xl:px-3.5 flex items-center font-sans text-[12px] 2xl:text-[14px] font-semibold tracking-[0.04em] text-[#1a2b5e] hover:text-[#0F172A] transition-colors duration-150 whitespace-nowrap"
                     >
                       {(item.displayLabel ?? item.label).toUpperCase()}
                     </Link>
@@ -314,8 +314,8 @@ export function Header() {
                     aria-haspopup="true"
                     onMouseEnter={() => handleGroupEnter(item.label)}
                     className={`
-                      relative h-full px-3 xl:px-4 flex items-center gap-1
-                      font-sans text-[14px] font-semibold tracking-[0.04em]
+                      relative h-full px-2 2xl:px-3.5 flex items-center gap-1
+                      font-sans text-[12px] 2xl:text-[14px] font-semibold tracking-[0.04em]
                       transition-colors duration-150 cursor-default select-none whitespace-nowrap
                       ${isActive
                         ? "text-[#0F172A]"
@@ -357,7 +357,7 @@ export function Header() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15 }}
               onMouseEnter={() => handlePanelEnter(activeGroup.label)}
-              className="hidden lg:block absolute left-0 right-0 top-full border-b-[2px] border-[#0A0A0A] bg-white shadow-xl"
+              className="hidden xl:block absolute left-0 right-0 top-full border-b-[2px] border-[#0A0A0A] bg-white shadow-xl"
             >
               <div className="px-6 sm:px-10 lg:px-14 xl:px-18">
                 <div className="grid grid-cols-[200px_1fr_260px] gap-0 divide-x divide-[#E4E1DC]">
@@ -484,7 +484,7 @@ export function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="lg:hidden fixed inset-0 bg-black/40 z-40"
+              className="xl:hidden fixed inset-0 bg-black/40 z-40"
               onClick={() => setIsMobileOpen(false)}
             />
 
@@ -494,7 +494,7 @@ export function Header() {
               animate={{ opacity: 1, x: 0 }}
               exit={shouldReduceMotion ? { opacity: 0 } : { x: "-100%" }}
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:hidden fixed inset-y-0 left-0 w-[320px] bg-white z-50 flex flex-col border-r-2 border-[#0A0A0A]"
+              className="xl:hidden fixed inset-y-0 left-0 w-[320px] bg-white z-50 flex flex-col border-r-2 border-[#0A0A0A]"
             >
               {/* Drawer masthead */}
               <div className="px-6 py-5 border-b-2 border-[#0A0A0A] flex items-center justify-between flex-shrink-0">

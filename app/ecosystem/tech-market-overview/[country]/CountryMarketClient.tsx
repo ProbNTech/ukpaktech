@@ -44,7 +44,7 @@ export default function CountryMarketClient({
         label={`${country.flag} ${country.name}`}
         title={country.tagline}
         subtitle={country.overview}
-        particleNetwork
+        image={country.bannerImage}
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="#sectors">View Market Data</ShinyButton>

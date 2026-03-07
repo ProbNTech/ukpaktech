@@ -14,13 +14,16 @@ export function Footer() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/image/footer/tower_bridge.jpg"
-            alt="Tower Bridge, London"
+            src="/image/footer/london-skyline-night.jpg"
+            alt="London Skyline at Night"
             fill
             className="object-cover object-center"
             sizes="100vw"
-            quality={80}
+            quality={85}
+            priority
           />
+          {/* Dark overlay for text visibility */}
+          <div className="absolute inset-0 bg-black/60" />
         </div>
 
         {/* Footer Content */}
@@ -42,12 +45,12 @@ export function Footer() {
                     UPTECH
                   </span>
                 </Link>
-                <p className="text-white/90 mb-7 leading-relaxed text-base">
+                <p className="text-white mb-7 leading-relaxed text-base drop-shadow-md">
                   UPTECH is the leading platform bringing together people, companies, and organizations from the UK and Pakistan to unlock the transformative potential of digital technology. With a diverse membership spanning startups, SMEs, corporates, and research institutions, the Council fosters a vibrant network for innovation, collaboration, and knowledge exchange across business, government, and stakeholders to create positive impact for society, the economy, and the wider world.
                 </p>
 
                 {/* Follow Us */}
-                <h3 className="font-heading font-semibold text-white text-base uppercase tracking-wider mb-4">
+                <h3 className="font-heading font-semibold text-white text-base uppercase tracking-wider mb-4 drop-shadow-md">
                   Follow Us
                 </h3>
                 <div className="flex gap-3">
@@ -62,7 +65,7 @@ export function Footer() {
                       <a
                         key={social.label}
                         href={social.href}
-                        className="w-12 h-12 rounded-full bg-white/35 border border-white/50 flex items-center justify-center text-white hover:text-white hover:bg-[#22C55E]/50 hover:border-[#22C55E]/70 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 transition-all duration-300"
+                        className="w-12 h-12 rounded-full bg-white/20 border border-white/60 flex items-center justify-center text-white hover:text-white hover:bg-[#22C55E]/50 hover:border-[#22C55E]/70 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 transition-all duration-300 drop-shadow-lg"
                         aria-label={social.label}
                       >
                         <Icon className="w-6 h-6" />
@@ -74,7 +77,7 @@ export function Footer() {
 
               {/* Column 2: Useful Links */}
               <div className="lg:col-span-4">
-                <h3 className="font-heading font-semibold text-white text-lg uppercase tracking-wider mb-5">
+                <h3 className="font-heading font-semibold text-white text-lg uppercase tracking-wider mb-5 drop-shadow-md">
                   Useful Links
                 </h3>
                 <ul className="space-y-3">
@@ -89,7 +92,7 @@ export function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-white hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1.5 text-base"
+                        className="text-white hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1.5 text-base drop-shadow-md"
                       >
                         <ChevronRight className="w-3 h-3" />
                         {link.label}
@@ -101,10 +104,10 @@ export function Footer() {
 
               {/* Column 3: Contact + Quick Links */}
               <div className="lg:col-span-4">
-                <h3 className="font-heading font-semibold text-white text-lg uppercase tracking-wider mb-5">
+                <h3 className="font-heading font-semibold text-white text-lg uppercase tracking-wider mb-5 drop-shadow-md">
                   Contact Us
                 </h3>
-                <div className="space-y-3 text-white text-base leading-relaxed">
+                <div className="space-y-3 text-white text-base leading-relaxed drop-shadow-md">
                   <p>
                     <span className="text-white font-medium">Email:</span>{" "}
                     <a
@@ -123,7 +126,7 @@ export function Footer() {
 
                 {/* Quick Links */}
                 <div className="mt-8">
-                  <h3 className="font-heading font-semibold text-white text-base uppercase tracking-wider mb-4">
+                  <h3 className="font-heading font-semibold text-white text-base uppercase tracking-wider mb-4 drop-shadow-md">
                     Quick Links
                   </h3>
                   <ul className="grid grid-cols-2 gap-2">
@@ -143,7 +146,7 @@ export function Footer() {
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className="text-white/90 hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1 text-base"
+                          className="text-white hover:text-[#22C55E] transition-colors duration-300 inline-flex items-center gap-1 text-base drop-shadow-md"
                         >
                           <ChevronRight className="w-3 h-3" />
                           {link.label}
@@ -156,15 +159,15 @@ export function Footer() {
             </div>
 
             {/* Disclaimer */}
-            <div className="border-t border-white/20 pt-7 mb-7">
-              <p className="text-white/70 text-sm leading-relaxed">
-                <span className="font-semibold text-white/90">Disclaimer:</span> The UK&ndash;Pakistan Technology Council (UPTECH) provides information on this website for general informational purposes only. While we endeavour to keep all content accurate and up to date, UPTECH makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or suitability of the information, products, services, or related materials contained on this website. Any reliance you place on such information is strictly at your own risk. UPTECH shall not be liable for any loss or damage arising from the use of this website. External links are provided for convenience and do not signify endorsement. All intellectual property rights in the content of this website are owned by or licensed to UPTECH unless otherwise stated.
+            <div className="border-t border-white/30 pt-7 mb-7">
+              <p className="text-white/90 text-sm leading-relaxed drop-shadow-md">
+                <span className="font-semibold text-white">Disclaimer:</span> The UK&ndash;Pakistan Technology Council (UPTECH) provides information on this website for general informational purposes only. While we endeavour to keep all content accurate and up to date, UPTECH makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or suitability of the information, products, services, or related materials contained on this website. Any reliance you place on such information is strictly at your own risk. UPTECH shall not be liable for any loss or damage arising from the use of this website. External links are provided for convenience and do not signify endorsement. All intellectual property rights in the content of this website are owned by or licensed to UPTECH unless otherwise stated.
               </p>
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-white/20 pt-7">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-base text-white">
+            <div className="border-t border-white/30 pt-7">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-base text-white drop-shadow-md">
                 <p style={{ color: "#FFFFFF" }}>
                   Copyright &copy; {new Date().getFullYear()} UK&ndash;Pakistan
                   Tech Council. All rights reserved.
