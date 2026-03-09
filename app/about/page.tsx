@@ -9,9 +9,42 @@ import { ShinyButton } from "@/components/ui/shiny-button";
 import { Button } from "@/components/Button";
 import Image from "next/image";
 import Link from "next/link";
-import { Lightbulb, Target, CheckCircle2, Award, Users, ArrowRight } from "lucide-react";
+import { Lightbulb, Target, CheckCircle2, Award, Users, ArrowRight, Shield, UserCheck, Globe2, Handshake, Layers } from "lucide-react";
 
 const brandColors = ["#2563EB", "#C41E3A", "#22C55E"];
+
+const whyUptech = [
+  {
+    icon: Shield,
+    title: "Trusted Gateway",
+    description: "UPTECH acts as a reliable bridge connecting Pakistani technology providers with UK and European companies.",
+    color: "#2563EB",
+  },
+  {
+    icon: UserCheck,
+    title: "Verified Technology Partners",
+    description: "We work with carefully selected technology companies, researchers, and professionals to ensure high-quality collaboration.",
+    color: "#22C55E",
+  },
+  {
+    icon: Globe2,
+    title: "Market Access Expertise",
+    description: "UPTECH provides guidance on European market entry, regulatory environments, and technology sector opportunities.",
+    color: "#C41E3A",
+  },
+  {
+    icon: Handshake,
+    title: "Cross-Border Collaboration",
+    description: "We facilitate partnerships between technology companies, research institutions, universities, innovation hubs, and investors.",
+    color: "#2563EB",
+  },
+  {
+    icon: Layers,
+    title: "End-to-End Support",
+    description: "From market research to partnership development and project coordination, UPTECH supports organisations throughout the collaboration process.",
+    color: "#22C55E",
+  },
+];
 
 const exploreItems = [
   { icon: Lightbulb, title: "Vision", desc: "A connected innovation ecosystem bridging UK and Pakistan's technology sectors.", href: "/about/vision", color: "#C41E3A" },
@@ -75,8 +108,33 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Explore Section */}
+      {/* Why Choose UPTECH */}
       <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader label="Why UPTECH" title="Why Choose UPTECH?" color="green" subtitle="The UK-Pakistan Technology Council provides a trusted platform for technology collaboration between Pakistan and Europe." />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyUptech.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.title}
+                  className="group bg-white rounded-2xl border border-[#D8D5CF] p-7 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: `${item.color}10`, border: `1px solid ${item.color}25` }}>
+                    <Icon className="w-5 h-5" style={{ color: item.color }} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{item.title}</h3>
+                  <div className="h-px bg-[#D8D5CF] mb-3" />
+                  <p className="text-base text-[#5A5F72] leading-relaxed">{item.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* Explore Section */}
+      <Section variant="light">
         <AnimatedSection>
           <SectionHeader label="Learn more" title="Explore" color="red" subtitle="Discover our vision, mission, leadership, and partnerships that drive the UK-Pakistan technology corridor." />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">

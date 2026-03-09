@@ -95,6 +95,11 @@ const baseSelectClass = "w-full px-4 py-3.5 rounded-xl bg-[#F8F8F7] border text-
 interface FormData {
   membershipType: string;
   orgName: string;
+  registrationNo: string;
+  tradeOrgName: string;
+  tradeOrgMemberNo: string;
+  cnic: string;
+  whatsapp: string;
   address: string;
   postcode: string;
   country: string;
@@ -145,6 +150,11 @@ interface FormData {
 const initialFormData: FormData = {
   membershipType: "",
   orgName: "",
+  registrationNo: "",
+  tradeOrgName: "",
+  tradeOrgMemberNo: "",
+  cnic: "",
+  whatsapp: "",
   address: "",
   postcode: "",
   country: "",
@@ -262,8 +272,9 @@ export default function MembershipApplicationForm() {
         break;
 
       case 1: // Organisation Details
-        if (!formData.orgName.trim()) newErrors.orgName = "Organisation name is required";
-        if (!formData.address.trim()) newErrors.address = "Business address is required";
+        if (!formData.orgName.trim()) newErrors.orgName = formData.membershipType === "individual" ? "Full name is required" : "Organisation name is required";
+        if (formData.membershipType === "individual" && !formData.cnic.trim()) newErrors.cnic = "CNIC is required";
+        if (!formData.address.trim()) newErrors.address = "Address is required";
         if (!formData.postcode.trim()) newErrors.postcode = "Postcode is required";
         if (!formData.country) newErrors.country = "Please select a country";
         if (!formData.orgPhone.trim()) newErrors.orgPhone = "Phone number is required";
@@ -779,25 +790,120 @@ export default function MembershipApplicationForm() {
                       <StepHeader stepIndex={1} />
                       <ErrorBanner />
                       <p className="text-[#5A5F72] text-base mb-6">
-                        Provide details about your company or institution.
+                        {formData.membershipType === "individual"
+                          ? "Provide your personal details."
+                          : "Provide details about your company or institution."}
                       </p>
                       <div className="grid sm:grid-cols-2 gap-6">
+                        {formData.membershipType === "individual" ? (
+                          <>
+                            <div className="sm:col-span-2">
+                              <label className="block text-base font-medium text-[#3D4152] mb-2">
+                                Full Name <span className="text-[#C41E3A]">*</span>
+                              </label>
+                              <input
+                                type="text"
+                                value={formData.orgName}
+                                onChange={(e) => updateField("orgName", e.target.value)}
+                                placeholder="Enter your full name"
+                                className={inputClass("orgName")}
+                              />
+                              <FieldError field="orgName" />
+                            </div>
+                            <div>
+                              <label className="block text-base font-medium text-[#3D4152] mb-2">
+                                CNIC <span className="text-[#C41E3A]">*</span>
+                              </label>
+                              <input
+                                type="text"
+                                value={formData.cnic}
+                                onChange={(e) => updateField("cnic", e.target.value)}
+                                placeholder="XXXXX-XXXXXXX-X"
+                                className={inputClass("cnic")}
+                              />
+                              <FieldError field="cnic" />
+                            </div>
+                            <div>
+                              <label className="block text-base font-medium text-[#3D4152] mb-2">
+                                WhatsApp
+                              </label>
+                              <input
+                                type="tel"
+                                value={formData.whatsapp}
+                                onChange={(e) => updateField("whatsapp", e.target.value)}
+                                placeholder="+92 3XX XXXXXXX"
+                                className={inputClass("whatsapp")}
+                              />
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <div className="sm:col-span-2">
+                              <label className="block text-base font-medium text-[#3D4152] mb-2">
+                                Organisation Name <span className="text-[#C41E3A]">*</span>
+                              </label>
+                              <input
+                                type="text"
+                                value={formData.orgName}
+                                onChange={(e) => updateField("orgName", e.target.value)}
+                                placeholder="Enter your organisation name"
+                                className={inputClass("orgName")}
+                              />
+                              <FieldError field="orgName" />
+                            </div>
+                            <div>
+                              <label className="block text-base font-medium text-[#3D4152] mb-2">
+                                Registration No.
+                              </label>
+                              <input
+                                type="text"
+                                value={formData.registrationNo}
+                                onChange={(e) => updateField("registrationNo", e.target.value)}
+                                placeholder="Company registration number"
+                                className={inputClass("registrationNo")}
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-base font-medium text-[#3D4152] mb-2">
+                                WhatsApp
+                              </label>
+                              <input
+                                type="tel"
+                                value={formData.whatsapp}
+                                onChange={(e) => updateField("whatsapp", e.target.value)}
+                                placeholder="+92 3XX XXXXXXX"
+                                className={inputClass("whatsapp")}
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-base font-medium text-[#3D4152] mb-2">
+                                Trade Organisation Affiliation
+                              </label>
+                              <input
+                                type="text"
+                                value={formData.tradeOrgName}
+                                onChange={(e) => updateField("tradeOrgName", e.target.value)}
+                                placeholder="e.g. PASHA, P@SHA"
+                                className={inputClass("tradeOrgName")}
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-base font-medium text-[#3D4152] mb-2">
+                                Trade Org Membership No.
+                              </label>
+                              <input
+                                type="text"
+                                value={formData.tradeOrgMemberNo}
+                                onChange={(e) => updateField("tradeOrgMemberNo", e.target.value)}
+                                placeholder="Membership number"
+                                className={inputClass("tradeOrgMemberNo")}
+                              />
+                            </div>
+                          </>
+                        )}
                         <div className="sm:col-span-2">
                           <label className="block text-base font-medium text-[#3D4152] mb-2">
-                            Organisation Name <span className="text-[#C41E3A]">*</span>
-                          </label>
-                          <input
-                            type="text"
-                            value={formData.orgName}
-                            onChange={(e) => updateField("orgName", e.target.value)}
-                            placeholder="Enter your organisation name"
-                            className={inputClass("orgName")}
-                          />
-                          <FieldError field="orgName" />
-                        </div>
-                        <div className="sm:col-span-2">
-                          <label className="block text-base font-medium text-[#3D4152] mb-2">
-                            Registered Business Address <span className="text-[#C41E3A]">*</span>
+                            {formData.membershipType === "individual" ? "Residential Address" : "Registered Business Address"} <span className="text-[#C41E3A]">*</span>
                           </label>
                           <input
                             type="text"
@@ -1541,6 +1647,7 @@ export default function MembershipApplicationForm() {
                             By submitting this form, you confirm that the information provided is accurate and agree
                             to UPTECH&apos;s{" "}
                             <Link href="/terms" className="text-[#2563EB] hover:underline">Terms &amp; Conditions</Link>,{" "}
+                            <Link href="/membership/terms" className="text-[#2563EB] hover:underline">Membership Terms &amp; Conditions</Link>,{" "}
                             <Link href="/privacy" className="text-[#2563EB] hover:underline">Privacy Policy</Link>, and{" "}
                             <Link href="/code-of-conduct" className="text-[#2563EB] hover:underline">Code of Conduct</Link>.
                             Membership is non-transferable. Payment details will be provided upon application approval.

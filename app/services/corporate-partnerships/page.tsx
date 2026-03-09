@@ -638,6 +638,36 @@ export default function CorporatePartnershipsPage() {
         </div>
       </section>
 
+      {/* ── Partnership Documents ── */}
+      <section className="relative bg-[#EEECEA]">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+          <AnimatedSection>
+            <SectionHeader label="Documents" title="Partnership Documents" color="blue" subtitle="Interested in formalising a partnership with UPTECH? Review our Memorandum of Understanding template." />
+            <motion.a
+              href="/services/corporate-partnerships/mou"
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4 }}
+              className="group relative max-w-2xl bg-white border border-[#D8D5CF] rounded-2xl p-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 block"
+            >
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/25 flex items-center justify-center flex-shrink-0">
+                  <Handshake className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2 group-hover:text-[#2563EB] transition-colors duration-200">Memorandum of Understanding (MoU)</h3>
+                  <p className="text-base text-[#5A5F72] leading-relaxed mb-3">A non-binding framework for cooperation between UPTECH and trade organisations, associations, and NGOs — covering joint events, mutual promotion, networking, and collaborative initiatives.</p>
+                  <span className="inline-flex items-center gap-2 text-base font-semibold text-[#2563EB]">
+                    View MoU Template <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                  </span>
+                </div>
+              </div>
+            </motion.a>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ================================================================
           CTA SECTION
           ================================================================ */}

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Network, Store, Megaphone, Plane, Users, Briefcase, ArrowRight } from "lucide-react";
+import { Network, Store, Megaphone, Plane, Users, Briefcase, ArrowRight, Search } from "lucide-react";
 import Link from "next/link";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
@@ -48,6 +48,13 @@ const services = [
     description:
       "Company registration, legal & accounting, IP protection, investment documents, and data rooms.",
     href: "/services/business-support",
+  },
+  {
+    icon: Search,
+    title: "Research & Innovation",
+    description:
+      "Cost-effective research services from Pakistan — technology research, data analytics, academic support, and more.",
+    href: "/services/research-innovation",
   },
 ];
 

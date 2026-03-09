@@ -16,6 +16,12 @@ import {
   Lightbulb,
   Eye,
   Megaphone,
+  Handshake,
+  CalendarDays,
+  BarChart3,
+  GraduationCap,
+  MapPin,
+  FileText,
 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
@@ -35,6 +41,10 @@ const membershipBenefits = [
   { icon: Lightbulb, title: "Thought Leadership", description: "Position your organisation as a leader in technology through speaking opportunities, published insights, and policy engagement.", color: "#C41E3A" },
   { icon: Building2, title: "Business Incubation Centres", description: "Members have access to shared boardrooms, office space, and other resources in our London office. Additional fees may apply.", color: "#2563EB" },
   { icon: Megaphone, title: "Sponsorships", description: "To increase exposure in both markets and demonstrate commitment to the bilateral relationship, UPTECH offers sponsorship opportunities exclusive to our member companies.", color: "#22C55E" },
+  { icon: Handshake, title: "Business Matchmaking", description: "B2B meetings with international companies, partner introductions, collaboration opportunities with technology firms, and client acquisition support.", color: "#C41E3A" },
+  { icon: CalendarDays, title: "Technology Events", description: "Participate in international technology conferences, business networking events, startup showcase programs, and innovation forums.", color: "#2563EB" },
+  { icon: BarChart3, title: "Research & Market Intelligence", description: "Access IT market reports, technology trends and opportunities, and sector-specific research insights covering key European technology markets.", color: "#22C55E" },
+  { icon: GraduationCap, title: "Talent & Collaboration", description: "Collaborate with universities, research institutions, innovation hubs, and technology accelerators to support innovation and knowledge exchange.", color: "#C41E3A" },
 ];
 
 const suitableFor = [
@@ -45,6 +55,19 @@ const suitableFor = [
   "Academic and research institutions",
 ];
 
+const europeanMarkets = [
+  { name: "United Kingdom", flag: "🇬🇧" },
+  { name: "Germany", flag: "🇩🇪" },
+  { name: "Netherlands", flag: "🇳🇱" },
+  { name: "France", flag: "🇫🇷" },
+  { name: "Switzerland", flag: "🇨🇭" },
+  { name: "Spain", flag: "🇪🇸" },
+  { name: "Poland", flag: "🇵🇱" },
+  { name: "Estonia", flag: "🇪🇪" },
+  { name: "Latvia", flag: "🇱🇻" },
+  { name: "Lithuania", flag: "🇱🇹" },
+];
+
 const whoShouldJoin = [
   { image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=85&auto=format&fit=crop", title: "Startups & Scale-ups", description: "Access funding, mentorship, market entry support, and collaboration opportunities.", color: "#2563EB" },
   { image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=85&auto=format&fit=crop", title: "SMEs & Technology Firms", description: "Grow your network, promote solutions, and explore cross-border opportunities.", color: "#22C55E" },
@@ -52,12 +75,15 @@ const whoShouldJoin = [
 ];
 
 const whoCanBecomeMembers = [
+  "IT companies and software firms",
+  "Technology startups",
+  "Research organizations",
+  "Digital service providers",
+  "IT professionals and consultants",
   "IT Professionals with computer and related education",
-  "12+ education and graduation in any field for support service professionals",
   "Contract and consulting employees",
   "AI/IT professionals or freelancers",
-  "Functional and related industry professionals",
-  "IT enabled support Services providers",
+  "IT enabled support services providers",
   "Students: IT, management and related fields",
 ];
 
@@ -295,8 +321,30 @@ export default function MembershipClient() {
         </AnimatedSection>
       </Section>
 
+      {/* ── Market Access ── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader label="Market Access" title="Access to UK & European Markets" color="blue" subtitle="Members gain access to opportunities in major European technology markets. UPTECH helps members identify potential clients, partners, and collaboration opportunities." />
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            {europeanMarkets.map((market, index) => (
+              <motion.div
+                key={market.name}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="group relative bg-white border border-[#D8D5CF] rounded-xl p-5 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+              >
+                <span className="text-3xl mb-2 block">{market.flag}</span>
+                <span className="text-base font-semibold text-[#1C1F2E]">{market.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
       {/* ── Membership Tiers ── */}
-      <Section variant="alt" id="tiers">
+      <Section variant="light" id="tiers">
         <AnimatedSection>
           <SectionHeader label="Membership Levels" title="Membership Tiers & Benefits" color="blue" subtitle="Choose the membership tier that best fits your organisation and goals." />
 
@@ -499,6 +547,40 @@ export default function MembershipClient() {
                 </p>
               </div>
             </motion.div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Membership Documents ── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader label="Documents" title="Membership Documents" color="blue" subtitle="Review the key documents governing UPTECH membership and partnership." />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: "Membership Terms & Conditions", description: "Rules, obligations, fees, and policies governing your UPTECH membership.", href: "/membership/terms", color: "#2563EB" },
+              { title: "Sales Commission Agreement", description: "Terms for UPTECH promoting and selling your products/services in UK and European markets.", href: "/membership/commission-agreement", color: "#22C55E" },
+              { title: "Memorandum of Understanding", description: "Framework for institutional partnerships between UPTECH and trade organisations.", href: "/services/corporate-partnerships/mou", color: "#C41E3A" },
+            ].map((doc) => (
+              <motion.a
+                key={doc.title}
+                href={doc.href}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4 }}
+                className="group relative bg-white border border-[#D8D5CF] rounded-2xl p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 block"
+              >
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: `${doc.color}10`, border: `1px solid ${doc.color}25` }}>
+                  <FileText className="w-5 h-5" style={{ color: doc.color }} strokeWidth={1.5} />
+                </div>
+                <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{doc.title}</h3>
+                <div className="h-px bg-[#D8D5CF] mb-3" />
+                <p className="text-base text-[#5A5F72] leading-relaxed mb-4">{doc.description}</p>
+                <span className="inline-flex items-center gap-2 text-base font-semibold" style={{ color: doc.color }}>
+                  View Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </span>
+              </motion.a>
+            ))}
           </div>
         </AnimatedSection>
       </Section>

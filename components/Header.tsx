@@ -11,7 +11,7 @@ import {
   Brain, ShoppingCart,
   Banknote, Coins, TrendingUp,
   CreditCard, FileText, MapPin, Send,
-  BriefcaseBusiness, CalendarDays, Newspaper, HelpCircle, Mail,
+  BriefcaseBusiness, CalendarDays, Newspaper, HelpCircle, Mail, Search,
   type LucideIcon,
 } from "lucide-react";
 
@@ -97,6 +97,7 @@ const navItems: NavItem[] = [
       { label: "Business Support", href: "/services/business-support", desc: "Company registration, legal, IP protection, investment documents, and data rooms.", icon: Scale },
       { label: "Mentorship", href: "/services/mentorship", desc: "One-to-one guidance from experienced UK and Pakistan tech leaders and entrepreneurs.", icon: UserCheck },
       { label: "Corporate Partnerships", href: "/services/corporate-partnerships", desc: "Strategic partnerships connecting founders, startups, accelerators, investors, and corporate partners.", icon: Building },
+      { label: "Research & Innovation", href: "/services/research-innovation", desc: "Cost-effective research services from Pakistan supporting UK and European companies.", icon: Search },
     ],
   },
   /* — Tech Markets (direct link, promoted from What We Do) */
