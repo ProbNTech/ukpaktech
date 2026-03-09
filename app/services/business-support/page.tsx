@@ -104,7 +104,7 @@ export default function BusinessSupportPage() {
         label="UPTECH Service"
         title="Business Support Services"
         subtitle="These services will be offered directly and through our partners."
-        image="/image/banners/banner34.jpg"
+        image="/image/banners/business-support.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership">Access Services</ShinyButton>
