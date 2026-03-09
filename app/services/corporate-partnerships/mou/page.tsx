@@ -138,7 +138,7 @@ export default function MoUPage() {
         label="Partnership Document"
         title="Memorandum of Understanding"
         subtitle="A framework for cooperation between UPTECH and partner organisations to support professional development, knowledge sharing, and collaborative initiatives in the IT sector."
-        image="/image/banners/banner21.jpg"
+        image="/image/banners/banner22.jpg"
       />
 
       <div className="content-body">

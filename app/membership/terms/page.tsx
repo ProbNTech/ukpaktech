@@ -139,7 +139,7 @@ export default function MembershipTermsPage() {
         label="Legal"
         title="Membership Terms & Conditions"
         subtitle="By applying for or maintaining membership, you agree to be bound by these Terms and Conditions."
-        image="/image/banners/banner21.jpg"
+        image="/image/banners/banner36.jpg"
       />
 
       <div className="content-body">

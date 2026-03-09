@@ -61,7 +61,7 @@ export default function AboutPage() {
         label="About Us"
         title="About UPTECH"
         subtitle="Empowering Pakistan's Tech Leaders; innovation, entrepreneurship, investment, advocacy and visionary growth."
-        image="/image/banners/leadership3.jpg"
+        threeBg
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Apply for Membership</ShinyButton>

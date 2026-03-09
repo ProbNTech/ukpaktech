@@ -117,7 +117,7 @@ export default function TechMarketOverviewClient() {
           </>
         }
         subtitle="Your gateway to market data, sector forecasts, and partnership opportunities across 8+ European countries."
-        image="/image/banners/banner30.jpg"
+        image="/image/banners/tech-overview.png"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="#countries">Explore Markets</ShinyButton>

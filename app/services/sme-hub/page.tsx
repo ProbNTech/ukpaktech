@@ -91,7 +91,7 @@ export default function SMEHubPage() {
         label="UPTECH Service"
         title="SME Hub"
         subtitle="Whether you're growing your business, entering new markets, securing public sector contracts, or boosting sales, SME Hub provides the support, connections, and insights you need. Our hub is your one-stop shop for overcoming challenges and unlocking new opportunities."
-        image="/image/banners/banner20.jpg"
+        image="/image/banners/leadership3.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership">Join the Hub</ShinyButton>

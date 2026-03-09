@@ -146,7 +146,7 @@ export default function CommissionAgreementPage() {
         label="Legal Document"
         title="Sales Commission Agreement"
         subtitle="This Sales Commission Agreement sets out the terms between UPTECH and its Members for the promotion, marketing, and sale of Member products and services."
-        image="/image/banners/banner21.jpg"
+        image="/image/banners/banner37.jpg"
       />
 
       <div className="content-body">
