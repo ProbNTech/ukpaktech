@@ -22,6 +22,9 @@ import {
   GraduationCap,
   MapPin,
   FileText,
+  Download,
+  Shield,
+  ScrollText,
 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
@@ -552,39 +555,89 @@ export default function MembershipClient() {
       </Section>
 
       {/* ── Membership Documents ── */}
-      <Section variant="alt">
-        <AnimatedSection>
-          <SectionHeader label="Documents" title="Membership Documents" color="blue" subtitle="Review the key documents governing UPTECH membership and partnership." />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: "Membership Terms & Conditions", description: "Rules, obligations, fees, and policies governing your UPTECH membership.", href: "/documents/UPTECH-Membership-Terms-and-Conditions.pdf", color: "#2563EB" },
-              { title: "Sales Commission Agreement", description: "Terms for UPTECH promoting and selling your products/services in UK and European markets.", href: "/documents/UPTECH-Sales-Commission-Agreement.pdf", color: "#22C55E" },
-              { title: "Memorandum of Understanding", description: "Framework for institutional partnerships between UPTECH and trade organisations.", href: "/documents/UPTECH-Memorandum-of-Understanding.pdf", color: "#C41E3A" },
-            ].map((doc) => (
-              <motion.a
-                key={doc.title}
-                href={doc.href}
-                target="_blank"
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4 }}
-                className="group relative bg-white border border-[#D8D5CF] rounded-2xl p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 block"
-              >
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: `${doc.color}10`, border: `1px solid ${doc.color}25` }}>
-                  <FileText className="w-5 h-5" style={{ color: doc.color }} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2 group-hover:text-[#2563EB] transition-colors duration-200">{doc.title}</h3>
-                <div className="h-px bg-[#D8D5CF] mb-3" />
-                <p className="text-base text-[#5A5F72] leading-relaxed mb-4">{doc.description}</p>
-                <span className="inline-flex items-center gap-2 text-base font-semibold" style={{ color: doc.color }}>
-                  Download Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </span>
-              </motion.a>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
+      <section
+        className="relative overflow-hidden py-16 lg:py-24"
+        style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}
+      >
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
+        {/* Background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-[0.04]" style={{ background: "radial-gradient(circle, #2563EB, transparent 60%)" }} />
+
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
+          <AnimatedSection>
+            <div className="text-center mb-12">
+              <p className="text-sm font-bold tracking-[0.25em] uppercase text-[#2563EB] mb-3">Official Documents</p>
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-4">
+                Membership Documents
+              </h2>
+              <p className="text-white/40 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                Download the key legal documents governing UPTECH membership and partnership agreements.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {[
+                { icon: Shield, title: "Membership Terms & Conditions", description: "Rules, obligations, fees, and policies governing your UPTECH membership.", href: "/documents/UPTECH-Membership-Terms-and-Conditions.pdf", color: "#2563EB", pages: "3 Pages" },
+                { icon: ScrollText, title: "Sales Commission Agreement", description: "Terms for UPTECH promoting and selling your products/services in UK and European markets.", href: "/documents/UPTECH-Sales-Commission-Agreement.pdf", color: "#22C55E", pages: "5 Pages" },
+                { icon: Handshake, title: "Memorandum of Understanding", description: "Framework for institutional partnerships between UPTECH and trade organisations.", href: "/documents/UPTECH-Memorandum-of-Understanding.pdf", color: "#C41E3A", pages: "4 Pages" },
+              ].map((doc, i) => {
+                const Icon = doc.icon;
+                return (
+                  <motion.a
+                    key={doc.title}
+                    href={doc.href}
+                    target="_blank"
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className="group relative block rounded-2xl overflow-hidden"
+                  >
+                    {/* Glowing border on hover */}
+                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `linear-gradient(135deg, ${doc.color}30, transparent 50%, ${doc.color}20)` }} />
+
+                    <div className="relative bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-2xl p-8 h-full flex flex-col group-hover:border-white/20 group-hover:bg-white/[0.09] transition-all duration-500">
+                      {/* Top row: icon + badge */}
+                      <div className="flex items-start justify-between mb-6">
+                        <div
+                          className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110"
+                          style={{ background: `${doc.color}15`, border: `1px solid ${doc.color}30` }}
+                        >
+                          <Icon className="w-6 h-6" style={{ color: doc.color }} strokeWidth={1.5} />
+                        </div>
+                        <span className="text-xs font-bold tracking-widest uppercase px-3 py-1.5 rounded-full" style={{ background: `${doc.color}15`, color: doc.color }}>
+                          {doc.pages}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="font-heading font-bold text-lg text-white mb-3 group-hover:text-white transition-colors duration-300 leading-snug">
+                        {doc.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-white/40 text-base leading-relaxed mb-6 flex-1">
+                        {doc.description}
+                      </p>
+
+                      {/* Download button */}
+                      <div
+                        className="inline-flex items-center gap-3 px-5 py-3 rounded-xl text-sm font-bold tracking-wide uppercase transition-all duration-300 group-hover:gap-4 w-fit"
+                        style={{ background: `${doc.color}15`, color: doc.color, border: `1px solid ${doc.color}25` }}
+                      >
+                        <Download className="w-4 h-4" strokeWidth={2} />
+                        Download PDF
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </div>
+                  </motion.a>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
 
       {/* ── Why Membership Matters ── */}
       <Section variant="light">
