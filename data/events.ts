@@ -928,7 +928,7 @@ export const events: Event[] = [
   {
     slug: "gitex-global-dubai-2026",
     title: "GITEX Global 2026",
-    category: "UPTECH",
+    category: "Europe",
     tag: "Expo",
     status: "upcoming",
     date: "December 7–11, 2026",

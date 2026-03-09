@@ -108,7 +108,7 @@ export const countryData: Record<string, CountryMarketData> = {
     slug: "uk",
     flag: "🇬🇧",
     countryCode: "GB",
-    bannerImage: "/image/banners/banner31.jpg",
+    bannerImage: "/image/banners/tech-overview-uk.png",
     tagline: "Europe's AI & IT Services Hub",
     overview:
       "The UK is one of Europe's most advanced digital economies and a global leader in artificial intelligence adoption.",
@@ -338,7 +338,7 @@ export const countryData: Record<string, CountryMarketData> = {
     slug: "france",
     flag: "🇫🇷",
     countryCode: "FR",
-    bannerImage: "/image/banners/banner37.jpg",
+    bannerImage: "/image/banners/tech-overview-france.png",
     tagline: "Industrial AI & Deep Tech Growth",
     overview:
       "France is investing heavily in AI, Industry 4.0, and digital transformation across public and private sectors.",
@@ -434,7 +434,7 @@ export const countryData: Record<string, CountryMarketData> = {
     slug: "spain",
     flag: "🇪🇸",
     countryCode: "ES",
-    bannerImage: "/image/banners/banner32.jpg",
+    bannerImage: "/image/banners/tech-overview-spain.png",
     tagline: "Rapid Digital Adoption & Cloud Growth",
     overview:
       "Spain's ICT market is experiencing rapid growth driven by strong public-private digital investment and infrastructure expansion.",
@@ -551,7 +551,7 @@ export const countryData: Record<string, CountryMarketData> = {
     slug: "netherlands",
     flag: "🇳🇱",
     countryCode: "NL",
-    bannerImage: "/image/banners/banner34.jpg",
+    bannerImage: "/image/banners/tech-overview-netherlands.png",
     tagline: "Europe's Digital Hub & Data Centre Gateway",
     overview:
       "The Netherlands is a highly connected digital ecosystem with strong cloud adoption across enterprise and public sectors.",
@@ -678,7 +678,7 @@ export const countryData: Record<string, CountryMarketData> = {
     slug: "switzerland",
     flag: "🇨🇭",
     countryCode: "CH",
-    bannerImage: "/image/banners/banner36.jpg",
+    bannerImage: "/image/banners/tech-overview-switzerland.png",
     tagline: "Secure & High-Compliance IT Market",
     overview:
       "Switzerland's stable economy and strong regulatory environment create demand for secure, high-quality IT solutions.",
@@ -783,7 +783,7 @@ export const countryData: Record<string, CountryMarketData> = {
     slug: "poland",
     flag: "🇵🇱",
     countryCode: "PL",
-    bannerImage: "/image/banners/banner35.jpg",
+    bannerImage: "/image/banners/tech-overview-poland.png",
     tagline: "Central Europe's Fastest-Growing IT Market",
     overview:
       "Poland's IT and ICT sector is one of Central Europe's fastest-growing technology markets.",
@@ -901,7 +901,7 @@ export const countryData: Record<string, CountryMarketData> = {
     slug: "baltic-states",
     flag: "🇪🇪🇱🇹🇱🇻",
     countryCode: "EE",
-    bannerImage: "/image/banners/banner39.jpg",
+    bannerImage: "/image/banners/tech-overview-baltic-states.png",
     tagline: "Digital Leaders of Northern Europe",
     overview:
       "The Baltic states — Estonia, Lithuania, and Latvia — are among Europe's most digitally advanced economies with strong IT export orientation.",
