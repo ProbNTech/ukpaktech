@@ -191,7 +191,7 @@ export default function ResearchInnovationPage() {
         label="UPTECH Service"
         title="Research & Innovation Services"
         subtitle="UPTECH builds a strong technology bridge between Pakistan and Europe, enabling companies to collaborate, innovate, and grow in the global digital economy."
-        image="/image/banners/banner.jpg"
+        particleNetwork
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership">Get Started</ShinyButton>
