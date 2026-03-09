@@ -13,12 +13,13 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 /* ------------------------------------------------------------------ */
 /*  Filter tabs                                                        */
 /* ------------------------------------------------------------------ */
-type FilterTab = "All" | "Upcoming" | "Past" | "London" | "Pakistan" | "UPTECH";
+type FilterTab = "All" | "Upcoming" | "Past" | "London" | "Europe" | "Pakistan" | "UPTECH";
 const FILTER_TABS: FilterTab[] = [
   "All",
   "Upcoming",
   "Past",
   "London",
+  "Europe",
   "Pakistan",
   "UPTECH",
 ];
@@ -31,6 +32,7 @@ const TAB_COLORS: Record<FilterTab, string> = {
   Upcoming: "#22C55E",
   Past: "#C41E3A",
   London: "#2563EB",
+  Europe: "#7C3AED",
   Pakistan: "#22C55E",
   UPTECH: "#C41E3A",
 };
@@ -85,6 +87,7 @@ export default function EventsPage() {
   const upcomingCount = events.filter((e) => isUpcoming(e.dateISO)).length;
   const pastCount = events.filter((e) => !isUpcoming(e.dateISO)).length;
   const londonCount = events.filter((e) => e.category === "London").length;
+  const europeCount = events.filter((e) => e.category === "Europe").length;
   const pakistanCount = events.filter((e) => e.category === "Pakistan").length;
   const uptechCount = events.filter((e) => e.category === "UPTECH").length;
 
@@ -93,8 +96,8 @@ export default function EventsPage() {
     { label: "Upcoming", value: upcomingCount, color: "#22C55E" },
     { label: "Past", value: pastCount, color: "#C41E3A" },
     { label: "London", value: londonCount, color: "#2563EB" },
+    { label: "Europe", value: europeCount, color: "#7C3AED" },
     { label: "Pakistan", value: pakistanCount, color: "#22C55E" },
-    { label: "UPTECH", value: uptechCount, color: "#C41E3A" },
   ];
 
   return (

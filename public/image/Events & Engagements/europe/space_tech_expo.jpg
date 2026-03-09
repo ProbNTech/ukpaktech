@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+    <title>404 Error Page | Space Tech Expo Europe</title>
+    <base href="https://www.spacetechexpo-europe.com/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="../assets/resources/bre/web/images/logos/BRE-logo.jpg" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+     <meta name="google-site-verification" content="acBPTHXL_djqQNVWd6l-N7YrVFq_wfaWghzBjBIlLRg" />
+    <link rel="icon" type="image/png" href="../assets/resources/bre/web/images/favicon/favicon.png">
+
+ 
+    <!---------------SCHEMA------------------>
+    <script type="application/ld+json"> 
+        {
+          "@context": "https://schema.org",
+          "@type": "ExhibitionEvent",
+          "name": "Space Tech Expo Europe",
+          "image":"./assets/resources/bre/web/images/logos/BRE-logo.jpg",
+          "url": "https://www.spacetechexpo-europe.com/",
+          "startDate": "2026-11-17",
+          "location": {
+            "@type": "Place",
+            "name": "MESSE BREMEN",
+            "geo": {
+              "@type": "GeoCoordinates",  
+              "latitude": "53.0889461",
+              "longitude": "8.8096215"
+            }},
+          "description": "Europe’s largest exhibition and conference for the space industry",
+          "endDate": "2025-11-20",
+          "offer": ""
+        }
+    </script>
+    <!-------------END SCHEMA---------------->
+    
+    <!---------------STYLE SHEETS------------>
+    <!--Bootstrap-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+   <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!--Animations-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!--Custom-->
+    <link rel="stylesheet" href="https://use.typekit.net/qsj4dlm.css">
+    <link rel="stylesheet" type="text/css" href="./assets/web/stylesheets/content_blocks/main.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/web/stylesheets/shows/bre/main.css" />
+    <!-------------END STYLESHEETS----------->
+    
+    <!---------------SCRIPTS------------------->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./assets/web/js/bundle.js"></script>
+    <!-------------END SCRIPTS----------------->
+    
+    <!-------------TAG MANAGER----------------->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5CFT7X');</script>
+    <!-----------END TAG MANAGER--------------->
+    
+    <!---------MISC SCRIPTS--------->
+    <!--Cookie Consent-->
+      <script>
+/** Place this script on EVERY page of your site
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Check if we have stored UTMs in localStorage
+    const storedUTMs = localStorage.getItem('utmParams');
+    console.log(storedUTMs)
+    // 2. If we're on a landing page with UTM parameters, save them
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('utm_source') || urlParams.has('utm_medium') || urlParams.has('utm_campaign')) {
+        const utmParams = {
+            utm_source: urlParams.get('utm_source'),
+            utm_medium: urlParams.get('utm_medium'),
+            utm_campaign: urlParams.get('utm_campaign'),
+            utm_content: urlParams.get('utm_content'),
+            utm_term: urlParams.get('utm_term'),
+            timestamp: new Date().getTime()
+        };
+        localStorage.setItem('utmParams', JSON.stringify(utmParams));
+    }
+    
+    // 3. Apply stored UTMs to all relevant links on this page
+    if (storedUTMs) {
+        const utms = JSON.parse(storedUTMs);
+        document.querySelectorAll('a[href*="visitcloud.com"]').forEach(function(link) {
+            try {
+                const url = new URL(link.href);
+                Object.keys(utms).forEach(key => {
+                    if (key !== 'timestamp' && utms[key]) {
+                        url.searchParams.set(key, utms[key]);
+                    }
+                });
+                link.href = url.toString();
+            } catch (e) {
+                console.error('Error updating link:', e);
+            }
+        });
+    }
+});**/
+</script>
+<script>
+// Place this script on EVERY page of your site
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const hasUTMs = urlParams.has('utm_source') || urlParams.has('utm_medium') || urlParams.has('utm_campaign');
+
+    // 1. If URL has UTM parameters → save/overwrite them
+    if (hasUTMs) {
+        const utmParams = {
+            utm_source: urlParams.get('utm_source'),
+            utm_medium: urlParams.get('utm_medium'),
+            utm_campaign: urlParams.get('utm_campaign'),
+            utm_content: urlParams.get('utm_content'),
+            utm_term: urlParams.get('utm_term'),
+            timestamp: new Date().getTime()
+        };
+        localStorage.setItem('utmParams', JSON.stringify(utmParams));
+    } else {
+        // 2. If no UTMs in URL → clear stored UTMs
+        localStorage.removeItem('utmParams');
+    }
+
+    // 3. Apply stored UTMs to links if they exist
+    const storedUTMs = localStorage.getItem('utmParams');
+    if (storedUTMs) {
+        const utms = JSON.parse(storedUTMs);
+        document.querySelectorAll('a[href*="visitcloud.com"]').forEach(function(link) {
+            try {
+                const url = new URL(link.href);
+                Object.keys(utms).forEach(key => {
+                    if (key !== 'timestamp' && utms[key]) {
+                        url.searchParams.set(key, utms[key]);
+                    }
+                });
+                link.href = url.toString();
+            } catch (e) {
+                console.error('Error updating link:', e);
+            }
+        });
+    }
+});
+</script>
+
+
+      <script type="text/javascript">"use strict";function _typeof(t){return(_typeof="function"==typeof 
+Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof 
+Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}!function(){self.airgap?.ready||(self.airgap={readyQueue:[],ready(e){this.readyQueue.push(e)},...self.airgap});
+const e=()=>{const e="__tcfapiLocator",t=[],a=window;let n,s,o=a;for(;o;){try{if(o.frames[e]){n=o;break}}catch(e){}if(o===a.top)break;o=o.parent}n||(!function t(){const n=a.document,s=!!a.frames[e];
+if(!s)if(n.body){const t=n.createElement("iframe");t.style.cssText="display:none",t.name=e,n.body.appendChild(t)}else setTimeout(t,5);return!s}(),a.__tcfapi=function(...e){if(!e.length)return t;
+"setGdprApplies"===e[0]?e.length>3&&2===parseInt(e[1],10)&&"boolean"==typeof e[3]&&(s=e[3],"function"==typeof e[2]&&e[2]("set",!0)):"ping"===e[0]?"function"==typeof e[2]&&e[2]({gdprApplies:s,cmpLoaded:!1,cmpStatus:"stub"}):t.push(e)},a.addEventListener("message",(function(e){const t="string"==typeof e.data;let a={};if(t)try{a=JSON.parse(e.data)}catch(e){}else a=e.data;const n="object"==typeof a&&null!==a?a.__tcfapiCall:null;n&&window.__tcfapi(n.command,n.version,(function(a,s){let o={__tcfapiReturn:{returnValue:a,success:s,callId:n.callId}};e&&e.source&&e.source.postMessage&&e.source.postMessage(t?JSON.stringify(o):o,"*")}),n.parameter)}),!1))};airgap.ready((t=>{"TCF_EU"===t.loadOptions.consentManagerConfig.initialViewStateByPrivacyRegime[t.getRegimes()[0]]&&("undefined"!=typeof module?module.exports=e:e())}))}();</script>
+
+
+
+
+
+
+<script
+data-cfasync="false"
+data-local-sync="allow-network-observable"
+data-prompt="1" data-report-only="off"
+data-dismissed-view-state="Collapsed"
+data-tcf-ui-dismissed-view-state="Collapsed"
+src=https://transcend-cdn.com/cm/ef49a3f1-d8c1-47d6-88fc-50e41130631f/airgap.js>
+</script>
+
+
+
+    <!--Search IQ-->
+    <!-- <script type="text/javascript">
+        (function () {
+            window.siqConfig = {
+                engineKey: "bc3bc58ebb405aa4673fb9dc019f1a5f"
+            };
+            window.siqConfig.baseUrl = "//pub.searchiq.co/";
+            var script = document.createElement("SCRIPT");
+            script.src = window.siqConfig.baseUrl + '/js/container/siq-container-2.js?cb=' + (Math.floor(Math.random()*999999)) + '&engineKey=' + siqConfig.engineKey;
+            script.id = "siq-container";
+            document.getElementsByTagName("HEAD")[0].appendChild(script);
+        })(); 
+    </script>-->
+    <!-------END MISC SCRIPTS------->
+    
+        <!-------PIXEL SCRIPTS------->
+
+<!--         <script async src='https://cdn.fluidads.com/cache/js/pixel/smarter-shows-pixel.js'></script> -->
+        <script async src="https://pixels.crooton.com/pixels/smartershows-pixel.js"></script>
+
+
+        
+       
+        <!------END PIXEL SCRIPTS-------->
+        
+                                <script>
+/* ----------------------------------------------------------------------------------------------------
+            IMPORTANT!
+            The code below requires a developer to install and setup.
+            Please do not simply copy/paste this onto your website.
+            ---------------------------------------------------------------------------------------------------- */
+                // Initiate Web Behaviour Tracking (this section MUST come prior any other dmPt calls)
+                // Do not change this
+                (function(w,d,u,t,o,c){w['dmtrackingobjectname']=o;c=d.createElement(t);c.async=1;c.src=u;t=d.getElementsByTagName
+                (t)[0];t.parentNode.insertBefore(c,t);w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments);};
+                })(window, document, '//static.trackedweb.net/js/_dmptv4.js', 'script', 'dmPt');
+                window.dmPt('create', 'DM-8691303871-01', 'spacetechexpo-europe.com');
+              window.dmPt('track');
+                
+                // window.dmPt("identify", "example@example.com");  // Hardcoded example, inject contact email address.
+                // window.dmPt("identify", { email: "example@example.com" }); // Hardcoded example, inject email as object.
+                // window.dmPt("identify", { email: "example@example.com", mobileNumber: "00447911123456" }); // Hardcoded example, inject email and mobile-number as object.
+</script>
+       
+<script type="text/javascript"
+src="https://onsite.optimonk.com/script.js?account=182878"
+async></script>
+</head>
+<body data-context="BRE" data-site="US">
+
+    <!-------------GTM ADDITIONAL--------------->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CFT7X"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-----------END GTM ADDITIONAL------------->
+    
+     <!---------- GOOGLE TRANSLATE --------->
+
+    <div class="container google-translate-container">
+        <div id="google_translate_element"></div>
+    </div>
+
+    <script>
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function googleTranslateElementInit() {
+            //let lang = getCookie('googtrans') || 'en'; // Default to English if no cookie
+              let lang =  'en';
+            // Change language to German if the page title matches "testg"
+            if ("404 Error Page".toLowerCase() === "testg") {
+                lang = 'de';
+            }
+              else{lang = 'en';}
+            //console.log('Selected language:', lang); // Debugging line
+
+            // Set Google Translate cookie to prefer the selected language
+            setCookie('googtrans', '/' + lang, 1);
+
+            // Initialize the Google Translate element
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', // Page language is set to English, but we force the translation
+                includedLanguages: 'it,de,fr,es,nl,en,pl,tr',
+                layout: google.translate.TranslateElement.InlineLayout.NONE
+            }, 'google_translate_element');
+        }
+
+        // Load Google Translate script
+        (function() {
+            var script = document.createElement('script');
+            script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            script.type = 'text/javascript';
+            document.head.appendChild(script);
+        })();
+    </script>
+
+
+    <!---------- GOOGLE TRANSLATE END--------->
+    
+    
+    <!--For search iq-->    
+   <!--  <subtitle style="display: none;">404 Error Page</subtitle> -->
+    <!---------------NAV DESKTOP---------------->
+    <header class="d-none d-lg-block d-xl-block d-xxl-block header--default header--desktop">
+        <!--<a class="header__covid-info" href="site/covid-safety" target="_blank" style="position: absolute;">
+            <img src="./assets/resources/shared/web/images/misc/Covid19-update-button.jpg" alt="Covid-19 Info"/>
+        </a>-->
+        <div class="container">
+            <div class="row header__sub-menu">
+                <div class="col-lg-12 col-xl-12">
+                    <div style="position: relative;">
+                         
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+ <ul class="header__sub-menu__list">
+  
+  <!--<li><a  "href="conference/speaker-list" title="Speaker List">Speaker List</a></li> -->
+  
+  <!--<li><a href="https://space-tech-expo-2022-matchmaking.b2match.io/" title="B2B Matchmaking">B2B Matchmaking</a></li> -->
+
+ <!-- <li><a href="plan-your-visit/exhibitor-faqs" title="Exhibitor FAQs">Exhibitor FAQs</a></li>  -->
+  
+ <!--  <li><a href="startseite" title="German Homepage">German Homepage</a></li> -->
+  
+  <!--  <li><a href="plan-your-visit/visitor-faqs" title="Visitor FAQs">Visitor FAQs</a></li>   -->
+  
+   <!-- <li><a href="conference/call-for-speakers" title="Call for speakers">Call for speakers</a> </li>   -->
+   
+  <li><a target="_blank" href="https://spaceexpoeurope26.mapyourshow.com/8_0/exhview/index.cfm" title="Floor Plan">Floor Plan</a></li>
+  
+  <!-- <li><a target="_blank" href="plan-your-visit/book-a-hotel" title="Hotels">Hotels</a></li> -->
+  
+   <li><a href="industry-insights/" title="Industry Insights">Industry Insights</a></li>
+   
+  <!--  <li><a href="whatson/press-information" title="Press">Press</a></li>   -->
+    
+<!--     <li><a href="whatson/about-us" title="About Us">About Us</a></li> -->
+	
+  <!--<li><a href="event-app" title="Event App">Event App</a></li>-->
+    
+     <li><a href="whatson/sponsors" title="Sponsors">Sponsors</a></li>
+
+    <li><a href="whatson/supporters" title="Supporters">Supporters</a></li> 
+    
+  <!--  <li><a  href="whatson/b2b-matchmaking-platform" title="B2B Matchmaking">B2B Matchmaking</a></li>   -->
+
+	<li><a href="plan-your-visit/contact-us" title="Contact Us">Contact Us</a></li>
+ 
+	<!--<li class="d-none d-xl-block d-xxl-block">
+		<div class="header__search">
+			<form id="siq_searchForm">
+				<div>
+					<img src="./assets/resources/shared/web/images/misc/search-icon.jpg" alt="search" />
+					<input style="" type="search" placeholder="Type here to search..." value="" name="s" />
+					<img src="./assets/resources/shared/web/images/misc/x.jpg" alt="search" />
+				</div>
+			</form>
+		</div>
+	</li>-->
+</ul> 
+
+
+
+
+
+                        <div class="header__sub-menu__co-locate pt-3">
+                           
+                            <a href="https://www.spacetechexpo.com" target="_blank" title="Space Tech Expo">
+                                <img class="img-fluid" style="max-width:85%;" src="./assets/resources/shared/images/logos/space-tech-expo-usa-colocated.png"/>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row header__main-menu">
+                <div class="col-lg-3 col-xl-3">
+                    <div class="header__main-logo pt-3">
+                        <a href="./home" title="Home" >
+                            <img src="./assets/resources/shared/images/logos/space-expo-europe.png" alt="Space Tech Expo Europe" />
+                        </a>
+                    </div>
+                    <div class="header__locked-logo">
+                        <a href="./home" title="Home" >
+                            <img src="./assets/resources/shared/images/logos/space-tech-expo-europe-logolocked.png" alt="Space Tech Expo Europe" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-xl-9">
+                    <div class="header__info">
+                        <h2 class="header__info--date">17 – 19 November 2026<span style="color: #e67e23; margin: 0 10px;">//</span>Bremen, Germany</h2>
+                        <!--<h2 class="header__info--location">August 29 – 31, 2022</h2>-->
+                    </div>
+                    <!--<div class="header__info--bonus">
+                        <p><i><strong style="color: #0c3353">*May 23:</strong> Invite only Preview <strong style="color: #0c3353">May 24-25:</strong> Exhibits and Conference</i></p>
+                    </div>-->
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <div class="container-fluid">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                              <ul class="navbar-nav">
+                                <li class="nav-item">
+                                  <a class="nav-link" aria-current="page" href="https://www.spacetechexpo-europe.com/" title="Home">HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" aria-current="page" href="whatson/" title="What's on">WHAT'S ON</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" aria-current="page" href="exhibit/" title="Exhibit">EXHIBIT</a>
+                                </li> 
+                                <li class="nav-item">
+                                  <a class="nav-link" aria-current="page" href="exhibitor-list/" title="Exhibitor List">EXHIBITOR LIST</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" aria-current="page" href="conference/" title="Conference">CONFERENCE</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" aria-current="page" href="plan-your-visit/" title="Plan Your Visit">PLAN YOUR VISIT</a>
+                                </li>
+                                <!--<li class="nav-item nav-item--reg-link--pop nav-item--reg-link">
+                                  <a class="nav-link" aria-current="page" href="site/forms/exhibition-enquiry" title="BOOKING ENQUIRY" target="_blank">BOOKING ENQUIRY</a>
+                                </li>-->
+                              <!--   <li class="nav-item nav-item--reg-link">
+                                <a class="nav-link" aria-current="page" href="register-your-interest-2025" title="Register Your Interest">Register Your Interest</a>
+                              </li> -->
+                              
+                                <li class="nav-item nav-item--reg-link">
+                                  <a class="nav-link" aria-current="page" href="https://www.spacetechexpo-europe.com/register-your-interest-2026" title="REGISTER YOUR INTEREST">REGISTER YOUR INTEREST</a>
+                                </li>
+                              </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="header--desktop__filler" style="display:none;"></div>
+    <!-------------END NAV DESKTOP-------------->
+    
+    <!----------------NAV MOBILE---------------->
+    <header class="d-md-block d-sm-block d-xs-block d-lg-none d-xl-none d-xxl-none header--mob">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+              <div class="container-fluid">
+                <div class="navbar-brand" href="#">
+                    <a href="https://twitter.com/spacetechexpoeu" target="_blank"><i class="bi-twitter-x"></i></a>
+                    <a href="https://www.linkedin.com/company/space-tech-expo-europe/" target="_blank"><i class="bi-linkedin"></i></a>
+                    <a href="https://www.facebook.com/Space-Tech-Expo-Europe-1059010607456771/" target="_blank"><i class="bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/spacetechexpo/" target="_blank"><i class="bi-instagram"></i></a>
+                    <a href="https://www.youtube.com/user/SpaceTechExpo/videos" target="_blank"><i class="bi-youtube"></i></a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="https://www.spacetechexpo-europe.com/">HOME</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" href="whatson/">WHAT'S ON</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="exhibit/">EXHIBIT</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="exhibitor-list/">EXHIBITOR LIST</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="conference/">CONFERENCE</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="plan-your-visit/">PLAN YOUR VISIT</a>
+                        </li>
+                       <!--  <li class="nav-item nav-item--reg--link">
+                         <a class="nav-link" target="_blank" href="register-now">REGISTER FOR FREE</a>
+                       </li> -->
+                         <li class="nav-item nav-item--reg--link">
+                       <a class="nav-link" target="_blank" href="https://www.spacetechexpo-europe.com/register-your-interest-2026">REGISTER YOUR INTEREST</a> 
+                          <!-- <a class="nav-link"  href="register-your-interest-2025" title="Register Your Interest">Register Your Interest</a> -->
+                        </li>
+                       
+                         
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+<li class="nav-item dropdown nav-item--secondary-menu">
+	<ul class="dropdown-menu show" aria-labelledby="navbarDropdown">
+	
+	 <!-- <li><a class="dropdown-item" href="startseite" title="German Homepage">German Homepage</a></li> -->
+	
+  <!--<li><a class="dropdown-item" target="_blank"  "href="conference/speaker-list" title="Speaker List">Speaker List</a></li> -->
+        
+    <li><a class="dropdown-item" target="_blank" href="https://spaceexpoeurope26.mapyourshow.com/8_0/exhview/index.cfm" title="Floor Plan">Floor Plan</a></li>
+    
+<!--      <li><a class="dropdown-item" target="_blank"  href="plan-your-visit/book-a-hotel" title="Hotels">Hotels</a></li> -->
+     
+    <li><a class="dropdown-item" href="industry-insights/" title="Industry Insights">Industry Insights</a></li>
+	     
+	 <!--  <li><a class="dropdown-item" href="whatson/press-information" title="Press">Press</a></li>  -->
+	    
+<!--      <li><a class="dropdown-item" href="whatson/about-us" title="About Us">About Us</a></li> -->
+	 
+  <!--<li><a class="dropdown-item" href="event-app" title="Event App">Event App</a></li>-->
+    
+  <!--<li><a class="dropdown-item" href="whatson/sponsors" title="Sponsors">Sponsors</a></li>-->
+  
+  <!-- <li><a class="dropdown-item" href="conference/call-for-speakers" title="Call for speakers">Call for speakers</a> </li>   -->
+  
+      <li> <a class="dropdown-item" href="whatson/supporters" title="Supporters">Supporters</a></li>  
+      
+<!--   <li><a class="dropdown-item" href="whatson/b2b-matchmaking-platform" title="B2B Matchmaking">B2B Matchmaking</a></li>   -->
+  
+<!--  <li><a class="dropdown-item" href="plan-your-visit/exhibitor-faqs" title="Exhibitor FAQs">Exhibitor FAQs</a></li>
+ 
+ <li><a class="dropdown-item" href="plan-your-visit/visitor-faqs" title="Visitor FAQs">Visitor FAQs</a></li>  -->
+   
+       <li><a class="dropdown-item" href="plan-your-visit/contact-us" title="Contact Us">Contact Us</a></li>
+       
+	</ul>
+</li>
+ 
+
+
+
+
+
+                        <!--<li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                          </ul>
+                        </li>-->
+                  </ul>
+                </div>
+            </nav>
+            <div class="header__details">
+                <div class="header__main-logo">
+                    <a href="https://www.spacetechexpo-europe.com/" title="Home">
+                        <img class="img-fluid px-2" src="./assets/resources/shared/images/logos/space-expo-europe.png" alt="Space Tech Expo Europe"/>
+                    </a>
+                </div>
+                <div class="header__info">
+                    <h2 class="header__info--location">17 – 19 November 2026<span style="color: #e67e23; margin: 0 10px;">//</span>Bremen, Germany</h2>
+                    <!--<h2 class="header__info--date">August 29 – 31, 2022</h2>-->
+                </div>
+                <!--<div class="header__info--bonus">
+                    <p><i><strong style="color: #0c3353">*May 23:</strong> Invite only Preview <strong style="color: #0c3353">May 24-25:</strong> Exhibits and Conference</i></p>
+                </div>-->
+            </div>
+        </div>
+    </header>
+    <!-------------END NAV MOBILE--------------->
+    
+<!-- animations initialiser-->
+<script>
+    AOS.init({offset: 200});
+</script> 
+    
+<main>
+    <section style="background-image: url('assets/resources/bre/images/headers/space-tech-expo-europe-header.png'); height: 190px;" class="layout-full layout--image      layout--colour-none " >
+    <div id="" style="position: absolute; top: -200px;"></div>
+    
+        <div class="container">
+            <div  class="rich-text text-start vertical-margin--5 layout--colour-none"  >
+    <h1><span style="color: #ffffff;">404 Error Page</span></h1>
+</div>
+
+<head>
+    
+    <style>
+        .error_page{
+            @media (min-width: 992px) { 
+            
+            max-width:500px;
+        }
+        @media (min-width: 1200px) { 
+            max-width:1000px;
+            
+        }
+        }
+    </style>
+</head>
+        </div>
+    
+</section>
+
+<section style=" " class="layout-full layout--image      layout--colour-none " >
+    <div id="" style="position: absolute; top: -200px;"></div>
+    
+        <div class="container">
+            <div  class="rich-text text-start vertical-margin--5 layout--colour-none"  >
+    <p><img class="error_page img-fluid" style="display: block; margin-left: auto; margin-right: auto;" src="assets/resources/shared/images/shared images /404-page.png" alt="Error Page" /></p>
+</div>
+
+<div  class="rich-text text-start vertical-margin--5 layout--colour-none"  >
+    <p style="text-align: center;"><strong>We apologize but the page doesn't seem to exist anymore and you landed here because of that.</strong></p>
+<p style="text-align: center;"><strong>You can head over to our homepage or recheck if you used the right address.</strong></p>
+</div>
+
+<div class="spacer vertical-margin--10 ">spacer</div>
+
+<button class="curved-cta curved-cta--black  center curved-cta--reg vertical-margin--0" ><a class="curved-cta__link" href="https://www.spacetechexpo-europe.com/" title="TAKE ME TO THE HOMEPAGE" target="_self">TAKE ME TO THE HOMEPAGE</a></button>
+
+<div class="spacer vertical-margin--10 ">spacer</div>
+        </div>
+    
+</section>
+ 
+    
+</main>
+<section class="layout-map-footer" style="background-color: black; height:auto;">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 col-xs-12 col-md-5 layout-map-footer__left d-flex align-items-center">
+				<div class="container">
+				<h2 style="color: #f09d00; text-align: left" class="heading vertical-margin--20">Venue Address</h2>
+<div class="rich-text text-start vertical-margin--0">
+	<p>
+		<span style="color: #ffffff">CONGRESS BREMEN - Messe Bremen, Hallen 4, 5, 6, 7 & 4.1</span>
+		</span>
+		<!-- <br />
+		<span style="color: #ffffff">M3B GmbH</span><span style="color: #ffffff"> -->
+		</span><br />
+		<span style="color: #ffffff">Findorffstrasse 101</span>
+		</br>
+		<span style="color: #ffffff">28215 Bremen</span>
+		</br>
+		<span style="color: #ffffff">Phone: +49 (0) 421 3505-0</span>
+		</br>
+	</p>
+</div>
+
+<h2 style="color: #f09d00; text-align: left" class="heading vertical-margin--20">Contact Us</h2>
+
+<div class="rich-text text-start vertical-margin--0">
+	<p>
+		<span style="color: #ffffff">Email: <a style="color: #f09d00;" href="/cdn-cgi/l/email-protection#caa3a4aca58ab9baaba9afbeafa9a2afb2baa5e7afbfb8a5baafe4a9a5a7"><span class="__cf_email__" data-cfemail="e28b8c848da291928381879687818a879a928dcf8797908d9287cc818d8f">[email&#160;protected]</span> </a></span><br /><span style="color: #ffffff"
+			>Phone (Europe): +44 (0) 2080 522 770</span
+		><br /><span style="color: #ffffff">Phone (US &amp; Canada): +1 855 436 8683</span>
+	</p>
+</div>
+<h2 style="color: #f09d00; text-align: left; margin-bottom: 10px;" class="heading vertical-margin--20">Follow Us</h2>
+<div style="margin-bottom: 10px">
+    <a style="margin-right: 10px; color: #fff; font-size: 25px;" href="https://www.linkedin.com/company/space-tech-expo-europe/" target="_blank"><i class="bi-linkedin"></i></a>
+    <a style="margin-right: 10px; color: #fff; font-size: 25px;" href="https://www.facebook.com/Space-Tech-Expo-Europe-1059010607456771/" target="_blank"><i class="bi-facebook"></i></a>
+    <a style="margin-right: 10px; color: #fff; font-size: 25px;" href="https://twitter.com/spacetechexpoeu" target="_blank"><i class="bi-twitter-x"></i></a>
+    <a style="margin-right: 10px; color: #fff; font-size: 25px;" href="https://www.instagram.com/spacetechexpo/" target="_blank"><i class="bi-instagram"></i></a>
+    <a style="margin-right: 10px; color: #fff; font-size: 25px;" href="https://www.youtube.com/user/SpaceTechExpo" target="_blank"><i class="bi-youtube"></i></a>
+</div>	
+				</div>
+			</div>
+			<div class="col-sm-12 col-xs-12 col-md-7 layout-map-footer__right d-flex align-items-center">
+			    
+    				<iframe
+    					src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4030.011195463177!2d8.811506536770127!3d53.08758341774845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b1286daed250af%3A0x967a25838b15d261!2sMesse+Bremen+Halle+5!5e0!3m2!1sen!2suk!4v1500886499580"
+    					height="600"
+    					frameborder="0"
+    					style="border: 0"
+    				></iframe>
+			    
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--------ADDITIONAL SCRIPTS--------->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../assets/web/js/custom/External/bootstrap5-beta-2.js"></script>
+<!--------ENDADDITIONAL SCRIPTS--------->
+
+<footer>
+    <div class="container">
+        <div class="row footer__sitemap my-3">
+            <!-- logic to show ABM footer for spanish version rather than the english one menu rather--> 
+            <!--footerOuterTpl-->
+<!-- footerInnerTpl -->
+<div class="col-md-2 sitemap__column">
+         <div class="sitemap__column__top text-center text-md-start">
+        <a class="first" href="https://www.spacetechexpo-europe.com/" title="Home" >Home</a>
+        
+    </div>
+</div>
+
+<!-- footerInnerTpl -->
+<div class="col-md-2 sitemap__column">
+         <div class="sitemap__column__top text-center text-md-start">
+        <a class="" href="register-your-interest-2026" title="Register Your Interest 2026" >Register Your Interest 2026</a>
+        
+    </div>
+</div>
+
+<!-- footerInnerTpl -->
+<div class="col-md-2 sitemap__column">
+         <div class="sitemap__column__top text-center text-md-start">
+        <a class="" href="whatson/" title="What's On" >What's On</a>
+        <!--footerSubTpl-->
+<ul class="list-unstyled sitemap__level-2">
+    <!--footerSubInnerTpl-->
+<li  class="first">
+    <a href="whatson/about-us" title="About us" >About Us</a>
+</li>
+<!--footerSubInnerTpl-->
+<li  class="last">
+    <a href="whatson/beyond-the-exhibition-and-conference" title="Beyond the Exhibition and Conference" >Beyond the Exhibition and Conference</a>
+</li>
+
+</ul>
+
+    </div>
+</div>
+
+<!-- footerInnerTpl -->
+<div class="col-md-2 sitemap__column">
+         <div class="sitemap__column__top text-center text-md-start">
+        <a class="" href="exhibit/" title="Exhibit" >Exhibit</a>
+        <!--footerSubTpl-->
+<ul class="list-unstyled sitemap__level-2">
+    <!--footerSubInnerTpl-->
+<li  class="first">
+    <a href="exhibit/better-stands" title="Better Stands" >Better Stands</a>
+</li>
+<!--footerSubInnerTpl-->
+<li  class="last">
+    <a href="exhibit/floor-plan" title="2024 Floor Plan (weblink)" target="_blank">Floor Plan</a>
+</li>
+
+</ul>
+
+    </div>
+</div>
+
+<!-- footerInnerTpl -->
+<div class="col-md-2 sitemap__column">
+         <div class="sitemap__column__top text-center text-md-start">
+        <a class="" href="exhibitor-list/" title="Exhibitor List" >Exhibitor List</a>
+        
+    </div>
+</div>
+
+<!-- footerInnerTpl -->
+<div class="col-md-2 sitemap__column">
+         <div class="sitemap__column__top text-center text-md-start">
+        <a class="" href="conference/" title="Conference" >conference</a>
+        
+    </div>
+</div>
+
+<!-- footerInnerTpl -->
+<div class="col-md-2 sitemap__column">
+         <div class="sitemap__column__top text-center text-md-start">
+        <a class="last" href="plan-your-visit/" title="Plan your visit" >Plan your visit</a>
+        <!--footerSubTpl-->
+<ul class="list-unstyled sitemap__level-2">
+    <!--footerSubInnerTpl-->
+<li  class="first">
+    <a href="plan-your-visit/sustainability" title="Sustainability" >Sustainability</a>
+</li>
+<!--footerSubInnerTpl-->
+<li  class="last">
+    <a href="plan-your-visit/contact-us" title="Contact us" >Contact us</a>
+</li>
+
+</ul>
+
+    </div>
+</div>
+
+
+         
+        </div>
+        <div style="border-top:1px solid #f3f9fa12" class="row footer__all-shows">
+            <div class="all-shows__message text-center pb-3 pt-3">
+   <small>SMARTER SHOWS ARE PROUD ORGANISERS OF:</small>
+</div>
+<div class="col-md-3">
+    <div class="all-shows__show-logo">
+        <a href="https://foam-expo.com" title="Foam Expo North America" target="_blank">
+            <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/show_logos/foam-expo-north-america-logo.png" alt="Foam Expo North America"/>
+        </a> 
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="all-shows__show-logo">
+        <a href="https://spacetechexpo.com" title="Space Tech Expo" target="_blank">
+            <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/show_logos/space-tech-expo-logo.png" alt="Space Tech Expo"/>
+        </a>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="all-shows__show-logo">
+        <a href="https://spacetechexpo-europe.com" title="Space Tech Expo Europe" target="_blank">
+            <img  class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/show_logos/space-tech-expo-europe-logo.png" alt="Space Tech Expo Europe"/>
+        </a>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="all-shows__show-logo">
+        <a href="https://www.foam-expo-europe.com/" title="Foam Expo Europe" target="_blank">
+            <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/show_logos/foam-expo-europe-logo.png" alt="Foam Europe Expo "/>
+        </a>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="all-shows__show-logo">
+        <a href="https://www.ceramicsexpousa.com/" title="Ceramics Expo" target="_blank">
+            <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/show_logos/ceramics-expo-logo.png" alt="Ceramics Expo"/>
+        </a>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="all-shows__show-logo">
+        <a href="http://www.adhesivesandbondingexpo.com/" title="Adhesives & Bonding Expo" target="_blank">
+            <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/show_logos/adhesives-and-bonding-expo.png" alt="Adhesives & Bonding Expo"/>
+        </a>
+    </div>
+</div>
+<!--<div class="col-md-3">
+    <div class="all-shows__show-logo">
+        <a href="https://www.netzerobuildsummit.com/" title="Net Zero Build Summit" target="_blank">
+            <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/show_logos/NZB-footer-logo-cutout.png" alt="Net Zero Build Summit"/>
+        </a>
+    </div>
+</div>-->
+<div class="col-md-3">
+    <div class="all-shows__show-logo">
+        <a href="https://www.adhesivesandbondingexpo-mexico.com/" title="Adhesives & Bonding Expo Mexico" target="_blank">
+            <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/abm/abm-cutout.png" alt="Adhesives & Bonding Expo Mexico"/>
+        </a>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="all-shows__show-logo">
+        <a href="https://www.adhesivesandbondingexpo-europe.com/" title="Adhesives & Bonding Expo Europe" target="_blank">
+            <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/show_logos/adhesives-and-bonding-expo-europe.png" alt="Adhesives & Bonding Expo Europe"/>
+        </a>
+    </div>
+</div>
+<!--<div class="col-md-3">
+    <div class="all-shows__show-logo">
+        <a href="https://onboardconnectivitysummit.com/" title="Onboard Connectivity Summit" target="_blank">
+            <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/show_logos/onboard-logo-cutout-footer.png" alt="Onboard Connectivity Summit"/>
+        </a>
+    </div>
+</div>
+<div class="col-md-3">
+     <div class="all-shows__show-logo">
+        <a href="https://satelliteconnectivitysummit.com/" title="Satellite Connectivity Summit" target="_blank">
+            <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/show_logos/satellite-logo-cutout-footer.png" alt="Satellite Connectivity Summit"/>
+        </a>
+    </div>
+</div>-->
+<div class="col-md-3 offset-md-3">
+     <div class="all-shows__show-logo">
+        <a href="https://www.thermalmanagementexpo.com/" title="Thermal Management Expo" target="_blank">
+            <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/show_logos/thermal-management-expo-logo.png" alt="Thermal Management Expo"/>
+        </a>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="all-shows__show-logo">
+    <a href="https://www.thermalmanagementexpo-europe.com/" title="Thermal Management Expo Europe" target="_blank">
+        <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/show_logos/thermal-management-expo-europe-logo.png" alt="Thermal Management Expo Europe"/>
+    </a>
+</div>
+</div>
+
+        </div>
+        <div class="row footer__disclaimers d-flex align-items-center">
+            <div class="col-xs-6 col-sm-6 col-md-3 disclaimers__ss">
+    <a href="https://www.smartershows.com/" title="SmarterShows" target="_blank">
+        <img  style="max-height:70px" class="img-fluid lazy rounded" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/misc/smartershows-logo.jpg" alt="Smarter Shows Logo"/>
+    </a>
+</div>
+<div class="col-xs-6 col-sm-6 col-md-3 disclaimers__tarsus">
+   <a href="https://www.informamarkets.com/en/home.html" title="Informa-Markets" target="_blank">  
+    <img class="lazy rounded" style="max-height:70px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/misc/informa-logo.jpg" alt="Informa"/>
+     </a>
+</div>
+<div class="col-xs-6 col-sm-6 col-md-3 disclaimers__siso">
+    <img class="lazy rounded" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/misc/siso-logo.png" alt="SISO"/>
+</div>
+<div class="col-xs-6 col-sm-6 col-md-3 disclaimers__aeo">
+    <img class="lazy rounded" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="./assets/resources/shared/web/images/footer/misc/aeo-logo.png" alt="AEO"/>
+</div>
+        </div>
+        <div style="border-top:1px solid #f3f9fa12" class="row footer__terms p-0 mt-5 mb-4 justify-content-center justify-content-xl-between pt-5 gx-3">
+            <div style="font-size:15px" class="col-12 col-lg-6 mb-3 mb-xxl-0 ">
+                <a href="https://www.informa.com/privacy-policy/" title="Privacy Policy"><small>Privacy policy</small></a>
+                <span style="color:#fff">|</span>
+                <a href="https://www.informamarkets.com/en/terms-of-use.html" title="Terms of Use"><small>Terms of Use</small></a>
+                <span style="color:#fff">|</span>
+                <a href="https://www.informamarkets.com/en/visitor-terms-and-conditions.html" title="Visitor Terms And Conditions"><small>Visitor Terms And Conditions</small></a>
+                 <span style="color:#fff">|</span>
+                <a href="https://www.informamarkets.com/en/code-of-conduct.html" title="Code of Conduct"><small>Code of Conduct</small></a>
+            </div ">
+            <!-- <div><small>Copyright © Smarter Shows Ltd 2023.All rights reserved.</small></div> -->
+            <div style="font-size:15px" class="col-12 col-lg-6 "><small>Copyright © 2025. All rights reserved. Informa Markets, a trading division of Informa PLC.</small></div>
+            
+        </div>
+    </div>
+</footer>
+
+<script>/*yall.js 2.3.0*/var yall=function(){"use strict";return function(e){e||(e={});var t="IntersectionObserver"in window&&"IntersectionObserverEntry"in window&&"intersectionRatio"in window.IntersectionObserverEntry.prototype,n="requestIdleCallback"in window,o=[[document,"scroll"],[document,"touchmove"],[window,"resize"],[window,"orientationchange"]],r=e.lazyClass||"lazy",i=e.lazyBackgroundClass||"lazy-bg",c=e.idleLoadTimeout||100,a=e.threshold||200,s=e.observeChanges||!1,l="img."+r+",video."+r+",iframe."+r+",."+i,u=["srcset","src","poster"],d={timeout:c},f=function(e){return[].slice.call(e)},v=function(t){switch(t.nodeName){case"IMG":var n=t.parentNode;"PICTURE"==n.nodeName&&f(n.querySelectorAll("source")).forEach(function(e){b(e)}),b(t);break;case"VIDEO":f(t.querySelectorAll("source")).forEach(function(e){b(e)}),b(t),t.autoplay&&t.load();break;case"IFRAME":b(t)}t.classList.contains(i)&&(t.classList.remove(i),t.classList.add(e.lazyBackgroundLoaded||"lazy-bg-loaded"))},b=function(e){u.forEach(function(t){t in e.dataset&&(e[t]=e.dataset[t])})},g=function yallBack(){var t=!1;!t&&h.length&&(t=!0,setTimeout(function(){h.forEach(function(e){e.getBoundingClientRect().top<=window.innerHeight+a&&e.getBoundingClientRect().bottom>=-a&&"none"!=getComputedStyle(e).display&&(n&&c?requestIdleCallback(function(){v(e)},d):v(e),e.classList.remove(r),h=h.filter(function(t){return t!=e}))}),t=!1,h.length||s||o.forEach(function(e){e[0].removeEventListener(e[1],yallBack)})},e.throttleTime||200))},h=f(document.querySelectorAll(l));if(/(google|bing|yandex|duckduck)bot/i.test(navigator.userAgent))h.forEach(function(e){v(e)});else{if(t){var m=new IntersectionObserver(function(e,t){e.forEach(function(e){if(e.isIntersecting){var o=e.target;n&&c?requestIdleCallback(function(){v(o)},d):v(o),o.classList.remove(r),t.unobserve(o),h=h.filter(function(e){return e!=o})}})},{rootMargin:a+"px 0%"});h.forEach(function(e){m.observe(e)})}else o.forEach(function(e){e[0].addEventListener(e[1],g)}),g();"MutationObserver"in window&&s&&new MutationObserver(function(e){e.forEach(function(){f(document.querySelectorAll(l)).forEach(function(e){-1==h.indexOf(e)&&(h.push(e),t?m.observe(e):g())})})}).observe(document.querySelector(e.observeRootSelector||"body"),e.mutationObserverOptions||{childList:!0,subtree:!0})}}}();document.addEventListener("DOMContentLoaded", yall);</script></body>
+</html>
