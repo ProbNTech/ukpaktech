@@ -230,7 +230,7 @@ export const countryData: Record<string, CountryMarketData> = {
     slug: "germany",
     flag: "🇩🇪",
     countryCode: "DE",
-    bannerImage: "/image/banners/banner38.jpg",
+    bannerImage: "/image/banners/tech-overview-germany.png",
     tagline: "Europe's Engineering & Enterprise IT Powerhouse",
     overview:
       "Germany is Europe's largest economy and a leader in Industry 4.0 and enterprise technology.",
