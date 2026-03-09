@@ -557,13 +557,14 @@ export default function MembershipClient() {
           <SectionHeader label="Documents" title="Membership Documents" color="blue" subtitle="Review the key documents governing UPTECH membership and partnership." />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Membership Terms & Conditions", description: "Rules, obligations, fees, and policies governing your UPTECH membership.", href: "/membership/terms", color: "#2563EB" },
-              { title: "Sales Commission Agreement", description: "Terms for UPTECH promoting and selling your products/services in UK and European markets.", href: "/membership/commission-agreement", color: "#22C55E" },
-              { title: "Memorandum of Understanding", description: "Framework for institutional partnerships between UPTECH and trade organisations.", href: "/services/corporate-partnerships/mou", color: "#C41E3A" },
+              { title: "Membership Terms & Conditions", description: "Rules, obligations, fees, and policies governing your UPTECH membership.", href: "/documents/UPTECH-Membership-Terms-and-Conditions.pdf", color: "#2563EB" },
+              { title: "Sales Commission Agreement", description: "Terms for UPTECH promoting and selling your products/services in UK and European markets.", href: "/documents/UPTECH-Sales-Commission-Agreement.pdf", color: "#22C55E" },
+              { title: "Memorandum of Understanding", description: "Framework for institutional partnerships between UPTECH and trade organisations.", href: "/documents/UPTECH-Memorandum-of-Understanding.pdf", color: "#C41E3A" },
             ].map((doc) => (
               <motion.a
                 key={doc.title}
                 href={doc.href}
+                target="_blank"
                 initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -577,7 +578,7 @@ export default function MembershipClient() {
                 <div className="h-px bg-[#D8D5CF] mb-3" />
                 <p className="text-base text-[#5A5F72] leading-relaxed mb-4">{doc.description}</p>
                 <span className="inline-flex items-center gap-2 text-base font-semibold" style={{ color: doc.color }}>
-                  View Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                  Download Document <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
               </motion.a>
             ))}

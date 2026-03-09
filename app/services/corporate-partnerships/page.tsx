@@ -644,7 +644,8 @@ export default function CorporatePartnershipsPage() {
           <AnimatedSection>
             <SectionHeader label="Documents" title="Partnership Documents" color="blue" subtitle="Interested in formalising a partnership with UPTECH? Review our Memorandum of Understanding template." />
             <motion.a
-              href="/services/corporate-partnerships/mou"
+              href="/documents/UPTECH-Memorandum-of-Understanding.pdf"
+              target="_blank"
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -659,7 +660,7 @@ export default function CorporatePartnershipsPage() {
                   <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2 group-hover:text-[#2563EB] transition-colors duration-200">Memorandum of Understanding (MoU)</h3>
                   <p className="text-base text-[#5A5F72] leading-relaxed mb-3">A non-binding framework for cooperation between UPTECH and trade organisations, associations, and NGOs — covering joint events, mutual promotion, networking, and collaborative initiatives.</p>
                   <span className="inline-flex items-center gap-2 text-base font-semibold text-[#2563EB]">
-                    View MoU Template <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                    Download MoU Template <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                   </span>
                 </div>
               </div>

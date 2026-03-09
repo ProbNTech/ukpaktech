@@ -1647,7 +1647,7 @@ export default function MembershipApplicationForm() {
                             By submitting this form, you confirm that the information provided is accurate and agree
                             to UPTECH&apos;s{" "}
                             <Link href="/terms" className="text-[#2563EB] hover:underline">Terms &amp; Conditions</Link>,{" "}
-                            <Link href="/membership/terms" className="text-[#2563EB] hover:underline">Membership Terms &amp; Conditions</Link>,{" "}
+                            <a href="/documents/UPTECH-Membership-Terms-and-Conditions.pdf" target="_blank" className="text-[#2563EB] hover:underline">Membership Terms &amp; Conditions</a>,{" "}
                             <Link href="/privacy" className="text-[#2563EB] hover:underline">Privacy Policy</Link>, and{" "}
                             <Link href="/code-of-conduct" className="text-[#2563EB] hover:underline">Code of Conduct</Link>.
                             Membership is non-transferable. Payment details will be provided upon application approval.
