@@ -102,7 +102,7 @@ export default function MentorshipPage() {
         label="UPTECH Service"
         title="Connecting Those Who Made It With the Ones on Their Way"
         subtitle="We provide a pool of experts who will mentor the incubates and guide startups with their experience. Our domain-specific and generic network of mentors would acknowledge the challenges faced by the incubates and give them advice in their fields of expertise."
-        image="/image/mentorship/hero_mentorship.webp"
+        image="/image/banners/mentorship.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership">Become a Mentor</ShinyButton>
