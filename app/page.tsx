@@ -28,6 +28,10 @@ const ImpactStats = dynamic(() =>
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { CountryCard } from "@/components/tech-market/CountryCard";
 import { countryData } from "@/lib/data/market-data";
+import { ContinuousCarousel } from "@/components/tech-market/CountryCarousel";
+import StatsCounter from "@/components/tech-market/StatsCounter";
+import MembershipSection from "@/components/tech-market/MembershipSection";
+// import { CountryCarousel } from "@/components/tech-market/CountryCarousel";
 
 /* Top 15 articles for the homepage news grid — 5 rows × 3 columns */
 const homepageArticles = articles.slice(0, 15);
@@ -276,45 +280,70 @@ export default function Home() {
            Layout: full-width text paragraph + About Us button
            Matches ukproptech.com "intro" section structure exactly
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection animation="blur-in">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Left — text content */}
-              <div>
-                <p className="text-base font-semibold text-[#2563EB] uppercase tracking-wider mb-3">About the Council</p>
-                <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl lg:text-[2.2rem] leading-[1.3] mb-6">
-                  The UK–Pakistan Tech Council is a bilateral technology platform established in 2026.
-                </h2>
-                <div className="content-body">
-                <p className="text-[#3D4152] text-base sm:text-lg leading-[1.75] mb-5">
-                  UPTECH bridges the United Kingdom and Pakistan through structured programmes of investment facilitation, policy dialogue, innovation partnership, and cross-border trade. The Council brings together technology companies, venture capital, government bodies, academic institutions, and enterprise leaders to drive long-term bilateral growth.
-                </p>
-                <p className="text-[#3D4152] text-base sm:text-lg leading-[1.75] mb-8">
-                  From flagship summits to regulatory frameworks, from AI innovation hubs to seed investment programmes — our work creates the institutional infrastructure that bilateral tech collaboration requires.
-                </p>
-                </div>
-                <PillButton href="/about">About Us</PillButton>
-              </div>
+     <section className="relative py-10 lg:py-14 bg-fixed bg-cover bg-center"
+style={{
+  backgroundImage:
+    "url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop')",
+}}
+>
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-[#0b1f4d]/80"></div>
 
-              {/* Right — image */}
-              <div className="relative">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-                  <Image
-                    src="/image/home/about_section.jpg"
-                    alt="UK–Pakistan Tech Council"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-                {/* Accent bar */}
-                <div className="absolute -bottom-3 -right-3 w-2/3 h-[4px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] rounded-full" />
-              </div>
-            </div>
-          </AnimatedSection>
+  <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20">
+    <AnimatedSection animation="blur-in">
+      <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-12 items-center">
+
+        {/* Left — text content */}
+        <div>
+          <div className="bg-[] p-4 rounded-lg">
+            <p className="text-base font-extrabold text-[#c41e3a] uppercase tracking-wider mb-3">
+              About the Council
+            </p>
+
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[2.2rem] leading-[1.3] mb-6 
+bg-gradient-to-r from-[#fff] to-[#c41e3a] bg-clip-text text-transparent">
+  The UK–Pakistan Tech Council is a bilateral technology platform established in 2026.
+</h2>
+          </div>
+
+          <div className="content-body">
+            <p className="text-gray-200 text-base sm:text-lg leading-[1.75] my-5">
+              UPTECH bridges the United Kingdom and Pakistan through structured programmes of investment facilitation, policy dialogue, innovation partnership, and cross-border trade.
+            </p>
+
+            <p className="text-gray-200 text-base sm:text-lg leading-[1.75] mb-8">
+              From flagship summits to regulatory frameworks, from AI innovation hubs to seed investment programmes — our work creates the institutional infrastructure that bilateral tech collaboration requires.
+            </p>
+          </div>
+
+          <PillButton href="/about">About Us</PillButton>
         </div>
-      </section>
+
+        {/* Right — AI GIF */}
+        <div className="relative">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-white/20 shadow-xl">
+
+            <Image
+      src="/image/home/kikogifs.gif"
+      alt="UK–Pakistan Tech Council"
+      fill
+      className="object-cover"
+      sizes="(max-width: 1024px) 100vw, 50vw"
+    />
+
+          </div>
+
+          {/* Gradient Frame */}
+          <div className="absolute -top-3 left-0 w-full h-[4px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] rounded-full"></div>
+          <div className="absolute -bottom-3 left-0 w-full h-[4px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A] rounded-full"></div>
+          <div className="absolute top-0 -left-3 h-full w-[4px] bg-gradient-to-b from-[#2563EB] via-[#22C55E] to-[#C41E3A] rounded-full"></div>
+          <div className="absolute top-0 -right-3 h-full w-[4px] bg-gradient-to-b from-[#2563EB] via-[#22C55E] to-[#C41E3A] rounded-full"></div>
+        </div>
+
+      </div>
+    </AnimatedSection>
+  </div>
+</section>
 
       {/* ════════════════════════════════════════════════════════════
            TECH MARKET OVERVIEW — country cards showcase
@@ -322,223 +351,141 @@ export default function Home() {
       <section className="relative z-[1] py-6 lg:py-8">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
-            <SectionHeader
-              label="Market Intelligence"
-              title="UK & European Tech Markets"
-              color="green"
-            />
+             <div className="text-center">
+  <span className="inline-block">
+    <SectionHeader
+      label="Market Intelligence"
+      title="UK & European Tech Markets"
+      color="red"
+    />
+  </span>
+</div>
 
-            {/* Intro text */}
-            <div className="mb-5">
-              <p className="text-[#3D4152] text-base sm:text-lg leading-[1.75] mb-4">
-                UPTECH provides Pakistani IT companies with deep market intelligence across Europe&apos;s most dynamic technology economies. Our research covers sector-level data, regulatory landscapes, growth forecasts, and actionable entry strategies — everything needed to expand internationally with confidence.
-              </p>
-              <p className="text-[#3D4152] text-base sm:text-lg leading-[1.75]">
-                From the UK&apos;s AI-driven economy to Germany&apos;s enterprise IT powerhouse, from France&apos;s deep-tech growth to Poland&apos;s rapidly expanding outsourcing market — each country profile includes current market valuations, future projections, high-demand sectors, and specific opportunities for Pakistani firms.
-              </p>
-            </div>
+ <div className="grid grid-cols-1 lg:grid-cols-6 gap-12 items-start">
 
-            {/* Aggregate stats — horizontal strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-              {[
-                { value: "10", label: "Countries Covered", color: "#2563EB" },
-                { value: "$500B+", label: "Combined IT Market", color: "#22C55E" },
-                { value: "40+", label: "Sectors Analysed", color: "#C41E3A" },
-                { value: "2030", label: "Forecast Horizon", color: "#d97706" },
-              ].map((stat) => (
-                <div key={stat.label} className="relative bg-white rounded-xl border border-gray-200 px-5 py-4 shadow-sm overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-[3px]" style={{ background: `linear-gradient(to right, ${stat.color}, transparent)` }} />
-                  <p className="font-heading font-extrabold text-2xl sm:text-3xl leading-tight" style={{ color: stat.color }}>{stat.value}</p>
-                  <p className="text-[#6b7280] text-sm mt-1">{stat.label}</p>
-                </div>
-              ))}
-            </div>
+  {/* Left Side Stats */}
+  <div className="lg:col-span-2">
+    <div className="grid grid-cols-2 gap-6">
+      {[
+        { value: 10, label: "Countries Covered", color: "#2563EB", suffix: "+" },
+        { value: 500, label: "Combined IT Market", color: "#22C55E", prefix: "$", suffix: "B+" },
+        { value: 40, label: "Sectors Analysed", color: "#C41E3A", suffix: "+" },
+        { value: 2030, label: "Forecast Horizon", color: "#d97706" },
+      ].map((stat) => (
+        <div
+          key={stat.label}
+          className="group relative bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden"
+        >
+          <div
+            className="absolute top-0 left-0 w-full h-[4px]"
+            style={{
+              background: `linear-gradient(to right, ${stat.color}, transparent)`
+            }}
+          />
 
-            {/* Top 4 countries */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {Object.values(countryData).slice(0, 4).map((country, i) => (
-                <CountryCard key={country.slug} country={country} index={i} />
-              ))}
-            </div>
+          <p
+            className="font-heading font-extrabold text-3xl leading-tight mb-2"
+            style={{ color: stat.color }}
+          >
+            {stat.prefix}
+            <StatsCounter end={stat.value} suffix={stat.suffix} />
+          </p>
 
-            {/* Bottom 4 countries */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-5">
-              {Object.values(countryData).slice(4, 8).map((country, i) => (
-                <CountryCard key={country.slug} country={country} index={i + 4} />
-              ))}
-            </div>
+          <p className="text-[#6b7280] text-sm">
+            {stat.label}
+          </p>
+
+          <div
+            className="absolute -bottom-10 -right-10 w-32 h-32 opacity-0 group-hover:opacity-20 blur-2xl transition"
+            style={{ background: stat.color }}
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+
+
+  {/* Right Side Text */}
+  <div className="lg:col-span-4">
+    <p className="text-[#3D4152] text-base sm:text-lg leading-[1.8] mb-4">
+      UPTECH provides Pakistani IT companies with deep market intelligence
+      across Europe's most dynamic technology economies. Our research covers
+      sector-level data, regulatory landscapes, growth forecasts, and
+      actionable entry strategies — everything needed to expand
+      internationally with confidence.
+    </p>
+
+    <p className="text-[#3D4152] text-base sm:text-lg leading-[1.8]">
+      From the UK's AI-driven economy to Germany's enterprise IT powerhouse,
+      from France's deep-tech growth to Poland's rapidly expanding outsourcing
+      market — each country profile includes current market valuations,
+      future projections, high-demand sectors, and specific opportunities for
+      Pakistani firms.
+    </p>
+  </div>
+
+</div>
+          {/* Top 4 countries carousel */}
+<ContinuousCarousel countryData={countryData} />
+
+           
 
             {/* CTA banner */}
-            <AnimatedSection animation="fade-up">
-              <div className="mt-8 relative overflow-hidden rounded-xl bg-gradient-to-r from-[#1a2b5e] via-[#1e3a6e] to-[#2563EB]">
-                <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, white 0%, transparent 50%), radial-gradient(circle at 80% 50%, white 0%, transparent 50%)" }} />
-                <div className="relative px-8 py-7 sm:py-6">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-                    <div className="max-w-2xl">
-                      <h3 className="font-heading font-bold text-white text-xl sm:text-2xl leading-snug">
-                        Explore the full market intelligence platform
-                      </h3>
-                      <p className="text-blue-200 text-sm sm:text-base mt-2 leading-relaxed">
-                        Access our interactive European map, detailed sector breakdowns, Pakistan IT scope analysis, talent statistics, and country-level deep dives — all in one place.
-                      </p>
-                    </div>
-                    <Link
-                      href="/ecosystem/tech-market-overview"
-                      className="flex-shrink-0 inline-flex items-center gap-2.5 px-7 py-3.5 rounded-lg bg-white text-[#1a2b5e] text-base font-bold hover:bg-[#22C55E] hover:text-white transition-colors duration-300 shadow-lg"
-                    >
-                      Explore All Markets
-                      <ArrowUpRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
+           <AnimatedSection animation="fade-up">
+  <div
+    className="mt-8 relative overflow-hidden rounded-xl bg-cover bg-center"
+    style={{ backgroundImage: "url('/image/about/movepro.webp')" }}
+  >
+    
+    {/* Blue Light Overlay */}
+    <div className="absolute inset-0 bg-blue-600/90"></div>
+
+    {/* Existing pattern */}
+    <div
+      className="absolute inset-0 opacity-[0.06]"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle at 20% 50%, white 0%, transparent 50%), radial-gradient(circle at 80% 50%, white 0%, transparent 50%)",
+      }}
+    />
+
+    <div className="relative px-8 py-7 sm:py-6">
+  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+    
+    {/* Left Side */}
+    <div className="flex-1 max-w-3xl">
+      <h3 className="font-heading font-bold text-white text-2xl sm:text-3xl lg:text-3xl leading-snug">
+        Explore the full market intelligence platform
+      </h3>
+
+      <p className="text-blue-100 text-md sm:text-md mt-2 leading-relaxed">
+        Access our interactive European map, detailed sector breakdowns, Pakistan IT scope analysis, talent statistics, and country-level deep dives — all in one place.
+      </p>
+    </div>
+
+    {/* Right Side */}
+    <div className="flex-none">
+      <Link
+        href="/ecosystem/tech-market-overview"
+        className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-lg bg-white text-[#1a2b5e] text-base font-bold hover:bg-[#22C55E] hover:text-white transition-colors duration-300 shadow-lg"
+      >
+        Explore All Markets
+        <ArrowUpRight className="w-4 h-4" />
+      </Link>
+    </div>
+
+  </div>
+</div>
+
+  </div>
+</AnimatedSection>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ════════════════════════════════════════════════════════════
-           WHO CAN JOIN — overlay image cards
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection animation="blur-in">
-            <SectionHeader
-              label="Membership"
-              title="Who can join?"
-              body="We offer different memberships based on whether you are a technology company, investor, institution, or individual professional."
-            />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {[
-                {
-                  title: "IT Companies",
-                  desc: "Software houses, SaaS providers, and tech service firms from both nations.",
-                  image: "/image/Who%20can%20join/IT_Companies.webp",
-                  icon: Cpu,
-                  color: "#2563EB",
-                },
-                {
-                  title: "Investors & VCs",
-                  desc: "Venture capital funds, angel investors, and private equity firms seeking cross-border deals.",
-                  image: "/image/Who%20can%20join/Investors_VCs.webp",
-                  icon: TrendingUp,
-                  color: "#22C55E",
-                },
-                {
-                  title: "Academic & Research",
-                  desc: "Universities, research centres, and academic institutions driving tech innovation.",
-                  image: "/image/Who%20can%20join/Academic_Research.webp",
-                  icon: GraduationCap,
-                  color: "#EAB308",
-                },
-                {
-                  title: "Individual Professionals",
-                  desc: "Engineers, founders, consultants, and tech leaders building their careers.",
-                  image: "/image/Who%20can%20join/Individual_Professionals.webp",
-                  icon: Users,
-                  color: "#C41E3A",
-                },
-              ].map((item) => {
-                const Icon = item.icon;
-                return (
-                  <Link key={item.title} href="/membership" className="group block rounded-xl overflow-hidden border border-gray-200/80 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
-                    {/* Image */}
-                    <div className="relative h-[200px] overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        quality={95}
-                        className="object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      />
-                    </div>
-
-                    {/* Text content */}
-                    <div className="p-5">
-                      <div className="flex items-center gap-2.5 mb-2">
-                        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${item.color}12`, border: `1px solid ${item.color}20` }}>
-                          <Icon className="w-4 h-4" style={{ color: item.color }} strokeWidth={1.8} />
-                        </div>
-                        <h3 className="font-heading font-bold text-[#1C1F2E] text-lg leading-snug">{item.title}</h3>
-                      </div>
-                      <p className="text-[#4B5563] text-sm leading-relaxed mb-3">{item.desc}</p>
-                      <div className="flex items-center gap-1 text-xs font-semibold uppercase tracking-wider" style={{ color: item.color }}>
-                        <span>Learn more</span>
-                        <ChevronRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════════════════════════
-           OUR FOCUS — 3 Strategic Pillars
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection animation="blur-in">
-            <SectionHeader
-              label="Our Focus"
-              title="What Drives Us"
-              body="We work across three strategic pillars to build a stronger, more connected UK-Pakistan technology ecosystem."
-              color="red"
-            />
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: Scale,
-                  title: "Shaping Policy & Regulation",
-                  desc: "We work at the intersection of technology and government to help develop supportive policies for bilateral tech trade, digital economy agreements, and tech-friendly regulations. Our council advocates for frameworks that enable efficient trade, protect data, and encourage investment.",
-                  color: "#2563EB",
-                },
-                {
-                  icon: Lightbulb,
-                  title: "Accelerating Innovation",
-                  desc: "We champion emerging technologies including AI, cloud computing, cybersecurity, fintech, and green tech by convening research partnerships, innovation hubs, and collaborative initiatives that harness the best of UK and Pakistani tech talent.",
-                  color: "#22C55E",
-                },
-                {
-                  icon: TrendingUp,
-                  title: "Developing Markets",
-                  desc: "We identify sectors where technology can drive progress — from health and education to financial services, smart infrastructure, and digital government. We help our members understand market needs, build competitive offerings, and enter new international markets.",
-                  color: "#C41E3A",
-                },
-              ].map((card) => {
-                const Icon = card.icon;
-                return (
-                  <div key={card.title} className="group rounded-lg border border-[#D8D5CF]/60 bg-white shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 text-center">
-                    <div className="flex flex-col space-y-1.5 p-6 pb-3">
-                      {/* Grid-dot decorator */}
-                      <div aria-hidden className="relative mx-auto size-36 [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]">
-                        <div
-                          className="absolute inset-0 opacity-10"
-                          style={{
-                            backgroundImage: `linear-gradient(to right, ${card.color} 1px, transparent 1px), linear-gradient(to bottom, ${card.color} 1px, transparent 1px)`,
-                            backgroundSize: "24px 24px",
-                          }}
-                        />
-                        <div className="absolute inset-0 m-auto flex size-12 items-center justify-center border-t border-l bg-white" style={{ borderColor: `${card.color}30` }}>
-                          <Icon className="size-6" style={{ color: card.color }} strokeWidth={1.5} />
-                        </div>
-                      </div>
-                      <h3 className="mt-6 font-heading font-bold text-[#1C1F2E] text-lg">{card.title}</h3>
-                    </div>
-                    <div className="p-6 pt-0">
-                      <p className="text-sm text-[#3D4152] leading-relaxed">{card.desc}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+    <div>
+      <MembershipSection/>
+    </div>
 
       {/* ════════════════════════════════════════════════════════════
            WHAT WE DO — Radial Orbital Timeline
