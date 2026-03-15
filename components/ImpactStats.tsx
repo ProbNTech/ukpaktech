@@ -111,47 +111,48 @@ function StatScoreCard({ stat, index }: { stat: typeof stats[0]; index: number }
   return (
     <div ref={ref} className="h-[360px]">
       <motion.div
-        className="h-full"
-        initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30, filter: "blur(6px)" }}
-        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <LiquidCard className="w-full h-full">
-          <CardContent className="p-7 flex flex-col h-full justify-between">
-            {/* Header */}
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-base font-semibold text-[#1C1F2E] truncate">{stat.label}</h3>
-              <span
-                className="shrink-0 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold"
-                style={{ background: `${stat.color}15`, color: stat.color }}
-              >
-                {stat.percent}%
-              </span>
-            </div>
+  className="h-full"
+  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30, filter: "blur(6px)" }}
+  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+>
+  {/* Make LiquidCard transparent and remove border/shadow */}
+  <LiquidCard className="w-full h-full bg-transparent shadow-none border-none">
+    <CardContent className="p-7 flex flex-col h-full justify-between bg-transparent shadow-none border-none">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-base font-semibold text-[#1C1F2E] truncate">{stat.label}</h3>
+        <span
+          className="shrink-0 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold"
+          style={{ background: `${stat.color}15`, color: stat.color }}
+        >
+          {stat.percent}%
+        </span>
+      </div>
 
-            {/* Half-circle gauge + value */}
-            <div className="relative mb-4">
-              <HalfCircleGauge percent={stat.percent} color={stat.color} animate={isInView} />
-              <div className="absolute bottom-0 w-full text-center">
-                <div className="text-4xl font-bold h-12 overflow-hidden" style={{ color: stat.color }}>
-                  {shouldReduceMotion ? (
-                    `${stat.value}${stat.suffix}`
-                  ) : isInView ? (
-                    <CountUp end={stat.value} duration={2.2} suffix={stat.suffix} separator="," />
-                  ) : (
-                    "0"
-                  )}
-                </div>
-              </div>
-            </div>
+      {/* Half-circle gauge + value */}
+      <div className="relative mb-4">
+        <HalfCircleGauge percent={stat.percent} color={stat.color} animate={isInView} />
+        <div className="absolute bottom-0 w-full text-center">
+          <div className="text-4xl font-bold h-12 overflow-hidden" style={{ color: stat.color }}>
+            {shouldReduceMotion ? (
+              `${stat.value}${stat.suffix}`
+            ) : isInView ? (
+              <CountUp end={stat.value} duration={2.2} suffix={stat.suffix} separator="," />
+            ) : (
+              "0"
+            )}
+          </div>
+        </div>
+      </div>
 
-            {/* Description */}
-            <p className="text-sm text-[#3D4152]/70 text-center leading-relaxed mt-auto">
-              {stat.description}
-            </p>
-          </CardContent>
-        </LiquidCard>
-      </motion.div>
+      {/* Description */}
+      <p className="text-sm text-[#3D4152]/70 text-center leading-relaxed mt-auto">
+        {stat.description}
+      </p>
+    </CardContent>
+  </LiquidCard>
+</motion.div>
     </div>
   );
 }
