@@ -31,6 +31,7 @@ import { countryData } from "@/lib/data/market-data";
 import { ContinuousCarousel } from "@/components/tech-market/CountryCarousel";
 import StatsCounter from "@/components/tech-market/StatsCounter";
 import MembershipSection from "@/components/tech-market/MembershipSection";
+import NewsCarousel from "@/components/NewsCarousel";
 // import { CountryCarousel } from "@/components/tech-market/CountryCarousel";
 
 /* Top 15 articles for the homepage news grid — 5 rows × 3 columns */
@@ -216,34 +217,45 @@ function HomeEventsSection() {
   }, [filterEvent]);
 
   return (
-    <section className="relative z-[1] py-6 lg:py-8">
-      <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-        <AnimatedSection>
-          <SectionHeader
-            label="Attend an event"
-            title="Upcoming events"
-            body="Our upcoming events span bilateral summits, investor dialogues, webinars, and trade delegations. All events are open to UPTECH members and selected guests."
-            color="blue"
-          />
+   <section className="relative z-[1] py-6 lg:py-8">
+  <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+    <AnimatedSection>
+      <div className="flex justify-center">
+  <span className="inline-block text-center bg-[#1a2b5e] px-8 py-8 rounded-lg">
+    <p className="text-lg sm:text-xl uppercase font-bold text-[#16a34a] mb-2">
+      Attend an event
+    </p>
+    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+      Upcoming events
+    </h2>
+    <p className="text-base text-white max-w-3xl mx-auto">
+      Our upcoming events span bilateral summits, investor dialogues, webinars, and trade delegations. All events are open to UPTECH members and selected guests.
+    </p>
+  </span>
+</div>
 
-          {/* Filter tabs */}
-          <div className="flex flex-wrap gap-2 mb-5">
-            {EVENT_FILTERS.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setFilter(tab)}
-                className={`px-4 py-2 text-base font-bold uppercase tracking-wide border transition-colors duration-200 rounded-sm ${
-                  filter === tab
-                    ? "bg-[#1a2b5e] text-white border-[#1a2b5e]"
-                    : "bg-white text-[#3D4152] border-[#D8D5CF] hover:border-[#1a2b5e] hover:text-[#1a2b5e]"
-                }`}
-              >
-                {tab} <span className="ml-1 opacity-60">{tabCounts[tab]}</span>
-              </button>
-            ))}
-          </div>
+      {/* 2-column layout: left = filter, right = cards */}
+      <div className="flex flex-col mt-10 lg:flex-row gap-6">
+        {/* Left column: filter tabs */}
+       {/* Left column: filter tabs */}
+<div className="lg:w-1/5 flex flex-col gap-4">
+  {EVENT_FILTERS.map((tab) => (
+    <button
+      key={tab}
+      onClick={() => setFilter(tab)}
+      className={`w-full px-6 py-4 text-lg font-bold uppercase tracking-wide border transition-colors duration-200 rounded-md text-left ${
+        filter === tab
+          ? "bg-[#1a2b5e] text-white border-[#1a2b5e]"
+          : "bg-white text-[#3D4152] border-[#D8D5CF] hover:border-[#1a2b5e] hover:text-[#1a2b5e]"
+      }`}
+    >
+      {tab} <span className="ml-2 opacity-70">{tabCounts[tab]}</span>
+    </button>
+  ))}
+</div>
 
-          {/* 3-column event card grid */}
+        {/* Right column: event cards */}
+        <div className="lg:w-4/5">
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
               {filtered.map((event) => (
@@ -255,13 +267,15 @@ function HomeEventsSection() {
               <p className="text-base">No events found for this filter.</p>
             </div>
           )}
-
-          <div className="flex justify-center">
-            <PillButton href="/events">Find out more</PillButton>
-          </div>
-        </AnimatedSection>
+        </div>
       </div>
-    </section>
+
+      <div className="flex justify-center mt-4">
+        <PillButton href="/events">Find out more</PillButton>
+      </div>
+    </AnimatedSection>
+  </div>
+</section>
   );
 }
 
@@ -490,153 +504,217 @@ bg-gradient-to-r from-[#fff] to-[#c41e3a] bg-clip-text text-transparent">
       {/* ════════════════════════════════════════════════════════════
            WHAT WE DO — Radial Orbital Timeline
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-14 lg:py-20 overflow-hidden">
-        {/* Brand-colored particles background */}
-        <Particles className="absolute inset-0 z-0" quantity={60} size={0.6} ease={80} color="#2563EB" staticity={40} />
-        <Particles className="absolute inset-0 z-0" quantity={40} size={0.5} ease={90} color="#22C55E" staticity={50} />
-        <Particles className="absolute inset-0 z-0" quantity={30} size={0.4} ease={100} color="#C41E3A" staticity={60} />
-        <div className="relative z-[1] px-6 sm:px-10 lg:px-16 xl:px-20">
-          <AnimatedSection animation="blur-in">
-            <SectionHeader
-              label="Explore our work"
-              title="What We Do"
-              body="From AI innovation to bilateral trade, from startup incubation to skill development — discover how UPTECH is building the future."
-              color="blue"
-            />
-            <WhatWeDoCards items={whatWeDoData} />
-          </AnimatedSection>
-        </div>
-      </section>
+ <section className="relative py-14 lg:py-20 overflow-hidden">
+
+  {/* Parallax Background */}
+  <div
+    className="absolute inset-0 bg-cover bg-center bg-fixed z-0"
+    style={{ backgroundImage: "url('/image/home/newai.png')" }}
+  />
+
+  {/* Dark overlay for readability */}
+  <div className="absolute inset-0 bg-black/40 z-0"></div>
+
+  {/* Content */}
+  <div className="relative z-10 px-6 sm:px-10 lg:px-16 xl:px-20">
+    <AnimatedSection animation="blur-in">
+
+      {/* Section Header with Glass Effect */}
+      
+    <div className="flex items-center justify-center">
+  <span className="inline-block text-center bg-[#1a2b5e] px-6 py-6 rounded-lg">
+    <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">Our Expertise</h4>
+    <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Innovation & Technology</h2>
+    <p className="text-white text-md">
+      We drive growth through AI, startups, and skill development — shaping the future of tech.
+    </p>
+  </span>
+</div>
+
+
+      {/* Cards */}
+      <WhatWeDoCards items={whatWeDoData} />
+
+    </AnimatedSection>
+  </div>
+
+</section>
+
+
 
       {/* ════════════════════════════════════════════════════════════
            MORE FROM UPTECH — 4-column Card Grid
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection animation="blur-in">
-            <SectionHeader
-              label="Discover more"
-              title="More from UPTECH"
-              body="Explore our platforms, meeting facilities, organisational structure, and flagship initiatives."
-              color="green"
-            />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { href: "/products", icon: Cpu, title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms connecting talent and enabling cross-border trade.", color: "#22C55E" },
-                { href: "/services/mentorship", icon: Users, title: "Mentorship", desc: "Connect with experienced mentors for guidance, career development, and business growth across both nations.", color: "#2563EB" },
-                { href: "/meeting-space", icon: MapPin, title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners.", color: "#C41E3A" },
-                { href: "/about/management-team", icon: Building2, title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures.", color: "#1C1F2E" },
-              ].map((card) => {
-                const Icon = card.icon;
-                return (
-                  <div key={card.title} className="relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full">
-                    <Link href={card.href} className="relative h-full block bg-white rounded-2xl overflow-hidden">
-                      <div className="p-6 lg:p-7">
-                        <div className="flex items-center justify-between mb-5">
-                          <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${card.color}10`, border: `1px solid ${card.color}15` }}>
-                            <Icon className="w-6 h-6" style={{ color: card.color }} strokeWidth={1.5} />
-                          </div>
-                          <ArrowUpRight className="w-4 h-4 text-[#D8D5CF]" />
-                        </div>
-                        <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">{card.title}</h3>
-                        <p className="text-[#3D4152] text-base leading-relaxed">{card.desc}</p>
-                      </div>
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
+    <section className="relative z-[1] py-6 lg:py-8">
+  <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
+    <AnimatedSection animation="blur-in">
+      {/* Custom grid fractions: left smaller, right larger */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8">
+        {/* Left Side - Custom Heading */}
+        <div className="flex items-center justify-center">
+          <div className="text-center bg-[#22C55E] px-6 py-6 rounded-2xl">
+            <h4 className="text-lg sm:text-2xl font-semibold text-white mb-2">Discover more</h4>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">More from UPTECH</h2>
+            <p className="text-white text-md">
+              Explore our platforms, meeting facilities, organisational structure, and flagship initiatives.
+            </p>
+          </div>
         </div>
-      </section>
+
+        {/* Right Side - Cards 2x2 */}
+        <div className="grid grid-cols-2 gap-4">
+          {[
+            { href: "/products", icon: Cpu, title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms connecting talent and enabling cross-border trade.", color: "#22C55E" },
+            { href: "/services/mentorship", icon: Users, title: "Mentorship", desc: "Connect with experienced mentors for guidance, career development, and business growth across both nations.", color: "#2563EB" },
+            { href: "/meeting-space", icon: MapPin, title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners.", color: "#C41E3A" },
+            { href: "/about/management-team", icon: Building2, title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures.", color: "#1C1F2E" },
+          ].map((card) => {
+            const Icon = card.icon;
+            return (
+              <div key={card.title} className="relative rounded-2xl p-px h-full">
+                <Link href={card.href} className="relative h-full block bg-transparent rounded-2xl overflow-hidden">
+                  <div className="p-6 lg:p-7">
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${card.color}10`, border: `1px solid ${card.color}15` }}>
+                        <Icon className="w-6 h-6" style={{ color: card.color }} strokeWidth={1.5} />
+                      </div>
+                      <ArrowUpRight className="w-4 h-4 text-[#D8D5CF]" />
+                    </div>
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">{card.title}</h3>
+                    <p className="text-[#3D4152] text-base leading-relaxed">{card.desc}</p>
+                  </div>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </AnimatedSection>
+  </div>
+</section>
+
+
+
 
       {/* ════════════════════════════════════════════════════════════
            EVENT HIGHLIGHTS — YouTube video embeds
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection>
-            <SectionHeader
-              label="Watch & learn"
-              title="Recent Event Highlights"
-              body="Key moments from recent bilateral summits, innovation forums, and technology dialogues shaping the UK–Pakistan digital corridor."
-              color="red"
-            />
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {[
-                {
-                  id: "NnKZrypT_tE",
-                  title: "Indus AI Week Sparks Pakistan's Journey to a Digital Future",
-                  description: "A look inside Indus AI Week — Pakistan's flagship artificial intelligence conference driving national digital transformation.",
-                },
-                {
-                  id: "CyE9Mde6d_E",
-                  title: "Pakistan Business Summit 2026 | Davos, Switzerland",
-                  description: "Global leaders convene in Davos to explore trade, investment, and technology opportunities with Pakistan's emerging digital economy.",
-                },
-                {
-                  id: "K49VP4KJ2vk",
-                  title: "Pakistan Pushes AI & Digital Collaboration at London Event",
-                  description: "Pakistan's delegation outlines its vision for AI-driven partnerships and digital cooperation at a landmark London gathering.",
-                },
-                {
-                  id: "pXI-qz33PoA",
-                  title: "UK–Pakistan Business Summit 2025",
-                  description: "Highlights from the UK–Pakistan Business Summit bringing together entrepreneurs, policymakers, and investors from both nations.",
-                },
-              ].map((video) => (
-                <div key={video.id} className="bg-white rounded overflow-hidden border border-[#D8D5CF]">
-                  <LiteYouTube id={video.id} title={video.title} />
-                  <div className="p-5">
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base sm:text-lg leading-snug mb-2">
-                      {video.title}
-                    </h3>
-                    <p className="text-[#3D4152] text-base leading-relaxed">
-                      {video.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
+    <section className="relative z-[1] py-10 lg:py-16 bg-[#1a2b5e] text-white">
+  <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+    <AnimatedSection>
+      {/* Main Label Box */}
+      <div className="flex justify-center mb-12">
+        <div className="text-center bg-[#C41E3A] px-6 py-6 rounded-2xl">
+          <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">Watch & learn</h4>
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Recent Event Highlights</h2>
+          <p className="text-white text-md">
+            Key moments from recent bilateral summits, innovation forums, and technology dialogues shaping the UK–Pakistan digital corridor.
+          </p>
         </div>
-      </section>
+      </div>
+
+      {/* Videos Stacked Zig-Zag */}
+      <div className="flex flex-col gap-12">
+        {[
+          {
+            id: "NnKZrypT_tE",
+            title: "Indus AI Week Sparks Pakistan's Journey to a Digital Future",
+            description: "A look inside Indus AI Week — Pakistan's flagship artificial intelligence conference driving national digital transformation.",
+          },
+          {
+            id: "CyE9Mde6d_E",
+            title: "Pakistan Business Summit 2026 | Davos, Switzerland",
+            description: "Global leaders convene in Davos to explore trade, investment, and technology opportunities with Pakistan's emerging digital economy.",
+          },
+          {
+            id: "K49VP4KJ2vk",
+            title: "Pakistan Pushes AI & Digital Collaboration at London Event",
+            description: "Pakistan's delegation outlines its vision for AI-driven partnerships and digital cooperation at a landmark London gathering.",
+          },
+          {
+            id: "pXI-qz33PoA",
+            title: "UK–Pakistan Business Summit 2025",
+            description: "Highlights from the UK–Pakistan Business Summit bringing together entrepreneurs, policymakers, and investors from both nations.",
+          },
+        ].map((video, index) => (
+          <div
+            key={video.id}
+            className={`flex flex-col lg:flex-row items-center gap-6 ${
+              index % 2 === 1 ? "lg:flex-row-reverse" : ""
+            }`}
+          >
+            {/* Video */}
+            <div className="flex-1 lg:flex-[0.6] w-full order-1 lg:order-none">
+              <div className="rounded-xl border-4 border-gray-500 p-1 shadow-lg shadow-blue-900/50 overflow-hidden">
+                <LiteYouTube id={video.id} title={video.title} />
+              </div>
+            </div>
+
+            {/* Text */}
+            <div className="flex-1 lg:flex-[0.4] order-2 lg:order-none mt-4 lg:mt-0">
+              <h3 className="font-heading font-bold text-xl sm:text-3xl mb-3 text-white">
+                {video.title}
+              </h3>
+              <p className="text-white text-lg leading-relaxed">
+                {video.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </AnimatedSection>
+  </div>
+</section>
+
 
       {/* ════════════════════════════════════════════════════════════
            RESOURCES / NEWS & INSIGHTS — 3 column editorial cards
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection animation="blur-in">
-            <SectionHeader
-              label="Stay informed"
-              title="News &amp; Insights"
-              body="Investment deals, policy developments, innovation spotlights, and bilateral progress — what's shaping the UK–Pakistan technology corridor."
-              color="green"
-            />
+  <section className="relative z-[1] py-6 lg:py-10">
+  <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 mb-6">
-              {homepageArticles.map((article, i) => (
-                <NewsCard
-                  key={article.slug}
-                  slug={article.slug}
-                  title={article.title}
-                  category={article.category}
-                  date={article.date}
-                  image={article.image}
-                  excerpt={article.excerpt}
-                  index={i}
-                />
-              ))}
-            </div>
+    <AnimatedSection animation="blur-in">
 
-            <div className="flex justify-center">
-              <PillButton href="/events">View all news &amp; events</PillButton>
-            </div>
-          </AnimatedSection>
+      <div className="grid lg:grid-cols-12 gap-10 items-center">
+
+        {/* Left Side */}
+        <div className="lg:col-span-4 flex flex-col justify-center">
+
+          <span className="inline-block text-lg sm:text-2xl font-bold text-green-600 mb-2">
+            Stay informed
+          </span>
+
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1C1F2E] mb-4">
+            News & Insights
+          </h2>
+
+          <p className="text-[#3D4152]/80 text-sm sm:text-base leading-relaxed">
+            Investment deals, policy developments, innovation spotlights,
+            and bilateral progress — what's shaping the UK–Pakistan
+            technology corridor.
+          </p>
+
         </div>
-      </section>
+
+        {/* Right Side */}
+        <div className="lg:col-span-8 w-full">
+
+          <NewsCarousel articles={homepageArticles} />
+
+          <div className="flex justify-center mt-4">
+            <PillButton href="/events">
+              View all news & events
+            </PillButton>
+          </div>
+
+        </div>
+
+      </div>
+
+    </AnimatedSection>
+
+  </div>
+</section>
 
       {/* ════════════════════════════════════════════════════════════
            ATTEND AN EVENT — filtered event cards
@@ -646,17 +724,25 @@ bg-gradient-to-r from-[#fff] to-[#c41e3a] bg-clip-text text-transparent">
       {/* ════════════════════════════════════════════════════════════
            PARTNER / MEMBER LOGOS — animated carousel
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-10 lg:py-14" style={{ background: "linear-gradient(135deg, #0f1a3a 0%, #1a2b5e 100%)" }}>
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <div className="text-center mb-8">
-            <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#2563EB]/70 mb-2">Trusted by</p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-              Leading Organisations
-            </h2>
-          </div>
-          <LogoCarousel columnCount={5} logos={sponsorCarouselLogos} />
-        </div>
-      </section>
+     <section
+  className="relative z-[1] py-10 lg:py-14 rounded-xl overflow-hidden bg-cover bg-center"
+  style={{ backgroundImage: "url('/image/about/movepro.webp')" }}
+>
+  {/* Optional overlay for better text contrast */}
+  <div className="absolute inset-0 bg-black/50"></div>
+
+  <div className="relative text-center px-8 sm:px-12 lg:px-16 xl:px-20">
+   <div className="text-center mb-8 inline-block px-6 py-4 rounded-lg bg-black/30 backdrop-blur-md">
+  <p className="text-lg sm:text-xl font-bold uppercase tracking-[0.3em] text-[#16a34a]/70 mb-2">
+    Trusted by
+  </p>
+  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+    Leading Organisations
+  </h2>
+</div>
+    <LogoCarousel columnCount={5} logos={sponsorCarouselLogos} />
+  </div>
+</section>
 
       {/* ════════════════════════════════════════════════════════════
            IMPACT NUMBERS — 4 stat cards on white bg
