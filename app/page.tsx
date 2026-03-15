@@ -361,7 +361,7 @@ style={{
       {/* ════════════════════════════════════════════════════════════
            TECH MARKET OVERVIEW — country cards showcase
       ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8">
+      <section className="relative z-[1] py-6 lg:py-8 bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
              <div className="text-center">

@@ -44,7 +44,7 @@ export function CountryCard({ country, index }: CountryCardProps) {
       >
         <div className="relative h-full flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
   {/* Gradient Header */}
-<div className="relative bg-gradient-to-r from-[#991b1b] to-[#ef4444] rounded-xl overflow-hidden">
+<div className="relative bg-gradient-to-r from-[#1e3a5f] to-[#2563EB] rounded-xl overflow-hidden">
   {/* Content */}
   <div className="px-5 pt-5 pb-10">
     <h3 className="text-white font-bold text-lg">{country.name}</h3>
