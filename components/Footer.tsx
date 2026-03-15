@@ -7,14 +7,14 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden text-white">
       {/* Top accent line */}
-      <div className="relative z-20 h-[3px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#E11D48]" />
+    <div className="relative z-20 h-[3px] bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#E11D48] rounded-full" />
 
       {/* Main Footer */}
       <div className="relative">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/image/footer/london-skyline-night.jpg"
+            src="/image/footer/uk2.jpg"
             alt="London Skyline at Night"
             fill
             className="object-cover object-center"
