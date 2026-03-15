@@ -42,16 +42,12 @@ export function CountryCard({ country, index }: CountryCardProps) {
         href={`/ecosystem/tech-market-overview/${country.slug}`}
         className="group block h-full"
       >
-        <div className="relative h-full bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div className="relative h-full flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
   {/* Gradient Header */}
 <div className="relative bg-gradient-to-r from-[#991b1b] to-[#ef4444] rounded-xl overflow-hidden">
-
- 
-
   {/* Content */}
   <div className="px-5 pt-5 pb-10">
     <h3 className="text-white font-bold text-lg">{country.name}</h3>
-
     <p className="text-red-100 text-sm mt-1">
       {country.tagline}
     </p>
@@ -72,26 +68,26 @@ export function CountryCard({ country, index }: CountryCardProps) {
   </div>
 
   {/* Card Content */}
-  <div className="px-5 pt-4 pb-5">
+  <div className="px-5 pt-4 pb-5 flex flex-col flex-1">
     {/* Sectors */}
-    <div className="flex flex-wrap gap-1.5 mb-4">
+    <div className="flex flex-wrap gap-1.5 mb-4 min-h-[56px]">
       {country.highDemandSectors.slice(0, 3).map((sector) => (
-        <span key={sector} className="text-[11px] px-2.5 py-1 rounded-full bg-[#f0f4ff] text-[#2563EB] font-semibold border border-[#2563EB]/10">{sector}</span>
+        <span key={sector} className="text-[11px] px-2.5 py-1 rounded-full bg-[#f0f4ff] text-[#2563EB] font-semibold border border-[#2563EB]/10 h-fit">{sector}</span>
       ))}
     </div>
 
     {/* Highlights */}
-    <div className="grid grid-cols-2 gap-2 mb-2">
-      {country.highlights.slice(0, 2).map((h) => (
-        <div key={h.label} className="bg-gradient-to-br from-[#f8fafc] to-[#f0f4ff] rounded-lg py-2.5 px-3 border border-[#e2e8f0]">
-          <p className="text-[#22C55E] font-bold text-sm">{h.value}</p>
-          <p className="text-[#6b7280] text-[11px] mt-0.5">{h.label}</p>
+    <div className="grid grid-cols-3 gap-2 mb-2">
+      {country.highlights.slice(0, 3).map((h, i) => (
+        <div key={h.label} className={`rounded-lg py-2.5 px-2.5 border ${i === 2 ? "bg-gradient-to-br from-[#fffbeb] to-[#fef3c7] border-[#f59e0b]/20" : "bg-gradient-to-br from-[#f8fafc] to-[#f0f4ff] border-[#e2e8f0]"}`}>
+          <p className={`font-bold text-[13px] leading-tight ${i === 2 ? "text-[#f59e0b]" : "text-[#22C55E]"}`}>{h.value}</p>
+          <p className="text-[#6b7280] text-[10px] mt-0.5 leading-tight">{h.label}</p>
         </div>
       ))}
     </div>
 
     {/* CTA */}
-    <div className="flex items-center text-sm font-semibold text-[#2563EB] gap-1.5 pt-2.5 border-t border-gray-100 group-hover:gap-2.5 transition-all duration-300">
+    <div className="flex items-center text-sm font-semibold text-[#2563EB] gap-1.5 pt-2.5 mt-auto border-t border-gray-100 group-hover:gap-2.5 transition-all duration-300">
       Explore Market
       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
     </div>

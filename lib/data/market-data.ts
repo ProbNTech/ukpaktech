@@ -115,6 +115,7 @@ export const countryData: Record<string, CountryMarketData> = {
     highlights: [
       { label: "IT Services", value: "$112.5B (2025)" },
       { label: "Software Dev", value: "$41.9B (2024)" },
+      { label: "IT Projected", value: "$156.6B (2030)" },
       { label: "Cloud Computing", value: "$29B+ (2024)" },
       { label: "AI Sector", value: "£23.9B (2024)" },
       { label: "Managed Services", value: "$23.3B (2025)" },
@@ -237,6 +238,7 @@ export const countryData: Record<string, CountryMarketData> = {
     highlights: [
       { label: "IT Services", value: "$79.6B (2025)" },
       { label: "AI Market", value: "€9.04B (2025)" },
+      { label: "AI Projected", value: "€23B (2030)" },
       { label: "Forecast IT Services", value: "$130.5B by 2031" },
     ],
     projections: [
@@ -345,6 +347,7 @@ export const countryData: Record<string, CountryMarketData> = {
     highlights: [
       { label: "IT Services", value: "$81.7B (2025)" },
       { label: "AI Market", value: "$9.48B (2024)" },
+      { label: "IT Projected", value: "$155B (2030)" },
       { label: "Forecast IT", value: "$230.1B by 2033" },
       { label: "AI Forecast", value: "$77.68B by 2032" },
     ],
@@ -441,6 +444,7 @@ export const countryData: Record<string, CountryMarketData> = {
     highlights: [
       { label: "ICT Market", value: "$62.3B (2025)" },
       { label: "IT Services", value: "$53.2B (2025)" },
+      { label: "ICT Projected", value: "$95B (2030)" },
       { label: "Digital Transform.", value: "$49B (2026)" },
       { label: "Cybersecurity", value: "$5.3B (2025)" },
     ],
@@ -558,6 +562,7 @@ export const countryData: Record<string, CountryMarketData> = {
     highlights: [
       { label: "ICT Sector", value: "$80–90B (2024)" },
       { label: "IT Services", value: "$19.2B (2025)" },
+      { label: "IT Projected", value: "$35B (2030)" },
       { label: "Digital Transform.", value: "$35.5B (2025)" },
       { label: "Cybersecurity", value: "$2.35B (2025)" },
       { label: "Data Centre", value: "$1.23B (2024)" },
@@ -685,6 +690,7 @@ export const countryData: Record<string, CountryMarketData> = {
     highlights: [
       { label: "ICT Market", value: "$44.7B (2025)" },
       { label: "IT/AI Services", value: "$2.6B (2025)" },
+      { label: "ICT Projected", value: "$58.8B (2030)" },
       { label: "Cybersecurity", value: "$1.04B (2026)" },
       { label: "Data Centre", value: "$1.02B (2024)" },
     ],
@@ -790,6 +796,7 @@ export const countryData: Record<string, CountryMarketData> = {
     highlights: [
       { label: "ICT Market", value: "$28.7B (2024)" },
       { label: "IT Exports", value: "$16.85B (2023)" },
+      { label: "ICT Projected", value: "$42B (2030)" },
       { label: "Data Centre", value: "$1.16B (2024)" },
       { label: "Cybersecurity", value: "~$1B (2025)" },
     ],
@@ -907,7 +914,8 @@ export const countryData: Record<string, CountryMarketData> = {
       "The Baltic states — Estonia, Lithuania, and Latvia — are among Europe's most digitally advanced economies with strong IT export orientation.",
     highlights: [
       { label: "Estonia ICT", value: "€10B (2024)" },
-      { label: "Lithuania Software", value: "€3.5B (2025)" },
+      { label: "Lithuania IT", value: "€3.5B (2025)" },
+      { label: "Lithuania Proj.", value: "€5.5B (2030)" },
       { label: "Latvia ICT", value: "$6.5B (2024)" },
     ],
     projections: [
