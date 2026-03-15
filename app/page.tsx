@@ -314,8 +314,7 @@ style={{
               About the Council
             </p>
 
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[2.2rem] leading-[1.3] mb-6 
-bg-gradient-to-r from-[#fff] to-[#c41e3a] bg-clip-text text-transparent">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[2.2rem] leading-[1.3] mb-6 text-white">
   The UK–Pakistan Tech Council is a bilateral technology platform established in 2026.
 </h2>
           </div>
@@ -733,9 +732,6 @@ bg-gradient-to-r from-[#fff] to-[#c41e3a] bg-clip-text text-transparent">
 
   <div className="relative text-center px-8 sm:px-12 lg:px-16 xl:px-20">
    <div className="text-center mb-8 inline-block px-6 py-4 rounded-lg bg-black/30 backdrop-blur-md">
-  <p className="text-lg sm:text-xl font-bold uppercase tracking-[0.3em] text-[#16a34a]/70 mb-2">
-    Trusted by
-  </p>
   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
     Leading Organisations
   </h2>
