@@ -84,7 +84,7 @@ export default function BusinessNetworksPage() {
       </PageHero>
 
       {/* Stats Bar */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
@@ -114,7 +114,7 @@ export default function BusinessNetworksPage() {
       </section>
 
       {/* Intro Section with Sidebar */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
@@ -194,7 +194,7 @@ export default function BusinessNetworksPage() {
       </section>
 
       {/* How It Works */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
           <AnimatedSection>
@@ -291,7 +291,7 @@ export default function BusinessNetworksPage() {
       </section>
 
       {/* Revenue Model */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="absolute top-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#C41E3A]" />
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
           <AnimatedSection>

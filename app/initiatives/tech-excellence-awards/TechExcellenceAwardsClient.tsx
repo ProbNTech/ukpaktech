@@ -64,7 +64,7 @@ export default function TechExcellenceAwardsClient() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="bg-[#EEECEA] content-body">
+    <div className="bg-white content-body">
       {/* ── Hero Section ── */}
       <PageHero
         label="UPTECH Initiative"
@@ -82,7 +82,7 @@ export default function TechExcellenceAwardsClient() {
       </PageHero>
 
       {/* ── About Section ── */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-start">
@@ -168,7 +168,7 @@ export default function TechExcellenceAwardsClient() {
       </section>
 
       {/* ── Professional Awards ── */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <SectionHeader
@@ -312,7 +312,7 @@ export default function TechExcellenceAwardsClient() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <SectionHeader

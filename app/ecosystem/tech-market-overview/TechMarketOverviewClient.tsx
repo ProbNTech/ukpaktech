@@ -128,7 +128,7 @@ export default function TechMarketOverviewClient() {
       </PageHero>
 
       {/* Intro Section */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader
@@ -180,7 +180,7 @@ export default function TechMarketOverviewClient() {
       </section>
 
       {/* Interactive Map + Country Cards */}
-      <section id="countries" className="relative bg-[#EEECEA]">
+      <section id="countries" className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader
@@ -276,7 +276,7 @@ export default function TechMarketOverviewClient() {
       </section>
 
       {/* Pakistan IT Scope Link */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader

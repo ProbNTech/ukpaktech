@@ -79,7 +79,7 @@ export default function AITechProgramsPage() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#EEECEA] content-body">
+    <div className="bg-white content-body">
       {/* ── Hero Section ── */}
       <PageHero
         label="UPTECH Programs"
@@ -97,7 +97,7 @@ export default function AITechProgramsPage() {
       </PageHero>
 
       {/* ── Intro Section ── */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 pt-10 pb-4">
           <AnimatedSection>
             <div>
@@ -212,7 +212,7 @@ export default function AITechProgramsPage() {
       </section>
 
       {/* ── Technology Focus Areas ── */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <SectionHeader

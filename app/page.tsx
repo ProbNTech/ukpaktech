@@ -11,7 +11,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Hero } from "@/components/Hero";
 import { NewsCard } from "@/components/NewsCard";
 import { LiteYouTube } from "@/components/LiteYouTube";
-import { ChevronRight, ArrowUpRight, Cpu, Briefcase, GraduationCap, Globe2, Shield, Handshake, Users, Building2, MapPin, Scale, Lightbulb, TrendingUp } from "lucide-react";
+import { ChevronRight, ChevronDown, ArrowUpRight, Cpu, Briefcase, GraduationCap, Globe2, Shield, Handshake, Users, Building2, MapPin, Scale, Lightbulb, TrendingUp } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { TechMeshBackground } from "@/components/TechMeshBackground";
 const WhatWeDoCards = dynamic(() => import("@/components/WhatWeDoCards"), { ssr: false });
@@ -102,6 +102,13 @@ function PillButton({ href, children }: { href: string; children: React.ReactNod
 type EventFilter = "All" | "London" | "Pakistan" | "Summit" | "Expo" | "Conference" | "Past Events";
 const EVENT_FILTERS: EventFilter[] = ["All", "London", "Pakistan", "Summit", "Expo", "Conference", "Past Events"];
 
+/** Dynamic check using dateISO */
+function isEventUpcomingISO(dateISO: string): boolean {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return new Date(dateISO) >= today;
+}
+
 /* ─── Brand-color mapping for event tags ─── */
 const tagColors: Record<string, string> = {
   Summit: "#2563EB",
@@ -164,114 +171,217 @@ function HomeEventCard({ event }: { event: typeof homepageEvents[0] }) {
   );
 }
 
-/* Helper to check if an event date is in the past */
-function isEventPast(dateStr: string): boolean {
-  const now = new Date();
-  // Extract year from the date string
-  const yearMatch = dateStr.match(/(\d{4})/);
-  if (!yearMatch) return false;
-  const year = parseInt(yearMatch[1]);
-
-  // Map month names to numbers
-  const months: Record<string, number> = {
-    january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
-    july: 6, august: 7, september: 8, october: 9, november: 10, december: 11,
-  };
-
-  const monthMatch = dateStr.toLowerCase().match(/^(january|february|march|april|may|june|july|august|september|october|november|december)/);
-  if (!monthMatch) return false;
-  const month = months[monthMatch[1]];
-
-  // Extract day(s) — use the last day if it's a range
-  const dayMatch = dateStr.match(/(\d{1,2})(?:[–-](\d{1,2}))?(?:,|\s)/);
-  const day = dayMatch ? parseInt(dayMatch[2] || dayMatch[1]) : 28; // default to end of month
-
-  const eventEnd = new Date(year, month, day, 23, 59, 59);
-  return eventEnd < now;
-}
 
 function HomeEventsSection() {
-  const [filter, setFilter] = useState<EventFilter>("All");
+  const [showPast, setShowPast] = useState(false);
+  const [categoryFilter, setCategoryFilter] = useState<string>("All");
+  const [monthFilter, setMonthFilter] = useState<string>("All");
+  const [sortOrder, setSortOrder] = useState<string>("nearest");
 
-  /* Memoize filter function to avoid re-filtering on every render */
-  const filterEvent = useCallback((e: typeof homepageEvents[0], tab: EventFilter) => {
-    if (tab === "All") return true;
-    if (tab === "Past Events") return isEventPast(e.date);
-    if (tab === "London") return e.location?.toLowerCase().includes("london");
-    if (tab === "Pakistan") {
-      const loc = e.location?.toLowerCase() ?? "";
-      return loc.includes("pakistan") || loc.includes("karachi") || loc.includes("islamabad") || loc.includes("lahore");
+  /* Split upcoming/past dynamically using dateISO */
+  const upcomingCount = useMemo(() =>
+    homepageEvents.filter((e) => isEventUpcomingISO(e.dateISO)).length, []
+  );
+  const pastCount = useMemo(() =>
+    homepageEvents.filter((e) => !isEventUpcomingISO(e.dateISO)).length, []
+  );
+
+  /* Get month-year from dateISO */
+  const getMonthYear = (dateISO: string) => {
+    const d = new Date(dateISO);
+    return d.toLocaleString("en-GB", { month: "long", year: "numeric" });
+  };
+
+  /* Available months */
+  const availableMonths = useMemo(() => {
+    const source = homepageEvents.filter((e) =>
+      showPast ? !isEventUpcomingISO(e.dateISO) : isEventUpcomingISO(e.dateISO)
+    );
+    const months = Array.from(new Set(source.map((e) => getMonthYear(e.dateISO))));
+    return months.sort((a, b) => {
+      const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      const [mA, yA] = a.split(" ");
+      const [mB, yB] = b.split(" ");
+      const diff = parseInt(yA) - parseInt(yB);
+      if (diff !== 0) return showPast ? -diff : diff;
+      return showPast ? MONTHS.indexOf(mB) - MONTHS.indexOf(mA) : MONTHS.indexOf(mA) - MONTHS.indexOf(mB);
+    });
+  }, [showPast]);
+
+  /* Category counts */
+  const getCatCount = useCallback((cat: string) => {
+    return homepageEvents.filter((e) => {
+      const isUp = isEventUpcomingISO(e.dateISO);
+      if (showPast ? isUp : !isUp) return false;
+      if (cat === "All") return true;
+      if (cat === "London") return e.location?.toLowerCase().includes("london");
+      if (cat === "Pakistan") {
+        const loc = e.location?.toLowerCase() ?? "";
+        return loc.includes("pakistan") || loc.includes("karachi") || loc.includes("islamabad") || loc.includes("lahore");
+      }
+      return e.tag === cat;
+    }).length;
+  }, [showPast]);
+
+  /* Filtered + sorted */
+  const filtered = useMemo(() => {
+    let result = homepageEvents.filter((e) => {
+      const isUp = isEventUpcomingISO(e.dateISO);
+      if (showPast ? isUp : !isUp) return false;
+
+      // Category
+      if (categoryFilter !== "All") {
+        if (categoryFilter === "London" && !e.location?.toLowerCase().includes("london")) return false;
+        if (categoryFilter === "Pakistan") {
+          const loc = e.location?.toLowerCase() ?? "";
+          if (!loc.includes("pakistan") && !loc.includes("karachi") && !loc.includes("islamabad") && !loc.includes("lahore")) return false;
+        }
+        if (["Summit", "Expo", "Conference"].includes(categoryFilter) && e.tag !== categoryFilter) return false;
+      }
+
+      // Month
+      if (monthFilter !== "All" && getMonthYear(e.dateISO) !== monthFilter) return false;
+
+      return true;
+    });
+
+    // Sort
+    if (sortOrder === "nearest") {
+      result = showPast
+        ? result.sort((a, b) => b.dateISO.localeCompare(a.dateISO))
+        : result.sort((a, b) => a.dateISO.localeCompare(b.dateISO));
+    } else if (sortOrder === "newest") {
+      result = result.sort((a, b) => b.dateISO.localeCompare(a.dateISO));
+    } else {
+      result = result.sort((a, b) => a.dateISO.localeCompare(b.dateISO));
     }
-    return e.tag === tab;
-  }, []);
 
-  const filtered = useMemo(() => homepageEvents.filter((e) => filterEvent(e, filter)), [filter, filterEvent]);
+    return result;
+  }, [showPast, categoryFilter, monthFilter, sortOrder]);
 
-  /* Pre-compute tab counts once */
-  const tabCounts = useMemo(() => {
-    const counts: Record<EventFilter, number> = {} as Record<EventFilter, number>;
-    for (const tab of EVENT_FILTERS) {
-      counts[tab] = homepageEvents.filter((e) => filterEvent(e, tab)).length;
-    }
-    return counts;
-  }, [filterEvent]);
+  const CATEGORY_OPTIONS = ["All", "London", "Pakistan", "Summit", "Expo", "Conference"];
+  const catColors: Record<string, string> = { All: "#2563EB", London: "#2563EB", Pakistan: "#22C55E", Summit: "#2563EB", Expo: "#22C55E", Conference: "#C41E3A" };
 
   return (
-   <section className="relative z-[1] py-6 lg:py-8">
+   <section className="relative z-[1] py-6 lg:py-8 bg-white">
   <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
     <AnimatedSection>
       <div className="flex justify-center">
-  <span className="inline-block text-center bg-[#1a2b5e] px-8 py-8 rounded-lg">
-    <p className="text-lg sm:text-xl uppercase font-bold text-[#16a34a] mb-2">
-      Attend an event
-    </p>
-    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-      Upcoming events
-    </h2>
-    <p className="text-base text-white max-w-3xl mx-auto">
-      Our upcoming events span bilateral summits, investor dialogues, webinars, and trade delegations. All events are open to UPTECH members and selected guests.
-    </p>
-  </span>
-</div>
+        <span className="inline-block text-center bg-[#1a2b5e] px-8 py-8 rounded-lg">
+          <p className="text-lg sm:text-xl uppercase font-bold text-[#16a34a] mb-2">
+            Attend an event
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            {showPast ? "Past Events" : "Upcoming Events"}
+          </h2>
+          <p className="text-base text-white max-w-3xl mx-auto">
+            Our events span bilateral summits, investor dialogues, webinars, and trade delegations. All events are open to UPTECH members and selected guests.
+          </p>
+        </span>
+      </div>
 
-      {/* 2-column layout: left = filter, right = cards */}
-      <div className="flex flex-col mt-10 lg:flex-row gap-6">
-        {/* Left column: filter tabs */}
-       {/* Left column: filter tabs */}
-<div className="lg:w-1/5 flex flex-col gap-4">
-  {EVENT_FILTERS.map((tab) => (
-    <button
-      key={tab}
-      onClick={() => setFilter(tab)}
-      className={`w-full px-6 py-4 text-lg font-bold uppercase tracking-wide border transition-colors duration-200 rounded-md text-left ${
-        filter === tab
-          ? "bg-[#1a2b5e] text-white border-[#1a2b5e]"
-          : "bg-white text-[#3D4152] border-[#D8D5CF] hover:border-[#1a2b5e] hover:text-[#1a2b5e]"
-      }`}
-    >
-      {tab} <span className="ml-2 opacity-70">{tabCounts[tab]}</span>
-    </button>
-  ))}
-</div>
+      {/* ── Filter Controls ── */}
+      <div className="flex flex-col gap-4 mt-8 mb-6">
+        {/* Row 1: Upcoming/Past toggle + Category pills */}
+        <div className="flex flex-wrap items-center gap-3">
+          {/* Upcoming / Past toggle */}
+          <div className="flex rounded-lg border border-[#D8D5CF] overflow-hidden mr-2">
+            <button
+              onClick={() => { setShowPast(false); setMonthFilter("All"); setCategoryFilter("All"); }}
+              className={`px-4 py-2 text-sm font-bold uppercase tracking-wider transition-all duration-200 ${
+                !showPast ? "bg-[#22C55E] text-white" : "bg-white text-[#5A5F72] hover:bg-gray-50"
+              }`}
+            >
+              Upcoming ({upcomingCount})
+            </button>
+            <button
+              onClick={() => { setShowPast(true); setMonthFilter("All"); setCategoryFilter("All"); }}
+              className={`px-4 py-2 text-sm font-bold uppercase tracking-wider transition-all duration-200 ${
+                showPast ? "bg-[#C41E3A] text-white" : "bg-white text-[#5A5F72] hover:bg-gray-50"
+              }`}
+            >
+              Past ({pastCount})
+            </button>
+          </div>
 
-        {/* Right column: event cards */}
-        <div className="lg:w-4/5">
-          {filtered.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-              {filtered.map((event) => (
-                <HomeEventCard key={event.id} event={event} />
+          {/* Category pills */}
+          {CATEGORY_OPTIONS.map((cat) => {
+            const isActive = categoryFilter === cat;
+            const color = catColors[cat] || "#2563EB";
+            const count = getCatCount(cat);
+            return (
+              <button
+                key={cat}
+                onClick={() => setCategoryFilter(cat)}
+                className="px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-lg border transition-all duration-200"
+                style={{
+                  background: isActive ? `${color}12` : "#FFFFFF",
+                  borderColor: isActive ? `${color}55` : "#D8D5CF",
+                  color: isActive ? color : "#5A5F72",
+                }}
+              >
+                {cat} <span className="ml-1 opacity-70">{count}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Row 2: Month + Sort dropdowns */}
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="relative">
+            <select
+              value={monthFilter}
+              onChange={(e) => setMonthFilter(e.target.value)}
+              className="appearance-none pl-4 pr-10 py-2.5 text-sm font-semibold rounded-lg border border-[#D8D5CF] bg-white text-[#3D4152] cursor-pointer hover:border-[#2563EB] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20"
+            >
+              <option value="All">All Months</option>
+              {availableMonths.map((m) => (
+                <option key={m} value={m}>{m}</option>
               ))}
-            </div>
-          ) : (
-            <div className="text-center py-12 text-[#3D4152] mb-10">
-              <p className="text-base">No events found for this filter.</p>
-            </div>
-          )}
+            </select>
+            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#7A7E8F] pointer-events-none" />
+          </div>
+
+          <div className="relative">
+            <select
+              value={sortOrder}
+              onChange={(e) => setSortOrder(e.target.value)}
+              className="appearance-none pl-4 pr-10 py-2.5 text-sm font-semibold rounded-lg border border-[#D8D5CF] bg-white text-[#3D4152] cursor-pointer hover:border-[#2563EB] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20"
+            >
+              <option value="nearest">Nearest First</option>
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+            </select>
+            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#7A7E8F] pointer-events-none" />
+          </div>
+
+          <span className="text-sm text-[#7A7E8F] ml-auto">
+            {filtered.length} event{filtered.length !== 1 ? "s" : ""}
+          </span>
         </div>
       </div>
 
+      {/* ── Event Cards ── */}
+      {filtered.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          {filtered.map((event) => (
+            <HomeEventCard key={event.id} event={event} />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-12 text-[#3D4152] mb-10">
+          <p className="text-base">No events found for this filter.</p>
+          <button
+            onClick={() => { setCategoryFilter("All"); setMonthFilter("All"); }}
+            className="mt-3 text-sm font-semibold text-[#2563EB]"
+          >
+            Clear filters
+          </button>
+        </div>
+      )}
+
       <div className="flex justify-center mt-4">
-        <PillButton href="/events">Find out more</PillButton>
+        <PillButton href="/events">View all events</PillButton>
       </div>
     </AnimatedSection>
   </div>
@@ -369,7 +479,7 @@ style={{
     <SectionHeader
       label="Market Intelligence"
       title="UK & European Tech Markets"
-      color="red"
+      color="blue"
     />
   </span>
 </div>
@@ -544,7 +654,7 @@ style={{
       {/* ════════════════════════════════════════════════════════════
            MORE FROM UPTECH — 4-column Card Grid
       ═══════════════════════════════════════════════════════════ */}
-    <section className="relative z-[1] py-6 lg:py-8">
+    <section className="relative z-[1] py-6 lg:py-8 bg-white">
   <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
     <AnimatedSection animation="blur-in">
       {/* Custom grid fractions: left smaller, right larger */}
@@ -598,66 +708,42 @@ style={{
       {/* ════════════════════════════════════════════════════════════
            EVENT HIGHLIGHTS — YouTube video embeds
       ═══════════════════════════════════════════════════════════ */}
-    <section className="relative z-[1] py-10 lg:py-16 bg-[#1a2b5e] text-white">
+    <section className="relative z-[1] py-8 lg:py-12 bg-[#1a2b5e] text-white">
   <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
     <AnimatedSection>
-      {/* Main Label Box */}
-      <div className="flex justify-center mb-12">
-        <div className="text-center bg-[#C41E3A] px-6 py-6 rounded-2xl">
-          <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">Watch & learn</h4>
-          <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">Recent Event Highlights</h2>
-          <p className="text-white text-md">
-            Key moments from recent bilateral summits, innovation forums, and technology dialogues shaping the UK–Pakistan digital corridor.
-          </p>
-        </div>
+      {/* Header */}
+      <div className="text-center mb-8">
+        <h4 className="text-sm sm:text-base font-semibold text-red-400 mb-1">Watch & learn</h4>
+        <h2 className="text-xl sm:text-2xl font-bold text-white">Recent Event Highlights</h2>
       </div>
 
-      {/* Videos Stacked Zig-Zag */}
-      <div className="flex flex-col gap-12">
+      {/* 4 Videos in a Row */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {[
           {
             id: "NnKZrypT_tE",
-            title: "Indus AI Week Sparks Pakistan's Journey to a Digital Future",
-            description: "A look inside Indus AI Week — Pakistan's flagship artificial intelligence conference driving national digital transformation.",
+            title: "Indus AI Week — Digital Future",
           },
           {
             id: "CyE9Mde6d_E",
-            title: "Pakistan Business Summit 2026 | Davos, Switzerland",
-            description: "Global leaders convene in Davos to explore trade, investment, and technology opportunities with Pakistan's emerging digital economy.",
+            title: "Pakistan Business Summit — Davos 2026",
           },
           {
             id: "K49VP4KJ2vk",
-            title: "Pakistan Pushes AI & Digital Collaboration at London Event",
-            description: "Pakistan's delegation outlines its vision for AI-driven partnerships and digital cooperation at a landmark London gathering.",
+            title: "AI & Digital Collaboration — London",
           },
           {
             id: "pXI-qz33PoA",
             title: "UK–Pakistan Business Summit 2025",
-            description: "Highlights from the UK–Pakistan Business Summit bringing together entrepreneurs, policymakers, and investors from both nations.",
           },
-        ].map((video, index) => (
-          <div
-            key={video.id}
-            className={`flex flex-col lg:flex-row items-center gap-6 ${
-              index % 2 === 1 ? "lg:flex-row-reverse" : ""
-            }`}
-          >
-            {/* Video */}
-            <div className="flex-1 lg:flex-[0.6] w-full order-1 lg:order-none">
-              <div className="rounded-xl border-4 border-gray-500 p-1 shadow-lg shadow-blue-900/50 overflow-hidden">
-                <LiteYouTube id={video.id} title={video.title} />
-              </div>
+        ].map((video) => (
+          <div key={video.id} className="group">
+            <div className="rounded-lg border border-gray-600 overflow-hidden shadow-md shadow-blue-900/30">
+              <LiteYouTube id={video.id} title={video.title} />
             </div>
-
-            {/* Text */}
-            <div className="flex-1 lg:flex-[0.4] order-2 lg:order-none mt-4 lg:mt-0">
-              <h3 className="font-heading font-bold text-xl sm:text-3xl mb-3 text-white">
-                {video.title}
-              </h3>
-              <p className="text-white text-lg leading-relaxed">
-                {video.description}
-              </p>
-            </div>
+            <h3 className="font-semibold text-sm mt-2 text-white/90 leading-snug">
+              {video.title}
+            </h3>
           </div>
         ))}
       </div>
@@ -669,7 +755,7 @@ style={{
       {/* ════════════════════════════════════════════════════════════
            RESOURCES / NEWS & INSIGHTS — 3 column editorial cards
       ═══════════════════════════════════════════════════════════ */}
-  <section className="relative z-[1] py-6 lg:py-10">
+  <section className="relative z-[1] py-6 lg:py-10 bg-white">
   <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
 
     <AnimatedSection animation="blur-in">
@@ -721,6 +807,23 @@ style={{
       <HomeEventsSection />
 
       {/* ════════════════════════════════════════════════════════════
+           IMPACT NUMBERS — 4 stat cards on white bg
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative z-[1] py-6 lg:py-8 bg-white">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+          <AnimatedSection animation="blur-in">
+            <SectionHeader
+              label="Our impact"
+              title="Impact Momentum"
+              body="A modern technology council engineered to scale collaboration, talent, and investment across the UK–Pakistan corridor."
+              color="red"
+            />
+            <ImpactStats />
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════
            PARTNER / MEMBER LOGOS — animated carousel
       ═══════════════════════════════════════════════════════════ */}
      <section
@@ -739,23 +842,6 @@ style={{
     <LogoCarousel columnCount={5} logos={sponsorCarouselLogos} />
   </div>
 </section>
-
-      {/* ════════════════════════════════════════════════════════════
-           IMPACT NUMBERS — 4 stat cards on white bg
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="relative z-[1] py-6 lg:py-8">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
-          <AnimatedSection animation="blur-in">
-            <SectionHeader
-              label="Our impact"
-              title="Impact Momentum"
-              body="A modern technology council engineered to scale collaboration, talent, and investment across the UK–Pakistan corridor."
-              color="red"
-            />
-            <ImpactStats />
-          </AnimatedSection>
-        </div>
-      </section>
 
       <GlobalCTA
         label="Join UPTECH"

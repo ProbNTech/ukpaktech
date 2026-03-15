@@ -150,7 +150,7 @@ export default function FundingAndGrantsClient() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#EEECEA] content-body">
+    <div className="bg-white content-body">
       {/* ── HERO ──────────────────────────────────────────────────── */}
       <PageHero
         label="Ecosystem / Funding & Grants"
@@ -167,7 +167,7 @@ export default function FundingAndGrantsClient() {
       </PageHero>
 
       {/* ── STATS BAR ─────────────────────────────────────────────── */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => {
@@ -200,7 +200,7 @@ export default function FundingAndGrantsClient() {
       </section>
 
       {/* ── OVERVIEW ──────────────────────────────────────────────── */}
-      <section className="relative bg-[#EEECEA] overflow-hidden">
+      <section className="relative bg-white overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="mb-8">

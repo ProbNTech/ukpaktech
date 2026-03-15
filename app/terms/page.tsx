@@ -275,7 +275,7 @@ export default function TermsPage() {
 
       <div className="content-body">
       {/* ── Background Notice — Light section ──────────────────────── */}
-      <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
+      <section className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -334,7 +334,7 @@ export default function TermsPage() {
               </button>
               <button
                 onClick={collapseAll}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#5A5F72] text-base font-semibold hover:bg-[#EEECEA] transition-colors duration-200"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#F5F4F2] border border-[#D8D5CF] text-[#5A5F72] text-base font-semibold hover:bg-white transition-colors duration-200"
               >
                 Collapse All
               </button>

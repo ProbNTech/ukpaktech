@@ -88,7 +88,7 @@ export default function SkillDevelopmentCenterPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="bg-[#EEECEA] content-body">
+    <div className="bg-white content-body">
       {/* ── Hero Section ── */}
       <PageHero
         label="UPTECH Programs"
@@ -119,7 +119,7 @@ export default function SkillDevelopmentCenterPage() {
       </section>
 
       {/* ── Intro Section ── */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
@@ -264,7 +264,7 @@ export default function SkillDevelopmentCenterPage() {
       </section>
 
       {/* ── Flagship Tracks ── */}
-      <section className="relative bg-[#EEECEA]" id="tracks">
+      <section className="relative bg-white" id="tracks">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <SectionHeader label="Flagship Tracks" title="Intensive Training Tracks" subtitle="Intensive programs designed to build expertise in high-demand tech domains." color="red" />
@@ -312,7 +312,7 @@ export default function SkillDevelopmentCenterPage() {
       </section>
 
       {/* ── Outcomes / Stats Bar ── */}
-      <section className="bg-[#EEECEA]">
+      <section className="bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <AnimatedSection>
             <SectionHeader label="Results" title="Program Outcomes" subtitle="Measurable results that accelerate your career growth." color="blue" />

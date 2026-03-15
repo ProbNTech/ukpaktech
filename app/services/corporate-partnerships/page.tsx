@@ -178,7 +178,7 @@ export default function CorporatePartnershipsPage() {
       {/* ================================================================
           STATS BAR
           ================================================================ */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
@@ -210,7 +210,7 @@ export default function CorporatePartnershipsPage() {
       {/* ================================================================
           FOUNDERS SECTION
           ================================================================ */}
-      <section className="relative bg-[#EEECEA] overflow-hidden">
+      <section className="relative bg-white overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.02]"
           style={{
@@ -422,7 +422,7 @@ export default function CorporatePartnershipsPage() {
       {/* ================================================================
           ACCELERATORS SECTION
           ================================================================ */}
-      <section className="relative bg-[#EEECEA] overflow-hidden">
+      <section className="relative bg-white overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C41E3A]/5 rounded-full blur-[150px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.015]"
@@ -585,7 +585,7 @@ export default function CorporatePartnershipsPage() {
       {/* ================================================================
           PARTNERS SECTION
           ================================================================ */}
-      <section className="relative bg-[#EEECEA] overflow-hidden">
+      <section className="relative bg-white overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#22C55E]/5 rounded-full blur-[150px] pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.02]"
@@ -639,7 +639,7 @@ export default function CorporatePartnershipsPage() {
       </section>
 
       {/* ── Partnership Documents ── */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader label="Documents" title="Partnership Documents" color="blue" subtitle="Interested in formalising a partnership with UPTECH? Review our Memorandum of Understanding template." />

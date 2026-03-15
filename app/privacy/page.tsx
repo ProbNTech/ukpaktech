@@ -61,7 +61,7 @@ export default function PrivacyPage() {
 
       <div className="content-body">
       {/* ── Introduction + Quick Nav ─────────────────────────────────── */}
-      <section id="introduction" className="relative bg-[#EEECEA] py-10 overflow-hidden">
+      <section id="introduction" className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -232,7 +232,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── What Type of Information Is Collected ─────────────────────── */}
-      <section id="info-type" className="relative bg-[#EEECEA] py-10 overflow-hidden">
+      <section id="info-type" className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -343,7 +343,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Who Has Access to Your Information ────────────────────────── */}
-      <section id="access" className="relative bg-[#EEECEA] py-10 overflow-hidden">
+      <section id="access" className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -452,7 +452,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Marketing Communications & Building Profiles ──────────────── */}
-      <section id="marketing" className="relative bg-[#EEECEA] py-10 overflow-hidden">
+      <section id="marketing" className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">

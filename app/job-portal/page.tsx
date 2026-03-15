@@ -101,7 +101,7 @@ export default function JobPortalPage() {
       </PageHero>
 
       {/* ── Stats Bar ── */}
-      <section className="bg-[#EEECEA]">
+      <section className="bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
@@ -131,7 +131,7 @@ export default function JobPortalPage() {
       </section>
 
       {/* ── Who It's For ── */}
-      <section id="who-its-for" className="relative bg-[#EEECEA]">
+      <section id="who-its-for" className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-16">
           <AnimatedSection>
             <SectionHeader
@@ -362,7 +362,7 @@ export default function JobPortalPage() {
       </section>
 
       {/* ── Key Sectors ── */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-16">
           <AnimatedSection>
             <SectionHeader

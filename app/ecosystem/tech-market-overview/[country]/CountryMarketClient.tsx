@@ -56,7 +56,7 @@ export default function CountryMarketClient({
 
       {/* Key Highlights */}
       {country.highlights.length > 0 && (
-        <section className="relative bg-[#EEECEA]">
+        <section className="relative bg-white">
           <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
   
               <AnimatedSection>
@@ -102,7 +102,7 @@ export default function CountryMarketClient({
 
       {/* Detailed Sections */}
       {country.detailedSections && country.detailedSections.length > 0 && (
-        <section className="relative bg-[#EEECEA]">
+        <section className="relative bg-white">
           <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
   
               <AnimatedSection>
@@ -180,7 +180,7 @@ export default function CountryMarketClient({
       </section>
 
       {/* High-Demand Sectors */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
 
             <AnimatedSection>
@@ -232,7 +232,7 @@ export default function CountryMarketClient({
       </section>
 
       {/* Prev/Next Navigation */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <div className="grid grid-cols-3 gap-4 items-stretch">
             {/* Previous */}

@@ -88,7 +88,7 @@ export default async function ArticleDetailPage({ params }: Props) {
       </section>
 
       {/* ── Article body ─────────────────────────────────────────── */}
-      <section className="bg-[#EEECEA] py-16 lg:py-20">
+      <section className="bg-white py-16 lg:py-20">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
             {/* Main content */}
@@ -170,7 +170,7 @@ export default async function ArticleDetailPage({ params }: Props) {
                 </p>
                 <Link
                   href="/membership"
-                  className="block text-center py-2.5 px-4 bg-white text-[#1C1F2E] text-base font-semibold hover:bg-[#EEECEA] transition-colors duration-200"
+                  className="block text-center py-2.5 px-4 bg-white text-[#1C1F2E] text-base font-semibold hover:bg-white transition-colors duration-200"
                 >
                   Apply now →
                 </Link>

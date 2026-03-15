@@ -86,7 +86,7 @@ export default function ContactPage() {
       </PageHero>
 
       {/* ── Contact Info Cards ─────────────────────────────────────────── */}
-      <section className="relative z-20 bg-[#EEECEA] py-10">
+      <section className="relative z-20 bg-white py-10">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((item, i) => {
@@ -173,7 +173,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── Form + Sidebar ────────────────────────────────────────────── */}
-      <section className="relative py-10 overflow-hidden bg-[#EEECEA]">
+      <section className="relative py-10 overflow-hidden bg-white">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader

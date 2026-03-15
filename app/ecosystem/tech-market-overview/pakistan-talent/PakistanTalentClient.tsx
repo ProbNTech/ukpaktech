@@ -105,7 +105,7 @@ export default function PakistanTalentClient() {
       {/* Key Stats Dashboard */}
       <section
         id="stats"
-        className="relative bg-[#EEECEA]"
+        className="relative bg-white"
       >
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
@@ -202,7 +202,7 @@ export default function PakistanTalentClient() {
       </section>
 
       {/* Education + Freelancing + Ecosystem */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <div className="grid md:grid-cols-3 gap-6">
           <AnimatedSection>
@@ -322,7 +322,7 @@ export default function PakistanTalentClient() {
       </section>
 
       {/* Export Growth */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader
@@ -373,7 +373,7 @@ export default function PakistanTalentClient() {
       </section>
 
       {/* Government Support */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <SectionHeader

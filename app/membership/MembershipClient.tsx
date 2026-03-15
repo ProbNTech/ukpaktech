@@ -605,7 +605,7 @@ export default function MembershipClient() {
                     </h3>
 
                     {/* Divider */}
-                    <div className="h-px bg-[#EEECEA] mb-3" />
+                    <div className="h-px bg-white mb-3" />
 
                     {/* Description */}
                     <p className="text-[#5A5F72] text-base leading-relaxed mb-6 flex-1">
@@ -735,7 +735,7 @@ function TierCard({
         ) : (
           <a
             href="/membership/apply"
-            className="inline-flex items-center justify-center gap-2.5 w-full px-7 py-3.5 rounded-xl font-heading font-bold text-base border border-[#D8D5CF] text-[#3D4152] bg-[#F5F4F2] hover:bg-[#EEECEA] hover:text-[#1C1F2E] transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2.5 w-full px-7 py-3.5 rounded-xl font-heading font-bold text-base border border-[#D8D5CF] text-[#3D4152] bg-[#F5F4F2] hover:bg-white hover:text-[#1C1F2E] transition-all duration-300"
           >
             Apply Now
           </a>

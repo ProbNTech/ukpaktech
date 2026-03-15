@@ -135,7 +135,7 @@ export default async function EventDetailPage({
       {/* ============================================================ */}
       {/*  MAIN CONTENT                                                 */}
       {/* ============================================================ */}
-      <section className="bg-[#EEECEA] py-16 lg:py-20">
+      <section className="bg-white py-16 lg:py-20">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-14">
 
@@ -264,7 +264,7 @@ export default async function EventDetailPage({
                     {event.agenda.map((item, index) => (
                       <div
                         key={index}
-                        className="flex gap-4 sm:gap-6 px-6 py-4 border-b border-[#D8D5CF] last:border-b-0 hover:bg-[#EEECEA] transition-colors duration-200"
+                        className="flex gap-4 sm:gap-6 px-6 py-4 border-b border-[#D8D5CF] last:border-b-0 hover:bg-white transition-colors duration-200"
                       >
                         <div className="shrink-0 w-36 sm:w-44">
                           <span className="text-base font-semibold text-[#2563EB]">{item.time}</span>

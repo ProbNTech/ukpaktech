@@ -981,19 +981,26 @@ export const events: Event[] = [
 /*  Utility functions                                                   */
 /* ------------------------------------------------------------------ */
 
+/** Dynamic check — compares dateISO against today */
+export function isEventUpcoming(dateISO: string): boolean {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return new Date(dateISO) >= today;
+}
+
 export function getEventBySlug(slug: string): Event | undefined {
   return events.find((e) => e.slug === slug);
 }
 
 export function getUpcomingEvents(): Event[] {
   return events
-    .filter((e) => e.status === "upcoming")
+    .filter((e) => isEventUpcoming(e.dateISO))
     .sort((a, b) => a.dateISO.localeCompare(b.dateISO));
 }
 
 export function getPastEvents(): Event[] {
   return events
-    .filter((e) => e.status === "past")
+    .filter((e) => !isEventUpcoming(e.dateISO))
     .sort((a, b) => b.dateISO.localeCompare(a.dateISO));
 }
 

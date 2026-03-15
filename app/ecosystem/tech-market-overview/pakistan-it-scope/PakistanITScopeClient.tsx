@@ -39,7 +39,7 @@ export default function PakistanITScopeClient() {
       </PageHero>
 
       {/* Sector Tabs */}
-      <section id="sectors" className="relative bg-[#EEECEA]">
+      <section id="sectors" className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
             <AnimatedSection>
               <SectionHeader
@@ -89,7 +89,7 @@ export default function PakistanITScopeClient() {
       </section>
 
       {/* Link to Talent Page */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
             <AnimatedSection>
               <Link

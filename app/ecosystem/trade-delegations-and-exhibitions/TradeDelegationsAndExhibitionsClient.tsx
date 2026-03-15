@@ -65,7 +65,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#EEECEA] content-body">
+    <div className="bg-white content-body">
       {/* â”€â”€ Hero Section â”€â”€ */}
       <PageHero
         label="UPTECH Ecosystem"
@@ -83,7 +83,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
       </PageHero>
 
       {/* â”€â”€ Stats Bar â”€â”€ */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
@@ -113,7 +113,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
       </section>
 
       {/* â”€â”€ Trade Delegation Section â”€â”€ */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start mb-10">
@@ -369,7 +369,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
       </section>
 
       {/* â”€â”€ CEO at Summit â”€â”€ */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">

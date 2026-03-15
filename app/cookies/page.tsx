@@ -51,7 +51,7 @@ export default function CookiesPage() {
 
       <div className="content-body">
       {/* ── Introduction — Light section ───────────────────────────── */}
-      <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
+      <section className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
@@ -106,7 +106,7 @@ export default function CookiesPage() {
       </section>
 
       {/* ── Cookie Types — Light section ───────────────────────────── */}
-      <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
+      <section className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
@@ -182,7 +182,7 @@ export default function CookiesPage() {
       </section>
 
       {/* ── Data Subject Rights — Light section ─────────────────────── */}
-      <section className="relative bg-[#EEECEA] py-10 overflow-hidden">
+      <section className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>

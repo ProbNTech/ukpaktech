@@ -67,7 +67,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#EEECEA] content-body">
+    <div className="bg-white content-body">
       {/* ── Hero Section — split layout with globe ── */}
       <section className="relative z-[2] w-full overflow-hidden bg-[#0B0F1A]">
         {/* Subtle left-side gradient */}
@@ -225,7 +225,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
       </section>
 
       {/* ── Who We Connect ── */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="mb-8">
@@ -351,7 +351,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
       </section>
 
       {/* ── Unlock Opportunities ── */}
-      <section className="relative bg-[#EEECEA]">
+      <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
           <AnimatedSection>
             <div className="mb-8">

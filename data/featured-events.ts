@@ -2,6 +2,7 @@ export interface FeaturedEventItem {
   id: string;
   title: string;
   date: string;
+  dateISO: string;
   shortDescription: string;
   image: string;
   location?: string;
@@ -14,6 +15,7 @@ export const featuredEvents: FeaturedEventItem[] = [
     id: "pk-1",
     title: "NextGen Digital Summit 2026",
     date: "February 25–26, 2026",
+    dateISO: "2026-02-26",
     shortDescription:
       "Organized with regulatory support to define Pakistan's roadmap for 5G readiness, smart cities, and digital governance.",
     image: "/image/Events%20%26%20Engagements/nextgen.webp",
@@ -24,6 +26,7 @@ export const featuredEvents: FeaturedEventItem[] = [
     id: "pk-4",
     title: "28th ITCN Asia Karachi 2026",
     date: "September 22–24, 2026",
+    dateISO: "2026-09-24",
     shortDescription:
       "Held under the patronage of the SIFC and MoITT, featuring the Global CISO Summit and AI Beyond Borders conferences.",
     image: "/image/Events%20%26%20Engagements/ITCN.webp",
@@ -34,6 +37,7 @@ export const featuredEvents: FeaturedEventItem[] = [
     id: "pk-5",
     title: "ASOCIO Digital Summit 2026",
     date: "November 2026",
+    dateISO: "2026-11-30",
     shortDescription:
       "Pakistan hosts this premier regional inter-governmental summit for the first time, bringing technology leadership from 24 member countries.",
     image: "/image/Events%20%26%20Engagements/ASOCIO.webp",
@@ -44,6 +48,7 @@ export const featuredEvents: FeaturedEventItem[] = [
     id: "pk-6",
     title: "IDEAS 2026 – Cyber & Emerging Tech Track",
     date: "November 24–27, 2026",
+    dateISO: "2026-11-27",
     shortDescription:
       "Organized by the Ministry of Defence Production with a dedicated 'Cyber & Emerging Tech' pavilion covering AI, quantum computing, and cybersecurity.",
     image: "/image/Events%20%26%20Engagements/IDEAS2026.webp",
@@ -55,6 +60,7 @@ export const featuredEvents: FeaturedEventItem[] = [
     id: "uk-1",
     title: "Innovation 2026",
     date: "March 24–25, 2026",
+    dateISO: "2026-03-25",
     shortDescription:
       "Co-hosted by the Cabinet Office and DSIT, focusing on AI-driven transformation of public services and digital governance.",
     image: "/image/Events%20%26%20Engagements/innovation_2026.webp",
@@ -65,6 +71,7 @@ export const featuredEvents: FeaturedEventItem[] = [
     id: "uk-2",
     title: "The GovTech Summit 2026",
     date: "April 16, 2026",
+    dateISO: "2026-04-16",
     shortDescription:
       "Connects senior government innovators with technology pioneers to reform public service procurement and accelerate digital transformation.",
     image: "/image/Events%20%26%20Engagements/govtech.webp",
@@ -75,6 +82,7 @@ export const featuredEvents: FeaturedEventItem[] = [
     id: "uk-3",
     title: "Building the Smarter State 2026",
     date: "May 13, 2026",
+    dateISO: "2026-05-13",
     shortDescription:
       "techUK's flagship conference for public sector DDaT leaders, backed by the Central Government and focused on AI-driven public service delivery.",
     image: "/image/Events%20%26%20Engagements/Building_smater_state.webp",
@@ -85,6 +93,7 @@ export const featuredEvents: FeaturedEventItem[] = [
     id: "uk-4",
     title: "Government Transformation Summit 2026",
     date: "June 25, 2026",
+    dateISO: "2026-06-25",
     shortDescription:
       "Unites 200+ senior government leaders in data and digital delivery to reimagine the modern state through responsible AI and technology.",
     image: "/image/Events%20%26%20Engagements/gov_transformation_summit_2026.webp",
@@ -95,6 +104,7 @@ export const featuredEvents: FeaturedEventItem[] = [
     id: "uk-5",
     title: "DigiGov Expo 2026",
     date: "September 23–24, 2026",
+    dateISO: "2026-09-24",
     shortDescription:
       "Developed with DSIT and GDS, featuring an international 'Government Village' showcasing digital projects and strategies for digital public services.",
     image: "/image/Events%20%26%20Engagements/DigiGovExpo.webp",

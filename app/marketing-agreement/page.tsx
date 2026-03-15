@@ -291,7 +291,7 @@ export default function MarketingAgreementPage() {
                   className={`bg-white border border-[#D8D5CF] border-l-4 ${section.accent} rounded p-6 sm:p-8`}
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#EEECEA] flex-shrink-0">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white flex-shrink-0">
                       <Icon className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
                     </div>
                     <div>

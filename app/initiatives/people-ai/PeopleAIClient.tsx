@@ -55,7 +55,7 @@ export default function PeopleAIClient() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className="bg-[#EEECEA] content-body">
+    <div className="bg-white content-body">
       {/* ── Hero Section ── */}
       <PageHero
         label="UPTECH Initiative"
