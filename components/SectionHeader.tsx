@@ -15,9 +15,10 @@ interface SectionHeaderProps {
   subtitle?: string | ReactNode;
   className?: string;
   color?: "blue" | "red" | "green";
+  dark?: boolean;
 }
 
-export function SectionHeader({ title, label, subtitle, className = "", color = "blue" }: SectionHeaderProps) {
+export function SectionHeader({ title, label, subtitle, className = "", color = "blue", dark = false }: SectionHeaderProps) {
   const theme = bannerThemes[color];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
@@ -64,7 +65,7 @@ export function SectionHeader({ title, label, subtitle, className = "", color = 
       </div>
       {subtitle && (
         <motion.p
-          className="text-[#3D4152] text-base sm:text-lg leading-relaxed"
+          className={`text-base sm:text-lg leading-relaxed ${dark ? "text-white/60" : "text-[#3D4152]"}`}
           initial={shouldReduceMotion ? {} : { opacity: 0, y: 10 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}

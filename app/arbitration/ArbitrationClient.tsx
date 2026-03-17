@@ -253,7 +253,7 @@ export default function ArbitrationClient() {
       </Section>
 
       {/* ── Introduction + Objectives ────────────────────────────── */}
-      <Section variant="alt">
+      <Section variant="dark">
         <AnimatedSection>
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
             <div className="lg:col-span-3">
@@ -261,11 +261,12 @@ export default function ArbitrationClient() {
                 label="Overview"
                 title="Purpose of Arbitration Services"
                 color="blue"
+                dark
               />
-              <p className="text-[#3D4152] text-lg leading-relaxed mb-5">
+              <p className="text-white/80 text-lg leading-relaxed mb-5">
                 Cross-border business relationships sometimes lead to misunderstandings or contractual disputes. UPTECH offers a structured framework to help parties resolve issues efficiently, professionally, and without unnecessary litigation.
               </p>
-              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
+              <p className="text-white/60 text-lg leading-relaxed mb-5">
                 The UK-Pakistan Technology Council (UPTECH) provides an independent dispute resolution framework to facilitate the fair, efficient, and amicable settlement of disputes arising from business collaborations, service agreements, employment arrangements, research partnerships, and technology transactions involving UPTECH members or affiliated parties.
               </p>
 
@@ -275,9 +276,9 @@ export default function ArbitrationClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="mt-6 rounded-xl bg-gradient-to-r from-[#2563EB]/8 to-[#22C55E]/8 border border-[#2563EB]/15 p-6"
+                className="mt-6 rounded-xl bg-gradient-to-r from-[#2563EB]/15 to-[#22C55E]/15 border border-white/10 p-6"
               >
-                <h4 className="font-heading font-bold text-[#1C1F2E] text-base mb-3">
+                <h4 className="font-heading font-bold text-white text-base mb-3">
                   To file a dispute, submit:
                 </h4>
                 <div className="grid sm:grid-cols-3 gap-3">
@@ -288,7 +289,7 @@ export default function ArbitrationClient() {
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-2">
                       <ArrowRight className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-[#3D4152] text-sm">{item}</span>
+                      <span className="text-white/80 text-sm">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -302,7 +303,7 @@ export default function ArbitrationClient() {
               transition={{ duration: 0.4, delay: 0.1 }}
               className="lg:col-span-2"
             >
-              <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 sticky top-8">
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 sticky top-8">
                 <div className="flex items-center gap-3 mb-5">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center"
@@ -310,9 +311,9 @@ export default function ArbitrationClient() {
                   >
                     <Scale className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Our Objectives</h3>
+                  <h3 className="font-heading font-bold text-white text-lg">Our Objectives</h3>
                 </div>
-                <div className="h-px bg-[#D8D5CF] mb-5" />
+                <div className="h-px bg-white/10 mb-5" />
                 <ul className="space-y-3">
                   {objectives.map((item, i) => (
                     <motion.li
@@ -327,7 +328,7 @@ export default function ArbitrationClient() {
                         className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0"
                         strokeWidth={2}
                       />
-                      <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
+                      <span className="text-white/60 text-sm leading-relaxed">{item}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -395,13 +396,14 @@ export default function ArbitrationClient() {
       </Section>
 
       {/* ── Arbitration Process ───────────────────────────────────── */}
-      <Section variant="alt">
+      <Section variant="dark">
         <AnimatedSection>
           <SectionHeader
             label="Process"
             title="Arbitration Process"
             subtitle="A structured four-step process designed to resolve disputes fairly and efficiently."
             color="green"
+            dark
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -410,14 +412,14 @@ export default function ArbitrationClient() {
               return (
                 <motion.div
                   key={step.number}
-                  className="group relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                  className="group relative h-full rounded-2xl border border-white/10 p-px hover:-translate-y-1 hover:shadow-lg hover:shadow-white/5 transition-all duration-300"
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                 >
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="relative h-full bg-white rounded-2xl p-6 flex flex-col">
+                  <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl p-6 flex flex-col">
                     <div className="flex items-center gap-3 mb-5">
                       <div
                         className="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold border-2"
@@ -437,10 +439,10 @@ export default function ArbitrationClient() {
                       </div>
                     </div>
 
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">
+                    <h3 className="font-heading font-bold text-white text-lg mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-[#5A5F72] text-sm leading-relaxed mb-4 flex-1">{step.description}</p>
+                    <p className="text-white/60 text-sm leading-relaxed mb-4 flex-1">{step.description}</p>
 
                     <div
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full self-start"
@@ -461,9 +463,9 @@ export default function ArbitrationClient() {
           <div className="hidden lg:flex items-center justify-center mt-6 gap-2">
             {["Filing", "", "Mediation", "", "Panel", "", "Decision"].map((label, i) =>
               label ? (
-                <span key={i} className="text-xs font-semibold text-[#5A5F72] uppercase tracking-wider">{label}</span>
+                <span key={i} className="text-xs font-semibold text-white/60 uppercase tracking-wider">{label}</span>
               ) : (
-                <ArrowRight key={i} className="w-4 h-4 text-[#D8D5CF]" />
+                <ArrowRight key={i} className="w-4 h-4 text-white/10" />
               )
             )}
           </div>
@@ -628,13 +630,14 @@ export default function ArbitrationClient() {
       </Section>
 
       {/* ── Legal Basis & Framework Highlights ────────────────────── */}
-      <Section variant="alt">
+      <Section variant="dark">
         <AnimatedSection>
           <SectionHeader
             label="Legal Basis"
             title="Governed by UK Law & International Standards"
             subtitle="The UPTECH Arbitration Framework is built on established legal foundations ensuring enforceability and credibility."
             color="blue"
+            dark
           />
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -669,10 +672,10 @@ export default function ArbitrationClient() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="group relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                  className="group relative h-full rounded-2xl border border-white/10 p-px hover:-translate-y-1 hover:shadow-lg hover:shadow-white/5 transition-all duration-300"
                 >
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="relative h-full bg-white rounded-2xl overflow-hidden">
+                  <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden">
                     <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${item.color}, ${item.color}60)` }} />
                     <div className="p-7">
                       <div
@@ -681,10 +684,10 @@ export default function ArbitrationClient() {
                       >
                         <Icon className="w-6 h-6" style={{ color: item.color }} strokeWidth={1.5} />
                       </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-1">{item.title}</h3>
+                      <h3 className="font-heading font-bold text-white text-lg mb-1">{item.title}</h3>
                       <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: item.color }}>{item.subtitle}</p>
-                      <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#5A5F72] text-sm leading-relaxed">{item.description}</p>
+                      <div className="h-px bg-white/10 mb-3" />
+                      <p className="text-white/60 text-sm leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -694,8 +697,8 @@ export default function ArbitrationClient() {
 
           {/* Key Framework Principles */}
           <AnimatedSection delay={0.2}>
-            <div className="rounded-xl bg-gradient-to-r from-[#2563EB]/8 to-[#22C55E]/8 border border-[#2563EB]/15 p-6 lg:p-8">
-              <h4 className="font-heading font-bold text-[#1C1F2E] text-base mb-4">Framework Key Principles</h4>
+            <div className="rounded-xl bg-gradient-to-r from-[#2563EB]/15 to-[#22C55E]/15 border border-white/10 p-6 lg:p-8">
+              <h4 className="font-heading font-bold text-white text-base mb-4">Framework Key Principles</h4>
               <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
                 {[
                   { label: "Party Autonomy", desc: "Parties select arbitrators, agree on rules, and decide procedures" },
@@ -707,8 +710,8 @@ export default function ArbitrationClient() {
                   <div key={item.label} className="flex items-start gap-2">
                     <BadgeCheck className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
                     <div>
-                      <span className="font-semibold text-[#1C1F2E] text-sm block">{item.label}</span>
-                      <span className="text-[#5A5F72] text-xs leading-relaxed">{item.desc}</span>
+                      <span className="font-semibold text-white text-sm block">{item.label}</span>
+                      <span className="text-white/60 text-xs leading-relaxed">{item.desc}</span>
                     </div>
                   </div>
                 ))}
@@ -865,12 +868,13 @@ export default function ArbitrationClient() {
       </Section>
 
       {/* ── Arbitration Clause + Voluntary + Limitations ──────────── */}
-      <Section variant="alt">
+      <Section variant="dark">
         <AnimatedSection>
           <SectionHeader
             label="Legal Framework"
             title="Arbitration Clause & Participation"
             color="blue"
+            dark
           />
 
           {/* Main clause blockquote */}
@@ -879,7 +883,7 @@ export default function ArbitrationClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="rounded-2xl border border-[#2563EB]/15 bg-white shadow-sm overflow-hidden mb-8"
+            className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden mb-8"
           >
             <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
             <div className="p-8 lg:p-10">
@@ -891,18 +895,18 @@ export default function ArbitrationClient() {
                   <FileText className="w-6 h-6 text-[#2563EB]" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-xl mb-1">
+                  <h3 className="font-heading font-bold text-white text-xl mb-1">
                     Recommended Arbitration Clause
                   </h3>
-                  <p className="text-[#5A5F72] text-sm">
+                  <p className="text-white/60 text-sm">
                     UPTECH recommends that agreements facilitated through its platform include the following clause:
                   </p>
                 </div>
               </div>
 
-              <blockquote className="relative border-l-4 border-[#2563EB] pl-6 py-5 bg-gradient-to-r from-[#2563EB]/5 to-transparent rounded-r-xl">
+              <blockquote className="relative border-l-4 border-[#2563EB] pl-6 py-5 bg-gradient-to-r from-[#2563EB]/15 to-transparent rounded-r-xl">
                 <div className="absolute -left-1 -top-2 text-[#2563EB]/20 text-6xl font-serif leading-none">&ldquo;</div>
-                <p className="text-[#1C1F2E] text-base leading-relaxed font-medium relative z-10">
+                <p className="text-white text-base leading-relaxed font-medium relative z-10">
                   Any dispute arising from this agreement shall first be resolved through mediation facilitated by the UK-Pakistan Technology Council (UPTECH). If mediation fails, the dispute may be referred to arbitration under the standard Arbitration & Legal Framework.
                 </p>
               </blockquote>
@@ -916,7 +920,7 @@ export default function ArbitrationClient() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden"
+              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden"
             >
               <div className="h-1 w-full bg-gradient-to-r from-[#22C55E] to-[#22C55E]/40" />
               <div className="p-8">
@@ -927,10 +931,10 @@ export default function ArbitrationClient() {
                   >
                     <Users className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Voluntary Participation</h3>
+                  <h3 className="font-heading font-bold text-white text-lg">Voluntary Participation</h3>
                 </div>
-                <div className="h-px bg-[#D8D5CF] mb-4" />
-                <p className="text-[#5A5F72] text-base leading-relaxed">
+                <div className="h-px bg-white/10 mb-4" />
+                <p className="text-white/60 text-base leading-relaxed">
                   Participation in UPTECH arbitration services is voluntary and typically requires agreement from both parties through contractual clauses referencing the UPTECH arbitration framework.
                 </p>
               </div>
@@ -941,7 +945,7 @@ export default function ArbitrationClient() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden"
+              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden"
             >
               <div className="h-1 w-full bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/40" />
               <div className="p-8">
@@ -952,10 +956,10 @@ export default function ArbitrationClient() {
                   >
                     <Eye className="w-5 h-5 text-[#C41E3A]" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Limitations</h3>
+                  <h3 className="font-heading font-bold text-white text-lg">Limitations</h3>
                 </div>
-                <div className="h-px bg-[#D8D5CF] mb-4" />
-                <p className="text-[#5A5F72] text-base leading-relaxed">
+                <div className="h-px bg-white/10 mb-4" />
+                <p className="text-white/60 text-base leading-relaxed">
                   UPTECH arbitration services are intended to support amicable dispute resolution and do not replace the jurisdiction of national courts in the United Kingdom or other relevant jurisdictions.
                 </p>
               </div>

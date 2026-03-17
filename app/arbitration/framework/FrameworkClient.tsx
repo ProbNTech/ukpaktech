@@ -321,30 +321,31 @@ export default function FrameworkClient() {
       </Section>
 
       {/* ── Legal Basis ──────────────────────────────────────────── */}
-      <Section variant="alt">
+      <Section variant="dark">
         <AnimatedSection>
           <SectionHeader
             label="Legal Foundation"
             title="Legal Basis"
             subtitle="The Framework is governed by established UK and international arbitration law, ensuring all awards are binding, final, and enforceable."
             color="red"
+            dark
           />
 
           <div className="grid md:grid-cols-3 gap-6">
             {legalBasis.map((item, i) => {
               const Icon = item.icon;
               return (
-                <motion.div key={item.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }} className="group relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                <motion.div key={item.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }} className="group relative h-full rounded-2xl border border-white/10 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="relative h-full bg-white rounded-2xl overflow-hidden">
+                  <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden">
                     <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${item.color}, ${item.color}60)` }} />
                     <div className="p-7 text-center">
                       <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300" style={{ background: `${item.color}12`, border: `1px solid ${item.color}25` }}>
                         <Icon className="w-7 h-7" style={{ color: item.color }} strokeWidth={1.5} />
                       </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">{item.title}</h3>
-                      <div className="h-px bg-[#D8D5CF] mb-3" />
-                      <p className="text-[#5A5F72] text-sm leading-relaxed">{item.description}</p>
+                      <h3 className="font-heading font-bold text-white text-lg mb-2">{item.title}</h3>
+                      <div className="h-px bg-white/10 mb-3" />
+                      <p className="text-white/60 text-sm leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -506,22 +507,22 @@ export default function FrameworkClient() {
       </Section>
 
       {/* ── Arbitrator Appointment ────────────────────────────────── */}
-      <Section variant="alt">
+      <Section variant="dark">
         <AnimatedSection>
-          <SectionHeader label="Appointment" title="Arbitrator Appointment Procedure" color="green" />
+          <SectionHeader label="Appointment" title="Arbitrator Appointment Procedure" color="green" dark />
 
           <div className="grid lg:grid-cols-2 gap-8">
             <div>
-              <p className="text-[#3D4152] text-lg leading-relaxed mb-5">
+              <p className="text-white/80 text-lg leading-relaxed mb-5">
                 Parties attempt to mutually agree on arbitrators within 7 days of the Notice of Arbitration. If no agreement is reached, the UPTECH Arbitration Committee appoints from the Technical Arbitration Panel. All arbitrators must have relevant technical, industry, or legal expertise.
               </p>
 
               <div className="space-y-3">
                 {appointmentTimeline.map((item, i) => (
-                  <motion.div key={item.step} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.08 }} className="flex items-center justify-between bg-white rounded-lg border border-[#D8D5CF] px-4 py-3">
+                  <motion.div key={item.step} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.08 }} className="flex items-center justify-between bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 px-4 py-3">
                     <div className="flex items-center gap-3">
                       <span className="w-6 h-6 rounded-full bg-[#22C55E]/10 flex items-center justify-center text-xs font-bold text-[#22C55E]">{i + 1}</span>
-                      <span className="text-[#1C1F2E] text-sm font-medium">{item.step}</span>
+                      <span className="text-white text-sm font-medium">{item.step}</span>
                     </div>
                     <span className="text-xs font-bold text-[#22C55E] bg-[#22C55E]/8 px-2.5 py-1 rounded-full">{item.duration}</span>
                   </motion.div>
@@ -529,14 +530,14 @@ export default function FrameworkClient() {
               </div>
             </div>
 
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8">
+            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#22C55E10", border: "1px solid #22C55E20" }}>
                   <Shield className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Conflict-of-Interest Process</h3>
+                <h3 className="font-heading font-bold text-white text-lg">Conflict-of-Interest Process</h3>
               </div>
-              <div className="h-px bg-[#D8D5CF] mb-5" />
+              <div className="h-px bg-white/10 mb-5" />
               <ul className="space-y-3">
                 {[
                   "All potential arbitrators must disclose any conflicts of interest",
@@ -547,7 +548,7 @@ export default function FrameworkClient() {
                 ].map((item, i) => (
                   <motion.li key={item} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -8 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
+                    <span className="text-white/60 text-sm leading-relaxed">{item}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -608,23 +609,23 @@ export default function FrameworkClient() {
       </Section>
 
       {/* ── Digital Platform ─────────────────────────────────────── */}
-      <Section variant="alt">
+      <Section variant="dark">
         <AnimatedSection>
-          <SectionHeader label="Technology" title="UPTECH Digital Arbitration Platform" subtitle="A secure, GDPR-compliant platform for managing the entire arbitration process digitally." color="blue" />
+          <SectionHeader label="Technology" title="UPTECH Digital Arbitration Platform" subtitle="A secure, GDPR-compliant platform for managing the entire arbitration process digitally." color="blue" dark />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {platformFeatures.map((feature, i) => {
               const Icon = feature.icon;
               return (
-                <motion.div key={feature.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="group relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                <motion.div key={feature.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="group relative h-full rounded-2xl border border-white/10 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="relative h-full bg-white rounded-2xl p-6">
+                  <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl p-6">
                     <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" style={{ background: `${feature.color}12`, border: `1px solid ${feature.color}25` }}>
                       <Icon className="w-5 h-5" style={{ color: feature.color }} strokeWidth={1.5} />
                     </div>
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{feature.title}</h3>
-                    <div className="h-px bg-[#D8D5CF] mb-2" />
-                    <p className="text-[#5A5F72] text-sm leading-relaxed">{feature.description}</p>
+                    <h3 className="font-heading font-bold text-white text-base mb-2">{feature.title}</h3>
+                    <div className="h-px bg-white/10 mb-2" />
+                    <p className="text-white/60 text-sm leading-relaxed">{feature.description}</p>
                   </div>
                 </motion.div>
               );
@@ -633,15 +634,15 @@ export default function FrameworkClient() {
 
           {/* Smart Contract Support */}
           <AnimatedSection delay={0.3}>
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="mt-8 rounded-2xl border border-[#2563EB]/15 bg-white shadow-sm overflow-hidden">
+            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="mt-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden">
               <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
               <div className="p-7 lg:p-8 flex items-start gap-5">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}>
                   <Blocks className="w-6 h-6 text-[#2563EB]" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">Digital & Smart Contract Dispute Resolution</h3>
-                  <p className="text-[#5A5F72] text-base leading-relaxed">
+                  <h3 className="font-heading font-bold text-white text-lg mb-2">Digital & Smart Contract Dispute Resolution</h3>
+                  <p className="text-white/60 text-base leading-relaxed">
                     Where disputes involve blockchain or smart contracts, the arbitrator may review on-chain evidence, issue digital awards executable via smart contracts, and the Framework supports fully automated enforcement with parties&apos; consent.
                   </p>
                 </div>
@@ -674,20 +675,20 @@ export default function FrameworkClient() {
       </Section>
 
       {/* ── FAQs ─────────────────────────────────────────────────── */}
-      <Section variant="alt">
+      <Section variant="dark">
         <AnimatedSection>
-          <SectionHeader label="FAQs" title="Frequently Asked Questions" color="red" />
+          <SectionHeader label="FAQs" title="Frequently Asked Questions" color="red" dark />
 
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <motion.div key={i} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }} className="rounded-xl border border-[#D8D5CF] bg-white shadow-sm p-6 hover:shadow-md transition-shadow duration-300">
+              <motion.div key={i} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }} className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:shadow-md transition-shadow duration-300">
                 <div className="flex items-start gap-3">
                   <div className="w-7 h-7 rounded-lg bg-[#C41E3A]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <HelpCircle className="w-4 h-4 text-[#C41E3A]" strokeWidth={2} />
                   </div>
                   <div>
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{faq.q}</h3>
-                    <p className="text-[#5A5F72] text-sm leading-relaxed">{faq.a}</p>
+                    <h3 className="font-heading font-bold text-white text-base mb-2">{faq.q}</h3>
+                    <p className="text-white/60 text-sm leading-relaxed">{faq.a}</p>
                   </div>
                 </div>
               </motion.div>

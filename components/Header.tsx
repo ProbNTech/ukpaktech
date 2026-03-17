@@ -153,8 +153,22 @@ const navItems: NavItem[] = [
       { label: "London Meeting Space", href: "/meeting-space", desc: "Professional meeting and event facilities in central London for UPTECH members.", icon: MapPin },
     ],
   },
-  /* 7 — Arbitration (direct link) */
-  { kind: "link", label: "Arbitration", href: "/arbitration" },
+  /* 7 — Arbitration */
+  {
+    kind: "group",
+    label: "Arbitration",
+    tagline: "Dispute resolution",
+    color: "#2563EB",
+    editorial: {
+      headline: "Fair, efficient\ndispute resolution.",
+      body: "UPTECH provides an independent arbitration framework ensuring trust in cross-border technology collaboration, governed by UK law.",
+      cta: { label: "Learn more →", href: "/arbitration" },
+    },
+    items: [
+      { label: "Arbitration Overview", href: "/arbitration", desc: "Dispute resolution services, process, principles, and benefits for cross-border technology partnerships.", icon: Scale },
+      { label: "Framework Policy", href: "/arbitration/framework", desc: "Complete arbitration framework policy including legal basis, procedures, costs, digital platform, and FAQs.", icon: FileText },
+    ],
+  },
   /* 8 — Job Portal (direct link) */
   { kind: "link", label: "Job Portal", href: "/job-portal" },
   /* 8 — Events (direct link) */
