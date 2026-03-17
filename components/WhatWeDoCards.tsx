@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback } from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface WhatWeDoItem {
   id: number;
@@ -11,6 +12,7 @@ interface WhatWeDoItem {
   icon: React.ElementType;
   href: string;
   color: string;
+  image?: string;
 }
 
 interface WhatWeDoCardsProps {
@@ -112,18 +114,23 @@ function Card3D({ item, index }: { item: WhatWeDoItem; index: number }) {
             }}
           />
 
-          {/* ── Icon ── */}
+          {/* ── Icon/Image ── */}
           <div
-            className="relative w-[68px] h-[68px] rounded-2xl flex items-center justify-center mb-7 transition-all duration-400"
+            className="relative w-[76px] h-[76px] rounded-2xl overflow-hidden mb-7 transition-all duration-400"
             style={{
-              background: `linear-gradient(145deg, ${item.color}, ${item.color}cc)`,
               boxShadow: isHovered
                 ? `0 16px 48px ${item.color}40, 0 0 0 6px ${item.color}08`
                 : `0 6px 20px ${item.color}25`,
               transform: isHovered ? "translateY(-6px) scale(1.05)" : "translateY(0) scale(1)",
             }}
           >
-            <Icon size={32} className="text-white" strokeWidth={1.5} />
+            {item.image ? (
+              <Image src={item.image} alt={item.title} fill className="object-cover" sizes="76px" />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center" style={{ background: `linear-gradient(145deg, ${item.color}, ${item.color}cc)` }}>
+                <Icon size={34} className="text-white" strokeWidth={1.5} />
+              </div>
+            )}
           </div>
 
           {/* ── Title ── */}

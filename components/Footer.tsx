@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Twitter, Youtube, Facebook, ChevronRight } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Facebook, ChevronRight } from "lucide-react";
 
 
 export function Footer() {
@@ -58,14 +58,14 @@ export function Footer() {
                     { icon: Facebook, label: "Facebook", href: "#" },
                     { icon: Linkedin, label: "LinkedIn", href: "#" },
                     { icon: Twitter, label: "X (Twitter)", href: "#" },
-                    { icon: Youtube, label: "YouTube", href: "#" },
+                    { icon: Instagram, label: "Instagram", href: "#" },
                   ].map((social) => {
                     const Icon = social.icon;
                     return (
                       <a
                         key={social.label}
                         href={social.href}
-                        className="w-12 h-12 rounded-full bg-white/20 border border-white/60 flex items-center justify-center text-white hover:text-white hover:bg-[#22C55E]/50 hover:border-[#22C55E]/70 hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 transition-all duration-300 drop-shadow-lg"
+                        className="w-12 h-12 rounded-full bg-white/30 border-2 border-white flex items-center justify-center text-white hover:text-white hover:bg-[#22C55E]/60 hover:border-[#22C55E] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 transition-all duration-300 drop-shadow-lg"
                         aria-label={social.label}
                       >
                         <Icon className="w-6 h-6" />
@@ -108,6 +108,29 @@ export function Footer() {
                   Contact Us
                 </h3>
                 <div className="space-y-3 text-white text-base leading-relaxed drop-shadow-md">
+                  <div>
+                    <p className="text-white">136 Westbourne Terrace</p>
+                    <p className="text-white">London W2 6QB</p>
+                    <p className="text-white">United Kingdom</p>
+                  </div>
+                  <p>
+                    <span className="text-white font-medium">Tel:</span>{" "}
+                    <a
+                      href="tel:02074024071"
+                      className="text-white hover:text-[#22C55E] transition-colors duration-300"
+                    >
+                      0207 402 4071
+                    </a>
+                  </p>
+                  <p>
+                    <span className="text-white font-medium">WhatsApp:</span>{" "}
+                    <a
+                      href="https://wa.me/447920550000"
+                      className="text-white hover:text-[#22C55E] transition-colors duration-300"
+                    >
+                      0044 7920550000
+                    </a>
+                  </p>
                   <p>
                     <span className="text-white font-medium">Email:</span>{" "}
                     <a
@@ -117,11 +140,6 @@ export function Footer() {
                       info@uptech.org.uk
                     </a>
                   </p>
-                  <div>
-                    <p className="text-white">UK–Pakistan Tech Council</p>
-                    <p className="text-white">London, United Kingdom</p>
-                    <p className="text-white">Islamabad, Pakistan</p>
-                  </div>
                 </div>
 
                 {/* Quick Links */}

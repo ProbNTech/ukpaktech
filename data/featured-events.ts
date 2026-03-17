@@ -57,15 +57,15 @@ export const featuredEvents: FeaturedEventItem[] = [
   },
   /* ── UK Events ── */
   {
-    id: "uk-1",
-    title: "Innovation 2026",
-    date: "March 24–25, 2026",
-    dateISO: "2026-03-25",
+    id: "uk-6",
+    title: "Tech.eu Summit London 2026",
+    date: "April 21–22, 2026",
+    dateISO: "2026-04-21",
     shortDescription:
-      "Co-hosted by the Cabinet Office and DSIT, focusing on AI-driven transformation of public services and digital governance.",
-    image: "/image/Events%20%26%20Engagements/innovation_2026.webp",
-    location: "ExCeL London",
-    tag: "Conference",
+      "Europe's premier startup and venture capital summit connecting founders, investors, and corporates shaping the continent's tech landscape.",
+    image: "/image/Events%20%26%20Engagements/europe/tech_eu_summit.jpg",
+    location: "London",
+    tag: "Summit",
   },
   {
     id: "uk-2",
@@ -87,6 +87,17 @@ export const featuredEvents: FeaturedEventItem[] = [
       "techUK's flagship conference for public sector DDaT leaders, backed by the Central Government and focused on AI-driven public service delivery.",
     image: "/image/Events%20%26%20Engagements/Building_smater_state.webp",
     location: "London",
+    tag: "Conference",
+  },
+  {
+    id: "uk-7",
+    title: "London Tech Week 2026",
+    date: "June 8–12, 2026",
+    dateISO: "2026-06-08",
+    shortDescription:
+      "Europe's leading technology festival — shaping the future of business through technology, with 30,000 innovators and 400+ world-class speakers.",
+    image: "/image/Events%20%26%20Engagements/europe/london_tech_week.png",
+    location: "Olympia London",
     tag: "Conference",
   },
   {

@@ -153,7 +153,9 @@ const navItems: NavItem[] = [
       { label: "London Meeting Space", href: "/meeting-space", desc: "Professional meeting and event facilities in central London for UPTECH members.", icon: MapPin },
     ],
   },
-  /* 7 — Job Portal (direct link) */
+  /* 7 — Arbitration (direct link) */
+  { kind: "link", label: "Arbitration", href: "/arbitration" },
+  /* 8 — Job Portal (direct link) */
   { kind: "link", label: "Job Portal", href: "/job-portal" },
   /* 8 — Events (direct link) */
   { kind: "link", label: "Events", href: "/events" },

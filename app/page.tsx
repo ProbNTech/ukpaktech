@@ -37,8 +37,8 @@ import NewsCarousel from "@/components/NewsCarousel";
 /* Top 15 articles for the homepage news grid — 5 rows × 3 columns */
 const homepageArticles = articles.slice(0, 15);
 
-/* 9 events — 3 rows × 3 columns on the homepage */
-const homepageEvents = featuredEvents.slice(0, 9);
+/* Homepage events — exclude March, max 9 */
+const homepageEvents = featuredEvents.filter(e => new Date(e.dateISO).getMonth() !== 2);
 
 /* Sponsor logos adapted for the LogoCarousel component */
 const sponsorCarouselLogos = sponsorLogos.map((logo, i) => ({
@@ -125,12 +125,12 @@ function getTagColor(tag: string): string {
 
 /* ─── What We Do — 3D card grid data ─── */
 const whatWeDoData = [
-  { id: 1, title: "AI & Tech Programs", content: "Driving AI innovation through training, certifications, and collaborative startup models across key sectors.", icon: Cpu, href: "/programs/ai-tech-programs", color: "#2563EB" },
-  { id: 2, title: "Services", content: "Business networks, SME hub, digital marketing, overseas employment, and business support for your tech venture.", icon: Briefcase, href: "/services", color: "#22C55E" },
-  { id: 3, title: "Skill Development", content: "Practical training pathways, professional certifications, and mentorship for the modern tech workforce.", icon: GraduationCap, href: "/programs/skill-development-center", color: "#EAB308" },
-  { id: 4, title: "UK-Pakistan Tech Partnership", content: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", icon: Globe2, href: "/ecosystem/uk-pakistan-technology-partnership", color: "#C41E3A" },
-  { id: 5, title: "Leadership & Governance", content: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", icon: Shield, href: "/about/management-team", color: "#6366F1" },
-  { id: 6, title: "Trade Delegations", content: "Curated business missions, international trade expos, and pavilion programmes placing members on the world stage.", icon: Handshake, href: "/ecosystem/trade-delegations-and-exhibitions", color: "#0EA5E9" },
+  { id: 1, title: "AI & Tech Programs", content: "Driving AI innovation through training, certifications, and collaborative startup models across key sectors.", icon: Cpu, href: "/programs/ai-tech-programs", color: "#2563EB", image: "/image/icons/ai-programs.jpg" },
+  { id: 2, title: "Services", content: "Business networks, SME hub, digital marketing, overseas employment, and business support for your tech venture.", icon: Briefcase, href: "/services", color: "#22C55E", image: "/image/icons/services.jpg" },
+  { id: 3, title: "Skill Development", content: "Practical training pathways, professional certifications, and mentorship for the modern tech workforce.", icon: GraduationCap, href: "/programs/skill-development-center", color: "#EAB308", image: "/image/icons/skill-development.jpg" },
+  { id: 4, title: "UK-Pakistan Tech Partnership", content: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", icon: Globe2, href: "/ecosystem/uk-pakistan-technology-partnership", color: "#C41E3A", image: "/image/icons/uk-pakistan-partnership.jpg" },
+  { id: 5, title: "Leadership & Governance", content: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", icon: Shield, href: "/about/management-team", color: "#6366F1", image: "/image/icons/leadership.jpg" },
+  { id: 6, title: "Trade Delegations", content: "Curated business missions, international trade expos, and pavilion programmes placing members on the world stage.", icon: Handshake, href: "/ecosystem/trade-delegations-and-exhibitions", color: "#0EA5E9", image: "/image/icons/trade-delegations.jpg" },
 ];
 
 /* ─── Workflow-style event card for homepage ─── */
@@ -245,7 +245,7 @@ function HomeEventsSection() {
       return true;
     });
 
-    // Sort
+    // Sort by date
     if (sortOrder === "nearest") {
       result = showPast
         ? result.sort((a, b) => b.dateISO.localeCompare(a.dateISO))
@@ -256,7 +256,21 @@ function HomeEventsSection() {
       result = result.sort((a, b) => a.dateISO.localeCompare(b.dateISO));
     }
 
-    return result;
+    // Group: UK/London events on top, Pakistan events on bottom
+    const isUK = (e: typeof result[0]) => {
+      const loc = e.location?.toLowerCase() ?? "";
+      return loc.includes("london") || loc.includes("westminster") || loc.includes("excel");
+    };
+    const isPK = (e: typeof result[0]) => {
+      const loc = e.location?.toLowerCase() ?? "";
+      return loc.includes("pakistan") || loc.includes("karachi") || loc.includes("islamabad") || loc.includes("lahore");
+    };
+    const ukEvents = result.filter(isUK);
+    const pkEvents = result.filter(isPK);
+    const otherEvents = result.filter(e => !isUK(e) && !isPK(e));
+    result = [...ukEvents, ...otherEvents, ...pkEvents];
+
+    return result.slice(0, 9);
   }, [showPast, categoryFilter, monthFilter, sortOrder]);
 
   const CATEGORY_OPTIONS = ["All", "London", "Pakistan", "Summit", "Expo", "Conference"];
@@ -267,11 +281,11 @@ function HomeEventsSection() {
   <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
     <AnimatedSection>
       <div className="flex justify-center">
-        <span className="inline-block text-center bg-[#1a2b5e] px-8 py-8 rounded-lg">
-          <p className="text-lg sm:text-xl uppercase font-bold text-[#16a34a] mb-2">
+        <span className="inline-block text-center bg-[#1a2b5e] px-4 sm:px-8 py-5 sm:py-8 rounded-lg w-full sm:w-auto">
+          <p className="text-base sm:text-xl uppercase font-bold text-[#16a34a] mb-2">
             Attend an event
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4">
             {showPast ? "Past Events" : "Upcoming Events"}
           </h2>
           <p className="text-base text-white max-w-3xl mx-auto">
@@ -404,7 +418,7 @@ export default function Home() {
            Layout: full-width text paragraph + About Us button
            Matches ukproptech.com "intro" section structure exactly
       ═══════════════════════════════════════════════════════════ */}
-     <section className="relative py-10 lg:py-14 bg-fixed bg-cover bg-center"
+     <section className="relative py-10 lg:py-14 bg-scroll md:bg-fixed bg-cover bg-center"
 style={{
   backgroundImage:
     "url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop')",
@@ -671,21 +685,19 @@ style={{
         </div>
 
         {/* Right Side - Cards 2x2 */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
-            { href: "/products", icon: Cpu, title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms connecting talent and enabling cross-border trade.", color: "#22C55E" },
-            { href: "/services/mentorship", icon: Users, title: "Mentorship", desc: "Connect with experienced mentors for guidance, career development, and business growth across both nations.", color: "#2563EB" },
-            { href: "/meeting-space", icon: MapPin, title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners.", color: "#C41E3A" },
-            { href: "/about/management-team", icon: Building2, title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures.", color: "#1C1F2E" },
-          ].map((card) => {
-            const Icon = card.icon;
-            return (
+            { href: "/products", image: "/image/icons/products.jpg", title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms connecting talent and enabling cross-border trade." },
+            { href: "/services/mentorship", image: "/image/icons/mentorship.jpg", title: "Mentorship", desc: "Connect with experienced mentors for guidance, career development, and business growth across both nations." },
+            { href: "/meeting-space", image: "/image/icons/meeting-space.jpg", title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners." },
+            { href: "/about/management-team", image: "/image/icons/structure.jpg", title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures." },
+          ].map((card) => (
               <div key={card.title} className="relative rounded-2xl p-px h-full">
-                <Link href={card.href} className="relative h-full block bg-transparent rounded-2xl overflow-hidden">
-                  <div className="p-6 lg:p-7">
+                <Link href={card.href} className="relative h-full block bg-transparent rounded-2xl overflow-hidden group">
+                  <div className="p-4 sm:p-6 lg:p-7">
                     <div className="flex items-center justify-between mb-5">
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${card.color}10`, border: `1px solid ${card.color}15` }}>
-                        <Icon className="w-6 h-6" style={{ color: card.color }} strokeWidth={1.5} />
+                      <div className="relative w-[72px] h-[72px] rounded-2xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        <Image src={card.image} alt={card.title} fill className="object-cover" sizes="72px" />
                       </div>
                       <ArrowUpRight className="w-4 h-4 text-[#D8D5CF]" />
                     </div>
@@ -694,8 +706,7 @@ style={{
                   </div>
                 </Link>
               </div>
-            );
-          })}
+          ))}
         </div>
       </div>
     </AnimatedSection>
@@ -718,7 +729,7 @@ style={{
       </div>
 
       {/* 4 Videos in a Row */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
           {
             id: "NnKZrypT_tE",

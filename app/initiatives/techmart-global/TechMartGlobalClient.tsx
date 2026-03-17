@@ -20,6 +20,23 @@ import {
   Search,
   CheckCircle2,
   ArrowUpRight,
+  Code2,
+  Cloud,
+  Brain,
+  Lock,
+  Smartphone,
+  CreditCard,
+  Users,
+  GraduationCap,
+  DollarSign,
+  BadgeCheck,
+  FileText,
+  BarChart3,
+  Briefcase,
+  Layers,
+  Tag,
+  Percent,
+  Award,
 } from "lucide-react";
 
 /* ── Stats bar data ──────────────────────────────────────────────── */
@@ -58,32 +75,203 @@ const audiences = [
   },
 ];
 
-/* ── Feature data ────────────────────────────────────────────────── */
-const features = [
+/* ── Key Features (from document) ────────────────────────────────── */
+const keyFeatures = [
   {
-    title: "Cross-border B2B Matchmaking",
-    description: "Curated introductions connect Pakistani tech companies with relevant UK and international buyers based on capabilities, needs, and strategic fit.",
-    icon: Handshake,
+    title: "Technology Product Listings",
+    description: "Pakistani companies can showcase their technology solutions including software products, SaaS platforms, AI solutions, FinTech products, cybersecurity tools, cloud platforms, and mobile applications. Each listing includes product description, technical capabilities, demos, pricing models, and contact details.",
+    icon: Layers,
     color: "#2563EB",
   },
   {
-    title: "Market Access and Discovery",
-    description: "Comprehensive company profiles, service catalogs, and capability showcases enable buyers to discover and evaluate technology solutions efficiently.",
+    title: "IT Service Providers Directory",
+    description: "Companies can list services such as software development, AI and machine learning solutions, cloud computing services, cybersecurity consulting, digital transformation services, and data analytics. European businesses can easily search and connect with service providers.",
     icon: Search,
     color: "#22C55E",
   },
   {
-    title: "Strategic Partnerships",
-    description: "Facilitation of joint ventures, technology licensing, co-development agreements, and long-term strategic alliances between companies.",
-    icon: Globe2,
+    title: "Verified Partner Badge",
+    description: "Companies certified through the UPTECH Trusted Partner Certification program receive a Verified Partner badge on their listings, increasing credibility with international buyers and demonstrating they have passed UPTECH verification standards.",
+    icon: BadgeCheck,
     color: "#C41E3A",
   },
   {
-    title: "Trade, Procurement, and Outsourcing",
-    description: "Direct access to procurement opportunities, outsourcing projects, and trade facilitation services that streamline cross-border transactions.",
-    icon: ArrowUpRight,
+    title: "Project & Tender Opportunities",
+    description: "European companies can post technology project requirements and Pakistani companies can submit proposals or bids, creating a dynamic B2B technology collaboration environment that facilitates cross-border procurement.",
+    icon: FileText,
     color: "#2563EB",
   },
+];
+
+/* ── Product listing categories ──────────────────────────────────── */
+const productCategories = [
+  { name: "Software Products", icon: Code2, color: "#2563EB" },
+  { name: "SaaS Platforms", icon: Cloud, color: "#22C55E" },
+  { name: "AI Solutions", icon: Brain, color: "#C41E3A" },
+  { name: "FinTech Products", icon: CreditCard, color: "#2563EB" },
+  { name: "Cybersecurity Tools", icon: Lock, color: "#22C55E" },
+  { name: "Cloud Platforms", icon: Cloud, color: "#C41E3A" },
+  { name: "Mobile Applications", icon: Smartphone, color: "#2563EB" },
+];
+
+/* ── IT Service categories ───────────────────────────────────────── */
+const serviceCategories = [
+  "Software Development",
+  "AI and Machine Learning Solutions",
+  "Cloud Computing Services",
+  "Cybersecurity Consulting",
+  "Digital Transformation Services",
+  "Data Analytics and Business Intelligence",
+];
+
+/* ── European Market Opportunity ─────────────────────────────────── */
+const europeanMarkets = [
+  {
+    country: "United Kingdom",
+    description: "One of Europe\u2019s largest digital economies and a global fintech and AI hub.",
+    color: "#2563EB",
+  },
+  {
+    country: "Germany",
+    description: "Europe\u2019s largest economy with strong demand for industrial software, cybersecurity, and digital transformation.",
+    color: "#22C55E",
+  },
+  {
+    country: "France",
+    description: "A major technology market with strong growth in AI, cloud computing, and innovation startups.",
+    color: "#C41E3A",
+  },
+  {
+    country: "Netherlands",
+    description: "A leading digital infrastructure hub with strong demand for software and cloud services.",
+    color: "#2563EB",
+  },
+  {
+    country: "Switzerland",
+    description: "A high-value technology and financial services market with strong demand for fintech and cybersecurity solutions.",
+    color: "#22C55E",
+  },
+  {
+    country: "Spain",
+    description: "A fast-growing digital economy with increasing demand for IT outsourcing and software development.",
+    color: "#C41E3A",
+  },
+  {
+    country: "Poland",
+    description: "One of Europe\u2019s fastest growing technology sectors and a major digital transformation market.",
+    color: "#2563EB",
+  },
+];
+
+/* ── Strategic Sectors ───────────────────────────────────────────── */
+const strategicSectors = [
+  {
+    title: "Artificial Intelligence",
+    description: "AI development, machine learning solutions, and data analytics services.",
+    icon: Brain,
+    color: "#2563EB",
+  },
+  {
+    title: "Cloud Computing",
+    description: "Cloud infrastructure development, migration services, and SaaS platforms.",
+    icon: Cloud,
+    color: "#22C55E",
+  },
+  {
+    title: "FinTech",
+    description: "Digital banking, payment platforms, and financial technology innovation.",
+    icon: CreditCard,
+    color: "#C41E3A",
+  },
+  {
+    title: "Cybersecurity",
+    description: "Security solutions for financial services, government systems, and enterprise platforms.",
+    icon: Lock,
+    color: "#2563EB",
+  },
+  {
+    title: "Software Engineering",
+    description: "Enterprise software development, SaaS products, and digital transformation services.",
+    icon: Code2,
+    color: "#22C55E",
+  },
+];
+
+/* ── Pakistan Tech Strength stats ────────────────────────────────── */
+const pakistanStrength = [
+  {
+    value: "300,000+",
+    label: "IT Professionals",
+    description: "Working in software development, AI, cybersecurity, and cloud computing.",
+    icon: Users,
+    color: "#2563EB",
+  },
+  {
+    value: "70,000+",
+    label: "IT Graduates/Year",
+    description: "Entering the workforce annually, creating a strong supply of skilled technology professionals.",
+    icon: GraduationCap,
+    color: "#22C55E",
+  },
+  {
+    value: "30\u201360%",
+    label: "Cost Efficiency",
+    description: "Cost advantage compared with European markets, making Pakistan an attractive development destination.",
+    icon: DollarSign,
+    color: "#C41E3A",
+  },
+];
+
+/* ── Benefits ────────────────────────────────────────────────────── */
+const benefitsPakistani = [
+  "Global visibility for products and services",
+  "Access to international clients",
+  "Increased credibility through verification",
+  "Business development opportunities in Europe",
+];
+
+const benefitsEuropean = [
+  "Discover reliable technology vendors",
+  "Access cost-effective IT solutions",
+  "Collaborate with skilled development teams",
+  "Accelerate digital transformation projects",
+];
+
+/* ── Revenue Model ───────────────────────────────────────────────── */
+const revenueModel = [
+  {
+    title: "Membership Fees",
+    description: "Companies pay annual membership to list products and services on the platform.",
+    icon: Briefcase,
+    color: "#2563EB",
+  },
+  {
+    title: "Listing Fees",
+    description: "Premium listings for higher visibility and enhanced showcase features.",
+    icon: Tag,
+    color: "#22C55E",
+  },
+  {
+    title: "Commission on Deals",
+    description: "UPTECH may receive a small commission for successful projects facilitated through the platform.",
+    icon: Percent,
+    color: "#C41E3A",
+  },
+  {
+    title: "Certification Fees",
+    description: "Companies pay fees to obtain UPTECH Trusted Partner Certification and verified badge.",
+    icon: Award,
+    color: "#2563EB",
+  },
+];
+
+/* ── Role of UPTECH ──────────────────────────────────────────────── */
+const roleOfUptech = [
+  "Business matchmaking between companies",
+  "Technology partnership development",
+  "Market intelligence and research",
+  "Talent and workforce connections",
+  "Investment and startup collaboration opportunities",
 ];
 
 /* ── How It Works data ───────────────────────────────────────────── */
@@ -104,48 +292,17 @@ const howItWorks = [
   },
   {
     number: "03",
-    title: "Validate",
-    description: "Engage in due diligence, capability assessments, and preliminary discussions to ensure mutual fit before proceeding.",
-    outcome: "Confirmed alignment",
+    title: "Collaborate",
+    description: "Establish partnerships and agreements. Engage in due diligence, capability assessments, and discussions to ensure mutual fit.",
+    outcome: "Partnership established",
     color: "#C41E3A",
   },
   {
     number: "04",
     title: "Scale",
-    description: "Execute agreements, launch partnerships, and leverage platform resources to scale relationships and achieve long-term objectives.",
-    outcome: "Partnership launched",
+    description: "Access new markets and grow. Execute agreements, launch partnerships, and leverage platform resources to achieve long-term objectives.",
+    outcome: "Business growth",
     color: "#2563EB",
-  },
-];
-
-/* ── UK Pathway data ─────────────────────────────────────────────── */
-const ukPathway = [
-  "UK market entry strategy and guidance",
-  "Compliance and regulatory navigation support",
-  "Introductions to UK-based buyers and partners",
-  "Access to UK industry associations and networks",
-  "Credibility building with UK institutions",
-];
-
-/* ── Alignment data ──────────────────────────────────────────────── */
-const alignment = [
-  {
-    label: "Transparency",
-    description: "Clear and fair processes with full visibility.",
-    icon: Search,
-    color: "#2563EB",
-  },
-  {
-    label: "Verification",
-    description: "All participants are verified for quality assurance.",
-    icon: Shield,
-    color: "#22C55E",
-  },
-  {
-    label: "Fair Process",
-    description: "Merit-based matching and dispute resolution.",
-    icon: Handshake,
-    color: "#C41E3A",
   },
 ];
 
@@ -158,7 +315,7 @@ export default function TechMartGlobalClient() {
       <PageHero
         label="UPTECH Initiative"
         title="TechMart Global"
-        subtitle="A global B2B technology marketplace and collaboration platform connecting Pakistani tech companies with UK and international buyers, partners, investors, and institutions."
+        subtitle="Connecting Pakistan's technology talent with the innovation ecosystems of the United Kingdom and Europe. A global B2B technology marketplace driving innovation, trade, and technology growth between Pakistan, UK and Europe."
         image="/image/banners/banner24.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
@@ -200,25 +357,23 @@ export default function TechMartGlobalClient() {
       <Section variant="alt">
         <AnimatedSection>
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
-            {/* Text content - 3 cols */}
             <div className="lg:col-span-3">
               <SectionHeader
                 label="About the Platform"
-                title="What is TechMart Global?"
+                title="Connecting Pakistan with the UK & European Technology Markets"
                 color="blue"
               />
               <p className="text-[#3D4152] text-lg leading-relaxed mb-5">
-                TechMart Global is a comprehensive B2B technology marketplace powered by the UK-Pakistan Tech Council, enabling Pakistani technology companies to showcase their capabilities to a global audience.
+                The UK-Pakistan Technology Council (UPTECH) aims to strengthen technology collaboration between Pakistan and Europe by creating a strategic bridge between technology talent, innovation ecosystems, and digital markets.
               </p>
               <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
-                Through structured matchmaking, transparent processes, and strategic support, TechMart Global facilitates cross-border partnerships, procurement opportunities, and long-term business relationships that drive innovation and economic growth.
+                With growing demand for digital transformation across Europe and a rapidly expanding technology workforce in Pakistan, the opportunity for cross-border collaboration has never been greater.
               </p>
               <p className="text-[#5A5F72] text-lg leading-relaxed">
-                The platform serves as a trusted intermediary, ensuring that every connection made is verified, purposeful, and built on a foundation of accountability.
+                Through TechMart Global, UPTECH aims to create a sustainable digital economy bridge that drives innovation, trade, and technology growth and business opportunities between Pakistan, UK and Europe.
               </p>
             </div>
 
-            {/* Sidebar card - 2 cols */}
             <motion.div
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -235,8 +390,8 @@ export default function TechMartGlobalClient() {
                   {[
                     { title: "B2B Marketplace", desc: "Connect technology vendors with global buyers.", color: "#2563EB" },
                     { title: "UK-Pakistan Corridor", desc: "Cross-border trade and partnership facilitation.", color: "#22C55E" },
-                    { title: "Verified Connections", desc: "All participants are vetted for quality assurance.", color: "#C41E3A" },
-                    { title: "Structured Matchmaking", desc: "Curated introductions based on capabilities and needs.", color: "#2563EB" },
+                    { title: "Verified Connections", desc: "All participants are vetted through Trusted Partner Certification.", color: "#C41E3A" },
+                    { title: "European Market Access", desc: "Gateway to UK, Germany, France, Netherlands, and more.", color: "#2563EB" },
                   ].map((item, i) => (
                     <motion.li
                       key={item.title}
@@ -308,18 +463,18 @@ export default function TechMartGlobalClient() {
         </AnimatedSection>
       </Section>
 
-      {/* ── What It Enables / Features ─────────────────────────────── */}
+      {/* ── Key Features of the Marketplace ──────────────────────── */}
       <Section variant="alt">
         <AnimatedSection>
           <SectionHeader
-            label="Capabilities"
-            title="What TechMart Global Enables"
-            subtitle="Key capabilities and opportunities facilitated through the platform."
+            label="Key Features"
+            title="Key Features of the Marketplace"
+            subtitle="A comprehensive platform connecting Pakistani technology companies with European buyers and partners."
             color="red"
           />
 
           <div className="grid md:grid-cols-2 gap-7">
-            {features.map((feature, i) => {
+            {keyFeatures.map((feature, i) => {
               const Icon = feature.icon;
               return (
                 <motion.div
@@ -356,27 +511,93 @@ export default function TechMartGlobalClient() {
         </AnimatedSection>
       </Section>
 
-      {/* ── UK Market Access ───────────────────────────────────────── */}
+      {/* ── Technology Product Categories ─────────────────────────── */}
       <Section variant="light">
         <AnimatedSection>
+          <SectionHeader
+            label="Product Listings"
+            title="Technology Products You Can Showcase"
+            subtitle="Pakistani companies can list their technology solutions across these categories."
+            color="blue"
+          />
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {productCategories.map((cat, i) => {
+              const Icon = cat.icon;
+              return (
+                <motion.div
+                  key={cat.name}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.06 }}
+                  className="group relative rounded-xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                >
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative bg-white rounded-xl p-5 text-center">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3"
+                      style={{ background: `${cat.color}12`, border: `1px solid ${cat.color}25` }}
+                    >
+                      <Icon className="w-6 h-6" style={{ color: cat.color }} strokeWidth={1.5} />
+                    </div>
+                    <p className="font-heading font-semibold text-[#1C1F2E] text-sm">
+                      {cat.name}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <AnimatedSection delay={0.3}>
+            <div className="mt-8 rounded-xl border border-[#D8D5CF] bg-white p-6">
+              <h4 className="font-heading font-bold text-[#1C1F2E] text-base mb-3">
+                Each listing may include:
+              </h4>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                {["Product Description", "Technical Capabilities", "Demo or Screenshots", "Pricing Models", "Contact Details"].map((item, i) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0" />
+                    <span className="text-sm text-[#5A5F72]">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimatedSection>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── IT Service Providers Directory ────────────────────────── */}
+      <Section variant="alt">
+        <AnimatedSection>
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
-            {/* Text content */}
             <div className="lg:col-span-3">
               <SectionHeader
-                label="UK Market"
-                title="UK Market Access Focus"
-                subtitle="Supporting Pakistani technology companies in entering and succeeding in the UK market."
-                color="blue"
+                label="Service Directory"
+                title="IT Service Providers Directory"
+                color="green"
               />
-              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
-                TechMart Global places particular emphasis on facilitating entry into the UK market, recognising its strategic importance as a gateway to broader international opportunities.
+              <p className="text-[#3D4152] text-lg leading-relaxed mb-5">
+                Companies can list their services on the platform, making it easy for European businesses to search, evaluate, and connect with qualified service providers from Pakistan.
               </p>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                Through partnerships with UK-based organisations, industry associations, and regulatory bodies, TechMart Global helps Pakistani tech companies understand market dynamics and build relationships with UK buyers.
-              </p>
+              <div className="space-y-3">
+                {serviceCategories.map((service, i) => (
+                  <motion.div
+                    key={service}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: i * 0.06 }}
+                    className="flex items-center gap-3 bg-white rounded-lg border border-[#D8D5CF] px-4 py-3"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0" />
+                    <span className="text-[#1C1F2E] font-medium text-base">{service}</span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
-            {/* Sidebar card */}
             <motion.div
               initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -388,39 +609,237 @@ export default function TechMartGlobalClient() {
                 <div className="flex items-center gap-3 mb-5">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center"
-                    style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}
+                    style={{ background: "#22C55E10", border: "1px solid #22C55E20" }}
                   >
-                    <Globe2 className="w-4 h-4 text-[#2563EB]" strokeWidth={1.5} />
+                    <BadgeCheck className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">UK Entry Pathway</h3>
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Verified Partner Badge</h3>
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
-                <ul className="space-y-3">
-                  {ukPathway.map((item, i) => (
-                    <motion.li
-                      key={item}
-                      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -8 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: 0.15 + i * 0.06 }}
-                      className="flex items-start gap-3"
-                    >
-                      <CheckCircle2
-                        className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0"
-                        strokeWidth={2}
-                      />
-                      <span className="text-[#5A5F72] text-base leading-relaxed">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
+                <p className="text-[#5A5F72] text-base leading-relaxed mb-4">
+                  Companies certified through the UPTECH Trusted Partner Certification program receive a Verified Partner badge on their listings, increasing credibility with international buyers.
+                </p>
+                <p className="text-[#5A5F72] text-base leading-relaxed">
+                  The badge demonstrates that the company has passed UPTECH verification standards for professional experience, technical capability, and business integrity.
+                </p>
               </div>
             </motion.div>
           </div>
         </AnimatedSection>
       </Section>
 
-      {/* ── How It Works ───────────────────────────────────────────── */}
+      {/* ── European Market Opportunity ───────────────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="European Markets"
+            title="European Technology Market Opportunity"
+            subtitle="Europe represents one of the world's largest and most advanced digital economies. The combined European technology market represents hundreds of billions of dollars in digital services, IT infrastructure, and software development opportunities."
+            color="blue"
+          />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {europeanMarkets.map((market, i) => (
+              <motion.div
+                key={market.country}
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="group relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+              >
+                <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                <div className="relative h-full bg-white rounded-2xl p-6">
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+                    style={{ background: `${market.color}12`, border: `1px solid ${market.color}25` }}
+                  >
+                    <Globe2 className="w-5 h-5" style={{ color: market.color }} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-2">
+                    {market.country}
+                  </h3>
+                  <div className="h-px bg-[#D8D5CF] mb-3" />
+                  <p className="text-[#5A5F72] text-sm leading-relaxed">{market.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Strategic Sectors ────────────────────────────────────── */}
       <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Focus Areas"
+            title="Strategic Areas of Collaboration"
+            subtitle="UPTECH focuses on promoting collaboration in high-growth technology sectors."
+            color="red"
+          />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+            {strategicSectors.map((sector, i) => {
+              const Icon = sector.icon;
+              return (
+                <motion.div
+                  key={sector.title}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="group relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                >
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-2xl p-6 text-center">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4"
+                      style={{ background: `${sector.color}12`, border: `1px solid ${sector.color}25` }}
+                    >
+                      <Icon className="w-6 h-6" style={{ color: sector.color }} strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">
+                      {sector.title}
+                    </h3>
+                    <p className="text-[#5A5F72] text-sm leading-relaxed">{sector.description}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Pakistan's Technology Strength ────────────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader
+            label="Why Pakistan"
+            title="Pakistan's Technology Strength"
+            subtitle="Pakistan is emerging as a strong global technology partner due to its rapidly growing IT ecosystem."
+            color="green"
+          />
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {pakistanStrength.map((stat, i) => {
+              const Icon = stat.icon;
+              return (
+                <motion.div
+                  key={stat.label}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  className="group relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                >
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-2xl p-7 text-center">
+                    <Icon className="w-8 h-8 mx-auto mb-3" style={{ color: stat.color }} strokeWidth={1.5} />
+                    <p
+                      className="font-heading font-extrabold text-3xl sm:text-4xl mb-2"
+                      style={{ color: stat.color }}
+                    >
+                      {stat.value}
+                    </p>
+                    <p className="font-heading font-bold text-[#1C1F2E] text-base mb-2">{stat.label}</p>
+                    <p className="text-[#5A5F72] text-sm leading-relaxed">{stat.description}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Benefits ─────────────────────────────────────────────── */}
+      <Section variant="alt">
+        <AnimatedSection>
+          <SectionHeader
+            label="Benefits"
+            title="Benefits for Companies"
+            subtitle="TechMart Global creates value for both Pakistani technology companies and European businesses."
+            color="blue"
+          />
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Pakistani Companies */}
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center"
+                  style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}
+                >
+                  <Rocket className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">For Pakistani Tech Companies</h3>
+              </div>
+              <div className="h-px bg-[#D8D5CF] mb-5" />
+              <ul className="space-y-3">
+                {benefitsPakistani.map((item, i) => (
+                  <motion.li
+                    key={item}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -8 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: 0.15 + i * 0.06 }}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <span className="text-[#5A5F72] text-base leading-relaxed">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* European Companies */}
+            <motion.div
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center"
+                  style={{ background: "#22C55E10", border: "1px solid #22C55E20" }}
+                >
+                  <Globe2 className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">For European Companies</h3>
+              </div>
+              <div className="h-px bg-[#D8D5CF] mb-5" />
+              <p className="text-[#5A5F72] text-sm mb-4">
+                Businesses in the United Kingdom, Germany, France, Netherlands, and other European markets can:
+              </p>
+              <ul className="space-y-3">
+                {benefitsEuropean.map((item, i) => (
+                  <motion.li
+                    key={item}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -8 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: 0.15 + i * 0.06 }}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <span className="text-[#5A5F72] text-base leading-relaxed">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── How It Works ───────────────────────────────────────────── */}
+      <Section variant="light">
         <AnimatedSection>
           <SectionHeader
             label="Process"
@@ -472,30 +891,100 @@ export default function TechMartGlobalClient() {
         </AnimatedSection>
       </Section>
 
-      {/* ── Council Alignment ──────────────────────────────────────── */}
-      <Section variant="light">
+      {/* ── Revenue Model ────────────────────────────────────────── */}
+      <Section variant="alt">
         <AnimatedSection>
           <SectionHeader
-            label="Official Initiative"
-            title="Alignment With UPTECH"
-            subtitle="TechMart Global as a strategic initiative supporting council objectives and ecosystem development."
-            color="red"
+            label="Membership & Pricing"
+            title="How the Marketplace Works"
+            subtitle="TechMart Global offers flexible options for companies to participate and grow."
+            color="green"
           />
 
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {revenueModel.map((model, i) => {
+              const Icon = model.icon;
+              return (
+                <motion.div
+                  key={model.title}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="group relative h-full rounded-2xl border border-[#D8D5CF]/60 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                >
+                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                  <div className="relative h-full bg-white rounded-2xl p-6">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                      style={{ background: `${model.color}12`, border: `1px solid ${model.color}25` }}
+                    >
+                      <Icon className="w-6 h-6" style={{ color: model.color }} strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2">
+                      {model.title}
+                    </h3>
+                    <div className="h-px bg-[#D8D5CF] mb-3" />
+                    <p className="text-[#5A5F72] text-sm leading-relaxed">{model.description}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Role of UPTECH ───────────────────────────────────────── */}
+      <Section variant="light">
+        <AnimatedSection>
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Text */}
             <div>
+              <SectionHeader
+                label="Our Role"
+                title="Role of UPTECH"
+                color="red"
+              />
               <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
-                TechMart Global is an official initiative of the UK-Pakistan Tech Council, designed to advance the council&apos;s mission of fostering collaboration, innovation, and economic growth between the UK and Pakistan technology sectors.
+                The UK-Pakistan Technology Council (UPTECH) acts as a facilitator for cross-border technology collaboration, providing essential services and infrastructure to support meaningful partnerships.
               </p>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                The platform operates with a commitment to transparency, credibility, and ethical business practices. All participants benefit from the council&apos;s governance framework, which ensures fair processes, dispute resolution mechanisms, and ongoing support.
-              </p>
+              <ul className="space-y-3">
+                {roleOfUptech.map((item, i) => (
+                  <motion.li
+                    key={item}
+                    initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -8 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: i * 0.06 }}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <span className="text-[#5A5F72] text-base leading-relaxed">{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
             </div>
 
-            {/* Alignment cards */}
             <div className="space-y-4">
-              {alignment.map((item, i) => {
+              {[
+                {
+                  label: "Transparency",
+                  description: "Clear and fair processes with full visibility for all participants.",
+                  icon: Search,
+                  color: "#2563EB",
+                },
+                {
+                  label: "Verification",
+                  description: "All participants are verified through UPTECH Trusted Partner Certification.",
+                  icon: Shield,
+                  color: "#22C55E",
+                },
+                {
+                  label: "Fair Process",
+                  description: "Merit-based matching and structured dispute resolution mechanisms.",
+                  icon: Handshake,
+                  color: "#C41E3A",
+                },
+              ].map((item, i) => {
                 const Icon = item.icon;
                 return (
                   <motion.div
