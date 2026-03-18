@@ -116,20 +116,22 @@ function Card3D({ item, index }: { item: WhatWeDoItem; index: number }) {
 
           {/* ── Icon/Image ── */}
           <div
-            className="relative w-[76px] h-[76px] rounded-2xl overflow-hidden mb-7 transition-all duration-400"
+            className="relative mb-5 transition-all duration-400"
             style={{
-              boxShadow: isHovered
-                ? `0 16px 48px ${item.color}40, 0 0 0 6px ${item.color}08`
-                : `0 6px 20px ${item.color}25`,
               transform: isHovered ? "translateY(-6px) scale(1.05)" : "translateY(0) scale(1)",
             }}
           >
             {item.image ? (
-              <Image src={item.image} alt={item.title} fill className="object-cover" sizes="76px" />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center" style={{ background: `linear-gradient(145deg, ${item.color}, ${item.color}cc)` }}>
-                <Icon size={34} className="text-white" strokeWidth={1.5} />
+              <div className="relative w-[76px] h-[76px] rounded-2xl overflow-hidden"
+                style={{
+                  boxShadow: isHovered
+                    ? `0 16px 48px ${item.color}40, 0 0 0 6px ${item.color}08`
+                    : `0 6px 20px ${item.color}25`,
+                }}>
+                <Image src={item.image} alt={item.title} fill className="object-cover" sizes="76px" />
               </div>
+            ) : (
+              <Icon className="w-[130px] h-[130px]" />
             )}
           </div>
 

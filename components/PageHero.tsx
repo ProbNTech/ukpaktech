@@ -35,6 +35,11 @@ const FloatingBoxesBg = dynamic(
   { ssr: false }
 );
 
+const AwardsHeroBg = dynamic(
+  () => import("@/components/ui/awards-hero-bg").then((m) => m.AwardsHeroBg),
+  { ssr: false }
+);
+
 interface FloatingIcon {
   id: number;
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -58,6 +63,11 @@ interface PageHeroProps {
   lightOverlay?: boolean;
   splineBg?: boolean;
   floatingBoxes?: boolean;
+  awardsBg?: boolean;
+  heroImage?: string;
+  heroImage2?: string;
+  heroVideo?: string;
+  heroVideoSpeed?: number;
 }
 
 export function PageHero({
@@ -77,15 +87,27 @@ export function PageHero({
   lightOverlay = false,
   splineBg = false,
   floatingBoxes = false,
+  awardsBg = false,
+  heroImage,
+  heroImage2,
+  heroVideo,
+  heroVideoSpeed = 1,
 }: PageHeroProps) {
   const shouldReduceMotion = useReducedMotion();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (videoRef.current && videoSpeed !== 1) {
       videoRef.current.playbackRate = videoSpeed;
     }
   }, [videoSpeed]);
+
+  useEffect(() => {
+    if (heroVideoRef.current && heroVideoSpeed !== 1) {
+      heroVideoRef.current.playbackRate = heroVideoSpeed;
+    }
+  }, [heroVideoSpeed]);
 
   return (
     <section className={`relative z-[2] w-full overflow-hidden bg-[#0B0F1A] ${className}`}>
@@ -141,13 +163,16 @@ export function PageHero({
       {/* Floating 3D boxes background */}
       {floatingBoxes && <FloatingBoxesBg />}
 
+      {/* Awards themed background */}
+      {awardsBg && <AwardsHeroBg />}
+
       {/* Subtle left-side gradient for text readability */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background: lightOverlay
             ? "linear-gradient(to right, rgba(5,10,20,0.45) 0%, rgba(5,10,20,0.22) 40%, rgba(5,10,20,0.08) 65%, rgba(5,10,20,0.02) 100%)"
-            : "linear-gradient(to right, rgba(5,10,20,0.62) 0%, rgba(5,10,20,0.38) 40%, rgba(5,10,20,0.15) 65%, rgba(5,10,20,0.04) 100%)",
+            : "linear-gradient(to right, rgba(5,10,20,0.98) 0%, rgba(5,10,20,0.95) 30%, rgba(5,10,20,0.6) 45%, rgba(5,10,20,0.15) 60%, rgba(5,10,20,0.02) 100%)",
         }}
       />
 
@@ -167,6 +192,129 @@ export function PageHero({
         animate={shouldReduceMotion ? {} : { y: [0, 15, 0], x: [0, -10, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
+
+      {/* Right-side hero video — blended into banner (same style as heroImage) */}
+      {heroVideo && (
+        <div className="absolute right-0 top-0 bottom-0 z-[8] hidden lg:block pointer-events-none" style={{ width: "58%" }}>
+          <motion.div
+            className="absolute inset-0 z-[7]"
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div
+              className="relative w-full h-full"
+              style={{
+                WebkitMaskImage: "radial-gradient(ellipse 90% 80% at 68% 50%, black 30%, transparent 70%)",
+                maskImage: "radial-gradient(ellipse 90% 80% at 68% 50%, black 30%, transparent 70%)",
+              }}
+            >
+              <video
+                ref={heroVideoRef}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 w-full h-full object-cover"
+                src={heroVideo}
+              />
+              <div
+                className="absolute inset-0 mix-blend-multiply"
+                style={{ background: "rgba(11,15,26,0.1)" }}
+              />
+            </div>
+          </motion.div>
+          {/* Subtle glow */}
+          <div
+            className="absolute right-[12%] top-[40%] -translate-y-1/2 w-[400px] h-[400px] rounded-full z-[5]"
+            style={{
+              background: "radial-gradient(circle, rgba(37,99,235,0.08) 0%, rgba(34,197,94,0.04) 50%, transparent 70%)",
+              filter: "blur(60px)",
+            }}
+          />
+        </div>
+      )}
+
+      {/* Right-side hero image(s) — blended into banner */}
+      {heroImage && !heroVideo && (
+        <div className="absolute right-0 top-0 bottom-0 z-[8] hidden lg:block pointer-events-none" style={{ width: "55%" }}>
+          {/* Primary image — front layer */}
+          <motion.div
+            className="absolute inset-0 z-[7]"
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div
+              className="relative w-full h-full"
+              style={{
+                WebkitMaskImage: heroImage2
+                  ? "radial-gradient(ellipse 75% 65% at 70% 40%, black 25%, transparent 68%)"
+                  : "radial-gradient(ellipse 85% 70% at 65% 50%, black 30%, transparent 72%)",
+                maskImage: heroImage2
+                  ? "radial-gradient(ellipse 75% 65% at 70% 40%, black 25%, transparent 68%)"
+                  : "radial-gradient(ellipse 85% 70% at 65% 50%, black 30%, transparent 72%)",
+              }}
+            >
+              <Image
+                src={heroImage}
+                alt=""
+                fill
+                priority
+                className="object-cover object-center scale-[1.1]"
+                sizes="55vw"
+                quality={95}
+              />
+              <div
+                className="absolute inset-0 mix-blend-multiply"
+                style={{ background: "rgba(11,15,26,0.45)" }}
+              />
+            </div>
+          </motion.div>
+
+          {/* Second image — back layer, offset lower-right */}
+          {heroImage2 && (
+            <motion.div
+              className="absolute inset-0 z-[6]"
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div
+                className="relative w-full h-full"
+                style={{
+                  WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 60% 68%, black 20%, transparent 65%)",
+                  maskImage: "radial-gradient(ellipse 70% 60% at 60% 68%, black 20%, transparent 65%)",
+                }}
+              >
+                <Image
+                  src={heroImage2}
+                  alt=""
+                  fill
+                  priority
+                  className="object-cover object-center scale-[1.1]"
+                  sizes="55vw"
+                  quality={90}
+                />
+                <div
+                  className="absolute inset-0 mix-blend-multiply"
+                  style={{ background: "rgba(11,15,26,0.5)" }}
+                />
+              </div>
+            </motion.div>
+          )}
+
+          {/* Subtle glow behind images */}
+          <div
+            className="absolute right-[12%] top-[40%] -translate-y-1/2 w-[400px] h-[400px] rounded-full z-[5]"
+            style={{
+              background: "radial-gradient(circle, rgba(37,99,235,0.08) 0%, rgba(34,197,94,0.04) 50%, transparent 70%)",
+              filter: "blur(60px)",
+            }}
+          />
+        </div>
+      )}
 
       {/* Content */}
       <div

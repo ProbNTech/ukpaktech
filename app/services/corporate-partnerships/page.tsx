@@ -5,6 +5,7 @@ import { PageHero } from "@/components/PageHero";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import {
   Rocket,
   Lightbulb,
@@ -167,10 +168,11 @@ export default function CorporatePartnershipsPage() {
         label="UPTECH Service"
         title="Corporate & Accelerator Partnerships"
         subtitle="The UK-Pakistan Tech Council fosters strategic partnerships between technology startups, scale-ups, corporates, and accelerator programs across the UK and Pakistan. These collaborations help members access resources, mentorship, market opportunities, and industry expertise to accelerate growth and innovation."
-        image="/image/banners/corporate.jpg"
+        video="/image/banners/corporate-partnerships-video.mp4"
+        videoSpeed={2}
       >
         <div className="flex flex-wrap items-center gap-4">
-          <Button href="/membership" variant="glass">Become a Partner</Button>
+          <ShinyButton href="/membership">Become a Partner</ShinyButton>
           <Button href="/contact" variant="glass">Get in Touch</Button>
         </div>
       </PageHero>

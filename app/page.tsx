@@ -11,7 +11,8 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Hero } from "@/components/Hero";
 import { NewsCard } from "@/components/NewsCard";
 import { LiteYouTube } from "@/components/LiteYouTube";
-import { ChevronRight, ChevronDown, ArrowUpRight, Cpu, Briefcase, GraduationCap, Globe2, Shield, Handshake, Users, Building2, MapPin, Scale, Lightbulb, TrendingUp } from "lucide-react";
+import { ChevronRight, ChevronDown, ArrowUpRight, Users, Building2, MapPin, Scale, Lightbulb, TrendingUp, Shield } from "lucide-react";
+import { AITechIcon, ServicesIcon, SkillDevIcon, PartnershipIcon, GovernanceIcon, TradeDelegationsIcon, ProductsIcon, MentorshipIcon, MeetingSpaceIcon, StructureIcon } from "@/components/ui/premium-icons";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { TechMeshBackground } from "@/components/TechMeshBackground";
 const WhatWeDoCards = dynamic(() => import("@/components/WhatWeDoCards"), { ssr: false });
@@ -125,12 +126,12 @@ function getTagColor(tag: string): string {
 
 /* ─── What We Do — 3D card grid data ─── */
 const whatWeDoData = [
-  { id: 1, title: "AI & Tech Programs", content: "Driving AI innovation through training, certifications, and collaborative startup models across key sectors.", icon: Cpu, href: "/programs/ai-tech-programs", color: "#2563EB", image: "/image/icons/ai-programs.jpg" },
-  { id: 2, title: "Services", content: "Business networks, SME hub, digital marketing, overseas employment, and business support for your tech venture.", icon: Briefcase, href: "/services", color: "#22C55E", image: "/image/icons/services.jpg" },
-  { id: 3, title: "Skill Development", content: "Practical training pathways, professional certifications, and mentorship for the modern tech workforce.", icon: GraduationCap, href: "/programs/skill-development-center", color: "#EAB308", image: "/image/icons/skill-development.jpg" },
-  { id: 4, title: "UK-Pakistan Tech Partnership", content: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", icon: Globe2, href: "/ecosystem/uk-pakistan-technology-partnership", color: "#C41E3A", image: "/image/icons/uk-pakistan-partnership.jpg" },
-  { id: 5, title: "Leadership & Governance", content: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", icon: Shield, href: "/about/management-team", color: "#6366F1", image: "/image/icons/leadership.jpg" },
-  { id: 6, title: "Trade Delegations", content: "Curated business missions, international trade expos, and pavilion programmes placing members on the world stage.", icon: Handshake, href: "/ecosystem/trade-delegations-and-exhibitions", color: "#0EA5E9", image: "/image/icons/trade-delegations.jpg" },
+  { id: 1, title: "AI & Tech Programs", content: "Driving AI innovation through training, certifications, and collaborative startup models across key sectors.", icon: AITechIcon, href: "/programs/ai-tech-programs", color: "#2563EB" },
+  { id: 2, title: "Services", content: "Business networks, SME hub, digital marketing, overseas employment, and business support for your tech venture.", icon: ServicesIcon, href: "/services", color: "#22C55E" },
+  { id: 3, title: "Skill Development", content: "Practical training pathways, professional certifications, and mentorship for the modern tech workforce.", icon: SkillDevIcon, href: "/programs/skill-development-center", color: "#EAB308" },
+  { id: 4, title: "UK-Pakistan Tech Partnership", content: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", icon: PartnershipIcon, href: "/ecosystem/uk-pakistan-technology-partnership", color: "#C41E3A" },
+  { id: 5, title: "Leadership & Governance", content: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", icon: GovernanceIcon, href: "/about/management-team", color: "#6366F1" },
+  { id: 6, title: "Trade Delegations", content: "Curated business missions, international trade expos, and pavilion programmes placing members on the world stage.", icon: TradeDelegationsIcon, href: "/ecosystem/trade-delegations-and-exhibitions", color: "#0EA5E9" },
 ];
 
 /* ─── Workflow-style event card for homepage ─── */
@@ -687,17 +688,19 @@ style={{
         {/* Right Side - Cards 2x2 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
-            { href: "/products", image: "/image/icons/products.jpg", title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms connecting talent and enabling cross-border trade." },
-            { href: "/services/mentorship", image: "/image/icons/mentorship.jpg", title: "Mentorship", desc: "Connect with experienced mentors for guidance, career development, and business growth across both nations." },
-            { href: "/meeting-space", image: "/image/icons/meeting-space.jpg", title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners." },
-            { href: "/about/management-team", image: "/image/icons/structure.jpg", title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures." },
-          ].map((card) => (
+            { href: "/products", icon: ProductsIcon, color: "#2563EB", title: "Our Products", desc: "People AI Platform and TechMart Global — technology platforms connecting talent and enabling cross-border trade.", premium: true },
+            { href: "/services/mentorship", icon: MentorshipIcon, color: "#22C55E", title: "Mentorship", desc: "Connect with experienced mentors for guidance, career development, and business growth across both nations.", premium: true },
+            { href: "/meeting-space", icon: MeetingSpaceIcon, color: "#EAB308", title: "London Meeting Space", desc: "Professional meeting facilities in central London for members and partners.", premium: true },
+            { href: "/about/management-team", icon: StructureIcon, color: "#6366F1", title: "Structure & Procedure", desc: "Our governance framework, organisational roles, and operating procedures.", premium: true },
+          ].map((card) => {
+            const CardIcon = card.icon;
+            return (
               <div key={card.title} className="relative rounded-2xl p-px h-full">
-                <Link href={card.href} className="relative h-full block bg-transparent rounded-2xl overflow-hidden group">
+                <Link href={card.href} className="relative h-full block bg-transparent rounded-2xl overflow-visible group">
                   <div className="p-4 sm:p-6 lg:p-7">
-                    <div className="flex items-center justify-between mb-5">
-                      <div className="relative w-[72px] h-[72px] rounded-2xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-300">
-                        <Image src={card.image} alt={card.title} fill className="object-cover" sizes="72px" />
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="group-hover:scale-105 transition-transform duration-300 overflow-visible">
+                        <CardIcon className="w-[140px] h-[140px]" />
                       </div>
                       <ArrowUpRight className="w-4 h-4 text-[#D8D5CF]" />
                     </div>
@@ -706,7 +709,8 @@ style={{
                   </div>
                 </Link>
               </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </AnimatedSection>

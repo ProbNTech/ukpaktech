@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
@@ -8,40 +7,32 @@ import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import {
   CheckCircle2, ChevronDown, Award, BookOpen, Briefcase, Globe2,
-  Code2, Cpu, Database, Cloud, Shield, Wifi, Binary, Terminal,
-  Braces, GitBranch, MonitorSmartphone, Layers, Smartphone, Rocket,
-  Lightbulb, GraduationCap,
+  BrainCircuit, CodeXml, Cloud, Database, Shield, Cpu,
+  Laptop, Rocket, GraduationCap, Lightbulb,
 } from "lucide-react";
 import { useState } from "react";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
-/* Lucide icons wrapped as SVG components for floating icons */
+
+/* Lucide icons wrapped for floating hero */
 const makeLucideIcon = (Icon: React.FC<Record<string, unknown>>) => {
-  const Wrapped = (props: React.SVGProps<SVGSVGElement>) => (
-    <Icon {...props} />
-  );
+  const Wrapped = (props: React.SVGProps<SVGSVGElement>) => <Icon {...props} />;
   return Wrapped;
 };
 
 const heroFloatingIcons = [
-  { id: 1, icon: makeLucideIcon(Code2), className: "top-[8%] left-[12%]" },
-  { id: 2, icon: makeLucideIcon(Cpu), className: "top-[15%] right-[10%]" },
-  { id: 3, icon: makeLucideIcon(Database), className: "top-[75%] left-[8%]" },
-  { id: 4, icon: makeLucideIcon(Cloud), className: "bottom-[12%] right-[12%]" },
-  { id: 5, icon: makeLucideIcon(Shield), className: "top-[6%] left-[35%]" },
-  { id: 6, icon: makeLucideIcon(Wifi), className: "top-[8%] right-[32%]" },
-  { id: 7, icon: makeLucideIcon(Binary), className: "bottom-[10%] left-[28%]" },
-  { id: 8, icon: makeLucideIcon(Terminal), className: "top-[40%] left-[6%]" },
-  { id: 9, icon: makeLucideIcon(Braces), className: "top-[70%] right-[22%]" },
-  { id: 10, icon: makeLucideIcon(GitBranch), className: "top-[85%] left-[65%]" },
-  { id: 11, icon: makeLucideIcon(MonitorSmartphone), className: "top-[50%] right-[6%]" },
-  { id: 12, icon: makeLucideIcon(Layers), className: "top-[55%] left-[22%]" },
-  { id: 13, icon: makeLucideIcon(Smartphone), className: "top-[5%] left-[58%]" },
-  { id: 14, icon: makeLucideIcon(Rocket), className: "bottom-[8%] right-[42%]" },
-  { id: 15, icon: makeLucideIcon(Lightbulb), className: "top-[25%] right-[18%]" },
-  { id: 16, icon: makeLucideIcon(GraduationCap), className: "top-[60%] left-[45%]" },
+  { id: 1, icon: makeLucideIcon(BrainCircuit), className: "top-[8%] left-[8%]" },
+  { id: 2, icon: makeLucideIcon(CodeXml), className: "top-[6%] left-[35%]" },
+  { id: 3, icon: makeLucideIcon(Cloud), className: "top-[10%] right-[12%]" },
+  { id: 4, icon: makeLucideIcon(Database), className: "top-[45%] right-[5%]" },
+  { id: 5, icon: makeLucideIcon(Shield), className: "bottom-[15%] right-[18%]" },
+  { id: 6, icon: makeLucideIcon(Cpu), className: "bottom-[10%] left-[25%]" },
+  { id: 7, icon: makeLucideIcon(Laptop), className: "top-[35%] left-[4%]" },
+  { id: 8, icon: makeLucideIcon(Rocket), className: "top-[5%] right-[32%]" },
+  { id: 9, icon: makeLucideIcon(GraduationCap), className: "bottom-[8%] right-[8%]" },
+  { id: 10, icon: makeLucideIcon(Lightbulb), className: "top-[65%] left-[6%]" },
 ];
 
 const trustItems = ["UK aligned curriculum", "Industry mentors", "Practical projects", "Career support", "Cross-border collaboration"];
@@ -94,7 +85,9 @@ export default function SkillDevelopmentCenterPage() {
         label="UPTECH Programs"
         title="Skill Development Centre"
         subtitle="Comprehensive training programs designed to build world-class tech capabilities and accelerate your career."
-        floatingIcons={heroFloatingIcons}
+        video="/image/Skill Development Center/3banner.mp4"
+        videoSpeed={0.75}
+        heroImage="/image/Skill Development Center/skill-dev-hero.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Apply for Training</ShinyButton>

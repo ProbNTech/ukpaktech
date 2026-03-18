@@ -6,11 +6,33 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, ChevronDown } from "lucide-react";
+import {
+  CheckCircle2, ChevronDown, Trophy, Star, Medal, Crown,
+  Sparkles, Award, Target, Gem, Flame, Zap,
+} from "lucide-react";
 import { useState } from "react";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
+
+/* Lucide icons wrapped for floating hero */
+const makeLucideIcon = (Icon: React.FC<Record<string, unknown>>) => {
+  const Wrapped = (props: React.SVGProps<SVGSVGElement>) => <Icon {...props} />;
+  return Wrapped;
+};
+
+const heroFloatingIcons = [
+  { id: 1, icon: makeLucideIcon(Trophy), className: "top-[8%] left-[10%]" },
+  { id: 2, icon: makeLucideIcon(Star), className: "top-[5%] left-[38%]" },
+  { id: 3, icon: makeLucideIcon(Crown), className: "top-[10%] right-[12%]" },
+  { id: 4, icon: makeLucideIcon(Medal), className: "top-[40%] right-[5%]" },
+  { id: 5, icon: makeLucideIcon(Sparkles), className: "bottom-[12%] right-[15%]" },
+  { id: 6, icon: makeLucideIcon(Award), className: "bottom-[10%] left-[22%]" },
+  { id: 7, icon: makeLucideIcon(Target), className: "top-[38%] left-[4%]" },
+  { id: 8, icon: makeLucideIcon(Gem), className: "top-[6%] right-[34%]" },
+  { id: 9, icon: makeLucideIcon(Flame), className: "bottom-[8%] right-[6%]" },
+  { id: 10, icon: makeLucideIcon(Zap), className: "top-[65%] left-[6%]" },
+];
 
 const companyAwards = [
   { title: "Excellence in IT Exports", tag: "Company", description: "Recognising outstanding achievement in IT export growth and international market development." },
@@ -70,8 +92,7 @@ export default function TechExcellenceAwardsClient() {
         label="UPTECH Initiative"
         title="Tech Excellence Awards"
         subtitle="Celebrating outstanding achievements in technology innovation, digital leadership, and cross-border collaboration across the UK–Pakistan tech corridor."
-        video="/image/Awards/2792370-hd_1920_1080_30fps.mp4"
-        videoSpeed={2}
+        heroImage="/image/Awards/business-excellence-award.png"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Submit a Nomination</ShinyButton>

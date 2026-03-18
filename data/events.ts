@@ -33,7 +33,7 @@ export const events: Event[] = [
     date: "February 25–26, 2026",
     dateISO: "2026-02-25",
     location: "Karachi, Pakistan",
-    image: "/image/Events%20%26%20Engagements/nextgen.webp",
+    image: "/image/Events & Engagements/nextgen.webp",
     officialLink: "https://alliancepakistan.org/event/nextgen-digital-summit/",
     excerpt:
       "Organized with regulatory support to define Pakistan's roadmap for 5G readiness, smart cities, and digital governance.",
@@ -58,7 +58,7 @@ export const events: Event[] = [
     dateISO: "2026-09-22",
     location: "Expo Centre Karachi",
     venue: "Expo Centre Karachi",
-    image: "/image/Events%20%26%20Engagements/ITCN.webp",
+    image: "/image/Events & Engagements/ITCN.webp",
     officialLink: "https://itcnasia.com/karachi/",
     excerpt:
       "Held under the patronage of the SIFC and MoITT, featuring the Global CISO Summit and AI Beyond Borders conferences alongside 3,500+ global brands.",
@@ -82,7 +82,7 @@ export const events: Event[] = [
     date: "November 2026",
     dateISO: "2026-11-01",
     location: "Islamabad / Lahore, Pakistan",
-    image: "/image/Events%20%26%20Engagements/ASOCIO.webp",
+    image: "/image/Events & Engagements/ASOCIO.webp",
     officialLink: "https://www.asocio.org/",
     excerpt:
       "Pakistan hosts this premier regional inter-governmental summit for the first time, bringing technology leadership from 24 ASOCIO member countries.",
@@ -107,7 +107,7 @@ export const events: Event[] = [
     dateISO: "2026-11-24",
     location: "Karachi Expo Centre",
     venue: "Karachi Expo Centre",
-    image: "/image/Events%20%26%20Engagements/IDEAS2026.webp",
+    image: "/image/Events & Engagements/IDEAS2026.webp",
     officialLink: "https://ideaspakistan.gov.pk/",
     excerpt:
       "Organized by the Ministry of Defence Production with a dedicated 'Cyber & Emerging Tech' pavilion covering AI, quantum computing, and cybersecurity.",
@@ -136,7 +136,7 @@ export const events: Event[] = [
     dateISO: "2026-03-24",
     location: "ExCeL London",
     venue: "ExCeL London",
-    image: "/image/Events%20%26%20Engagements/innovation_2026.webp",
+    image: "/image/Events & Engagements/innovation_2026.webp",
     officialLink: "https://innovation.globalgovernmentforum.com/",
     excerpt:
       "Co-hosted by the Cabinet Office and DSIT, focusing on AI-driven transformation of public services and digital governance across government.",
@@ -161,7 +161,7 @@ export const events: Event[] = [
     dateISO: "2026-04-16",
     location: "Westminster, London",
     venue: "Westminster, London",
-    image: "/image/Events%20%26%20Engagements/govtech.webp",
+    image: "/image/Events & Engagements/govtech.webp",
     officialLink: "https://www.govtechsummit.eu/",
     excerpt:
       "Connects senior government innovators with technology pioneers to reform public service procurement and accelerate digital transformation.",
@@ -185,7 +185,7 @@ export const events: Event[] = [
     date: "May 13, 2026",
     dateISO: "2026-05-13",
     location: "London",
-    image: "/image/Events%20%26%20Engagements/Building_smater_state.webp",
+    image: "/image/Events & Engagements/Building_smater_state.webp",
     officialLink: "https://www.techuk.org/what-we-deliver/flagship-and-sponsored-events/building-the-smarter-state-2026.html",
     excerpt:
       "techUK's flagship conference for public sector DDaT leaders, backed by the Central Government and focused on AI-driven public service delivery.",
@@ -210,7 +210,7 @@ export const events: Event[] = [
     dateISO: "2026-06-25",
     location: "Westminster, London",
     venue: "Westminster, London",
-    image: "/image/Events%20%26%20Engagements/gov_transformation_summit_2026.webp",
+    image: "/image/Events & Engagements/gov_transformation_summit_2026.webp",
     officialLink: "https://summit.government-transformation.com/",
     excerpt:
       "Unites 200+ senior government leaders in data and digital delivery to reimagine the modern state through responsible AI and technology.",
@@ -235,7 +235,7 @@ export const events: Event[] = [
     dateISO: "2026-09-23",
     location: "ExCeL London",
     venue: "ExCeL London",
-    image: "/image/Events%20%26%20Engagements/DigiGovExpo.webp",
+    image: "/image/Events & Engagements/DigiGovExpo.webp",
     officialLink: "https://www.digital-government.co.uk/",
     excerpt:
       "Developed with DSIT and GDS, featuring an international 'Government Village' showcasing digital projects and actionable strategies for digital public services.",
@@ -264,7 +264,7 @@ export const events: Event[] = [
     dateISO: "2026-03-19",
     location: "Athens, Greece",
     venue: "Megaron – The Athens Concert Hall",
-    image: "/image/Events%20%26%20Engagements/europe/emtech_europe.jpg",
+    image: "/image/Events & Engagements/europe/emtech_europe.jpg",
     officialLink: "https://emtecheurope.com/",
     excerpt:
       "Unlocking Innovation in an Age of Intelligent Technologies — where emerging tech meets leadership, business, and responsibility.",
@@ -288,7 +288,7 @@ export const events: Event[] = [
     date: "April 21–22, 2026",
     dateISO: "2026-04-21",
     location: "London",
-    image: "/image/Events%20%26%20Engagements/europe/tech_eu_summit.jpg",
+    image: "/image/Events & Engagements/europe/tech_eu_summit.jpg",
     officialLink: "https://tech.eu/event/",
     excerpt:
       "Connecting Europe's tech and startup ecosystem — an annual gathering fostering real conversations and meaningful connections.",
@@ -313,7 +313,7 @@ export const events: Event[] = [
     dateISO: "2026-05-06",
     location: "Oslo, Norway",
     venue: "Nova Spektrum",
-    image: "/image/Events%20%26%20Engagements/europe/oslo_tech_show.jpg",
+    image: "/image/Events & Engagements/europe/oslo_tech_show.jpg",
     officialLink: "https://oslotechshow.com/",
     excerpt:
       "Norway's largest event and meeting place for Hi-Tech and transformation through new technology — Tech Dreams Become Reality.",
@@ -338,7 +338,7 @@ export const events: Event[] = [
     dateISO: "2026-05-26",
     location: "Stockholm, Sweden",
     venue: "Kistamässan",
-    image: "/image/Events%20%26%20Engagements/europe/stockholm_tech_show.jpg",
+    image: "/image/Events & Engagements/europe/stockholm_tech_show.jpg",
     officialLink: "https://stockholmtechshow.se/",
     excerpt:
       "The Nordic region's leading meeting place, event and exhibition for digital transformation — featuring 250+ exhibitors and 5,000+ attendees.",
@@ -363,7 +363,7 @@ export const events: Event[] = [
     dateISO: "2026-06-02",
     location: "ExCeL London",
     venue: "ExCeL London",
-    image: "/image/Events%20%26%20Engagements/europe/infosecurity_europe.jpg",
+    image: "/image/Events & Engagements/europe/infosecurity_europe.jpg",
     officialLink: "https://www.infosecurityeurope.com/",
     excerpt:
       "Europe's leading cybersecurity event — Building a Safer Cyber World, bringing together 13,000+ professionals and 300+ exhibitors.",
@@ -392,7 +392,7 @@ export const events: Event[] = [
     dateISO: "2026-06-08",
     location: "Olympia London",
     venue: "Olympia London",
-    image: "/image/Events%20%26%20Engagements/europe/london_tech_week.png",
+    image: "/image/Events & Engagements/europe/london_tech_week.png",
     officialLink: "https://londontechweek.com/",
     excerpt:
       "Europe's leading technology festival — shaping the future of business through technology, with 30,000 innovators and 400+ world-class speakers.",
@@ -417,7 +417,7 @@ export const events: Event[] = [
     dateISO: "2026-06-10",
     location: "Tobacco Dock, London",
     venue: "Tobacco Dock",
-    image: "/image/Events%20%26%20Engagements/europe/ai_summit_london.jpg",
+    image: "/image/Events & Engagements/europe/ai_summit_london.jpg",
     officialLink: "https://london.theaisummit.com/",
     excerpt:
       "From AI Breakthroughs to Bottom-Line Impact — the headline AI event during London Tech Week, with 5,000+ attendees and 300+ speakers.",
@@ -441,7 +441,7 @@ export const events: Event[] = [
     date: "June 17–20, 2026",
     dateISO: "2026-06-17",
     location: "Paris, France",
-    image: "/image/Events%20%26%20Engagements/europe/vivatech.png",
+    image: "/image/Events & Engagements/europe/vivatech.png",
     officialLink: "https://vivatech.com/",
     excerpt:
       "Europe's biggest startup and tech event — A Decade of Innovation, attracting 180,000 attendees, 14,000 startups, and 3,600 investors.",
@@ -465,7 +465,7 @@ export const events: Event[] = [
     date: "June 23–24, 2026",
     dateISO: "2026-06-23",
     location: "London",
-    image: "/image/Events%20%26%20Engagements/europe/ai_world_congress.jpg",
+    image: "/image/Events & Engagements/europe/ai_world_congress.jpg",
     officialLink: "https://aiconference.london/",
     excerpt:
       "A premier AI conference for CTOs, CIOs, AI engineers, and policymakers — covering machine learning, generative AI, ethics, and smart cities.",
@@ -490,7 +490,7 @@ export const events: Event[] = [
     dateISO: "2026-06-24",
     location: "ExCeL London",
     venue: "ExCeL London",
-    image: "/image/Events%20%26%20Engagements/europe/travel_tech_show.webp",
+    image: "/image/Events & Engagements/europe/travel_tech_show.webp",
     officialLink: "https://traveltech-show.com/",
     excerpt:
       "Europe's only travel tech marketplace — connecting 700+ qualified buyers from 53 countries with 100+ innovative technology suppliers.",
@@ -514,7 +514,7 @@ export const events: Event[] = [
     date: "June 23–25, 2026",
     dateISO: "2026-06-23",
     location: "Zurich, Switzerland",
-    image: "/image/Events%20%26%20Engagements/europe/point_zero_forum.jpg",
+    image: "/image/Events & Engagements/europe/point_zero_forum.jpg",
     officialLink: "https://www.pointzeroforum.com/",
     excerpt:
       "Europe's definitive finance, technology and policy forum — 2,000+ policymakers, regulators, and industry leaders reshaping global finance.",
@@ -539,7 +539,7 @@ export const events: Event[] = [
     dateISO: "2026-06-30",
     location: "Berlin, Germany",
     venue: "Messe Berlin",
-    image: "/image/Events%20%26%20Engagements/europe/gitex_europe.png",
+    image: "/image/Events & Engagements/europe/gitex_ai_europe.webp",
     officialLink: "https://www.gitexeurope.com/",
     excerpt:
       "A Bolder Digital Europe Is Open — Europe's largest tech, startup, and digital investment event uniting enterprises, governments, and investors.",
@@ -564,7 +564,7 @@ export const events: Event[] = [
     dateISO: "2026-07-07",
     location: "Geneva, Switzerland",
     venue: "Palexpo, Geneva",
-    image: "/image/Events%20%26%20Engagements/europe/ai_for_good.png",
+    image: "/image/Events & Engagements/europe/ai_for_good.png",
     officialLink: "https://aiforgood.itu.int/summit26/",
     excerpt:
       "Unlock AI's potential to serve humanity — the ITU-led global summit demonstrating trustworthy AI for sustainable development.",
@@ -589,7 +589,7 @@ export const events: Event[] = [
     dateISO: "2026-09-11",
     location: "Amsterdam, Netherlands",
     venue: "Amsterdam RAI",
-    image: "/image/Events%20%26%20Engagements/europe/ibc2026.png",
+    image: "/image/Events & Engagements/europe/ibc2026.png",
     officialLink: "https://show.ibc.org/",
     excerpt:
       "Shaping the Future of Media — the essential meeting place for media, entertainment, and technology industry leaders across 14 innovation halls.",
@@ -614,7 +614,7 @@ export const events: Event[] = [
     dateISO: "2026-09-23",
     location: "ExCeL London",
     venue: "ExCeL London",
-    image: "/image/Events%20%26%20Engagements/europe/tech_for_marketing.png",
+    image: "/image/Events & Engagements/europe/tech_for_marketing.png",
     officialLink: "https://www.technologyformarketing.co.uk/",
     excerpt:
       "The UK marketers' top destination for AI & MarTech — 10,000+ professionals, 200+ speakers, and 200+ hours of CPD-accredited content.",
@@ -639,7 +639,7 @@ export const events: Event[] = [
     dateISO: "2026-09-23",
     location: "Olympia London",
     venue: "Olympia London",
-    image: "/image/Events%20%26%20Engagements/europe/big_data_ldn.png",
+    image: "/image/Events & Engagements/europe/big_data_ldn.png",
     officialLink: "https://www.bigdataldn.com/",
     excerpt:
       "The UK's leading data, analytics and AI conference & exhibition — Join Forces, Drive Insight, with 400+ expert-led seminars.",
@@ -664,7 +664,7 @@ export const events: Event[] = [
     dateISO: "2026-09-29",
     location: "Olympia, London",
     venue: "Olympia London",
-    image: "/image/Events%20%26%20Engagements/europe/international_security_expo.jpg",
+    image: "/image/Events & Engagements/europe/international_security_expo.jpg",
     officialLink: "https://www.internationalsecurityexpo.com/",
     excerpt:
       "The Home of Global Security Innovation — 10,000+ security professionals, counter-terrorism, critical infrastructure, and homeland security.",
@@ -688,7 +688,7 @@ export const events: Event[] = [
     date: "October 7–9, 2026",
     dateISO: "2026-10-07",
     location: "Munich, Germany",
-    image: "/image/Events%20%26%20Engagements/europe/isaca_europe.jpg",
+    image: "/image/Events & Engagements/europe/isaca_europe.jpg",
     officialLink: "https://www.isaca.org/training-and-events/conferences/isaca-europe-conference",
     excerpt:
       "Europe's premier IS/IT conference — world-class content, engaging speakers, and unsurpassed networking for information systems professionals.",
@@ -713,7 +713,7 @@ export const events: Event[] = [
     dateISO: "2026-10-07",
     location: "Amsterdam, Netherlands",
     venue: "Taets Art & Event Park",
-    image: "/image/Events%20%26%20Engagements/europe/ai_for_good.png",
+    image: "/image/Events & Engagements/europe/ai_for_good.png",
     officialLink: "https://worldsummit.ai/programme/",
     excerpt:
       "The world's leading AI summit — bringing together global AI leaders, researchers, and practitioners in Amsterdam.",
@@ -738,7 +738,7 @@ export const events: Event[] = [
     dateISO: "2026-10-13",
     location: "Rome, Italy",
     venue: "La Nuvola Convention Center",
-    image: "/image/Events%20%26%20Engagements/europe/cybertech_europe.jpg",
+    image: "/image/Events & Engagements/europe/cybertech_europe.jpg",
     officialLink: "https://italy.cybertechconference.com/",
     excerpt:
       "An international cybersecurity conference and exhibition featuring cutting-edge solutions, senior government officials, and C-level executives.",
@@ -763,7 +763,7 @@ export const events: Event[] = [
     dateISO: "2026-10-20",
     location: "Amsterdam, Netherlands",
     venue: "RAI Amsterdam",
-    image: "/image/Events%20%26%20Engagements/europe/techex_europe.png",
+    image: "/image/Events & Engagements/europe/techex_europe.png",
     officialLink: "https://techexevent.com/europe/",
     excerpt:
       "6 Events, 2 Days, 1 Ticket — Transforming Enterprise Through Technology with 8,000+ attendees, 200+ speakers, and 150+ exhibitors.",
@@ -787,7 +787,7 @@ export const events: Event[] = [
     date: "October 27–29, 2026",
     dateISO: "2026-10-27",
     location: "Nuremberg, Germany",
-    image: "/image/Events%20%26%20Engagements/europe/itsa_expo.jpg",
+    image: "/image/Events & Engagements/europe/itsa_expo.jpg",
     officialLink: "https://www.itsa365.de/en/it-sa-expo-congress/exhibition-info",
     excerpt:
       "Home of IT Security — Europe's leading trade fair for IT security, serving as an industry trend barometer and dialogue platform.",
@@ -812,7 +812,7 @@ export const events: Event[] = [
     dateISO: "2026-10-27",
     location: "QEII Centre, London",
     venue: "QEII Centre",
-    image: "/image/Events%20%26%20Engagements/europe/cyber_security_expo.png",
+    image: "/image/Events & Engagements/europe/cyber_security_expo.png",
     officialLink: "https://www.cybersecurityexpo.co.uk/london",
     excerpt:
       "The only dedicated recruitment event for cybersecurity professionals — 100+ exhibitors, career networking, and unadvertised opportunities.",
@@ -837,7 +837,7 @@ export const events: Event[] = [
     dateISO: "2026-11-02",
     location: "London",
     venue: "etc.venues Fenchurch Street",
-    image: "/image/Events%20%26%20Engagements/europe/data_ai_conference.jpg",
+    image: "/image/Events & Engagements/europe/data_ai_conference.jpg",
     officialLink: "https://irmuk.co.uk/data-ai-conference-2026/",
     excerpt:
       "Where Data Drives Intelligence and AI Builds Trust — 60+ industry visionaries, five curated tracks, and an industry awards programme.",
@@ -862,7 +862,7 @@ export const events: Event[] = [
     dateISO: "2026-11-09",
     location: "Lisbon, Portugal",
     venue: "MEO Arena (Altice Arena)",
-    image: "/image/Events%20%26%20Engagements/europe/web_summit.jpg",
+    image: "/image/Events & Engagements/europe/web_summit.jpg",
     officialLink: "https://websummit.com/",
     excerpt:
       "The best tech conference in Europe — 20 content tracks, talks, masterclasses, and Europe's largest gathering of startups and investors.",
@@ -886,7 +886,7 @@ export const events: Event[] = [
     date: "November 16, 2026",
     dateISO: "2026-11-16",
     location: "Zurich, Switzerland",
-    image: "/image/Events%20%26%20Engagements/europe/swiss_ai_summit.jpg",
+    image: "/image/Events & Engagements/europe/swiss_ai_summit.jpg",
     officialLink: "https://www.swissaisummit.com/",
     excerpt:
       "The leading conference on artificial intelligence in Switzerland — cross-sectoral networking, keynotes, workshops, and AI demonstrations.",
@@ -910,7 +910,7 @@ export const events: Event[] = [
     date: "November 17–19, 2026",
     dateISO: "2026-11-17",
     location: "Bremen, Germany",
-    image: "/image/Events%20%26%20Engagements/europe/space_tech_expo.jpg",
+    image: "/image/Events & Engagements/europe/space_tech_expo.jpg",
     officialLink: "https://www.spacetechexpo-europe.com/",
     excerpt:
       "Europe's largest B2B space event — connecting the space supply chain from civil and commercial to defence sectors with 950+ exhibitors.",
@@ -935,7 +935,7 @@ export const events: Event[] = [
     dateISO: "2026-12-07",
     location: "Dubai, UAE",
     venue: "Dubai World Trade Centre & Expo City Dubai",
-    image: "/image/Events%20%26%20Engagements/europe/gitex_dubai.jpg",
+    image: "/image/Events & Engagements/europe/gitex_global_2026.jpg",
     officialLink: "https://www.gitex.com/",
     excerpt:
       "The world's largest tech & AI show — the boldest reinvention featuring Sam Altman, Geoffrey Hinton, and 200,000+ attendees in Dubai.",
@@ -960,7 +960,7 @@ export const events: Event[] = [
     dateISO: "2027-02-03",
     location: "Olympia London",
     venue: "Olympia London",
-    image: "/image/Events%20%26%20Engagements/europe/ai_big_data_expo.jpg",
+    image: "/image/Events & Engagements/europe/ai_big_data_expo_2027.jpg",
     officialLink: "https://www.ai-expo.net/global/",
     excerpt:
       "Delivering AI & Big Data for a Smarter Future — 9,000+ innovators, 200+ speakers, and 150+ exhibitors across seven co-located events.",

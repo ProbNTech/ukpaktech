@@ -10,11 +10,91 @@ import type { FeatureCollection, Feature, Geometry } from "geojson";
 const HIGHLIGHT_CODES: Record<string, string> = {
   "826": "#2563EB", // UK  — Blue
   "586": "#22C55E", // Pakistan — Green
+  "840": "#E11D48", // USA — Rose
+  "276": "#F59E0B", // Germany — Amber
+  "784": "#8B5CF6", // UAE — Purple
+  "682": "#06B6D4", // Saudi Arabia — Cyan
+  "792": "#EC4899", // Turkey — Pink
+  "156": "#EF4444", // China — Red
+  "458": "#14B8A6", // Malaysia — Teal
+  "124": "#F97316", // Canada — Orange
+  "208": "#60A5FA", // Denmark — Light Blue
+  "250": "#A78BFA", // France — Light Purple
+  "528": "#FB923C", // Netherlands — Light Orange
+  "372": "#34D399", // Ireland — Emerald
+  "578": "#38BDF8", // Norway — Sky
+  "752": "#FBBF24", // Sweden — Yellow
+  "56":  "#C084FC", // Belgium — Violet
+  "76":  "#4ADE80", // Brazil — Light Green
+  "484": "#2DD4BF", // Mexico — Teal
 };
 
-/* Approx centroids for the connection arc */
-const UK_CENTER: [number, number] = [-2, 54];
-const PAK_CENTER: [number, number] = [69, 30];
+/* Approx centroids for each country */
+const COUNTRY_CENTERS: Record<string, [number, number]> = {
+  UK: [-2, 54],
+  PK: [69, 30],
+  US: [-98, 39],
+  DE: [10, 51],
+  AE: [54, 24],
+  SA: [45, 24],
+  TR: [35, 39],
+  CN: [104, 35],
+  MY: [102, 4],
+  CA: [-106, 56],
+  DK: [10, 56],
+  FR: [2, 47],
+  NL: [5, 52],
+  IE: [-8, 53],
+  NO: [10, 62],
+  SE: [16, 62],
+  BE: [4, 51],
+  BR: [-52, -14],
+  MX: [-102, 23],
+};
+
+/* Network connections — pairs of country keys */
+const CONNECTIONS: [string, string][] = [
+  // Primary corridor
+  ["UK", "PK"],
+  // UK ↔ Europe neighbours
+  ["UK", "IE"],
+  ["UK", "FR"],
+  ["UK", "NL"],
+  ["UK", "BE"],
+  ["UK", "DE"],
+  ["UK", "DK"],
+  ["UK", "NO"],
+  ["UK", "SE"],
+  // UK ↔ Americas & Middle East
+  ["UK", "US"],
+  ["UK", "CA"],
+  ["UK", "AE"],
+  ["UK", "TR"],
+  // European inter-connections
+  ["FR", "DE"],
+  ["FR", "BE"],
+  ["NL", "DE"],
+  ["NL", "BE"],
+  ["DK", "NO"],
+  ["DK", "SE"],
+  ["DK", "DE"],
+  ["NO", "SE"],
+  ["DE", "TR"],
+  // Americas cluster
+  ["US", "CA"],
+  ["US", "MX"],
+  ["US", "BR"],
+  ["CA", "MX"],
+  // Pakistan ↔ regional
+  ["PK", "AE"],
+  ["PK", "SA"],
+  ["PK", "CN"],
+  ["PK", "MY"],
+  ["PK", "TR"],
+  // Middle East / Asia
+  ["AE", "SA"],
+  ["CN", "MY"],
+];
 
 interface GlobeProps {
   size?: number;
@@ -156,40 +236,71 @@ export function WireframeDottedGlobe({ size = 500, className = "" }: GlobeProps)
           }
         }
 
-        /* Connection arc between UK and Pakistan */
-        const ukProj = projection(UK_CENTER);
-        const pakProj = projection(PAK_CENTER);
+        /* Connection arcs between network countries */
+        const arcPulse = 0.5 + 0.5 * Math.sin(time * 3);
 
-        if (ukProj && pakProj) {
-          // Great-circle line
-          const line: GeoJSON.Feature<GeoJSON.LineString> = {
-            type: "Feature",
-            properties: {},
-            geometry: {
-              type: "LineString",
-              coordinates: [UK_CENTER, PAK_CENTER],
-            },
-          };
+        for (let ci = 0; ci < CONNECTIONS.length; ci++) {
+          const [keyA, keyB] = CONNECTIONS[ci];
+          const a = COUNTRY_CENTERS[keyA];
+          const b = COUNTRY_CENTERS[keyB];
+          const projA = projection(a);
+          const projB = projection(b);
 
-          const arcPulse = 0.5 + 0.5 * Math.sin(time * 3);
+          if (projA && projB) {
+            const line: GeoJSON.Feature<GeoJSON.LineString> = {
+              type: "Feature",
+              properties: {},
+              geometry: { type: "LineString", coordinates: [a, b] },
+            };
 
-          ctx.beginPath();
-          pathGenerator(line);
-          ctx.strokeStyle = `rgba(196, 30, 58, ${0.4 + arcPulse * 0.4})`;
-          ctx.lineWidth = 2;
-          ctx.setLineDash([6, 4]);
-          ctx.shadowColor = "#C41E3A";
-          ctx.shadowBlur = 8 * arcPulse;
-          ctx.stroke();
-          ctx.setLineDash([]);
-          ctx.shadowBlur = 0;
+            // Stagger the pulse per connection
+            const p = 0.5 + 0.5 * Math.sin(time * 3 + ci * 0.7);
+            const isPrimary = (keyA === "UK" && keyB === "PK") || (keyA === "PK" && keyB === "UK");
 
-          // Endpoint dots
-          for (const pt of [ukProj, pakProj]) {
             ctx.beginPath();
-            ctx.arc(pt[0], pt[1], 4, 0, Math.PI * 2);
-            ctx.fillStyle = "#C41E3A";
-            ctx.shadowColor = "#C41E3A";
+            pathGenerator(line);
+            ctx.strokeStyle = isPrimary
+              ? `rgba(196, 30, 58, ${0.5 + p * 0.4})`
+              : `rgba(148, 163, 184, ${0.2 + p * 0.25})`;
+            ctx.lineWidth = isPrimary ? 2 : 1.2;
+            ctx.setLineDash([6, 4]);
+            if (isPrimary) {
+              ctx.shadowColor = "#C41E3A";
+              ctx.shadowBlur = 8 * p;
+            }
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.shadowBlur = 0;
+          }
+        }
+
+        /* Endpoint dots for all network countries */
+        const codeToColor: Record<string, string> = {
+          UK: "#2563EB", PK: "#22C55E", US: "#E11D48", DE: "#F59E0B",
+          AE: "#8B5CF6", SA: "#06B6D4", TR: "#EC4899", CN: "#EF4444",
+          MY: "#14B8A6", CA: "#F97316", DK: "#60A5FA", FR: "#A78BFA",
+          NL: "#FB923C", IE: "#34D399", NO: "#38BDF8", SE: "#FBBF24",
+          BE: "#C084FC", BR: "#4ADE80", MX: "#2DD4BF",
+        };
+
+        for (const [key, center] of Object.entries(COUNTRY_CENTERS)) {
+          const pt = projection(center);
+          if (pt) {
+            const dotColor = codeToColor[key] || "#94A3B8";
+            const isPrimary = key === "UK" || key === "PK";
+            const radius = isPrimary ? 4.5 : 3.5;
+
+            // Outer glow ring
+            ctx.beginPath();
+            ctx.arc(pt[0], pt[1], radius + 3, 0, Math.PI * 2);
+            ctx.fillStyle = dotColor + "30";
+            ctx.fill();
+
+            // Main dot
+            ctx.beginPath();
+            ctx.arc(pt[0], pt[1], radius, 0, Math.PI * 2);
+            ctx.fillStyle = dotColor;
+            ctx.shadowColor = dotColor;
             ctx.shadowBlur = 10;
             ctx.fill();
             ctx.shadowBlur = 0;

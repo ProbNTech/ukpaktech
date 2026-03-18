@@ -70,7 +70,8 @@ export default function OverseasEmploymentPage() {
         label="UPTECH Service"
         title="Overseas Contract Employment Opportunities"
         subtitle="The UK-Pakistan Tech Council facilitates skilled technology professionals with high-value overseas contract opportunities, helping both employers and talent thrive in global markets."
-        image="/image/banners/banner35.jpg"
+        video="/image/banners/overseas-employment-video2.mp4"
+        videoSpeed={2}
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership">Get Connected</ShinyButton>

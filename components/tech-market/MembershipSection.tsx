@@ -6,99 +6,190 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 
 import { Cpu, TrendingUp, GraduationCap, Users } from "lucide-react";
 
-/* ── Premium custom SVG icons for "Our Focus" section ── */
+/* ── Premium 3D-style isometric SVG illustrations for "Our Focus" section ── */
 const PolicyIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-  <svg className={className} style={style} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Shield outer */}
-    <path d="M24 3L6 13v12c0 13 7.8 25 18 29 10.2-4 18-16 18-29V13L24 3z"
-      stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" fill="currentColor" fillOpacity="0.05"/>
-    {/* Shield inner accent */}
-    <path d="M24 7L10 15v10c0 10.5 6.2 20 14 24 7.8-4 14-13.5 14-24V15L24 7z"
-      stroke="currentColor" strokeWidth="0.5" strokeLinejoin="round" opacity="0.2" fill="none"/>
-    {/* Scales pivot */}
-    <circle cx="24" cy="16" r="2.5" fill="currentColor" fillOpacity="0.85"/>
-    <circle cx="24" cy="16" r="4" stroke="currentColor" strokeWidth="0.4" opacity="0.25" fill="none"/>
-    {/* Pillar */}
-    <line x1="24" y1="18.5" x2="24" y2="35" stroke="currentColor" strokeWidth="1.5"/>
-    {/* Beam */}
-    <line x1="15" y1="22" x2="33" y2="22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-    {/* Left chain */}
-    <line x1="15" y1="22" x2="15" y2="28" stroke="currentColor" strokeWidth="0.7" opacity="0.5"/>
-    {/* Right chain */}
-    <line x1="33" y1="22" x2="33" y2="28" stroke="currentColor" strokeWidth="0.7" opacity="0.5"/>
-    {/* Left pan */}
-    <path d="M11 28c0 2.5 1.8 4.5 4 4.5s4-2 4-4.5H11z" stroke="currentColor" strokeWidth="1" fill="currentColor" fillOpacity="0.1"/>
-    {/* Right pan */}
-    <path d="M29 28c0 2.5 1.8 4.5 4 4.5s4-2 4-4.5H29z" stroke="currentColor" strokeWidth="1" fill="currentColor" fillOpacity="0.1"/>
-    {/* Pedestal base */}
-    <rect x="19" y="35" width="10" height="2.5" rx="1.25" fill="currentColor" fillOpacity="0.45"/>
-    {/* Corner accents */}
-    <circle cx="24" cy="43" r="0.7" fill="currentColor" opacity="0.2"/>
-    <circle cx="12" cy="13" r="0.6" fill="currentColor" opacity="0.15"/>
-    <circle cx="36" cy="13" r="0.6" fill="currentColor" opacity="0.15"/>
+  <svg className={className} style={style} viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="pol1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#7C3AED"/>
+        <stop offset="100%" stopColor="#4F46E5"/>
+      </linearGradient>
+      <linearGradient id="pol2" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#A78BFA"/>
+        <stop offset="100%" stopColor="#7C3AED"/>
+      </linearGradient>
+      <linearGradient id="pol3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#C4B5FD"/>
+        <stop offset="100%" stopColor="#818CF8"/>
+      </linearGradient>
+      <filter id="polGlow">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    {/* Base platform - isometric */}
+    <path d="M60 100L20 78V72L60 94L100 72V78L60 100z" fill="#4F46E5" opacity="0.3"/>
+    <path d="M60 94L20 72L60 50L100 72L60 94z" fill="url(#pol1)" opacity="0.15"/>
+    {/* Building/pillar left */}
+    <rect x="30" y="35" width="16" height="45" rx="2" fill="url(#pol2)" opacity="0.8"/>
+    <rect x="32" y="38" width="12" height="8" rx="1" fill="#C4B5FD" opacity="0.3"/>
+    <rect x="32" y="49" width="12" height="8" rx="1" fill="#C4B5FD" opacity="0.3"/>
+    <rect x="32" y="60" width="12" height="8" rx="1" fill="#C4B5FD" opacity="0.25"/>
+    {/* Building/pillar right */}
+    <rect x="74" y="42" width="16" height="38" rx="2" fill="url(#pol2)" opacity="0.8"/>
+    <rect x="76" y="45" width="12" height="8" rx="1" fill="#C4B5FD" opacity="0.3"/>
+    <rect x="76" y="56" width="12" height="8" rx="1" fill="#C4B5FD" opacity="0.3"/>
+    <rect x="76" y="67" width="12" height="8" rx="1" fill="#C4B5FD" opacity="0.25"/>
+    {/* Central shield */}
+    <path d="M60 12L42 22v18c0 12 8 22 18 26 10-4 18-14 18-26V22L60 12z"
+      fill="url(#pol1)" stroke="#A78BFA" strokeWidth="1.5" strokeLinejoin="round"/>
+    <path d="M60 18L46 26v14c0 10 6.5 18 14 22 7.5-4 14-12 14-22V26L60 18z"
+      fill="#7C3AED" fillOpacity="0.6" stroke="#C4B5FD" strokeWidth="0.8"/>
+    {/* Checkmark inside shield */}
+    <path d="M52 36l6 6 12-12" stroke="#E0E7FF" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" filter="url(#polGlow)"/>
+    {/* Document pages floating */}
+    <rect x="48" y="62" width="24" height="18" rx="2" fill="#818CF8" stroke="#C4B5FD" strokeWidth="0.8"/>
+    <line x1="52" y1="67" x2="68" y2="67" stroke="#C4B5FD" strokeWidth="1.5" strokeLinecap="round"/>
+    <line x1="52" y1="71" x2="64" y2="71" stroke="#C4B5FD" strokeWidth="1.5" strokeLinecap="round" opacity="0.7"/>
+    <line x1="52" y1="75" x2="60" y2="75" stroke="#C4B5FD" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+    {/* Glowing dots */}
+    <circle cx="26" cy="30" r="2" fill="#A78BFA" opacity="0.6"/>
+    <circle cx="95" cy="38" r="1.5" fill="#C4B5FD" opacity="0.5"/>
+    <circle cx="15" cy="55" r="1.5" fill="#818CF8" opacity="0.4"/>
+    <circle cx="105" cy="60" r="2" fill="#A78BFA" opacity="0.4"/>
   </svg>
 );
 
 const InnovationIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-  <svg className={className} style={style} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Nucleus core */}
-    <circle cx="24" cy="24" r="4.5" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeWidth="1.3"/>
-    <circle cx="24" cy="24" r="2" fill="currentColor"/>
-    {/* Inner glow ring */}
-    <circle cx="24" cy="24" r="7" stroke="currentColor" strokeWidth="0.4" opacity="0.2" strokeDasharray="2 3"/>
-    {/* Orbital ring 1 (horizontal) */}
-    <ellipse cx="24" cy="24" rx="19" ry="7.5" stroke="currentColor" strokeWidth="0.9" opacity="0.35"/>
-    {/* Orbital ring 2 (60deg) */}
-    <ellipse cx="24" cy="24" rx="19" ry="7.5" stroke="currentColor" strokeWidth="0.9" opacity="0.35" transform="rotate(60 24 24)"/>
-    {/* Orbital ring 3 (-60deg) */}
-    <ellipse cx="24" cy="24" rx="19" ry="7.5" stroke="currentColor" strokeWidth="0.9" opacity="0.35" transform="rotate(-60 24 24)"/>
-    {/* Electron nodes on orbits */}
-    <circle cx="43" cy="24" r="2.5" fill="currentColor" fillOpacity="0.85"/>
-    <circle cx="5" cy="24" r="2" fill="currentColor" fillOpacity="0.5"/>
-    <circle cx="14.5" cy="7.5" r="2.5" fill="currentColor" fillOpacity="0.85"/>
-    <circle cx="33.5" cy="40.5" r="2" fill="currentColor" fillOpacity="0.5"/>
-    <circle cx="33.5" cy="7.5" r="2" fill="currentColor" fillOpacity="0.5"/>
-    <circle cx="14.5" cy="40.5" r="2.5" fill="currentColor" fillOpacity="0.85"/>
-    {/* Energy particles */}
-    <circle cx="24" cy="4" r="0.8" fill="currentColor" opacity="0.25"/>
-    <circle cx="24" cy="44" r="0.8" fill="currentColor" opacity="0.25"/>
-    <circle cx="4" cy="14" r="0.6" fill="currentColor" opacity="0.15"/>
-    <circle cx="44" cy="34" r="0.6" fill="currentColor" opacity="0.15"/>
-    <circle cx="44" cy="14" r="0.6" fill="currentColor" opacity="0.15"/>
-    <circle cx="4" cy="34" r="0.6" fill="currentColor" opacity="0.15"/>
+  <svg className={className} style={style} viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="inn1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#06B6D4"/>
+        <stop offset="100%" stopColor="#8B5CF6"/>
+      </linearGradient>
+      <linearGradient id="inn2" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#22D3EE"/>
+        <stop offset="100%" stopColor="#6366F1"/>
+      </linearGradient>
+      <linearGradient id="inn3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#67E8F9"/>
+        <stop offset="50%" stopColor="#A78BFA"/>
+        <stop offset="100%" stopColor="#F472B6"/>
+      </linearGradient>
+      <radialGradient id="innGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stopColor="#22D3EE" stopOpacity="0.4"/>
+        <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0"/>
+      </radialGradient>
+      <filter id="innBlur">
+        <feGaussianBlur stdDeviation="2.5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    {/* Background glow */}
+    <circle cx="60" cy="55" r="40" fill="url(#innGlow)"/>
+    {/* Lightbulb body */}
+    <path d="M60 14c-18 0-28 14-28 28 0 10 6 18 12 24 2 2 4 6 4 10h24c0-4 2-8 4-10 6-6 12-14 12-24 0-14-10-28-28-28z"
+      fill="url(#inn1)" stroke="#67E8F9" strokeWidth="1.5"/>
+    {/* Bulb glass reflection */}
+    <path d="M48 36c0-8 5-16 14-18" stroke="#E0F2FE" strokeWidth="2" strokeLinecap="round" opacity="0.6"/>
+    {/* Filament glow */}
+    <path d="M52 42c4-6 12-6 16 0" stroke="#FCD34D" strokeWidth="2.5" strokeLinecap="round" filter="url(#innBlur)"/>
+    <path d="M55 42c2.5-3.5 7.5-3.5 10 0" stroke="#FEF08A" strokeWidth="1.5" strokeLinecap="round"/>
+    {/* Light rays */}
+    <line x1="60" y1="6" x2="60" y2="12" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" opacity="0.8"/>
+    <line x1="30" y1="20" x2="35" y2="25" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" opacity="0.6"/>
+    <line x1="90" y1="20" x2="85" y2="25" stroke="#A78BFA" strokeWidth="2" strokeLinecap="round" opacity="0.6"/>
+    <line x1="22" y1="42" x2="28" y2="42" stroke="#67E8F9" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
+    <line x1="98" y1="42" x2="92" y2="42" stroke="#A78BFA" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
+    {/* Bulb base */}
+    <rect x="48" y="76" width="24" height="4" rx="1" fill="#22D3EE" opacity="0.8"/>
+    <rect x="50" y="80" width="20" height="3" rx="1" fill="#06B6D4" opacity="0.7"/>
+    <rect x="52" y="83" width="16" height="3" rx="1" fill="#0891B2" opacity="0.6"/>
+    {/* Gear left */}
+    <circle cx="22" cy="70" r="10" fill="url(#inn2)" fillOpacity="0.7" stroke="#67E8F9" strokeWidth="1"/>
+    <circle cx="22" cy="70" r="5" fill="#0E7490" stroke="#67E8F9" strokeWidth="0.8"/>
+    <rect x="19" y="58" width="6" height="4" rx="1" fill="#06B6D4"/>
+    <rect x="19" y="78" width="6" height="4" rx="1" fill="#06B6D4"/>
+    <rect x="10" y="67" width="4" height="6" rx="1" fill="#06B6D4"/>
+    <rect x="30" y="67" width="4" height="6" rx="1" fill="#06B6D4"/>
+    {/* Gear right */}
+    <circle cx="98" cy="72" r="8" fill="url(#inn2)" fillOpacity="0.6" stroke="#A78BFA" strokeWidth="1"/>
+    <circle cx="98" cy="72" r="4" fill="#6D28D9" stroke="#A78BFA" strokeWidth="0.8"/>
+    <rect x="95.5" y="62.5" width="5" height="3.5" rx="1" fill="#8B5CF6"/>
+    <rect x="95.5" y="78" width="5" height="3.5" rx="1" fill="#8B5CF6"/>
+    <rect x="88.5" y="69.5" width="3.5" height="5" rx="1" fill="#8B5CF6"/>
+    <rect x="104" y="69.5" width="3.5" height="5" rx="1" fill="#8B5CF6"/>
+    {/* Circuit/connection lines */}
+    <path d="M34 70h12" stroke="#67E8F9" strokeWidth="1" strokeDasharray="3 2" opacity="0.5"/>
+    <path d="M74 72h14" stroke="#A78BFA" strokeWidth="1" strokeDasharray="3 2" opacity="0.5"/>
+    {/* Sparkle dots */}
+    <circle cx="40" cy="16" r="1.5" fill="#FCD34D" opacity="0.8"/>
+    <circle cx="80" cy="14" r="1.5" fill="#F472B6" opacity="0.8"/>
+    <circle cx="16" cy="50" r="1" fill="#67E8F9" opacity="0.6"/>
+    <circle cx="104" cy="48" r="1" fill="#A78BFA" opacity="0.6"/>
+    {/* Stars */}
+    <path d="M100 18l1.5 3 3 .5-2 2.2.5 3.3-3-1.5-3 1.5.5-3.3-2-2.2 3-.5z" fill="#FCD34D" opacity="0.7"/>
   </svg>
 );
 
 const MarketsIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-  <svg className={className} style={style} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Globe circle */}
-    <circle cx="24" cy="24" r="19" stroke="currentColor" strokeWidth="1.2" opacity="0.25"/>
-    <circle cx="24" cy="24" r="19" fill="currentColor" fillOpacity="0.03"/>
-    {/* Latitude lines */}
-    <ellipse cx="24" cy="24" rx="19" ry="6.5" stroke="currentColor" strokeWidth="0.4" opacity="0.15"/>
-    <ellipse cx="24" cy="24" rx="19" ry="13" stroke="currentColor" strokeWidth="0.4" opacity="0.15"/>
-    {/* Longitude lines */}
-    <ellipse cx="24" cy="24" rx="6.5" ry="19" stroke="currentColor" strokeWidth="0.4" opacity="0.15"/>
-    <ellipse cx="24" cy="24" rx="13" ry="19" stroke="currentColor" strokeWidth="0.4" opacity="0.15"/>
-    {/* Equator & meridian */}
-    <line x1="5" y1="24" x2="43" y2="24" stroke="currentColor" strokeWidth="0.3" opacity="0.1"/>
-    <line x1="24" y1="5" x2="24" y2="43" stroke="currentColor" strokeWidth="0.3" opacity="0.1"/>
-    {/* Trend area fill */}
-    <path d="M9 36L16 30L22 32L29 21L36 14L40 10V36H9z" fill="currentColor" fillOpacity="0.1"/>
-    {/* Rising trend line */}
-    <path d="M9 36L16 30L22 32L29 21L36 14L40 10" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-    {/* Data nodes */}
-    <circle cx="9" cy="36" r="2" fill="currentColor" fillOpacity="0.6" stroke="currentColor" strokeWidth="0.5"/>
-    <circle cx="16" cy="30" r="2.2" fill="currentColor" fillOpacity="0.7" stroke="currentColor" strokeWidth="0.5"/>
-    <circle cx="22" cy="32" r="2.2" fill="currentColor" fillOpacity="0.7" stroke="currentColor" strokeWidth="0.5"/>
-    <circle cx="29" cy="21" r="2.5" fill="currentColor" fillOpacity="0.8" stroke="currentColor" strokeWidth="0.5"/>
-    <circle cx="36" cy="14" r="2.5" fill="currentColor" fillOpacity="0.85" stroke="currentColor" strokeWidth="0.5"/>
-    <circle cx="40" cy="10" r="3" fill="currentColor" stroke="currentColor" strokeWidth="0.5"/>
-    {/* Arrow tip */}
-    <path d="M38 8l2 2-2 2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/>
-    {/* Pulse rings on peak node */}
-    <circle cx="40" cy="10" r="5" stroke="currentColor" strokeWidth="0.4" opacity="0.2"/>
-    <circle cx="40" cy="10" r="7.5" stroke="currentColor" strokeWidth="0.3" opacity="0.1"/>
+  <svg className={className} style={style} viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="mkt1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#F59E0B"/>
+        <stop offset="100%" stopColor="#EF4444"/>
+      </linearGradient>
+      <linearGradient id="mkt2" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%" stopColor="#F97316"/>
+        <stop offset="100%" stopColor="#FBBF24"/>
+      </linearGradient>
+      <linearGradient id="mkt3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#34D399"/>
+        <stop offset="100%" stopColor="#10B981"/>
+      </linearGradient>
+      <radialGradient id="mktGlow" cx="50%" cy="40%" r="50%">
+        <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.3"/>
+        <stop offset="100%" stopColor="#EF4444" stopOpacity="0"/>
+      </radialGradient>
+      <filter id="mktBlur">
+        <feGaussianBlur stdDeviation="2" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    {/* Background glow */}
+    <circle cx="60" cy="55" r="42" fill="url(#mktGlow)"/>
+    {/* Globe */}
+    <circle cx="60" cy="50" r="32" fill="#1E3A5F" fillOpacity="0.4" stroke="url(#mkt1)" strokeWidth="2"/>
+    <ellipse cx="60" cy="50" rx="32" ry="12" stroke="#F59E0B" strokeWidth="0.8" opacity="0.35"/>
+    <ellipse cx="60" cy="50" rx="12" ry="32" stroke="#F59E0B" strokeWidth="0.8" opacity="0.35"/>
+    <ellipse cx="60" cy="50" rx="24" ry="32" stroke="#F59E0B" strokeWidth="0.5" opacity="0.2"/>
+    {/* Continent shapes (abstract) */}
+    <path d="M42 38c4-2 8 0 12-1s6-4 10-2c2 1 4 4 2 6s-6 2-8 4-2 6-6 6-6-2-8-4-4-6-2-9z" fill="#FBBF24" opacity="0.2"/>
+    <path d="M62 55c3 0 6 2 10 1s6-3 8-1c1 2-1 5-3 6s-6 0-8 2-2 4-5 4-4-2-5-4 0-5 3-8z" fill="#F59E0B" opacity="0.15"/>
+    {/* Rising chart bars */}
+    <rect x="26" y="78" width="10" height="22" rx="2" fill="url(#mkt2)" opacity="0.7"/>
+    <rect x="40" y="72" width="10" height="28" rx="2" fill="url(#mkt2)" opacity="0.8"/>
+    <rect x="54" y="65" width="10" height="35" rx="2" fill="url(#mkt1)" opacity="0.85"/>
+    <rect x="68" y="58" width="10" height="42" rx="2" fill="url(#mkt1)" opacity="0.9"/>
+    <rect x="82" y="50" width="10" height="50" rx="2" fill="#EF4444"/>
+    {/* Bar highlights */}
+    <rect x="28" y="80" width="6" height="3" rx="1" fill="#FEF3C7" opacity="0.4"/>
+    <rect x="42" y="74" width="6" height="3" rx="1" fill="#FEF3C7" opacity="0.4"/>
+    <rect x="56" y="67" width="6" height="3" rx="1" fill="#FEF3C7" opacity="0.4"/>
+    <rect x="70" y="60" width="6" height="3" rx="1" fill="#FEF3C7" opacity="0.4"/>
+    <rect x="84" y="52" width="6" height="3" rx="1" fill="#FEF3C7" opacity="0.4"/>
+    {/* Trend arrow */}
+    <path d="M30 85L45 77L60 70L75 62L90 52" stroke="#34D399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" filter="url(#mktBlur)"/>
+    <circle cx="90" cy="52" r="4" fill="#34D399" stroke="#6EE7B7" strokeWidth="1.5"/>
+    <path d="M86 48l4 4 4-4" stroke="#6EE7B7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" transform="rotate(-45 90 48)"/>
+    {/* Currency symbols floating */}
+    <text x="18" y="42" fill="#FBBF24" fontSize="10" fontWeight="bold" opacity="0.6">$</text>
+    <text x="96" y="35" fill="#F59E0B" fontSize="8" fontWeight="bold" opacity="0.5">€</text>
+    <text x="105" y="70" fill="#FBBF24" fontSize="9" fontWeight="bold" opacity="0.5">£</text>
+    {/* Sparkle dots */}
+    <circle cx="20" cy="25" r="1.5" fill="#FCD34D" opacity="0.7"/>
+    <circle cx="100" cy="22" r="1.5" fill="#F87171" opacity="0.6"/>
+    <circle cx="12" cy="65" r="1" fill="#FBBF24" opacity="0.5"/>
   </svg>
 );
 
@@ -249,30 +340,29 @@ export default function MembershipSection() {
               <div className="lg:w-2/3 flex flex-col sm:flex-row gap-6">
                 {[
                   {
-                    image: "/image/icons/policy.jpg",
+                    icon: PolicyIcon,
                     title: "Shaping Policy & Regulation",
                     desc: "We work at the intersection of technology and government to help develop supportive policies for bilateral tech trade, digital economy agreements, and tech-friendly regulations. Our council advocates for frameworks that enable efficient trade, protect data, and encourage investment.",
                   },
                   {
-                    image: "/image/icons/innovation.jpg",
+                    icon: InnovationIcon,
                     title: "Accelerating Innovation",
                     desc: "We champion emerging technologies including AI, cloud computing, cybersecurity, fintech, and green tech by convening research partnerships, innovation hubs, and collaborative initiatives that harness the best of UK and Pakistani tech talent.",
                   },
                   {
-                    image: "/image/icons/markets.jpg",
+                    icon: MarketsIcon,
                     title: "Developing Markets",
                     desc: "We identify sectors where technology can drive progress — from health and education to financial services, smart infrastructure, and digital government. We help our members understand market needs, build competitive offerings, and enter new international markets.",
                   },
-                ].map((card) => (
+                ].map((card) => {
+                  const CardIcon = card.icon;
+                  return (
                     <div
                       key={card.title}
                       className="group rounded-lg shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 text-center p-6 flex-1"
                     >
-                      <div
-                        aria-hidden
-                        className="relative mx-auto w-24 h-24 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300 shadow-lg"
-                      >
-                        <Image src={card.image} alt={card.title} fill className="object-cover" sizes="96px" />
+                      <div aria-hidden className="flex justify-center group-hover:scale-110 transition-transform duration-500">
+                        <CardIcon className="w-24 h-24 sm:w-28 sm:h-28 drop-shadow-2xl" />
                       </div>
 
                       <h3 className="mt-6 font-heading font-bold text-white text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl">
@@ -280,7 +370,8 @@ export default function MembershipSection() {
                       </h3>
                       <p className="mt-3 text-white text-sm leading-relaxed">{card.desc}</p>
                     </div>
-                  ))}
+                  );
+                })}
               </div>
             </div>
           </AnimatedSection>
