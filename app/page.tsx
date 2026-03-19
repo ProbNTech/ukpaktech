@@ -569,36 +569,6 @@ style={{
            
 
             {/* CTA banner */}
-           {/* European Tech Markets Grid */}
-           <AnimatedSection animation="fade-up">
-  <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-    {[
-      { flag: "🇬🇧", name: "United Kingdom", desc: "One of Europe's largest digital economies and a global fintech and AI hub.", color: "#2563EB" },
-      { flag: "🇩🇪", name: "Germany", desc: "Europe's largest economy with strong demand for industrial software, cybersecurity, and digital transformation.", color: "#C41E3A" },
-      { flag: "🇫🇷", name: "France", desc: "A major technology market with strong growth in AI, cloud computing, and innovation startups.", color: "#2563EB" },
-      { flag: "🇳🇱", name: "Netherlands", desc: "A leading digital infrastructure hub with strong demand for software and cloud services.", color: "#22C55E" },
-      { flag: "🇨🇭", name: "Switzerland", desc: "A high-value technology and financial services market with strong demand for fintech and cybersecurity solutions.", color: "#C41E3A" },
-      { flag: "🇪🇸", name: "Spain", desc: "A fast-growing digital economy with increasing demand for IT outsourcing and software development.", color: "#22C55E" },
-      { flag: "🇵🇱", name: "Poland", desc: "One of Europe's fastest growing technology sectors and a major digital transformation market.", color: "#2563EB" },
-    ].map((country, i) => (
-      <Link key={country.name} href="/ecosystem/tech-market-overview" className="group flex flex-col gap-2 bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-        <div className="flex items-center gap-3 mb-1">
-          <span className="text-2xl">{country.flag}</span>
-          <h3 className="font-heading font-bold text-[#1C1F2E] text-base group-hover:text-[#2563EB] transition-colors duration-200">{country.name}</h3>
-        </div>
-        <div className="h-px mb-1" style={{ background: `linear-gradient(to right, ${country.color}, transparent)` }} />
-        <p className="text-[#5A5F72] text-sm leading-relaxed flex-1">{country.desc}</p>
-        <span className="text-xs font-semibold mt-1" style={{ color: country.color }}>Explore market →</span>
-      </Link>
-    ))}
-    <div className="flex flex-col justify-center items-start bg-[#1a2b5e] rounded-xl p-4 shadow-sm">
-      <p className="text-blue-200 text-sm mb-2 font-semibold uppercase tracking-wider">Combined Market</p>
-      <p className="text-white font-extrabold text-2xl mb-2">Hundreds of billions</p>
-      <p className="text-blue-100 text-sm leading-relaxed">in digital services, IT infrastructure, and software development opportunities across Europe.</p>
-    </div>
-  </div>
-</AnimatedSection>
-
            <AnimatedSection animation="fade-up">
   <div
     className="mt-8 relative overflow-hidden rounded-xl bg-cover bg-center"
