@@ -159,7 +159,7 @@ export default function TrustedPartnerCertificationClient() {
       </PageHero>
 
       {/* ── About ────────────────────────────────────────────────────── */}
-      <Section variant="white">
+      <Section>
         <AnimatedSection>
           <div className="max-w-3xl">
             <SectionHeader
@@ -208,7 +208,7 @@ export default function TrustedPartnerCertificationClient() {
       </Section>
 
       {/* ── Benefits ─────────────────────────────────────────────────── */}
-      <Section variant="white">
+      <Section>
         <AnimatedSection>
           <SectionHeader
             label="Certification Benefits"
@@ -295,7 +295,7 @@ export default function TrustedPartnerCertificationClient() {
       </Section>
 
       {/* ── Process ──────────────────────────────────────────────────── */}
-      <Section variant="white">
+      <Section>
         <AnimatedSection>
           <SectionHeader
             label="Process"
