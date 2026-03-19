@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion } from "framer-motion";
-import { CheckCircle2, Cpu, ShoppingCart, Users, Globe2, BarChart3, Zap } from "lucide-react";
+import { CheckCircle2, Cpu, ShoppingCart, Users, Globe2, BarChart3, Zap, BadgeCheck } from "lucide-react";
 import { GlobalCTA } from "@/components/GlobalCTA";
 
 const products = [
@@ -39,6 +39,21 @@ const products = [
       "Exhibition and showcase events",
     ],
     cta: { label: "Explore TechMart", href: "/initiatives/techmart-global" },
+  },
+  {
+    icon: BadgeCheck,
+    label: "Certification Programme",
+    title: "Trusted Partner Certification",
+    description: "A certification programme recognising Pakistani technology companies that meet high standards of professionalism, reliability, and technical capability. Trusted Partner Certification helps international companies identify verified and credible technology partners, building confidence in cross-border collaboration.",
+    features: [
+      "Global recognition badge for certified companies",
+      "Listing in the UPTECH Global Technology Directory",
+      "Priority access to international technology projects",
+      "B2B matchmaking opportunities with European companies",
+      "Evaluation across 5 professional criteria",
+      "One-year renewable certification",
+    ],
+    cta: { label: "Explore Certification", href: "/initiatives/trusted-partner-certification" },
   },
 ];
 
@@ -142,7 +157,7 @@ export default function ProductsPage() {
       <GlobalCTA
         label="Get Access"
         title="Ready to Use Our Platforms?"
-        subtitle="UPTECH members get priority access to People AI and TechMart Global. Join today and start leveraging our technology platforms."
+        subtitle="UPTECH members get priority access to People AI, TechMart Global, and Trusted Partner Certification. Join today and start leveraging our technology platforms."
         primaryButtonText="Become a Member"
         primaryButtonLink="/membership"
         secondaryButtonText="Contact Us"

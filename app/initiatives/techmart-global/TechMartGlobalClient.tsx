@@ -220,6 +220,13 @@ const pakistanStrength = [
     icon: DollarSign,
     color: "#C41E3A",
   },
+  {
+    value: "Expanding",
+    label: "IT Exports",
+    description: "Pakistan's IT sector is growing rapidly with increasing exports to global markets.",
+    icon: TrendingUp,
+    color: "#7C3AED",
+  },
 ];
 
 /* ── Benefits ────────────────────────────────────────────────────── */
@@ -619,9 +626,12 @@ export default function TechMartGlobalClient() {
                 <p className="text-[#5A5F72] text-base leading-relaxed mb-4">
                   Companies certified through the UPTECH Trusted Partner Certification program receive a Verified Partner badge on their listings, increasing credibility with international buyers.
                 </p>
-                <p className="text-[#5A5F72] text-base leading-relaxed">
+                <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
                   The badge demonstrates that the company has passed UPTECH verification standards for professional experience, technical capability, and business integrity.
                 </p>
+                <a href="/initiatives/trusted-partner-certification" className="inline-flex items-center gap-2 text-[#2563EB] font-semibold text-base hover:underline">
+                  Learn about Trusted Partner Certification →
+                </a>
               </div>
             </motion.div>
           </div>

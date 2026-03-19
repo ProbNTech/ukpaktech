@@ -8,7 +8,7 @@ import {
   Building2, Eye, Target, CheckCircle2, Award, Users, Globe2,
   Cpu, GraduationCap, Rocket, Trophy, Handshake, Plane,
   Network, Store, Megaphone, Briefcase, Scale, UserCheck, Building,
-  Brain, ShoppingCart,
+  Brain, ShoppingCart, BadgeCheck,
   Banknote, Coins, TrendingUp,
   CreditCard, FileText, MapPin, Send,
   BriefcaseBusiness, CalendarDays, Newspaper, HelpCircle, Mail, Search,
@@ -116,6 +116,7 @@ const navItems: NavItem[] = [
     items: [
       { label: "People AI Platform", href: "/initiatives/people-ai", desc: "A human-centric AI ecosystem connecting talent, tools and opportunity at national scale.", icon: Brain },
       { label: "TechMart Global", href: "/initiatives/techmart-global", desc: "A cross-border digital marketplace enabling UK and Pakistani tech firms to trade and collaborate.", icon: ShoppingCart },
+      { label: "Trusted Partner Certification", href: "/initiatives/trusted-partner-certification", desc: "Certification programme recognising Pakistani technology companies that meet high standards for global collaboration.", icon: BadgeCheck },
     ],
   },
   /* 5 — Funding */
