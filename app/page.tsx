@@ -27,6 +27,7 @@ const ImpactStats = dynamic(() =>
   { ssr: false }
 );
 import { GlobalCTA } from "@/components/GlobalCTA";
+import BoardOfAdvisors from "@/components/BoardOfAdvisors";
 import { CountryCard } from "@/components/tech-market/CountryCard";
 import { countryData } from "@/lib/data/market-data";
 import { ContinuousCarousel } from "@/components/tech-market/CountryCarousel";
@@ -664,7 +665,10 @@ style={{
 
 </section>
 
-
+      {/* ════════════════════════════════════════════════════════════
+           BOARD OF ADVISORS
+      ═══════════════════════════════════════════════════════════ */}
+      <BoardOfAdvisors />
 
       {/* ════════════════════════════════════════════════════════════
            MORE FROM UPTECH — 4-column Card Grid
