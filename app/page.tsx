@@ -34,6 +34,7 @@ import { ContinuousCarousel } from "@/components/tech-market/CountryCarousel";
 import StatsCounter from "@/components/tech-market/StatsCounter";
 import MembershipSection from "@/components/tech-market/MembershipSection";
 import NewsCarousel from "@/components/NewsCarousel";
+const FeaturedPartnersCarousel = dynamic(() => import("@/components/FeaturedPartnersCarousel"), { ssr: false });
 // import { CountryCarousel } from "@/components/tech-market/CountryCarousel";
 
 /* Top 15 articles for the homepage news grid — 5 rows × 3 columns */
@@ -841,6 +842,11 @@ style={{
           </AnimatedSection>
         </div>
       </section>
+
+      {/* ════════════════════════════════════════════════════════════
+           FEATURED PARTNERS — auto-scrolling ad carousel
+      ═══════════════════════════════════════════════════════════ */}
+      <FeaturedPartnersCarousel />
 
       {/* ════════════════════════════════════════════════════════════
            PARTNER / MEMBER LOGOS — animated carousel
