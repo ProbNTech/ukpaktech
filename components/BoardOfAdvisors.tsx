@@ -17,7 +17,7 @@ const advisors = [
     role: "President",
     bio: "Leading bilateral partnerships, policy engagement, and operational strategy across both nations.",
     photo: "/image/ceo/khalil-choudhary-headshot.jpg",
-    accent: "#C0C0C0",
+    accent: "#D4AF37",
     delay: 0.15,
   },
   {
@@ -25,7 +25,7 @@ const advisors = [
     role: "Board Director — Technology & Innovation",
     bio: "Driving technology initiatives, innovation programmes, and digital transformation strategy.",
     photo: "/image/board/director.jpg",
-    accent: "#B08D57",
+    accent: "#D4AF37",
     delay: 0.3,
   },
 ];
@@ -57,31 +57,13 @@ export default function BoardOfAdvisors() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden">
-      {/* ── Deep gradient background ── */}
+    <section className="relative py-20 lg:py-28 bg-white overflow-hidden">
+      {/* Subtle dot-grid texture */}
       <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(160deg, #070d1f 0%, #0f1a3a 35%, #152040 60%, #0a1025 100%)",
-        }}
-      />
-
-      {/* Subtle radial light spots */}
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          background:
-            "radial-gradient(ellipse 600px 400px at 20% 20%, rgba(212,175,55,0.08) 0%, transparent 100%), radial-gradient(ellipse 500px 350px at 80% 80%, rgba(59,130,246,0.06) 0%, transparent 100%)",
-        }}
-      />
-
-      {/* Fine dot-grid texture */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            "radial-gradient(circle, #fff 0.5px, transparent 0.5px)",
+            "radial-gradient(circle, #1C1F2E 0.5px, transparent 0.5px)",
           backgroundSize: "24px 24px",
         }}
       />
@@ -96,25 +78,18 @@ export default function BoardOfAdvisors() {
           variants={headingVariants}
           className="text-center mb-14 lg:mb-16"
         >
-          <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#D4AF37] mb-4">
-            Leadership
-          </p>
+          <div className="flex items-center gap-3 mb-4 justify-center">
+            <div className="w-8 h-[3px] rounded-full bg-[#D4AF37]" />
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#D4AF37]">
+              Leadership
+            </p>
+          </div>
 
-          <h2
-            className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-5"
-            style={{ fontFamily: "'Lato', sans-serif" }}
-          >
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.8rem] leading-[1.1] text-[#1C1F2E]">
             Board of Advisors
           </h2>
 
-          {/* Accent underline */}
-          <div className="flex items-center justify-center gap-2">
-            <span className="block h-[2px] w-10 bg-gradient-to-r from-transparent to-[#D4AF37]" />
-            <span className="block h-[3px] w-16 bg-[#D4AF37] rounded-full" />
-            <span className="block h-[2px] w-10 bg-gradient-to-l from-transparent to-[#D4AF37]" />
-          </div>
-
-          <p className="mt-6 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto text-[#5A5F72]">
             Guided by distinguished leaders committed to strengthening
             UK–Pakistan technology collaboration.
           </p>
@@ -145,7 +120,7 @@ export default function BoardOfAdvisors() {
           className="mt-14 lg:mt-16 flex items-center justify-center gap-3"
         >
           <div className="h-px flex-1 max-w-[140px] bg-gradient-to-r from-transparent to-[#D4AF37]/30" />
-          <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-[0.2em] font-medium text-center">
+          <p className="text-xs sm:text-sm text-[#7A7E8F] uppercase tracking-[0.2em] font-medium text-center">
             More advisors joining soon
           </p>
           <div className="h-px flex-1 max-w-[140px] bg-gradient-to-l from-transparent to-[#D4AF37]/30" />
@@ -165,20 +140,9 @@ function AdvisorCard({
 }) {
   return (
     <div className="group relative flex flex-col items-center text-center rounded-2xl overflow-hidden h-full">
-      {/* Glass card background */}
+      {/* Card background — white with subtle border */}
       <div
-        className="absolute inset-0 rounded-2xl transition-all duration-500"
-        style={{
-          background: "linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)",
-          border: "1px solid rgba(255,255,255,0.06)",
-        }}
-      />
-      <div
-        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{
-          background: `linear-gradient(180deg, ${advisor.accent}08 0%, transparent 60%)`,
-          border: `1px solid ${advisor.accent}20`,
-        }}
+        className="absolute inset-0 rounded-2xl transition-all duration-500 bg-[#f7f8fa] border border-[#E5E7EB] group-hover:shadow-xl group-hover:border-[#D4AF37]/20"
       />
 
       {/* Card content */}
@@ -187,12 +151,12 @@ function AdvisorCard({
         <div className="relative mb-6 group/photo">
           {/* Outer glow ring */}
           <div
-            className="absolute -inset-[3px] rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-500"
+            className="absolute -inset-[3px] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-500"
             style={{
               background: `conic-gradient(from 0deg, ${advisor.accent}, transparent 40%, ${advisor.accent} 60%, transparent 100%)`,
             }}
           />
-          <div className="absolute -inset-[2px] rounded-full bg-[#0f1a3a]" />
+          <div className="absolute -inset-[2px] rounded-full bg-[#f7f8fa]" />
 
           <div
             className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full overflow-hidden transition-all duration-500 group-hover:scale-105 group-hover:shadow-lg"
@@ -206,19 +170,10 @@ function AdvisorCard({
               sizes="160px"
             />
           </div>
-
-          {/* Hover glow beneath */}
-          <div
-            className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500 -z-10"
-            style={{ background: advisor.accent }}
-          />
         </div>
 
         {/* Name */}
-        <h3
-          className="font-heading font-bold text-white text-lg sm:text-xl leading-tight mb-3"
-          style={{ fontFamily: "'Lato', serif" }}
-        >
+        <h3 className="font-heading font-bold text-[#1C1F2E] text-lg sm:text-xl leading-tight mb-3">
           {advisor.name}
         </h3>
 
@@ -235,7 +190,7 @@ function AdvisorCard({
         </span>
 
         {/* Bio */}
-        <p className="text-gray-400/80 text-sm leading-relaxed mt-auto">
+        <p className="text-[#5A5F72] text-sm leading-relaxed mt-auto">
           {advisor.bio}
         </p>
       </div>

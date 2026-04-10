@@ -20,7 +20,7 @@ export default function FeaturedPartnersCarousel() {
   if (homepagePartners.length === 0) return null;
 
   return (
-    <section className="relative z-[1] py-6 lg:py-8 bg-white">
+    <section className="relative z-[1] py-16 lg:py-20 bg-white">
       <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
         <AnimatedSection animation="blur-in">
           <SectionHeader

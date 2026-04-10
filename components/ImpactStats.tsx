@@ -78,7 +78,7 @@ function HalfCircleGauge({ percent, color, animate }: { percent: number; color: 
         </linearGradient>
       </defs>
       <g fill="none" strokeWidth="10" transform="translate(50, 50.5)">
-        <circle className="stroke-[#E8E6E3]" r={radius} strokeDasharray={strokeDasharray} />
+        <circle className="stroke-white/10" r={radius} strokeDasharray={strokeDasharray} />
         <circle
           ref={strokeRef}
           stroke={`url(#${gradId})`}
@@ -116,15 +116,15 @@ function StatScoreCard({ stat, index }: { stat: typeof stats[0]; index: number }
   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
 >
-  {/* Make LiquidCard transparent and remove border/shadow */}
-  <LiquidCard className="w-full h-full bg-transparent shadow-none border-none">
+  {/* Glass card for dark background */}
+  <LiquidCard className="w-full h-full bg-white/[0.06] backdrop-blur-sm shadow-none border border-white/[0.08] rounded-2xl">
     <CardContent className="p-7 flex flex-col h-full justify-between bg-transparent shadow-none border-none">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-base font-semibold text-[#1C1F2E] truncate">{stat.label}</h3>
+        <h3 className="text-base font-semibold text-white/90 truncate">{stat.label}</h3>
         <span
           className="shrink-0 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold"
-          style={{ background: `${stat.color}15`, color: stat.color }}
+          style={{ background: `${stat.color}20`, color: stat.color }}
         >
           {stat.percent}%
         </span>
@@ -147,7 +147,7 @@ function StatScoreCard({ stat, index }: { stat: typeof stats[0]; index: number }
       </div>
 
       {/* Description */}
-      <p className="text-sm text-[#3D4152]/70 text-center leading-relaxed mt-auto">
+      <p className="text-sm text-white/50 text-center leading-relaxed mt-auto">
         {stat.description}
       </p>
     </CardContent>
