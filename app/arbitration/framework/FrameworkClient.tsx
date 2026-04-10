@@ -9,6 +9,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { DownloadButton } from "@/components/DownloadButton";
 import {
   Scale,
   Shield,
@@ -254,9 +255,9 @@ export default function FrameworkClient() {
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/contact">File a Dispute</ShinyButton>
-          <Button href="/arbitration" variant="glass" size="lg">
-            Back to Overview
-          </Button>
+          <DownloadButton href="/documents/UPTECH-Arbitration-Framework.pdf" filename="UPTECH-Arbitration-Framework.pdf">
+            Download PDF
+          </DownloadButton>
         </div>
       </PageHero>
 

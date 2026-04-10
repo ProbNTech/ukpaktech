@@ -25,6 +25,8 @@ import {
   Download,
   Shield,
   ScrollText,
+  Gavel,
+  Scale,
 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
@@ -278,6 +280,94 @@ export default function MembershipClient() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </AnimatedSection>
+      </Section>
+
+      {/* ── Membership Documents ── */}
+      <Section variant="light">
+        <AnimatedSection>
+          <SectionHeader label="Official Documents" title="Membership Documents" color="blue" subtitle="Download the key legal documents governing UPTECH membership, partnerships, and dispute resolution." />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              { icon: Shield, title: "Membership Terms & Conditions", description: "Rules, obligations, fees, and policies governing your UPTECH membership.", href: "/documents/UPTECH-Membership-Terms-and-Conditions.pdf", webPage: "/membership/terms", color: "#2563EB", pages: "3 Pages" },
+              { icon: Gavel, title: "Arbitration Framework Policy", description: "Dispute resolution framework under the Arbitration Act 1996 (UK) and LCIA Rules.", href: "/documents/UPTECH-Arbitration-Framework.pdf", webPage: "/arbitration/framework", color: "#2563EB", pages: "4 Pages" },
+              { icon: Scale, title: "Code of Conduct", description: "Binding principles of integrity, professionalism, and ethical behaviour for all members.", href: "/documents/UPTECH-Code-of-Conduct.pdf", webPage: "/code-of-conduct", color: "#C41E3A", pages: "3 Pages" },
+              { icon: ScrollText, title: "Sales Commission Agreement", description: "Terms for UPTECH promoting and selling your products/services in UK and European markets.", href: "/documents/UPTECH-Sales-Commission-Agreement.pdf", color: "#22C55E", pages: "5 Pages" },
+              { icon: Handshake, title: "Memorandum of Understanding", description: "Framework for institutional partnerships between UPTECH and trade organisations.", href: "/documents/UPTECH-Memorandum-of-Understanding.pdf", color: "#C41E3A", pages: "4 Pages" },
+            ].map((doc, i) => {
+              const Icon = doc.icon;
+              return (
+                <motion.div
+                  key={doc.title}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.45, delay: i * 0.1 }}
+                  className="group relative bg-white border border-[#D8D5CF] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                >
+                  {/* Colored top accent bar */}
+                  <div className="h-1 w-full" style={{ background: doc.color }} />
+
+                  <div className="p-7 lg:p-8 flex flex-col h-full">
+                    {/* Icon + badge row */}
+                    <div className="flex items-start justify-between mb-5">
+                      <div
+                        className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                        style={{ background: `${doc.color}10`, border: `1px solid ${doc.color}20` }}
+                      >
+                        <Icon className="w-5.5 h-5.5" style={{ color: doc.color }} strokeWidth={1.5} />
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-[#F5F4F2] text-[#5A5F72]">
+                          PDF
+                        </span>
+                        <span className="text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md" style={{ background: `${doc.color}08`, color: doc.color }}>
+                          {doc.pages}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2 leading-snug">
+                      {doc.title}
+                    </h3>
+
+                    {/* Divider */}
+                    <div className="h-px bg-[#D8D5CF] mb-3" />
+
+                    {/* Description */}
+                    <p className="text-[#5A5F72] text-base leading-relaxed mb-6 flex-1">
+                      {doc.description}
+                    </p>
+
+                    {/* Buttons */}
+                    <div className="flex items-center gap-3">
+                      <a
+                        href={doc.href}
+                        download
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 group-hover:gap-3 w-fit"
+                        style={{ background: doc.color, color: "#fff" }}
+                      >
+                        <Download className="w-4 h-4" strokeWidth={2} />
+                        Download PDF
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
+                      </a>
+                      {"webPage" in doc && doc.webPage && (
+                        <a
+                          href={doc.webPage}
+                          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-semibold text-[#5A5F72] border border-[#D8D5CF] hover:bg-[#F5F4F2] transition-all duration-300"
+                        >
+                          <FileText className="w-3.5 h-3.5" strokeWidth={2} />
+                          View Online
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </AnimatedSection>
       </Section>
@@ -550,81 +640,6 @@ export default function MembershipClient() {
                 </p>
               </div>
             </motion.div>
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* ── Membership Documents ── */}
-      <Section variant="light">
-        <AnimatedSection>
-          <SectionHeader label="Official Documents" title="Membership Documents" color="blue" subtitle="Download the key legal documents governing UPTECH membership and partnership agreements." />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {[
-              { icon: Shield, title: "Membership Terms & Conditions", description: "Rules, obligations, fees, and policies governing your UPTECH membership.", href: "/documents/UPTECH-Membership-Terms-and-Conditions.pdf", color: "#2563EB", pages: "3 Pages", format: "PDF" },
-              { icon: ScrollText, title: "Sales Commission Agreement", description: "Terms for UPTECH promoting and selling your products/services in UK and European markets.", href: "/documents/UPTECH-Sales-Commission-Agreement.pdf", color: "#22C55E", pages: "5 Pages", format: "PDF" },
-              { icon: Handshake, title: "Memorandum of Understanding", description: "Framework for institutional partnerships between UPTECH and trade organisations.", href: "/documents/UPTECH-Memorandum-of-Understanding.pdf", color: "#C41E3A", pages: "4 Pages", format: "PDF" },
-            ].map((doc, i) => {
-              const Icon = doc.icon;
-              return (
-                <motion.a
-                  key={doc.title}
-                  href={doc.href}
-                  target="_blank"
-                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.45, delay: i * 0.1 }}
-                  className="group relative block bg-white border border-[#D8D5CF] rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                >
-                  {/* Colored top accent bar */}
-                  <div className="h-1 w-full" style={{ background: doc.color }} />
-
-                  <div className="p-7 lg:p-8 flex flex-col h-full">
-                    {/* Icon + badge row */}
-                    <div className="flex items-start justify-between mb-5">
-                      <div
-                        className="w-12 h-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                        style={{ background: `${doc.color}10`, border: `1px solid ${doc.color}20` }}
-                      >
-                        <Icon className="w-5.5 h-5.5" style={{ color: doc.color }} strokeWidth={1.5} />
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md bg-[#F5F4F2] text-[#5A5F72]">
-                          {doc.format}
-                        </span>
-                        <span className="text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-md" style={{ background: `${doc.color}08`, color: doc.color }}>
-                          {doc.pages}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2 leading-snug group-hover:text-[#1C1F2E] transition-colors duration-200">
-                      {doc.title}
-                    </h3>
-
-                    {/* Divider */}
-                    <div className="h-px bg-white mb-3" />
-
-                    {/* Description */}
-                    <p className="text-[#5A5F72] text-base leading-relaxed mb-6 flex-1">
-                      {doc.description}
-                    </p>
-
-                    {/* Download button */}
-                    <div
-                      className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 group-hover:gap-3.5 w-fit"
-                      style={{ background: doc.color, color: "#fff" }}
-                    >
-                      <Download className="w-4 h-4" strokeWidth={2} />
-                      Download PDF
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
-                    </div>
-                  </div>
-                </motion.a>
-              );
-            })}
           </div>
         </AnimatedSection>
       </Section>

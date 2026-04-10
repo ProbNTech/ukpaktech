@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { GlobalCTA } from "@/components/GlobalCTA";
+import { DownloadButton } from "@/components/DownloadButton";
 
 const navSections = [
   { id: "principles", label: "Principles" },
@@ -82,7 +83,13 @@ export default function CodeOfConductPage() {
         title="Code of Conduct"
         subtitle="UK-Pakistan Tech Council Code of Conduct"
         image="/image/banners/banner29.jpg"
-      />
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <DownloadButton href="/documents/UPTECH-Code-of-Conduct.pdf" filename="UPTECH-Code-of-Conduct.pdf">
+            Download PDF
+          </DownloadButton>
+        </div>
+      </PageHero>
 
       <div className="content-body">
       {/* ── Summary + Quick Nav — Light section ──────────────────────── */}
