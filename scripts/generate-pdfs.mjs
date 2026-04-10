@@ -17,12 +17,16 @@
  */
 
 import { PDFDocument, StandardFonts, rgb, PageSizes } from "pdf-lib";
-import { writeFileSync } from "fs";
+import { writeFileSync, existsSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT_DIR = join(__dirname, "..", "public", "documents");
+
+if (!existsSync(OUTPUT_DIR)) {
+  mkdirSync(OUTPUT_DIR, { recursive: true });
+}
 
 // ── Design Constants ────────────────────────────────────────────────────────
 const NAVY = rgb(0.122, 0.204, 0.373);        // #1F3460 — navy blue for headings
@@ -41,6 +45,7 @@ const FOOTER_Y = 30;
 
 // ── Helper: word-wrap text to fit a width ───────────────────────────────────
 function wrapText(text, font, fontSize, maxWidth) {
+  if (!text) return [];
   const words = text.split(" ");
   const lines = [];
   let currentLine = "";
@@ -80,7 +85,6 @@ class UptechPdfBuilder {
     this.fonts.regular = await this.doc.embedFont(StandardFonts.TimesRoman);
     this.fonts.bold = await this.doc.embedFont(StandardFonts.TimesRomanBold);
     this.fonts.italic = await this.doc.embedFont(StandardFonts.TimesRomanItalic);
-    this.fonts.boldItalic = await this.doc.embedFont(StandardFonts.TimesRomanBoldItalic);
     this.addPage();
   }
 
@@ -242,21 +246,6 @@ class UptechPdfBuilder {
     this.y -= 2;
   }
 
-  // ── Italic sub-heading ─────────────────────────────────────────────────
-  drawItalicSubHeading(text) {
-    this.ensureSpace(20);
-    this.y -= 2;
-    const size = 10;
-    this.page.drawText(text, {
-      x: MARGIN_LEFT,
-      y: this.y,
-      size,
-      font: this.fonts.boldItalic,
-      color: BLACK,
-    });
-    this.y -= 15;
-  }
-
   // ── Paragraph text ────────────────────────────────────────────────────
   drawParagraph(text, opts = {}) {
     const size = opts.size || 10;
@@ -285,7 +274,9 @@ class UptechPdfBuilder {
     const size = 10;
     const { bold, regular } = this.fonts;
     const fullText = `${boldPart} ${normalPart}`;
-    const lines = wrapText(fullText, regular, size, CONTENT_W);
+    // Use bold font for width calc since the first line contains bold text;
+    // this prevents the bold portion from overflowing the line width
+    const lines = wrapText(fullText, bold, size, CONTENT_W);
 
     for (let i = 0; i < lines.length; i++) {
       this.ensureSpace(14);
@@ -344,7 +335,16 @@ class UptechPdfBuilder {
     const font = this.fonts.regular;
     const boldFont = this.fonts.bold;
 
-    this.ensureSpace(14);
+    const textIndent = indent + 12;
+    const maxW = CONTENT_W - textIndent;
+
+    // Pre-calculate how many lines this bullet needs so we can ensure
+    // at least the first two lines (bullet + first text line) fit on the
+    // current page. This prevents orphaned bullet dots.
+    const preLines = wrapText(text, font, size, maxW);
+    const firstChunkHeight = Math.min(preLines.length, 2) * 14;
+    this.ensureSpace(firstChunkHeight);
+
     // Draw bullet
     this.page.drawText(bulletChar, {
       x: MARGIN_LEFT + indent,
@@ -354,18 +354,13 @@ class UptechPdfBuilder {
       color: BLACK,
     });
 
-    const textIndent = indent + 12;
-    const maxW = CONTENT_W - textIndent;
-
     // Handle bold-lead bullets ("Term — definition")
     const emDashIdx = text.indexOf(" \u2014 ");
     const dashIdx = text.indexOf(" \u2013 ");
     const sepIdx = emDashIdx !== -1 ? emDashIdx : dashIdx;
-    const sep = emDashIdx !== -1 ? " \u2014 " : " \u2013 ";
 
     if (sepIdx !== -1 && !opts.noBoldLead) {
       const boldPart = text.substring(0, sepIdx);
-      const normalPart = text.substring(sepIdx);
       const fullLines = wrapText(text, font, size, maxW);
 
       for (let i = 0; i < fullLines.length; i++) {
@@ -421,70 +416,6 @@ class UptechPdfBuilder {
   // ── Spacer ─────────────────────────────────────────────────────────────
   space(px = 8) {
     this.y -= px;
-  }
-
-  // ── Horizontal rule ────────────────────────────────────────────────────
-  drawRule() {
-    this.ensureSpace(10);
-    this.page.drawLine({
-      start: { x: MARGIN_LEFT, y: this.y },
-      end: { x: PAGE_W - MARGIN_RIGHT, y: this.y },
-      thickness: 0.5,
-      color: RULE_COLOR,
-    });
-    this.y -= 10;
-  }
-
-  // ── Form field line (Label: ___________) ──────────────────────────────
-  drawFormField(label) {
-    this.ensureSpace(20);
-    const size = 10;
-    this.page.drawText(label, {
-      x: MARGIN_LEFT + 5,
-      y: this.y,
-      size,
-      font: this.fonts.bold,
-      color: BLACK,
-    });
-    const labelW = this.fonts.bold.widthOfTextAtSize(label, size);
-    const lineStart = MARGIN_LEFT + 5 + labelW + 10;
-    const lineEnd = PAGE_W - MARGIN_RIGHT;
-    if (lineStart < lineEnd) {
-      this.page.drawLine({
-        start: { x: lineStart, y: this.y - 1 },
-        end: { x: lineEnd, y: this.y - 1 },
-        thickness: 0.5,
-        color: BLACK,
-      });
-    }
-    this.y -= 20;
-  }
-
-  // ── Signature block (two columns) ──────────────────────────────────────
-  drawSignatureBlock(leftTitle, rightTitle) {
-    this.ensureSpace(120);
-    this.y -= 5;
-    const size = 10;
-    const halfW = CONTENT_W / 2 - 10;
-    const leftX = MARGIN_LEFT;
-    const rightX = MARGIN_LEFT + CONTENT_W / 2 + 10;
-
-    // Titles
-    this.page.drawText(leftTitle, { x: leftX, y: this.y, size, font: this.fonts.bold, color: NAVY });
-    this.page.drawText(rightTitle, { x: rightX, y: this.y, size, font: this.fonts.bold, color: NAVY });
-    this.y -= 16;
-
-    this.page.drawText("Authorized Person", { x: leftX, y: this.y, size: 9, font: this.fonts.regular, color: BLACK });
-    this.page.drawText("Authorized Person", { x: rightX, y: this.y, size: 9, font: this.fonts.regular, color: BLACK });
-    this.y -= 20;
-
-    for (const label of ["Name:", "Title:", "Date:", "Signature:"]) {
-      this.page.drawText(label, { x: leftX, y: this.y, size: 9, font: this.fonts.regular, color: BLACK });
-      this.page.drawLine({ start: { x: leftX + 60, y: this.y - 1 }, end: { x: leftX + halfW, y: this.y - 1 }, thickness: 0.5, color: BLACK });
-      this.page.drawText(label, { x: rightX, y: this.y, size: 9, font: this.fonts.regular, color: BLACK });
-      this.page.drawLine({ start: { x: rightX + 60, y: this.y - 1 }, end: { x: rightX + halfW, y: this.y - 1 }, thickness: 0.5, color: BLACK });
-      this.y -= 20;
-    }
   }
 
   // ── Save to file ──────────────────────────────────────────────────────
