@@ -9,6 +9,7 @@ import {
   FileText, Target, Banknote, Lock, Clock,
   Scale, Gavel, PenTool, CheckCircle2, AlertTriangle, Briefcase,
 } from "lucide-react";
+import { DownloadButton } from "@/components/DownloadButton";
 
 const sections = [
   {
@@ -200,7 +201,13 @@ export default function JobPromotionAgreementPage() {
         title="Job Promotion Agreement"
         subtitle="Terms and conditions governing the promotion of job opportunities through the UK\u2013Pakistan Technology Council network and channels."
         image="/image/banners/banner39.jpg"
-      />
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <DownloadButton href="/documents/UPTECH-Job-Promotion-Agreement.pdf" filename="UPTECH-Job-Promotion-Agreement.pdf">
+            Download PDF
+          </DownloadButton>
+        </div>
+      </PageHero>
 
       {/* Parties */}
       <Section variant="light">

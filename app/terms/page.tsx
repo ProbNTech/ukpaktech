@@ -7,6 +7,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
 import { useState } from "react";
 import { ChevronDown, FileText, Mail } from "lucide-react";
+import { DownloadButton } from "@/components/DownloadButton";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    Terms & Conditions Data — Client's exact wording preserved verbatim
@@ -271,7 +272,13 @@ export default function TermsPage() {
         title="Acceptance of Terms of Use for This Website"
         subtitle="These Terms and Conditions, together with any and all other documents referred to herein, set out the terms of use under which you may use this website."
         image="/image/banners/banner21.jpg"
-      />
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <DownloadButton href="/documents/UPTECH-Terms-and-Conditions.pdf" filename="UPTECH-Terms-and-Conditions.pdf">
+            Download PDF
+          </DownloadButton>
+        </div>
+      </PageHero>
 
       <div className="content-body">
       {/* ── Background Notice — Light section ──────────────────────── */}

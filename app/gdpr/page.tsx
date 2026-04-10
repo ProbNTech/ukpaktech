@@ -9,6 +9,7 @@ import {
   Shield, Eye, Users, FileText, Bell, Scale, Lock, Clock,
   UserCheck, ArrowRightLeft, Ban, Mail, CheckCircle2,
 } from "lucide-react";
+import { DownloadButton } from "@/components/DownloadButton";
 
 /* ── Data Subject Rights (from Cookies page GDPR section) ──────────── */
 const dataSubjectRights = [
@@ -54,7 +55,13 @@ export default function GDPRPage() {
         title="GDPR Compliance"
         subtitle="Our commitment to data protection and your rights under the General Data Protection Regulation."
         image="/image/banners/banner30.jpg"
-      />
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <DownloadButton href="/documents/UPTECH-GDPR-Policy.pdf" filename="UPTECH-GDPR-Policy.pdf">
+            Download PDF
+          </DownloadButton>
+        </div>
+      </PageHero>
 
       <div className="content-body">
       {/* ── Data Subject Rights — Light section ─────────────────────── */}

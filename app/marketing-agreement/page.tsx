@@ -9,6 +9,7 @@ import {
   FileText, Target, Shield, Banknote, Lock, Clock,
   Scale, Gavel, PenTool, CheckCircle2, AlertTriangle,
 } from "lucide-react";
+import { DownloadButton } from "@/components/DownloadButton";
 
 const sections = [
   {
@@ -240,7 +241,13 @@ export default function MarketingAgreementPage() {
         title="Marketing Agreement"
         subtitle="Terms and conditions governing the promotion, marketing, and showcase of products through the UK\u2013Pakistan Technology Council network."
         image="/image/banners/banner32.jpg"
-      />
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <DownloadButton href="/documents/UPTECH-Marketing-Agreement.pdf" filename="UPTECH-Marketing-Agreement.pdf">
+            Download PDF
+          </DownloadButton>
+        </div>
+      </PageHero>
 
       {/* Parties */}
       <Section variant="light">

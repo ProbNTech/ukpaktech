@@ -10,6 +10,7 @@ import {
   CheckCircle2, Scale, Database, UserCheck,
   Fingerprint, Bell, BarChart3, AlertTriangle,
 } from "lucide-react";
+import { DownloadButton } from "@/components/DownloadButton";
 
 /* ── Retention data ───────────────────────────────────────────────── */
 const retentionData = [
@@ -57,7 +58,13 @@ export default function PrivacyPage() {
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your personal information."
         image="/image/banners/banner23.jpg"
-      />
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <DownloadButton href="/documents/UPTECH-Privacy-Policy.pdf" filename="UPTECH-Privacy-Policy.pdf">
+            Download PDF
+          </DownloadButton>
+        </div>
+      </PageHero>
 
       <div className="content-body">
       {/* ── Introduction + Quick Nav ─────────────────────────────────── */}
