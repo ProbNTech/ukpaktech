@@ -145,6 +145,8 @@ interface FormData {
   referrerEmail: string;
   referrerPhone: string;
   termsAccepted: boolean;
+  membershipTermsAccepted: boolean;
+  arbitrationAccepted: boolean;
 }
 
 const initialFormData: FormData = {
@@ -200,6 +202,8 @@ const initialFormData: FormData = {
   referrerEmail: "",
   referrerPhone: "",
   termsAccepted: false,
+  membershipTermsAccepted: false,
+  arbitrationAccepted: false,
 };
 
 export default function MembershipApplicationForm() {
@@ -312,6 +316,8 @@ export default function MembershipApplicationForm() {
 
       case 9: // Review & Submit
         if (!formData.termsAccepted) newErrors.termsAccepted = "You must accept the terms and conditions";
+        if (!formData.membershipTermsAccepted) newErrors.membershipTermsAccepted = "You must accept the membership terms";
+        if (!formData.arbitrationAccepted) newErrors.arbitrationAccepted = "You must accept the arbitration framework";
         break;
     }
 
@@ -1644,37 +1650,81 @@ export default function MembershipApplicationForm() {
                             Submit Your Application
                           </h3>
                           <p className="text-[#5A5F72] mb-6 text-base leading-relaxed">
-                            By submitting this form, you confirm that the information provided is accurate and agree
-                            to UPTECH&apos;s{" "}
-                            <Link href="/terms" className="text-[#2563EB] hover:underline">Terms &amp; Conditions</Link>,{" "}
-                            <a href="/documents/UPTECH-Membership-Terms-and-Conditions.pdf" target="_blank" className="text-[#2563EB] hover:underline">Membership Terms &amp; Conditions</a>,{" "}
-                            <Link href="/privacy" className="text-[#2563EB] hover:underline">Privacy Policy</Link>, and{" "}
-                            <Link href="/code-of-conduct" className="text-[#2563EB] hover:underline">Code of Conduct</Link>.
+                            Please review and accept the following agreements to submit your application.
                             Membership is non-transferable. Payment details will be provided upon application approval.
                           </p>
 
-                          <label className={`flex items-start gap-3 text-left mb-2 max-w-lg mx-auto ${errors.termsAccepted ? "ring-1 ring-[#C41E3A]/30 rounded-lg p-3" : "mb-8"}`}>
-                            <input
-                              type="checkbox"
-                              checked={formData.termsAccepted}
-                              onChange={(e) => updateField("termsAccepted", e.target.checked)}
-                              className="mt-1 accent-[#2563EB]"
-                            />
-                            <span className="text-base text-[#3D4152]">
-                              I confirm the above information is accurate and I agree to UPTECH&apos;s Terms &amp; Conditions,
-                              Privacy Policy, and Code of Conduct. <span className="text-[#C41E3A]">*</span>
-                            </span>
-                          </label>
-                          {errors.termsAccepted && (
-                            <motion.p
-                              initial={{ opacity: 0, y: -4 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              className="flex items-center justify-center gap-1.5 mb-8 text-sm text-[#C41E3A]"
-                            >
-                              <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
-                              {errors.termsAccepted}
-                            </motion.p>
-                          )}
+                          {/* ── Agreement checkboxes ── */}
+                          <div className="flex flex-col gap-4 max-w-lg mx-auto text-left mb-8">
+                            {/* 1. Terms, Privacy & Code of Conduct */}
+                            <label className={`flex items-start gap-3 cursor-pointer ${errors.termsAccepted ? "ring-1 ring-[#C41E3A]/30 rounded-lg p-3" : ""}`}>
+                              <input
+                                type="checkbox"
+                                checked={formData.termsAccepted}
+                                onChange={(e) => updateField("termsAccepted", e.target.checked)}
+                                className="mt-1 accent-[#2563EB] w-4 h-4"
+                              />
+                              <span className="text-sm text-[#3D4152] leading-relaxed">
+                                I confirm the above information is accurate and I agree to UPTECH&apos;s{" "}
+                                <Link href="/terms" className="text-[#2563EB] hover:underline">Terms &amp; Conditions</Link>,{" "}
+                                <Link href="/privacy" className="text-[#2563EB] hover:underline">Privacy Policy</Link>, and{" "}
+                                <Link href="/code-of-conduct" className="text-[#2563EB] hover:underline">Code of Conduct</Link>.
+                                <span className="text-[#C41E3A]"> *</span>
+                              </span>
+                            </label>
+                            {errors.termsAccepted && (
+                              <p className="flex items-center gap-1.5 text-sm text-[#C41E3A] -mt-2 ml-7">
+                                <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                                {errors.termsAccepted}
+                              </p>
+                            )}
+
+                            {/* 2. Membership Terms & Conditions */}
+                            <label className={`flex items-start gap-3 cursor-pointer ${errors.membershipTermsAccepted ? "ring-1 ring-[#C41E3A]/30 rounded-lg p-3" : ""}`}>
+                              <input
+                                type="checkbox"
+                                checked={formData.membershipTermsAccepted}
+                                onChange={(e) => updateField("membershipTermsAccepted", e.target.checked)}
+                                className="mt-1 accent-[#2563EB] w-4 h-4"
+                              />
+                              <span className="text-sm text-[#3D4152] leading-relaxed">
+                                I accept the{" "}
+                                <a href="/membership/terms" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:underline">
+                                  Membership Terms &amp; Conditions
+                                </a>, including fee structure, non-transferability, and disciplinary procedure.
+                                <span className="text-[#C41E3A]"> *</span>
+                              </span>
+                            </label>
+                            {errors.membershipTermsAccepted && (
+                              <p className="flex items-center gap-1.5 text-sm text-[#C41E3A] -mt-2 ml-7">
+                                <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                                {errors.membershipTermsAccepted}
+                              </p>
+                            )}
+
+                            {/* 3. Arbitration & Dispute Resolution */}
+                            <label className={`flex items-start gap-3 cursor-pointer ${errors.arbitrationAccepted ? "ring-1 ring-[#C41E3A]/30 rounded-lg p-3" : ""}`}>
+                              <input
+                                type="checkbox"
+                                checked={formData.arbitrationAccepted}
+                                onChange={(e) => updateField("arbitrationAccepted", e.target.checked)}
+                                className="mt-1 accent-[#2563EB] w-4 h-4"
+                              />
+                              <span className="text-sm text-[#3D4152] leading-relaxed">
+                                I acknowledge and accept the{" "}
+                                <a href="/arbitration/framework" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:underline">
+                                  Arbitration &amp; Dispute Resolution Framework
+                                </a>{" "}governed under the Arbitration Act 1996 (UK).
+                                <span className="text-[#C41E3A]"> *</span>
+                              </span>
+                            </label>
+                            {errors.arbitrationAccepted && (
+                              <p className="flex items-center gap-1.5 text-sm text-[#C41E3A] -mt-2 ml-7">
+                                <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
+                                {errors.arbitrationAccepted}
+                              </p>
+                            )}
+                          </div>
 
                           {submitError && (
                             <motion.div
@@ -1691,10 +1741,10 @@ export default function MembershipApplicationForm() {
 
                           <motion.button
                             type="submit"
-                            disabled={submitting}
+                            disabled={submitting || !formData.termsAccepted || !formData.membershipTermsAccepted || !formData.arbitrationAccepted}
                             animate={shake ? { x: [0, -8, 8, -6, 6, -3, 3, 0] } : {}}
                             transition={{ duration: 0.5 }}
-                            className="group relative inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-[#2563EB] to-[#22C55E] text-white font-bold text-[15px] rounded-xl hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 transition-all duration-300 shadow-[0_4px_20px_rgba(37,99,235,0.2)] disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden"
+                            className={`group relative inline-flex items-center gap-3 px-10 py-4 font-bold text-[15px] rounded-xl transition-all duration-300 overflow-hidden ${submitting || !formData.termsAccepted || !formData.membershipTermsAccepted || !formData.arbitrationAccepted ? "bg-[#D1D5DB] text-[#9CA3AF] cursor-not-allowed shadow-none" : "bg-gradient-to-r from-[#2563EB] to-[#22C55E] text-white hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)] hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(37,99,235,0.2)]"}`}
                           >
                             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                             {submitting ? (
