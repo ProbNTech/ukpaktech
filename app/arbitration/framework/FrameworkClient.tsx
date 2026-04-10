@@ -251,513 +251,514 @@ export default function FrameworkClient() {
           </>
         }
         subtitle="Version 1.0 — A comprehensive framework for resolving disputes arising in technology agreements, SaaS platforms, digital assets, software development contracts, and intellectual property transactions."
-        particleNetwork
+        image="/image/banners/banner43.jpg"
+        // particleNetwork
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/contact">File a Dispute</ShinyButton>
-          <DownloadButton href="/documents/UPTECH-Arbitration-Framework.pdf" filename="UPTECH-Arbitration-Framework.pdf">
-            Download PDF
-          </DownloadButton>
-        </div>
-      </PageHero>
+      <ShinyButton href="/contact">File a Dispute</ShinyButton>
+      <DownloadButton href="/documents/UPTECH-Arbitration-Framework.pdf" filename="UPTECH-Arbitration-Framework.pdf">
+        Download PDF
+      </DownloadButton>
+    </div>
+      </PageHero >
 
-      {/* ── Scope ────────────────────────────────────────────────── */}
-      <Section variant="light">
-        <AnimatedSection>
-          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
-            <div className="lg:col-span-3">
-              <SectionHeader
-                label="Introduction"
-                title="Framework Scope & Purpose"
-                color="blue"
-              />
-              <p className="text-[#3D4152] text-lg leading-relaxed mb-5">
-                This policy establishes the UPTECH Arbitration Framework for resolving disputes arising in technology agreements, SaaS platforms, digital assets, software development contracts, and intellectual property transactions.
-              </p>
-              <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
-                The purpose of the Framework is to provide a fast, confidential, and enforceable dispute resolution process that leverages technology while complying with UK law (Arbitration Act 1996) and international arbitration standards.
-              </p>
-              <p className="text-[#5A5F72] text-lg leading-relaxed">
-                This Framework applies to all contracts entered into by UPTECH involving technology services, software licensing, SaaS, and platform agreements, as well as disputes between UPTECH and clients, vendors, technology partners, and investors where contracts reference arbitration.
-              </p>
-            </div>
-
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="lg:col-span-2"
-            >
-              <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 sticky top-8">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}>
-                    <Scale className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Applies To</h3>
-                </div>
-                <div className="h-px bg-[#D8D5CF] mb-5" />
-                <ul className="space-y-3">
-                  {[
-                    "Technology services & software licensing",
-                    "SaaS & platform agreements",
-                    "Digital asset & blockchain disputes",
-                    "Intellectual property transactions",
-                    "Disputes with clients, vendors, and partners",
-                    "Investor disputes (where contracts reference arbitration)",
-                  ].map((item, i) => (
-                    <motion.li key={item} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -8 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-                <div className="mt-5 pt-4 border-t border-[#D8D5CF]">
-                  <p className="text-xs text-[#5A5F72]"><span className="font-semibold text-[#C41E3A]">Excluded:</span> Employment disputes (separate HR policy) and regulatory/statutory enforcement matters.</p>
-                </div>
-              </div>
-            </motion.div>
+    {/* ── Scope ────────────────────────────────────────────────── */ }
+    < Section variant = "light" >
+      <AnimatedSection>
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+          <div className="lg:col-span-3">
+            <SectionHeader
+              label="Introduction"
+              title="Framework Scope & Purpose"
+              color="blue"
+            />
+            <p className="text-[#3D4152] text-lg leading-relaxed mb-5">
+              This policy establishes the UPTECH Arbitration Framework for resolving disputes arising in technology agreements, SaaS platforms, digital assets, software development contracts, and intellectual property transactions.
+            </p>
+            <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
+              The purpose of the Framework is to provide a fast, confidential, and enforceable dispute resolution process that leverages technology while complying with UK law (Arbitration Act 1996) and international arbitration standards.
+            </p>
+            <p className="text-[#5A5F72] text-lg leading-relaxed">
+              This Framework applies to all contracts entered into by UPTECH involving technology services, software licensing, SaaS, and platform agreements, as well as disputes between UPTECH and clients, vendors, technology partners, and investors where contracts reference arbitration.
+            </p>
           </div>
-        </AnimatedSection>
-      </Section>
 
-      {/* ── Legal Basis ──────────────────────────────────────────── */}
-      <Section variant="dark">
-        <AnimatedSection>
-          <SectionHeader
-            label="Legal Foundation"
-            title="Legal Basis"
-            subtitle="The Framework is governed by established UK and international arbitration law, ensuring all awards are binding, final, and enforceable."
-            color="red"
-            dark
-          />
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {legalBasis.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <motion.div key={item.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }} className="group relative h-full rounded-2xl border border-white/10 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden">
-                    <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${item.color}, ${item.color}60)` }} />
-                    <div className="p-7 text-center">
-                      <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300" style={{ background: `${item.color}12`, border: `1px solid ${item.color}25` }}>
-                        <Icon className="w-7 h-7" style={{ color: item.color }} strokeWidth={1.5} />
-                      </div>
-                      <h3 className="font-heading font-bold text-white text-lg mb-2">{item.title}</h3>
-                      <div className="h-px bg-white/10 mb-3" />
-                      <p className="text-white/60 text-sm leading-relaxed">{item.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* ── Arbitration Agreement ────────────────────────────────── */}
-      <Section variant="light">
-        <AnimatedSection>
-          <SectionHeader label="Agreement" title="Arbitration Acceptance Agreement" subtitle="Under the Arbitration Act 1996 — United Kingdom. Every relevant contract must include an arbitration clause." color="green" />
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Agreement Overview */}
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
-              <div className="h-1 w-full bg-gradient-to-r from-[#22C55E] to-[#22C55E]/40" />
-              <div className="p-7">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#22C55E10", border: "1px solid #22C55E20" }}>
-                    <FileText className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Agreement Clauses</h3>
-                </div>
-                <div className="h-px bg-[#D8D5CF] mb-5" />
-                <p className="text-[#5A5F72] text-sm leading-relaxed mb-4">
-                  Parties sign a formal Arbitration Acceptance Agreement covering the following key provisions:
-                </p>
-                <ul className="space-y-2.5">
-                  {[
-                    "Agreement to arbitrate all disputes",
-                    "Governing law: Laws of England and Wales",
-                    "Arbitration procedure under the Arbitration Act 1996",
-                    "Appointment of independent arbitrator(s)",
-                    "Seat and venue: London, England (or agreed alternative)",
-                    "Confidentiality of all proceedings and awards",
-                    "Binding and enforceable decision",
-                    "Arbitrator authority to allocate costs",
-                    "Waiver of court proceedings (except enforcement)",
-                    "Voluntary acceptance by both parties",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-
-            {/* Contract Requirements */}
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
-              <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40" />
-              <div className="p-7">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}>
-                    <ClipboardList className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Contract Requirements</h3>
-                </div>
-                <div className="h-px bg-[#D8D5CF] mb-5" />
-                <p className="text-[#5A5F72] text-sm leading-relaxed mb-4">
-                  Every relevant contract must include an arbitration clause specifying:
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    { label: "Agreement to Arbitrate", desc: "Commitment to resolve disputes under this Framework" },
-                    { label: "Seat of Arbitration", desc: "Typically London, England" },
-                    { label: "Governing Law", desc: "Laws of England & Wales" },
-                    { label: "Number of Arbitrators", desc: "One or three, based on dispute complexity" },
-                    { label: "Procedural Rules", desc: "LCIA or UPTECH digital arbitration rules" },
-                    { label: "Language", desc: "English as the language of proceedings" },
-                  ].map((item) => (
-                    <li key={item.label} className="flex items-start gap-2.5">
-                      <BadgeCheck className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <div>
-                        <span className="font-semibold text-[#1C1F2E] text-sm">{item.label}</span>
-                        <span className="text-[#5A5F72] text-xs block">{item.desc}</span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-5 pt-4 border-t border-[#D8D5CF]">
-                  <p className="text-[#5A5F72] text-xs leading-relaxed">
-                    <span className="font-semibold text-[#1C1F2E]">Note:</span> Proceedings may take place in person or by electronic means as determined by the arbitrator. The decision or award shall be final and binding, and judgment may be entered in any court of competent jurisdiction.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* ── Key Principles — DARK ────────────────────────────────── */}
-      <Section variant="dark">
-        <AnimatedSection>
-          <SectionHeader label="Principles" title="Key Principles" color="green" />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {keyPrinciples.map((p, i) => {
-              const Icon = p.icon;
-              const lightColors = ["#60a5fa", "#86efac", "#F9A8B4", "#60a5fa", "#86efac"];
-              const c = lightColors[i];
-              return (
-                <motion.div key={p.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }} className="group rounded-2xl border border-white/10 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/5 transition-all duration-300">
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden h-full">
-                    <div className="h-0.5 w-full" style={{ background: `linear-gradient(90deg, ${c}, transparent)` }} />
-                    <div className="p-5 text-center">
-                      <div className="w-11 h-11 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" style={{ background: `${c}15`, border: `1px solid ${c}30` }}>
-                        <Icon className="w-5 h-5" style={{ color: c }} strokeWidth={1.5} />
-                      </div>
-                      <h3 className="font-heading font-bold text-white text-sm mb-1">{p.title}</h3>
-                      <p className="text-white/50 text-xs leading-relaxed">{p.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* ── Detailed Process ─────────────────────────────────────── */}
-      <Section variant="light">
-        <AnimatedSection>
-          <SectionHeader label="Detailed Process" title="Arbitration Procedure" subtitle="A step-by-step guide to how disputes are handled from initiation to final award." color="blue" />
-
-          <div className="space-y-6">
-            {detailedSteps.map((step, i) => {
-              const Icon = step.icon;
-              return (
-                <motion.div key={step.number} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
-                  <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${step.color}, ${step.color}40)` }} />
-                  <div className="p-7 lg:p-8">
-                    <div className="flex items-center gap-4 mb-5">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold border-2" style={{ background: `linear-gradient(135deg, ${step.color}30, ${step.color}10)`, borderColor: `${step.color}60`, color: step.color }}>
-                        {step.number}
-                      </div>
-                      <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: `${step.color}08` }}>
-                        <Icon className="w-5 h-5" style={{ color: step.color }} strokeWidth={1.5} />
-                      </div>
-                      <h3 className="font-heading font-bold text-[#1C1F2E] text-xl">{step.title}</h3>
-                    </div>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 ml-0 lg:ml-[104px]">
-                      {step.items.map((item) => (
-                        <div key={item} className="flex items-start gap-2.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
-                          <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* ── Arbitrator Appointment ────────────────────────────────── */}
-      <Section variant="dark">
-        <AnimatedSection>
-          <SectionHeader label="Appointment" title="Arbitrator Appointment Procedure" color="green" dark />
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div>
-              <p className="text-white/80 text-lg leading-relaxed mb-5">
-                Parties attempt to mutually agree on arbitrators within 7 days of the Notice of Arbitration. If no agreement is reached, the UPTECH Arbitration Committee appoints from the Technical Arbitration Panel. All arbitrators must have relevant technical, industry, or legal expertise.
-              </p>
-
-              <div className="space-y-3">
-                {appointmentTimeline.map((item, i) => (
-                  <motion.div key={item.step} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.08 }} className="flex items-center justify-between bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 px-4 py-3">
-                    <div className="flex items-center gap-3">
-                      <span className="w-6 h-6 rounded-full bg-[#22C55E]/10 flex items-center justify-center text-xs font-bold text-[#22C55E]">{i + 1}</span>
-                      <span className="text-white text-sm font-medium">{item.step}</span>
-                    </div>
-                    <span className="text-xs font-bold text-[#22C55E] bg-[#22C55E]/8 px-2.5 py-1 rounded-full">{item.duration}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8">
+          <motion.div
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="lg:col-span-2"
+          >
+            <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 sticky top-8">
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#22C55E10", border: "1px solid #22C55E20" }}>
-                  <Shield className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}>
+                  <Scale className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-heading font-bold text-white text-lg">Conflict-of-Interest Process</h3>
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Applies To</h3>
               </div>
-              <div className="h-px bg-white/10 mb-5" />
+              <div className="h-px bg-[#D8D5CF] mb-5" />
               <ul className="space-y-3">
                 {[
-                  "All potential arbitrators must disclose any conflicts of interest",
-                  "Parties may raise objections within 3 business days of disclosure",
-                  "UPTECH Arbitration Committee resolves objections fairly and promptly",
-                  "Appointed arbitrators sign a declaration of compliance with the Framework",
-                  "All appointments formally documented via the digital platform",
+                  "Technology services & software licensing",
+                  "SaaS & platform agreements",
+                  "Digital asset & blockchain disputes",
+                  "Intellectual property transactions",
+                  "Disputes with clients, vendors, and partners",
+                  "Investor disputes (where contracts reference arbitration)",
                 ].map((item, i) => (
                   <motion.li key={item} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -8 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-white/60 text-sm leading-relaxed">{item}</span>
+                    <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
                   </motion.li>
                 ))}
               </ul>
-            </motion.div>
-          </div>
-        </AnimatedSection>
-      </Section>
+              <div className="mt-5 pt-4 border-t border-[#D8D5CF]">
+                <p className="text-xs text-[#5A5F72]"><span className="font-semibold text-[#C41E3A]">Excluded:</span> Employment disputes (separate HR policy) and regulatory/statutory enforcement matters.</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </AnimatedSection>
+      </Section >
 
-      {/* ── Cost Schedule ────────────────────────────────────────── */}
-      <Section variant="light">
-        <AnimatedSection>
-          <SectionHeader label="Fees" title="Cost Schedule & Fees" subtitle="Transparent pricing for arbitration services under the UPTECH Framework." color="red" />
+    {/* ── Legal Basis ──────────────────────────────────────────── */ }
+    < Section variant = "dark" >
+      <AnimatedSection>
+        <SectionHeader
+          label="Legal Foundation"
+          title="Legal Basis"
+          subtitle="The Framework is governed by established UK and international arbitration law, ensuring all awards are binding, final, and enforceable."
+          color="red"
+          dark
+        />
 
-          <div className="grid md:grid-cols-2 gap-7">
-            {costSchedule.map((group, gi) => (
-              <motion.div key={group.category} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: gi * 0.1 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
-                <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${group.color}, ${group.color}60)` }} />
-                <div className="p-7">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${group.color}10`, border: `1px solid ${group.color}20` }}>
-                      <PoundSterling className="w-5 h-5" style={{ color: group.color }} strokeWidth={1.5} />
+        <div className="grid md:grid-cols-3 gap-6">
+          {legalBasis.map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <motion.div key={item.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }} className="group relative h-full rounded-2xl border border-white/10 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden">
+                  <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${item.color}, ${item.color}60)` }} />
+                  <div className="p-7 text-center">
+                    <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300" style={{ background: `${item.color}12`, border: `1px solid ${item.color}25` }}>
+                      <Icon className="w-7 h-7" style={{ color: item.color }} strokeWidth={1.5} />
                     </div>
-                    <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">{group.category}</h3>
+                    <h3 className="font-heading font-bold text-white text-lg mb-2">{item.title}</h3>
+                    <div className="h-px bg-white/10 mb-3" />
+                    <p className="text-white/60 text-sm leading-relaxed">{item.description}</p>
                   </div>
-                  <div className="h-px bg-[#D8D5CF] mb-5" />
-                  <ul className="space-y-4">
-                    {group.items.map((item) => (
-                      <li key={item.label} className="flex items-center justify-between">
-                        <span className="text-[#3D4152] text-sm">{item.label}</span>
-                        <span className="text-sm font-bold whitespace-nowrap ml-3" style={{ color: group.color }}>{item.fee}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </motion.div>
-            ))}
+            );
+          })}
+        </div>
+      </AnimatedSection>
+      </Section >
+
+    {/* ── Arbitration Agreement ────────────────────────────────── */ }
+    < Section variant = "light" >
+      <AnimatedSection>
+        <SectionHeader label="Agreement" title="Arbitration Acceptance Agreement" subtitle="Under the Arbitration Act 1996 — United Kingdom. Every relevant contract must include an arbitration clause." color="green" />
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Agreement Overview */}
+          <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
+            <div className="h-1 w-full bg-gradient-to-r from-[#22C55E] to-[#22C55E]/40" />
+            <div className="p-7">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#22C55E10", border: "1px solid #22C55E20" }}>
+                  <FileText className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Agreement Clauses</h3>
+              </div>
+              <div className="h-px bg-[#D8D5CF] mb-5" />
+              <p className="text-[#5A5F72] text-sm leading-relaxed mb-4">
+                Parties sign a formal Arbitration Acceptance Agreement covering the following key provisions:
+              </p>
+              <ul className="space-y-2.5">
+                {[
+                  "Agreement to arbitrate all disputes",
+                  "Governing law: Laws of England and Wales",
+                  "Arbitration procedure under the Arbitration Act 1996",
+                  "Appointment of independent arbitrator(s)",
+                  "Seat and venue: London, England (or agreed alternative)",
+                  "Confidentiality of all proceedings and awards",
+                  "Binding and enforceable decision",
+                  "Arbitrator authority to allocate costs",
+                  "Waiver of court proceedings (except enforcement)",
+                  "Voluntary acceptance by both parties",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+          {/* Contract Requirements */}
+          <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
+            <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40" />
+            <div className="p-7">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}>
+                  <ClipboardList className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Contract Requirements</h3>
+              </div>
+              <div className="h-px bg-[#D8D5CF] mb-5" />
+              <p className="text-[#5A5F72] text-sm leading-relaxed mb-4">
+                Every relevant contract must include an arbitration clause specifying:
+              </p>
+              <ul className="space-y-3">
+                {[
+                  { label: "Agreement to Arbitrate", desc: "Commitment to resolve disputes under this Framework" },
+                  { label: "Seat of Arbitration", desc: "Typically London, England" },
+                  { label: "Governing Law", desc: "Laws of England & Wales" },
+                  { label: "Number of Arbitrators", desc: "One or three, based on dispute complexity" },
+                  { label: "Procedural Rules", desc: "LCIA or UPTECH digital arbitration rules" },
+                  { label: "Language", desc: "English as the language of proceedings" },
+                ].map((item) => (
+                  <li key={item.label} className="flex items-start gap-2.5">
+                    <BadgeCheck className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <div>
+                      <span className="font-semibold text-[#1C1F2E] text-sm">{item.label}</span>
+                      <span className="text-[#5A5F72] text-xs block">{item.desc}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-5 pt-4 border-t border-[#D8D5CF]">
+                <p className="text-[#5A5F72] text-xs leading-relaxed">
+                  <span className="font-semibold text-[#1C1F2E]">Note:</span> Proceedings may take place in person or by electronic means as determined by the arbitrator. The decision or award shall be final and binding, and judgment may be entered in any court of competent jurisdiction.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </AnimatedSection>
+      </Section >
+
+    {/* ── Key Principles — DARK ────────────────────────────────── */ }
+    < Section variant = "dark" >
+      <AnimatedSection>
+        <SectionHeader label="Principles" title="Key Principles" color="green" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          {keyPrinciples.map((p, i) => {
+            const Icon = p.icon;
+            const lightColors = ["#60a5fa", "#86efac", "#F9A8B4", "#60a5fa", "#86efac"];
+            const c = lightColors[i];
+            return (
+              <motion.div key={p.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }} className="group rounded-2xl border border-white/10 hover:-translate-y-1 hover:shadow-lg hover:shadow-white/5 transition-all duration-300">
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden h-full">
+                  <div className="h-0.5 w-full" style={{ background: `linear-gradient(90deg, ${c}, transparent)` }} />
+                  <div className="p-5 text-center">
+                    <div className="w-11 h-11 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" style={{ background: `${c}15`, border: `1px solid ${c}30` }}>
+                      <Icon className="w-5 h-5" style={{ color: c }} strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-heading font-bold text-white text-sm mb-1">{p.title}</h3>
+                    <p className="text-white/50 text-xs leading-relaxed">{p.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </AnimatedSection>
+      </Section >
+
+    {/* ── Detailed Process ─────────────────────────────────────── */ }
+    < Section variant = "light" >
+      <AnimatedSection>
+        <SectionHeader label="Detailed Process" title="Arbitration Procedure" subtitle="A step-by-step guide to how disputes are handled from initiation to final award." color="blue" />
+
+        <div className="space-y-6">
+          {detailedSteps.map((step, i) => {
+            const Icon = step.icon;
+            return (
+              <motion.div key={step.number} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+                <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${step.color}, ${step.color}40)` }} />
+                <div className="p-7 lg:p-8">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold border-2" style={{ background: `linear-gradient(135deg, ${step.color}30, ${step.color}10)`, borderColor: `${step.color}60`, color: step.color }}>
+                      {step.number}
+                    </div>
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: `${step.color}08` }}>
+                      <Icon className="w-5 h-5" style={{ color: step.color }} strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-heading font-bold text-[#1C1F2E] text-xl">{step.title}</h3>
+                  </div>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 ml-0 lg:ml-[104px]">
+                    {step.items.map((item) => (
+                      <div key={item} className="flex items-start gap-2.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: step.color }} strokeWidth={2} />
+                        <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </AnimatedSection>
+      </Section >
+
+    {/* ── Arbitrator Appointment ────────────────────────────────── */ }
+    < Section variant = "dark" >
+      <AnimatedSection>
+        <SectionHeader label="Appointment" title="Arbitrator Appointment Procedure" color="green" dark />
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          <div>
+            <p className="text-white/80 text-lg leading-relaxed mb-5">
+              Parties attempt to mutually agree on arbitrators within 7 days of the Notice of Arbitration. If no agreement is reached, the UPTECH Arbitration Committee appoints from the Technical Arbitration Panel. All arbitrators must have relevant technical, industry, or legal expertise.
+            </p>
+
+            <div className="space-y-3">
+              {appointmentTimeline.map((item, i) => (
+                <motion.div key={item.step} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.08 }} className="flex items-center justify-between bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 px-4 py-3">
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 h-6 rounded-full bg-[#22C55E]/10 flex items-center justify-center text-xs font-bold text-[#22C55E]">{i + 1}</span>
+                    <span className="text-white text-sm font-medium">{item.step}</span>
+                  </div>
+                  <span className="text-xs font-bold text-[#22C55E] bg-[#22C55E]/8 px-2.5 py-1 rounded-full">{item.duration}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
-          <AnimatedSection delay={0.2}>
-            <div className="mt-6 rounded-xl bg-gradient-to-r from-[#C41E3A]/8 to-transparent border border-[#C41E3A]/15 p-6">
-              <h4 className="font-heading font-bold text-[#1C1F2E] text-sm mb-2">Payment & Allocation</h4>
-              <ul className="grid sm:grid-cols-2 gap-2">
-                {[
-                  "Parties bear their own legal representation costs",
-                  "Arbitrators may allocate costs based on outcome and complexity",
-                  "Platform and admin fees payable within 7 days of initiation",
-                  "Additional costs invoiced and payable within 14 days",
-                ].map((item) => (
+          <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#22C55E10", border: "1px solid #22C55E20" }}>
+                <Shield className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
+              </div>
+              <h3 className="font-heading font-bold text-white text-lg">Conflict-of-Interest Process</h3>
+            </div>
+            <div className="h-px bg-white/10 mb-5" />
+            <ul className="space-y-3">
+              {[
+                "All potential arbitrators must disclose any conflicts of interest",
+                "Parties may raise objections within 3 business days of disclosure",
+                "UPTECH Arbitration Committee resolves objections fairly and promptly",
+                "Appointed arbitrators sign a declaration of compliance with the Framework",
+                "All appointments formally documented via the digital platform",
+              ].map((item, i) => (
+                <motion.li key={item} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -8 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                  <span className="text-white/60 text-sm leading-relaxed">{item}</span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+      </AnimatedSection>
+      </Section >
+
+    {/* ── Cost Schedule ────────────────────────────────────────── */ }
+    < Section variant = "light" >
+      <AnimatedSection>
+        <SectionHeader label="Fees" title="Cost Schedule & Fees" subtitle="Transparent pricing for arbitration services under the UPTECH Framework." color="red" />
+
+        <div className="grid md:grid-cols-2 gap-7">
+          {costSchedule.map((group, gi) => (
+            <motion.div key={group.category} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: gi * 0.1 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
+              <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${group.color}, ${group.color}60)` }} />
+              <div className="p-7">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: `${group.color}10`, border: `1px solid ${group.color}20` }}>
+                    <PoundSterling className="w-5 h-5" style={{ color: group.color }} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">{group.category}</h3>
+                </div>
+                <div className="h-px bg-[#D8D5CF] mb-5" />
+                <ul className="space-y-4">
+                  {group.items.map((item) => (
+                    <li key={item.label} className="flex items-center justify-between">
+                      <span className="text-[#3D4152] text-sm">{item.label}</span>
+                      <span className="text-sm font-bold whitespace-nowrap ml-3" style={{ color: group.color }}>{item.fee}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <AnimatedSection delay={0.2}>
+          <div className="mt-6 rounded-xl bg-gradient-to-r from-[#C41E3A]/8 to-transparent border border-[#C41E3A]/15 p-6">
+            <h4 className="font-heading font-bold text-[#1C1F2E] text-sm mb-2">Payment & Allocation</h4>
+            <ul className="grid sm:grid-cols-2 gap-2">
+              {[
+                "Parties bear their own legal representation costs",
+                "Arbitrators may allocate costs based on outcome and complexity",
+                "Platform and admin fees payable within 7 days of initiation",
+                "Additional costs invoiced and payable within 14 days",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                  <span className="text-[#5A5F72] text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </AnimatedSection>
+      </AnimatedSection>
+      </Section >
+
+    {/* ── Digital Platform ─────────────────────────────────────── */ }
+    < Section variant = "dark" >
+      <AnimatedSection>
+        <SectionHeader label="Technology" title="UPTECH Digital Arbitration Platform" subtitle="A secure, GDPR-compliant platform for managing the entire arbitration process digitally." color="blue" dark />
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {platformFeatures.map((feature, i) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div key={feature.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="group relative h-full rounded-2xl border border-white/10 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
+                <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl p-6">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" style={{ background: `${feature.color}12`, border: `1px solid ${feature.color}25` }}>
+                    <Icon className="w-5 h-5" style={{ color: feature.color }} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-heading font-bold text-white text-base mb-2">{feature.title}</h3>
+                  <div className="h-px bg-white/10 mb-2" />
+                  <p className="text-white/60 text-sm leading-relaxed">{feature.description}</p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Smart Contract Support */}
+        <AnimatedSection delay={0.3}>
+          <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="mt-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden">
+            <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
+            <div className="p-7 lg:p-8 flex items-start gap-5">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}>
+                <Blocks className="w-6 h-6 text-[#2563EB]" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h3 className="font-heading font-bold text-white text-lg mb-2">Digital & Smart Contract Dispute Resolution</h3>
+                <p className="text-white/60 text-base leading-relaxed">
+                  Where disputes involve blockchain or smart contracts, the arbitrator may review on-chain evidence, issue digital awards executable via smart contracts, and the Framework supports fully automated enforcement with parties&apos; consent.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatedSection>
+      </AnimatedSection>
+      </Section >
+
+    {/* ── Sample Arbitration Clause ─────────────────────────────── */ }
+    < Section variant = "light" >
+      <AnimatedSection>
+        <SectionHeader label="Sample Clause" title="Recommended Arbitration Clause" color="green" />
+
+        <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="rounded-2xl border border-[#22C55E]/15 bg-white shadow-sm overflow-hidden">
+          <div className="h-1 w-full bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#22C55E]" />
+          <div className="p-8 lg:p-10">
+            <blockquote className="relative border-l-4 border-[#22C55E] pl-6 py-5 bg-gradient-to-r from-[#22C55E]/5 to-transparent rounded-r-xl">
+              <div className="absolute -left-1 -top-2 text-[#22C55E]/20 text-6xl font-serif leading-none">&ldquo;</div>
+              <p className="text-[#1C1F2E] text-base leading-[1.8] font-medium relative z-10">
+                Any dispute, controversy, or claim arising out of or relating to this Agreement, including any question regarding its existence, validity, or termination, shall be referred to and finally resolved by arbitration under the UPTECH Arbitration Framework.
+              </p>
+              <p className="text-[#1C1F2E] text-base leading-[1.8] font-medium relative z-10 mt-4">
+                The arbitration shall be conducted in accordance with the Arbitration Act 1996 (UK) and any applicable LCIA or UPTECH digital arbitration rules. The number of arbitrators shall be one for disputes under &pound;250,000 or three for complex disputes, as determined by the UPTECH Arbitration Committee. The seat of arbitration shall be London, England. The language of arbitration shall be English. The arbitrator(s) shall have the authority to allocate costs and fees, and the award shall be final and binding upon the Parties.
+              </p>
+            </blockquote>
+          </div>
+        </motion.div>
+      </AnimatedSection>
+      </Section >
+
+    {/* ── FAQs ─────────────────────────────────────────────────── */ }
+    < Section variant = "dark" >
+      <AnimatedSection>
+        <SectionHeader label="FAQs" title="Frequently Asked Questions" color="red" dark />
+
+        <div className="space-y-4">
+          {faqs.map((faq, i) => (
+            <motion.div key={i} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }} className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:shadow-md transition-shadow duration-300">
+              <div className="flex items-start gap-3">
+                <div className="w-7 h-7 rounded-lg bg-[#C41E3A]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <HelpCircle className="w-4 h-4 text-[#C41E3A]" strokeWidth={2} />
+                </div>
+                <div>
+                  <h3 className="font-heading font-bold text-white text-base mb-2">{faq.q}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{faq.a}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </AnimatedSection>
+      </Section >
+
+    {/* ── Governance & Review ──────────────────────────────────── */ }
+    < Section variant = "light" >
+      <AnimatedSection>
+        <div className="grid md:grid-cols-2 gap-6">
+          <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
+            <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40" />
+            <div className="p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}>
+                  <Users className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Governance</h3>
+              </div>
+              <div className="h-px bg-[#D8D5CF] mb-4" />
+              <p className="text-[#5A5F72] text-base leading-relaxed mb-4">
+                The UPTECH Arbitration Committee oversees implementation, arbitrator selection, and compliance. The Committee reports annually to the Board of Directors on arbitration activity, efficiency, and lessons learned.
+              </p>
+              <p className="text-[#5A5F72] text-base leading-relaxed">
+                The Framework maintains secure digital records of disputes, awards, and timelines. Analytics are used to improve process efficiency, identify recurring issues, and update rules.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
+            <div className="h-1 w-full bg-gradient-to-r from-[#22C55E] to-[#22C55E]/40" />
+            <div className="p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#22C55E10", border: "1px solid #22C55E20" }}>
+                  <Clock className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Policy Review</h3>
+              </div>
+              <div className="h-px bg-[#D8D5CF] mb-4" />
+              <p className="text-[#5A5F72] text-base leading-relaxed mb-4">
+                This Framework is reviewed every 12 months to incorporate legal updates in UK arbitration law, technological innovations in digital dispute resolution, and feedback from arbitrators, parties, and stakeholders.
+              </p>
+              <ul className="space-y-2">
+                {["Legal updates in UK arbitration law", "Technological innovations in digital dispute resolution", "Feedback from arbitrators, parties, and stakeholders"].map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
                     <span className="text-[#5A5F72] text-sm">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-          </AnimatedSection>
-        </AnimatedSection>
-      </Section>
-
-      {/* ── Digital Platform ─────────────────────────────────────── */}
-      <Section variant="dark">
-        <AnimatedSection>
-          <SectionHeader label="Technology" title="UPTECH Digital Arbitration Platform" subtitle="A secure, GDPR-compliant platform for managing the entire arbitration process digitally." color="blue" dark />
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {platformFeatures.map((feature, i) => {
-              const Icon = feature.icon;
-              return (
-                <motion.div key={feature.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="group relative h-full rounded-2xl border border-white/10 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                  <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
-                  <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl p-6">
-                    <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" style={{ background: `${feature.color}12`, border: `1px solid ${feature.color}25` }}>
-                      <Icon className="w-5 h-5" style={{ color: feature.color }} strokeWidth={1.5} />
-                    </div>
-                    <h3 className="font-heading font-bold text-white text-base mb-2">{feature.title}</h3>
-                    <div className="h-px bg-white/10 mb-2" />
-                    <p className="text-white/60 text-sm leading-relaxed">{feature.description}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Smart Contract Support */}
-          <AnimatedSection delay={0.3}>
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="mt-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden">
-              <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#C41E3A]" />
-              <div className="p-7 lg:p-8 flex items-start gap-5">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}>
-                  <Blocks className="w-6 h-6 text-[#2563EB]" strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h3 className="font-heading font-bold text-white text-lg mb-2">Digital & Smart Contract Dispute Resolution</h3>
-                  <p className="text-white/60 text-base leading-relaxed">
-                    Where disputes involve blockchain or smart contracts, the arbitrator may review on-chain evidence, issue digital awards executable via smart contracts, and the Framework supports fully automated enforcement with parties&apos; consent.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatedSection>
-        </AnimatedSection>
-      </Section>
-
-      {/* ── Sample Arbitration Clause ─────────────────────────────── */}
-      <Section variant="light">
-        <AnimatedSection>
-          <SectionHeader label="Sample Clause" title="Recommended Arbitration Clause" color="green" />
-
-          <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="rounded-2xl border border-[#22C55E]/15 bg-white shadow-sm overflow-hidden">
-            <div className="h-1 w-full bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#22C55E]" />
-            <div className="p-8 lg:p-10">
-              <blockquote className="relative border-l-4 border-[#22C55E] pl-6 py-5 bg-gradient-to-r from-[#22C55E]/5 to-transparent rounded-r-xl">
-                <div className="absolute -left-1 -top-2 text-[#22C55E]/20 text-6xl font-serif leading-none">&ldquo;</div>
-                <p className="text-[#1C1F2E] text-base leading-[1.8] font-medium relative z-10">
-                  Any dispute, controversy, or claim arising out of or relating to this Agreement, including any question regarding its existence, validity, or termination, shall be referred to and finally resolved by arbitration under the UPTECH Arbitration Framework.
-                </p>
-                <p className="text-[#1C1F2E] text-base leading-[1.8] font-medium relative z-10 mt-4">
-                  The arbitration shall be conducted in accordance with the Arbitration Act 1996 (UK) and any applicable LCIA or UPTECH digital arbitration rules. The number of arbitrators shall be one for disputes under &pound;250,000 or three for complex disputes, as determined by the UPTECH Arbitration Committee. The seat of arbitration shall be London, England. The language of arbitration shall be English. The arbitrator(s) shall have the authority to allocate costs and fees, and the award shall be final and binding upon the Parties.
-                </p>
-              </blockquote>
-            </div>
           </motion.div>
-        </AnimatedSection>
-      </Section>
+        </div>
+      </AnimatedSection>
+      </Section >
 
-      {/* ── FAQs ─────────────────────────────────────────────────── */}
-      <Section variant="dark">
-        <AnimatedSection>
-          <SectionHeader label="FAQs" title="Frequently Asked Questions" color="red" dark />
-
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <motion.div key={i} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }} className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 hover:shadow-md transition-shadow duration-300">
-                <div className="flex items-start gap-3">
-                  <div className="w-7 h-7 rounded-lg bg-[#C41E3A]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <HelpCircle className="w-4 h-4 text-[#C41E3A]" strokeWidth={2} />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-white text-base mb-2">{faq.q}</h3>
-                    <p className="text-white/60 text-sm leading-relaxed">{faq.a}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* ── Governance & Review ──────────────────────────────────── */}
-      <Section variant="light">
-        <AnimatedSection>
-          <div className="grid md:grid-cols-2 gap-6">
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
-              <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40" />
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}>
-                    <Users className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Governance</h3>
-                </div>
-                <div className="h-px bg-[#D8D5CF] mb-4" />
-                <p className="text-[#5A5F72] text-base leading-relaxed mb-4">
-                  The UPTECH Arbitration Committee oversees implementation, arbitrator selection, and compliance. The Committee reports annually to the Board of Directors on arbitration activity, efficiency, and lessons learned.
-                </p>
-                <p className="text-[#5A5F72] text-base leading-relaxed">
-                  The Framework maintains secure digital records of disputes, awards, and timelines. Analytics are used to improve process efficiency, identify recurring issues, and update rules.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
-              <div className="h-1 w-full bg-gradient-to-r from-[#22C55E] to-[#22C55E]/40" />
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#22C55E10", border: "1px solid #22C55E20" }}>
-                    <Clock className="w-5 h-5 text-[#22C55E]" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Policy Review</h3>
-                </div>
-                <div className="h-px bg-[#D8D5CF] mb-4" />
-                <p className="text-[#5A5F72] text-base leading-relaxed mb-4">
-                  This Framework is reviewed every 12 months to incorporate legal updates in UK arbitration law, technological innovations in digital dispute resolution, and feedback from arbitrators, parties, and stakeholders.
-                </p>
-                <ul className="space-y-2">
-                  {["Legal updates in UK arbitration law", "Technological innovations in digital dispute resolution", "Feedback from arbitrators, parties, and stakeholders"].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-[#5A5F72] text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* ── CTA ────────────────────────────────────────────────────── */}
-      <GlobalCTA
-        label="Get Started"
-        title="Ready to Use the Framework?"
-        subtitle="Contact UPTECH to initiate arbitration or learn more about our dispute resolution services."
-        primaryButtonText="File a Dispute"
-        primaryButtonLink="/contact"
-        secondaryButtonText="Back to Overview"
-        secondaryButtonLink="/arbitration"
-      />
-    </div>
+    {/* ── CTA ────────────────────────────────────────────────────── */ }
+    < GlobalCTA
+  label = "Get Started"
+  title = "Ready to Use the Framework?"
+  subtitle = "Contact UPTECH to initiate arbitration or learn more about our dispute resolution services."
+  primaryButtonText = "File a Dispute"
+  primaryButtonLink = "/contact"
+  secondaryButtonText = "Back to Overview"
+  secondaryButtonLink = "/arbitration"
+    />
+    </div >
   );
 }

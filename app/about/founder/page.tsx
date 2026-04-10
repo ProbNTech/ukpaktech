@@ -21,7 +21,7 @@ export default function LeadershipPage() {
         label="Leadership"
         title="Our Leadership"
         subtitle="Meet the leaders driving the UK-Pakistan technology corridor through innovation, collaboration, and sustainable partnerships."
-        image="/image/banners/founder.jpg"
+        image="/image/banners/banner47.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>
