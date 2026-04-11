@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+  import type { Metadata } from "next";
 import TechMarketOverviewClient from "./TechMarketOverviewClient";
 
 export const metadata: Metadata = {

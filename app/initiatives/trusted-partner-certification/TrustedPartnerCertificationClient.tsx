@@ -150,7 +150,7 @@ export default function TrustedPartnerCertificationClient() {
         label="UPTECH Certification"
         title="Trusted Partner Certification"
         subtitle="Recognising Pakistani technology companies that meet high standards of professionalism, reliability, and technical capability for global collaboration."
-        image="/image/banners/banner24.jpg"
+        image="/image/banners/banner49.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Apply for Certification</ShinyButton>

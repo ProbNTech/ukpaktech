@@ -56,7 +56,7 @@ export default function NewsPage() {
         label="News & Updates"
         title="News & Updates"
         subtitle="Stay informed with the latest news, insights, and announcements from the UK–Pakistan technology corridor."
-        image="/image/banners/banner5.jpg"
+        image="/image/banners/news.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership">Become a Member</ShinyButton>

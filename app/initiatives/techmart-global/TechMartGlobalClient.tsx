@@ -323,7 +323,7 @@ export default function TechMartGlobalClient() {
         label="UPTECH Initiative"
         title="TechMart Global"
         subtitle="Connecting Pakistan's technology talent with the innovation ecosystems of the United Kingdom and Europe. A global B2B technology marketplace driving innovation, trade, and technology growth between Pakistan, UK and Europe."
-        image="/image/banners/banner24.jpg"
+        image="/image/banners/banner41.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Get Started</ShinyButton>
