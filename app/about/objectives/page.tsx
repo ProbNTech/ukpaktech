@@ -34,7 +34,7 @@ export default function ObjectivesPage() {
         label="Objectives & Values"
         title="Our Objectives"
         subtitle="We provide a platform to all Pakistani IT professionals residing in the United Kingdom working across various levels and industry sectors."
-        image="/image/banners/about-3.jpeg"
+        image="/image/banners/banner59.jpg"
 
       >
         <div className="flex flex-wrap items-center gap-4">
