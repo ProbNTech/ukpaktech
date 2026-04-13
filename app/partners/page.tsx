@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, Users, ArrowUpRight } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
@@ -20,12 +21,16 @@ export default function PartnersPage() {
     <div className="min-h-screen bg-white">
       {/* ═══ Hero ═══ */}
       <section className="relative overflow-hidden pt-36 pb-20 lg:pt-44 lg:pb-28">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: "linear-gradient(135deg, #1a2b5e 0%, #0c1530 40%, #162248 70%, #1a2b5e 100%)",
-          }}
+        <Image
+          src="/image/banners/banner106.png"
+          alt=""
+          fill
+          priority
+          className="object-cover object-[center_50%]"
+          sizes="100vw"
+          quality={90}
         />
+        <div className="absolute inset-0 bg-[#0c1530]/70" />
 
         {/* Decorative blobs */}
         <div className="absolute top-20 -left-20 w-80 h-80 rounded-full opacity-20 blur-3xl" style={{ background: "radial-gradient(circle, #3B82F6 0%, transparent 70%)" }} />

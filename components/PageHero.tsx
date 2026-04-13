@@ -268,7 +268,7 @@ export function PageHero({
               />
               <div
                 className="absolute inset-0 mix-blend-multiply"
-                style={{ background: "rgba(11,15,26,0.45)" }}
+                style={{ background: "rgba(11,15,26,0.15)" }}
               />
             </div>
           </motion.div>

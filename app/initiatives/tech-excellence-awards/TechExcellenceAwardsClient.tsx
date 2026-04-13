@@ -93,6 +93,7 @@ export default function TechExcellenceAwardsClient() {
         title="Tech Excellence Awards"
         subtitle="Celebrating outstanding achievements in technology innovation, digital leadership, and cross-border collaboration across the UK–Pakistan tech corridor."
         heroImage="/image/banners/banner61.jpg"
+        lightOverlay
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Submit a Nomination</ShinyButton>
