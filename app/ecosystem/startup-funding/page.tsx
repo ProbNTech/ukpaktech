@@ -143,7 +143,7 @@ export default function StartupFundingPage() {
         label="Ecosystem / Startup Funding"
         title="Startup Funding Opportunities"
         subtitle="The UK-Pakistan Tech Council supports early-stage technology startups in accessing funding, investment networks, and growth capital to turn innovative ideas into scalable businesses."
-        image="/image/banners/banner70.jpg"
+        image="/image/banners/banner96.png"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership">Access Funding</ShinyButton>

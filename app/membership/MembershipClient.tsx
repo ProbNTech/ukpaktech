@@ -197,7 +197,7 @@ export default function MembershipClient() {
         label="Membership"
         title="At UK Pakistan Tech Council, Membership Means Business"
         subtitle="Whether your priorities are to network with the industry and key stakeholders, to help shape policy, or to have access to insights that help your business to grow, UPTECH membership will positively impact your organisation in whatever way matters most to you."
-        image="/image/banners/banner72.jpg"
+        image="/image/banners/banner102.png"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Apply Now</ShinyButton>
