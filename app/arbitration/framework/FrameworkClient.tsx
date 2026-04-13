@@ -251,7 +251,7 @@ export default function FrameworkClient() {
           </>
         }
         subtitle="Version 1.0 — A comprehensive framework for resolving disputes arising in technology agreements, SaaS platforms, digital assets, software development contracts, and intellectual property transactions."
-        image="/image/banners/banner43.jpg"
+        image="/image/banners/banner74.jpg"
         // particleNetwork
       >
         <div className="flex flex-wrap items-center gap-4">
