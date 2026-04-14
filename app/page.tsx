@@ -92,7 +92,6 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" aria-hidden="true" />
 
       {/* 3. TECH MARKET OVERVIEW */}
       <section className="relative z-[1] py-20 lg:py-28 bg-[#eef1f5]" aria-labelledby="market-heading">
@@ -205,14 +204,8 @@ export default function Home() {
       {/* 7. WHAT DRIVES US */}
       <WhatDrivesUs />
 
-      {/* divider: red subtle line */}
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-[#C41E3A]/15 to-transparent" aria-hidden="true" />
-
       {/* 8. BOARD OF ADVISORS */}
       <BoardOfAdvisors />
-
-      {/* divider: blue subtle line */}
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-[#2563EB]/15 to-transparent" aria-hidden="true" />
 
       {/* 9. NEWS & INSIGHTS */}
       <section className="relative z-[1] py-20 lg:py-28 bg-white" aria-labelledby="news-heading">
@@ -235,9 +228,6 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
-
-      {/* divider: green subtle line */}
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-[#22C55E]/15 to-transparent" aria-hidden="true" />
 
       {/* 10. MORE FROM UPTECH */}
       <section className="relative z-[1] py-20 lg:py-28 bg-[#eef1f5]" aria-labelledby="more-heading">
@@ -338,9 +328,6 @@ export default function Home() {
 
       {/* 12. EVENTS */}
       <HomeEventsSection />
-
-      {/* divider: blue subtle line */}
-      <div className="h-[2px] bg-gradient-to-r from-transparent via-[#2563EB]/15 to-transparent" aria-hidden="true" />
 
       {/* 13. PARTNERS & NETWORK (merged) */}
       <FeaturedPartnersCarousel />
