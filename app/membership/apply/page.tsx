@@ -1231,8 +1231,8 @@ export default function MembershipApplicationForm() {
                       <p className="text-sm text-[#7A7E8F] mt-3">
                         UPTECH reserves the right to edit profiles that exceed 100 words.
                         Please send your high-resolution logo to{" "}
-                        <a href="mailto:info@uptechcouncil.org" className="text-[#2563EB] hover:underline">
-                          info@uptechcouncil.org
+                        <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:underline">
+                          info@uptech.org.uk
                         </a>{" "}
                         if you would like to be listed on the member directory.
                       </p>
@@ -1768,8 +1768,8 @@ export default function MembershipApplicationForm() {
                           <p className="text-sm text-[#7A7E8F] mt-6">
                             Our membership team will review your application and respond within 5 business days.
                             For enquiries, contact{" "}
-                            <a href="mailto:membership@uptechcouncil.org" className="text-[#2563EB] hover:underline">
-                              membership@uptechcouncil.org
+                            <a href="mailto:membership@uptech.org.uk" className="text-[#2563EB] hover:underline">
+                              membership@uptech.org.uk
                             </a>
                           </p>
                         </div>

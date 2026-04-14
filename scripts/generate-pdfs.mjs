@@ -534,7 +534,7 @@ async function generateArbitrationFramework() {
   b.drawParagraph("24/7 technical support is available via the platform, chat, email, or phone. The UPTECH Arbitration Committee provides procedural guidance and handles all enquiries regarding arbitration proceedings.");
   b.drawParagraph("UK-Pakistan Technology Council (UPTECH)", { bold: true });
   b.drawParagraph("134-136 Westbourne Terrace, London, W2 6QB, United Kingdom");
-  b.drawParagraph("Email: info@uptechcouncil.org");
+  b.drawParagraph("Email: info@uptech.org.uk");
 
   await b.save("UPTECH-Arbitration-Framework.pdf");
 }
@@ -591,7 +591,7 @@ async function generateCodeOfConduct() {
   b.drawSectionHeading("7. Contact");
   b.drawParagraph("UK-Pakistan Technology Council (UPTECH)", { bold: true });
   b.drawParagraph("134-136 Westbourne Terrace, London, W2 6QB, United Kingdom");
-  b.drawParagraph("Email: info@uptechcouncil.org");
+  b.drawParagraph("Email: info@uptech.org.uk");
 
   await b.save("UPTECH-Code-of-Conduct.pdf");
 }

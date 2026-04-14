@@ -20,7 +20,7 @@ const lato = Lato({
   display: "swap",
 });
 
-const BASE_URL = "https://www.uptechcouncil.org";
+const BASE_URL = "https://www.uptech.org.uk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
