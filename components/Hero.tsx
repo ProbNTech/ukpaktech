@@ -4,7 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Play, Pause } from "lucide-react";
 import { ShinyButton } from "@/components/ui/shiny-button";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 const slides = [
   {
@@ -38,6 +38,7 @@ const slides = [
 ];
 
 export function Hero() {
+  const prefersReducedMotion = useReducedMotion();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -98,6 +99,7 @@ export function Hero() {
           <video
             key={s.video}
             ref={setVideoRef(index)}
+            aria-hidden="true"
             autoPlay={index === 0}
             muted
             playsInline
@@ -129,10 +131,10 @@ export function Hero() {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, y: 30 }}
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -20 }}
+              transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
               {/* Small label */}
               <p className="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.18em] text-[#C41E3A] mb-4 sm:mb-5" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.4)" }}>
@@ -148,9 +150,9 @@ export function Hero() {
                   <motion.span
                     key={i}
                     className="inline-block mr-[0.3em]"
-                    initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
+                    initial={prefersReducedMotion ? false : { opacity: 0, y: 16, filter: "blur(4px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    transition={{ duration: 0.35, delay: 0.15 + i * 0.035, ease: [0.22, 1, 0.36, 1] }}
+                    transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.35, delay: 0.15 + i * 0.035, ease: [0.22, 1, 0.36, 1] }}
                   >
                     {word}
                   </motion.span>
@@ -160,9 +162,9 @@ export function Hero() {
               {/* Buttons */}
               <motion.div
                 className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-6 mb-8 sm:mb-10"
-                initial={{ opacity: 0, y: 12 }}
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.4, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
                 <ShinyButton href={slide.cta.href}>
                   {slide.cta.text}

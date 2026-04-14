@@ -69,7 +69,7 @@ export default function FeaturedPartnersCarousel() {
               </Link>
 
               <div className="flex gap-2.5">
-                <button className="partners-prev group w-10 h-10 flex items-center justify-center rounded-xl border border-[#E5E7EB] bg-white shadow-sm hover:shadow-md hover:border-[#2563EB]/30 transition-all duration-300">
+                <button aria-label="Previous partners" className="partners-prev group w-10 h-10 flex items-center justify-center rounded-xl border border-[#E5E7EB] bg-white shadow-sm hover:shadow-md hover:border-[#2563EB]/30 transition-all duration-300">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-4 h-4 text-[#6B7280] transition-all duration-300 group-hover:text-[#2563EB] group-hover:-translate-x-0.5"
@@ -82,7 +82,7 @@ export default function FeaturedPartnersCarousel() {
                   </svg>
                 </button>
 
-                <button className="partners-next group w-10 h-10 flex items-center justify-center rounded-xl border border-[#E5E7EB] bg-white shadow-sm hover:shadow-md hover:border-[#2563EB]/30 transition-all duration-300">
+                <button aria-label="Next partners" className="partners-next group w-10 h-10 flex items-center justify-center rounded-xl border border-[#E5E7EB] bg-white shadow-sm hover:shadow-md hover:border-[#2563EB]/30 transition-all duration-300">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-4 h-4 text-[#6B7280] transition-all duration-300 group-hover:text-[#2563EB] group-hover:translate-x-0.5"

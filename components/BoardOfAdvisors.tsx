@@ -9,7 +9,7 @@ const advisors = [
     role: "Chairman",
     bio: "Providing strategic vision and governance oversight for the UK–Pakistan technology corridor.",
     photo: "/image/chairman/hussnain-kazmi.jpg",
-    accent: "#D4AF37",
+    accent: "#2563EB",
     delay: 0,
   },
   {
@@ -17,7 +17,7 @@ const advisors = [
     role: "President",
     bio: "Leading bilateral partnerships, policy engagement, and operational strategy across both nations.",
     photo: "/image/ceo/khalil-choudhary-headshot.jpg",
-    accent: "#D4AF37",
+    accent: "#2563EB",
     delay: 0.15,
   },
   {
@@ -25,7 +25,7 @@ const advisors = [
     role: "Board Director — Technology & Innovation",
     bio: "Driving technology initiatives, innovation programmes, and digital transformation strategy.",
     photo: "/image/board/director.jpg",
-    accent: "#D4AF37",
+    accent: "#2563EB",
     delay: 0.3,
   },
 ];
@@ -79,8 +79,8 @@ export default function BoardOfAdvisors() {
           className="text-center mb-14 lg:mb-16"
         >
           <div className="flex items-center gap-3 mb-4 justify-center">
-            <div className="w-8 h-[3px] rounded-full bg-[#D4AF37]" />
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#D4AF37]">
+            <div className="w-8 h-[3px] rounded-full bg-[#2563EB]" />
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#2563EB]">
               Leadership
             </p>
           </div>
@@ -119,11 +119,11 @@ export default function BoardOfAdvisors() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-14 lg:mt-16 flex items-center justify-center gap-3"
         >
-          <div className="h-px flex-1 max-w-[140px] bg-gradient-to-r from-transparent to-[#D4AF37]/30" />
-          <p className="text-xs sm:text-sm text-[#7A7E8F] uppercase tracking-[0.2em] font-medium text-center">
+          <div className="h-px flex-1 max-w-[140px] bg-gradient-to-r from-transparent to-[#2563EB]/30" />
+          <p className="text-xs sm:text-sm text-[#5A5F72] uppercase tracking-[0.2em] font-medium text-center">
             More advisors joining soon
           </p>
-          <div className="h-px flex-1 max-w-[140px] bg-gradient-to-l from-transparent to-[#D4AF37]/30" />
+          <div className="h-px flex-1 max-w-[140px] bg-gradient-to-l from-transparent to-[#2563EB]/30" />
         </motion.div>
       </div>
     </section>
@@ -139,10 +139,10 @@ function AdvisorCard({
   advisor: (typeof advisors)[number];
 }) {
   return (
-    <div className="group relative flex flex-col items-center text-center rounded-2xl overflow-hidden h-full">
+    <div className="group relative flex flex-col items-center text-center rounded-xl overflow-hidden h-full">
       {/* Card background — white with subtle border */}
       <div
-        className="absolute inset-0 rounded-2xl transition-all duration-500 bg-[#f7f8fa] border border-[#E5E7EB] group-hover:shadow-xl group-hover:border-[#D4AF37]/20"
+        className="absolute inset-0 rounded-xl transition-all duration-500 bg-[#f7f8fa] border border-[#E5E7EB] group-hover:shadow-xl group-hover:border-[#2563EB]/20"
       />
 
       {/* Card content */}

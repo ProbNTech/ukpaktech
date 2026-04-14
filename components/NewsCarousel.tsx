@@ -50,7 +50,7 @@ export default function NewsCarousel({ articles }: NewsCarouselProps) {
      <div className="flex justify-end gap-3 mt-6">
 
   {/* Prev */}
-  <button className="news-prev group w-11 h-11 flex items-center justify-center rounded-full bg-[#16a34a] shadow-md hover:scale-105 transition-all duration-300">
+  <button aria-label="Previous slide" className="news-prev group w-11 h-11 flex items-center justify-center rounded-full bg-[#22C55E] shadow-md hover:scale-105 transition-all duration-300">
     
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ export default function NewsCarousel({ articles }: NewsCarouselProps) {
   </button>
 
   {/* Next */}
-  <button className="news-next group w-11 h-11 flex items-center justify-center rounded-full bg-[#16a34a] shadow-md hover:scale-105 transition-all duration-300">
+  <button aria-label="Next slide" className="news-next group w-11 h-11 flex items-center justify-center rounded-full bg-[#22C55E] shadow-md hover:scale-105 transition-all duration-300">
 
     <svg
       xmlns="http://www.w3.org/2000/svg"

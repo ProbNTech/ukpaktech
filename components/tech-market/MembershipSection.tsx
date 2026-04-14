@@ -205,13 +205,15 @@ export default function MembershipSection() {
 
   return (
     <div ref={containerRef} className="relative w-full">
-      <section className="relative w-full h-screen overflow-hidden z-10">
+      <section className="relative w-full min-h-screen lg:min-h-[700px] overflow-hidden z-10">
         {/* Background Video */}
         <motion.video
+          aria-hidden="true"
           autoPlay
           loop
           muted
           playsInline
+          poster="/image/banners/banner15.jpg"
           className="absolute top-0 left-0 w-full h-full object-cover"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -372,7 +374,7 @@ export function WhatDrivesUs() {
                     <h3 className="mt-6 font-heading font-bold text-white text-base sm:text-lg xl:text-xl">
                       {card.title}
                     </h3>
-                    <p className="mt-3 text-white/60 text-sm leading-relaxed">{card.desc}</p>
+                    <p className="mt-3 text-white/70 text-sm leading-relaxed">{card.desc}</p>
                   </div>
                 );
               })}

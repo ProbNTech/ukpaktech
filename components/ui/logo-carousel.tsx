@@ -7,7 +7,7 @@ import React, {
   useState,
 } from "react"
 import Image from "next/image"
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 
 interface Logo {
   name: string
@@ -126,15 +126,17 @@ interface LogoCarouselProps {
 export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
   const [logoSets, setLogoSets] = useState<Logo[][]>([])
   const [currentTime, setCurrentTime] = useState(0)
+  const prefersReducedMotion = useReducedMotion()
 
   const updateTime = useCallback(() => {
     setCurrentTime((prevTime) => prevTime + 100)
   }, [])
 
   useEffect(() => {
+    if (prefersReducedMotion) return
     const intervalId = setInterval(updateTime, 100)
     return () => clearInterval(intervalId)
-  }, [updateTime])
+  }, [updateTime, prefersReducedMotion])
 
   useEffect(() => {
     const distributedLogos = distributeLogos(logos, columnCount)
@@ -142,7 +144,7 @@ export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
   }, [logos, columnCount])
 
   return (
-    <div className="flex space-x-4 justify-center">
+    <div role="region" aria-label="Partner logos" className="flex space-x-4 justify-center">
       {logoSets.map((logos, index) => (
         <LogoColumn
           key={index}
