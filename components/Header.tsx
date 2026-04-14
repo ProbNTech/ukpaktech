@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { TopTicker } from "@/components/TopTicker";
 import {
   Building2, Eye, Target, CheckCircle2, Award, Users, Globe2,
   Cpu, GraduationCap, Rocket, Trophy, Handshake, Plane,
@@ -247,6 +248,9 @@ export function Header() {
         className="sticky top-0 z-50 bg-white border-b border-gray-200"
         onMouseLeave={handleLeave}
       >
+        {/* ── Top ticker banner ──────────────────────────────── */}
+        <TopTicker />
+
         {/* ── Tier 1: Brand bar ──────────────────────────────── */}
         <div className="px-5 sm:px-8 lg:px-12 xl:px-8 2xl:px-16">
           <div className="flex items-center justify-between h-[70px] sm:h-[80px] lg:h-[90px]">

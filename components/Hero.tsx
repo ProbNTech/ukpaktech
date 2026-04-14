@@ -126,7 +126,7 @@ export function Hero() {
       <div className="absolute inset-0 z-[11] pointer-events-none opacity-[0.04] bg-gradient-to-br from-white/5 via-transparent to-white/5" />
 
       {/* Content wrapper */}
-      <div className="relative z-20 flex items-center lg:h-screen px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-14 sm:pt-16 lg:pt-0 pb-14 lg:pb-0">
+      <div className="relative z-20 flex items-center lg:h-screen px-6 sm:px-10 lg:px-16 xl:px-20 pt-14 sm:pt-16 lg:pt-0 pb-14 lg:pb-0">
         <div className="w-full max-w-full lg:max-w-[55%]">
           <AnimatePresence mode="wait">
             <motion.div

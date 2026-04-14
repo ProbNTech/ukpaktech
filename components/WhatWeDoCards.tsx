@@ -20,13 +20,15 @@ interface WhatWeDoCardsProps {
 }
 
 /* ────────────────────────────────────────────
-   Single card with cursor-following glow
-   and subtle hover lift + shadow
+   Single card with cursor-following glow,
+   gradient glass background, premium shadows,
+   and smooth hover lift
    ──────────────────────────────────────────── */
 function Card({ item }: { item: WhatWeDoItem; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [glowPos, setGlowPos] = useState({ x: 50, y: 50 });
   const [isHovered, setIsHovered] = useState(false);
+  const [isLinkHovered, setIsLinkHovered] = useState(false);
 
   const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
@@ -55,32 +57,40 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
     >
       {/* ── Card surface ── */}
       <div
-        className="relative rounded-xl bg-white/95 backdrop-blur-xl border border-[#E8E6E1]/70 p-8 lg:p-10 h-full overflow-hidden transition-all duration-300"
+        className="relative rounded-2xl overflow-hidden p-8 lg:p-10 h-full"
         style={{
-          transform: isHovered ? "translateY(-4px)" : "translateY(0)",
+          background: `linear-gradient(135deg, white 60%, ${item.color}08 100%)`,
+          border: `1px solid ${item.color}${isHovered ? "30" : "15"}`,
+          backdropFilter: isHovered ? "blur(8px)" : "none",
+          WebkitBackdropFilter: isHovered ? "blur(8px)" : "none",
+          transform: isHovered ? "translateY(-6px)" : "translateY(0)",
           boxShadow: isHovered
-            ? "0 20px 40px -12px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06)"
-            : "0 4px 20px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.04)",
+            ? `0 20px 60px -15px ${item.color}25, 0 8px 24px -8px rgba(0,0,0,0.08)`
+            : "0 4px 20px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03)",
+          transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
         }}
       >
         {/* Cursor-following radial glow */}
         <div
-          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+          className="absolute inset-0 rounded-2xl pointer-events-none"
           style={{
             background: `radial-gradient(500px circle at ${glowPos.x}% ${glowPos.y}%, ${item.color}14 0%, transparent 50%)`,
+            opacity: isHovered ? 1 : 0,
+            transition: "opacity 0.3s ease",
           }}
         />
 
-        {/* Top accent bar */}
+        {/* Top accent gradient bar */}
         <div
-          className="absolute top-0 inset-x-0 h-[3px] rounded-t-xl transition-opacity duration-300"
+          className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl"
           style={{
-            background: `linear-gradient(90deg, transparent 5%, ${item.color}90, ${item.color}, ${item.color}90, transparent 95%)`,
-            opacity: isHovered ? 1 : 0.3,
+            background: `linear-gradient(90deg, ${item.color}, ${item.color}60, transparent)`,
+            opacity: isHovered ? 1 : 0.45,
+            transition: "opacity 0.4s ease",
           }}
         />
 
-        {/* ── Icon/Image ── */}
+        {/* ── Icon / Image ── */}
         <div className="relative mb-5">
           {item.image ? (
             <div
@@ -89,10 +99,26 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
                 boxShadow: `0 6px 20px ${item.color}25`,
               }}
             >
-              <Image src={item.image} alt={item.title} fill className="object-cover" sizes="76px" />
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover"
+                sizes="76px"
+              />
             </div>
           ) : (
-            <Icon className="w-[130px] h-[130px]" />
+            <div
+              className="inline-flex items-center justify-center w-[72px] h-[72px] rounded-full"
+              style={{
+                background: `${item.color}14`,
+              }}
+            >
+              <Icon
+                className="w-9 h-9"
+                style={{ color: item.color }}
+              />
+            </div>
           )}
         </div>
 
@@ -106,22 +132,31 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
           {item.content}
         </p>
 
-        {/* ── CTA link ── */}
+        {/* ── CTA link with animated underline ── */}
         <Link
           href={item.href}
-          className="inline-flex items-center gap-2 font-bold text-[15px] transition-all duration-200 group/link"
+          className="inline-flex items-center gap-2 font-bold text-[15px]"
           style={{ color: item.color }}
+          onMouseEnter={() => setIsLinkHovered(true)}
+          onMouseLeave={() => setIsLinkHovered(false)}
         >
           <span className="relative">
             Explore
             <span
-              className="absolute -bottom-0.5 left-0 w-0 group-hover/link:w-full h-[2px] transition-all duration-300 rounded-full"
-              style={{ background: item.color }}
+              className="absolute -bottom-0.5 left-0 h-[2px] rounded-full"
+              style={{
+                background: item.color,
+                width: isLinkHovered ? "100%" : "0%",
+                transition: "width 0.3s ease",
+              }}
             />
           </span>
           <ArrowRight
             size={18}
-            className="transition-transform duration-200 group-hover/link:translate-x-1.5"
+            style={{
+              transform: isLinkHovered ? "translateX(6px)" : "translateX(0)",
+              transition: "transform 0.2s ease",
+            }}
           />
         </Link>
       </div>

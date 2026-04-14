@@ -16,7 +16,7 @@ export function TubesCTA({ children }: { children: React.ReactNode }) {
         lightIntensity={220}
         className="min-h-[420px] md:min-h-[480px]"
       >
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 md:py-20">
+        <div className="px-6 sm:px-10 lg:px-16 xl:px-20 py-14 md:py-20">
           {children}
         </div>
       </TubesCursor>

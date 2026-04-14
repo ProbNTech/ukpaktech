@@ -21,7 +21,7 @@ export default function FeaturedPartnersCarousel() {
 
   return (
     <section className="relative z-[1] py-16 lg:py-20 bg-white">
-      <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
+      <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
         <AnimatedSection animation="blur-in">
           <SectionHeader
             label="Our partners"

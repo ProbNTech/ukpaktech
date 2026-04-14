@@ -230,7 +230,7 @@ export default function MembershipSection() {
         />
 
         {/* Content */}
-        <div className="relative z-20 flex flex-col justify-center items-start h-full px-8 sm:px-12 lg:px-16 xl:px-20">
+        <div className="relative z-20 flex flex-col justify-center items-start h-full px-6 sm:px-10 lg:px-16 xl:px-20">
           <motion.div
             className="grid lg:grid-cols-2 gap-10 items-start w-full"
             initial={{ opacity: 0, y: 20 }}
@@ -289,7 +289,7 @@ export default function MembershipSection() {
                   <Link
                     key={item.title}
                     href="/membership"
-                    className="group block rounded-xl overflow-hidden bg-[black/30] backdrop-blur-md border border-white/[0.12] hover:-translate-y-1 hover:bg-black/40 hover:border-white/[0.2] transition-all duration-300 shadow-lg shadow-black/20"
+                    className="group block rounded-xl overflow-hidden bg-black/30 backdrop-blur-md border border-white/[0.12] hover:-translate-y-1 hover:bg-black/40 hover:border-white/[0.2] transition-all duration-300 shadow-lg shadow-black/20"
                   >
                     <div className="relative h-[180px] overflow-hidden rounded-t-xl">
                       <Image
@@ -323,9 +323,9 @@ export default function MembershipSection() {
 /* ───────────── WHAT DRIVES US — Separate exported component ───────────── */
 export function WhatDrivesUs() {
   return (
-    <section className="relative z-[1] py-20 lg:py-24 bg-[#0f1a3a] overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
-      <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
+    <section className="relative z-[1] py-20 lg:py-28 bg-[#eef1f5] overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, #1C1F2E 0.5px, transparent 0.5px)", backgroundSize: "24px 24px" }} />
+      <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
         <AnimatedSection animation="blur-in">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-14">
             {/* Left Side: Header */}
@@ -334,10 +334,10 @@ export function WhatDrivesUs() {
                 <div className="w-8 h-[3px] rounded-full bg-[#C41E3A]" />
                 <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#C41E3A]">Our Focus</p>
               </div>
-              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.8rem] leading-[1.1] text-white">
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.8rem] leading-[1.1] text-[#1C1F2E]">
                 What Drives Us
               </h2>
-              <p className="mt-4 text-base sm:text-lg leading-relaxed text-gray-300">
+              <p className="mt-4 text-base sm:text-lg leading-relaxed text-[#5A5F72]">
                 We work across three strategic pillars to build a stronger, more connected UK–Pakistan technology ecosystem.
               </p>
             </div>
@@ -365,16 +365,16 @@ export function WhatDrivesUs() {
                 return (
                   <div
                     key={card.title}
-                    className="group rounded-2xl bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] p-6 hover:-translate-y-1 hover:bg-white/[0.1] hover:shadow-lg transition-all duration-300 text-center"
+                    className="group rounded-2xl bg-white border border-[#E5E7EB] shadow-sm p-6 hover:-translate-y-1 hover:shadow-xl hover:border-[#C41E3A]/20 transition-all duration-300 text-center"
                   >
                     <div aria-hidden className="flex justify-center group-hover:scale-110 transition-transform duration-500">
                       <CardIcon className="w-24 h-24 sm:w-28 sm:h-28 drop-shadow-2xl" />
                     </div>
 
-                    <h3 className="mt-6 font-heading font-bold text-white text-base sm:text-lg xl:text-xl">
+                    <h3 className="mt-6 font-heading font-bold text-[#1C1F2E] text-base sm:text-lg xl:text-xl">
                       {card.title}
                     </h3>
-                    <p className="mt-3 text-white/70 text-sm leading-relaxed">{card.desc}</p>
+                    <p className="mt-3 text-[#5A5F72] text-sm leading-relaxed">{card.desc}</p>
                   </div>
                 );
               })}

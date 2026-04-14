@@ -164,7 +164,7 @@ export default function HomeEventsSection() {
 
   return (
     <section className="relative z-[1] py-20 lg:py-28 bg-white" aria-labelledby="events-heading">
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-16">
+      <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
         <AnimatedSection>
           <SectionLabel
             label="Attend an Event"
