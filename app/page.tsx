@@ -159,14 +159,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* gradient: light → dark */}
-      <div className="h-16 bg-gradient-to-b from-[#eef1f5] to-[#0f1a3a]" aria-hidden="true" />
-
       {/* 4. MEMBERSHIP */}
       <MembershipSection />
-
-      {/* gradient: dark → white */}
-      <div className="h-16 bg-gradient-to-b from-[#0B0F1A] to-white" aria-hidden="true" />
 
       {/* 5. WHAT WE DO */}
       <section className="relative z-[1] py-20 lg:py-28 bg-white" aria-labelledby="expertise-heading">
@@ -184,9 +178,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* gradient: white → dark navy */}
-      <div className="h-16 bg-gradient-to-b from-white to-[#0f1a3a]" aria-hidden="true" />
-
       {/* 6. IMPACT STATS */}
       <section className="relative z-[1] py-20 lg:py-24 bg-[#0f1a3a] overflow-hidden" aria-labelledby="impact-heading">
         <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
@@ -197,9 +188,6 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
-
-      {/* gradient: dark navy → light gray */}
-      <div className="h-16 bg-gradient-to-b from-[#0f1a3a] to-[#eef1f5]" aria-hidden="true" />
 
       {/* 7. WHAT DRIVES US */}
       <WhatDrivesUs />
@@ -288,9 +276,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* gradient: light gray → dark navy */}
-      <div className="h-16 bg-gradient-to-b from-[#eef1f5] to-[#0f1a3a]" aria-hidden="true" />
-
       {/* 11. EVENT HIGHLIGHTS */}
       <section className="relative z-[1] py-20 lg:py-24 bg-[#0f1a3a] overflow-hidden" aria-labelledby="highlights-heading">
         <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
@@ -323,17 +308,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* gradient: dark → white */}
-      <div className="h-16 bg-gradient-to-b from-[#0f1a3a] to-white" aria-hidden="true" />
-
       {/* 12. EVENTS */}
       <HomeEventsSection />
 
       {/* 13. PARTNERS & NETWORK (merged) */}
       <FeaturedPartnersCarousel />
-
-      {/* gradient: white → dark navy */}
-      <div className="h-16 bg-gradient-to-b from-white to-[#0f1a3a]" aria-hidden="true" />
 
       <section className="relative z-[1] py-14 lg:py-20 bg-[#0f1a3a] overflow-hidden" aria-labelledby="network-heading">
         <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
