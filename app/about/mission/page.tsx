@@ -33,7 +33,7 @@ export default function MissionPage() {
         label="Our Mission"
         title="Mission"
         subtitle="Our mission is to transform Pakistan into a thriving tech hub. By forging connections with global experts and harnessing diverse resources, we're setting the stage for a tech-driven future."
-        image="/image/banners/banner98.png"
+        image="/image/banners/banner116.png"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>
