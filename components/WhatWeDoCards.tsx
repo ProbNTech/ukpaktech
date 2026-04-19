@@ -9,7 +9,7 @@ interface WhatWeDoItem {
   id: number;
   title: string;
   content: string;
-  icon: React.ElementType;
+  icon: string;
   href: string;
   color: string;
   image?: string;
@@ -44,8 +44,6 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
   const handleMouseLeave = useCallback(() => {
     setIsHovered(false);
   }, []);
-
-  const Icon = item.icon;
 
   return (
     <div
@@ -114,9 +112,12 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
                 background: `${item.color}14`,
               }}
             >
-              <Icon
-                className="w-9 h-9"
-                style={{ color: item.color }}
+              <Image
+                src={item.icon}
+                alt=""
+                width={40}
+                height={40}
+                className="w-10 h-10 object-contain"
               />
             </div>
           )}

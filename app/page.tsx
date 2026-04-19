@@ -12,7 +12,7 @@ import { PillButton } from "@/components/ui/PillButton";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { Hero } from "@/components/Hero";
 import { LiteYouTube } from "@/components/LiteYouTube";
-import { AITechIcon, ServicesIcon, SkillDevIcon, PartnershipIcon, GovernanceIcon, TradeDelegationsIcon, ProductsIcon, MentorshipIcon, MeetingSpaceIcon, StructureIcon } from "@/components/ui/premium-icons";
+import { ProductsIcon, MentorshipIcon, MeetingSpaceIcon, StructureIcon } from "@/components/ui/premium-icons";
 const WhatWeDoCards = dynamic(() => import("@/components/WhatWeDoCards"), {
   loading: () => <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" aria-busy="true">{Array.from({ length: 6 }).map((_, i) => <div key={i} className="h-64 bg-[#f7f8fa] rounded-xl animate-pulse" />)}</div>,
 });
@@ -45,12 +45,12 @@ const sponsorCarouselLogos = sponsorLogos.map((logo, i) => ({
 
 /* ─── What We Do data ─── */
 const whatWeDoData = [
-  { id: 1, title: "AI & Tech Programs", content: "Driving AI innovation through training, certifications, and collaborative startup models across key sectors.", icon: AITechIcon, href: "/programs/ai-tech-programs", color: "#2563EB" },
-  { id: 2, title: "Services", content: "Business networks, SME hub, digital marketing, overseas employment, and business support for your tech venture.", icon: ServicesIcon, href: "/services", color: "#22C55E" },
-  { id: 3, title: "Skill Development", content: "Practical training pathways, professional certifications, and mentorship for the modern tech workforce.", icon: SkillDevIcon, href: "/programs/skill-development-center", color: "#EAB308" },
-  { id: 4, title: "UK-Pakistan Tech Partnership", content: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", icon: PartnershipIcon, href: "/ecosystem/uk-pakistan-technology-partnership", color: "#C41E3A" },
-  { id: 5, title: "Leadership & Governance", content: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", icon: GovernanceIcon, href: "/about/management-team", color: "#6366F1" },
-  { id: 6, title: "Trade Delegations", content: "Curated business missions, international trade expos, and pavilion programmes placing members on the world stage.", icon: TradeDelegationsIcon, href: "/ecosystem/trade-delegations-and-exhibitions", color: "#0EA5E9" },
+  { id: 1, title: "AI & Tech Programs", content: "Driving AI innovation through training, certifications, and collaborative startup models across key sectors.", icon: "/image/home/what-we-do/AI.png", href: "/programs/ai-tech-programs", color: "#2563EB" },
+  { id: 2, title: "Services", content: "Business networks, SME hub, digital marketing, overseas employment, and business support for your tech venture.", icon: "/image/home/what-we-do/Services.png", href: "/services", color: "#22C55E" },
+  { id: 3, title: "Skill Development", content: "Practical training pathways, professional certifications, and mentorship for the modern tech workforce.", icon: "/image/home/what-we-do/Skill%20development.png", href: "/programs/skill-development-center", color: "#EAB308" },
+  { id: 4, title: "UK-Pakistan Tech Partnership", content: "Bilateral framework underpinning joint ventures, policy dialogue, and shared R&D investment.", icon: "/image/home/what-we-do/Partnership.png", href: "/ecosystem/uk-pakistan-technology-partnership", color: "#C41E3A" },
+  { id: 5, title: "Leadership & Governance", content: "Transparent governance, ethical oversight, and accountability ensuring UPTECH operates to the highest standards.", icon: "/image/home/what-we-do/leadership.png", href: "/about/management-team", color: "#6366F1" },
+  { id: 6, title: "Trade Delegations", content: "Curated business missions, international trade expos, and pavilion programmes placing members on the world stage.", icon: "/image/home/what-we-do/Trade.png", href: "/ecosystem/trade-delegations-and-exhibitions", color: "#0EA5E9" },
 ];
 
 export default function Home() {
