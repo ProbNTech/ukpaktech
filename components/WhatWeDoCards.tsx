@@ -9,7 +9,7 @@ interface WhatWeDoItem {
   id: number;
   title: string;
   content: string;
-  icon: React.ElementType;
+  icon?: React.ElementType;
   href: string;
   color: string;
   image?: string;
@@ -107,7 +107,7 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
                 sizes="76px"
               />
             </div>
-          ) : (
+          ) : Icon ? (
             <div
               className="inline-flex items-center justify-center w-[72px] h-[72px] rounded-full"
               style={{
@@ -119,7 +119,7 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
                 style={{ color: item.color }}
               />
             </div>
-          )}
+          ) : null}
         </div>
 
         {/* ── Title ── */}
