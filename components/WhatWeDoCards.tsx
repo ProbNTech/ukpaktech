@@ -105,20 +105,12 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
                 sizes="76px"
               />
             </div>
-          ) : Icon ? (
+          ) : item.icon ? (
             <div
               className="inline-flex items-center justify-center w-[72px] h-[72px] rounded-full"
-              style={{
-                background: `${item.color}14`,
-              }}
+              style={{ background: `${item.color}14` }}
             >
-              <Image
-                src={item.icon}
-                alt=""
-                width={40}
-                height={40}
-                className="w-10 h-10 object-contain"
-              />
+              {(() => { const Icon = item.icon!; return <Icon className="w-9 h-9" style={{ color: item.color }} />; })()}
             </div>
           ) : null}
         </div>
