@@ -45,8 +45,6 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
     setIsHovered(false);
   }, []);
 
-  const Icon = item.icon;
-
   return (
     <div
       ref={cardRef}
@@ -114,9 +112,12 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
                 background: `${item.color}14`,
               }}
             >
-              <Icon
-                className="w-9 h-9"
-                style={{ color: item.color }}
+              <Image
+                src={item.icon}
+                alt=""
+                width={40}
+                height={40}
+                className="w-10 h-10 object-contain"
               />
             </div>
           ) : null}
