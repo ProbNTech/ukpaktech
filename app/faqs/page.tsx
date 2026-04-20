@@ -328,10 +328,10 @@ function FAQAccordion({
             <div
               className={`bg-white rounded-xl overflow-hidden transition-all duration-300 ${
                 isOpen
-                  ? "shadow-lg ring-1"
+                  ? "shadow-lg"
                   : "shadow-sm border border-[#E5E7EB] hover:shadow-md hover:border-[#D1D5DB]"
               }`}
-              style={isOpen ? { ringColor: `${color}30`, borderLeft: `3px solid ${color}` } : {}}
+              style={isOpen ? { boxShadow: `0 0 0 1px ${color}30, 0 10px 15px -3px rgb(0 0 0 / 0.1)`, borderLeft: `3px solid ${color}` } : {}}
             >
               <button
                 onClick={() => setOpenIndex(isOpen ? null : index)}
