@@ -95,15 +95,16 @@ export function Hero() {
       {slides.map((s, index) => {
         const isActive = index === currentIndex;
         const isNext = index === (currentIndex + 1) % slides.length;
+        if (!isActive && !isNext) return null;
         return (
           <video
             key={s.video}
             ref={setVideoRef(index)}
             aria-hidden="true"
-            autoPlay={index === 0}
+            autoPlay={isActive}
             muted
             playsInline
-            preload={isActive || isNext ? "auto" : "none"}
+            preload={isActive ? "auto" : "none"}
             onEnded={isActive ? handleVideoEnded : undefined}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
               isActive ? "opacity-100 z-10" : "opacity-0 z-0"

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -37,11 +34,8 @@ const dataSubjectRights = [
 ];
 
 export default function CookiesPage() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <div>
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
       <PageHero
         label="Data & Privacy"
         title="Cookies Policy"
@@ -50,14 +44,13 @@ export default function CookiesPage() {
       />
 
       <div className="content-body">
-      {/* ── Introduction — Light section ───────────────────────────── */}
       <section className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Overview" title="About Our Cookies" color="blue" />
             <div className="space-y-6">
-              <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
+              <div className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
                   <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center flex-shrink-0">
@@ -73,20 +66,19 @@ export default function CookiesPage() {
                   <p className="text-base text-[#5A5F72] leading-relaxed">Cookies are text files placed on your computer to collect standard internet log information and visitor behavior information. This information is used to track visitor use of the website and to compile statistical reports on website activity. For further information visit{" "}<a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">www.aboutcookies.org</a>{" "}or{" "}<a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">www.allaboutcookies.org</a>.</p>
                   <p className="text-base text-[#5A5F72] leading-relaxed">You can set your browser not to accept cookies, and the above websites tell you how to remove cookies from your browser. However, in a few cases, some of our website features may not function as a result.</p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ── Links to Other Websites — Light alt section ─────────────── */}
       <section className="relative py-10 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="External Links" title="Links to Other Websites" color="green" />
             <div>
-              <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
+              <div className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
                   <div className="w-10 h-10 rounded-xl bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center flex-shrink-0">
@@ -99,32 +91,30 @@ export default function CookiesPage() {
                   <p className="text-base text-[#5A5F72] leading-relaxed">Our website may contain links to other websites run by other organizations. This policy applies only to our website, so we encourage you to read the privacy statements on the other websites you visit. We cannot be responsible for the privacy policies and practices of other websites even if you access them using links from our website.</p>
                   <p className="text-base text-[#5A5F72] leading-relaxed">In addition, if you linked to our website from a third-party site, we cannot be responsible for the privacy policies and practices of the owners and operators of that third party site and recommend that you check the privacy policy of that third party site.</p>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ── Cookie Types — Light section ───────────────────────────── */}
       <section className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Cookie Categories" title="We Use These Cookies" color="blue" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {cookieTypes.map((cookie, i) => {
+              {cookieTypes.map((cookie) => {
                 const Icon = cookie.icon;
                 return (
-                  <motion.div key={cookie.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, delay: i * 0.06 }} className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:shadow-md transition-all duration-300 overflow-hidden shadow-sm">
+                  <div key={cookie.title} className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:shadow-md transition-all duration-300 overflow-hidden shadow-sm">
                     <div className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full transition-opacity duration-300 opacity-40 group-hover:opacity-100" style={{ background: `linear-gradient(to bottom, ${cookie.color}, ${cookie.color}40)` }} />
                     <div className="relative w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: `${cookie.color}10`, border: `1px solid ${cookie.color}20` }}>
-                      <div className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500" style={{ backgroundColor: cookie.color }} />
                       <Icon className="relative z-10 w-5 h-5" style={{ color: cookie.color }} strokeWidth={1.5} />
                     </div>
                     <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{cookie.title}</h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
                     <p className="text-base text-[#7A7E8F] leading-relaxed">{cookie.desc}</p>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>
@@ -132,40 +122,38 @@ export default function CookiesPage() {
         </div>
       </section>
 
-      {/* ── Additional Cookie Details — Light alt section ───────────── */}
       <section className="relative py-10 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Detailed Information" title="Additional Cookie Details" color="red" />
             <div className="grid lg:grid-cols-2 gap-5">
-              {additionalCookieDetails.map((item, i) => (
-                <motion.div key={item.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4, delay: i * 0.05 }} className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:shadow-md transition-all duration-300 overflow-hidden shadow-sm">
+              {additionalCookieDetails.map((item) => (
+                <div key={item.title} className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:shadow-md transition-all duration-300 overflow-hidden shadow-sm">
                   <div className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full transition-opacity duration-300 opacity-40 group-hover:opacity-100 bg-gradient-to-b from-[#C41E3A] to-[#C41E3A]/25" />
                   <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-3">{item.title}</h3>
                   <div className="h-px bg-[#D8D5CF] mb-3" />
                   <p className="text-base text-[#7A7E8F] leading-relaxed">{item.desc}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-30px" }} transition={{ duration: 0.4, delay: 0.3 }} className="mt-8 relative bg-gradient-to-br from-[#2563EB]/10 to-[#2563EB]/10 border border-[#2563EB]/20 rounded-xl p-6 overflow-hidden">
+            <div className="mt-8 relative bg-gradient-to-br from-[#2563EB]/10 to-[#2563EB]/10 border border-[#2563EB]/20 rounded-xl p-6 overflow-hidden">
               <div className="relative">
                 <Cookie className="w-5 h-5 text-[#2563EB] mb-3" strokeWidth={1.5} />
                 <p className="text-[#5A5F72] text-base leading-relaxed">The specific names and types of cookies, web beacons, and other similar technologies we use may change from time to time. However, the cookies we use generally fall into one of the following categories:</p>
               </div>
-            </motion.div>
+            </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ── Browser Settings — Light section ────────────────────────── */}
       <section className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Cookie Management" title="Browser Settings" color="red" />
             <div>
-              <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
+              <div className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
                   <div className="w-10 h-10 rounded-xl bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
@@ -175,32 +163,30 @@ export default function CookiesPage() {
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
                 <p className="text-base text-[#5A5F72] leading-relaxed">Your web browser may be set to accept cookies automatically but can be changed to decline them. If you don{"\u2019"}t want to receive cookies, you can modify your browser so that it notifies you when cookies are sent to it or you can refuse cookies altogether. You can also delete cookies that have already been set. The Help section of the toolbar on most browsers will tell you how to set your browser to prevent new cookies or disable cookies altogether, or you should browse the site using your browser{"\u2019"}s anonymous usage setting (called {"\u201C"}Incognito{"\u201D"} in Chrome, {"\u201C"}InPrivate{"\u201D"} for Internet Explorer, {"\u201C"}Private Browsing{"\u201D"} in Firefox and Safari). For more help,{" "}<a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-[#C41E3A] hover:text-[#ef4444] transition-colors">www.aboutcookies.org</a>{" "}contains information on how to do this on a wide variety of desktop browsers.</p>
-              </motion.div>
+              </div>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* ── Data Subject Rights — Light section ─────────────────────── */}
       <section className="relative bg-white py-10 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="GDPR Compliance" title="Data Subject Rights" subtitle={<>GDPR compliance requires data subjects to be granted certain rights. What follows is not an exhaustive list, but those rights that are relevant to the collection, processing, and storage of personal data on{" "}<a href="https://www.ukpaktech.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">www.ukpaktech.org.uk</a></>} color="blue" />
             <div className="grid md:grid-cols-2 gap-5">
-              {dataSubjectRights.map((right, i) => {
+              {dataSubjectRights.map((right) => {
                 const Icon = right.icon;
                 return (
-                  <motion.div key={right.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.4, delay: i * 0.06 }} className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:shadow-md transition-all duration-300 overflow-hidden shadow-sm">
+                  <div key={right.title} className="group relative bg-white border border-[#D8D5CF] rounded-xl p-6 hover:shadow-md transition-all duration-300 overflow-hidden shadow-sm">
                     <div className="absolute top-3 bottom-3 left-0 w-[2px] rounded-r-full transition-opacity duration-300 opacity-40 group-hover:opacity-100" style={{ background: `linear-gradient(to bottom, ${right.color}, ${right.color}40)` }} />
                     <div className="relative w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: `${right.color}10`, border: `1px solid ${right.color}20` }}>
-                      <div className="absolute inset-[-6px] rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500" style={{ backgroundColor: right.color }} />
                       <Icon className="relative z-10 w-5 h-5" style={{ color: right.color }} strokeWidth={1.5} />
                     </div>
                     <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-2">{right.title}</h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
                     <p className="text-base text-[#7A7E8F] leading-relaxed">{right.desc}</p>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>
@@ -208,14 +194,13 @@ export default function CookiesPage() {
         </div>
       </section>
 
-      {/* ── Changes, Review & General — Light alt section ───────────── */}
       <section className="relative py-10 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Policy Updates" title="Changes, Review & General" color="blue" />
             <div className="grid lg:grid-cols-3 gap-5 max-w-5xl">
-              <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
+              <div className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
                   <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center flex-shrink-0">
@@ -225,8 +210,8 @@ export default function CookiesPage() {
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-3">Changes to this Policy</h3>
                 <div className="h-px bg-[#D8D5CF] mb-3" />
                 <p className="text-base text-[#7A7E8F] leading-relaxed">UPTECH reserves the right to modify or amend the Privacy Policy at any time and for any reason, as permitted by applicable law. If there are material changes to the Privacy Policy, we will post those changes here.</p>
-              </motion.div>
-              <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.08 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
+              </div>
+              <div className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
                   <div className="w-10 h-10 rounded-xl bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center flex-shrink-0">
@@ -236,8 +221,8 @@ export default function CookiesPage() {
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-3">Review</h3>
                 <div className="h-px bg-[#D8D5CF] mb-3" />
                 <p className="text-base text-[#7A7E8F] leading-relaxed">We keep this policy under regular review.</p>
-              </motion.div>
-              <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.16 }} className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
+              </div>
+              <div className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 overflow-hidden shadow-sm">
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
                 <div className="flex items-start gap-4 mb-5">
                   <div className="w-10 h-10 rounded-xl bg-[#C41E3A]/10 border border-[#C41E3A]/20 flex items-center justify-center flex-shrink-0">
@@ -247,15 +232,13 @@ export default function CookiesPage() {
                 <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-3">General</h3>
                 <div className="h-px bg-[#D8D5CF] mb-3" />
                 <p className="text-base text-[#7A7E8F] leading-relaxed">You may not transfer any of your rights under this privacy policy to any other person. We may transfer our rights under this privacy policy where we believe your rights will not be affected. We may transfer your personal information to a third party as part of the sale of some or all assets. We would take steps to ensure your privacy rights continue to be protected.</p>
-              </motion.div>
+              </div>
             </div>
           </AnimatedSection>
         </div>
       </section>
-
       </div>
 
-      {/* ── Contact CTA — Gradient dark section ───────────────────── */}
       <section className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
