@@ -134,7 +134,7 @@ const addOnServices = [
 
 const bookingChecklist = [
   { icon: ShieldCheck, text: "Meeting facilities are available by advance booking and subject to membership tier allocations and availability." },
-  { icon: Mail, text: "Contact: Membership & Operations Team, Email: info@uptech.org.uk" },
+  { icon: Mail, text: "Contact: Membership & Operations Team, Email: info@ukpaktech.org.uk" },
 ];
 
 export default function MeetingSpacePage() {

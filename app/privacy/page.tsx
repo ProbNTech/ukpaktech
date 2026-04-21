@@ -535,7 +535,7 @@ export default function PrivacyPage() {
                     <div className="h-px bg-[#D8D5CF] mb-3" />
                     <p className="text-base text-[#7A7E8F] leading-relaxed">
                       {right.desc}
-                      {right.title === "Right of Access" && <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a>}
+                      {right.title === "Right of Access" && <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@ukpaktech.org.uk</a>}
                     </p>
                   </motion.div>
                 );
@@ -546,7 +546,7 @@ export default function PrivacyPage() {
               <div className="relative">
                 <p className="text-base text-[#5A5F72] leading-relaxed mb-4">
                   If you want to exercise any of the above rights, please email us at{" "}
-                  <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a>
+                  <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@ukpaktech.org.uk</a>
                   {" "}and clearly state in the email subject line: RIGHTS REQUEST. We may be required to ask for further information and/or evidence of identity. We will endeavor to respond fully to all requests within 10 working days of your request, however if we are unable to do so we will contact you with reasons for the delay.
                 </p>
                 <p className="text-base text-[#5A5F72] leading-relaxed">
@@ -612,7 +612,7 @@ export default function PrivacyPage() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">Contact Information</h2>
               <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-8">
                 For any questions about this Privacy Policy or our treatment of your Personal Information, please contact{" "}
-                <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a>
+                <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@ukpaktech.org.uk</a>
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button href="/contact" variant="primary" size="lg">Contact Us</Button>

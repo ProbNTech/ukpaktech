@@ -96,7 +96,7 @@ npm start
 
 - Portal URL is set to `https://portal.example.com` (update in code)
 - Placeholder images are used (replace with actual images)
-- Contact email is `info@uptech.org.uk` (update in Footer and Contact page)
+- Contact email is `info@ukpaktech.org.uk` (update in Footer and Contact page)
 
 
 

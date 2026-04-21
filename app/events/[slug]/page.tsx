@@ -146,10 +146,10 @@ export default async function EventDetailPage({
               <div className="lg:sticky lg:top-28">
                 <div className="flex lg:flex-col gap-3">
                   {[
-                    { label: "Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://www.uptech.org.uk/events/${event.slug}`)}` },
-                    { label: "Twitter", href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://www.uptech.org.uk/events/${event.slug}`)}&text=${encodeURIComponent(event.title)}` },
-                    { label: "LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://www.uptech.org.uk/events/${event.slug}`)}` },
-                    { label: "Email", href: `mailto:?subject=${encodeURIComponent(event.title)}&body=${encodeURIComponent(`Check out this event: https://www.uptech.org.uk/events/${event.slug}`)}` },
+                    { label: "Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://www.ukpaktech.org.uk/events/${event.slug}`)}` },
+                    { label: "Twitter", href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://www.ukpaktech.org.uk/events/${event.slug}`)}&text=${encodeURIComponent(event.title)}` },
+                    { label: "LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://www.ukpaktech.org.uk/events/${event.slug}`)}` },
+                    { label: "Email", href: `mailto:?subject=${encodeURIComponent(event.title)}&body=${encodeURIComponent(`Check out this event: https://www.ukpaktech.org.uk/events/${event.slug}`)}` },
                   ].map((s) => (
                     <a
                       key={s.label}

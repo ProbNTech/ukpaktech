@@ -534,7 +534,7 @@ async function generateArbitrationFramework() {
   b.drawParagraph("24/7 technical support is available via the platform, chat, email, or phone. The UPTECH Arbitration Committee provides procedural guidance and handles all enquiries regarding arbitration proceedings.");
   b.drawParagraph("UK-Pakistan Technology Council (UPTECH)", { bold: true });
   b.drawParagraph("134-136 Westbourne Terrace, London, W2 6QB, United Kingdom");
-  b.drawParagraph("Email: info@uptech.org.uk");
+  b.drawParagraph("Email: info@ukpaktech.org.uk");
 
   await b.save("UPTECH-Arbitration-Framework.pdf");
 }
@@ -591,7 +591,7 @@ async function generateCodeOfConduct() {
   b.drawSectionHeading("7. Contact");
   b.drawParagraph("UK-Pakistan Technology Council (UPTECH)", { bold: true });
   b.drawParagraph("134-136 Westbourne Terrace, London, W2 6QB, United Kingdom");
-  b.drawParagraph("Email: info@uptech.org.uk");
+  b.drawParagraph("Email: info@ukpaktech.org.uk");
 
   await b.save("UPTECH-Code-of-Conduct.pdf");
 }
@@ -603,7 +603,7 @@ async function generatePrivacyPolicy() {
   b.drawTitle("UPTECH PRIVACY POLICY");
 
   b.drawSectionHeading("1. Introduction");
-  b.drawParagraph("UK-PAKISTAN TECH COUNCIL LTD (UPTECH) understands that your privacy is important to you and that you care about how your personal data is used. We respect and value the privacy of everyone who visits our website, www.uptech.org.uk, and will only collect and use personal data in ways that are described here, and in a way that is consistent with our obligations and your rights under the law.");
+  b.drawParagraph("UK-PAKISTAN TECH COUNCIL LTD (UPTECH) understands that your privacy is important to you and that you care about how your personal data is used. We respect and value the privacy of everyone who visits our website, www.ukpaktech.org.uk, and will only collect and use personal data in ways that are described here, and in a way that is consistent with our obligations and your rights under the law.");
 
   b.drawSectionHeading("2. How We Collect Information");
   b.drawParagraph("We collect information through:");
@@ -654,7 +654,7 @@ async function generatePrivacyPolicy() {
   b.drawBullet("Specific Consent \u2014 Where you have provided specific consent to us using your personal information.");
 
   b.drawSectionHeading("8. Marketing");
-  b.drawParagraph("We will only send you marketing communications where you have given us consent or where we have a legitimate interest to do so. You may opt out at any time by contacting info@uptech.org.uk or using the unsubscribe link in our emails.");
+  b.drawParagraph("We will only send you marketing communications where you have given us consent or where we have a legitimate interest to do so. You may opt out at any time by contacting info@ukpaktech.org.uk or using the unsubscribe link in our emails.");
 
   b.drawSectionHeading("9. Your Rights");
   b.drawParagraph("Under UK data protection law, you have certain rights over the personal information that we hold about you:");
@@ -664,7 +664,7 @@ async function generatePrivacyPolicy() {
   b.drawBullet("Right of Erasure \u2014 You may ask us to delete some or all your personal information.");
   b.drawBullet("Right to Portability \u2014 You may ask us to provide your data in a machine-readable format.");
   b.drawBullet("Right to Object \u2014 You have the right to object to processing based on legitimate interests, direct marketing, or statistical/research purposes.");
-  b.drawParagraph("To exercise any of these rights, please email us at info@uptech.org.uk with subject line: RIGHTS REQUEST. We will endeavour to respond within 10 working days.");
+  b.drawParagraph("To exercise any of these rights, please email us at info@ukpaktech.org.uk with subject line: RIGHTS REQUEST. We will endeavour to respond within 10 working days.");
 
   b.drawSectionHeading("10. Security");
   b.drawParagraph("UPTECH uses reasonable measures to safeguard personal information. We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorised way, altered or disclosed. In addition, we limit access to your personal data to only those employees, contractors or agents who have a legitimate business need.");
@@ -673,7 +673,7 @@ async function generatePrivacyPolicy() {
   b.drawParagraph("For any questions about this Privacy Policy or our treatment of your Personal Information, please contact:");
   b.drawParagraph("UK-Pakistan Technology Council (UPTECH)", { bold: true });
   b.drawParagraph("134-136 Westbourne Terrace, London, W2 6QB, United Kingdom");
-  b.drawParagraph("Email: info@uptech.org.uk");
+  b.drawParagraph("Email: info@ukpaktech.org.uk");
 
   await b.save("UPTECH-Privacy-Policy.pdf");
 }
@@ -734,7 +734,7 @@ async function generateTermsAndConditions() {
   b.drawParagraph("These Terms shall be governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.");
 
   b.drawSectionHeading("15. Contact");
-  b.drawParagraph("To contact Us, please email info@uptech.org.uk or write to:");
+  b.drawParagraph("To contact Us, please email info@ukpaktech.org.uk or write to:");
   b.drawParagraph("UK-Pakistan Technology Council (UPTECH)", { bold: true });
   b.drawParagraph("134-136 Westbourne Terrace, London, W2 6QB, United Kingdom");
 
@@ -748,9 +748,9 @@ async function generateGDPRPolicy() {
   b.drawTitle("UPTECH GDPR COMPLIANCE POLICY");
 
   b.drawSectionHeading("1. Data Subject Rights");
-  b.drawParagraph("GDPR compliance requires data subjects to be granted certain rights. What follows are those rights relevant to the collection, processing, and storage of personal data on www.uptech.org.uk:");
-  b.drawBullet("Right to Access \u2014 Data subjects reserve the right to request and obtain confirmation that data is or is not being collected on them. This data can be manually requested via info@uptech.org.uk and provided in an electronic format free of charge.");
-  b.drawBullet("Right to Be Forgotten \u2014 Should data subjects wish to withdraw their consent and no longer allow UPTECH to store their personal data, this request can be made via info@uptech.org.uk.");
+  b.drawParagraph("GDPR compliance requires data subjects to be granted certain rights. What follows are those rights relevant to the collection, processing, and storage of personal data on www.ukpaktech.org.uk:");
+  b.drawBullet("Right to Access \u2014 Data subjects reserve the right to request and obtain confirmation that data is or is not being collected on them. This data can be manually requested via info@ukpaktech.org.uk and provided in an electronic format free of charge.");
+  b.drawBullet("Right to Be Forgotten \u2014 Should data subjects wish to withdraw their consent and no longer allow UPTECH to store their personal data, this request can be made via info@ukpaktech.org.uk.");
   b.drawBullet("Data Portability \u2014 Data subjects are able to request, obtain, and/or transfer possession of collected data at any time, provided in an electronic format free of charge.");
   b.drawBullet("Breach Notification \u2014 Should UPTECH encounter a breach of personal data, a notification will be made within 72 hours of becoming aware of the breach.");
 
@@ -762,7 +762,7 @@ async function generateGDPRPolicy() {
   b.drawBullet("Right of Erasure \u2014 You may ask us to delete some or all your personal information and in certain cases, we will do so as far as we are required to.");
   b.drawBullet("Right to Portability \u2014 If we are processing your personal information based on your consent, or in order to carry out a contract with you, you may ask us to provide it in a machine-readable format.");
   b.drawBullet("Right to Object \u2014 You have the right to object to processing where we are using your personal information based on legitimate interests, for direct marketing, or for statistical/research purposes.");
-  b.drawParagraph("To exercise any of the above rights, please email us at info@uptech.org.uk and clearly state in the email subject line: RIGHTS REQUEST. We will endeavour to respond fully to all requests within 10 working days.");
+  b.drawParagraph("To exercise any of the above rights, please email us at info@ukpaktech.org.uk and clearly state in the email subject line: RIGHTS REQUEST. We will endeavour to respond fully to all requests within 10 working days.");
 
   b.drawSectionHeading("3. Lawful Processing");
   b.drawParagraph("Data protection law requires us to rely on one or more lawful grounds to process your personal information:");
@@ -787,7 +787,7 @@ async function generateGDPRPolicy() {
   b.drawParagraph("For any questions about this GDPR Policy or to exercise your rights, please contact:");
   b.drawParagraph("UK-Pakistan Technology Council (UPTECH)", { bold: true });
   b.drawParagraph("134-136 Westbourne Terrace, London, W2 6QB, United Kingdom");
-  b.drawParagraph("Email: info@uptech.org.uk");
+  b.drawParagraph("Email: info@ukpaktech.org.uk");
 
   await b.save("UPTECH-GDPR-Policy.pdf");
 }

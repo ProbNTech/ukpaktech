@@ -646,7 +646,7 @@ export default function MembershipTermsClient() {
               134-136 Westbourne Terrace, London, W2 6QB, United Kingdom
               <br />
               For any questions about these Terms, please contact{" "}
-              <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:underline">info@uptech.org.uk</a>
+              <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:underline">info@ukpaktech.org.uk</a>
             </p>
           </div>
         </AnimatedSection>

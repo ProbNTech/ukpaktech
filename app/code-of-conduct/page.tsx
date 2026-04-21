@@ -360,7 +360,7 @@ export default function CodeOfConductPage() {
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "Email the governance team at info@uptech.org.uk",
+                    "Email the governance team at info@ukpaktech.org.uk",
                     "Speak confidentially with any Board member",
                     "Use the anonymous reporting form on the member portal",
                     "Contact the designated ethics officer directly",

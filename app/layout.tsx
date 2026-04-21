@@ -20,7 +20,7 @@ const lato = Lato({
   display: "swap",
 });
 
-const BASE_URL = "https://www.uptech.org.uk";
+const BASE_URL = "https://www.ukpaktech.org.uk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -91,7 +91,7 @@ const jsonLd = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "general enquiry",
-    email: "info@uptech.org.uk",
+    email: "info@ukpaktech.org.uk",
   },
 };
 

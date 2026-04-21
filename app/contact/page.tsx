@@ -20,8 +20,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "info@uptech.org.uk",
-    href: "mailto:info@uptech.org.uk",
+    value: "info@ukpaktech.org.uk",
+    href: "mailto:info@ukpaktech.org.uk",
     color: "#2563EB",
     glow: "rgba(37,99,235,0.15)",
   },
@@ -245,10 +245,10 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <a
-                    href="mailto:info@uptech.org.uk"
+                    href="mailto:info@ukpaktech.org.uk"
                     className="inline-flex items-center gap-2 text-base font-semibold text-[#2563EB] hover:text-[#1D4ED8] transition-colors"
                   >
-                    info@uptech.org.uk
+                    info@ukpaktech.org.uk
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                 </motion.div>

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://www.uptech.org.uk';
+const BASE_URL = 'https://www.ukpaktech.org.uk';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

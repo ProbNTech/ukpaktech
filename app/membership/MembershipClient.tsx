@@ -529,10 +529,10 @@ export default function MembershipClient() {
               <p className="text-base text-[#5A5F72] leading-relaxed">
                 The first step towards membership is always a meeting with our Membership team where we can determine your annual fee. For further information please contact{" "}
                 <a
-                  href="mailto:membership@uptech.org.uk"
+                  href="mailto:membership@ukpaktech.org.uk"
                   className="text-[#2563EB] hover:text-[#3b82f6] transition-colors underline underline-offset-2"
                 >
-                  membership@uptech.org.uk
+                  membership@ukpaktech.org.uk
                 </a>{" "}
                 or complete the online enquiry form and the Membership team will be in touch to set up a meeting.
               </p>
