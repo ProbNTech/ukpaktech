@@ -50,7 +50,7 @@ const exploreItems = [
   { icon: Lightbulb, title: "Vision", desc: "A connected innovation ecosystem bridging UK and Pakistan's technology sectors.", href: "/about/vision", color: "#C41E3A" },
   { icon: Target, title: "Mission", desc: "Our strategic mission to transform Pakistan into a thriving global tech hub.", href: "/about/mission", color: "#22C55E" },
   { icon: CheckCircle2, title: "Objectives & Values", desc: "Core values, key activities, and broader impact goals driving our work.", href: "/about/objectives", color: "#2563EB" },
-  { icon: Award, title: "Leadership", desc: "Meet our Chairman Hussnain Kazmi and President Khalil Choudhary — the leaders of UPTECH.", href: "/about/founder", color: "#C41E3A" },
+  { icon: Award, title: "Leadership", desc: "Meet our President Khalil Choudhary — the leader of UPTECH.", href: "/about/founder", color: "#C41E3A" },
   { icon: Users, title: "Management Team", desc: "Board of directors, advisory council, and executive leadership team.", href: "/about/management-team", color: "#22C55E" },
 ];
 

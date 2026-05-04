@@ -29,46 +29,8 @@ export default function LeadershipPage() {
         </div>
       </PageHero>
 
-      {/* Chairman Profile Section */}
-      <Section variant="light" className="content-body">
-        <AnimatedSection>
-          <div className="grid lg:grid-cols-[300px_1fr] gap-10 items-center">
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5 }}
-              className="relative"
-            >
-              <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
-                <Image src="/image/chairman/hussnain-kazmi.jpg" alt="Hussnain Kazmi — Chairman, UPTECH" fill className="object-cover object-top" quality={95} sizes="300px" />
-              </div>
-              <div className="absolute -bottom-3 -right-3 w-24 h-24 rounded-lg -z-10" style={{ background: `linear-gradient(135deg, ${brandColors[1]}20, ${brandColors[0]}20)` }} />
-            </motion.div>
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-base font-bold uppercase tracking-widest mb-3" style={{ background: `${brandColors[1]}12`, color: brandColors[1] }}>
-                Chairman
-              </div>
-              <h2 className="font-heading font-extrabold text-3xl lg:text-4xl text-[#1C1F2E] mb-3">Hussnain Kazmi</h2>
-              <div className="h-1 w-16 rounded-full mb-5" style={{ background: `linear-gradient(to right, ${brandColors[1]}, ${brandColors[2]}, ${brandColors[0]})` }} />
-              <p className="text-[#3D4152] leading-relaxed mb-4">
-                As Chairman of UPTECH, Hussnain Kazmi provides strategic oversight and governance to the UK-Pakistan Technology Council. His leadership ensures that UPTECH remains focused on its mission of fostering bilateral technology cooperation and creating meaningful impact across both nations.
-              </p>
-              <p className="text-[#3D4152] leading-relaxed">
-                With extensive experience in technology leadership and cross-border partnerships, Hussnain Kazmi plays a pivotal role in shaping UPTECH&apos;s strategic direction and strengthening its position as the premier platform for UK-Pakistan tech collaboration.
-              </p>
-            </motion.div>
-          </div>
-        </AnimatedSection>
-      </Section>
-
       {/* President Profile Section */}
-      <Section variant="alt" className="content-body">
+      <Section variant="light" className="content-body">
         <AnimatedSection>
           <div className="grid lg:grid-cols-[300px_1fr] gap-10 items-center">
             <motion.div
