@@ -55,7 +55,7 @@ const navItems: NavItem[] = [
       { label: "Vision", href: "/about/vision", desc: "A connected innovation ecosystem bridging UK and Pakistan's technology sectors.", icon: Eye },
       { label: "Mission", href: "/about/mission", desc: "Our strategic mission to transform Pakistan into a thriving global tech hub.", icon: Target },
       { label: "Objectives", href: "/about/objectives", desc: "Core values, key activities, and broader impact goals driving our work.", icon: CheckCircle2 },
-      { label: "Leadership", href: "/about/founder", desc: "Meet our President Khalil Choudhary and Board Director Faizan Ashraf — the leaders of UPTECH.", icon: Award },
+      { label: "Leadership", href: "/about/founder", desc: "Meet our President Khalil Choudhary.", icon: Award },
       { label: "Management Team", href: "/about/management-team", desc: "Board of directors, advisory council, and executive leadership team.", icon: Users },
     ],
   },

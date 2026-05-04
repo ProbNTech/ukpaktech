@@ -13,7 +13,7 @@ const advisors = [
     delay: 0,
   },
   {
-    name: "Safeer ul Hak",
+    name: "Safeer Ul Hak",
     role: "Director Marketing & PR, Pakistan",
     bio: "Leading marketing and public relations efforts across Pakistan to amplify partnerships and outreach.",
     photo: "/image/board/safeer.jpeg",
