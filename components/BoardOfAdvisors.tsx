@@ -5,28 +5,36 @@ import Image from "next/image";
 
 const advisors = [
   {
-    name: "Hussnain Kazmi",
-    role: "Chairman",
-    bio: "Providing strategic vision and governance oversight for the UK–Pakistan technology corridor.",
-    photo: "/image/chairman/hussnain-kazmi.jpg",
-    accent: "#2563EB",
-    delay: 0,
-  },
-  {
     name: "Khalil Choudhary",
     role: "President",
     bio: "Leading bilateral partnerships, policy engagement, and operational strategy across both nations.",
     photo: "/image/ceo/khalil-choudhary-headshot.jpg",
     accent: "#2563EB",
-    delay: 0.15,
+    delay: 0,
+  },
+  {
+    name: "Safeer ul Haq",
+    role: "Director Marketing & PR, Pakistan",
+    bio: "Leading marketing and public relations efforts across Pakistan to amplify partnerships and outreach.",
+    photo: "/image/board/safeer.jpeg",
+    accent: "#2563EB",
+    delay: 0.3,
   },
   {
     name: "Muhammad Faizan Ashraf",
-    role: "Board Director — Technology & Innovation",
+    role: "Director - Tech & Innovation",
     bio: "Driving technology initiatives, innovation programmes, and digital transformation strategy.",
     photo: "/image/board/director.jpg",
     accent: "#2563EB",
-    delay: 0.3,
+    delay: 0.15,
+  },
+  {
+    name: "Mahrouz Choudhary",
+    role: "Director Marketing UK",
+    bio: "Leading marketing strategy, brand positioning, and stakeholder engagement across the UK.",
+    photo: "/image/board/mehrouz.jpeg",
+    accent: "#2563EB",
+    delay: 0.15,
   },
 ];
 
@@ -96,7 +104,7 @@ export default function BoardOfAdvisors() {
         </motion.div>
 
         {/* ── Cards — 3-column horizontal layout ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {advisors.map((advisor) => (
             <motion.div
               key={advisor.name}
