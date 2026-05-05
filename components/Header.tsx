@@ -172,8 +172,8 @@ const navItems: NavItem[] = [
       { label: "Framework Policy", href: "/arbitration/framework", desc: "Complete arbitration framework policy including legal basis, procedures, costs, digital platform, and FAQs.", icon: FileText },
     ],
   },
-  /* 8 — Job Portal (direct link) */
-  { kind: "link", label: "Job Portal", href: "/job-portal" },
+  /* 8 — Job Portal (direct link) — hidden from public nav, page still accessible at /job-portal */
+  // { kind: "link", label: "Job Portal", href: "/job-portal" },
   /* 8 — Events (direct link) */
   { kind: "link", label: "Events", href: "/events" },
   /* 9 — News & Updates (direct link) */

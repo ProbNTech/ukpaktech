@@ -157,7 +157,8 @@ export function Footer() {
                       { label: "Mentorship", href: "/services/mentorship" },
                       { label: "Funding", href: "/ecosystem/funding-and-grants" },
                       { label: "FAQs", href: "/faqs" },
-                      { label: "Job Portal", href: "/job-portal" },
+                      // { label: "Job Portal", href: "/job-portal" }, // hidden from public — page still accessible directly
+
                       { label: "News", href: "/news" },
                       { label: "Contact", href: "/contact" },
                     ].map((link) => (
