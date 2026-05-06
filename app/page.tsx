@@ -206,7 +206,7 @@ export default function Home() {
                   Investment deals, policy developments, innovation spotlights, and bilateral progress — what&apos;s shaping the UK–Pakistan technology corridor.
                 </p>
               </div>
-              <div className="lg:col-span-8 w-full">
+              <div className="lg:col-span-8 w-full min-w-0">
                 <NewsCarousel articles={homepageArticles} />
                 <div className="flex justify-center mt-8">
                   <PillButton href="/events">View all news & events</PillButton>

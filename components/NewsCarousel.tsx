@@ -23,7 +23,7 @@ export default function NewsCarousel({ articles }: NewsCarouselProps) {
         loop={true}
 
         autoplay={{
-          delay: 2500,
+          delay: 4500,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
