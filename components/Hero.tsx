@@ -9,6 +9,7 @@ import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 const slides = [
   {
     video: "/image/home/hero_video_openart.mp4",
+    poster: "/image/home/poster_openart.jpg",
     label: "UPTECH",
     headline: "Driving bilateral technology collaboration between the UK and Pakistan",
     cta: { text: "Explore our work", href: "/about" },
@@ -16,6 +17,7 @@ const slides = [
   },
   {
     video: "/image/home/hero_video_new2.mp4",
+    poster: "/image/home/poster_new2.jpg",
     label: "INNOVATION",
     headline: "Connecting startups, investors & enterprises across borders",
     cta: { text: "Discover programmes", href: "/programs/ai-tech-programs" },
@@ -23,6 +25,7 @@ const slides = [
   },
   {
     video: "/image/home/hero_video_new3.mp4",
+    poster: "/image/home/poster_new3.jpg",
     label: "PARTNERSHIP",
     headline: "Building the UK–Pakistan digital corridor of the future",
     cta: { text: "Join the ecosystem", href: "/ecosystem/uk-pakistan-technology-partnership" },
@@ -30,6 +33,7 @@ const slides = [
   },
   {
     video: "/image/home/hero_video3.mp4",
+    poster: "/image/home/poster_3.jpg",
     label: "MEMBERSHIP",
     headline: "A trusted network of 120+ members shaping bilateral tech growth",
     cta: { text: "Become a member", href: "/membership" },
@@ -37,11 +41,22 @@ const slides = [
   },
 ];
 
+const MOBILE_SLIDE_DURATION_MS = 6000;
+
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   const setVideoRef = useCallback(
     (index: number) => (el: HTMLVideoElement | null) => {
@@ -55,6 +70,7 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
+    if (!isDesktop) return;
     const activeVideo = videoRefs.current[currentIndex];
     if (!activeVideo) return;
 
@@ -70,7 +86,16 @@ export function Hero() {
         v.currentTime = 0;
       }
     });
-  }, [currentIndex, isPlaying]);
+  }, [currentIndex, isPlaying, isDesktop]);
+
+  // Mobile: auto-advance posters on a timer (no video to drive onEnded).
+  useEffect(() => {
+    if (isDesktop || !isPlaying) return;
+    const id = window.setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+    }, MOBILE_SLIDE_DURATION_MS);
+    return () => window.clearInterval(id);
+  }, [isDesktop, isPlaying]);
 
   const togglePlayPause = useCallback(() => {
     setIsPlaying((prev) => {
@@ -91,29 +116,46 @@ export function Hero() {
 
   return (
     <section className="relative z-[2] w-full min-h-[420px] sm:min-h-[500px] lg:h-screen overflow-hidden bg-[#0B0F1A]">
-      {/* Background videos */}
-      {slides.map((s, index) => {
-        const isActive = index === currentIndex;
-        const isNext = index === (currentIndex + 1) % slides.length;
-        if (!isActive && !isNext) return null;
-        return (
-          <video
-            key={s.video}
-            ref={setVideoRef(index)}
-            aria-hidden="true"
-            autoPlay={isActive}
-            muted
-            playsInline
-            preload={isActive ? "auto" : "none"}
-            onEnded={isActive ? handleVideoEnded : undefined}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
-              isActive ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
-          >
-            <source src={s.video} type="video/mp4" />
-          </video>
-        );
-      })}
+      {/* Background: posters on mobile, videos on desktop */}
+      {!isDesktop &&
+        slides.map((s, index) => {
+          const isActive = index === currentIndex;
+          return (
+            <img
+              key={s.poster}
+              src={s.poster}
+              alt=""
+              aria-hidden="true"
+              loading={isActive ? "eager" : "lazy"}
+              decoding="async"
+              fetchPriority={isActive ? "high" : "low"}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
+                isActive ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            />
+          );
+        })}
+      {isDesktop &&
+        slides.map((s, index) => {
+          const isActive = index === currentIndex;
+          if (!isActive) return null;
+          return (
+            <video
+              key={s.video}
+              ref={setVideoRef(index)}
+              aria-hidden="true"
+              autoPlay
+              muted
+              playsInline
+              preload="auto"
+              poster={s.poster}
+              onEnded={handleVideoEnded}
+              className="absolute inset-0 w-full h-full object-cover opacity-100 z-10 will-change-[opacity]"
+            >
+              <source src={s.video} type="video/mp4" />
+            </video>
+          );
+        })}
 
       {/* Dark overlay for text readability across all video slides */}
       <div
