@@ -120,7 +120,7 @@ export default function MembersGuidancePage() {
       <GlobalCTA
         label="Contact Us"
         title="Communication & Support"
-        subtitle="For any questions, support requests, or feedback, contact our membership team at info@uptech.org.uk. We aim to respond to all member enquiries within 2 business days."
+        subtitle="For any questions, support requests, or feedback, contact our membership team at info@ukpaktech.org.uk. We aim to respond to all member enquiries within 2 business days."
         primaryButtonText="Apply for Membership"
         primaryButtonLink="/membership/apply"
         secondaryButtonText="Contact Us"

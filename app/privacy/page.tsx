@@ -10,6 +10,7 @@ import {
   CheckCircle2, Scale, Database, UserCheck,
   Fingerprint, Bell, BarChart3, AlertTriangle,
 } from "lucide-react";
+import { DownloadButton } from "@/components/DownloadButton";
 
 /* ── Retention data ───────────────────────────────────────────────── */
 const retentionData = [
@@ -57,7 +58,13 @@ export default function PrivacyPage() {
         title="Privacy Policy"
         subtitle="How we collect, use, and protect your personal information."
         image="/image/banners/banner23.jpg"
-      />
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <DownloadButton href="/documents/UPTECH-Privacy-Policy.pdf" filename="UPTECH-Privacy-Policy.pdf">
+            Download PDF
+          </DownloadButton>
+        </div>
+      </PageHero>
 
       <div className="content-body">
       {/* ── Introduction + Quick Nav ─────────────────────────────────── */}
@@ -86,7 +93,7 @@ export default function PrivacyPage() {
                   </div>
                   <div className="h-px bg-[#D8D5CF] mb-5" />
                   <p className="text-base text-[#5A5F72] leading-relaxed mb-5">
-                    The UK-PAKISTAN TECH COUNCIL LTD (UPTECH) is the UK&apos;s leading organization for promoting opportunities and increasing bi-later trade and investment in between UK and Pakistan. We are committed to protecting the privacy of your Personal Information. This policy sets out how we collect, use and transfer your Personal Information, the security measures we employ to protect such data and your rights and choices with regards to access or use of such data.
+                    The UK-PAKISTAN TECH FORUM LTD (UPTECH) is the UK&apos;s leading organization for promoting opportunities and increasing bi-later trade and investment in between UK and Pakistan. We are committed to protecting the privacy of your Personal Information. This policy sets out how we collect, use and transfer your Personal Information, the security measures we employ to protect such data and your rights and choices with regards to access or use of such data.
                   </p>
                   <p className="text-base text-[#5A5F72] leading-relaxed">
                     This policy explains when and why we collect personal information about you, how we use it, the conditions under which we may disclose it to others, how we keep it safe and secure and your rights and choices in relation to your information.
@@ -528,7 +535,7 @@ export default function PrivacyPage() {
                     <div className="h-px bg-[#D8D5CF] mb-3" />
                     <p className="text-base text-[#7A7E8F] leading-relaxed">
                       {right.desc}
-                      {right.title === "Right of Access" && <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a>}
+                      {right.title === "Right of Access" && <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@ukpaktech.org.uk</a>}
                     </p>
                   </motion.div>
                 );
@@ -539,7 +546,7 @@ export default function PrivacyPage() {
               <div className="relative">
                 <p className="text-base text-[#5A5F72] leading-relaxed mb-4">
                   If you want to exercise any of the above rights, please email us at{" "}
-                  <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a>
+                  <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@ukpaktech.org.uk</a>
                   {" "}and clearly state in the email subject line: RIGHTS REQUEST. We may be required to ask for further information and/or evidence of identity. We will endeavor to respond fully to all requests within 10 working days of your request, however if we are unable to do so we will contact you with reasons for the delay.
                 </p>
                 <p className="text-base text-[#5A5F72] leading-relaxed">
@@ -605,7 +612,7 @@ export default function PrivacyPage() {
               <h2 className="font-heading font-extrabold text-white text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">Contact Information</h2>
               <p className="text-white/40 text-base sm:text-lg leading-relaxed mb-8">
                 For any questions about this Privacy Policy or our treatment of your Personal Information, please contact{" "}
-                <a href="mailto:info@uptech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@uptech.org.uk</a>
+                <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@ukpaktech.org.uk</a>
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button href="/contact" variant="primary" size="lg">Contact Us</Button>

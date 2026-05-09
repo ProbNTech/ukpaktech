@@ -9,6 +9,7 @@ import {
   FileText, Target, Banknote, Lock, Clock,
   Scale, Gavel, PenTool, CheckCircle2, AlertTriangle, Briefcase,
 } from "lucide-react";
+import { DownloadButton } from "@/components/DownloadButton";
 
 const sections = [
   {
@@ -19,7 +20,7 @@ const sections = [
     accent: "border-[#2563EB]",
     content: (
       <p className="text-[#3D4152] text-base leading-relaxed">
-        This Agreement sets out the terms under which the Council will promote the Employer&apos;s job opportunities to its network of members, stakeholders, and partners in the UK, Europe, Middle East, African continent and Pakistan.
+        This Agreement sets out the terms under which the Forum will promote the Employer&apos;s job opportunities to its network of members, stakeholders, and partners in the UK, Europe, Middle East, African continent and Pakistan.
       </p>
     ),
   },
@@ -31,11 +32,11 @@ const sections = [
     accent: "border-[#2563EB]",
     content: (
       <div>
-        <p className="text-[#3D4152] text-base leading-relaxed mb-4">The Council agrees to:</p>
+        <p className="text-[#3D4152] text-base leading-relaxed mb-4">The Forum agrees to:</p>
         <ul className="space-y-3 mb-6">
           {[
-            "Publish and promote the Employer\u2019s job openings through the Council\u2019s website, newsletters, social media, events, and other marketing channels.",
-            "List jobs on the Council\u2019s Member Job Portal.",
+            "Publish and promote the Employer\u2019s job openings through the Forum\u2019s website, newsletters, social media, events, and other marketing channels.",
+            "List jobs on the Forum\u2019s Member Job Portal.",
             "Facilitate introductions to potential candidates where requested.",
             "Provide updates and analytics on job promotion performance (optional).",
           ].map((item) => (
@@ -60,7 +61,7 @@ const sections = [
     content: (
       <div>
         <p className="text-[#3D4152] text-base leading-relaxed mb-6">
-          The Employer agrees to pay the Council the following fees for promotion services:
+          The Employer agrees to pay the Forum the following fees for promotion services:
         </p>
         <div className="overflow-x-auto mb-6">
           <table className="w-full text-base border-collapse">
@@ -74,7 +75,7 @@ const sections = [
             </thead>
             <tbody>
               {[
-                { service: "Job Posting", desc: "Placement on Council Job Portal", fee: "\u00A3[Amount]", freq: "Payable within 30 days of after getting job" },
+                { service: "Job Posting", desc: "Placement on Forum Job Portal", fee: "\u00A3[Amount]", freq: "Payable within 30 days of after getting job" },
                 { service: "Featured Campaign", desc: "Promotion via newsletter, social media, or events", fee: "\u00A3[Amount]", freq: "Payable within 30 days of after getting job" },
                 { service: "Recruitment Support", desc: "Candidate introduction, event participation", fee: "\u00A3[Amount]", freq: "Payable within 30 days of after getting job" },
               ].map((row, i) => (
@@ -114,7 +115,7 @@ const sections = [
           {[
             "Provide complete and accurate job information, including title, description, qualifications, salary, location, and contact details.",
             "Ensure all materials comply with applicable laws and regulations.",
-            "Respond promptly to candidate inquiries and Council requests for clarification.",
+            "Respond promptly to candidate inquiries and Forum requests for clarification.",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
               <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
@@ -166,7 +167,7 @@ const sections = [
     content: (
       <ul className="space-y-3">
         {[
-          "The Council is not responsible for hiring decisions or employment outcomes.",
+          "The Forum is not responsible for hiring decisions or employment outcomes.",
           "The Employer is responsible for accuracy of job postings and legal compliance in hiring.",
         ].map((item) => (
           <li key={item} className="flex items-start gap-3">
@@ -198,9 +199,15 @@ export default function JobPromotionAgreementPage() {
     <div>
       <PageHero
         title="Job Promotion Agreement"
-        subtitle="Terms and conditions governing the promotion of job opportunities through the UK\u2013Pakistan Technology Council network and channels."
+        subtitle="Terms and conditions governing the promotion of job opportunities through the UK\u2013Pakistan Technology Forum network and channels."
         image="/image/banners/banner39.jpg"
-      />
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <DownloadButton href="/documents/UPTECH-Job-Promotion-Agreement.pdf" filename="UPTECH-Job-Promotion-Agreement.pdf">
+            Download PDF
+          </DownloadButton>
+        </div>
+      </PageHero>
 
       {/* Parties */}
       <Section variant="light">
@@ -217,8 +224,8 @@ export default function JobPromotionAgreementPage() {
                 </div>
                 <div className="border-l-4 border-[#22C55E] pl-4">
                   <p className="text-base text-[#7A7E8F] uppercase tracking-wider mb-1">Party B</p>
-                  <p className="font-heading font-bold text-[#1C1F2E]">UK&ndash;Pakistan Technology Council</p>
-                  <p className="text-base text-[#3D4152]">&ldquo;Council&rdquo;</p>
+                  <p className="font-heading font-bold text-[#1C1F2E]">UK&ndash;Pakistan Technology Forum</p>
+                  <p className="text-base text-[#3D4152]">&ldquo;Forum&rdquo;</p>
                 </div>
               </div>
               <div className="mt-6 pt-4 border-t border-[#D8D5CF]">
@@ -277,7 +284,7 @@ export default function JobPromotionAgreementPage() {
           />
           <div className="grid sm:grid-cols-2 gap-8">
             {[
-              { party: "UK\u2013Pakistan Technology Council", role: "Council" },
+              { party: "UK\u2013Pakistan Technology Forum", role: "Forum" },
               { party: "Employer / Employee", role: "Employer" },
             ].map((signee) => (
               <motion.div

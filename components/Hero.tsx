@@ -4,11 +4,12 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Play, Pause } from "lucide-react";
 import { ShinyButton } from "@/components/ui/shiny-button";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 const slides = [
   {
     video: "/image/home/hero_video_openart.mp4",
+    poster: "/image/home/poster_openart.jpg",
     label: "UPTECH",
     headline: "Driving bilateral technology collaboration between the UK and Pakistan",
     cta: { text: "Explore our work", href: "/about" },
@@ -16,6 +17,7 @@ const slides = [
   },
   {
     video: "/image/home/hero_video_new2.mp4",
+    poster: "/image/home/poster_new2.jpg",
     label: "INNOVATION",
     headline: "Connecting startups, investors & enterprises across borders",
     cta: { text: "Discover programmes", href: "/programs/ai-tech-programs" },
@@ -23,6 +25,7 @@ const slides = [
   },
   {
     video: "/image/home/hero_video_new3.mp4",
+    poster: "/image/home/poster_new3.jpg",
     label: "PARTNERSHIP",
     headline: "Building the UK–Pakistan digital corridor of the future",
     cta: { text: "Join the ecosystem", href: "/ecosystem/uk-pakistan-technology-partnership" },
@@ -30,6 +33,7 @@ const slides = [
   },
   {
     video: "/image/home/hero_video3.mp4",
+    poster: "/image/home/poster_3.jpg",
     label: "MEMBERSHIP",
     headline: "A trusted network of 120+ members shaping bilateral tech growth",
     cta: { text: "Become a member", href: "/membership" },
@@ -37,10 +41,22 @@ const slides = [
   },
 ];
 
+const MOBILE_SLIDE_DURATION_MS = 6000;
+
 export function Hero() {
+  const prefersReducedMotion = useReducedMotion();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   const setVideoRef = useCallback(
     (index: number) => (el: HTMLVideoElement | null) => {
@@ -54,6 +70,7 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
+    if (!isDesktop) return;
     const activeVideo = videoRefs.current[currentIndex];
     if (!activeVideo) return;
 
@@ -69,7 +86,16 @@ export function Hero() {
         v.currentTime = 0;
       }
     });
-  }, [currentIndex, isPlaying]);
+  }, [currentIndex, isPlaying, isDesktop]);
+
+  // Mobile: auto-advance posters on a timer (no video to drive onEnded).
+  useEffect(() => {
+    if (isDesktop || !isPlaying) return;
+    const id = window.setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+    }, MOBILE_SLIDE_DURATION_MS);
+    return () => window.clearInterval(id);
+  }, [isDesktop, isPlaying]);
 
   const togglePlayPause = useCallback(() => {
     setIsPlaying((prev) => {
@@ -90,27 +116,46 @@ export function Hero() {
 
   return (
     <section className="relative z-[2] w-full min-h-[420px] sm:min-h-[500px] lg:h-screen overflow-hidden bg-[#0B0F1A]">
-      {/* Background videos */}
-      {slides.map((s, index) => {
-        const isActive = index === currentIndex;
-        const isNext = index === (currentIndex + 1) % slides.length;
-        return (
-          <video
-            key={s.video}
-            ref={setVideoRef(index)}
-            autoPlay={index === 0}
-            muted
-            playsInline
-            preload={isActive || isNext ? "auto" : "none"}
-            onEnded={isActive ? handleVideoEnded : undefined}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
-              isActive ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
-          >
-            <source src={s.video} type="video/mp4" />
-          </video>
-        );
-      })}
+      {/* Background: posters on mobile, videos on desktop */}
+      {!isDesktop &&
+        slides.map((s, index) => {
+          const isActive = index === currentIndex;
+          return (
+            <img
+              key={s.poster}
+              src={s.poster}
+              alt=""
+              aria-hidden="true"
+              loading={isActive ? "eager" : "lazy"}
+              decoding="async"
+              fetchPriority={isActive ? "high" : "low"}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
+                isActive ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            />
+          );
+        })}
+      {isDesktop &&
+        slides.map((s, index) => {
+          const isActive = index === currentIndex;
+          if (!isActive) return null;
+          return (
+            <video
+              key={s.video}
+              ref={setVideoRef(index)}
+              aria-hidden="true"
+              autoPlay
+              muted
+              playsInline
+              preload="auto"
+              poster={s.poster}
+              onEnded={handleVideoEnded}
+              className="absolute inset-0 w-full h-full object-cover opacity-100 z-10 will-change-[opacity]"
+            >
+              <source src={s.video} type="video/mp4" />
+            </video>
+          );
+        })}
 
       {/* Dark overlay for text readability across all video slides */}
       <div
@@ -124,15 +169,15 @@ export function Hero() {
       <div className="absolute inset-0 z-[11] pointer-events-none opacity-[0.04] bg-gradient-to-br from-white/5 via-transparent to-white/5" />
 
       {/* Content wrapper */}
-      <div className="relative z-20 flex items-center lg:h-screen px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-14 sm:pt-16 lg:pt-0 pb-14 lg:pb-0">
+      <div className="relative z-20 flex items-center lg:h-screen px-6 sm:px-10 lg:px-16 xl:px-20 pt-14 sm:pt-16 lg:pt-0 pb-14 lg:pb-0">
         <div className="w-full max-w-full lg:max-w-[55%]">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, y: 30 }}
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              exit={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: -20 }}
+              transition={{ duration: prefersReducedMotion ? 0 : 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
               {/* Small label */}
               <p className="text-lg sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.18em] text-[#C41E3A] mb-4 sm:mb-5" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.4)" }}>
@@ -148,9 +193,9 @@ export function Hero() {
                   <motion.span
                     key={i}
                     className="inline-block mr-[0.3em]"
-                    initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
+                    initial={prefersReducedMotion ? false : { opacity: 0, y: 16, filter: "blur(4px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    transition={{ duration: 0.35, delay: 0.15 + i * 0.035, ease: [0.22, 1, 0.36, 1] }}
+                    transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.35, delay: 0.15 + i * 0.035, ease: [0.22, 1, 0.36, 1] }}
                   >
                     {word}
                   </motion.span>
@@ -160,9 +205,9 @@ export function Hero() {
               {/* Buttons */}
               <motion.div
                 className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 sm:gap-6 mb-8 sm:mb-10"
-                initial={{ opacity: 0, y: 12 }}
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.4, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
                 <ShinyButton href={slide.cta.href}>
                   {slide.cta.text}

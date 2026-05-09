@@ -35,7 +35,7 @@ export function Footer() {
               <div className="lg:col-span-4">
                 <Link href="/" className="flex items-center gap-3 mb-5 group">
                   <Image
-                    src="/image/main-logo/mainlogo.png"
+                    src="/logo.svg"
                     alt="UPTECH Logo"
                     width={50}
                     height={50}
@@ -46,7 +46,7 @@ export function Footer() {
                   </span>
                 </Link>
                 <p className="text-white mb-7 leading-relaxed text-base drop-shadow-md">
-                  UPTECH is the leading platform bringing together people, companies, and organizations from the UK and Pakistan to unlock the transformative potential of digital technology. With a diverse membership spanning startups, SMEs, corporates, and research institutions, the Council fosters a vibrant network for innovation, collaboration, and knowledge exchange across business, government, and stakeholders to create positive impact for society, the economy, and the wider world.
+                  UPTECH is the leading platform bringing together people, companies, and organizations from the UK and Pakistan to unlock the transformative potential of digital technology. With a diverse membership spanning startups, SMEs, corporates, and research institutions, the Forum fosters a vibrant network for innovation, collaboration, and knowledge exchange across business, government, and stakeholders to create positive impact for society, the economy, and the wider world.
                 </p>
 
                 {/* Follow Us */}
@@ -134,10 +134,10 @@ export function Footer() {
                   <p>
                     <span className="text-white font-medium">Email:</span>{" "}
                     <a
-                      href="mailto:info@uptech.org.uk"
+                      href="mailto:info@ukpaktech.org.uk"
                       className="text-[#C41E3A] font-bold hover:text-[#E74C5E] transition-colors duration-300"
                     >
-                      info@uptech.org.uk
+                      info@ukpaktech.org.uk
                     </a>
                   </p>
                 </div>
@@ -157,7 +157,8 @@ export function Footer() {
                       { label: "Mentorship", href: "/services/mentorship" },
                       { label: "Funding", href: "/ecosystem/funding-and-grants" },
                       { label: "FAQs", href: "/faqs" },
-                      { label: "Job Portal", href: "/job-portal" },
+                      // { label: "Job Portal", href: "/job-portal" }, // hidden from public — page still accessible directly
+
                       { label: "News", href: "/news" },
                       { label: "Contact", href: "/contact" },
                     ].map((link) => (
@@ -179,7 +180,7 @@ export function Footer() {
             {/* Disclaimer */}
             <div className="border-t border-white/30 pt-7 mb-7">
               <p className="text-white/90 text-sm leading-relaxed drop-shadow-md">
-                <span className="font-semibold text-white">Disclaimer:</span> The UK&ndash;Pakistan Technology Council (UPTECH) provides information on this website for general informational purposes only. While we endeavour to keep all content accurate and up to date, UPTECH makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or suitability of the information, products, services, or related materials contained on this website. Any reliance you place on such information is strictly at your own risk. UPTECH shall not be liable for any loss or damage arising from the use of this website. External links are provided for convenience and do not signify endorsement. All intellectual property rights in the content of this website are owned by or licensed to UPTECH unless otherwise stated.
+                <span className="font-semibold text-white">Disclaimer:</span> The UK&ndash;Pakistan Technology Forum (UPTECH) provides information on this website for general informational purposes only. While we endeavour to keep all content accurate and up to date, UPTECH makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or suitability of the information, products, services, or related materials contained on this website. Any reliance you place on such information is strictly at your own risk. UPTECH shall not be liable for any loss or damage arising from the use of this website. External links are provided for convenience and do not signify endorsement. All intellectual property rights in the content of this website are owned by or licensed to UPTECH unless otherwise stated.
               </p>
             </div>
 
@@ -188,7 +189,7 @@ export function Footer() {
               <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-base text-white drop-shadow-md">
                 <p style={{ color: "#FFFFFF" }}>
                   Copyright &copy; {new Date().getFullYear()} UK&ndash;Pakistan
-                  Tech Council. All rights reserved.
+                  Tech Forum. All rights reserved.
                 </p>
                 <div className="flex flex-wrap gap-4 text-base">
                   <Link href="/privacy" className="text-white hover:text-[#22C55E] transition-colors duration-300">Privacy Policy</Link>

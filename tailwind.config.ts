@@ -123,6 +123,10 @@ const config: Config = {
           "0%": { "background-position": "0%" },
           "100%": { "background-position": "200%" },
         },
+        "ticker-scroll": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
       },
       animation: {
         shimmer: "shimmer-sweep 2s ease-in-out infinite",
@@ -130,6 +134,7 @@ const config: Config = {
         "float-slow": "float 8s ease-in-out infinite",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
         rainbow: "rainbow var(--speed, 2s) infinite linear",
+        "ticker-scroll": "ticker-scroll 35s linear infinite",
       },
     },
   },

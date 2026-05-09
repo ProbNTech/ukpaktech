@@ -39,19 +39,18 @@ export function NewsCard({ slug, title, category, date, image, excerpt, index = 
 
   return (
     <motion.div
+      className="h-full"
       initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{ duration: 0.45, delay: Math.min(index * 0.08, 0.4), ease: [0.22, 1, 0.36, 1] }}
     >
       <Link
         href={`/news/${slug}`}
-        className="group flex flex-col gap-2 rounded-lg p-2 duration-75 hover:bg-[#E8E6E3]/60 active:bg-[#E8E6E3]"
+        className="group flex h-full flex-col gap-2 rounded-lg p-2 duration-75 hover:bg-[#E8E6E3]/60 active:bg-[#E8E6E3]"
       >
         <LazyImage
           src={image}
-          fallback="/image/placeholder.webp"
-          inView={true}
+          inView={false}
           alt={title}
           ratio={16 / 9}
           className="transition-all duration-500 group-hover:scale-105"

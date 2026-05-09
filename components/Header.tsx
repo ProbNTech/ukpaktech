@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { TopTicker } from "@/components/TopTicker";
 import {
   Building2, Eye, Target, CheckCircle2, Award, Users, Globe2,
   Cpu, GraduationCap, Rocket, Trophy, Handshake, Plane,
@@ -50,12 +51,12 @@ const navItems: NavItem[] = [
       cta: { label: "Our story →", href: "/about" },
     },
     items: [
-      { label: "About Us", href: "/about", desc: "Who we are, our founding story, and the values that drive the UK-Pakistan Tech Council.", icon: Building2 },
+      { label: "About Us", href: "/about", desc: "Who we are, our founding story, and the values that drive the UK-Pakistan Tech Forum.", icon: Building2 },
       { label: "Vision", href: "/about/vision", desc: "A connected innovation ecosystem bridging UK and Pakistan's technology sectors.", icon: Eye },
       { label: "Mission", href: "/about/mission", desc: "Our strategic mission to transform Pakistan into a thriving global tech hub.", icon: Target },
       { label: "Objectives", href: "/about/objectives", desc: "Core values, key activities, and broader impact goals driving our work.", icon: CheckCircle2 },
-      { label: "Leadership", href: "/about/founder", desc: "Meet our President Khalil Choudhary and Chairman Hussnain Kazmi — the leaders of UPTECH.", icon: Award },
-      { label: "Management Team", href: "/about/management-team", desc: "Board of directors, advisory council, and executive leadership team.", icon: Users },
+      { label: "Leadership", href: "/about/founder", desc: "Meet our President Khalil Choudhary.", icon: Award },
+      { label: "Management Team", href: "/about/management-team", desc: "Board of directors, advisory forum, and executive leadership team.", icon: Users },
     ],
   },
   /* 2 — What We Do */
@@ -140,7 +141,7 @@ const navItems: NavItem[] = [
   {
     kind: "group",
     label: "Membership",
-    tagline: "Join the council",
+    tagline: "Join the forum",
     color: "#C41E3A",
     editorial: {
       headline: "Be part of\nthe movement.",
@@ -149,7 +150,7 @@ const navItems: NavItem[] = [
     },
     items: [
       { label: "Membership Overview", href: "/membership", desc: "Explore membership tiers, benefits, and how to join the UPTECH community.", icon: CreditCard },
-      { label: "Apply for Membership", href: "/membership/apply", desc: "Complete the membership application form to join the UK–Pakistan Tech Council.", icon: Send },
+      { label: "Apply for Membership", href: "/membership/apply", desc: "Complete the membership application form to join the UK–Pakistan Tech Forum.", icon: Send },
       { label: "Membership Directory", href: "/membership/directory", desc: "Browse our corporate and individual members shaping the UK–Pakistan technology corridor.", icon: FileText },
       { label: "London Meeting Space", href: "/meeting-space", desc: "Professional meeting and event facilities in central London for UPTECH members.", icon: MapPin },
       { label: "Featured Partners", href: "/partners", desc: "Trusted organisations showcasing services, solutions, and expertise across the UK–Pakistan tech corridor.", icon: Handshake },
@@ -171,8 +172,8 @@ const navItems: NavItem[] = [
       { label: "Framework Policy", href: "/arbitration/framework", desc: "Complete arbitration framework policy including legal basis, procedures, costs, digital platform, and FAQs.", icon: FileText },
     ],
   },
-  /* 8 — Job Portal (direct link) */
-  { kind: "link", label: "Job Portal", href: "/job-portal" },
+  /* 8 — Job Portal (direct link) — hidden from public nav, page still accessible at /job-portal */
+  // { kind: "link", label: "Job Portal", href: "/job-portal" },
   /* 8 — Events (direct link) */
   { kind: "link", label: "Events", href: "/events" },
   /* 9 — News & Updates (direct link) */
@@ -247,6 +248,9 @@ export function Header() {
         className="sticky top-0 z-50 bg-white border-b border-gray-200"
         onMouseLeave={handleLeave}
       >
+        {/* ── Top ticker banner ──────────────────────────────── */}
+        <TopTicker />
+
         {/* ── Tier 1: Brand bar ──────────────────────────────── */}
         <div className="px-5 sm:px-8 lg:px-12 xl:px-8 2xl:px-16">
           <div className="flex items-center justify-between h-[70px] sm:h-[80px] lg:h-[90px]">
@@ -258,15 +262,15 @@ export function Header() {
               aria-label="UPTECH — Home"
             >
               <Image
-                src="/image/main-logo/mainlogo.png"
-                alt="UPTECH Council logo"
+                src="/logo.svg"
+                alt="UPTECH Forum logo"
                 width={72}
                 height={72}
                 className="h-[48px] sm:h-[56px] lg:h-[68px] w-auto object-contain"
                 priority
               />
               <span className="hidden sm:inline font-heading font-black text-[20px] sm:text-[24px] md:text-[28px] lg:text-[34px] xl:text-[38px] 2xl:text-[48px] tracking-[0.01em] leading-none text-[#1a2b5e] uppercase">
-                UK–PAKISTAN TECH COUNCIL <span className="text-[#C41E3A]">(UPTECH)</span>
+                UK–PAKISTAN TECH FORUM <span className="text-[#C41E3A]">(UPTECH)</span>
               </span>
             </Link>
 
@@ -458,7 +462,7 @@ export function Header() {
                   <div className="py-10 pl-10 flex flex-col justify-between">
                     <div>
                       <p className="font-sans text-panel-eyebrow uppercase text-[#6B6B6B] mb-4">
-                        From the council
+                        From the forum
                       </p>
                       <blockquote className="font-heading font-bold text-panel-quote text-[#0A0A0A] whitespace-pre-line">
                         {activeGroup.editorial.headline}
@@ -523,7 +527,7 @@ export function Header() {
                   onClick={() => setIsMobileOpen(false)}
                 >
                   <Image
-                    src="/image/main-logo/mainlogo.png"
+                    src="/logo.svg"
                     alt="UPTECH Logo"
                     width={100}
                     height={100}

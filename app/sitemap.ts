@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://www.uptechcouncil.org';
+const BASE_URL = 'https://www.ukpaktech.org.uk';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -9,9 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/leadership`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/events`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE_URL}/membership`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/job-portal`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
+    // { url: `${BASE_URL}/job-portal`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 }, // hidden from public
     { url: `${BASE_URL}/marketing-agreement`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${BASE_URL}/job-promotion-agreement`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
+    // { url: `${BASE_URL}/job-promotion-agreement`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 }, // hidden from public
     { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/code-of-conduct`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.4 },
     { url: `${BASE_URL}/initiatives`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },

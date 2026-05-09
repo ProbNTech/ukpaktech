@@ -145,7 +145,7 @@ export default function ExcellenceManagementTermsPage() {
       <GlobalCTA
         label="Need Help?"
         title="Questions About These Terms?"
-        subtitle="For questions about these terms, contact us at info@uptech.org.uk."
+        subtitle="For questions about these terms, contact us at info@ukpaktech.org.uk."
         primaryButtonText="Contact Us"
         primaryButtonLink="/contact"
       />

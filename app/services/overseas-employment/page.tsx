@@ -69,7 +69,7 @@ export default function OverseasEmploymentPage() {
       <PageHero
         label="UPTECH Service"
         title="Overseas Contract Employment Opportunities"
-        subtitle="The UK-Pakistan Tech Council facilitates skilled technology professionals with high-value overseas contract opportunities, helping both employers and talent thrive in global markets."
+        subtitle="The UK-Pakistan Tech Forum facilitates skilled technology professionals with high-value overseas contract opportunities, helping both employers and talent thrive in global markets."
         image="/image/banners/services04.jpg"
         // video="/image/banners/overseas-employment-video2.mp4"
         // videoSpeed={2}
@@ -309,7 +309,7 @@ export default function OverseasEmploymentPage() {
       <GlobalCTA
         label="Get Started"
         title="Get Connected. Access Opportunities. Grow Your Impact."
-        subtitle="Overseas contract employment through the Council provides a trusted, compliant, and efficient way to connect talent with opportunity."
+        subtitle="Overseas contract employment through the Forum provides a trusted, compliant, and efficient way to connect talent with opportunity."
         primaryButtonText="Get Connected"
         primaryButtonLink="/membership"
         secondaryButtonText="Contact Us"

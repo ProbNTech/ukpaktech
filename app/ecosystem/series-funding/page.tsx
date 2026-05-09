@@ -134,7 +134,7 @@ export default function SeriesFundingPage() {
       <PageHero
         label="Ecosystem / Series Funding"
         title="Series A & B Funding Opportunities"
-        subtitle="The UK-Pakistan Tech Council supports high-growth technology companies in securing Series A and B funding to scale operations, expand into new markets, and accelerate innovation."
+        subtitle="The UK-Pakistan Tech Forum supports high-growth technology companies in securing Series A and B funding to scale operations, expand into new markets, and accelerate innovation."
         image="/image/banners/banner85.png"
       >
         <div className="flex flex-wrap items-center gap-4">
@@ -318,7 +318,7 @@ export default function SeriesFundingPage() {
             <div className="lg:col-span-3">
               <SectionHeader label="Why It Matters" title="Critical Funding for Rapid Growth" color="red" />
               <p className="text-[#5A5F72] text-lg leading-relaxed mb-6">
-                Series A and B funding is critical for companies moving beyond early-stage validation into rapid growth. By facilitating access to these funding rounds, the Council helps high-growth startups scale efficiently, strengthen their market position, and expand across borders.
+                Series A and B funding is critical for companies moving beyond early-stage validation into rapid growth. By facilitating access to these funding rounds, the Forum helps high-growth startups scale efficiently, strengthen their market position, and expand across borders.
               </p>
 
               <div className="space-y-4">
@@ -390,7 +390,7 @@ export default function SeriesFundingPage() {
       <GlobalCTA
         label="Scale Now"
         title="Fuel Growth. Expand Markets. Transform the Tech Ecosystem."
-        subtitle="Whether you are a scaling company seeking Series A or B funding, or an investor looking for growth-stage opportunities, the UK–Pakistan Tech Council is your partner in driving cross-border innovation."
+        subtitle="Whether you are a scaling company seeking Series A or B funding, or an investor looking for growth-stage opportunities, the UK–Pakistan Tech Forum is your partner in driving cross-border innovation."
         primaryButtonText="Apply for Membership"
         primaryButtonLink="/membership/apply"
         secondaryButtonText="Contact Us"

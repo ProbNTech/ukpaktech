@@ -8,14 +8,15 @@ const PDFDocument = require('pdfkit');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUT_DIR = path.join(ROOT, 'public', 'documents');
-const LOGO = path.join(ROOT, 'public', 'image', 'main-logo', 'mainlogo.png');
+// New official logo (rasterized from public/logo.svg via scripts/svg-to-png.js).
+const LOGO = path.join(ROOT, 'scripts', 'pdf-content', 'logo.png');
 
 const BRAND = {
   name: 'UK Pakistan Tech Forum',
   short: 'UPTECH',
   fullLegal: 'UK-Pakistan Tech Forum Ltd',
   address: '134-136 Westbourne Terrace, London, W2 6QB, United Kingdom',
-  email: 'info@uptech.org.uk',
+  email: 'info@ukpaktech.org.uk',
 };
 
 const C = {

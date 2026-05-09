@@ -1,11 +1,8 @@
-"use client";
-
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { Section } from "@/components/Section";
 import { PageHero } from "@/components/PageHero";
-import { motion, useReducedMotion } from "framer-motion";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
@@ -112,9 +109,9 @@ const conductPrinciples = [
   { title: "Integrity", description: "Consistently demonstrate honesty and ethical behaviour in all actions and decisions.", icon: Shield, color: "#2563EB" },
   { title: "Respect & Equality", description: "Treat all members with dignity, equality, and cultural sensitivity, without discrimination.", icon: Heart, color: "#22C55E" },
   { title: "Competence", description: "Accurately represent skills and experience; continuously strive to maintain professional competence.", icon: Target, color: "#C41E3A" },
-  { title: "Loyalty", description: "Act with unwavering loyalty towards the Council and maintain confidentiality of sensitive information.", icon: Lock, color: "#2563EB" },
+  { title: "Loyalty", description: "Act with unwavering loyalty towards the Forum and maintain confidentiality of sensitive information.", icon: Lock, color: "#2563EB" },
   { title: "Impartiality", description: "Provide objective advice; disclose any potential conflicts of interest promptly and transparently.", icon: Scale, color: "#22C55E" },
-  { title: "Ethical Conduct", description: "Do not pursue personal gain at the expense of the Council; actively enhance its reputation.", icon: Award, color: "#C41E3A" },
+  { title: "Ethical Conduct", description: "Do not pursue personal gain at the expense of the Forum; actively enhance its reputation.", icon: Award, color: "#C41E3A" },
   { title: "Non-discrimination", description: "Refrain from engaging in discriminatory practices in any professional activities.", icon: Ban, color: "#2563EB" },
   { title: "Continuous Development", description: "Commit to lifelong learning and actively seek opportunities to develop skills and knowledge.", icon: RefreshCw, color: "#22C55E" },
   { title: "Professionalism", description: "Adhere to recognised professional standards; offer services diligently within areas of expertise.", icon: BadgeCheck, color: "#C41E3A" },
@@ -217,8 +214,6 @@ const faqs = [
 ];
 
 export default function MembershipTermsClient() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <div className="content-body">
       {/* ── HERO ─────────────────────────────────────────────────────── */}
@@ -231,7 +226,7 @@ export default function MembershipTermsClient() {
             &amp; Conditions
           </>
         }
-        subtitle="By applying for or maintaining membership with the UK-Pakistan Technology Council (UPTECH), you agree to be bound by these Terms and Conditions."
+        subtitle="By applying for or maintaining membership with the UK-Pakistan Technology Forum (UPTECH), you agree to be bound by these Terms and Conditions."
         particleNetwork
       >
         <div className="flex flex-wrap items-center gap-4">
@@ -246,14 +241,7 @@ export default function MembershipTermsClient() {
       <Section variant="light">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {overviewStats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-            >
+            <div key={stat.label} className="group relative rounded-xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
               <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
               <div className="relative h-full text-center bg-white rounded-xl p-6">
                 <p className="font-heading font-extrabold text-2xl sm:text-3xl mb-2" style={{ color: stat.color }}>
@@ -261,7 +249,7 @@ export default function MembershipTermsClient() {
                 </p>
                 <p className="text-[#5A5F72] text-sm">{stat.label}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Section>
@@ -273,7 +261,7 @@ export default function MembershipTermsClient() {
             <div className="lg:col-span-3">
               <SectionHeader label="Introduction" title="Scope & Purpose" color="blue" />
               <p className="text-[#3D4152] text-lg leading-relaxed mb-5">
-                These Terms and Conditions govern your membership with the UK-Pakistan Technology Council (UPTECH). By using this website and/or applying to register as a member, you agree to abide by these Conditions.
+                These Terms and Conditions govern your membership with the UK-Pakistan Technology Forum (UPTECH). By using this website and/or applying to register as a member, you agree to abide by these Conditions.
               </p>
               <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                 These Conditions apply to all membership tiers, services, and benefits provided by UPTECH. If you do not agree to these Conditions, you must not use the website or apply for membership.
@@ -283,13 +271,7 @@ export default function MembershipTermsClient() {
               </p>
             </div>
 
-            <motion.div
-              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="lg:col-span-2"
-            >
+            <div className="lg:col-span-2">
               <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 sticky top-8">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}>
@@ -308,14 +290,14 @@ export default function MembershipTermsClient() {
                     "GDPR and Data Protection Act 2018 compliant",
                     "Code of Conduct is binding on all members",
                   ].map((item, i) => (
-                    <motion.li key={item} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -8 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }} className="flex items-start gap-3">
+                    <li key={item} className="flex items-start gap-3">
                       <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
                       <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           </div>
         </AnimatedSection>
       </Section>
@@ -329,7 +311,7 @@ export default function MembershipTermsClient() {
             {coreTerms.map((term, i) => {
               const Icon = term.icon;
               return (
-                <motion.div key={term.number} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden hover:shadow-md hover:shadow-white/5 transition-shadow duration-300">
+                <div key={term.number} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden hover:shadow-md hover:shadow-white/5 transition-shadow duration-300">
                   <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${term.color}, ${term.color}40)` }} />
                   <div className="p-7 lg:p-8">
                     <div className="flex items-center gap-4 mb-5">
@@ -350,7 +332,7 @@ export default function MembershipTermsClient() {
                       ))}
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -366,7 +348,7 @@ export default function MembershipTermsClient() {
             {conductPrinciples.map((p, i) => {
               const Icon = p.icon;
               return (
-                <motion.div key={p.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }} className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                <div key={p.title} className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px h-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                   <div className="relative h-full bg-white rounded-2xl overflow-hidden">
                     <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${p.color}, ${p.color}60)` }} />
@@ -378,7 +360,7 @@ export default function MembershipTermsClient() {
                       <p className="text-[#5A5F72] text-sm leading-relaxed">{p.description}</p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -393,23 +375,23 @@ export default function MembershipTermsClient() {
           <div className="grid lg:grid-cols-2 gap-8">
             <div>
               <p className="text-white/80 text-lg leading-relaxed mb-5">
-                All members of the Council are expected to adhere to the Code of Conduct. In the event of a violation, the following disciplinary procedure applies. Members retain the right to appeal any decision.
+                All members of the Forum are expected to adhere to the Code of Conduct. In the event of a violation, the following disciplinary procedure applies. Members retain the right to appeal any decision.
               </p>
 
               <div className="space-y-3">
                 {disciplinarySteps.map((item, i) => (
-                  <motion.div key={item.step} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.08 }} className="flex items-center justify-between bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 px-4 py-3">
+                  <div key={item.step} className="flex items-center justify-between bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 px-4 py-3">
                     <div className="flex items-center gap-3">
                       <span className="w-6 h-6 rounded-full bg-[#22C55E]/10 flex items-center justify-center text-xs font-bold text-[#22C55E]">{i + 1}</span>
                       <span className="text-white text-sm font-medium">{item.step}</span>
                     </div>
                     <span className="text-xs font-bold text-[#22C55E] bg-[#22C55E]/8 px-2.5 py-1 rounded-full whitespace-nowrap">{item.outcome}</span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
 
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8">
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#C41E3A10", border: "1px solid #C41E3A20" }}>
                   <AlertTriangle className="w-5 h-5 text-[#F9A8B4]" strokeWidth={1.5} />
@@ -421,10 +403,10 @@ export default function MembershipTermsClient() {
                 {[
                   { action: "Caution", desc: "Formal warning issued. Details circulated to members without disclosing the member's identity." },
                   { action: "Reprimand", desc: "Formal reprimand recorded. Circumstances communicated confidentially." },
-                  { action: "Suspension", desc: "Temporary suspension of membership privileges. Council may inform members at its discretion." },
-                  { action: "Expulsion", desc: "Permanent removal from membership. Council may inform members confidentially at its discretion." },
+                  { action: "Suspension", desc: "Temporary suspension of membership privileges. Forum may inform members at its discretion." },
+                  { action: "Expulsion", desc: "Permanent removal from membership. Forum may inform members confidentially at its discretion." },
                 ].map((item, i) => (
-                  <motion.li key={item.action} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -8 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }} className="flex items-start gap-3">
+                  <li key={item.action} className="flex items-start gap-3">
                     <div className="w-4 h-4 rounded-full mt-0.5 flex-shrink-0 flex items-center justify-center" style={{ background: i < 2 ? "#EAB30820" : "#C41E3A20" }}>
                       <div className="w-1.5 h-1.5 rounded-full" style={{ background: i < 2 ? "#EAB308" : "#C41E3A" }} />
                     </div>
@@ -432,7 +414,7 @@ export default function MembershipTermsClient() {
                       <span className="font-semibold text-white text-sm">{item.action}</span>
                       <p className="text-white/50 text-xs mt-0.5">{item.desc}</p>
                     </div>
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
               <div className="mt-5 pt-4 border-t border-white/10">
@@ -440,7 +422,7 @@ export default function MembershipTermsClient() {
                   <span className="font-semibold text-white/70">Right to Appeal:</span> Affected members retain the right to appeal the committee&apos;s decision within 7 days by submitting a written appeal. The Executive Committee will review the appeal, and the verdict shall be final and non-negotiable.
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </AnimatedSection>
       </Section>
@@ -452,7 +434,7 @@ export default function MembershipTermsClient() {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Payment Options */}
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
+            <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
               <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40" />
               <div className="p-7">
                 <div className="flex items-center gap-3 mb-5">
@@ -479,10 +461,10 @@ export default function MembershipTermsClient() {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
 
             {/* Important Payment Notes */}
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
+            <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
               <div className="h-1 w-full bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/40" />
               <div className="p-7">
                 <div className="flex items-center gap-3 mb-5">
@@ -508,7 +490,7 @@ export default function MembershipTermsClient() {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           </div>
         </AnimatedSection>
       </Section>
@@ -522,7 +504,7 @@ export default function MembershipTermsClient() {
             {legalProtections.map((item, i) => {
               const Icon = item.icon;
               return (
-                <motion.div key={item.title} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }} className="group relative h-full rounded-2xl border border-white/10 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                <div key={item.title} className="group relative h-full rounded-2xl border border-white/10 p-px hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                   <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
                   <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden">
                     <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${item.color}, ${item.color}60)` }} />
@@ -535,7 +517,7 @@ export default function MembershipTermsClient() {
                       <p className="text-white/60 text-sm leading-relaxed">{item.description}</p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </div>
@@ -548,7 +530,7 @@ export default function MembershipTermsClient() {
           <SectionHeader label="Provisions" title="Additional Provisions" color="blue" />
 
           <div className="grid lg:grid-cols-2 gap-8">
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-7">
+            <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-7">
               <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-5">Membership Rules</h3>
               <div className="h-px bg-[#D8D5CF] mb-5" />
               <ul className="space-y-3">
@@ -568,9 +550,9 @@ export default function MembershipTermsClient() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
 
-            <motion.div initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: 0.1 }} className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-7">
+            <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-7">
               <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-5">Website & Communication</h3>
               <div className="h-px bg-[#D8D5CF] mb-5" />
               <ul className="space-y-3">
@@ -590,7 +572,7 @@ export default function MembershipTermsClient() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
         </AnimatedSection>
       </Section>
@@ -602,10 +584,10 @@ export default function MembershipTermsClient() {
 
           <div className="grid md:grid-cols-2 gap-5">
             {faqs.map((faq, i) => (
-              <motion.div key={faq.q} initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.3, delay: i * 0.05 }} className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6">
+              <div key={faq.q} className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6">
                 <h3 className="font-heading font-bold text-white text-sm mb-2">{faq.q}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{faq.a}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </AnimatedSection>
@@ -641,12 +623,12 @@ export default function MembershipTermsClient() {
         <AnimatedSection>
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-[#5A5F72] text-sm leading-relaxed">
-              <span className="font-semibold text-[#1C1F2E]">UK-Pakistan Technology Council (UPTECH)</span>
+              <span className="font-semibold text-[#1C1F2E]">UK-Pakistan Technology Forum (UPTECH)</span>
               <br />
               134-136 Westbourne Terrace, London, W2 6QB, United Kingdom
               <br />
               For any questions about these Terms, please contact{" "}
-              <a href="mailto:info@uptechcouncil.org" className="text-[#2563EB] hover:underline">info@uptechcouncil.org</a>
+              <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:underline">info@ukpaktech.org.uk</a>
             </p>
           </div>
         </AnimatedSection>

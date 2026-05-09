@@ -371,7 +371,7 @@ export default function TechMartGlobalClient() {
                 color="blue"
               />
               <p className="text-[#3D4152] text-lg leading-relaxed mb-5">
-                The UK-Pakistan Technology Council (UPTECH) aims to strengthen technology collaboration between Pakistan and Europe by creating a strategic bridge between technology talent, innovation ecosystems, and digital markets.
+                The UK-Pakistan Technology Forum (UPTECH) aims to strengthen technology collaboration between Pakistan and Europe by creating a strategic bridge between technology talent, innovation ecosystems, and digital markets.
               </p>
               <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                 With growing demand for digital transformation across Europe and a rapidly expanding technology workforce in Pakistan, the opportunity for cross-border collaboration has never been greater.
@@ -955,7 +955,7 @@ export default function TechMartGlobalClient() {
                 color="red"
               />
               <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
-                The UK-Pakistan Technology Council (UPTECH) acts as a facilitator for cross-border technology collaboration, providing essential services and infrastructure to support meaningful partnerships.
+                The UK-Pakistan Technology Forum (UPTECH) acts as a facilitator for cross-border technology collaboration, providing essential services and infrastructure to support meaningful partnerships.
               </p>
               <ul className="space-y-3">
                 {roleOfUptech.map((item, i) => (

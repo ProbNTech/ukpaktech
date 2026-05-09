@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Management Team",
   description:
-    "UPTECH's leadership structure, board of directors, advisory council, and executive team driving strategic direction.",
+    "UPTECH's leadership structure, board of directors, advisory forum, and executive team driving strategic direction.",
   openGraph: {
     title: "Management Team | UPTECH",
     description:
-      "UPTECH's leadership structure, board of directors, advisory council, and executive team driving strategic direction.",
+      "UPTECH's leadership structure, board of directors, advisory forum, and executive team driving strategic direction.",
   },
 };
 

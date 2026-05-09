@@ -60,8 +60,8 @@ const bilateralBenefits = [
 const memberBenefits = [
   "Preferential booking rates",
   "Allocated complimentary meeting hours (subject to membership tier)",
-  "Priority access for Council-endorsed events",
-  "Administrative support for official Council engagements",
+  "Priority access for Forum-endorsed events",
+  "Administrative support for official Forum engagements",
 ];
 
 const tierTableData = [
@@ -122,7 +122,7 @@ const meetingSpaceTerms = [
   "Advance booking required (min 5 working days recommended)",
   "Additional hours available at preferential member rates",
   "Unused hours do not roll over to the following year",
-  "Council-endorsed events may receive priority scheduling",
+  "Forum-endorsed events may receive priority scheduling",
 ];
 
 const addOnServices = [
@@ -134,7 +134,7 @@ const addOnServices = [
 
 const bookingChecklist = [
   { icon: ShieldCheck, text: "Meeting facilities are available by advance booking and subject to membership tier allocations and availability." },
-  { icon: Mail, text: "Contact: Membership & Operations Team, Email: info@uptech.org.uk" },
+  { icon: Mail, text: "Contact: Membership & Operations Team, Email: info@ukpaktech.org.uk" },
 ];
 
 export default function MeetingSpacePage() {
@@ -146,7 +146,7 @@ export default function MeetingSpacePage() {
       <PageHero
         label="Meeting Space"
         title="London Meeting Space Access — An Exclusive Member Privilege"
-        subtitle="The UK-Pakistan Tech Council offers members access to professional meeting facilities in Central London, enabling high-level engagement within a credible and strategic business environment. This benefit supports our mission to strengthen bilateral Tech collaboration and provides members with the infrastructure required to conduct business effectively in the United Kingdom."
+        subtitle="The UK-Pakistan Tech Forum offers members access to professional meeting facilities in Central London, enabling high-level engagement within a credible and strategic business environment. This benefit supports our mission to strengthen bilateral Tech collaboration and provides members with the infrastructure required to conduct business effectively in the United Kingdom."
         image="/image/banners/banner77.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
@@ -315,7 +315,7 @@ export default function MeetingSpacePage() {
           <AnimatedSection>
             <SectionHeader label="Bilateral Collaboration" title="Supporting Bilateral Collaboration" color="blue" />
             <p className="text-[#3D4152] text-base leading-relaxed mb-8">
-              These facilities are designed to support our members in conducting business, hosting visiting delegations from Pakistan or the UK, and engaging with policymakers and investors in a credible and professional setting. By facilitating access to centrally located meeting infrastructure, the Council enables:
+              These facilities are designed to support our members in conducting business, hosting visiting delegations from Pakistan or the UK, and engaging with policymakers and investors in a credible and professional setting. By facilitating access to centrally located meeting infrastructure, the Forum enables:
             </p>
 
             {/* Bilateral benefits as GlowingEffect cards */}

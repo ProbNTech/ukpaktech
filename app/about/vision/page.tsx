@@ -107,7 +107,7 @@ export default function VisionPage() {
       <GlobalCTA
         label="Share Our Vision"
         title="Be Part of the Vision"
-        subtitle="Join the UK-Pakistan Technology Council and help build a connected innovation ecosystem that creates lasting impact for both nations."
+        subtitle="Join the UK-Pakistan Technology Forum and help build a connected innovation ecosystem that creates lasting impact for both nations."
         primaryButtonText="Apply for Membership"
         primaryButtonLink="/membership/apply"
         secondaryButtonText="Our Mission"

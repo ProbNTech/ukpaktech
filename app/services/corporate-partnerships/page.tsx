@@ -167,7 +167,7 @@ export default function CorporatePartnershipsPage() {
       <PageHero
         label="UPTECH Service"
         title="Corporate & Accelerator Partnerships"
-        subtitle="The UK-Pakistan Tech Council fosters strategic partnerships between technology startups, scale-ups, corporates, and accelerator programs across the UK and Pakistan. These collaborations help members access resources, mentorship, market opportunities, and industry expertise to accelerate growth and innovation."
+        subtitle="The UK-Pakistan Tech Forum fosters strategic partnerships between technology startups, scale-ups, corporates, and accelerator programs across the UK and Pakistan. These collaborations help members access resources, mentorship, market opportunities, and industry expertise to accelerate growth and innovation."
         video="/image/banners/corporate-partnerships-video.mp4"
         videoSpeed={2}
       >

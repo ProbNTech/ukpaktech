@@ -50,8 +50,8 @@ const exploreItems = [
   { icon: Lightbulb, title: "Vision", desc: "A connected innovation ecosystem bridging UK and Pakistan's technology sectors.", href: "/about/vision", color: "#C41E3A" },
   { icon: Target, title: "Mission", desc: "Our strategic mission to transform Pakistan into a thriving global tech hub.", href: "/about/mission", color: "#22C55E" },
   { icon: CheckCircle2, title: "Objectives & Values", desc: "Core values, key activities, and broader impact goals driving our work.", href: "/about/objectives", color: "#2563EB" },
-  { icon: Award, title: "Leadership", desc: "Meet our Chairman Hussnain Kazmi and President Khalil Choudhary — the leaders of UPTECH.", href: "/about/founder", color: "#C41E3A" },
-  { icon: Users, title: "Management Team", desc: "Board of directors, advisory council, and executive leadership team.", href: "/about/management-team", color: "#22C55E" },
+  { icon: Award, title: "Leadership", desc: "Meet our President Khalil Choudhary — the leader of UPTECH.", href: "/about/founder", color: "#C41E3A" },
+  { icon: Users, title: "Management Team", desc: "Board of directors, advisory forum, and executive leadership team.", href: "/about/management-team", color: "#22C55E" },
 ];
 
 export default function AboutPage() {
@@ -75,17 +75,17 @@ export default function AboutPage() {
           <AnimatedSection>
             <SectionHeader
               label="Who we are"
-              title="About the Council"
+              title="About the Forum"
               color="blue"
             />
             <p className="text-[#3D4152] leading-relaxed mb-5">
-              The UK Pakistan Technology Council brings together businesses, innovators, government partners, investors, and technology leaders from the UK and Pakistan to support cross-border innovation, trade, and economic growth. Our mission is to shape strategic technology cooperation that powers sustainable development, accelerates digital transformation, and fosters shared prosperity for both nations.
+              The UK Pakistan Technology Forum brings together businesses, innovators, government partners, investors, and technology leaders from the UK and Pakistan to support cross-border innovation, trade, and economic growth. Our mission is to shape strategic technology cooperation that powers sustainable development, accelerates digital transformation, and fosters shared prosperity for both nations.
             </p>
             <p className="text-[#3D4152] leading-relaxed mb-5">
               Our primary objective is to champion a positive and soft image of Pakistan while nurturing innovation, collaboration, and continuous education within the dynamic landscape of technology.
             </p>
             <p className="text-[#3D4152] leading-relaxed mb-5">
-              Our dynamic platform empowers individuals to unlock their full potential, advance their careers, and make a lasting impact on the Council. We champion the highest standards of professionalism, integrity, and ethics, setting a benchmark for IT societies worldwide.
+              Our dynamic platform empowers individuals to unlock their full potential, advance their careers, and make a lasting impact on the Forum. We champion the highest standards of professionalism, integrity, and ethics, setting a benchmark for IT societies worldwide.
             </p>
             <p className="text-[#3D4152] leading-relaxed mb-5">
               By uniting Pakistani IT professionals residing and working in the United Kingdom, we establish a dynamic platform for networking, knowledge-sharing, and collective advancement.
@@ -98,7 +98,7 @@ export default function AboutPage() {
             <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl border-2 border-[#2563EB]/15">
               <Image
                 src="/image/about/about-section-home.jpg"
-                alt="About the Council"
+                alt="About the Forum"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 50vw, 100vw"
@@ -111,7 +111,7 @@ export default function AboutPage() {
       {/* Why Choose UPTECH */}
       <Section variant="alt">
         <AnimatedSection>
-          <SectionHeader label="Why UPTECH" title="Why Choose UPTECH?" color="green" subtitle="The UK-Pakistan Technology Council provides a trusted platform for technology collaboration between Pakistan and Europe." />
+          <SectionHeader label="Why UPTECH" title="Why Choose UPTECH?" color="green" subtitle="The UK-Pakistan Technology Forum provides a trusted platform for technology collaboration between Pakistan and Europe." />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whyUptech.map((item) => {
               const Icon = item.icon;

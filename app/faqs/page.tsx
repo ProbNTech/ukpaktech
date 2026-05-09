@@ -1,13 +1,10 @@
 "use client";
 
-import { Section } from "@/components/Section";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { SectionHeader } from "@/components/SectionHeader";
-import { Button } from "@/components/Button";
 import { PageHero } from "@/components/PageHero";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
-import { ChevronDown, HelpCircle, Users, Briefcase, Banknote, Calendar, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { ChevronDown, HelpCircle, Users, Briefcase, Banknote, Calendar, Search, X } from "lucide-react";
+import { useState, useMemo } from "react";
 import { GlobalCTA } from "@/components/GlobalCTA";
 
 const categoryIcons: Record<string, typeof HelpCircle> = {
@@ -18,19 +15,19 @@ const categoryIcons: Record<string, typeof HelpCircle> = {
   "Events & Networking": Calendar,
 };
 
-const categoryMeta: Record<string, { color: string; border: string; bg: string; desc: string }> = {
-  General: { color: "#2563EB", border: "border-[#2563EB]", bg: "bg-[#2563EB]", desc: "Learn about UPTECH, our mission, and how to get involved." },
-  Membership: { color: "#22C55E", border: "border-[#22C55E]", bg: "bg-[#22C55E]", desc: "Tiers, benefits, application process, and cancellation policy." },
-  "Programs & Services": { color: "#C41E3A", border: "border-[#C41E3A]", bg: "bg-[#C41E3A]", desc: "Training, mentorship, incubation, and business support." },
-  "Funding & Grants": { color: "#2563EB", border: "border-[#2563EB]", bg: "bg-[#2563EB]", desc: "Investment stages, eligibility criteria, and application timelines." },
-  "Events & Networking": { color: "#22C55E", border: "border-[#22C55E]", bg: "bg-[#22C55E]", desc: "Conferences, sponsorship, speaking opportunities, and networking." },
+const categoryMeta: Record<string, { color: string; desc: string }> = {
+  General: { color: "#2563EB", desc: "Learn about UPTECH, our mission, and how to get involved." },
+  Membership: { color: "#22C55E", desc: "Tiers, benefits, application process, and cancellation policy." },
+  "Programs & Services": { color: "#C41E3A", desc: "Training, mentorship, incubation, and business support." },
+  "Funding & Grants": { color: "#6366F1", desc: "Investment stages, eligibility criteria, and application timelines." },
+  "Events & Networking": { color: "#EAB308", desc: "Conferences, sponsorship, speaking opportunities, and networking." },
 };
 
 const faqCategories = [
   {
     category: "General",
     faqs: [
-      { question: "What is UPTECH?", answer: "UPTECH (UK\u2013Pakistan Tech Council) is a strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan. We connect companies, investors, professionals, and policymakers across both ecosystems." },
+      { question: "What is UPTECH?", answer: "UPTECH (UK\u2013Pakistan Tech Forum) is a strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan. We connect companies, investors, professionals, and policymakers across both ecosystems." },
       { question: "Who can join UPTECH?", answer: "UPTECH is open to technology companies, startups, investors, professionals, researchers, and organisations with an interest in the UK\u2013Pakistan technology corridor. Both individuals and companies can apply for membership." },
       { question: "Where is UPTECH based?", answer: "UPTECH operates across both the UK and Pakistan, with presence in London and Islamabad. Our programmes and events take place in both countries and online." },
       { question: "How can I get involved?", answer: "You can get involved by becoming a member, attending our events, applying for our programmes, or partnering with us. Visit our membership page or contact us to learn more." },
@@ -78,14 +75,37 @@ const totalQuestions = faqCategories.reduce((sum, cat) => sum + cat.faqs.length,
 
 export default function FAQsPage() {
   const shouldReduceMotion = useReducedMotion();
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredCategories = useMemo(() => {
+    let cats = faqCategories;
+
+    if (activeCategory !== "All") {
+      cats = cats.filter((c) => c.category === activeCategory);
+    }
+
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      cats = cats
+        .map((cat) => ({
+          ...cat,
+          faqs: cat.faqs.filter(
+            (faq) =>
+              faq.question.toLowerCase().includes(q) ||
+              faq.answer.toLowerCase().includes(q)
+          ),
+        }))
+        .filter((cat) => cat.faqs.length > 0);
+    }
+
+    return cats;
+  }, [activeCategory, searchQuery]);
 
   const scrollToCategory = (category: string) => {
-    const id = `faq-${category.toLowerCase().replace(/[^a-z]/g, "-")}`;
-    const el = document.getElementById(id);
-    if (el) {
-      const offset = el.getBoundingClientRect().top + window.pageYOffset - 100;
-      window.scrollTo({ top: offset, behavior: "smooth" });
-    }
+    setActiveCategory(category);
+    setSearchQuery("");
+    window.scrollTo({ top: 400, behavior: "smooth" });
   };
 
   return (
@@ -97,112 +117,161 @@ export default function FAQsPage() {
         image="/image/banners/faq.jpg"
       />
 
-      <div className="content-body">
       {/* Stats Bar */}
-      <Section variant="light">
-        <AnimatedSection>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { value: String(faqCategories.length), label: "Categories", color: "#2563EB" },
-              { value: String(totalQuestions), label: "Questions Answered", color: "#22C55E" },
-              { value: "24/7", label: "Online Access", color: "#C41E3A" },
-              { value: "5–10", label: "Days Response Time", color: "#2563EB" },
-            ].map((stat) => (
-              <motion.div
-                key={stat.label}
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4 }}
-                className="text-center flex flex-col items-center"
-              >
-                <p className="font-heading font-extrabold text-3xl" style={{ color: stat.color }}>{stat.value}</p>
-                <p className="text-base text-[#7A7E8F]">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* Category Navigation Grid */}
-      <Section variant="alt">
-        <AnimatedSection>
-          <SectionHeader label="Browse topics" title="Select a Category" subtitle="Click any topic below to jump directly to that section." />
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
-            {faqCategories.map((cat, i) => {
-              const Icon = categoryIcons[cat.category] || HelpCircle;
-              const meta = categoryMeta[cat.category];
-              return (
-                <motion.button
-                  key={cat.category}
-                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
+      <section className="relative py-10 lg:py-14 bg-white">
+        <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
+          <AnimatedSection>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { value: String(faqCategories.length), label: "Categories", color: "#2563EB" },
+                { value: String(totalQuestions), label: "Questions Answered", color: "#22C55E" },
+                { value: "24/7", label: "Online Access", color: "#C41E3A" },
+                { value: "5\u201310", label: "Days Response Time", color: "#6366F1" },
+              ].map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.3, delay: i * 0.06 }}
-                  onClick={() => scrollToCategory(cat.category)}
-                  className="group text-left bg-white rounded-xl border border-[#D8D5CF] p-5 hover:border-[#2563EB]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  className="text-center flex flex-col items-center gap-1"
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: `${meta.color}10`, border: `1px solid ${meta.color}15` }}>
-                    <Icon className="w-5 h-5" style={{ color: meta.color }} strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1 group-hover:text-[#2563EB] transition-colors duration-200">{cat.category}</h3>
-                  <p className="text-base text-[#7A7E8F] leading-relaxed hidden sm:block">{meta.desc}</p>
-                  <p className="text-base font-bold text-[#D8D5CF] uppercase tracking-wider mt-2">{cat.faqs.length} questions</p>
-                </motion.button>
-              );
-            })}
+                  <p className="font-heading font-extrabold text-4xl lg:text-5xl" style={{ color: stat.color }}>{stat.value}</p>
+                  <p className="text-sm sm:text-base text-[#5A5F72] font-medium">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Search + Filter Bar */}
+      <section className="sticky top-[120px] sm:top-[150px] z-40 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] py-4">
+        <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
+          <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+            {/* Search */}
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search questions..."
+                className="w-full pl-10 pr-9 py-2.5 text-sm rounded-lg border border-[#E5E7EB] bg-[#f7f8fa] focus:bg-white focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 outline-none transition-all duration-200"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#9CA3AF] hover:text-[#1C1F2E] transition-colors"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+
+            {/* Category Pills */}
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setActiveCategory("All")}
+                className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full border transition-all duration-200 ${
+                  activeCategory === "All"
+                    ? "bg-[#1C1F2E] text-white border-[#1C1F2E]"
+                    : "bg-white text-[#5A5F72] border-[#E5E7EB] hover:border-[#1C1F2E]/30"
+                }`}
+              >
+                All ({totalQuestions})
+              </button>
+              {faqCategories.map((cat) => {
+                const meta = categoryMeta[cat.category];
+                const isActive = activeCategory === cat.category;
+                return (
+                  <button
+                    key={cat.category}
+                    onClick={() => scrollToCategory(cat.category)}
+                    className="px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full border transition-all duration-200"
+                    style={{
+                      background: isActive ? meta.color : "#fff",
+                      color: isActive ? "#fff" : "#5A5F72",
+                      borderColor: isActive ? meta.color : "#E5E7EB",
+                    }}
+                  >
+                    {cat.category} ({cat.faqs.length})
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </AnimatedSection>
-      </Section>
+        </div>
+      </section>
 
       {/* FAQ Sections */}
-      {faqCategories.map((cat, catIdx) => {
-        const Icon = categoryIcons[cat.category] || HelpCircle;
-        const meta = categoryMeta[cat.category];
-        const sectionId = `faq-${cat.category.toLowerCase().replace(/[^a-z]/g, "-")}`;
+      <section className="py-12 lg:py-20 bg-[#f7f8fa]">
+        <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
+          {filteredCategories.length > 0 ? (
+            <div className="space-y-16">
+              {filteredCategories.map((cat) => {
+                const Icon = categoryIcons[cat.category] || HelpCircle;
+                const meta = categoryMeta[cat.category];
+                const sectionId = `faq-${cat.category.toLowerCase().replace(/[^a-z]/g, "-")}`;
 
-        return (
-          <section key={cat.category} id={sectionId} className="scroll-mt-24">
-            <Section variant={catIdx % 2 === 0 ? "light" : "alt"}>
-              <AnimatedSection>
-                {/* Category Header */}
-                <div className="flex items-start gap-5 mb-8">
-                  <div className="relative flex-shrink-0">
-                    <div className="absolute inset-[-4px] rounded-xl blur-lg opacity-30" style={{ background: meta.color }} />
-                    <div className="relative w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${meta.color}10`, border: `1px solid ${meta.color}20` }}>
-                      <Icon className="w-6 h-6" style={{ color: meta.color }} strokeWidth={1.5} />
-                    </div>
+                return (
+                  <div key={cat.category} id={sectionId} className="scroll-mt-48">
+                    <AnimatedSection animation="blur-in">
+                      {/* Category Header */}
+                      <div className="flex items-center gap-4 mb-8">
+                        <div
+                          className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                          style={{ background: `${meta.color}12`, border: `1.5px solid ${meta.color}25` }}
+                        >
+                          <Icon className="w-6 h-6" style={{ color: meta.color }} strokeWidth={1.8} />
+                        </div>
+                        <div>
+                          <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl sm:text-3xl leading-tight">
+                            {cat.category}
+                          </h2>
+                          <p className="text-sm text-[#5A5F72] mt-0.5">{meta.desc}</p>
+                        </div>
+                        <span
+                          className="hidden sm:inline-flex ml-auto text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full"
+                          style={{ background: `${meta.color}10`, color: meta.color }}
+                        >
+                          {cat.faqs.length} questions
+                        </span>
+                      </div>
+
+                      {/* Accordion */}
+                      <FAQAccordion
+                        faqs={cat.faqs}
+                        shouldReduceMotion={shouldReduceMotion}
+                        color={meta.color}
+                        searchQuery={searchQuery}
+                      />
+                    </AnimatedSection>
                   </div>
-                  <div>
-                    <div className="flex items-center gap-3 mb-1">
-                      <h2 className="font-heading font-extrabold text-[#1C1F2E] text-2xl">{cat.category}</h2>
-                      <span className="text-base font-bold uppercase tracking-wider px-2.5 py-1 rounded-full text-white" style={{ background: meta.color }}>
-                        {cat.faqs.length} Q&A
-                      </span>
-                    </div>
-                    <p className="text-base text-[#7A7E8F] leading-relaxed">{meta.desc}</p>
-                  </div>
-                </div>
-
-                {/* Accordion */}
-                <FAQAccordion
-                  faqs={cat.faqs}
-                  shouldReduceMotion={shouldReduceMotion}
-                  color={meta.color}
-                />
-              </AnimatedSection>
-            </Section>
-          </section>
-        );
-      })}
-
-      </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="text-center py-20">
+              <Search className="w-12 h-12 text-[#D1D5DB] mx-auto mb-4" />
+              <p className="text-lg font-semibold text-[#1C1F2E] mb-2">No results found</p>
+              <p className="text-sm text-[#5A5F72] mb-6">Try a different search term or browse all categories.</p>
+              <button
+                onClick={() => { setSearchQuery(""); setActiveCategory("All"); }}
+                className="px-5 py-2.5 text-sm font-bold text-[#2563EB] bg-[#2563EB]/10 rounded-lg hover:bg-[#2563EB]/20 transition-colors"
+              >
+                Clear filters
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* CTA */}
       <GlobalCTA
         label="Still Have Questions?"
-        title="We’re Here to Help"
-        subtitle="Can’t find the answer you’re looking for? Our team is ready to assist with any questions about UPTECH, membership, programmes, or partnerships."
+        title="We're Here to Help"
+        subtitle="Can't find the answer you're looking for? Our team is ready to assist with any questions about UPTECH, membership, programmes, or partnerships."
         primaryButtonText="Contact Us"
         primaryButtonLink="/contact"
         secondaryButtonText="Apply for Membership"
@@ -212,14 +281,35 @@ export default function FAQsPage() {
   );
 }
 
+/* ─── Highlight matching text ─── */
+function HighlightText({ text, query }: { text: string; query: string }) {
+  if (!query.trim()) return <>{text}</>;
+  const q = query.trim();
+  const regex = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi");
+  const parts = text.split(regex);
+  return (
+    <>
+      {parts.map((part, i) =>
+        regex.test(part) ? (
+          <mark key={i} className="bg-yellow-200/60 text-inherit rounded px-0.5">{part}</mark>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </>
+  );
+}
+
 function FAQAccordion({
   faqs,
   shouldReduceMotion,
   color,
+  searchQuery,
 }: {
   faqs: { question: string; answer: string }[];
   shouldReduceMotion: boolean | null;
   color: string;
+  searchQuery: string;
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -230,62 +320,65 @@ function FAQAccordion({
         return (
           <motion.div
             key={faq.question}
-            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 8 }}
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
-            transition={{ duration: 0.3, delay: index * 0.05 }}
-            className={`bg-white rounded-xl border overflow-hidden transition-all duration-300 ${
-              isOpen ? "border-transparent shadow-lg" : "border-[#D8D5CF] hover:border-[#D8D5CF]/60"
-            }`}
-            style={isOpen ? { borderLeft: `3px solid ${color}` } : {}}
+            transition={{ duration: 0.35, delay: index * 0.06 }}
           >
-            <button
-              onClick={() => setOpenIndex(isOpen ? null : index)}
-              className="w-full flex items-center gap-4 p-5 lg:p-6 text-left"
+            <div
+              className={`bg-white rounded-xl overflow-hidden transition-all duration-300 ${
+                isOpen
+                  ? "shadow-lg"
+                  : "shadow-sm border border-[#E5E7EB] hover:shadow-md hover:border-[#D1D5DB]"
+              }`}
+              style={isOpen ? { boxShadow: `0 0 0 1px ${color}30, 0 10px 15px -3px rgb(0 0 0 / 0.1)`, borderLeft: `3px solid ${color}` } : {}}
             >
-              <span
-                className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-base font-bold transition-colors duration-300"
-                style={
-                  isOpen
-                    ? { background: color, color: "#fff" }
-                    : { background: `${color}10`, color }
-                }
+              <button
+                onClick={() => setOpenIndex(isOpen ? null : index)}
+                className="w-full flex items-center gap-4 p-5 lg:p-6 text-left group"
               >
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className={`font-heading font-semibold text-base flex-1 transition-colors duration-200 ${isOpen ? "text-[#1C1F2E]" : "text-[#1C1F2E]"}`}>
-                {faq.question}
-              </span>
-              <div
-                className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
-                style={
-                  isOpen
-                    ? { background: `${color}10` }
-                    : { background: "transparent" }
-                }
-              >
-                <ChevronDown
-                  className="w-4.5 h-4.5 transition-transform duration-300"
-                  style={{ color: isOpen ? color : "#7A7E8F", transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
-                />
-              </div>
-            </button>
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.25 }}
-                  className="overflow-hidden"
+                <span
+                  className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-sm font-bold transition-all duration-300"
+                  style={
+                    isOpen
+                      ? { background: color, color: "#fff" }
+                      : { background: `${color}0D`, color }
+                  }
                 >
-                  <div className="px-5 lg:px-6 pb-5 lg:pb-6 pl-[4.25rem] lg:pl-[4.75rem]">
-                    <div className="h-px bg-[#D8D5CF]/50 mb-4" />
-                    <p className="text-[#3D4152] text-base leading-[1.8]">{faq.answer}</p>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className={`font-heading font-bold text-base sm:text-[17px] flex-1 leading-snug transition-colors duration-200 ${isOpen ? "text-[#1C1F2E]" : "text-[#3D4152] group-hover:text-[#1C1F2E]"}`}>
+                  <HighlightText text={faq.question} query={searchQuery} />
+                </span>
+                <div
+                  className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
+                  style={{ background: isOpen ? `${color}10` : "transparent" }}
+                >
+                  <ChevronDown
+                    className="w-4.5 h-4.5 transition-transform duration-300"
+                    style={{ color: isOpen ? color : "#9CA3AF", transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                  />
+                </div>
+              </button>
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-5 lg:px-6 pb-6 pl-[4.25rem] lg:pl-[4.75rem]">
+                      <div className="h-px bg-[#E5E7EB] mb-4" />
+                      <p className="text-[#5A5F72] text-[15px] leading-[1.85]">
+                        <HighlightText text={faq.answer} query={searchQuery} />
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </motion.div>
         );
       })}

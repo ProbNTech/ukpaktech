@@ -1,6 +1,6 @@
-# UK–Pakistan Tech Council (UPTECH) Website
+# UK–Pakistan Tech Forum (UPTECH) Website
 
-Official website for the UK–Pakistan Tech Council built with Next.js 16, TypeScript, and Tailwind CSS.
+Official website for the UK–Pakistan Tech Forum built with Next.js 16, TypeScript, and Tailwind CSS.
 
 ## Getting Started
 
@@ -96,7 +96,7 @@ npm start
 
 - Portal URL is set to `https://portal.example.com` (update in code)
 - Placeholder images are used (replace with actual images)
-- Contact email is `info@uptech.example.com` (update in Footer and Contact page)
+- Contact email is `info@ukpaktech.org.uk` (update in Footer and Contact page)
 
 
 

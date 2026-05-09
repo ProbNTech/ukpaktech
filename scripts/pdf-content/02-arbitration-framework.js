@@ -129,7 +129,7 @@ module.exports = {
       n: '9', heading: 'Contact & Support',
       blocks: [
         { type: 'p', text: '24/7 technical support is available via the platform, chat, email, or phone. The UPTECH Arbitration Committee provides procedural guidance and handles all enquiries regarding arbitration proceedings.' },
-        { type: 'contact', org: 'UK-Pakistan Tech Forum (UPTECH)', address: '134-136 Westbourne Terrace, London, W2 6QB, United Kingdom', email: 'info@uptech.org.uk' },
+        { type: 'contact', org: 'UK-Pakistan Tech Forum (UPTECH)', address: '134-136 Westbourne Terrace, London, W2 6QB, United Kingdom', email: 'info@ukpaktech.org.uk' },
       ],
     },
   ],

@@ -142,7 +142,7 @@ export default function StartupFundingPage() {
       <PageHero
         label="Ecosystem / Startup Funding"
         title="Startup Funding Opportunities"
-        subtitle="The UK-Pakistan Tech Council supports early-stage technology startups in accessing funding, investment networks, and growth capital to turn innovative ideas into scalable businesses."
+        subtitle="The UK-Pakistan Tech Forum supports early-stage technology startups in accessing funding, investment networks, and growth capital to turn innovative ideas into scalable businesses."
         image="/image/banners/banner109.png"
       >
         <div className="flex flex-wrap items-center gap-4">
@@ -316,7 +316,7 @@ export default function StartupFundingPage() {
             <div className="lg:col-span-3">
               <SectionHeader label="Why It Matters" title="Funding is a Critical Enabler for Innovation" color="blue" />
               <p className="text-[#5A5F72] text-lg leading-relaxed mb-6">
-                Funding is a critical enabler for innovation. By facilitating investment connections, the Council helps startups accelerate product development, scale operations, and enter new markets, while giving investors access to the most promising technology ventures across the UK and Pakistan.
+                Funding is a critical enabler for innovation. By facilitating investment connections, the Forum helps startups accelerate product development, scale operations, and enter new markets, while giving investors access to the most promising technology ventures across the UK and Pakistan.
               </p>
 
               <div className="space-y-4">
@@ -388,7 +388,7 @@ export default function StartupFundingPage() {
       <GlobalCTA
         label="Get Started"
         title="Empowering Startups. Connecting Investors. Driving Cross-Border Growth."
-        subtitle="Whether you are a startup seeking investment or an investor looking for the next breakthrough, the UK–Pakistan Tech Council is your gateway to cross-border opportunity."
+        subtitle="Whether you are a startup seeking investment or an investor looking for the next breakthrough, the UK–Pakistan Tech Forum is your gateway to cross-border opportunity."
         primaryButtonText="Apply for Membership"
         primaryButtonLink="/membership/apply"
         secondaryButtonText="Contact Us"

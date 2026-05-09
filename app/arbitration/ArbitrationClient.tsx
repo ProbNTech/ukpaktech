@@ -268,7 +268,7 @@ export default function ArbitrationClient() {
                 Cross-border business relationships sometimes lead to misunderstandings or contractual disputes. UPTECH offers a structured framework to help parties resolve issues efficiently, professionally, and without unnecessary litigation.
               </p>
               <p className="text-white/60 text-lg leading-relaxed mb-5">
-                The UK-Pakistan Technology Council (UPTECH) provides an independent dispute resolution framework to facilitate the fair, efficient, and amicable settlement of disputes arising from business collaborations, service agreements, employment arrangements, research partnerships, and technology transactions involving UPTECH members or affiliated parties.
+                The UK-Pakistan Technology Forum (UPTECH) provides an independent dispute resolution framework to facilitate the fair, efficient, and amicable settlement of disputes arising from business collaborations, service agreements, employment arrangements, research partnerships, and technology transactions involving UPTECH members or affiliated parties.
               </p>
 
               {/* Filing info card inline */}
@@ -542,7 +542,7 @@ export default function ArbitrationClient() {
           <SectionHeader
             label="Our Commitment"
             title="Arbitration Principles & Commitment to Fair Practice"
-            subtitle="The UK-Pakistan Technology Council (UPTECH) is committed to promoting ethical business practices, transparency, and trust within the global technology ecosystem. Our arbitration services help create a secure environment for international technology collaboration and investment."
+            subtitle="The UK-Pakistan Technology Forum (UPTECH) is committed to promoting ethical business practices, transparency, and trust within the global technology ecosystem. Our arbitration services help create a secure environment for international technology collaboration and investment."
             color="red"
           />
 
@@ -908,7 +908,7 @@ export default function ArbitrationClient() {
               <blockquote className="relative border-l-4 border-[#2563EB] pl-6 py-5 bg-gradient-to-r from-[#2563EB]/15 to-transparent rounded-r-xl">
                 <div className="absolute -left-1 -top-2 text-[#2563EB]/20 text-6xl font-serif leading-none">&ldquo;</div>
                 <p className="text-white text-base leading-relaxed font-medium relative z-10">
-                  Any dispute arising from this agreement shall first be resolved through mediation facilitated by the UK-Pakistan Technology Council (UPTECH). If mediation fails, the dispute may be referred to arbitration under the standard Arbitration & Legal Framework.
+                  Any dispute arising from this agreement shall first be resolved through mediation facilitated by the UK-Pakistan Technology Forum (UPTECH). If mediation fails, the dispute may be referred to arbitration under the standard Arbitration & Legal Framework.
                 </p>
               </blockquote>
             </div>

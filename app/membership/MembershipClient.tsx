@@ -40,7 +40,7 @@ import Image from "next/image";
 const membershipBenefits = [
   { icon: Globe, title: "Industry Access", description: "Engage with key decision-makers, regulators, and thought leaders across the UK, Europe and Pakistan.", color: "#2563EB" },
   { icon: Network, title: "Networking & Collaboration", description: "Connect with startups, scale-ups, corporates, and accelerators.", color: "#22C55E" },
-  { icon: Eye, title: "Market Visibility", description: "Promote your products, services, and solutions through Council channels, digital campaigns, and cross-border events.", color: "#C41E3A" },
+  { icon: Eye, title: "Market Visibility", description: "Promote your products, services, and solutions through Forum channels, digital campaigns, and cross-border events.", color: "#C41E3A" },
   { icon: DollarSign, title: "Funding & Investment Support", description: "Receive guidance and access to startup funding, Series A and B investment, and accelerator programs.", color: "#2563EB" },
   { icon: Users, title: "Talent & Employment Opportunities", description: "Leverage overseas contract employment programs to access global tech talent.", color: "#22C55E" },
   { icon: Lightbulb, title: "Thought Leadership", description: "Position your organisation as a leader in technology through speaking opportunities, published insights, and policy engagement.", color: "#C41E3A" },
@@ -109,7 +109,7 @@ const membershipTiers = [
       "Priority invitations to CEO-level briefings and bilateral meetings",
       "Leadership opportunities in executive trade missions, annual meetings, and events",
       "Increased visibility for company branding",
-      "Participation in setting Council\u2019s advocacy goals and strategic planning",
+      "Participation in setting Forum\u2019s advocacy goals and strategic planning",
       "Advocacy assistance to resolve company-specific trade or investment issues",
       "All Corporate Membership benefits listed below",
     ],
@@ -119,9 +119,9 @@ const membershipTiers = [
     highlight: false,
     description: "Any Company, Corporation, Firm, Concern or other legal business entity in UK and Pakistan actively engaged in the AI & Information Technology industry",
     features: [
-      "Participation on the Council\u2019s policy task forces",
+      "Participation on the Forum\u2019s policy task forces",
       "Assistance with securing appointments for company executives visiting UK",
-      "Opportunities to participate in Council members-only events, executive trade missions, and briefings",
+      "Opportunities to participate in Forum members-only events, executive trade missions, and briefings",
       "Policy papers and sector-specific advocacy updates",
       "UPTECH economy and policy updates",
     ],
@@ -147,7 +147,7 @@ const membershipTiers = [
   {
     name: "Associates",
     highlight: false,
-    description: "Any Company, Association, Council shall apply for membership in the \u2018Associate\u2019 Category.",
+    description: "Any Company, Association, Forum shall apply for membership in the \u2018Associate\u2019 Category.",
     features: [],
   },
   {
@@ -195,7 +195,7 @@ export default function MembershipClient() {
       {/* ── Hero ── */}
       <PageHero
         label="Membership"
-        title="At UK Pakistan Tech Council, Membership Means Business"
+        title="At UK Pakistan Tech Forum, Membership Means Business"
         subtitle="Whether your priorities are to network with the industry and key stakeholders, to help shape policy, or to have access to insights that help your business to grow, UPTECH membership will positively impact your organisation in whatever way matters most to you."
         image="/image/banners/banner102.png"
       >
@@ -211,7 +211,7 @@ export default function MembershipClient() {
           <AnimatedSection>
             <SectionHeader label="About UPTECH Membership" title="Why UPTECH?" color="blue" />
             <p className="text-[#3D4152] leading-relaxed mb-8">
-              UPTECH is a non-governmental, results-focused business council that is committed to your organization&#39;s bilateral success in Technology, business, trade, and investment. We offer a range of both universal as well as custom-built services to our UK and Pakistani corporate members, including on-the-ground UK market support for Pakistani businesses; policy guidelines and regulatory analysis; and one-stop-shop Business Incubation Centre packages.
+              UPTECH is a non-governmental, results-focused business forum that is committed to your organization&#39;s bilateral success in Technology, business, trade, and investment. We offer a range of both universal as well as custom-built services to our UK and Pakistani corporate members, including on-the-ground UK market support for Pakistani businesses; policy guidelines and regulatory analysis; and one-stop-shop Business Incubation Centre packages.
             </p>
 
             <h3 className="font-heading font-bold text-2xl text-[#1C1F2E] mb-5">
@@ -517,7 +517,7 @@ export default function MembershipClient() {
           <div className="max-w-4xl mx-auto">
             <div className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 lg:p-10 shadow-sm text-center">
               <p className="text-base text-[#3D4152] leading-relaxed mb-6">
-                The UK-Pakistan Tech Council offers flexible membership plans designed to suit technology startups, SMEs, scale-ups, and corporates. Our membership fees provide access to a wealth of benefits, including networking, industry insights, cross-border opportunities, funding support, and promotional platforms.
+                The UK-Pakistan Tech Forum offers flexible membership plans designed to suit technology startups, SMEs, scale-ups, and corporates. Our membership fees provide access to a wealth of benefits, including networking, industry insights, cross-border opportunities, funding support, and promotional platforms.
               </p>
 
               <div className="border border-[#C41E3A]/20 rounded-xl p-6 mb-6 bg-[#C41E3A]/[0.03]">
@@ -529,10 +529,10 @@ export default function MembershipClient() {
               <p className="text-base text-[#5A5F72] leading-relaxed">
                 The first step towards membership is always a meeting with our Membership team where we can determine your annual fee. For further information please contact{" "}
                 <a
-                  href="mailto:membership@uptech.org.uk"
+                  href="mailto:membership@ukpaktech.org.uk"
                   className="text-[#2563EB] hover:text-[#3b82f6] transition-colors underline underline-offset-2"
                 >
-                  membership@uptech.org.uk
+                  membership@ukpaktech.org.uk
                 </a>{" "}
                 or complete the online enquiry form and the Membership team will be in touch to set up a meeting.
               </p>
@@ -651,7 +651,7 @@ export default function MembershipClient() {
             label="Why It Matters"
             title="Why Membership Matters"
             color="green"
-            subtitle="Membership with the Council provides more than just networking — it's a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Our members gain practical support, strategic connections, and market insights that accelerate business success and cross-border collaboration. Join today. Connect, grow, and lead the future of UK-Pakistan technology."
+            subtitle="Membership with the Forum provides more than just networking — it's a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Our members gain practical support, strategic connections, and market insights that accelerate business success and cross-border collaboration. Join today. Connect, grow, and lead the future of UK-Pakistan technology."
           />
         </AnimatedSection>
       </Section>
@@ -660,7 +660,7 @@ export default function MembershipClient() {
       <GlobalCTA
         label="Join Today"
         title="Ready to Join UPTECH?"
-        subtitle="Membership with the Council provides more than just networking — it's a gateway to growth, visibility, and influence in the UK–Pakistan technology corridor."
+        subtitle="Membership with the Forum provides more than just networking — it's a gateway to growth, visibility, and influence in the UK–Pakistan technology corridor."
         primaryButtonText="Apply for Membership"
         primaryButtonLink="/membership/apply"
         secondaryButtonText="Get in Touch"

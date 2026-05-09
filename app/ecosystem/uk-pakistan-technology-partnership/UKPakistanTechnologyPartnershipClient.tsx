@@ -397,7 +397,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
               <div>
                 <SectionHeader
                   label="Membership"
-                  title="Why UK–Pakistan Tech Council"
+                  title="Why UK–Pakistan Tech Forum"
                   color="green"
                   subtitle="An invite-only community of UK-based Pakistan tech leaders, founders, investors, and executives."
                 />

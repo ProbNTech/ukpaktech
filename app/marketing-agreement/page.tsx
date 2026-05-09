@@ -9,6 +9,7 @@ import {
   FileText, Target, Shield, Banknote, Lock, Clock,
   Scale, Gavel, PenTool, CheckCircle2, AlertTriangle,
 } from "lucide-react";
+import { DownloadButton } from "@/components/DownloadButton";
 
 const sections = [
   {
@@ -19,7 +20,7 @@ const sections = [
     accent: "border-[#2563EB]",
     content: (
       <p className="text-[#3D4152] text-base leading-relaxed">
-        The purpose of this Agreement is to define the terms under which the Council will promote, market, and showcase the Product Owner&apos;s products, solutions, or services to its network of members, stakeholders, and partners in the UK, Europe, Middle East and African continent.
+        The purpose of this Agreement is to define the terms under which the Forum will promote, market, and showcase the Product Owner&apos;s products, solutions, or services to its network of members, stakeholders, and partners in the UK, Europe, Middle East and African continent.
       </p>
     ),
   },
@@ -31,13 +32,13 @@ const sections = [
     accent: "border-[#2563EB]",
     content: (
       <div>
-        <p className="text-[#3D4152] text-base leading-relaxed mb-4">The Council agrees to provide the following marketing services:</p>
+        <p className="text-[#3D4152] text-base leading-relaxed mb-4">The Forum agrees to provide the following marketing services:</p>
         <ul className="space-y-3">
           {[
-            "Promotion of the Product Owner\u2019s products through the Council\u2019s website, newsletters, social media, and events.",
-            "Listing of products on the Council\u2019s Member Product Portal.",
-            "Inclusion in relevant Council campaigns, exhibitions, and trade missions.",
-            "Facilitation of introductions to potential clients, investors, and partners within the Council network.",
+            "Promotion of the Product Owner\u2019s products through the Forum\u2019s website, newsletters, social media, and events.",
+            "Listing of products on the Forum\u2019s Member Product Portal.",
+            "Inclusion in relevant Forum campaigns, exhibitions, and trade missions.",
+            "Facilitation of introductions to potential clients, investors, and partners within the Forum network.",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
               <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
@@ -84,7 +85,7 @@ const sections = [
       <ul className="space-y-3">
         {[
           "The Product Owner retains all intellectual property rights in its products and branding.",
-          "The Council may use the Product Owner\u2019s trademarks, logos, and product descriptions solely for the purpose of marketing under this Agreement.",
+          "The Forum may use the Product Owner\u2019s trademarks, logos, and product descriptions solely for the purpose of marketing under this Agreement.",
           "Any third-party materials provided by the Product Owner must be properly licensed and free of claims.",
         ].map((item) => (
           <li key={item} className="flex items-start gap-3">
@@ -104,7 +105,7 @@ const sections = [
     content: (
       <div>
         <p className="text-[#3D4152] text-base leading-relaxed mb-6">
-          The Product Owner agrees to pay the Council the following fees for marketing services:
+          The Product Owner agrees to pay the Forum the following fees for marketing services:
         </p>
         <div className="overflow-x-auto mb-6">
           <table className="w-full text-base border-collapse">
@@ -120,7 +121,7 @@ const sections = [
               {[
                 { service: "Product Listing", desc: "Placement on Member Product Portal", fee: "\u00A3[Amount]", freq: "Annual / Per Product" },
                 { service: "Featured Campaign", desc: "Inclusion in newsletters, social media, and events", fee: "\u00A3[Amount]", freq: "Per Campaign" },
-                { service: "Trade Mission / Exhibition Support", desc: "Access to Council-facilitated events", fee: "\u00A3[Amount]", freq: "Per Event" },
+                { service: "Trade Mission / Exhibition Support", desc: "Access to Forum-facilitated events", fee: "\u00A3[Amount]", freq: "Per Event" },
                 { service: "Custom Marketing Services", desc: "Content creation, design, or promotional campaigns", fee: "\u00A3[Amount]", freq: "As Agreed" },
               ].map((row, i) => (
                 <tr key={row.service} className={i % 2 === 0 ? "bg-white" : "bg-[#F8F7F5]"}>
@@ -156,7 +157,7 @@ const sections = [
             <div>
               <h4 className="font-heading font-bold text-[#1C1F2E] text-base mb-1">Binding Payment Clause</h4>
               <p className="text-[#3D4152] text-base leading-relaxed">
-                The Product Owner unconditionally agrees to pay all fees as invoiced by the Council. Fees are due within 30 days of invoice, and non-payment constitutes a breach of this Agreement. The Council may suspend or terminate marketing services if payment is not received on time. Late payments incur interest at 4% per month until paid in full. This clause is legally binding and enforceable under the governing law specified in Section 8.
+                The Product Owner unconditionally agrees to pay all fees as invoiced by the Forum. Fees are due within 30 days of invoice, and non-payment constitutes a breach of this Agreement. The Forum may suspend or terminate marketing services if payment is not received on time. Late payments incur interest at 4% per month until paid in full. This clause is legally binding and enforceable under the governing law specified in Section 8.
               </p>
             </div>
           </div>
@@ -206,7 +207,7 @@ const sections = [
     content: (
       <ul className="space-y-3">
         {[
-          "Council is not liable for indirect or consequential damages.",
+          "Forum is not liable for indirect or consequential damages.",
           "Product Owner is responsible for accuracy of claims and materials.",
         ].map((item) => (
           <li key={item} className="flex items-start gap-3">
@@ -238,9 +239,15 @@ export default function MarketingAgreementPage() {
     <div>
       <PageHero
         title="Marketing Agreement"
-        subtitle="Terms and conditions governing the promotion, marketing, and showcase of products through the UK\u2013Pakistan Technology Council network."
+        subtitle="Terms and conditions governing the promotion, marketing, and showcase of products through the UK\u2013Pakistan Technology Forum network."
         image="/image/banners/banner32.jpg"
-      />
+      >
+        <div className="flex flex-wrap items-center gap-4">
+          <DownloadButton href="/documents/UPTECH-Marketing-Agreement.pdf" filename="UPTECH-Marketing-Agreement.pdf">
+            Download PDF
+          </DownloadButton>
+        </div>
+      </PageHero>
 
       {/* Parties */}
       <Section variant="light">
@@ -257,8 +264,8 @@ export default function MarketingAgreementPage() {
                 </div>
                 <div className="border-l-4 border-[#22C55E] pl-4">
                   <p className="text-base text-[#7A7E8F] uppercase tracking-wider mb-1">Party B</p>
-                  <p className="font-heading font-bold text-[#1C1F2E]">UK&ndash;Pakistan Technology Council</p>
-                  <p className="text-base text-[#3D4152]">&ldquo;Council&rdquo;</p>
+                  <p className="font-heading font-bold text-[#1C1F2E]">UK&ndash;Pakistan Technology Forum</p>
+                  <p className="text-base text-[#3D4152]">&ldquo;Forum&rdquo;</p>
                 </div>
               </div>
               <div className="mt-6 pt-4 border-t border-[#D8D5CF]">
@@ -317,7 +324,7 @@ export default function MarketingAgreementPage() {
           />
           <div className="grid sm:grid-cols-2 gap-8">
             {[
-              { party: "UK\u2013Pakistan Technology Council", role: "Council" },
+              { party: "UK\u2013Pakistan Technology Forum", role: "Forum" },
               { party: "Product Owner", role: "Product Owner" },
             ].map((signee) => (
               <motion.div
