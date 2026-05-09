@@ -50,7 +50,7 @@ const professionalAwards = [
   { title: "Women in Technology Excellence Award", tag: "Professional", description: "Celebrating outstanding women leaders driving technology transformation." },
   { title: "Young IT Professionals Awards", tag: "Professional", description: "Recognising promising young IT professionals making significant contributions." },
   { title: "Academic Excellence Awards", tag: "Professional", description: "Honouring outstanding academic contributions to IT education and research." },
-  { title: "Fellowship and Hon. Fellowship Awards", tag: "Special Recognition", description: "Members with many years of significant contribution to the IT industry are made Fellows of the Council." },
+  { title: "Fellowship and Hon. Fellowship Awards", tag: "Special Recognition", description: "Members with many years of significant contribution to the IT industry are made Fellows of the Forum." },
   { title: "Lifetime Achievement Award", tag: "Special Recognition", description: "Celebrating lifelong dedication and transformative contributions to the technology industry." },
 ];
 
@@ -115,7 +115,7 @@ export default function TechExcellenceAwardsClient() {
                   color="red"
                 />
                 <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
-                  Achievement is a wonderful thing. But what makes it even more wonderful is being publicly acclaimed for it&#8212;especially in the presence of one&apos;s peers. That&apos;s why UPTECH has instituted awards in several categories. Also, members with many years of significant contribution to the IT industry are made Fellows of the Council. It is regarded as one of the most prestigious titles that an IT professional can receive in the country today.
+                  Achievement is a wonderful thing. But what makes it even more wonderful is being publicly acclaimed for it&#8212;especially in the presence of one&apos;s peers. That&apos;s why UPTECH has instituted awards in several categories. Also, members with many years of significant contribution to the IT industry are made Fellows of the Forum. It is regarded as one of the most prestigious titles that an IT professional can receive in the country today.
                 </p>
                 <p className="text-[#5A5F72] text-lg leading-relaxed">
                   Awards will be honorary in nature and presented during a high-impact ceremony /annual Black Tie Gala dinner in UK and other prominent locations.
@@ -323,7 +323,7 @@ export default function TechExcellenceAwardsClient() {
                   <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-3">Fellowship</h3>
                   <div className="h-px bg-[#D8D5CF] mb-4" />
                   <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">
-                    Members with many years of significant contribution to the IT industry are made Fellows of the Council. It is regarded as one of the most prestigious titles that an IT professional can receive in the country today.
+                    Members with many years of significant contribution to the IT industry are made Fellows of the Forum. It is regarded as one of the most prestigious titles that an IT professional can receive in the country today.
                   </p>
                   <p className="text-base text-[#7A7E8F] italic">Honorary awards presented at the annual Black Tie Gala dinner</p>
                 </div>

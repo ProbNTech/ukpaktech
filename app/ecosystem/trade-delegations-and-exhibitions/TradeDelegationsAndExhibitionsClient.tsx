@@ -11,7 +11,7 @@ import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
-const tradeDelegationIntro = "The UK-Pakistan Tech Council organises trade delegations to connect technology companies with key stakeholders, potential partners, investors, and government representatives in both the UK and Pakistan. These delegations provide members with a strategic platform to explore new markets, forge partnerships, and drive business growth.";
+const tradeDelegationIntro = "The UK-Pakistan Tech Forum organises trade delegations to connect technology companies with key stakeholders, potential partners, investors, and government representatives in both the UK and Pakistan. These delegations provide members with a strategic platform to explore new markets, forge partnerships, and drive business growth.";
 
 const tradeDelegationBenefits = [
   { title: "Market Access", description: "Gain first-hand exposure to emerging opportunities in cross-border technology markets.", color: "#2563EB" },
@@ -20,7 +20,7 @@ const tradeDelegationBenefits = [
   { title: "Insights & Intelligence", description: "Learn about local market trends, regulatory frameworks, and business opportunities.", color: "#2563EB" },
 ];
 
-const exhibitionIntro = "The UK-Pakistan Tech Council organises and participates in high-impact exhibition events to showcase innovation, foster collaboration, and create business opportunities across the UK and Pakistan. These events provide members with a platform to present their technology solutions, connect with potential clients and partners, and gain visibility in key markets.";
+const exhibitionIntro = "The UK-Pakistan Tech Forum organises and participates in high-impact exhibition events to showcase innovation, foster collaboration, and create business opportunities across the UK and Pakistan. These events provide members with a platform to present their technology solutions, connect with potential clients and partners, and gain visibility in key markets.";
 
 const exhibitionBenefits = [
   { title: "Showcase Your Solutions", description: "Present software, platforms, and digital products to a targeted audience of corporates, investors, and industry leaders.", color: "#2563EB" },
@@ -379,7 +379,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
                   color="blue"
                 />
                 <p className="text-[#3D4152] text-lg leading-relaxed mb-4">
-                  UPTECH President Khalil Choudhary personally leads trade delegations and represents the Council at international summits, ensuring our members have direct access to decision-makers and opportunities at the highest level.
+                  UPTECH President Khalil Choudhary personally leads trade delegations and represents the Forum at international summits, ensuring our members have direct access to decision-makers and opportunities at the highest level.
                 </p>
                 <p className="text-[#5A5F72] text-lg leading-relaxed mb-6">
                   His hands-on leadership ensures that every delegation delivers tangible outcomes for participating members.

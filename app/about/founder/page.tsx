@@ -91,7 +91,7 @@ export default function LeadershipPage() {
             </div>
             <div>
               <p className="text-[#3D4152] text-base leading-relaxed mb-5">
-                When we founded the UK Pakistan Technology Council, our vision was simple yet ambitious: to create a bridge between two nations rich in talent, innovation, and entrepreneurial spirit. Pakistan&apos;s technology sector is one of the fastest-growing in the world, and the United Kingdom remains a global hub for innovation and enterprise. Together, these two nations have extraordinary potential to shape the future of technology.
+                When we founded the UK Pakistan Technology Forum, our vision was simple yet ambitious: to create a bridge between two nations rich in talent, innovation, and entrepreneurial spirit. Pakistan&apos;s technology sector is one of the fastest-growing in the world, and the United Kingdom remains a global hub for innovation and enterprise. Together, these two nations have extraordinary potential to shape the future of technology.
               </p>
               <p className="text-[#3D4152] text-base leading-relaxed mb-5">
                 UPTECH was built on the belief that collaboration, not competition, drives progress. We bring together technology professionals, entrepreneurs, investors, government leaders, and academics from both nations to forge partnerships that create lasting impact — not just for businesses, but for communities and future generations.

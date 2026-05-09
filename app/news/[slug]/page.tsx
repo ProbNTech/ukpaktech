@@ -145,7 +145,7 @@ export default async function ArticleDetailPage({ params }: Props) {
                 </h3>
                 <div className="h-px bg-[#D8D5CF] mb-4" />
                 <p className="text-base text-[#3D4152] leading-relaxed mb-5">
-                  The UK–Pakistan Tech Council is a bilateral technology platform established to strengthen innovation, digital trade, and institutional collaboration between the two nations.
+                  The UK–Pakistan Tech Forum is a bilateral technology platform established to strengthen innovation, digital trade, and institutional collaboration between the two nations.
                 </p>
                 <Link
                   href="/about"

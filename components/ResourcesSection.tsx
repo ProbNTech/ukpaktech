@@ -45,7 +45,7 @@ export function ResourcesSection() {
             <div className="flex-1 h-[2px] bg-[#22C55E]" />
           </div>
           <p className="text-lg text-[#4B5563] leading-relaxed">
-            Explore insights, market intelligence, policy briefings, and cross-border technology updates from the UK–Pakistan Tech Council.
+            Explore insights, market intelligence, policy briefings, and cross-border technology updates from the UK–Pakistan Tech Forum.
           </p>
         </motion.div>
 

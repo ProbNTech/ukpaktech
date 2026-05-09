@@ -551,7 +551,7 @@ export default function MembershipApplicationForm() {
       <PageHero
         align="center"
         label="Membership Application"
-        title="Join the UK-Pakistan Tech Council"
+        title="Join the UK-Pakistan Tech Forum"
         subtitle="Complete the application form below. UPTECH reserves the right to review and approve all membership applications. Membership is valid for one year from the date of payment."
         image="/image/banners/banner16.jpg"
       />

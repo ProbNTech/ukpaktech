@@ -93,7 +93,7 @@ export default function PrivacyPage() {
                   </div>
                   <div className="h-px bg-[#D8D5CF] mb-5" />
                   <p className="text-base text-[#5A5F72] leading-relaxed mb-5">
-                    The UK-PAKISTAN TECH COUNCIL LTD (UPTECH) is the UK&apos;s leading organization for promoting opportunities and increasing bi-later trade and investment in between UK and Pakistan. We are committed to protecting the privacy of your Personal Information. This policy sets out how we collect, use and transfer your Personal Information, the security measures we employ to protect such data and your rights and choices with regards to access or use of such data.
+                    The UK-PAKISTAN TECH FORUM LTD (UPTECH) is the UK&apos;s leading organization for promoting opportunities and increasing bi-later trade and investment in between UK and Pakistan. We are committed to protecting the privacy of your Personal Information. This policy sets out how we collect, use and transfer your Personal Information, the security measures we employ to protect such data and your rights and choices with regards to access or use of such data.
                   </p>
                   <p className="text-base text-[#5A5F72] leading-relaxed">
                     This policy explains when and why we collect personal information about you, how we use it, the conditions under which we may disclose it to others, how we keep it safe and secure and your rights and choices in relation to your information.

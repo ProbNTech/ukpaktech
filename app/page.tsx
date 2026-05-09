@@ -1,4 +1,4 @@
-// UPTECH Council - Home page
+// UPTECH Forum - Home page
 "use client";
 
 import dynamic from "next/dynamic";
@@ -66,7 +66,7 @@ export default function Home() {
           <AnimatedSection animation="blur-in">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
-                <SectionLabel label="About the Council" title="A bilateral technology platform bridging the UK and Pakistan." color="#2563EB" />
+                <SectionLabel label="About the Forum" title="A bilateral technology platform bridging the UK and Pakistan." color="#2563EB" />
                 <div className="content-body">
                   <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
                     UPTECH bridges the United Kingdom and Pakistan through structured programmes of investment facilitation, policy dialogue, innovation partnership, and cross-border trade.
@@ -79,7 +79,7 @@ export default function Home() {
               </div>
               <div className="relative">
                 <div className="relative z-10 aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_25px_60px_-12px_rgba(37,99,235,0.15)]">
-                  <Image src="/image/home/kikogifs.gif" alt="Animated overview of UK–Pakistan Tech Council activities and events" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                  <Image src="/image/home/kikogifs.gif" alt="Animated overview of UK–Pakistan Tech Forum activities and events" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
                   <div className="absolute bottom-4 left-4 z-20 bg-white/90 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg border border-white/60">
                     <p className="font-heading font-extrabold text-[#2563EB] text-lg leading-none">120+</p>
                     <p className="text-[#5A5F72] text-xs mt-0.5">Member Organisations</p>
@@ -183,7 +183,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
         <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
-            <SectionLabel label="Our Impact" title="Impact Momentum" body="A modern technology council engineered to scale collaboration, talent, and investment across the UK–Pakistan corridor." color="#60a5fa" align="center" light />
+            <SectionLabel label="Our Impact" title="Impact Momentum" body="A modern technology forum engineered to scale collaboration, talent, and investment across the UK–Pakistan corridor." color="#60a5fa" align="center" light />
             <ImpactStats />
           </AnimatedSection>
         </div>

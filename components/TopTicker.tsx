@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 const items = [
-  { text: "UPTECH Council — Bridging UK & Pakistan Tech Ecosystems", href: "/about" },
+  { text: "UPTECH Forum — Bridging UK & Pakistan Tech Ecosystems", href: "/about" },
   { text: "Indus AI Week 2026 — Register Now", href: "/events" },
   { text: "120+ Member Organisations & Growing", href: "/membership/directory" },
   { text: "Pakistan Business Summit — Davos 2026", href: "/news" },

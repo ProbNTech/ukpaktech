@@ -1138,7 +1138,7 @@ export const entryStrategies: EntryStrategy[] = [
   {
     title: "Partnership with European Tech Councils",
     description:
-      "e.g., UK-Pakistan Tech Council to access local networks and introductions",
+      "e.g., UK-Pakistan Tech Forum to access local networks and introductions",
   },
   {
     title: "Sector Specialization",

@@ -348,7 +348,7 @@ export function WhatDrivesUs() {
                 {
                   icon: PolicyIcon,
                   title: "Shaping Policy & Regulation",
-                  desc: "We work at the intersection of technology and government to help develop supportive policies for bilateral tech trade, digital economy agreements, and tech-friendly regulations. Our council advocates for frameworks that enable efficient trade, protect data, and encourage investment.",
+                  desc: "We work at the intersection of technology and government to help develop supportive policies for bilateral tech trade, digital economy agreements, and tech-friendly regulations. Our forum advocates for frameworks that enable efficient trade, protect data, and encourage investment.",
                 },
                 {
                   icon: InnovationIcon,

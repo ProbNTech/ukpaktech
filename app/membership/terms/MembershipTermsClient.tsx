@@ -109,9 +109,9 @@ const conductPrinciples = [
   { title: "Integrity", description: "Consistently demonstrate honesty and ethical behaviour in all actions and decisions.", icon: Shield, color: "#2563EB" },
   { title: "Respect & Equality", description: "Treat all members with dignity, equality, and cultural sensitivity, without discrimination.", icon: Heart, color: "#22C55E" },
   { title: "Competence", description: "Accurately represent skills and experience; continuously strive to maintain professional competence.", icon: Target, color: "#C41E3A" },
-  { title: "Loyalty", description: "Act with unwavering loyalty towards the Council and maintain confidentiality of sensitive information.", icon: Lock, color: "#2563EB" },
+  { title: "Loyalty", description: "Act with unwavering loyalty towards the Forum and maintain confidentiality of sensitive information.", icon: Lock, color: "#2563EB" },
   { title: "Impartiality", description: "Provide objective advice; disclose any potential conflicts of interest promptly and transparently.", icon: Scale, color: "#22C55E" },
-  { title: "Ethical Conduct", description: "Do not pursue personal gain at the expense of the Council; actively enhance its reputation.", icon: Award, color: "#C41E3A" },
+  { title: "Ethical Conduct", description: "Do not pursue personal gain at the expense of the Forum; actively enhance its reputation.", icon: Award, color: "#C41E3A" },
   { title: "Non-discrimination", description: "Refrain from engaging in discriminatory practices in any professional activities.", icon: Ban, color: "#2563EB" },
   { title: "Continuous Development", description: "Commit to lifelong learning and actively seek opportunities to develop skills and knowledge.", icon: RefreshCw, color: "#22C55E" },
   { title: "Professionalism", description: "Adhere to recognised professional standards; offer services diligently within areas of expertise.", icon: BadgeCheck, color: "#C41E3A" },
@@ -226,7 +226,7 @@ export default function MembershipTermsClient() {
             &amp; Conditions
           </>
         }
-        subtitle="By applying for or maintaining membership with the UK-Pakistan Technology Council (UPTECH), you agree to be bound by these Terms and Conditions."
+        subtitle="By applying for or maintaining membership with the UK-Pakistan Technology Forum (UPTECH), you agree to be bound by these Terms and Conditions."
         particleNetwork
       >
         <div className="flex flex-wrap items-center gap-4">
@@ -261,7 +261,7 @@ export default function MembershipTermsClient() {
             <div className="lg:col-span-3">
               <SectionHeader label="Introduction" title="Scope & Purpose" color="blue" />
               <p className="text-[#3D4152] text-lg leading-relaxed mb-5">
-                These Terms and Conditions govern your membership with the UK-Pakistan Technology Council (UPTECH). By using this website and/or applying to register as a member, you agree to abide by these Conditions.
+                These Terms and Conditions govern your membership with the UK-Pakistan Technology Forum (UPTECH). By using this website and/or applying to register as a member, you agree to abide by these Conditions.
               </p>
               <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
                 These Conditions apply to all membership tiers, services, and benefits provided by UPTECH. If you do not agree to these Conditions, you must not use the website or apply for membership.
@@ -375,7 +375,7 @@ export default function MembershipTermsClient() {
           <div className="grid lg:grid-cols-2 gap-8">
             <div>
               <p className="text-white/80 text-lg leading-relaxed mb-5">
-                All members of the Council are expected to adhere to the Code of Conduct. In the event of a violation, the following disciplinary procedure applies. Members retain the right to appeal any decision.
+                All members of the Forum are expected to adhere to the Code of Conduct. In the event of a violation, the following disciplinary procedure applies. Members retain the right to appeal any decision.
               </p>
 
               <div className="space-y-3">
@@ -403,8 +403,8 @@ export default function MembershipTermsClient() {
                 {[
                   { action: "Caution", desc: "Formal warning issued. Details circulated to members without disclosing the member's identity." },
                   { action: "Reprimand", desc: "Formal reprimand recorded. Circumstances communicated confidentially." },
-                  { action: "Suspension", desc: "Temporary suspension of membership privileges. Council may inform members at its discretion." },
-                  { action: "Expulsion", desc: "Permanent removal from membership. Council may inform members confidentially at its discretion." },
+                  { action: "Suspension", desc: "Temporary suspension of membership privileges. Forum may inform members at its discretion." },
+                  { action: "Expulsion", desc: "Permanent removal from membership. Forum may inform members confidentially at its discretion." },
                 ].map((item, i) => (
                   <li key={item.action} className="flex items-start gap-3">
                     <div className="w-4 h-4 rounded-full mt-0.5 flex-shrink-0 flex items-center justify-center" style={{ background: i < 2 ? "#EAB30820" : "#C41E3A20" }}>
@@ -623,7 +623,7 @@ export default function MembershipTermsClient() {
         <AnimatedSection>
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-[#5A5F72] text-sm leading-relaxed">
-              <span className="font-semibold text-[#1C1F2E]">UK-Pakistan Technology Council (UPTECH)</span>
+              <span className="font-semibold text-[#1C1F2E]">UK-Pakistan Technology Forum (UPTECH)</span>
               <br />
               134-136 Westbourne Terrace, London, W2 6QB, United Kingdom
               <br />

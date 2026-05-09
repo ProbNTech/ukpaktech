@@ -27,7 +27,7 @@ const faqCategories = [
   {
     category: "General",
     faqs: [
-      { question: "What is UPTECH?", answer: "UPTECH (UK\u2013Pakistan Tech Council) is a strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan. We connect companies, investors, professionals, and policymakers across both ecosystems." },
+      { question: "What is UPTECH?", answer: "UPTECH (UK\u2013Pakistan Tech Forum) is a strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan. We connect companies, investors, professionals, and policymakers across both ecosystems." },
       { question: "Who can join UPTECH?", answer: "UPTECH is open to technology companies, startups, investors, professionals, researchers, and organisations with an interest in the UK\u2013Pakistan technology corridor. Both individuals and companies can apply for membership." },
       { question: "Where is UPTECH based?", answer: "UPTECH operates across both the UK and Pakistan, with presence in London and Islamabad. Our programmes and events take place in both countries and online." },
       { question: "How can I get involved?", answer: "You can get involved by becoming a member, attending our events, applying for our programmes, or partnering with us. Visit our membership page or contact us to learn more." },

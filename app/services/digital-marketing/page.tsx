@@ -19,7 +19,7 @@ const stats = [
 ];
 
 const offerings = [
-  { icon: Megaphone, color: "#C41E3A", title: "Product & Solutions Showcase", description: "Feature your software products, digital platforms, and services through Council channels, events, and curated industry spotlights." },
+  { icon: Megaphone, color: "#C41E3A", title: "Product & Solutions Showcase", description: "Feature your software products, digital platforms, and services through Forum channels, events, and curated industry spotlights." },
   { icon: Globe, color: "#22C55E", title: "Market Visibility & Promotion", description: "Gain exposure through newsletters, digital campaigns, industry roundtables, trade missions, and strategic introductions to potential partners and customers." },
   { icon: PenTool, color: "#2563EB", title: "Go-to-Market Support", description: "Receive guidance on positioning, messaging, and market entry strategies tailored to the UK and Europe technology ecosystems." },
   { icon: Calendar, color: "#22C55E", title: "Thought Leadership Opportunities", description: "Position your organisation as an industry leader through speaking opportunities, panel discussions, policy forums, and published insights." },
@@ -29,7 +29,7 @@ const offerings = [
 const steps = [
   { number: "01", title: "Onboard", description: "Join the hub and share your product portfolio, target markets, and growth objectives.", outcome: "Strategy brief prepared", color: "#2563EB" },
   { number: "02", title: "Strategy", description: "We develop a tailored cross-border marketing strategy aligned with your business goals.", outcome: "Campaign plan approved", color: "#22C55E" },
-  { number: "03", title: "Execute", description: "Launch campaigns across Council channels, events, and partner networks.", outcome: "Campaigns live", color: "#C41E3A" },
+  { number: "03", title: "Execute", description: "Launch campaigns across Forum channels, events, and partner networks.", outcome: "Campaigns live", color: "#C41E3A" },
   { number: "04", title: "Grow", description: "Track results, optimise performance, and scale your international presence.", outcome: "ROI measured & scaled", color: "#2563EB" },
 ];
 
@@ -42,9 +42,9 @@ const whyItMatters = [
 ];
 
 const faqs = [
-  { question: "What types of products can be promoted?", answer: "We promote software products, digital platforms, SaaS solutions, technology services, and hardware products from our member companies. The product must be from a Council member or partner organisation." },
+  { question: "What types of products can be promoted?", answer: "We promote software products, digital platforms, SaaS solutions, technology services, and hardware products from our member companies. The product must be from a Forum member or partner organisation." },
   { question: "How much does it cost?", answer: "Core marketing services are included in UPTECH membership. Premium packages \u2014 including dedicated campaigns, event sponsorship, and bespoke content creation \u2014 are available as add-ons with transparent pricing." },
-  { question: "What channels do you use for promotion?", answer: "We use Council email newsletters (10,000+ subscribers), social media channels, the UPTECH website, partner networks, and our events program including summits, exhibitions, and trade delegations." },
+  { question: "What channels do you use for promotion?", answer: "We use Forum email newsletters (10,000+ subscribers), social media channels, the UPTECH website, partner networks, and our events program including summits, exhibitions, and trade delegations." },
   { question: "How do you measure campaign success?", answer: "We provide detailed analytics including impressions, click-through rates, lead generation, and ROI metrics. Monthly reports track campaign performance against agreed KPIs." },
 ];
 

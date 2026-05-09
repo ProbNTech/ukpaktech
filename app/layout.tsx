@@ -1,4 +1,4 @@
-// UPTECH Council - Main application layout
+// UPTECH Forum - Main application layout
 import type { Metadata } from "next";
 import { Lato, Montserrat } from "next/font/google";
 import "./globals.css";
@@ -25,14 +25,14 @@ const BASE_URL = "https://www.ukpaktech.org.uk";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "UK–Pakistan Tech Council | UPTECH",
+    default: "UK–Pakistan Tech Forum | UPTECH",
     template: "%s | UPTECH",
   },
   description:
     "A strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan.",
   keywords: [
     "UK Pakistan",
-    "technology council",
+    "technology forum",
     "digital trade",
     "UPTECH",
     "tech innovation",
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
     "startup ecosystem",
     "AI programs",
   ],
-  authors: [{ name: "UK–Pakistan Tech Council" }],
+  authors: [{ name: "UK–Pakistan Tech Forum" }],
   openGraph: {
     type: "website",
     locale: "en_GB",
     url: BASE_URL,
-    siteName: "UK–Pakistan Tech Council",
-    title: "UK–Pakistan Tech Council | UPTECH",
+    siteName: "UK–Pakistan Tech Forum",
+    title: "UK–Pakistan Tech Forum | UPTECH",
     description:
       "A strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan.",
     images: [
@@ -54,13 +54,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "UK–Pakistan Tech Council",
+        alt: "UK–Pakistan Tech Forum",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "UK–Pakistan Tech Council | UPTECH",
+    title: "UK–Pakistan Tech Forum | UPTECH",
     description:
       "A strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan.",
     images: ["/og-image.png"],
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "UK–Pakistan Tech Council",
+  name: "UK–Pakistan Tech Forum",
   alternateName: "UPTECH",
   url: BASE_URL,
   logo: `${BASE_URL}/image/main-logo/mainlogo.png`,

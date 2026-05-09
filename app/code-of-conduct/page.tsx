@@ -25,9 +25,9 @@ const principles = [
   { icon: Shield, title: "Integrity", description: "Members will consistently demonstrate honesty and ethical behavior in all actions and decisions." },
   { icon: Users, title: "Respect and Equality", description: "Treat all members with dignity, equality, and cultural sensitivity, without discrimination based on any criteria." },
   { icon: Award, title: "Competence", description: "Members will accurately represent their skills and experience and continuously strive to maintain professional competence." },
-  { icon: Heart, title: "Loyalty", description: "Act with unwavering loyalty towards the Council and maintain confidentiality when entrusted with sensitive information." },
+  { icon: Heart, title: "Loyalty", description: "Act with unwavering loyalty towards the Forum and maintain confidentiality when entrusted with sensitive information." },
   { icon: Scale, title: "Impartiality", description: "Provide objective advice, disclosing any potential conflicts of interest promptly and transparently." },
-  { icon: Lightbulb, title: "Ethical Conduct", description: "Members will not pursue personal gain at the expense of the Council and actively work to enhance its reputation." },
+  { icon: Lightbulb, title: "Ethical Conduct", description: "Members will not pursue personal gain at the expense of the Forum and actively work to enhance its reputation." },
   { icon: Ban, title: "Non-discrimination", description: "Refrain from engaging in discriminatory practices in any professional activities." },
   { icon: GraduationCap, title: "Continuous Development", description: "Commit to lifelong learning, actively seeking opportunities to develop skills and knowledge, and encouraging fellow members to do the same." },
   { icon: Briefcase, title: "Professionalism", description: "Adhere to recognized professional standards, offering services and advice diligently and responsibly within their areas of expertise." },
@@ -46,14 +46,14 @@ const whatsappRules = [
 ];
 
 const disciplinarySteps = [
-  { step: "01", title: "Complaint Submission", description: "All complaints must be submitted in writing and sent to the Management Committee of the Council. Any member is eligible to lodge a complaint." },
+  { step: "01", title: "Complaint Submission", description: "All complaints must be submitted in writing and sent to the Management Committee of the Forum. Any member is eligible to lodge a complaint." },
   { step: "02", title: "Investigation", description: "Upon receipt, the complaint will undergo investigation by a Committee vested with the authority to summon any member(s) deemed relevant to the matter." },
   { step: "03", title: "Response Period", description: "Should the Committee determine potential misconduct, the implicated member(s) will be afforded a 7-day period to respond to the allegations." },
-  { step: "04", title: "Disciplinary Actions", description: "Should the member(s) be found guilty, disciplinary actions may include caution, reprimand, suspension, or expulsion from Council membership." },
+  { step: "04", title: "Disciplinary Actions", description: "Should the member(s) be found guilty, disciplinary actions may include caution, reprimand, suspension, or expulsion from Forum membership." },
   { step: "05", title: "Lack of Merit", description: "If the complaint lacks merit following the Committee\u2019s evaluation, the complainant will be duly informed." },
   { step: "06", title: "Referral to Disciplinary Committee", description: "In instances where the matter is referred to the Disciplinary Committee, formal proceedings will be arranged for a fair hearing of the charges." },
   { step: "07", title: "Escalation", description: "If the Committee finds the response inadequate or no written representation is received, the matter will be escalated to the Disciplinary Committee." },
-  { step: "08", title: "Outcome Communication", description: "For caution and reprimand, the Council will disseminate details of the circumstances and outcome to all members without disclosing the member\u2019s identity. In cases of suspension or expulsion, the Council will, at its discretion, inform members confidentially." },
+  { step: "08", title: "Outcome Communication", description: "For caution and reprimand, the Forum will disseminate details of the circumstances and outcome to all members without disclosing the member\u2019s identity. In cases of suspension or expulsion, the Forum will, at its discretion, inform members confidentially." },
   { step: "09", title: "Right to Appeal", description: "Affected members retain the right to appeal the committee\u2019s decision within 7 days, submitting a written appeal." },
   { step: "10", title: "Appeal Review", description: "The Executive Committee will then review the appeal." },
   { step: "11", title: "Final Verdict", description: "The verdict rendered by the Executive Committee on the appeal(s) shall be final and non-negotiable." },
@@ -81,7 +81,7 @@ export default function CodeOfConductPage() {
       <PageHero
         label="Ethics & Standards"
         title="Code of Conduct"
-        subtitle="UK-Pakistan Tech Council Code of Conduct"
+        subtitle="UK-Pakistan Tech Forum Code of Conduct"
         image="/image/banners/banner29.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
@@ -111,13 +111,13 @@ export default function CodeOfConductPage() {
                   All members are required to give an undertaking to the effect that they would abide by the UPTECH Code of Conduct. The Code of Conduct will also specify the procedure for the action to be taken against concerned members for any breach of this Code. The following is the Code of Conduct prepared by the Executive Committee and adopted after approval by balloting by the Voting Members of UPTECH.
                 </p>
                 <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
-                  UK-Pakistan Tech Council Code of Conduct is issued under the authority of the Constitution of the UK-Pakistan Tech Council and is binding on all members of the Organization. {"\u201C"}UK-Pakistani Tech Council is hereby also mentioned as UPTECH{"\u201D"}
+                  UK-Pakistan Tech Forum Code of Conduct is issued under the authority of the Constitution of the UK-Pakistan Tech Forum and is binding on all members of the Organization. {"\u201C"}UK-Pakistani Tech Forum is hereby also mentioned as UPTECH{"\u201D"}
                 </p>
                 <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
-                  The Code of Conduct for UK-Pakistan Tech Council is a foundational document established under the authority of our organization{"\u2019"}s Constitution. It outlines the principles and standards that all members are expected to uphold in their professional and personal conduct.
+                  The Code of Conduct for UK-Pakistan Tech Forum is a foundational document established under the authority of our organization{"\u2019"}s Constitution. It outlines the principles and standards that all members are expected to uphold in their professional and personal conduct.
                 </p>
                 <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
-                  As a binding document, adherence to this Code is mandatory for all members, ensuring consistency, integrity, and professionalism in our collective endeavors. By adhering to these ethical and behavioral guidelines, we demonstrate our commitment to excellence, integrity, and mutual respect within our community and in our interactions with others. {"\u201C"}UK-Pakistani Tech Council is hereby also mentioned as UPTECH{"\u201D"}
+                  As a binding document, adherence to this Code is mandatory for all members, ensuring consistency, integrity, and professionalism in our collective endeavors. By adhering to these ethical and behavioral guidelines, we demonstrate our commitment to excellence, integrity, and mutual respect within our community and in our interactions with others. {"\u201C"}UK-Pakistani Tech Forum is hereby also mentioned as UPTECH{"\u201D"}
                 </p>
                 <p className="text-[#5A5F72] text-base leading-relaxed">
                   The UPTECH Code of Conduct is compulsory for all members and adherence to its principles is obligatory. Therefore, it is imperative for every member of UPTECH to possess a comprehensive understanding and knowledge of its provisions.
@@ -296,7 +296,7 @@ export default function CodeOfConductPage() {
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <SectionHeader label="Enforcement" title="Disciplinary Procedure" subtitle={<>All members of the Council are expected to adhere to the Council{"\u2019"}s Code of Conduct. In the event of a member wishing to file a complaint against other members for violating the Code, the following procedures apply:</>} color="red" />
+            <SectionHeader label="Enforcement" title="Disciplinary Procedure" subtitle={<>All members of the Forum are expected to adhere to the Forum{"\u2019"}s Code of Conduct. In the event of a member wishing to file a complaint against other members for violating the Code, the following procedures apply:</>} color="red" />
 
             <div className="space-y-0">
               {disciplinarySteps.map((item, i) => {

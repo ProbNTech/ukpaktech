@@ -59,7 +59,7 @@ const orgChart = [
       "Represent UPTECH at the highest levels with governments and international bodies",
       "Drive membership growth and stakeholder engagement",
       "Oversee programme delivery and service quality",
-      "Serve as the principal ambassador for the Council",
+      "Serve as the principal ambassador for the Forum",
     ],
   },
   {
@@ -92,7 +92,7 @@ const orgChart = [
     level: "Senior Management",
     responsibilities: [
       "Assist the Chairman in providing strategic direction and vision",
-      "Guide Council activities toward fulfilling its mission and goals",
+      "Guide Forum activities toward fulfilling its mission and goals",
       "Manage specific functional areas and departmental operations",
       "Drive innovation and process improvement within departments",
       "Report on departmental performance and milestones",
@@ -217,7 +217,7 @@ const procedureColors = ["#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E", 
 const governanceCards = [
   { id: "governance-structure", title: "Governance Structure", desc: "Our framework for accountability, transparency, and ethical oversight.", tags: ["Ethics", "Accountability"], colorIdx: 0 },
   { id: "board-of-directors", title: "Board of Directors", desc: "Strategic oversight and decision-making at the highest level.", tags: ["Oversight", "Strategy"], colorIdx: 1 },
-  { id: "advisory-council", title: "Advisory Council", desc: "Expert guidance and strategic counsel from industry leaders.", tags: ["Expertise", "Guidance"], colorIdx: 2 },
+  { id: "advisory-forum", title: "Advisory Forum", desc: "Expert guidance and strategic counsel from industry leaders.", tags: ["Expertise", "Guidance"], colorIdx: 2 },
   { id: "executive-leadership", title: "Executive Leadership", desc: "Day-to-day operations and strategic execution of UPTECH initiatives.", tags: ["Execution", "Operations"], colorIdx: 0 },
 ];
 
@@ -302,7 +302,7 @@ export default function ManagementTeamPage() {
                 Our organisational structure combines strategic leadership with operational excellence. Each role has clearly defined responsibilities, and all office bearers are accountable to the Board and the membership through transparent reporting and regular review.
               </p>
               <p className="text-[#3D4152] text-base leading-relaxed">
-                The structure ensures that decisions are made collaboratively, resources are managed responsibly, and every member has a voice in the direction of the Council.
+                The structure ensures that decisions are made collaboratively, resources are managed responsibly, and every member has a voice in the direction of the Forum.
               </p>
             </motion.div>
 
@@ -429,9 +429,9 @@ export default function ManagementTeamPage() {
         colorIdx={1}
       />
       <GovernanceSection
-        id="advisory-council" variant="alt" title="Advisory Council"
+        id="advisory-forum" variant="alt" title="Advisory Forum"
         desc="Expert guidance and strategic counsel from distinguished leaders across technology, business, and policy."
-        image="/image/Leadership%20Governance/Advisory_Council.webp" imageAlt="UPTECH Advisory Council" imageLeft={false}
+        image="/image/Leadership%20Governance/Advisory_Council.webp" imageAlt="UPTECH Advisory Forum" imageLeft={false}
         responsibilities={["Provide expert guidance on technology trends", "Offer strategic counsel on program development", "Facilitate connections with key stakeholders", "Review and provide feedback on initiatives", "Serve as ambassadors for UPTECH's mission", "Contribute to thought leadership"]}
         colorIdx={2}
       />

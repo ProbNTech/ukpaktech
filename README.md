@@ -1,6 +1,6 @@
-# UK–Pakistan Tech Council (UPTECH) Website
+# UK–Pakistan Tech Forum (UPTECH) Website
 
-Official website for the UK–Pakistan Tech Council built with Next.js 16, TypeScript, and Tailwind CSS.
+Official website for the UK–Pakistan Tech Forum built with Next.js 16, TypeScript, and Tailwind CSS.
 
 ## Getting Started
 
