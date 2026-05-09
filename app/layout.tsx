@@ -83,7 +83,7 @@ const jsonLd = {
   name: "UK–Pakistan Tech Forum",
   alternateName: "UPTECH",
   url: BASE_URL,
-  logo: `${BASE_URL}/image/main-logo/mainlogo.png`,
+  logo: `${BASE_URL}/logo.svg`,
   description:
     "A strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan.",
   foundingDate: "2024",

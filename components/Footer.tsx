@@ -35,7 +35,7 @@ export function Footer() {
               <div className="lg:col-span-4">
                 <Link href="/" className="flex items-center gap-3 mb-5 group">
                   <Image
-                    src="/image/main-logo/mainlogo.png"
+                    src="/logo.svg"
                     alt="UPTECH Logo"
                     width={50}
                     height={50}

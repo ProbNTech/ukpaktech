@@ -262,7 +262,7 @@ export function Header() {
               aria-label="UPTECH — Home"
             >
               <Image
-                src="/image/main-logo/mainlogo.png"
+                src="/logo.svg"
                 alt="UPTECH Forum logo"
                 width={72}
                 height={72}
@@ -527,7 +527,7 @@ export function Header() {
                   onClick={() => setIsMobileOpen(false)}
                 >
                   <Image
-                    src="/image/main-logo/mainlogo.png"
+                    src="/logo.svg"
                     alt="UPTECH Logo"
                     width={100}
                     height={100}
