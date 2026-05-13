@@ -13,6 +13,22 @@ const advisors = [
     delay: 0,
   },
   {
+    name: "Zane M Thirlwall",
+    role: "Executive Director",
+    bio: "Driving executive strategy and overseeing cross-border operations to advance UPTECH's mission.",
+    photo: "/image/board/zane.jpeg",
+    accent: "#2563EB",
+    delay: 0.1,
+  },
+  {
+    name: "Laith Shukary",
+    role: "Director Marketing, Middle East",
+    bio: "Leading marketing strategy and regional partnerships across the Middle East.",
+    photo: "/image/board/laith.jpeg",
+    accent: "#2563EB",
+    delay: 0.15,
+  },
+  {
     name: "Safeer Ul Hak",
     role: "Director Marketing & PR, Pakistan",
     bio: "Leading marketing and public relations efforts across Pakistan to amplify partnerships and outreach.",
@@ -104,7 +120,7 @@ export default function BoardOfAdvisors() {
         </motion.div>
 
         {/* ── Cards — 3-column horizontal layout ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {advisors.map((advisor) => (
             <motion.div
               key={advisor.name}
