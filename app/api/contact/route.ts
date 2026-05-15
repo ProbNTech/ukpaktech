@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { appendRow } from "@/lib/google-sheets";
+import { renderRowsHtml, renderRowsText, sendAlert } from "@/lib/mailer";
 
 const SHEET_ID = process.env.CONTACT_SHEET_ID!;
 
@@ -44,6 +45,29 @@ export async function POST(req: NextRequest) {
       enquiryType.trim(),
       message.trim(),
     ]);
+
+    try {
+      const rows: Array<[string, unknown]> = [
+        ["Submitted", timestamp],
+        ["Name", name.trim()],
+        ["Email", email.trim()],
+        ["Phone", phone?.trim()],
+        ["Organisation", organisation?.trim()],
+        ["Enquiry Type", enquiryType.trim()],
+        ["Message", message.trim()],
+      ];
+
+      await sendAlert({
+        subject: `New contact form: ${enquiryType.trim()} — ${name.trim()}`,
+        text: renderRowsText(rows),
+        html: `<p style="font-family:system-ui,sans-serif;font-size:14px;">New enquiry submitted via the UPTECH contact form.</p>${renderRowsHtml(
+          rows
+        )}`,
+        replyTo: email.trim(),
+      });
+    } catch (mailErr) {
+      console.error("Contact form alert email failed:", mailErr);
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
