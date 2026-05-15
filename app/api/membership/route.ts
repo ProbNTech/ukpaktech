@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { appendRow } from "@/lib/google-sheets";
+import { renderRowsHtml, renderRowsText, sendAlert } from "@/lib/mailer";
 
 const SHEET_ID = process.env.MEMBERSHIP_SHEET_ID!;
 
@@ -177,6 +178,21 @@ export async function POST(req: NextRequest) {
     ];
 
     await appendRow(SHEET_ID, tabName, HEADERS, values);
+
+    try {
+      const rows: Array<[string, unknown]> = HEADERS.map((h, i) => [h, values[i]]);
+
+      await sendAlert({
+        subject: `New membership application: ${tabName} — ${body.orgName?.trim() || "(unknown org)"}`,
+        text: renderRowsText(rows),
+        html: `<p style="font-family:system-ui,sans-serif;font-size:14px;">New membership application submitted via the UPTECH website.</p>${renderRowsHtml(
+          rows
+        )}`,
+        replyTo: body.ceoEmail?.trim() || body.primaryEmail?.trim() || undefined,
+      });
+    } catch (mailErr) {
+      console.error("Membership form alert email failed:", mailErr);
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
