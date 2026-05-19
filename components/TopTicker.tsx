@@ -3,12 +3,12 @@
 import Link from "next/link";
 
 const items = [
-  { text: "UPTECH Forum — Bridging UK & Pakistan Tech Ecosystems", href: "/about" },
-  { text: "Indus AI Week 2026 — Register Now", href: "/events" },
-  { text: "120+ Member Organisations & Growing", href: "/membership/directory" },
-  { text: "Pakistan Business Summit — Davos 2026", href: "/news" },
-  { text: "European Tech Market Intelligence — Now Live", href: "/ecosystem/tech-market-overview" },
-  { text: "Apply for UPTECH Membership Today", href: "/membership/apply" },
+  { text: "UPTECH — The UK–Pakistan Tech Forum", href: "/about" },
+  { text: "Services for UK companies and Pakistani companies", href: "/services" },
+  { text: "Arbitration framework under the UK Arbitration Act 1996", href: "/arbitration/framework" },
+  { text: "Member code of conduct — published and binding", href: "/code-of-conduct" },
+  { text: "Trusted Partner Certification for member companies", href: "/initiatives/trusted-partner-certification" },
+  { text: "Apply for UPTECH membership", href: "/membership/apply" },
 ];
 
 export function TopTicker() {

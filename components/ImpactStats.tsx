@@ -5,38 +5,38 @@ import { motion, useInView, useReducedMotion } from "framer-motion";
 import CountUp from "react-countup";
 import { LiquidCard, CardContent } from "@/components/ui/liquid-glass-card";
 
-/* ─── Stat data ─── */
+/* ─── Stat data — sourced bilateral corridor figures ─── */
 const stats = [
   {
-    label: "Strategic Members",
-    value: 120,
-    suffix: "+",
-    percent: 80,
-    description: "Enterprises, startups, and public sector allies driving the mission.",
+    label: "Pakistan IT export growth, YoY",
+    value: 18,
+    suffix: "%",
+    percent: 18,
+    description: "Record IT and ITeS export revenue in FY24–25, up on FY23–24 (State Bank of Pakistan, 2025).",
     color: "#2563EB",
   },
   {
-    label: "Innovation Programs",
-    value: 48,
-    suffix: "+",
-    percent: 80,
-    description: "Active initiatives across AI, trade, and digital transformation.",
+    label: "UK ICT skills-shortage rate",
+    value: 43,
+    suffix: "%",
+    percent: 43,
+    description: "Share of UK information and communications vacancies reported as skills-shortage roles (Migration Advisory Committee, 2022).",
     color: "#22C55E",
   },
   {
-    label: "Cross-Border Ventures",
-    value: 32,
-    suffix: "+",
-    percent: 75,
-    description: "Investment and partnership pipelines between the UK and Pakistan.",
+    label: "UK–Pakistan trade growth, YoY",
+    value: 7,
+    suffix: "%",
+    percent: 7,
+    description: "Bilateral goods and services trade growth to Q4 2024 (UK Department for Business and Trade, 2025).",
     color: "#C41E3A",
   },
   {
-    label: "Export Growth Lift",
-    value: 285,
+    label: "Pakistan goods duty-free to UK",
+    value: 94,
     suffix: "%",
-    percent: 95,
-    description: "Momentum in digital trade outcomes accelerated by UPTECH.",
+    percent: 94,
+    description: "Share of Pakistan's goods exports qualifying duty-free under the UK Developing Countries Trading Scheme, in force June 2023 (UK Department for Business and Trade).",
     color: "#EAB308",
   },
 ];
@@ -98,7 +98,7 @@ function StatScoreCard({ stat, index }: { stat: typeof stats[0]; index: number }
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="h-full">
       <motion.div
         className="h-full"
         initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30, filter: "blur(6px)" }}

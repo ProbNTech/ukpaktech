@@ -35,7 +35,7 @@ const slides = [
     video: "/image/home/hero_video3.mp4",
     poster: "/image/home/poster_3.jpg",
     label: "MEMBERSHIP",
-    headline: "A trusted network of 120+ members shaping bilateral tech growth",
+    headline: "A trusted network of UK and Pakistani members shaping bilateral tech growth",
     cta: { text: "Become a member", href: "/membership" },
     secondary: { text: "Upcoming events", href: "/events" },
   },

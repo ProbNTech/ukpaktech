@@ -25,11 +25,11 @@ const BASE_URL = "https://www.ukpaktech.org.uk";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "UK–Pakistan Tech Forum | UPTECH",
+    default: "UPTECH — UK–Pakistan Tech Forum",
     template: "%s | UPTECH",
   },
   description:
-    "A strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan.",
+    "UPTECH connects UK and Pakistani technology companies for hiring, sourcing, market entry, and capital — under a published code of conduct and an arbitration framework governed by the UK Arbitration Act 1996.",
   keywords: [
     "UK Pakistan",
     "technology forum",
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: BASE_URL,
     siteName: "UK–Pakistan Tech Forum",
-    title: "UK–Pakistan Tech Forum | UPTECH",
+    title: "UPTECH — UK–Pakistan Tech Forum",
     description:
-      "A strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan.",
+      "Hiring, sourcing, market entry, and capital between UK and Pakistani technology companies — governed by a published code of conduct and the UK Arbitration Act 1996.",
     images: [
       {
         url: "/og-image.png",
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "UK–Pakistan Tech Forum | UPTECH",
+    title: "UPTECH — UK–Pakistan Tech Forum",
     description:
-      "A strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan.",
+      "Hiring, sourcing, market entry, and capital between UK and Pakistani technology companies — governed by a published code of conduct and the UK Arbitration Act 1996.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -85,8 +85,12 @@ const jsonLd = {
   url: BASE_URL,
   logo: `${BASE_URL}/logo.svg`,
   description:
-    "A strategic platform strengthening technology, innovation, and digital trade between the United Kingdom and Pakistan.",
+    "UPTECH connects UK and Pakistani technology companies for hiring, sourcing, market entry, and capital, under a published code of conduct and an arbitration framework governed by the UK Arbitration Act 1996.",
   foundingDate: "2024",
+  areaServed: [
+    { "@type": "Country", name: "United Kingdom" },
+    { "@type": "Country", name: "Pakistan" },
+  ],
   sameAs: [],
   contactPoint: {
     "@type": "ContactPoint",

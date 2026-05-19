@@ -17,6 +17,14 @@ interface WhatWeDoItem {
 
 interface WhatWeDoCardsProps {
   items: WhatWeDoItem[];
+  /** Eyebrow label above the row heading (e.g. "Services"). Optional. */
+  eyebrow?: string;
+  /** The audience name displayed in the row heading — coloured in accent. */
+  audience?: string;
+  /** Single-line supporting copy beneath the heading. Optional. */
+  context?: string;
+  /** Accent colour applied to the rule, eyebrow, and audience name. */
+  accentColor?: string;
 }
 
 /* ────────────────────────────────────────────
@@ -91,17 +99,12 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
         {/* ── Icon / Image ── */}
         <div className="relative mb-5">
           {item.image ? (
-            <div
-              className="relative w-[76px] h-[76px] rounded-2xl overflow-hidden"
-              style={{
-                boxShadow: `0 6px 20px ${item.color}25`,
-              }}
-            >
+            <div className="relative w-[76px] h-[76px]">
               <Image
                 src={item.image}
                 alt={item.title}
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="76px"
               />
             </div>
@@ -116,9 +119,9 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
         </div>
 
         {/* ── Title ── */}
-        <h3 className="text-[22px] font-extrabold mb-3 text-[#1C1F2E] tracking-tight leading-tight">
+        <h4 className="text-[22px] font-extrabold mb-3 text-[#1C1F2E] tracking-tight leading-tight">
           {item.title}
-        </h3>
+        </h4>
 
         {/* ── Description ── */}
         <p className="text-[15px] text-[#5A5F72] leading-[1.7] mb-8">
@@ -160,12 +163,52 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
 /* ────────────────────────────────────────────
    Grid wrapper
    ──────────────────────────────────────────── */
-export default function WhatWeDoCards({ items }: WhatWeDoCardsProps) {
+export default function WhatWeDoCards({
+  items,
+  eyebrow,
+  audience,
+  context,
+  accentColor,
+}: WhatWeDoCardsProps) {
+  const hasHeader = Boolean((eyebrow || audience) && accentColor);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 lg:gap-9 mt-4">
-      {items.map((item, index) => (
-        <Card key={item.id} item={item} index={index} />
-      ))}
+    <div>
+      {hasHeader && (
+        <div className="mb-8 lg:mb-10">
+          {eyebrow && (
+            <div className="flex items-center gap-3 mb-3">
+              <span
+                className="block w-12 h-[3px] rounded-full"
+                style={{ background: accentColor }}
+                aria-hidden="true"
+              />
+              <p
+                className="text-xs sm:text-sm font-bold uppercase tracking-[0.22em]"
+                style={{ color: accentColor }}
+              >
+                {eyebrow}
+              </p>
+            </div>
+          )}
+          {audience && (
+            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[2rem] text-[#1C1F2E] leading-[1.15] tracking-tight">
+              For{" "}
+              <span style={{ color: accentColor }}>{audience}</span>
+            </h3>
+          )}
+          {context && (
+            <p className="mt-3 text-[#5A5F72] text-base sm:text-lg leading-relaxed max-w-2xl">
+              {context}
+            </p>
+          )}
+        </div>
+      )}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 lg:gap-9 mt-4">
+        {items.map((item, index) => (
+          <Card key={item.id} item={item} index={index} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -49,16 +49,14 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
 
 function LiquidCard({ className, ...props }: React.ComponentProps<"div">) {
   return (
-    <div>
-      <div
-        data-slot="card"
-        className={cn(
-          "text-[#1C1F2E] bg-white flex flex-col gap-6 rounded-xl border border-[#D8D5CF]/60 py-6 shadow-[0_0_6px_rgba(0,0,0,0.03),0_2px_6px_rgba(0,0,0,0.08),inset_3px_3px_0.5px_-3px_rgba(0,0,0,0.06),inset_-3px_-3px_0.5px_-3px_rgba(0,0,0,0.04),inset_0_0_6px_6px_rgba(0,0,0,0.02)] transition-all",
-          className
-        )}
-        {...props}
-      />
-    </div>
+    <div
+      data-slot="card"
+      className={cn(
+        "text-[#1C1F2E] bg-white flex flex-col gap-6 rounded-xl border border-[#D8D5CF]/60 py-6 shadow-[0_0_6px_rgba(0,0,0,0.03),0_2px_6px_rgba(0,0,0,0.08),inset_3px_3px_0.5px_-3px_rgba(0,0,0,0.06),inset_-3px_-3px_0.5px_-3px_rgba(0,0,0,0.04),inset_0_0_6px_6px_rgba(0,0,0,0.02)] transition-all",
+        className
+      )}
+      {...props}
+    />
   )
 }
 

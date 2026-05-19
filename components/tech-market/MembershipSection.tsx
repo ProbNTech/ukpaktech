@@ -247,7 +247,7 @@ export default function MembershipSection() {
                   Who can join?
                 </h2>
                 <p className="mt-5 text-white text-base sm:text-lg lg:text-xl bg-black/20 px-4 py-3 rounded-md max-w-3xl leading-relaxed">
-                  We offer different memberships based on whether you are a technology company, investor, institution, or individual professional.
+                  Membership is open to organisations and individuals on both sides of the corridor — UK and Pakistani technology firms, investors, academic bodies, and tech professionals.
                 </p>
               </div>
             </div>
@@ -257,28 +257,28 @@ export default function MembershipSection() {
               {[
                 {
                   title: "IT Companies",
-                  desc: "Software houses, SaaS providers, and tech service firms from both nations.",
+                  desc: "Software houses, SaaS firms, and technology service businesses on both sides of the corridor.",
                   image: "/image/Who%20can%20join/IT_Companies.webp",
                   icon: Cpu,
                   color: "#2563EB",
                 },
                 {
                   title: "Investors & VCs",
-                  desc: "Venture capital funds, angel investors, and private equity firms seeking cross-border deals.",
+                  desc: "Venture funds, angel investors, and private equity firms running cross-border UK–Pakistan tech deals.",
                   image: "/image/Who%20can%20join/Investors_VCs.webp",
                   icon: TrendingUp,
                   color: "#22C55E",
                 },
                 {
                   title: "Academic & Research",
-                  desc: "Universities, research centres, and academic institutions driving tech innovation.",
+                  desc: "Universities and research institutions building UK–Pakistan technology research and education links.",
                   image: "/image/Who%20can%20join/Academic_Research.webp",
                   icon: GraduationCap,
                   color: "#EAB308",
                 },
                 {
                   title: "Individual Professionals",
-                  desc: "Engineers, founders, consultants, and tech leaders building their careers.",
+                  desc: "Engineers, founders, consultants, and operators working across the UK–Pakistan corridor.",
                   image: "/image/Who%20can%20join/Individual_Professionals.webp",
                   icon: Users,
                   color: "#C41E3A",
@@ -338,7 +338,7 @@ export function WhatDrivesUs() {
                 What Drives Us
               </h2>
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-[#5A5F72]">
-                We work across three strategic pillars to build a stronger, more connected UK–Pakistan technology ecosystem.
+                Three operating pillars sit beneath UPTECH&apos;s work — policy and regulation, innovation partnerships, and market development between the UK and Pakistan.
               </p>
             </div>
 
@@ -347,18 +347,18 @@ export function WhatDrivesUs() {
               {[
                 {
                   icon: PolicyIcon,
-                  title: "Shaping Policy & Regulation",
-                  desc: "We work at the intersection of technology and government to help develop supportive policies for bilateral tech trade, digital economy agreements, and tech-friendly regulations. Our forum advocates for frameworks that enable efficient trade, protect data, and encourage investment.",
+                  title: "Policy & Regulation",
+                  desc: "UPTECH engages with UK and Pakistani policy stakeholders on digital trade, data protection, and the bilateral framework conditions that make cross-border technology business workable — including representation alongside the UK–Pakistan Trade Dialogue agenda.",
                 },
                 {
                   icon: InnovationIcon,
-                  title: "Accelerating Innovation",
-                  desc: "We champion emerging technologies including AI, cloud computing, cybersecurity, fintech, and green tech by convening research partnerships, innovation hubs, and collaborative initiatives that harness the best of UK and Pakistani tech talent.",
+                  title: "Innovation Partnerships",
+                  desc: "We convene research partnerships and joint programmes across AI, cloud, cybersecurity, fintech, and clean technology — pairing UK demand and standards with Pakistan's research base, including HEC-recognised university partnerships.",
                 },
                 {
                   icon: MarketsIcon,
-                  title: "Developing Markets",
-                  desc: "We identify sectors where technology can drive progress — from health and education to financial services, smart infrastructure, and digital government. We help our members understand market needs, build competitive offerings, and enter new international markets.",
+                  title: "Market Development",
+                  desc: "We help members on either side enter the other market — UK companies into Pakistan's 251M-person economy, and Pakistani firms into UK and European procurement, health, and financial services pipelines.",
                 },
               ].map((card) => {
                 const CardIcon = card.icon;
