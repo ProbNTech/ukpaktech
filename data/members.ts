@@ -41,6 +41,7 @@ export const members: Member[] = [
   {
     name: "Velvonix",
     slug: "velvonix",
+    logo: "/image/members/velvonix.png",
     website: "https://velvonix.com",
     description:
       "AI-powered digital agency delivering intelligent automation, custom software, mobile and web applications, and cloud infrastructure for businesses across finance, healthcare, retail, and education.",
