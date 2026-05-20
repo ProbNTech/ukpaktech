@@ -2,6 +2,7 @@ export interface Member {
   name: string;
   slug: string;
   logo?: string;
+  logoScale?: number;
   website: string;
   description: string;
   companyType: string;
