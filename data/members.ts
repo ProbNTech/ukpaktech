@@ -48,7 +48,31 @@ export const members: Member[] = [
     companyType: "Consultancy",
     sectors: ["Artificial Intelligence", "FinTech", "HealthTech", "Digital Transformation"],
     technologies: ["AI & Machine Learning", "Cloud & DevOps", "Custom Software", "Mobile Development"],
-    location: "New York, USA",
+    location: "Faisalabad, Pakistan",
+  },
+  {
+    name: "Aulysius",
+    slug: "aulysius",
+    logo: "/image/members/aulysiusLogo.avif",
+    website: "https://www.aulysius.com",
+    description:
+      "Project Management-as-a-Service (PMaaS) consultancy and certified solution partners for Miro, Make, Asana and Airtable. London, Dubai and Hong Kong-based team helping B2B enterprises plan, execute and report on projects end-to-end.",
+    companyType: "Consultancy",
+    sectors: ["Artificial Intelligence", "FinTech", "HealthTech", "EdTech", "Digital Transformation"],
+    technologies: ["AI & Machine Learning", "Automation", "Data Analytics", "Custom Software"],
+    location: "London, United Kingdom",
+  },
+  {
+    name: "Genetech Solutions",
+    slug: "genetech-solutions",
+    logo: "/image/members/genetech-solutions.svg",
+    website: "https://www.genetechsolutions.com",
+    description:
+      "Karachi-based digital transformation partner with 20+ years of experience building bespoke web and mobile applications, AI-powered solutions, cybersecurity and dedicated product engineering teams for global clients.",
+    companyType: "Software & Services",
+    sectors: ["Artificial Intelligence", "FinTech", "HealthTech", "EdTech", "E-Commerce", "Cybersecurity", "Digital Transformation"],
+    technologies: ["AI & Machine Learning", "Cloud & DevOps", "Custom Software", "Mobile Development"],
+    location: "Karachi, Pakistan",
   },
 ];
 
