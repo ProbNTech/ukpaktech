@@ -297,15 +297,9 @@ export default function MembershipApplicationForm() {
       case 4: // Organisation Profile — no strict required fields
         break;
 
-      case 5: // CEO Contact
-        if (!formData.ceoFirstName.trim()) newErrors.ceoFirstName = "First name is required";
-        if (!formData.ceoLastName.trim()) newErrors.ceoLastName = "Last name is required";
-        if (!formData.ceoJobTitle.trim()) newErrors.ceoJobTitle = "Job title is required";
-        if (!formData.ceoEmail.trim()) newErrors.ceoEmail = "Email address is required";
-        else if (!isValidEmail(formData.ceoEmail)) newErrors.ceoEmail = "Please enter a valid email address";
-        if (!formData.ceoPhone.trim()) newErrors.ceoPhone = "Phone number is required";
-        else if (!isValidPhone(formData.ceoPhone)) newErrors.ceoPhone = "Please enter a valid phone number";
-        if (formData.ceoEmail && formData.ceoEmail.trim() && !isValidEmail(formData.ceoEmail)) newErrors.ceoEmail = "Please enter a valid email address";
+      case 5: // CEO Contact — optional step
+        if (formData.ceoEmail && !isValidEmail(formData.ceoEmail)) newErrors.ceoEmail = "Please enter a valid email address";
+        if (formData.ceoPhone && !isValidPhone(formData.ceoPhone)) newErrors.ceoPhone = "Please enter a valid phone number";
         if (formData.ceoLinkedin && !/^https?:\/\/.+/.test(formData.ceoLinkedin)) newErrors.ceoLinkedin = "Please enter a valid LinkedIn URL";
         break;
 
@@ -1246,15 +1240,16 @@ export default function MembershipApplicationForm() {
                   {currentStep === 5 && (
                     <div>
                       <StepHeader stepIndex={5} />
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C41E3A]/10 text-[#C41E3A] text-xs font-bold uppercase tracking-wider mb-4">
+                        Optional
+                      </div>
                       <ErrorBanner />
                       <p className="text-[#5A5F72] text-base mb-6">
                         Primary decision-maker for the organisation.
                       </p>
                       <div className="grid sm:grid-cols-2 gap-6">
                         <div>
-                          <label className="block text-base font-medium text-[#3D4152] mb-2">
-                            First Name <span className="text-[#C41E3A]">*</span>
-                          </label>
+                          <label className="block text-base font-medium text-[#3D4152] mb-2">First Name</label>
                           <input
                             type="text"
                             value={formData.ceoFirstName}
@@ -1262,12 +1257,9 @@ export default function MembershipApplicationForm() {
                             placeholder="First name"
                             className={inputClass("ceoFirstName")}
                           />
-                          <FieldError field="ceoFirstName" />
                         </div>
                         <div>
-                          <label className="block text-base font-medium text-[#3D4152] mb-2">
-                            Last Name <span className="text-[#C41E3A]">*</span>
-                          </label>
+                          <label className="block text-base font-medium text-[#3D4152] mb-2">Last Name</label>
                           <input
                             type="text"
                             value={formData.ceoLastName}
@@ -1275,12 +1267,9 @@ export default function MembershipApplicationForm() {
                             placeholder="Last name"
                             className={inputClass("ceoLastName")}
                           />
-                          <FieldError field="ceoLastName" />
                         </div>
                         <div>
-                          <label className="block text-base font-medium text-[#3D4152] mb-2">
-                            Job Title <span className="text-[#C41E3A]">*</span>
-                          </label>
+                          <label className="block text-base font-medium text-[#3D4152] mb-2">Job Title</label>
                           <input
                             type="text"
                             value={formData.ceoJobTitle}
@@ -1288,7 +1277,6 @@ export default function MembershipApplicationForm() {
                             placeholder="e.g. CEO, Managing Director"
                             className={inputClass("ceoJobTitle")}
                           />
-                          <FieldError field="ceoJobTitle" />
                         </div>
                         <div>
                           <label className="block text-base font-medium text-[#3D4152] mb-2">Nationality</label>
@@ -1301,9 +1289,7 @@ export default function MembershipApplicationForm() {
                           />
                         </div>
                         <div>
-                          <label className="block text-base font-medium text-[#3D4152] mb-2">
-                            Email Address <span className="text-[#C41E3A]">*</span>
-                          </label>
+                          <label className="block text-base font-medium text-[#3D4152] mb-2">Email Address</label>
                           <input
                             type="email"
                             value={formData.ceoEmail}
@@ -1314,9 +1300,7 @@ export default function MembershipApplicationForm() {
                           <FieldError field="ceoEmail" />
                         </div>
                         <div>
-                          <label className="block text-base font-medium text-[#3D4152] mb-2">
-                            Phone Number <span className="text-[#C41E3A]">*</span>
-                          </label>
+                          <label className="block text-base font-medium text-[#3D4152] mb-2">Phone Number</label>
                           <input
                             type="tel"
                             value={formData.ceoPhone}
@@ -1348,7 +1332,7 @@ export default function MembershipApplicationForm() {
                           <FieldError field="ceoLinkedin" />
                         </div>
                       </div>
-                      <StepNav />
+                      <StepNav showSkip />
                     </div>
                   )}
 

@@ -85,14 +85,14 @@ function MemberCard({ member }: { member: Member }) {
       className="group block bg-white border border-[#D8D5CF] rounded-lg overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
     >
       {/* Logo area */}
-      <div className="h-40 bg-[#F8FAFC] flex items-center justify-center p-6 border-b border-[#EEECEA]">
+      <div className="h-44 bg-[#F8FAFC] flex items-center justify-center px-4 py-5 border-b border-[#EEECEA]">
         {member.logo && !imgError ? (
           <Image
             src={member.logo}
             alt={member.name}
-            width={160}
-            height={80}
-            className="max-h-20 w-auto object-contain"
+            width={280}
+            height={120}
+            className="max-h-28 max-w-full w-auto object-contain"
             onError={() => setImgError(true)}
           />
         ) : (

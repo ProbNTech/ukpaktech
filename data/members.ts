@@ -25,6 +25,30 @@ export const members: Member[] = [
     location: "Faisalabad, Pakistan",
     founded: "2023",
   },
+  {
+    name: "LetTech",
+    slug: "lettech",
+    logo: "/image/members/letTechLogo.png",
+    website: "https://lettech.pk",
+    description:
+      "Peshawar-based problem-first technology company building AI-powered SaaS products for Pakistan's most underserved industries — starting with LetPsyc, the country's first practitioner-focused mental health assessment platform.",
+    companyType: "SaaS / Platform",
+    sectors: ["Artificial Intelligence", "HealthTech", "EdTech"],
+    technologies: ["AI & Machine Learning", "Custom Software", "Automation"],
+    location: "Peshawar, Pakistan",
+    founded: "2025",
+  },
+  {
+    name: "Velvonix",
+    slug: "velvonix",
+    website: "https://velvonix.com",
+    description:
+      "AI-powered digital agency delivering intelligent automation, custom software, mobile and web applications, and cloud infrastructure for businesses across finance, healthcare, retail, and education.",
+    companyType: "Consultancy",
+    sectors: ["Artificial Intelligence", "FinTech", "HealthTech", "Digital Transformation"],
+    technologies: ["AI & Machine Learning", "Cloud & DevOps", "Custom Software", "Mobile Development"],
+    location: "New York, USA",
+  },
 ];
 
 /* ── Filter option lists ──────────────────────────────────────── */
