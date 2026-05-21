@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PageHero } from "@/components/PageHero";
+import MembershipApplyForm from "@/components/membership/MembershipApplyForm";
 import { GlobalCTA } from "@/components/GlobalCTA";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
@@ -200,10 +201,13 @@ export default function MembershipClient() {
         image="/image/banners/banner102.png"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Apply Now</ShinyButton>
+          <ShinyButton href="#apply">Apply Now</ShinyButton>
           <Button href="#tiers" variant="glass">View Tiers</Button>
         </div>
       </PageHero>
+
+      {/* ── Membership application form ── */}
+      <MembershipApplyForm />
 
       {/* ── Intro ── */}
       <Section variant="light">

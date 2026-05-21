@@ -86,27 +86,16 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
 
     // Server-side validation for required fields
-    if (!body.membershipType) {
-      return NextResponse.json(
-        { error: "Membership type is required." },
-        { status: 400 }
-      );
-    }
     if (!body.orgName?.trim()) {
       return NextResponse.json(
         { error: "Organisation name is required." },
         { status: 400 }
       );
     }
-    if (!body.ceoEmail?.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.ceoEmail)) {
-      return NextResponse.json(
-        { error: "A valid CEO email is required." },
-        { status: 400 }
-      );
-    }
 
-    const tabName =
-      MEMBERSHIP_TAB_NAMES[body.membershipType] || body.membershipType;
+    const tabName = body.membershipType
+      ? MEMBERSHIP_TAB_NAMES[body.membershipType] || body.membershipType
+      : "Applications";
     const timestamp = new Date().toISOString();
 
     const values = [
@@ -188,7 +177,7 @@ export async function POST(req: NextRequest) {
         html: `<p style="font-family:system-ui,sans-serif;font-size:14px;">New membership application submitted via the UPTECH website.</p>${renderRowsHtml(
           rows
         )}`,
-        replyTo: body.ceoEmail?.trim() || body.primaryEmail?.trim() || undefined,
+        replyTo: body.personEmail?.trim() || body.ceoEmail?.trim() || undefined,
       });
     } catch (mailErr) {
       console.error("Membership form alert email failed:", mailErr);
