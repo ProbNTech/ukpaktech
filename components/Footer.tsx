@@ -157,30 +157,30 @@ export function Footer() {
                   <h3 className="font-heading font-semibold text-white text-lg uppercase tracking-wider mb-4 drop-shadow-md">
                     Contact Us
                   </h3>
-                  <div className="rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 divide-y divide-white/10 overflow-hidden">
+                  <div className="rounded-xl bg-slate-950/55 backdrop-blur-md border border-white/15 divide-y divide-white/[0.08] overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.35)]">
                     {/* Address */}
-                    <div className="flex items-start gap-3 px-4 py-3.5">
-                      <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-[#22C55E]/20 border border-[#22C55E]/40 flex items-center justify-center">
-                        <MapPin className="w-4 h-4 text-[#22C55E]" />
+                    <div className="flex items-start gap-3 px-4 py-3.5 hover:bg-white/[0.04] transition-colors duration-200">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#22C55E]/25 border border-[#22C55E]/55 flex items-center justify-center shadow-[0_4px_12px_rgba(34,197,94,0.2)]">
+                        <MapPin className="w-4 h-4 text-[#4ADE80]" />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="text-white/60 text-[11px] uppercase tracking-wider font-medium leading-tight">Address</p>
-                        <p className="text-white text-sm leading-snug mt-0.5">
+                        <p className="text-white/75 text-[10.5px] uppercase tracking-[0.18em] font-bold leading-tight">Address</p>
+                        <p className="text-white text-[14px] leading-snug mt-1 drop-shadow-sm">
                           136 Westbourne Terrace, London W2 6QB, United Kingdom
                         </p>
                       </div>
                     </div>
 
                     {/* Telephone */}
-                    <div className="flex items-center gap-3 px-4 py-3.5">
-                      <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-[#2563EB]/20 border border-[#2563EB]/40 flex items-center justify-center">
-                        <Phone className="w-4 h-4 text-[#60A5FA]" />
+                    <div className="flex items-center gap-3 px-4 py-3.5 hover:bg-white/[0.04] transition-colors duration-200">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#2563EB]/25 border border-[#2563EB]/55 flex items-center justify-center shadow-[0_4px_12px_rgba(37,99,235,0.2)]">
+                        <Phone className="w-4 h-4 text-[#93C5FD]" />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="text-white/60 text-[11px] uppercase tracking-wider font-medium leading-tight">Telephone</p>
+                        <p className="text-white/75 text-[10.5px] uppercase tracking-[0.18em] font-bold leading-tight">Telephone</p>
                         <a
                           href="tel:02074024071"
-                          className="text-white text-sm hover:text-[#22C55E] transition-colors duration-300"
+                          className="text-white text-[14px] font-medium hover:text-[#4ADE80] transition-colors duration-200 drop-shadow-sm"
                         >
                           0207 402 4071
                         </a>
@@ -188,15 +188,15 @@ export function Footer() {
                     </div>
 
                     {/* WhatsApp */}
-                    <div className="flex items-center gap-3 px-4 py-3.5">
-                      <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-[#22C55E]/20 border border-[#22C55E]/40 flex items-center justify-center">
-                        <MessageCircle className="w-4 h-4 text-[#22C55E]" />
+                    <div className="flex items-center gap-3 px-4 py-3.5 hover:bg-white/[0.04] transition-colors duration-200">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#22C55E]/25 border border-[#22C55E]/55 flex items-center justify-center shadow-[0_4px_12px_rgba(34,197,94,0.2)]">
+                        <MessageCircle className="w-4 h-4 text-[#4ADE80]" />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="text-white/60 text-[11px] uppercase tracking-wider font-medium leading-tight">WhatsApp</p>
+                        <p className="text-white/75 text-[10.5px] uppercase tracking-[0.18em] font-bold leading-tight">WhatsApp</p>
                         <a
                           href="https://wa.me/447920550000"
-                          className="text-white text-sm hover:text-[#22C55E] transition-colors duration-300"
+                          className="text-white text-[14px] font-medium hover:text-[#4ADE80] transition-colors duration-200 drop-shadow-sm"
                         >
                           0044 7920 550000
                         </a>
@@ -204,15 +204,15 @@ export function Footer() {
                     </div>
 
                     {/* Email */}
-                    <div className="flex items-center gap-3 px-4 py-3.5">
-                      <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-[#E11D48]/20 border border-[#E11D48]/40 flex items-center justify-center">
-                        <Mail className="w-4 h-4 text-[#FB7185]" />
+                    <div className="flex items-center gap-3 px-4 py-3.5 hover:bg-white/[0.04] transition-colors duration-200">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#E11D48]/25 border border-[#E11D48]/55 flex items-center justify-center shadow-[0_4px_12px_rgba(225,29,72,0.2)]">
+                        <Mail className="w-4 h-4 text-[#FDA4AF]" />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="text-white/60 text-[11px] uppercase tracking-wider font-medium leading-tight">Email</p>
+                        <p className="text-white/75 text-[10.5px] uppercase tracking-[0.18em] font-bold leading-tight">Email</p>
                         <a
                           href="mailto:info@ukpaktech.org.uk"
-                          className="text-[#FB7185] text-sm font-semibold hover:text-white transition-colors duration-300 break-all"
+                          className="text-[#FDA4AF] text-[14px] font-semibold hover:text-white transition-colors duration-200 break-all drop-shadow-sm"
                         >
                           info@ukpaktech.org.uk
                         </a>
