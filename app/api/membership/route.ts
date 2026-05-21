@@ -5,76 +5,45 @@ import { renderRowsHtml, renderRowsText, sendAlert } from "@/lib/mailer";
 const SHEET_ID = process.env.SUBMISSIONS_SHEET_ID!;
 const TAB_NAME = "Memberships";
 
+const COUNTRY_LABELS: Record<string, string> = {
+  uk: "United Kingdom",
+  pakistan: "Pakistan",
+  other: "Other",
+};
+
 const HEADERS = [
   "Timestamp",
   // Organisation
   "Organisation Name",
+  "Registration No.",
   "Address",
-  "Postcode",
   "Country",
-  "Organisation Phone",
+  "City",
+  "Phone",
+  "WhatsApp",
   "Website",
-  "Revenue",
   "Employees",
   "Core Products/Services",
-  "Website Link",
-  "Publicly Listed",
-  "Member Directory",
-  "Mailing List",
   // Industry
-  "Selected Sectors",
+  "Sectors",
   "Other Sector",
-  // Locations
-  "UK Offices",
-  "Other UK City",
-  "Pakistan Offices",
-  "Other Pakistan City",
-  "UK Employees",
-  "Pakistan Employees",
   // Profile
   "Organisation Profile",
-  // CEO
-  "CEO First Name",
-  "CEO Last Name",
-  "CEO Job Title",
-  "CEO Nationality",
-  "CEO Email",
-  "CEO Phone",
-  "CEO Mobile",
-  "CEO LinkedIn",
-  // Primary Contact
-  "Primary First Name",
-  "Primary Last Name",
-  "Primary Job Title",
-  "Primary Nationality",
-  "Primary Email",
-  "Primary Phone",
-  // Secondary Contact
-  "Secondary First Name",
-  "Secondary Last Name",
-  "Secondary Job Title",
-  "Secondary Email",
-  "Secondary Phone",
-  "Secondary Mobile",
-  // Pakistan Contact
-  "Pakistan First Name",
-  "Pakistan Last Name",
-  "Pakistan Job Title",
-  "Pakistan Email",
-  "Pakistan Phone",
-  "Pakistan Address",
-  // Referrer
-  "Referrer Name",
-  "Referrer Organisation",
-  "Referrer Email",
-  "Referrer Phone",
+  // Applicant
+  "Contact Name",
+  "Contact Job Title",
+  "Contact Email",
+  "Contact Nationality",
+  // Consents
+  "Terms Accepted",
+  "Membership Terms Accepted",
+  "Arbitration Accepted",
 ];
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    // Server-side validation for required fields
     if (!body.orgName?.trim()) {
       return NextResponse.json(
         { error: "Organisation name is required." },
@@ -84,71 +53,46 @@ export async function POST(req: NextRequest) {
 
     const timestamp = new Date().toISOString();
 
+    const country = body.country
+      ? COUNTRY_LABELS[body.country] || body.country
+      : "";
+
+    // City: form sends `city` for UK/Pakistan list, `cityOther` when "other" is picked
+    // (either at country level or city level)
+    const city =
+      body.country === "other"
+        ? body.cityOther?.trim() || ""
+        : body.city === "other"
+        ? body.cityOther?.trim() || ""
+        : body.city?.trim() || "";
+
     const values = [
       timestamp,
       // Organisation
       body.orgName?.trim() || "",
+      body.registrationNo?.trim() || "",
       body.address?.trim() || "",
-      body.postcode?.trim() || "",
-      body.country?.trim() || "",
+      country,
+      city,
       body.orgPhone?.trim() || "",
+      body.whatsapp?.trim() || "",
       body.website?.trim() || "",
-      body.revenue || "",
       body.employees || "",
       body.coreProducts?.trim() || "",
-      body.websiteLink ? "Yes" : "No",
-      body.publiclyListed ? "Yes" : "No",
-      body.memberDirectory ? "Yes" : "No",
-      body.mailingList ? "Yes" : "No",
       // Industry
-      Array.isArray(body.selectedSectors)
-        ? body.selectedSectors.join(", ")
-        : "",
+      Array.isArray(body.selectedSectors) ? body.selectedSectors.join(", ") : "",
       body.otherSector?.trim() || "",
-      // Locations
-      Array.isArray(body.ukOffices) ? body.ukOffices.join(", ") : "",
-      body.otherUkCity?.trim() || "",
-      Array.isArray(body.pakOffices) ? body.pakOffices.join(", ") : "",
-      body.otherPakCity?.trim() || "",
-      body.ukEmployees || "",
-      body.pakEmployees || "",
       // Profile
       body.orgProfile?.trim() || "",
-      // CEO
-      body.ceoFirstName?.trim() || "",
-      body.ceoLastName?.trim() || "",
-      body.ceoJobTitle?.trim() || "",
-      body.ceoNationality?.trim() || "",
-      body.ceoEmail?.trim() || "",
-      body.ceoPhone?.trim() || "",
-      body.ceoMobile?.trim() || "",
-      body.ceoLinkedin?.trim() || "",
-      // Primary Contact
-      body.primaryFirstName?.trim() || "",
-      body.primaryLastName?.trim() || "",
-      body.primaryJobTitle?.trim() || "",
-      body.primaryNationality?.trim() || "",
-      body.primaryEmail?.trim() || "",
-      body.primaryPhone?.trim() || "",
-      // Secondary Contact
-      body.secondaryFirstName?.trim() || "",
-      body.secondaryLastName?.trim() || "",
-      body.secondaryJobTitle?.trim() || "",
-      body.secondaryEmail?.trim() || "",
-      body.secondaryPhone?.trim() || "",
-      body.secondaryMobile?.trim() || "",
-      // Pakistan Contact
-      body.pakFirstName?.trim() || "",
-      body.pakLastName?.trim() || "",
-      body.pakJobTitle?.trim() || "",
-      body.pakEmail?.trim() || "",
-      body.pakPhone?.trim() || "",
-      body.pakAddress?.trim() || "",
-      // Referrer
-      body.referrerName?.trim() || "",
-      body.referrerOrg?.trim() || "",
-      body.referrerEmail?.trim() || "",
-      body.referrerPhone?.trim() || "",
+      // Applicant
+      body.personName?.trim() || "",
+      body.personJobTitle?.trim() || "",
+      body.personEmail?.trim() || "",
+      body.personNationality?.trim() || "",
+      // Consents
+      body.termsAccepted ? "Yes" : "No",
+      body.membershipTermsAccepted ? "Yes" : "No",
+      body.arbitrationAccepted ? "Yes" : "No",
     ];
 
     await appendRow(SHEET_ID, TAB_NAME, HEADERS, values);
@@ -162,7 +106,7 @@ export async function POST(req: NextRequest) {
         html: `<p style="font-family:system-ui,sans-serif;font-size:14px;">New membership application submitted via the UPTECH website.</p>${renderRowsHtml(
           rows
         )}`,
-        replyTo: body.personEmail?.trim() || body.ceoEmail?.trim() || undefined,
+        replyTo: body.personEmail?.trim() || undefined,
       });
     } catch (mailErr) {
       console.error("Membership form alert email failed:", mailErr);
