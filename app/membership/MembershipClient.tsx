@@ -20,7 +20,6 @@ import {
   CalendarDays,
   BarChart3,
   GraduationCap,
-  MapPin,
   FileText,
   Download,
   Shield,
@@ -74,12 +73,6 @@ const europeanMarkets = [
   { name: "Lithuania", flag: "🇱🇹" },
 ];
 
-const whoShouldJoin = [
-  { image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=85&auto=format&fit=crop", title: "Startups & Scale-ups", description: "Access funding, mentorship, market entry support, and collaboration opportunities.", color: "#2563EB" },
-  { image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=85&auto=format&fit=crop", title: "SMEs & Technology Firms", description: "Grow your network, promote solutions, and explore cross-border opportunities.", color: "#22C55E" },
-  { image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=85&auto=format&fit=crop", title: "Corporates & Investors", description: "Discover high-potential startups, engage in partnerships, and participate in innovation programs.", color: "#C41E3A" },
-];
-
 const whoCanBecomeMembers = [
   "IT companies and software firms",
   "Technology startups",
@@ -93,10 +86,10 @@ const whoCanBecomeMembers = [
   "Students: IT, management and related fields",
 ];
 
-const eligibilityMethods = [
-  { title: "By Nomination", description: "Any Pakistani IT professional or student residing in Pakistan and UK shall be eligible to hold the membership status of UPTECH.", color: "#2563EB" },
-  { title: "Nominated by two Existing Members", description: "Referrals will be reviewed by the UPTECH team to ensure alignment with UPTECH values.", color: "#22C55E" },
-  { title: "By Application", description: "Holding the title: Founder, Chairperson, Managing Director, Managing Partner, C-Suite or equivalent title: Age criterion: 30 \u2013 55 years Revenue: USD 1 million or above", color: "#C41E3A" },
+const whoShouldJoin = [
+  { image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=85&auto=format&fit=crop", title: "Startups & Scale-ups", description: "Access funding, mentorship, market entry support, and collaboration opportunities.", color: "#2563EB" },
+  { image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=85&auto=format&fit=crop", title: "SMEs & Technology Firms", description: "Grow your network, promote solutions, and explore cross-border opportunities.", color: "#22C55E" },
+  { image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=85&auto=format&fit=crop", title: "Corporates & Investors", description: "Discover high-potential startups, engage in partnerships, and participate in innovation programs.", color: "#C41E3A" },
 ];
 
 const membershipTiers = [
@@ -172,18 +165,18 @@ const membershipTiers = [
   },
 ];
 
-const membershipDiscounts = [
-  { title: "Early-Bird Discount", description: "Reduced fees for members who join within a specified period.", color: "#2563EB", icon: "https://cdn-icons-png.flaticon.com/512/6897/6897039.png" },
-  { title: "Startup & SME Discount", description: "Special rates for early-stage and small to medium-sized technology businesses.", color: "#22C55E", icon: "https://cdn-icons-png.flaticon.com/512/6897/6897100.png" },
-  { title: "Group / Corporate Discount", description: "Reduced rates for multiple memberships within the same organisation or group.", color: "#C41E3A", icon: "https://cdn-icons-png.flaticon.com/512/6897/6897122.png" },
-  { title: "Cross-Border Collaboration Discount", description: "Incentives for organisations actively engaging in UK-Pakistan technology partnerships.", color: "#2563EB", icon: "https://cdn-icons-png.flaticon.com/512/6897/6897177.png" },
-];
-
 const pakistanToUkServices = [
   "Individual Consultations",
   "Government Relations",
   "Partners and Channels",
   "Delegations and Missions",
+];
+
+const ukToPakistanServices = [
+  "Market Entry Advisory",
+  "Local Partner Identification",
+  "Regulatory & Compliance Support",
+  "Investment Facilitation",
 ];
 
 /* ─── Component ─── */
@@ -463,36 +456,10 @@ export default function MembershipClient() {
         </AnimatedSection>
       </Section>
 
-      {/* ── Eligibility ── */}
-      <Section variant="light">
+      {/* ── Who Can Become Members ── */}
+      <Section variant="alt">
         <AnimatedSection>
-          <SectionHeader label="Eligibility" title="Eligibility Criteria" color="red" />
-
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
-            {eligibilityMethods.map((method, index) => (
-              <motion.div
-                key={index}
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative h-full"
-              >
-                <div className="relative h-full bg-white rounded-2xl border border-[#D8D5CF] p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                  <h3 className="font-heading font-bold text-lg mb-3" style={{ color: method.color }}>
-                    {method.title}
-                  </h3>
-                  <div className="h-px bg-[#D8D5CF] mb-3" />
-                  <p className="text-base text-[#5A5F72] leading-relaxed">{method.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <h3 className="font-heading font-bold text-2xl text-[#1C1F2E] mb-5">
-            Who can become{" "}
-            <span className="text-[#22C55E]">Members</span>
-          </h3>
+          <SectionHeader label="Who Can Join" title="Who Can Become Members" color="green" />
           <div className="grid md:grid-cols-2 gap-4">
             {whoCanBecomeMembers.map((point, index) => (
               <motion.div
@@ -513,79 +480,8 @@ export default function MembershipClient() {
         </AnimatedSection>
       </Section>
 
-      {/* ── Membership Fees ── */}
-      <Section variant="alt">
-        <AnimatedSection>
-          <SectionHeader label="Membership Fees" title="Membership Fees" color="red" />
-
-          <div className="max-w-4xl mx-auto">
-            <div className="relative bg-white border border-[#D8D5CF] rounded-2xl p-8 lg:p-10 shadow-sm text-center">
-              <p className="text-base text-[#3D4152] leading-relaxed mb-6">
-                The UK-Pakistan Tech Forum offers flexible membership plans designed to suit technology startups, SMEs, scale-ups, and corporates. Our membership fees provide access to a wealth of benefits, including networking, industry insights, cross-border opportunities, funding support, and promotional platforms.
-              </p>
-
-              <div className="border border-[#C41E3A]/20 rounded-xl p-6 mb-6 bg-[#C41E3A]/[0.03]">
-                <p className="text-lg text-[#3D4152] leading-relaxed font-medium text-center">
-                  Invest in your growth. Gain access to cross-border opportunities, funding, and strategic networks.
-                </p>
-              </div>
-
-              <p className="text-base text-[#5A5F72] leading-relaxed">
-                The first step towards membership is always a meeting with our Membership team where we can determine your annual fee. For further information please contact{" "}
-                <a
-                  href="mailto:membership@ukpaktech.org.uk"
-                  className="text-[#2563EB] hover:text-[#3b82f6] transition-colors underline underline-offset-2"
-                >
-                  membership@ukpaktech.org.uk
-                </a>{" "}
-                or complete the online enquiry form and the Membership team will be in touch to set up a meeting.
-              </p>
-            </div>
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* ── Membership Discounts ── */}
-      <Section variant="light">
-        <AnimatedSection>
-          <SectionHeader label="Discounts" title="Membership Discounts" color="green" />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {membershipDiscounts.map((discount, index) => (
-              <motion.div
-                key={index}
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative h-full"
-              >
-                <div className="relative h-full bg-white rounded-2xl border border-[#D8D5CF] p-7 text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                  <div className="flex justify-center mb-5">
-                    <div
-                      className="w-20 h-20 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                      style={{ backgroundColor: `${discount.color}08`, border: `1px solid ${discount.color}15` }}
-                    >
-                      <Image
-                        src={discount.icon}
-                        alt={discount.title}
-                        width={52}
-                        height={52}
-                        className="object-contain"
-                      />
-                    </div>
-                  </div>
-                  <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-3">{discount.title}</h3>
-                  <div className="h-px bg-[#D8D5CF] mb-3 mx-auto max-w-[60px]" />
-                  <p className="text-base text-[#5A5F72] leading-relaxed">{discount.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
-
       {/* ── Cross-Border Market Entry ── */}
-      <Section variant="alt">
+      <Section variant="light">
         <AnimatedSection>
           <SectionHeader label="Cross-Border Support" title="Cross-Border Market Entry" color="red" />
           <div className="grid md:grid-cols-2 gap-8">
@@ -639,9 +535,17 @@ export default function MembershipClient() {
                   </h3>
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
-                <p className="text-base text-[#5A5F72] leading-relaxed">
+                <p className="text-base text-[#5A5F72] leading-relaxed mb-5">
                   UK/Europe companies entering Pakistani take many forms, such as greenfield investment and technology partnerships. UPTECH is a critical partner when entering Pakistan.
                 </p>
+                <ul className="space-y-3">
+                  {ukToPakistanServices.map((service, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 text-base">
+                      <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#2563EB]" />
+                      <span className="text-[#3D4152]">{service}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           </div>

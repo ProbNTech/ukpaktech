@@ -2,22 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { appendRow } from "@/lib/google-sheets";
 import { renderRowsHtml, renderRowsText, sendAlert } from "@/lib/mailer";
 
-const SHEET_ID = process.env.MEMBERSHIP_SHEET_ID!;
-
-/** Map membership type slugs to readable sheet tab names */
-const MEMBERSHIP_TAB_NAMES: Record<string, string> = {
-  "chairmans-circle": "Chairman's Circle",
-  corporate: "Corporate",
-  "sme-scaleup": "SME Scale-up",
-  startup: "Startup",
-  associates: "Associates",
-  academic: "Academic Institutions",
-  individual: "Individual",
-};
+const SHEET_ID = process.env.SUBMISSIONS_SHEET_ID!;
+const TAB_NAME = "Memberships";
 
 const HEADERS = [
   "Timestamp",
-  "Membership Type",
   // Organisation
   "Organisation Name",
   "Address",
@@ -93,14 +82,10 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const tabName = body.membershipType
-      ? MEMBERSHIP_TAB_NAMES[body.membershipType] || body.membershipType
-      : "Applications";
     const timestamp = new Date().toISOString();
 
     const values = [
       timestamp,
-      tabName,
       // Organisation
       body.orgName?.trim() || "",
       body.address?.trim() || "",
@@ -166,13 +151,13 @@ export async function POST(req: NextRequest) {
       body.referrerPhone?.trim() || "",
     ];
 
-    await appendRow(SHEET_ID, tabName, HEADERS, values);
+    await appendRow(SHEET_ID, TAB_NAME, HEADERS, values);
 
     try {
       const rows: Array<[string, unknown]> = HEADERS.map((h, i) => [h, values[i]]);
 
       await sendAlert({
-        subject: `New membership application: ${tabName} — ${body.orgName?.trim() || "(unknown org)"}`,
+        subject: `New membership application — ${body.orgName?.trim() || "(unknown org)"}`,
         text: renderRowsText(rows),
         html: `<p style="font-family:system-ui,sans-serif;font-size:14px;">New membership application submitted via the UPTECH website.</p>${renderRowsHtml(
           rows
