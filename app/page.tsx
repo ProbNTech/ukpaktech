@@ -33,6 +33,9 @@ import NewsCarousel from "@/components/NewsCarousel";
 const FeaturedPartnersCarousel = dynamic(() => import("@/components/FeaturedPartnersCarousel"), {
   loading: () => <div className="py-20 bg-white" aria-busy="true"><div className="px-6 sm:px-10 lg:px-16 xl:px-20"><div className="h-48 bg-[#f7f8fa] rounded-xl animate-pulse" /></div></div>,
 });
+const PartnerSolutionsSection = dynamic(() => import("@/components/PartnerSolutionsSection"), {
+  loading: () => <div className="py-20 bg-[#eef1f5]" aria-busy="true"><div className="px-6 sm:px-10 lg:px-16 xl:px-20"><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{Array.from({ length: 3 }).map((_, i) => <div key={i} className="h-96 bg-white rounded-2xl animate-pulse" />)}</div></div></div>,
+});
 import HomeEventsSection from "@/components/events/HomeEventsSection";
 
 const homepageArticles = articles.slice(0, 15);
@@ -98,7 +101,127 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. TECH MARKET OVERVIEW */}
+      {/* 3. MEMBERSHIP */}
+      <MembershipSection />
+
+      {/* 4. OUR SERVICES — bilateral two-row grid */}
+      <section id="services" className="relative z-[1] py-20 lg:py-28 bg-white scroll-mt-24" aria-labelledby="services-heading">
+        <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
+          <AnimatedSection animation="blur-in">
+            <SectionLabel
+              label="Our Services"
+              title="Services on both sides of the corridor"
+              body="Concrete engagements for UK companies engaging Pakistan's technology base, and for Pakistani companies reaching UK and European markets."
+              color="#2563EB"
+              align="center"
+            />
+
+            {/* Row 1 — For UK companies */}
+            <div id="for-uk-companies" className="scroll-mt-24">
+              <WhatWeDoCards
+                items={ukServicesData}
+                eyebrow="Services"
+                audience="UK companies"
+                context="Engaging Pakistan's technology base — research, hiring, market entry, and verified sourcing."
+                accentColor="#2563EB"
+              />
+            </div>
+
+            {/* Row 2 — For Pakistani companies */}
+            <div id="for-pakistani-companies" className="mt-14 lg:mt-16 scroll-mt-24">
+              <WhatWeDoCards
+                items={pakistanServicesData}
+                eyebrow="Services"
+                audience="Pakistani companies"
+                context="Reaching UK and European markets — marketing, sales, hiring, and growth capital."
+                accentColor="#22C55E"
+              />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* 5. MORE FROM UPTECH */}
+      <section className="relative z-[1] py-20 lg:py-28 bg-[#eef1f5]" aria-labelledby="more-heading">
+        <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
+          <AnimatedSection animation="blur-in">
+            <SectionLabel label="Discover More" title="More from UPTECH" body="Platforms, meeting facilities, organisational structure, and member resources." color="#22C55E" align="center" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { href: "/products", icon: ProductsIcon, color: "#2563EB", title: "Our Products", desc: "People AI, TechMart Global, and Trusted Partner Certification — the products that operate beneath the services." },
+                { href: "/services/mentorship", icon: MentorshipIcon, color: "#22C55E", title: "Mentorship", desc: "One-to-one guidance from operators and investors active across the UK–Pakistan corridor." },
+                { href: "/meeting-space", icon: MeetingSpaceIcon, color: "#EAB308", title: "London Meeting Space", desc: "Boardrooms and meeting facilities in central London, available to members." },
+                { href: "/arbitration/framework", icon: StructureIcon, color: "#6366F1", title: "Governance & Arbitration", desc: "The published rulebook — Code of Conduct and dispute resolution under the UK Arbitration Act 1996." },
+              ].map((card, index) => {
+                const CardIcon = card.icon;
+                return (
+                  <motion.div
+                    key={card.title}
+                    className="h-full"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.5, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                  <Link
+                    href={card.href}
+                    className="group relative flex h-full flex-col bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 p-6 lg:p-7 hover:-translate-y-2 transition-all duration-300 overflow-hidden"
+                    style={{ borderTop: `2px solid ${card.color}`, boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.boxShadow = `0 12px 32px -8px ${card.color}33`; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)'; }}
+                  >
+                    {/* Gradient hover overlay */}
+                    <div
+                      className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ background: `linear-gradient(135deg, ${card.color}08 0%, ${card.color}03 100%)` }}
+                    />
+                    <div className="relative flex flex-1 flex-col">
+                      <div className="mb-4 flex items-center">
+                        <div className="rounded-xl p-2.5 group-hover:scale-105 transition-transform duration-300" style={{ backgroundColor: `${card.color}0F` }}>
+                          <CardIcon className="w-[100px] h-[100px]" />
+                        </div>
+                      </div>
+                      <div className="flex items-start justify-between gap-2">
+                        <h3
+                          className="font-heading font-bold text-[#1C1F2E] text-[1.15rem] mb-2 transition-colors duration-300 group-hover:text-[var(--card-color)]"
+                          style={{ "--card-color": card.color } as React.CSSProperties}
+                        >
+                          {card.title}
+                        </h3>
+                        <ArrowUpRight className="w-5 h-5 shrink-0 mt-1 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ color: card.color }} />
+                      </div>
+                      <p className="text-[#5A5F72] text-sm leading-relaxed">{card.desc}</p>
+                    </div>
+                  </Link>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* 6. FEATURED PARTNERS */}
+      <FeaturedPartnersCarousel />
+
+      {/* 7. PARTNER SOLUTIONS */}
+      <PartnerSolutionsSection />
+
+      {/* 8. WHAT DRIVES US */}
+      <WhatDrivesUs />
+
+      {/* 9. IMPACT STATS — Corridor Signals */}
+      <section className="relative z-[1] py-20 lg:py-24 bg-[#0f1a3a] overflow-hidden" aria-labelledby="impact-heading">
+        <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
+        <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
+          <AnimatedSection animation="blur-in">
+            <SectionLabel label="Corridor Signals" title="Where the corridor is, in numbers" body="Trade, talent demand, and market access figures that frame UPTECH's work — sourced from the State Bank of Pakistan, the UK Department for Business and Trade, and the Migration Advisory Committee." color="#60a5fa" align="center" light />
+            <ImpactStats />
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* 10. TECH MARKET OVERVIEW — Market Intelligence */}
       <section className="relative z-[1] py-20 lg:py-28 bg-[#eef1f5]" aria-labelledby="market-heading">
         <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
@@ -164,64 +287,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. MEMBERSHIP */}
-      <MembershipSection />
-
-      {/* 5. OUR SERVICES — bilateral two-row grid */}
-      <section id="services" className="relative z-[1] py-20 lg:py-28 bg-white scroll-mt-24" aria-labelledby="services-heading">
-        <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
-          <AnimatedSection animation="blur-in">
-            <SectionLabel
-              label="Our Services"
-              title="Services on both sides of the corridor"
-              body="Concrete engagements for UK companies engaging Pakistan's technology base, and for Pakistani companies reaching UK and European markets."
-              color="#2563EB"
-              align="center"
-            />
-
-            {/* Row 1 — For UK companies */}
-            <div id="for-uk-companies" className="scroll-mt-24">
-              <WhatWeDoCards
-                items={ukServicesData}
-                eyebrow="Services"
-                audience="UK companies"
-                context="Engaging Pakistan's technology base — research, hiring, market entry, and verified sourcing."
-                accentColor="#2563EB"
-              />
-            </div>
-
-            {/* Row 2 — For Pakistani companies */}
-            <div id="for-pakistani-companies" className="mt-14 lg:mt-16 scroll-mt-24">
-              <WhatWeDoCards
-                items={pakistanServicesData}
-                eyebrow="Services"
-                audience="Pakistani companies"
-                context="Reaching UK and European markets — marketing, sales, hiring, and growth capital."
-                accentColor="#22C55E"
-              />
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* 6. IMPACT STATS */}
-      <section className="relative z-[1] py-20 lg:py-24 bg-[#0f1a3a] overflow-hidden" aria-labelledby="impact-heading">
-        <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
-        <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
-          <AnimatedSection animation="blur-in">
-            <SectionLabel label="Corridor Signals" title="Where the corridor is, in numbers" body="Trade, talent demand, and market access figures that frame UPTECH's work — sourced from the State Bank of Pakistan, the UK Department for Business and Trade, and the Migration Advisory Committee." color="#60a5fa" align="center" light />
-            <ImpactStats />
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* 7. WHAT DRIVES US */}
-      <WhatDrivesUs />
-
-      {/* 8. BOARD OF ADVISORS */}
+      {/* 11. BOARD OF ADVISORS */}
       <BoardOfAdvisors />
 
-      {/* 9. NEWS & INSIGHTS */}
+      {/* 12. NEWS & INSIGHTS */}
       <section className="relative z-[1] py-20 lg:py-28 bg-white" aria-labelledby="news-heading">
         <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
@@ -243,67 +312,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 10. MORE FROM UPTECH */}
-      <section className="relative z-[1] py-20 lg:py-28 bg-[#eef1f5]" aria-labelledby="more-heading">
-        <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
-          <AnimatedSection animation="blur-in">
-            <SectionLabel label="Discover More" title="More from UPTECH" body="Platforms, meeting facilities, organisational structure, and member resources." color="#22C55E" align="center" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { href: "/products", icon: ProductsIcon, color: "#2563EB", title: "Our Products", desc: "People AI, TechMart Global, and Trusted Partner Certification — the products that operate beneath the services." },
-                { href: "/services/mentorship", icon: MentorshipIcon, color: "#22C55E", title: "Mentorship", desc: "One-to-one guidance from operators and investors active across the UK–Pakistan corridor." },
-                { href: "/meeting-space", icon: MeetingSpaceIcon, color: "#EAB308", title: "London Meeting Space", desc: "Boardrooms and meeting facilities in central London, available to members." },
-                { href: "/arbitration/framework", icon: StructureIcon, color: "#6366F1", title: "Governance & Arbitration", desc: "The published rulebook — Code of Conduct and dispute resolution under the UK Arbitration Act 1996." },
-              ].map((card, index) => {
-                const CardIcon = card.icon;
-                return (
-                  <motion.div
-                    key={card.title}
-                    className="h-full"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.5, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                  <Link
-                    href={card.href}
-                    className="group relative flex h-full flex-col bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 p-6 lg:p-7 hover:-translate-y-2 transition-all duration-300 overflow-hidden"
-                    style={{ borderTop: `2px solid ${card.color}`, boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
-                    onMouseEnter={(e) => { e.currentTarget.style.boxShadow = `0 12px 32px -8px ${card.color}33`; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)'; }}
-                  >
-                    {/* Gradient hover overlay */}
-                    <div
-                      className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{ background: `linear-gradient(135deg, ${card.color}08 0%, ${card.color}03 100%)` }}
-                    />
-                    <div className="relative flex flex-1 flex-col">
-                      <div className="mb-4 flex items-center">
-                        <div className="rounded-xl p-2.5 group-hover:scale-105 transition-transform duration-300" style={{ backgroundColor: `${card.color}0F` }}>
-                          <CardIcon className="w-[100px] h-[100px]" />
-                        </div>
-                      </div>
-                      <div className="flex items-start justify-between gap-2">
-                        <h3
-                          className="font-heading font-bold text-[#1C1F2E] text-[1.15rem] mb-2 transition-colors duration-300 group-hover:text-[var(--card-color)]"
-                          style={{ "--card-color": card.color } as React.CSSProperties}
-                        >
-                          {card.title}
-                        </h3>
-                        <ArrowUpRight className="w-5 h-5 shrink-0 mt-1 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ color: card.color }} />
-                      </div>
-                      <p className="text-[#5A5F72] text-sm leading-relaxed">{card.desc}</p>
-                    </div>
-                  </Link>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* 11. EVENT HIGHLIGHTS */}
+      {/* 13. EVENT HIGHLIGHTS */}
       <section className="relative z-[1] py-20 lg:py-24 bg-[#0f1a3a] overflow-hidden" aria-labelledby="highlights-heading">
         <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
         <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
@@ -335,12 +344,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 12. EVENTS */}
+      {/* 14. EVENTS */}
       <HomeEventsSection />
 
-      {/* 13. PARTNERS & NETWORK (merged) */}
-      <FeaturedPartnersCarousel />
-
+      {/* 15. PAKISTAN ECOSYSTEM NETWORK */}
       <section className="relative z-[1] py-14 lg:py-20 bg-[#0f1a3a] overflow-hidden" aria-labelledby="network-heading">
         <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
         <div className="relative text-center px-6 sm:px-10 lg:px-16 xl:px-20">
@@ -349,7 +356,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 14. GLOBAL CTA */}
+      {/* 16. GLOBAL CTA */}
       <GlobalCTA
         label="Join UPTECH"
         title="Equal access for organisations on both sides of the corridor."

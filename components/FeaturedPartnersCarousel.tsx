@@ -7,14 +7,49 @@ import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PartnerCard } from "@/components/PartnerCard";
-import { featuredPartners } from "@/data/featured-partners";
+import type { FeaturedPartner } from "@/data/featured-partners";
+import { members, type Member } from "@/data/members";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
-const homepagePartners = featuredPartners
-  .filter((p) => p.featured)
-  .sort((a, b) => a.order - b.order);
+/**
+ * Featured Partners are the real, current UPTECH members.
+ * We adapt each Member into the FeaturedPartner shape consumed by PartnerCard.
+ */
+
+const sectorToCategory: Record<string, string> = {
+  "Artificial Intelligence": "AI & Data",
+  "FinTech": "Fintech",
+  "Cybersecurity": "Cybersecurity",
+  "HealthTech": "HealthTech",
+  "EdTech": "Consulting",
+  "E-Commerce": "Consulting",
+  "Digital Transformation": "Consulting",
+};
+
+function pickCategory(member: Member): string {
+  for (const sector of member.sectors) {
+    if (sectorToCategory[sector]) return sectorToCategory[sector];
+  }
+  return "AI & Data";
+}
+
+function memberToPartner(member: Member, index: number): FeaturedPartner {
+  return {
+    id: index + 1,
+    slug: member.slug,
+    name: member.name,
+    description: member.description,
+    image: member.logo || "/image/placeholder.webp",
+    href: member.website,
+    category: pickCategory(member),
+    featured: true,
+    order: index + 1,
+  };
+}
+
+const homepagePartners: FeaturedPartner[] = members.map(memberToPartner);
 
 export default function FeaturedPartnersCarousel() {
   if (homepagePartners.length === 0) return null;
@@ -26,7 +61,7 @@ export default function FeaturedPartnersCarousel() {
           <SectionHeader
             label="Our partners"
             title="Featured Partners"
-            subtitle="Trusted organisations and innovators across the UK–Pakistan technology corridor — showcasing services, solutions, and expertise."
+            subtitle="UPTECH member organisations operating across the UK–Pakistan technology corridor — drawn directly from the membership directory."
             color="blue"
           />
 
@@ -35,7 +70,7 @@ export default function FeaturedPartnersCarousel() {
               modules={[Navigation, Autoplay]}
               spaceBetween={20}
               slidesPerView={1}
-              loop={homepagePartners.length > 3}
+              loop={homepagePartners.length > 4}
               autoplay={{
                 delay: 3500,
                 disableOnInteraction: false,
@@ -53,7 +88,7 @@ export default function FeaturedPartnersCarousel() {
             >
               {homepagePartners.map((partner, i) => (
                 <SwiperSlide key={partner.slug} className="pb-4">
-                  <PartnerCard partner={partner} index={i} />
+                  <PartnerCard partner={partner} index={i} displayMode="logo" />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -61,10 +96,10 @@ export default function FeaturedPartnersCarousel() {
             {/* Navigation + CTA row */}
             <div className="flex items-center justify-between mt-6">
               <Link
-                href="/partners"
+                href="/membership/directory"
                 className="group inline-flex items-center gap-2 text-sm font-semibold text-[#2563EB] hover:text-[#1d4ed8] transition-colors"
               >
-                View all partners
+                View full member directory
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
 

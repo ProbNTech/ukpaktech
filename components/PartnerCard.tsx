@@ -22,9 +22,11 @@ function getTheme(category: string) {
 interface PartnerCardProps {
   partner: FeaturedPartner;
   index?: number;
+  /** "image" renders the asset edge-to-edge (cover). "logo" centers the asset on a soft tinted background with padding (contain). */
+  displayMode?: "image" | "logo";
 }
 
-export function PartnerCard({ partner, index = 0 }: PartnerCardProps) {
+export function PartnerCard({ partner, index = 0, displayMode = "image" }: PartnerCardProps) {
   const theme = getTheme(partner.category);
   const cardRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -102,21 +104,35 @@ export function PartnerCard({ partner, index = 0 }: PartnerCardProps) {
           )}
 
           {/* Image */}
-          <div className="relative mx-4 mt-4 rounded-xl overflow-hidden">
+          <div
+            className="relative mx-4 mt-4 rounded-xl overflow-hidden"
+            style={
+              displayMode === "logo"
+                ? { background: `linear-gradient(135deg, ${theme.badge} 0%, #ffffff 100%)` }
+                : undefined
+            }
+          >
             <LazyImage
               src={partner.image}
               fallback="/image/placeholder.webp"
               inView={true}
               alt={partner.name}
               ratio={16 / 9}
-              className="transition-all duration-700 group-hover:scale-105"
+              className={
+                displayMode === "logo"
+                  ? "object-contain p-6 transition-all duration-700 group-hover:scale-105"
+                  : "transition-all duration-700 group-hover:scale-105"
+              }
             />
 
             {/* Subtle vignette for depth */}
             <div
               className="absolute inset-0 pointer-events-none rounded-xl"
               style={{
-                boxShadow: "inset 0 0 30px rgba(0,0,0,0.06)",
+                boxShadow:
+                  displayMode === "logo"
+                    ? "inset 0 0 20px rgba(0,0,0,0.03)"
+                    : "inset 0 0 30px rgba(0,0,0,0.06)",
               }}
             />
           </div>
