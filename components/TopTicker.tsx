@@ -8,7 +8,7 @@ const items = [
   { text: "Arbitration framework under the UK Arbitration Act 1996", href: "/arbitration/framework" },
   { text: "Member code of conduct — published and binding", href: "/code-of-conduct" },
   { text: "Trusted Partner Certification for member companies", href: "/initiatives/trusted-partner-certification" },
-  { text: "Apply for UPTECH membership", href: "/membership/apply" },
+  { text: "Apply for UPTECH membership", href: "/membership#apply" },
 ];
 
 export function TopTicker() {

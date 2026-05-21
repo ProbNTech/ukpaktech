@@ -150,7 +150,7 @@ export default function MeetingSpacePage() {
         image="/image/banners/banner77.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Apply for Membership</ShinyButton>
+          <ShinyButton href="/membership#apply">Apply for Membership</ShinyButton>
           <Button href="/contact" variant="glass">Contact Us</Button>
         </div>
       </PageHero>

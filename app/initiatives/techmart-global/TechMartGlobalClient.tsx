@@ -326,7 +326,7 @@ export default function TechMartGlobalClient() {
         image="/image/banners/banner41.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Get Started</ShinyButton>
+          <ShinyButton href="/membership#apply">Get Started</ShinyButton>
           <Button href="/contact" variant="glass" size="lg">
             Learn More
           </Button>
@@ -1033,7 +1033,7 @@ export default function TechMartGlobalClient() {
         title="Join TechMart Global"
         subtitle="Connect with the global technology marketplace and unlock new opportunities for growth and cross-border collaboration."
         primaryButtonText="Get Started"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Learn About Membership"
         secondaryButtonLink="/membership"
       />

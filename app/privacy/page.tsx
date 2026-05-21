@@ -616,7 +616,7 @@ export default function PrivacyPage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button href="/contact" variant="primary" size="lg">Contact Us</Button>
-                <Button href="/membership/apply" variant="glass" size="lg">Apply for Membership</Button>
+                <Button href="/membership#apply" variant="glass" size="lg">Apply for Membership</Button>
               </div>
             </div>
           </AnimatedSection>

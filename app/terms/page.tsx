@@ -646,7 +646,7 @@ export default function TermsPage() {
                   Contact Us
                 </Button>
                 <Button
-                  href="/membership/apply"
+                  href="/membership#apply"
                   variant="glass"
                   size="lg"
                   showArrow

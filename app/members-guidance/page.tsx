@@ -122,7 +122,7 @@ export default function MembersGuidancePage() {
         title="Communication & Support"
         subtitle="For any questions, support requests, or feedback, contact our membership team at info@ukpaktech.org.uk. We aim to respond to all member enquiries within 2 business days."
         primaryButtonText="Apply for Membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Contact Us"
         secondaryButtonLink="/contact"
       />

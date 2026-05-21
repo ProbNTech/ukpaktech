@@ -166,7 +166,7 @@ export default function PartnersPage() {
         primaryButtonText="Contact Us"
         primaryButtonLink="/contact"
         secondaryButtonText="Apply for Membership"
-        secondaryButtonLink="/membership/apply"
+        secondaryButtonLink="/membership#apply"
       />
     </div>
   );

@@ -80,7 +80,7 @@ export default function ContactPage() {
         image="/image/banners/banner54.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Apply for Membership</ShinyButton>
+          <ShinyButton href="/membership#apply">Apply for Membership</ShinyButton>
           <Button href="#enquiry-types" variant="glass">Enquiry Types</Button>
         </div>
       </PageHero>
@@ -265,7 +265,7 @@ export default function ContactPage() {
                     <Briefcase className="w-6 h-6 text-[#2563EB] mb-3" strokeWidth={1.5} />
                     <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-1">Ready to Join?</h3>
                     <p className="text-base text-[#475569] mb-5 leading-relaxed">Become a member and unlock the full UPTECH network.</p>
-                    <Button href="/membership/apply" variant="primary" size="sm">
+                    <Button href="/membership#apply" variant="primary" size="sm">
                       Apply Now
                     </Button>
                   </div>
@@ -282,7 +282,7 @@ export default function ContactPage() {
         title="Let’s Build the Future Together"
         subtitle="Whether you represent a startup, corporation, government body, or academic institution — UPTECH is your gateway to the UK–Pakistan technology partnership."
         primaryButtonText="Apply for Membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="About UPTECH"
         secondaryButtonLink="/about"
       />

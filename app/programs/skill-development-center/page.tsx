@@ -90,7 +90,7 @@ export default function SkillDevelopmentCenterPage() {
         heroImage="/image/Skill Development Center/skill-dev-hero.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Apply for Training</ShinyButton>
+          <ShinyButton href="/membership#apply">Apply for Training</ShinyButton>
           <Button href="/contact" variant="glass" size="lg">
             Partner with UPTECH
           </Button>
@@ -384,7 +384,7 @@ export default function SkillDevelopmentCenterPage() {
         title="Ready to Transform Your Career?"
         subtitle="Join UPTECH’s Skill Development Center and unlock your potential in the tech industry. Start your journey today with world-class training and mentorship."
         primaryButtonText="Apply for Training"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Partner with UPTECH"
         secondaryButtonLink="/contact"
       />

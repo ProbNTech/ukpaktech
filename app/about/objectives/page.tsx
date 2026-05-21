@@ -38,7 +38,7 @@ export default function ObjectivesPage() {
 
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>
+          <ShinyButton href="/membership#apply">Join UPTECH</ShinyButton>
           <Button href="/about/founder" variant="glass">Meet Our Founder</Button>
         </div>
       </PageHero>
@@ -177,7 +177,7 @@ export default function ObjectivesPage() {
         title="Join the Movement"
         subtitle="Become part of UPTECH and contribute to the objectives that are shaping the future of UK-Pakistan technology collaboration."
         primaryButtonText="Apply for Membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Meet Our Founder"
         secondaryButtonLink="/about/founder"
       />

@@ -219,7 +219,7 @@ export default function GDPRPage() {
               <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-4">For any questions about this Privacy Policy or our treatment of your Personal Information, please contact{" "}<a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] hover:text-[#60A5FA] transition-colors">info@ukpaktech.org.uk</a></p>
               <div className="flex flex-wrap gap-4 mt-10">
                 <Button href="/contact" variant="primary" size="lg">Contact Us</Button>
-                <Button href="/membership/apply" variant="glass" size="lg">Apply for Membership</Button>
+                <Button href="/membership#apply" variant="glass" size="lg">Apply for Membership</Button>
               </div>
             </div>
           </AnimatedSection>

@@ -150,7 +150,7 @@ const navItems: NavItem[] = [
     },
     items: [
       { label: "Membership Overview", href: "/membership", desc: "Explore membership tiers, benefits, and how to join the UPTECH community.", icon: CreditCard },
-      { label: "Apply for Membership", href: "/membership/apply", desc: "Complete the membership application form to join the UK–Pakistan Tech Forum.", icon: Send },
+      { label: "Apply for Membership", href: "/membership#apply", desc: "Complete the membership application form to join the UK–Pakistan Tech Forum.", icon: Send },
       { label: "Membership Directory", href: "/membership/directory", desc: "Browse our corporate and individual members shaping the UK–Pakistan technology corridor.", icon: FileText },
       { label: "London Meeting Space", href: "/meeting-space", desc: "Professional meeting and event facilities in central London for UPTECH members.", icon: MapPin },
       { label: "Featured Partners", href: "/partners", desc: "Trusted organisations showcasing services, solutions, and expertise across the UK–Pakistan tech corridor.", icon: Handshake },

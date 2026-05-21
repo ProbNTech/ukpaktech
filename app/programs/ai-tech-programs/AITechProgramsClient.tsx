@@ -89,7 +89,7 @@ export default function AITechProgramsPage() {
         videoSpeed={2}
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Become a Member</ShinyButton>
+          <ShinyButton href="/membership#apply">Become a Member</ShinyButton>
           <Button href="/contact" variant="glass" size="lg">
             Get in Touch
           </Button>
@@ -274,7 +274,7 @@ export default function AITechProgramsPage() {
         title="Start Building With UPTECH"
         subtitle="Whether you are an entrepreneur, student, or technology professional, our programmes provide structured pathways to training, collaboration, and market access across the UK–Pakistan technology corridor."
         primaryButtonText="Become a Member"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Get in Touch"
         secondaryButtonLink="/contact"
       />

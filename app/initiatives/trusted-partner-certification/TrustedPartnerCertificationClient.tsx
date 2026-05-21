@@ -153,7 +153,7 @@ export default function TrustedPartnerCertificationClient() {
         image="/image/banners/banner49.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Apply for Certification</ShinyButton>
+          <ShinyButton href="/membership#apply">Apply for Certification</ShinyButton>
           <Button href="/contact" variant="glass">Get in Touch</Button>
         </div>
       </PageHero>
@@ -362,7 +362,7 @@ export default function TrustedPartnerCertificationClient() {
         title="Apply for UPTECH Trusted Partner Certification"
         subtitle="Join the network of verified Pakistani technology companies and unlock global visibility, credibility, and business opportunities in UK and European markets."
         primaryButtonText="Apply for Certification"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Learn About Membership"
         secondaryButtonLink="/membership"
       />

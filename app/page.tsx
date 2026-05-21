@@ -362,7 +362,7 @@ export default function Home() {
         title="Equal access for organisations on both sides of the corridor."
         subtitle="Whether you are a UK company looking into Pakistan or a Pakistani company looking into the UK, membership opens services, the directory, the Trusted Partner programme, and the governance framework."
         primaryButtonText="Apply for membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Talk to the team"
         secondaryButtonLink="/contact"
       />

@@ -64,7 +64,7 @@ export default function AboutPage() {
         threeBg
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Apply for Membership</ShinyButton>
+          <ShinyButton href="/membership#apply">Apply for Membership</ShinyButton>
           <Button href="/contact" variant="glass">Contact Us</Button>
         </div>
       </PageHero>
@@ -170,7 +170,7 @@ export default function AboutPage() {
         title="Ready to Be Part of the Movement?"
         subtitle="Join UPTECH and connect with technology leaders, entrepreneurs, and innovators shaping the UK–Pakistan tech corridor."
         primaryButtonText="Apply for Membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Contact Us"
         secondaryButtonLink="/contact"
       />

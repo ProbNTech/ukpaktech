@@ -79,7 +79,7 @@ export default function IncubationCollectiveStartupsClient() {
         videoSpeed={2}
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Apply for Incubation</ShinyButton>
+          <ShinyButton href="/membership#apply">Apply for Incubation</ShinyButton>
           <Button href="/contact" variant="glass" size="lg">
             Partner With Us
           </Button>
@@ -452,7 +452,7 @@ export default function IncubationCollectiveStartupsClient() {
         title="Build, Scale, and Expand With UPTECH"
         subtitle="Join our incubation program and become part of a collaborative ecosystem driving innovation across the UK and Pakistan."
         primaryButtonText="Apply for Incubation"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Partner With Us"
         secondaryButtonLink="/contact"
       />

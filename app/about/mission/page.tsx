@@ -36,7 +36,7 @@ export default function MissionPage() {
         image="/image/banners/banner116.png"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>
+          <ShinyButton href="/membership#apply">Join UPTECH</ShinyButton>
           <Button href="/about/objectives" variant="glass">Our Objectives</Button>
         </div>
       </PageHero>
@@ -117,7 +117,7 @@ export default function MissionPage() {
         title="Help Shape the Future of Tech"
         subtitle="Join UPTECH and become part of the mission to transform the UK-Pakistan technology corridor into a global innovation powerhouse."
         primaryButtonText="Apply for Membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Our Objectives"
         secondaryButtonLink="/about/objectives"
       />

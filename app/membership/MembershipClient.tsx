@@ -570,7 +570,7 @@ export default function MembershipClient() {
         title="Ready to Join UPTECH?"
         subtitle="Membership with the Forum provides more than just networking — it's a gateway to growth, visibility, and influence in the UK–Pakistan technology corridor."
         primaryButtonText="Apply for Membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Get in Touch"
         secondaryButtonLink="/contact"
       />
@@ -649,7 +649,7 @@ function TierCard({
 
         {tier.highlight ? (
           <a
-            href="/membership/apply"
+            href="/membership#apply"
             className="group/btn relative inline-flex items-center justify-center gap-2.5 w-full px-7 py-3.5 rounded-xl font-heading font-bold text-base text-white bg-[#2563EB] hover:bg-[#1d4ed8] transition-all duration-300 shadow-sm hover:shadow-md"
           >
             Apply Now
@@ -657,7 +657,7 @@ function TierCard({
           </a>
         ) : (
           <a
-            href="/membership/apply"
+            href="/membership#apply"
             className="inline-flex items-center justify-center gap-2.5 w-full px-7 py-3.5 rounded-xl font-heading font-bold text-base border border-[#D8D5CF] text-[#3D4152] bg-[#F5F4F2] hover:bg-white hover:text-[#1C1F2E] transition-all duration-300"
           >
             Apply Now

@@ -546,7 +546,7 @@ export default function FundingAndGrantsClient() {
         title="Ready to Secure Funding for Your Innovation?"
         subtitle="Explore funding opportunities and take your technology innovation to the next level with UPTECH funding and grants programs."
         primaryButtonText="Apply for Membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Contact Us"
         secondaryButtonLink="/contact"
       />

@@ -392,7 +392,7 @@ export default function SeriesFundingPage() {
         title="Fuel Growth. Expand Markets. Transform the Tech Ecosystem."
         subtitle="Whether you are a scaling company seeking Series A or B funding, or an investor looking for growth-stage opportunities, the UK–Pakistan Tech Forum is your partner in driving cross-border innovation."
         primaryButtonText="Apply for Membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Contact Us"
         secondaryButtonLink="/contact"
       />

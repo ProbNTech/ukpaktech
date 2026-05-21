@@ -96,7 +96,7 @@ export default function TechExcellenceAwardsClient() {
         lightOverlay
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Submit a Nomination</ShinyButton>
+          <ShinyButton href="/membership#apply">Submit a Nomination</ShinyButton>
           <Button href="/contact" variant="glass" size="lg">
             Contact Us
           </Button>
@@ -389,7 +389,7 @@ export default function TechExcellenceAwardsClient() {
         title="Nominate the Innovators Shaping the UK–Pakistan Tech Corridor"
         subtitle="Help us recognise exceptional individuals and organisations driving technology excellence and cross-border collaboration."
         primaryButtonText="Submit a Nomination"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Contact Us"
         secondaryButtonLink="/contact"
       />

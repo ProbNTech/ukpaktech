@@ -64,7 +64,7 @@ export default function PeopleAIClient() {
         image="/image/banners/banner40.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Get Started</ShinyButton>
+          <ShinyButton href="/membership#apply">Get Started</ShinyButton>
           <Button href="/contact" variant="glass" size="lg">
             Learn More
           </Button>
@@ -265,7 +265,7 @@ export default function PeopleAIClient() {
         title="Join the People AI Platform"
         subtitle="Be part of a transformative movement reshaping how people and organisations work with AI across the UK and Pakistan."
         primaryButtonText="Get Started"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Contact Us"
         secondaryButtonLink="/contact"
       />

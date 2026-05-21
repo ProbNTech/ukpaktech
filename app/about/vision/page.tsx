@@ -46,7 +46,7 @@ export default function VisionPage() {
         image="/image/banners/banner15.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>
+          <ShinyButton href="/membership#apply">Join UPTECH</ShinyButton>
           <Button href="/about/mission" variant="glass">Our Mission</Button>
         </div>
       </PageHero>
@@ -109,7 +109,7 @@ export default function VisionPage() {
         title="Be Part of the Vision"
         subtitle="Join the UK-Pakistan Technology Forum and help build a connected innovation ecosystem that creates lasting impact for both nations."
         primaryButtonText="Apply for Membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Our Mission"
         secondaryButtonLink="/about/mission"
       />

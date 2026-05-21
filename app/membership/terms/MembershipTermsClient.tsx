@@ -230,7 +230,7 @@ export default function MembershipTermsClient() {
         particleNetwork
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Apply Now</ShinyButton>
+          <ShinyButton href="/membership#apply">Apply Now</ShinyButton>
           <DownloadButton href="/documents/UPTECH-Membership-Terms-and-Conditions.pdf" filename="UPTECH-Membership-Terms-and-Conditions.pdf">
             Download PDF
           </DownloadButton>
@@ -609,7 +609,7 @@ export default function MembershipTermsClient() {
               constitute the entire agreement between you and UPTECH regarding your membership.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <ShinyButton href="/membership/apply">Apply for Membership</ShinyButton>
+              <ShinyButton href="/membership#apply">Apply for Membership</ShinyButton>
               <Button href="/contact" variant="ghost" size="lg">
                 Contact Us
               </Button>
@@ -640,7 +640,7 @@ export default function MembershipTermsClient() {
         title="Ready to Become a Member?"
         subtitle="Apply for membership and join the UK-Pakistan technology corridor. Our team will review your application within 5 business days."
         primaryButtonText="Apply Now"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Membership Overview"
         secondaryButtonLink="/membership"
       />

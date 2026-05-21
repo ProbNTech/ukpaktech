@@ -390,7 +390,7 @@ export default function StartupFundingPage() {
         title="Empowering Startups. Connecting Investors. Driving Cross-Border Growth."
         subtitle="Whether you are a startup seeking investment or an investor looking for the next breakthrough, the UK–Pakistan Tech Forum is your gateway to cross-border opportunity."
         primaryButtonText="Apply for Membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Contact Us"
         secondaryButtonLink="/contact"
       />

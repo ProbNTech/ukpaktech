@@ -472,7 +472,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
         title="Strengthen the Corridor. Build the Future."
         subtitle="Join us in building a stronger technology partnership between the UK and Pakistan."
         primaryButtonText="Apply for Membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Contact Us"
         secondaryButtonLink="/contact"
       />

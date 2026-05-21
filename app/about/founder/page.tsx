@@ -24,7 +24,7 @@ export default function LeadershipPage() {
         image="/image/banners/banner47.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
-          <ShinyButton href="/membership/apply">Join UPTECH</ShinyButton>
+          <ShinyButton href="/membership#apply">Join UPTECH</ShinyButton>
           <Button href="/about/management-team" variant="glass">Management Team</Button>
         </div>
       </PageHero>
@@ -112,7 +112,7 @@ export default function LeadershipPage() {
         title="Be Part of the UPTECH Story"
         subtitle="Join our leadership and thousands of technology leaders building the future of UK-Pakistan tech collaboration."
         primaryButtonText="Apply for Membership"
-        primaryButtonLink="/membership/apply"
+        primaryButtonLink="/membership#apply"
         secondaryButtonText="Management Team"
         secondaryButtonLink="/about/management-team"
       />
