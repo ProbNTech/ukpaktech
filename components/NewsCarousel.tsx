@@ -1,10 +1,11 @@
 "use client";
 
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import type { Swiper as SwiperClass } from "swiper";
+import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
-import "swiper/css/navigation";
 
 import { NewsCard, NewsCardProps } from "./NewsCard";
 
@@ -17,29 +18,25 @@ interface NewsCarouselProps {
 }
 
 export default function NewsCarousel({ articles, light = false, cta }: NewsCarouselProps) {
+  const swiperRef = useRef<SwiperClass | null>(null);
+
   return (
     <div className="relative">
 
       <Swiper
-        modules={[Navigation, Autoplay]}
+        onSwiper={(s) => (swiperRef.current = s)}
+        modules={[Autoplay]}
         spaceBetween={24}
         slidesPerView={1}
         loop={true}
-
         autoplay={{
           delay: 4500,
           disableOnInteraction: false,
-          pauseOnMouseEnter: true
+          pauseOnMouseEnter: true,
         }}
-
-        navigation={{
-          nextEl: ".news-next",
-          prevEl: ".news-prev"
-        }}
-
         breakpoints={{
           640: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 }
+          1024: { slidesPerView: 3 },
         }}
       >
         {articles.map((article, i) => (
@@ -55,8 +52,10 @@ export default function NewsCarousel({ articles, light = false, cta }: NewsCarou
 
         <div className="flex gap-3 shrink-0">
           <button
+            type="button"
             aria-label="Previous slide"
-            className="news-prev group w-11 h-11 flex items-center justify-center rounded-full bg-[#22C55E] shadow-md hover:bg-[#16a34a] hover:scale-105 transition-[transform,background-color] duration-300 ease-out"
+            onClick={() => swiperRef.current?.slidePrev()}
+            className="group w-11 h-11 flex items-center justify-center rounded-full bg-[#22C55E] shadow-md hover:bg-[#16a34a] hover:scale-105 transition-[transform,background-color] duration-300 ease-out"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -71,8 +70,10 @@ export default function NewsCarousel({ articles, light = false, cta }: NewsCarou
           </button>
 
           <button
+            type="button"
             aria-label="Next slide"
-            className="news-next group w-11 h-11 flex items-center justify-center rounded-full bg-[#22C55E] shadow-md hover:bg-[#16a34a] hover:scale-105 transition-[transform,background-color] duration-300 ease-out"
+            onClick={() => swiperRef.current?.slideNext()}
+            className="group w-11 h-11 flex items-center justify-center rounded-full bg-[#22C55E] shadow-md hover:bg-[#16a34a] hover:scale-105 transition-[transform,background-color] duration-300 ease-out"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
