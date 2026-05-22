@@ -54,11 +54,12 @@ export function Footer() {
                 {/* Registration */}
                 <div className="mb-7 p-4 rounded-lg bg-white/10 backdrop-blur-sm border-l-4 border-[#22C55E]">
                   <p className="text-white font-semibold text-base leading-relaxed drop-shadow-md">
-                    UK&ndash;Pakistan Trade and Investment Board Registration Number:{" "}
-                    <span className="text-[#22C55E] font-bold">..</span>
+                    Registered in England as UK&ndash;Pakistan Trade and Investment Board Ltd
                   </p>
                   <p className="text-white font-semibold text-base leading-relaxed mt-1 drop-shadow-md">
-                    T/A as UK&ndash;Pakistan Tech Forum (UPTECH)
+                    Registeration No.{" "}
+                    <span className="text-[#22C55E] font-bold">15417151</span>
+                    {" "}&middot; T/A UK&ndash;Pakistan Tech Forum (UPTECH)
                   </p>
                 </div>
 
