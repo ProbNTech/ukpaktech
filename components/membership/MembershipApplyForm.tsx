@@ -86,6 +86,7 @@ interface FormData {
   personName: string;
   personJobTitle: string;
   personEmail: string;
+  personPhone: string;
   personNationality: string;
   termsAccepted: boolean;
   membershipTermsAccepted: boolean;
@@ -109,6 +110,7 @@ const initialFormData: FormData = {
   personName: "",
   personJobTitle: "",
   personEmail: "",
+  personPhone: "",
   personNationality: "",
   termsAccepted: false,
   membershipTermsAccepted: false,
@@ -233,9 +235,12 @@ export default function MembershipApplyForm() {
       newErrors.sectors = "Please select at least one sector or specify other";
     }
 
-    if (formData.personEmail && !isValidEmail(formData.personEmail)) {
-      newErrors.personEmail = "Please enter a valid email address";
-    }
+    if (!formData.personName.trim()) newErrors.personName = "Name is required";
+    if (!formData.personJobTitle.trim()) newErrors.personJobTitle = "Job title is required";
+    if (!formData.personEmail.trim()) newErrors.personEmail = "Email is required";
+    else if (!isValidEmail(formData.personEmail)) newErrors.personEmail = "Please enter a valid email address";
+    if (!formData.personPhone.trim()) newErrors.personPhone = "Phone number is required";
+    else if (!isValidPhone(formData.personPhone)) newErrors.personPhone = "Please enter a valid phone number";
 
     if (!formData.termsAccepted) newErrors.termsAccepted = "You must accept the terms and conditions";
     if (!formData.membershipTermsAccepted) newErrors.membershipTermsAccepted = "You must accept the membership terms";
@@ -564,7 +569,7 @@ export default function MembershipApplyForm() {
                       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                         <div data-field="orgPhone">
                           <label className="block text-sm font-semibold text-[#334155] mb-2">
-                            Phone Number <span className="text-[#C41E3A]">*</span>
+                            Mobile / Phone Number <span className="text-[#C41E3A]">*</span>
                           </label>
                           <input
                             type="tel"
@@ -712,12 +717,13 @@ export default function MembershipApplyForm() {
                       index="03"
                       icon={UserRound}
                       title="Your Details"
-                      hint="— all optional"
                       color="#C41E3A"
                     />
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label className="block text-sm font-semibold text-[#334155] mb-2">Name</label>
+                      <div data-field="personName">
+                        <label className="block text-sm font-semibold text-[#334155] mb-2">
+                          Name <span className="text-[#C41E3A]">*</span>
+                        </label>
                         <input
                           type="text"
                           value={formData.personName}
@@ -725,9 +731,12 @@ export default function MembershipApplyForm() {
                           placeholder="Your full name"
                           className={inputClass("personName")}
                         />
+                        <FieldError field="personName" />
                       </div>
-                      <div>
-                        <label className="block text-sm font-semibold text-[#334155] mb-2">Job Title</label>
+                      <div data-field="personJobTitle">
+                        <label className="block text-sm font-semibold text-[#334155] mb-2">
+                          Job Title <span className="text-[#C41E3A]">*</span>
+                        </label>
                         <input
                           type="text"
                           value={formData.personJobTitle}
@@ -735,9 +744,12 @@ export default function MembershipApplyForm() {
                           placeholder="e.g. CEO, Managing Director"
                           className={inputClass("personJobTitle")}
                         />
+                        <FieldError field="personJobTitle" />
                       </div>
                       <div data-field="personEmail">
-                        <label className="block text-sm font-semibold text-[#334155] mb-2">Email</label>
+                        <label className="block text-sm font-semibold text-[#334155] mb-2">
+                          Email <span className="text-[#C41E3A]">*</span>
+                        </label>
                         <input
                           type="email"
                           value={formData.personEmail}
@@ -746,6 +758,19 @@ export default function MembershipApplyForm() {
                           className={inputClass("personEmail")}
                         />
                         <FieldError field="personEmail" />
+                      </div>
+                      <div data-field="personPhone">
+                        <label className="block text-sm font-semibold text-[#334155] mb-2">
+                          Mobile / Phone Number <span className="text-[#C41E3A]">*</span>
+                        </label>
+                        <input
+                          type="tel"
+                          value={formData.personPhone}
+                          onChange={(e) => updateField("personPhone", e.target.value)}
+                          placeholder="+44 7XXX XXXXXX"
+                          className={inputClass("personPhone")}
+                        />
+                        <FieldError field="personPhone" />
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-[#334155] mb-2">Nationality</label>

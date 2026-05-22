@@ -38,6 +38,8 @@ const HEADERS = [
   "Terms Accepted",
   "Membership Terms Accepted",
   "Arbitration Accepted",
+  // Added later — appended to preserve existing column alignment
+  "Contact Phone",
 ];
 
 export async function POST(req: NextRequest) {
@@ -93,6 +95,8 @@ export async function POST(req: NextRequest) {
       body.termsAccepted ? "Yes" : "No",
       body.membershipTermsAccepted ? "Yes" : "No",
       body.arbitrationAccepted ? "Yes" : "No",
+      // Added later — appended to preserve existing column alignment
+      body.personPhone?.trim() || "",
     ];
 
     await appendRow(SHEET_ID, TAB_NAME, HEADERS, values);
