@@ -115,25 +115,25 @@ export default function Home() {
               align="center"
             />
 
-            {/* Row 1 — For UK companies */}
-            <div id="for-uk-companies" className="scroll-mt-24">
-              <WhatWeDoCards
-                items={ukServicesData}
-                eyebrow="Services"
-                audience="UK companies"
-                context="Engaging Pakistan's technology base — research, hiring, market entry, and verified sourcing."
-                accentColor="#2563EB"
-              />
-            </div>
-
-            {/* Row 2 — For Pakistani companies */}
-            <div id="for-pakistani-companies" className="mt-14 lg:mt-16 scroll-mt-24">
+            {/* Row 1 — For Pakistani companies */}
+            <div id="for-pakistani-companies" className="scroll-mt-24">
               <WhatWeDoCards
                 items={pakistanServicesData}
                 eyebrow="Services"
                 audience="Pakistani companies"
                 context="Reaching UK and European markets — marketing, sales, hiring, and growth capital."
                 accentColor="#22C55E"
+              />
+            </div>
+
+            {/* Row 2 — For UK companies */}
+            <div id="for-uk-companies" className="mt-14 lg:mt-16 scroll-mt-24">
+              <WhatWeDoCards
+                items={ukServicesData}
+                eyebrow="Services"
+                audience="UK companies"
+                context="Engaging Pakistan's technology base — research, hiring, market entry, and verified sourcing."
+                accentColor="#2563EB"
               />
             </div>
           </AnimatedSection>

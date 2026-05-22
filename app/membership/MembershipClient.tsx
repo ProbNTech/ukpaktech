@@ -433,28 +433,30 @@ export default function MembershipClient() {
         </AnimatedSection>
       </Section>
 
-      {/* ── Membership Tiers ── */}
-      <Section variant="light" id="tiers">
-        <AnimatedSection>
-          <SectionHeader label="Membership Levels" title="Membership Tiers & Benefits" color="blue" subtitle="Choose the membership tier that best fits your organisation and goals." />
+      {/* ── Membership Tiers (hidden) ── */}
+      <div className="hidden" aria-hidden="true">
+        <Section variant="light" id="tiers">
+          <AnimatedSection>
+            <SectionHeader label="Membership Levels" title="Membership Tiers & Benefits" color="blue" subtitle="Choose the membership tier that best fits your organisation and goals." />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-            {membershipTiers.slice(0, 3).map((tier, index) => (
-              <TierCard key={index} tier={tier} index={index} shouldReduceMotion={shouldReduceMotion} />
-            ))}
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-            {membershipTiers.slice(3, 6).map((tier, index) => (
-              <TierCard key={index + 3} tier={tier} index={index + 3} shouldReduceMotion={shouldReduceMotion} />
-            ))}
-          </div>
-          <div className="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
-            {membershipTiers.slice(6).map((tier, index) => (
-              <TierCard key={index + 6} tier={tier} index={index + 6} shouldReduceMotion={shouldReduceMotion} />
-            ))}
-          </div>
-        </AnimatedSection>
-      </Section>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+              {membershipTiers.slice(0, 3).map((tier, index) => (
+                <TierCard key={index} tier={tier} index={index} shouldReduceMotion={shouldReduceMotion} />
+              ))}
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+              {membershipTiers.slice(3, 6).map((tier, index) => (
+                <TierCard key={index + 3} tier={tier} index={index + 3} shouldReduceMotion={shouldReduceMotion} />
+              ))}
+            </div>
+            <div className="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
+              {membershipTiers.slice(6).map((tier, index) => (
+                <TierCard key={index + 6} tier={tier} index={index + 6} shouldReduceMotion={shouldReduceMotion} />
+              ))}
+            </div>
+          </AnimatedSection>
+        </Section>
+      </div>
 
       {/* ── Who Can Become Members ── */}
       <Section variant="alt">
