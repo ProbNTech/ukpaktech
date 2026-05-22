@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface WhatWeDoItem {
   id: number;
@@ -25,6 +26,8 @@ interface WhatWeDoCardsProps {
   context?: string;
   /** Accent colour applied to the rule, eyebrow, and audience name. */
   accentColor?: string;
+  /** When true, the header text uses light colors for use on dark backgrounds. */
+  light?: boolean;
 }
 
 /* ────────────────────────────────────────────
@@ -32,67 +35,87 @@ interface WhatWeDoCardsProps {
    gradient glass background, premium shadows,
    and smooth hover lift
    ──────────────────────────────────────────── */
-function Card({ item }: { item: WhatWeDoItem; index: number }) {
+function Card({ item, index }: { item: WhatWeDoItem; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [glowPos, setGlowPos] = useState({ x: 50, y: 50 });
-  const [isHovered, setIsHovered] = useState(false);
-  const [isLinkHovered, setIsLinkHovered] = useState(false);
+  const surfaceRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number | null>(null);
 
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!cardRef.current) return;
-      const rect = cardRef.current.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
-      setGlowPos({ x: x * 100, y: y * 100 });
-    },
-    [],
-  );
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (rafRef.current !== null) return;
+    const card = cardRef.current;
+    const glow = glowRef.current;
+    if (!card || !glow) return;
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = null;
+      const rect = card.getBoundingClientRect();
+      const x = ((clientX - rect.left) / rect.width) * 100;
+      const y = ((clientY - rect.top) / rect.height) * 100;
+      glow.style.setProperty("--gx", `${x}%`);
+      glow.style.setProperty("--gy", `${y}%`);
+    });
+  }, []);
 
-  const handleMouseLeave = useCallback(() => {
-    setIsHovered(false);
+  const handleSurfaceEnter = useCallback(() => {
+    const el = surfaceRef.current;
+    if (!el) return;
+    el.style.borderColor = `${item.color}30`;
+    el.style.boxShadow = `0 20px 60px -15px ${item.color}25, 0 8px 24px -8px rgba(0,0,0,0.08)`;
+  }, [item.color]);
+
+  const handleSurfaceLeave = useCallback(() => {
+    const el = surfaceRef.current;
+    if (!el) return;
+    el.style.borderColor = `${item.color}15`;
+    el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03)";
+  }, [item.color]);
+
+  useEffect(() => {
+    return () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   return (
-    <div
+    <motion.div
       ref={cardRef}
       className="group relative"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, delay: Math.min(index * 0.08, 0.4), ease: [0.22, 1, 0.36, 1] }}
       onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      onMouseEnter={() => setIsHovered(true)}
     >
       {/* ── Card surface ── */}
       <div
-        className="relative rounded-2xl overflow-hidden p-8 lg:p-10 h-full"
+        ref={surfaceRef}
+        className="relative h-full rounded-2xl overflow-hidden p-8 lg:p-10 transition-[transform,box-shadow,border-color] duration-[400ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:-translate-y-1.5 [transform:translateZ(0)]"
         style={{
           background: `linear-gradient(135deg, white 60%, ${item.color}08 100%)`,
-          border: `1px solid ${item.color}${isHovered ? "30" : "15"}`,
-          backdropFilter: isHovered ? "blur(8px)" : "none",
-          WebkitBackdropFilter: isHovered ? "blur(8px)" : "none",
-          transform: isHovered ? "translateY(-6px)" : "translateY(0)",
-          boxShadow: isHovered
-            ? `0 20px 60px -15px ${item.color}25, 0 8px 24px -8px rgba(0,0,0,0.08)`
-            : "0 4px 20px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03)",
-          transition: "all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+          border: `1px solid ${item.color}15`,
+          boxShadow: "0 4px 20px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03)",
         }}
+        onMouseEnter={handleSurfaceEnter}
+        onMouseLeave={handleSurfaceLeave}
       >
         {/* Cursor-following radial glow */}
         <div
-          className="absolute inset-0 rounded-2xl pointer-events-none"
+          ref={glowRef}
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{
-            background: `radial-gradient(500px circle at ${glowPos.x}% ${glowPos.y}%, ${item.color}14 0%, transparent 50%)`,
-            opacity: isHovered ? 1 : 0,
-            transition: "opacity 0.3s ease",
+            background: `radial-gradient(500px circle at var(--gx, 50%) var(--gy, 50%), ${item.color}14 0%, transparent 50%)`,
           }}
         />
 
         {/* Top accent gradient bar */}
         <div
-          className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl"
+          aria-hidden="true"
+          className="pointer-events-none absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-300"
           style={{
             background: `linear-gradient(90deg, ${item.color}, ${item.color}60, transparent)`,
-            opacity: isHovered ? 1 : 0.45,
-            transition: "opacity 0.4s ease",
           }}
         />
 
@@ -131,32 +154,24 @@ function Card({ item }: { item: WhatWeDoItem; index: number }) {
         {/* ── CTA link with animated underline ── */}
         <Link
           href={item.href}
-          className="inline-flex items-center gap-2 font-bold text-[15px]"
+          className="group/link inline-flex items-center gap-2 font-bold text-[15px]"
           style={{ color: item.color }}
-          onMouseEnter={() => setIsLinkHovered(true)}
-          onMouseLeave={() => setIsLinkHovered(false)}
         >
           <span className="relative">
             Explore
             <span
-              className="absolute -bottom-0.5 left-0 h-[2px] rounded-full"
-              style={{
-                background: item.color,
-                width: isLinkHovered ? "100%" : "0%",
-                transition: "width 0.3s ease",
-              }}
+              aria-hidden="true"
+              className="absolute -bottom-0.5 left-0 h-[2px] w-0 group-hover/link:w-full rounded-full transition-[width] duration-300 ease-out"
+              style={{ background: item.color }}
             />
           </span>
           <ArrowRight
             size={18}
-            style={{
-              transform: isLinkHovered ? "translateX(6px)" : "translateX(0)",
-              transition: "transform 0.2s ease",
-            }}
+            className="transition-transform duration-200 ease-out group-hover/link:translate-x-1.5"
           />
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -169,6 +184,7 @@ export default function WhatWeDoCards({
   audience,
   context,
   accentColor,
+  light = false,
 }: WhatWeDoCardsProps) {
   const hasHeader = Boolean((eyebrow || audience) && accentColor);
 
@@ -192,13 +208,13 @@ export default function WhatWeDoCards({
             </div>
           )}
           {audience && (
-            <h3 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[2rem] text-[#1C1F2E] leading-[1.15] tracking-tight">
+            <h3 className={`font-heading font-extrabold text-2xl sm:text-3xl lg:text-[2rem] leading-[1.15] tracking-tight ${light ? "text-white" : "text-[#1C1F2E]"}`}>
               For{" "}
               <span style={{ color: accentColor }}>{audience}</span>
             </h3>
           )}
           {context && (
-            <p className="mt-3 text-[#5A5F72] text-base sm:text-lg leading-relaxed max-w-2xl">
+            <p className={`mt-3 text-base sm:text-lg leading-relaxed max-w-2xl ${light ? "text-gray-300" : "text-[#5A5F72]"}`}>
               {context}
             </p>
           )}

@@ -55,8 +55,14 @@ export default function FeaturedPartnersCarousel() {
   if (homepagePartners.length === 0) return null;
 
   return (
-    <section className="relative z-[1] py-16 lg:py-20 bg-white">
-      <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
+    <section
+      className="relative z-[1] py-16 lg:py-20 overflow-hidden"
+      style={{
+        background:
+          "radial-gradient(900px circle at 0% 0%, rgba(37,99,235,0.07), transparent 50%), radial-gradient(800px circle at 100% 100%, rgba(34,197,94,0.05), transparent 50%), #FFFFFF",
+      }}
+    >
+      <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
         <AnimatedSection animation="blur-in">
           <SectionHeader
             label="Our partners"

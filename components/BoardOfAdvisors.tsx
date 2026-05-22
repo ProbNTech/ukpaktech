@@ -81,7 +81,13 @@ export default function BoardOfAdvisors() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative py-20 lg:py-28 bg-white overflow-hidden">
+    <section
+      className="relative py-20 lg:py-28 overflow-hidden"
+      style={{
+        background:
+          "radial-gradient(1000px circle at 50% 0%, rgba(37,99,235,0.07), transparent 50%), radial-gradient(800px circle at 10% 100%, rgba(99,102,241,0.05), transparent 50%), radial-gradient(700px circle at 90% 100%, rgba(34,197,94,0.04), transparent 50%), #FFFFFF",
+      }}
+    >
       {/* Subtle dot-grid texture */}
       <div
         className="absolute inset-0 opacity-[0.03]"

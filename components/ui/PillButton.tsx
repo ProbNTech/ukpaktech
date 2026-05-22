@@ -4,14 +4,18 @@ import { ChevronRight } from "lucide-react";
 interface PillButtonProps {
   href: string;
   children: React.ReactNode;
-  variant?: "dark" | "blue";
+  variant?: "dark" | "blue" | "white";
 }
 
 export function PillButton({ href, children, variant = "dark" }: PillButtonProps) {
-  const base = "inline-flex items-center gap-2 px-7 py-3 rounded-full text-base font-semibold transition-colors duration-300";
-  const styles = variant === "blue"
-    ? "bg-[#2563EB] text-white hover:bg-[#1d4ed8]"
-    : "bg-[#1C1F2E] text-white hover:bg-[#2563EB]";
+  const base =
+    "inline-flex items-center gap-2 px-7 py-3 rounded-full text-base font-semibold transition-colors duration-300 shadow-sm";
+  const styles =
+    variant === "blue"
+      ? "bg-[#2563EB] text-white hover:bg-[#1d4ed8]"
+      : variant === "white"
+      ? "bg-white text-[#1C1F2E] hover:bg-[#22C55E] hover:text-white"
+      : "bg-[#1C1F2E] text-white hover:bg-[#2563EB]";
 
   return (
     <Link href={href} className={`${base} ${styles}`}>

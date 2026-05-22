@@ -325,7 +325,7 @@ export default function PartnerSolutionsSection() {
 
   return (
     <section
-      className="relative z-[1] pt-16 lg:pt-20 pb-2 lg:pb-3 bg-[#eef1f5] overflow-hidden"
+      className="relative z-[1] py-20 lg:py-28 bg-gradient-to-b from-[#f0f7ff] via-[#e8f1fb] to-[#dfeaf7] overflow-hidden"
       aria-labelledby="partner-solutions-heading"
     >
       <div

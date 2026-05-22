@@ -163,8 +163,15 @@ export default function HomeEventsSection() {
   const catColors: Record<string, string> = { All: "#2563EB", London: "#2563EB", Pakistan: "#22C55E", Summit: "#2563EB", Expo: "#22C55E", Conference: "#C41E3A" };
 
   return (
-    <section className="relative z-[1] py-20 lg:py-28 bg-white" aria-labelledby="events-heading">
-      <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
+    <section
+      className="relative z-[1] py-20 lg:py-28 overflow-hidden"
+      style={{
+        background:
+          "radial-gradient(900px circle at 0% 0%, rgba(37,99,235,0.07), transparent 50%), radial-gradient(800px circle at 100% 100%, rgba(34,197,94,0.06), transparent 50%), #F8FAFC",
+      }}
+      aria-labelledby="events-heading"
+    >
+      <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
         <AnimatedSection>
           <SectionLabel
             label="Attend an Event"

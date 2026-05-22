@@ -33,9 +33,10 @@ const FeaturedPartnersCarousel = dynamic(() => import("@/components/FeaturedPart
   loading: () => <div className="py-20 bg-white" aria-busy="true"><div className="px-6 sm:px-10 lg:px-16 xl:px-20"><div className="h-48 bg-[#f7f8fa] rounded-xl animate-pulse" /></div></div>,
 });
 const PartnerSolutionsSection = dynamic(() => import("@/components/PartnerSolutionsSection"), {
-  loading: () => <div className="py-20 bg-[#eef1f5]" aria-busy="true"><div className="px-6 sm:px-10 lg:px-16 xl:px-20"><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{Array.from({ length: 3 }).map((_, i) => <div key={i} className="h-96 bg-white rounded-2xl animate-pulse" />)}</div></div></div>,
+  loading: () => <div className="py-20 bg-gradient-to-b from-[#f0f7ff] via-[#e8f1fb] to-[#dfeaf7]" aria-busy="true"><div className="px-6 sm:px-10 lg:px-16 xl:px-20"><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{Array.from({ length: 3 }).map((_, i) => <div key={i} className="h-96 bg-white rounded-2xl animate-pulse" />)}</div></div></div>,
 });
 import HomeEventsSection from "@/components/events/HomeEventsSection";
+import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
 
 const homepageArticles = articles.slice(0, 15);
 
@@ -63,11 +64,19 @@ const pakistanServicesData = [
 export default function Home() {
   return (
     <div className="relative">
+      <ScrollProgressBar />
       {/* 1. HERO */}
       <Hero />
 
       {/* 2. ABOUT */}
-      <section className="relative py-20 lg:py-28 bg-white overflow-hidden" aria-labelledby="about-heading">
+      <section
+        className="relative py-20 lg:py-28 overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(900px circle at 10% -10%, rgba(37,99,235,0.08), transparent 50%), radial-gradient(800px circle at 95% 110%, rgba(34,197,94,0.07), transparent 50%), #FFFFFF",
+        }}
+        aria-labelledby="about-heading"
+      >
         <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #1C1F2E 0.5px, transparent 0.5px)", backgroundSize: "24px 24px" }} />
         <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
@@ -104,7 +113,15 @@ export default function Home() {
       <MembershipSection />
 
       {/* 4. OUR SERVICES — bilateral two-row grid */}
-      <section id="services" className="relative z-[1] py-20 lg:py-28 bg-white scroll-mt-24" aria-labelledby="services-heading">
+      <section
+        id="services"
+        className="relative z-[1] py-20 lg:py-28 scroll-mt-24 overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(1100px circle at 0% 0%, rgba(34,197,94,0.07), transparent 55%), radial-gradient(1000px circle at 100% 100%, rgba(37,99,235,0.08), transparent 55%), radial-gradient(700px circle at 50% 50%, rgba(255,255,255,0.6), transparent 70%), #F8FAFC",
+        }}
+        aria-labelledby="services-heading"
+      >
         <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
             <SectionLabel
@@ -141,10 +158,18 @@ export default function Home() {
       </section>
 
       {/* 5. MORE FROM UPTECH */}
-      <section className="relative z-[1] py-20 lg:py-28 bg-[#eef1f5]" aria-labelledby="more-heading">
+      <section
+        className="relative z-[1] py-20 lg:py-28 overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(1100px circle at 0% 0%, rgba(37,99,235,0.22), transparent 50%), radial-gradient(900px circle at 100% 100%, rgba(34,197,94,0.15), transparent 50%), radial-gradient(700px circle at 50% 50%, rgba(99,102,241,0.08), transparent 70%), #0f1a3a",
+        }}
+        aria-labelledby="more-heading"
+      >
+        <div className="absolute inset-0 opacity-[0.04]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
         <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
-            <SectionLabel label="Discover More" title="More from UPTECH" body="Platforms, meeting facilities, organisational structure, and member resources." color="#22C55E" align="center" />
+            <SectionLabel label="Discover More" title="More from UPTECH" body="Platforms, meeting facilities, organisational structure, and member resources." color="#86efac" align="center" light />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { href: "/products", icon: ProductsIcon, color: "#2563EB", title: "Our Products", desc: "People AI, TechMart Global, and Trusted Partner Certification — the products that operate beneath the services." },
@@ -164,32 +189,60 @@ export default function Home() {
                   >
                   <Link
                     href={card.href}
-                    className="group relative flex h-full flex-col bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60 p-6 lg:p-7 hover:-translate-y-2 transition-all duration-300 overflow-hidden"
-                    style={{ borderTop: `2px solid ${card.color}`, boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
-                    onMouseEnter={(e) => { e.currentTarget.style.boxShadow = `0 12px 32px -8px ${card.color}33`; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)'; }}
+                    className="group relative flex h-full flex-col rounded-2xl p-6 lg:p-7 overflow-hidden hover:-translate-y-2 transition-[transform,box-shadow,background] duration-300 ease-out [transform:translateZ(0)]"
+                    style={{
+                      background: "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.05)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.boxShadow = `0 20px 50px -10px ${card.color}55, 0 0 0 1px ${card.color}30 inset, inset 0 1px 0 rgba(255,255,255,0.1)`;
+                      e.currentTarget.style.background = `linear-gradient(180deg, ${card.color}1A 0%, rgba(255,255,255,0.03) 100%)`;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.05)";
+                      e.currentTarget.style.background = "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)";
+                    }}
                   >
-                    {/* Gradient hover overlay */}
+                    {/* Top accent gradient bar */}
                     <div
-                      className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{ background: `linear-gradient(135deg, ${card.color}08 0%, ${card.color}03 100%)` }}
+                      className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                      aria-hidden="true"
+                      style={{ background: `linear-gradient(90deg, ${card.color}, ${card.color}80, transparent)` }}
+                    />
+                    {/* Radial accent glow on hover */}
+                    <div
+                      className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      aria-hidden="true"
+                      style={{ background: `radial-gradient(400px circle at top left, ${card.color}25 0%, transparent 55%)` }}
                     />
                     <div className="relative flex flex-1 flex-col">
                       <div className="mb-4 flex items-center">
-                        <div className="rounded-xl p-2.5 group-hover:scale-105 transition-transform duration-300" style={{ backgroundColor: `${card.color}0F` }}>
+                        <div
+                          className="rounded-xl p-2.5 group-hover:scale-105 transition-all duration-300"
+                          style={{
+                            backgroundColor: `${card.color}22`,
+                            boxShadow: `0 0 0 1px ${card.color}33 inset`,
+                          }}
+                        >
                           <CardIcon className="w-[100px] h-[100px]" />
                         </div>
                       </div>
                       <div className="flex items-start justify-between gap-2">
                         <h3
-                          className="font-heading font-bold text-[#1C1F2E] text-[1.15rem] mb-2 transition-colors duration-300 group-hover:text-[var(--card-color)]"
+                          className="font-heading font-bold text-white text-[1.15rem] mb-2 transition-colors duration-300 group-hover:text-[var(--card-color)]"
                           style={{ "--card-color": card.color } as React.CSSProperties}
                         >
                           {card.title}
                         </h3>
-                        <ArrowUpRight className="w-5 h-5 shrink-0 mt-1 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" style={{ color: card.color }} />
+                        <ArrowUpRight
+                          className="w-5 h-5 shrink-0 mt-1 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                          style={{ color: card.color }}
+                        />
                       </div>
-                      <p className="text-[#5A5F72] text-sm leading-relaxed">{card.desc}</p>
+                      <p className="text-gray-300/90 text-sm leading-relaxed">{card.desc}</p>
                     </div>
                   </Link>
                   </motion.div>
@@ -210,7 +263,14 @@ export default function Home() {
       <WhatDrivesUs />
 
       {/* 9. IMPACT STATS — Corridor Signals */}
-      <section className="relative z-[1] py-20 lg:py-24 bg-[#0f1a3a] overflow-hidden" aria-labelledby="impact-heading">
+      <section
+        className="relative z-[1] py-20 lg:py-24 overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(1000px circle at 100% 0%, rgba(96,165,250,0.20), transparent 50%), radial-gradient(900px circle at 0% 100%, rgba(34,197,94,0.13), transparent 50%), #0f1a3a",
+        }}
+        aria-labelledby="impact-heading"
+      >
         <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
         <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
@@ -221,7 +281,14 @@ export default function Home() {
       </section>
 
       {/* 10. TECH MARKET OVERVIEW — Market Intelligence */}
-      <section className="relative z-[1] py-20 lg:py-28 bg-[#eef1f5]" aria-labelledby="market-heading">
+      <section
+        className="relative z-[1] py-20 lg:py-28 overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(900px circle at 5% 0%, rgba(37,99,235,0.08), transparent 50%), radial-gradient(800px circle at 95% 100%, rgba(196,30,58,0.06), transparent 50%), radial-gradient(700px circle at 50% 50%, rgba(34,197,94,0.04), transparent 60%), #F8FAFC",
+        }}
+        aria-labelledby="market-heading"
+      >
         <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
             <SectionLabel label="Market Intelligence" title="UK, European & Pakistani tech markets" color="#2563EB" />
@@ -290,21 +357,30 @@ export default function Home() {
       <BoardOfAdvisors />
 
       {/* 12. NEWS & INSIGHTS */}
-      <section className="relative z-[1] py-20 lg:py-28 bg-white" aria-labelledby="news-heading">
-        <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
+      <section
+        className="relative z-[1] py-20 lg:py-28 overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(1000px circle at 0% 0%, rgba(134,239,172,0.13), transparent 50%), radial-gradient(900px circle at 100% 100%, rgba(37,99,235,0.18), transparent 50%), #0f1a3a",
+        }}
+        aria-labelledby="news-heading"
+      >
+        <div className="absolute inset-0 opacity-[0.04]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
+        <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
             <div className="grid lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-4 flex flex-col justify-center">
-                <SectionLabel label="Stay Informed" title="News & Insights" color="#22C55E" />
-                <p className="text-[#5A5F72] text-sm sm:text-base leading-relaxed">
+                <SectionLabel label="Stay Informed" title="News & Insights" color="#86efac" light />
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                   Policy developments, deal announcements, and ecosystem updates relevant to the UK–Pakistan technology corridor — useful for members on either side.
                 </p>
               </div>
               <div className="lg:col-span-8 w-full min-w-0">
-                <NewsCarousel articles={homepageArticles} />
-                <div className="flex justify-center mt-8">
-                  <PillButton href="/events">View all news & events</PillButton>
-                </div>
+                <NewsCarousel
+                  articles={homepageArticles}
+                  light
+                  cta={<PillButton href="/events" variant="white">View all news & events</PillButton>}
+                />
               </div>
             </div>
           </AnimatedSection>
@@ -312,11 +388,18 @@ export default function Home() {
       </section>
 
       {/* 13. EVENT HIGHLIGHTS */}
-      <section className="relative z-[1] py-20 lg:py-24 bg-[#0f1a3a] overflow-hidden" aria-labelledby="highlights-heading">
-        <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
+      <section
+        className="relative z-[1] py-20 lg:py-24 overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(800px circle at 90% 0%, rgba(37,99,235,0.07), transparent 50%), radial-gradient(700px circle at 10% 100%, rgba(196,30,58,0.05), transparent 50%), #FFFFFF",
+        }}
+        aria-labelledby="highlights-heading"
+      >
+        <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #1C1F2E 0.5px, transparent 0.5px)", backgroundSize: "24px 24px" }} />
         <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection>
-            <SectionLabel label="Watch & Learn" title="Recent Event Highlights" body="Recordings from UPTECH-hosted and UPTECH-participating events on both sides of the corridor." color="#60a5fa" align="center" light />
+            <SectionLabel label="Watch & Learn" title="Recent Event Highlights" body="Recordings from UPTECH-hosted and UPTECH-participating events on both sides of the corridor." color="#2563EB" align="center" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { id: "NnKZrypT_tE", title: "Indus AI Week — Digital Future" },
@@ -332,10 +415,10 @@ export default function Home() {
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <div className="rounded-xl border border-white/10 overflow-hidden shadow-lg shadow-black/20">
+                  <div className="rounded-xl border border-[#E5E7EB] overflow-hidden shadow-lg shadow-black/5">
                     <LiteYouTube id={video.id} title={video.title} />
                   </div>
-                  <h3 className="font-semibold text-sm mt-4 text-white/85 leading-snug">{video.title}</h3>
+                  <h3 className="font-semibold text-sm mt-4 text-[#1C1F2E] leading-snug">{video.title}</h3>
                 </motion.div>
               ))}
             </div>
@@ -347,7 +430,14 @@ export default function Home() {
       <HomeEventsSection />
 
       {/* 15. PAKISTAN ECOSYSTEM NETWORK */}
-      <section className="relative z-[1] py-14 lg:py-20 bg-[#0f1a3a] overflow-hidden" aria-labelledby="network-heading">
+      <section
+        className="relative z-[1] py-14 lg:py-20 overflow-hidden"
+        style={{
+          background:
+            "radial-gradient(1000px circle at 50% 0%, rgba(34,197,94,0.16), transparent 55%), radial-gradient(700px circle at 0% 100%, rgba(96,165,250,0.12), transparent 50%), radial-gradient(700px circle at 100% 100%, rgba(196,30,58,0.10), transparent 50%), #0f1a3a",
+        }}
+        aria-labelledby="network-heading"
+      >
         <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
         <div className="relative text-center px-6 sm:px-10 lg:px-16 xl:px-20">
           <SectionLabel label="Pakistan ecosystem" title="Pakistan-side institutional stakeholders" body="Public and industry bodies that shape Pakistan's technology, trade, and regulatory environment — the policy surface UPTECH engages with on Pakistan's side of the corridor." color="#60a5fa" align="center" light />

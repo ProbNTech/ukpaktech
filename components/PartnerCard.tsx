@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Globe } from "lucide-react";
 import { LazyImage } from "@/components/ui/lazy-image";
@@ -29,34 +29,63 @@ interface PartnerCardProps {
 export function PartnerCard({ partner, index = 0, displayMode = "image" }: PartnerCardProps) {
   const theme = getTheme(partner.category);
   const cardRef = useRef<HTMLDivElement>(null);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const [glowPos, setGlowPos] = useState({ x: 50, y: 50 });
+  const surfaceRef = useRef<HTMLAnchorElement>(null);
+  const rafRef = useRef<number | null>(null);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = (e.clientY - rect.top) / rect.height;
-    setTilt({ x: (y - 0.5) * -6, y: (x - 0.5) * 6 });
-    setGlowPos({ x: x * 100, y: y * 100 });
+    if (rafRef.current !== null) return;
+    const card = cardRef.current;
+    const surface = surfaceRef.current;
+    if (!card || !surface) return;
+    const cx = e.clientX;
+    const cy = e.clientY;
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = null;
+      const rect = card.getBoundingClientRect();
+      const xNorm = (cx - rect.left) / rect.width;
+      const yNorm = (cy - rect.top) / rect.height;
+      surface.style.setProperty("--tx", `${(yNorm - 0.5) * -6}deg`);
+      surface.style.setProperty("--ty", `${(xNorm - 0.5) * 6}deg`);
+      surface.style.setProperty("--gx", `${xNorm * 100}%`);
+      surface.style.setProperty("--gy", `${yNorm * 100}%`);
+    });
+  }, []);
+
+  const handleMouseEnter = useCallback(() => {
+    const surface = surfaceRef.current;
+    if (surface) {
+      surface.style.transition = "transform 0.1s ease-out, box-shadow 0.4s ease";
+    }
+    setIsHovered(true);
   }, []);
 
   const handleMouseLeave = useCallback(() => {
-    setTilt({ x: 0, y: 0 });
+    const surface = surfaceRef.current;
+    if (surface) {
+      surface.style.transition = "transform 0.6s cubic-bezier(0.25,0.8,0.25,1), box-shadow 0.4s ease";
+      surface.style.setProperty("--tx", "0deg");
+      surface.style.setProperty("--ty", "0deg");
+    }
     setIsHovered(false);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   const initial = partner.name.charAt(0).toUpperCase();
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{
         duration: 0.5,
-        delay: index * 0.08,
+        delay: Math.min(index * 0.08, 0.4),
         ease: [0.22, 1, 0.36, 1],
       }}
     >
@@ -64,20 +93,23 @@ export function PartnerCard({ partner, index = 0, displayMode = "image" }: Partn
         ref={cardRef}
         className="group relative h-full"
         onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onMouseEnter={() => setIsHovered(true)}
         style={{ perspective: "900px" }}
       >
         <a
+          ref={surfaceRef}
           href={partner.href}
           target="_blank"
           rel="noopener noreferrer sponsored"
           className="relative flex flex-col h-full rounded-2xl overflow-hidden"
           style={{
-            transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) ${isHovered ? "translateY(-8px)" : ""}`,
-            transition: isHovered
-              ? "transform 0.1s ease-out, box-shadow 0.4s ease"
-              : "transform 0.6s cubic-bezier(.25,.8,.25,1), box-shadow 0.4s ease",
+            ["--tx" as string]: "0deg",
+            ["--ty" as string]: "0deg",
+            ["--gx" as string]: "50%",
+            ["--gy" as string]: "50%",
+            transform: `rotateX(var(--tx)) rotateY(var(--ty)) ${isHovered ? "translateY(-8px)" : "translateY(0)"}`,
+            transition: "transform 0.6s cubic-bezier(0.25,0.8,0.25,1), box-shadow 0.4s ease",
             transformStyle: "preserve-3d",
             background: "#fff",
             boxShadow: isHovered
@@ -87,21 +119,21 @@ export function PartnerCard({ partner, index = 0, displayMode = "image" }: Partn
         >
           {/* Top accent gradient bar */}
           <div
-            className="h-1 w-full shrink-0 transition-all duration-500"
+            className="h-1 w-full shrink-0 transition-[background] duration-500 ease-out"
             style={{
               background: isHovered ? theme.gradient : `linear-gradient(90deg, ${theme.glow}40, ${theme.glow}10)`,
             }}
           />
 
           {/* Cursor-following glow on hover */}
-          {isHovered && (
-            <div
-              className="absolute inset-0 pointer-events-none z-10 rounded-2xl"
-              style={{
-                background: `radial-gradient(400px circle at ${glowPos.x}% ${glowPos.y}%, ${theme.glow}08, transparent 50%)`,
-              }}
-            />
-          )}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            style={{
+              background: `radial-gradient(400px circle at var(--gx) var(--gy), ${theme.glow}08, transparent 50%)`,
+            }}
+          />
+
 
           {/* Image */}
           <div

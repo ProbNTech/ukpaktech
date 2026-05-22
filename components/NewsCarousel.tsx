@@ -10,9 +10,13 @@ import { NewsCard, NewsCardProps } from "./NewsCard";
 
 interface NewsCarouselProps {
   articles: NewsCardProps[];
+  /** When true, the cards render with light text for dark backgrounds. */
+  light?: boolean;
+  /** Optional CTA rendered on the left of the toolbar, opposite the prev/next arrows. */
+  cta?: React.ReactNode;
 }
 
-export default function NewsCarousel({ articles }: NewsCarouselProps) {
+export default function NewsCarousel({ articles, light = false, cta }: NewsCarouselProps) {
   return (
     <div className="relative">
 
@@ -40,49 +44,49 @@ export default function NewsCarousel({ articles }: NewsCarouselProps) {
       >
         {articles.map((article, i) => (
           <SwiperSlide key={article.slug}>
-            <NewsCard {...article} index={i} />
+            <NewsCard {...article} index={i} light={light} />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Buttons Bottom Left */}
+      {/* Toolbar — CTA + prev/next arrows grouped right */}
+      <div className="flex items-center justify-end gap-4 mt-8">
+        {cta && <div className="shrink-0">{cta}</div>}
 
-     <div className="flex justify-end gap-3 mt-6">
+        <div className="flex gap-3 shrink-0">
+          <button
+            aria-label="Previous slide"
+            className="news-prev group w-11 h-11 flex items-center justify-center rounded-full bg-[#22C55E] shadow-md hover:bg-[#16a34a] hover:scale-105 transition-[transform,background-color] duration-300 ease-out"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5 text-white transition-transform duration-300 group-hover:-translate-x-0.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
 
-  {/* Prev */}
-  <button aria-label="Previous slide" className="news-prev group w-11 h-11 flex items-center justify-center rounded-full bg-[#22C55E] shadow-md hover:scale-105 transition-all duration-300">
-    
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-5 h-5 text-white transition-transform duration-300 group-hover:-translate-x-0.5"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-    </svg>
-
-  </button>
-
-  {/* Next */}
-  <button aria-label="Next slide" className="news-next group w-11 h-11 flex items-center justify-center rounded-full bg-[#22C55E] shadow-md hover:scale-105 transition-all duration-300">
-
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-0.5"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-    </svg>
-
-  </button>
-
-</div>
-
+          <button
+            aria-label="Next slide"
+            className="news-next group w-11 h-11 flex items-center justify-center rounded-full bg-[#22C55E] shadow-md hover:bg-[#16a34a] hover:scale-105 transition-[transform,background-color] duration-300 ease-out"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-0.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
