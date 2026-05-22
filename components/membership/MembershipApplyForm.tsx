@@ -13,6 +13,16 @@ import {
   Layers,
   UserRound,
   ShieldCheck,
+  Users,
+  FileText,
+  Globe,
+  MapPin,
+  Phone,
+  MessageCircle,
+  Package,
+  Mail,
+  Briefcase,
+  Flag,
 } from "lucide-react";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -64,9 +74,11 @@ function citiesFor(country: string): string[] {
 
 /* ─── Shared styles ─── */
 const baseInputClass =
-  "w-full px-4 py-3.5 rounded-xl bg-white border text-[#0F172A] text-[15px] placeholder:text-[#94A3B8] focus:outline-none focus:ring-4 focus:ring-[#2563EB]/15 hover:border-[#94A3B8] transition-all duration-200 shadow-sm";
+  "w-full pl-11 pr-4 py-3.5 rounded-xl bg-white border text-[#0F172A] text-[15px] placeholder:text-[#94A3B8] focus:outline-none focus:ring-4 focus:ring-[#2563EB]/15 hover:border-[#94A3B8] transition-all duration-200 shadow-sm";
 const baseSelectClass =
-  "w-full px-4 py-3.5 rounded-xl bg-white border text-[#0F172A] text-[15px] focus:outline-none focus:ring-4 focus:ring-[#2563EB]/15 hover:border-[#94A3B8] transition-all duration-200 appearance-none cursor-pointer shadow-sm";
+  "w-full pl-11 pr-10 py-3.5 rounded-xl bg-white border text-[#0F172A] text-[15px] focus:outline-none focus:ring-4 focus:ring-[#2563EB]/15 hover:border-[#94A3B8] transition-all duration-200 appearance-none cursor-pointer shadow-sm";
+const baseTextareaClass =
+  "w-full pl-11 pr-4 py-3.5 rounded-xl bg-white border text-[#0F172A] text-[15px] placeholder:text-[#94A3B8] focus:outline-none focus:ring-4 focus:ring-[#2563EB]/15 hover:border-[#94A3B8] transition-all duration-200 shadow-sm";
 
 /* ─── Form data type ─── */
 interface FormData {
@@ -316,6 +328,27 @@ export default function MembershipApplyForm() {
         : "border-[#E2E8F0] focus:border-[#2563EB]"
     }`;
 
+  const textareaClass = (field: string) =>
+    `${baseTextareaClass} ${
+      errors[field]
+        ? "border-[#C41E3A] bg-[#FEF2F4] focus:ring-[#C41E3A]/15"
+        : "border-[#E2E8F0] focus:border-[#2563EB]"
+    }`;
+
+  const InputIcon = ({ icon: Icon }: { icon: React.ComponentType<{ className?: string; strokeWidth?: number }> }) => (
+    <Icon
+      className="absolute left-3.5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-[#94A3B8] pointer-events-none"
+      strokeWidth={1.75}
+    />
+  );
+
+  const TextareaIcon = ({ icon: Icon }: { icon: React.ComponentType<{ className?: string; strokeWidth?: number }> }) => (
+    <Icon
+      className="absolute left-3.5 top-4 w-[18px] h-[18px] text-[#94A3B8] pointer-events-none"
+      strokeWidth={1.75}
+    />
+  );
+
   const FieldError = ({ field }: { field: string }) => {
     if (!errors[field]) return null;
     return (
@@ -443,13 +476,16 @@ export default function MembershipApplyForm() {
                         <label className="block text-sm font-semibold text-[#334155] mb-2">
                           Organisation Name <span className="text-[#C41E3A]">*</span>
                         </label>
-                        <input
-                          type="text"
-                          value={formData.orgName}
-                          onChange={(e) => updateField("orgName", e.target.value)}
-                          placeholder="Enter your organisation name"
-                          className={inputClass("orgName")}
-                        />
+                        <div className="relative">
+                          <InputIcon icon={Building2} />
+                          <input
+                            type="text"
+                            value={formData.orgName}
+                            onChange={(e) => updateField("orgName", e.target.value)}
+                            placeholder="Enter your organisation name"
+                            className={inputClass("orgName")}
+                          />
+                        </div>
                         <FieldError field="orgName" />
                       </div>
 
@@ -457,6 +493,7 @@ export default function MembershipApplyForm() {
                         <div>
                           <label className="block text-sm font-semibold text-[#334155] mb-2">Number of Employees</label>
                           <div className="relative">
+                            <InputIcon icon={Users} />
                             <select
                               value={formData.employees}
                               onChange={(e) => updateField("employees", e.target.value)}
@@ -478,13 +515,16 @@ export default function MembershipApplyForm() {
                           <label className="block text-sm font-semibold text-[#334155] mb-2">
                             Registration No.
                           </label>
-                          <input
-                            type="text"
-                            value={formData.registrationNo}
-                            onChange={(e) => updateField("registrationNo", e.target.value)}
-                            placeholder="Company reg. number"
-                            className={inputClass("registrationNo")}
-                          />
+                          <div className="relative">
+                            <InputIcon icon={FileText} />
+                            <input
+                              type="text"
+                              value={formData.registrationNo}
+                              onChange={(e) => updateField("registrationNo", e.target.value)}
+                              placeholder="Company reg. number"
+                              className={inputClass("registrationNo")}
+                            />
+                          </div>
                         </div>
 
                         <div data-field="country">
@@ -492,6 +532,7 @@ export default function MembershipApplyForm() {
                             Country <span className="text-[#C41E3A]">*</span>
                           </label>
                           <div className="relative">
+                            <InputIcon icon={Globe} />
                             <select
                               value={formData.country}
                               onChange={(e) => updateField("country", e.target.value)}
@@ -512,15 +553,19 @@ export default function MembershipApplyForm() {
                             City <span className="text-[#C41E3A]">*</span>
                           </label>
                           {formData.country === "other" ? (
-                            <input
-                              type="text"
-                              value={formData.cityOther}
-                              onChange={(e) => updateField("cityOther", e.target.value)}
-                              placeholder="Enter your city"
-                              className={inputClass("cityOther")}
-                            />
+                            <div className="relative">
+                              <InputIcon icon={MapPin} />
+                              <input
+                                type="text"
+                                value={formData.cityOther}
+                                onChange={(e) => updateField("cityOther", e.target.value)}
+                                placeholder="Enter your city"
+                                className={inputClass("cityOther")}
+                              />
+                            </div>
                           ) : (
                             <div className="relative">
+                              <InputIcon icon={MapPin} />
                               <select
                                 value={formData.city}
                                 onChange={(e) => updateField("city", e.target.value)}
@@ -539,13 +584,16 @@ export default function MembershipApplyForm() {
                             </div>
                           )}
                           {formData.country && formData.country !== "other" && formData.city === "other" && (
-                            <input
-                              type="text"
-                              value={formData.cityOther}
-                              onChange={(e) => updateField("cityOther", e.target.value)}
-                              placeholder="Enter your city"
-                              className={`${inputClass("cityOther")} mt-2`}
-                            />
+                            <div className="relative mt-2">
+                              <InputIcon icon={MapPin} />
+                              <input
+                                type="text"
+                                value={formData.cityOther}
+                                onChange={(e) => updateField("cityOther", e.target.value)}
+                                placeholder="Enter your city"
+                                className={inputClass("cityOther")}
+                              />
+                            </div>
                           )}
                           <FieldError field="city" />
                           <FieldError field="cityOther" />
@@ -556,13 +604,16 @@ export default function MembershipApplyForm() {
                         <label className="block text-sm font-semibold text-[#334155] mb-2">
                           Registered Business Address <span className="text-[#C41E3A]">*</span>
                         </label>
-                        <input
-                          type="text"
-                          value={formData.address}
-                          onChange={(e) => updateField("address", e.target.value)}
-                          placeholder="Street address"
-                          className={inputClass("address")}
-                        />
+                        <div className="relative">
+                          <InputIcon icon={MapPin} />
+                          <input
+                            type="text"
+                            value={formData.address}
+                            onChange={(e) => updateField("address", e.target.value)}
+                            placeholder="Street address"
+                            className={inputClass("address")}
+                          />
+                        </div>
                         <FieldError field="address" />
                       </div>
 
@@ -571,13 +622,16 @@ export default function MembershipApplyForm() {
                           <label className="block text-sm font-semibold text-[#334155] mb-2">
                             Mobile / Phone Number <span className="text-[#C41E3A]">*</span>
                           </label>
-                          <input
-                            type="tel"
-                            value={formData.orgPhone}
-                            onChange={(e) => updateField("orgPhone", e.target.value)}
-                            placeholder="+44 20 XXXX XXXX"
-                            className={inputClass("orgPhone")}
-                          />
+                          <div className="relative">
+                            <InputIcon icon={Phone} />
+                            <input
+                              type="tel"
+                              value={formData.orgPhone}
+                              onChange={(e) => updateField("orgPhone", e.target.value)}
+                              placeholder="+44 20 XXXX XXXX"
+                              className={inputClass("orgPhone")}
+                            />
+                          </div>
                           <FieldError field="orgPhone" />
                         </div>
 
@@ -585,24 +639,30 @@ export default function MembershipApplyForm() {
                           <label className="block text-sm font-semibold text-[#334155] mb-2">
                             WhatsApp
                           </label>
-                          <input
-                            type="tel"
-                            value={formData.whatsapp}
-                            onChange={(e) => updateField("whatsapp", e.target.value)}
-                            placeholder="+92 3XX XXXXXXX"
-                            className={inputClass("whatsapp")}
-                          />
+                          <div className="relative">
+                            <InputIcon icon={MessageCircle} />
+                            <input
+                              type="tel"
+                              value={formData.whatsapp}
+                              onChange={(e) => updateField("whatsapp", e.target.value)}
+                              placeholder="+92 3XX XXXXXXX"
+                              className={inputClass("whatsapp")}
+                            />
+                          </div>
                         </div>
 
                         <div data-field="website">
                           <label className="block text-sm font-semibold text-[#334155] mb-2">Website</label>
-                          <input
-                            type="url"
-                            value={formData.website}
-                            onChange={(e) => updateField("website", e.target.value)}
-                            placeholder="https://www.example.com"
-                            className={inputClass("website")}
-                          />
+                          <div className="relative">
+                            <InputIcon icon={Globe} />
+                            <input
+                              type="url"
+                              value={formData.website}
+                              onChange={(e) => updateField("website", e.target.value)}
+                              placeholder="https://www.example.com"
+                              className={inputClass("website")}
+                            />
+                          </div>
                           <FieldError field="website" />
                         </div>
                       </div>
@@ -611,13 +671,16 @@ export default function MembershipApplyForm() {
                         <label className="block text-sm font-semibold text-[#334155] mb-2">
                           Core Products / Services <span className="text-[#C41E3A]">*</span>
                         </label>
-                        <textarea
-                          rows={3}
-                          value={formData.coreProducts}
-                          onChange={(e) => updateField("coreProducts", e.target.value)}
-                          placeholder="Describe your core products and services"
-                          className={`${inputClass("coreProducts")} resize-none`}
-                        />
+                        <div className="relative">
+                          <TextareaIcon icon={Package} />
+                          <textarea
+                            rows={3}
+                            value={formData.coreProducts}
+                            onChange={(e) => updateField("coreProducts", e.target.value)}
+                            placeholder="Describe your core products and services"
+                            className={`${textareaClass("coreProducts")} resize-none`}
+                          />
+                        </div>
                         <FieldError field="coreProducts" />
                       </div>
 
@@ -626,14 +689,17 @@ export default function MembershipApplyForm() {
                           Organisation Profile{" "}
                           <span className="text-[#64748B] font-normal">— used for the member directory, max 100 words</span>
                         </label>
-                        <textarea
-                          rows={4}
-                          maxLength={800}
-                          value={formData.orgProfile}
-                          onChange={(e) => updateField("orgProfile", e.target.value)}
-                          placeholder="Provide a brief description of your organisation, its mission, and key activities..."
-                          className={`${inputClass("orgProfile")} resize-none`}
-                        />
+                        <div className="relative">
+                          <TextareaIcon icon={FileText} />
+                          <textarea
+                            rows={4}
+                            maxLength={800}
+                            value={formData.orgProfile}
+                            onChange={(e) => updateField("orgProfile", e.target.value)}
+                            placeholder="Provide a brief description of your organisation, its mission, and key activities..."
+                            className={`${textareaClass("orgProfile")} resize-none`}
+                          />
+                        </div>
                         <p className="text-[13px] text-[#64748B] mt-2.5 leading-relaxed">
                           UPTECH reserves the right to edit profiles that exceed 100 words.
                           Please send your high-resolution logo to{" "}
@@ -701,13 +767,16 @@ export default function MembershipApplyForm() {
                     <FieldError field="sectors" />
                     <div className="mt-5 max-w-xl">
                       <label className="block text-sm font-semibold text-[#334155] mb-2">Other (please specify)</label>
-                      <input
-                        type="text"
-                        value={formData.otherSector}
-                        onChange={(e) => updateField("otherSector", e.target.value)}
-                        placeholder="Enter other sectors"
-                        className={inputClass("otherSector")}
-                      />
+                      <div className="relative">
+                        <InputIcon icon={Layers} />
+                        <input
+                          type="text"
+                          value={formData.otherSector}
+                          onChange={(e) => updateField("otherSector", e.target.value)}
+                          placeholder="Enter other sectors"
+                          className={inputClass("otherSector")}
+                        />
+                      </div>
                     </div>
                   </motion.section>
 
@@ -724,63 +793,78 @@ export default function MembershipApplyForm() {
                         <label className="block text-sm font-semibold text-[#334155] mb-2">
                           Name <span className="text-[#C41E3A]">*</span>
                         </label>
-                        <input
-                          type="text"
-                          value={formData.personName}
-                          onChange={(e) => updateField("personName", e.target.value)}
-                          placeholder="Your full name"
-                          className={inputClass("personName")}
-                        />
+                        <div className="relative">
+                          <InputIcon icon={UserRound} />
+                          <input
+                            type="text"
+                            value={formData.personName}
+                            onChange={(e) => updateField("personName", e.target.value)}
+                            placeholder="Your full name"
+                            className={inputClass("personName")}
+                          />
+                        </div>
                         <FieldError field="personName" />
                       </div>
                       <div data-field="personJobTitle">
                         <label className="block text-sm font-semibold text-[#334155] mb-2">
                           Job Title <span className="text-[#C41E3A]">*</span>
                         </label>
-                        <input
-                          type="text"
-                          value={formData.personJobTitle}
-                          onChange={(e) => updateField("personJobTitle", e.target.value)}
-                          placeholder="e.g. CEO, Managing Director"
-                          className={inputClass("personJobTitle")}
-                        />
+                        <div className="relative">
+                          <InputIcon icon={Briefcase} />
+                          <input
+                            type="text"
+                            value={formData.personJobTitle}
+                            onChange={(e) => updateField("personJobTitle", e.target.value)}
+                            placeholder="e.g. CEO, Managing Director"
+                            className={inputClass("personJobTitle")}
+                          />
+                        </div>
                         <FieldError field="personJobTitle" />
                       </div>
                       <div data-field="personEmail">
                         <label className="block text-sm font-semibold text-[#334155] mb-2">
                           Email <span className="text-[#C41E3A]">*</span>
                         </label>
-                        <input
-                          type="email"
-                          value={formData.personEmail}
-                          onChange={(e) => updateField("personEmail", e.target.value)}
-                          placeholder="name@company.com"
-                          className={inputClass("personEmail")}
-                        />
+                        <div className="relative">
+                          <InputIcon icon={Mail} />
+                          <input
+                            type="email"
+                            value={formData.personEmail}
+                            onChange={(e) => updateField("personEmail", e.target.value)}
+                            placeholder="name@company.com"
+                            className={inputClass("personEmail")}
+                          />
+                        </div>
                         <FieldError field="personEmail" />
                       </div>
                       <div data-field="personPhone">
                         <label className="block text-sm font-semibold text-[#334155] mb-2">
                           Mobile / Phone Number <span className="text-[#C41E3A]">*</span>
                         </label>
-                        <input
-                          type="tel"
-                          value={formData.personPhone}
-                          onChange={(e) => updateField("personPhone", e.target.value)}
-                          placeholder="+44 7XXX XXXXXX"
-                          className={inputClass("personPhone")}
-                        />
+                        <div className="relative">
+                          <InputIcon icon={Phone} />
+                          <input
+                            type="tel"
+                            value={formData.personPhone}
+                            onChange={(e) => updateField("personPhone", e.target.value)}
+                            placeholder="+44 7XXX XXXXXX"
+                            className={inputClass("personPhone")}
+                          />
+                        </div>
                         <FieldError field="personPhone" />
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-[#334155] mb-2">Nationality</label>
-                        <input
-                          type="text"
-                          value={formData.personNationality}
-                          onChange={(e) => updateField("personNationality", e.target.value)}
-                          placeholder="e.g. British, Pakistani"
-                          className={inputClass("personNationality")}
-                        />
+                        <div className="relative">
+                          <InputIcon icon={Flag} />
+                          <input
+                            type="text"
+                            value={formData.personNationality}
+                            onChange={(e) => updateField("personNationality", e.target.value)}
+                            placeholder="e.g. British, Pakistani"
+                            className={inputClass("personNationality")}
+                          />
+                        </div>
                       </div>
                     </div>
                   </motion.section>

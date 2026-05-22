@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const WHATSAPP_NUMBER = "447920550000";
-const WHATSAPP_MESSAGE =
+export const WHATSAPP_NUMBER = "447920550000";
+export const WHATSAPP_DISPLAY = "0044 7920 550000";
+export const WHATSAPP_MESSAGE =
   "Hello UPTECH,\n\nI came across your website and would like to learn more about UPTECH membership and how to get involved.\n\nCould you share more details?";
-const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+export const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE
 )}`;
 

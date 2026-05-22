@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Linkedin, Twitter, Instagram, Facebook, ChevronRight, MapPin, Phone, MessageCircle, Mail } from "lucide-react";
 import { FooterContactForm } from "./FooterContactForm";
+import { WHATSAPP_HREF, WHATSAPP_DISPLAY } from "./ui/WhatsAppButton";
 
 
 export function Footer() {
@@ -165,9 +166,14 @@ export function Footer() {
                       </div>
                       <div className="min-w-0 flex-1">
                         <p className="text-white/75 text-[10.5px] uppercase tracking-[0.18em] font-bold leading-tight">Address</p>
-                        <p className="text-white text-[14px] leading-snug mt-1 drop-shadow-sm">
+                        <a
+                          href="https://www.google.com/maps/search/?api=1&query=136+Westbourne+Terrace,+London+W2+6QB,+United+Kingdom"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block text-white text-[14px] leading-snug mt-1 drop-shadow-sm hover:text-[#4ADE80] transition-colors duration-200"
+                        >
                           136 Westbourne Terrace, London W2 6QB, United Kingdom
-                        </p>
+                        </a>
                       </div>
                     </div>
 
@@ -195,10 +201,12 @@ export function Footer() {
                       <div className="min-w-0 flex-1">
                         <p className="text-white/75 text-[10.5px] uppercase tracking-[0.18em] font-bold leading-tight">WhatsApp</p>
                         <a
-                          href="https://wa.me/447920550000"
+                          href={WHATSAPP_HREF}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-white text-[14px] font-medium hover:text-[#4ADE80] transition-colors duration-200 drop-shadow-sm"
                         >
-                          0044 7920 550000
+                          {WHATSAPP_DISPLAY}
                         </a>
                       </div>
                     </div>

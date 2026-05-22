@@ -292,7 +292,7 @@ function SolutionCard({
           {solution.tagline}
         </p>
 
-        <p className="text-[13.5px] text-[#5A5F72] leading-relaxed line-clamp-3 mb-5">
+        <p className="text-[13.5px] text-[#5A5F72] leading-relaxed line-clamp-3 mb-5 min-h-[66px]">
           {solution.description}
         </p>
 

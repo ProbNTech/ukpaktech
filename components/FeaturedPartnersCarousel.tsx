@@ -93,7 +93,7 @@ export default function FeaturedPartnersCarousel() {
               }}
             >
               {homepagePartners.map((partner, i) => (
-                <SwiperSlide key={partner.slug} className="pb-4">
+                <SwiperSlide key={partner.slug} className="!h-auto pb-4">
                   <PartnerCard partner={partner} index={i} displayMode="logo" />
                 </SwiperSlide>
               ))}

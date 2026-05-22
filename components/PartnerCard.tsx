@@ -88,6 +88,7 @@ export function PartnerCard({ partner, index = 0, displayMode = "image" }: Partn
         delay: Math.min(index * 0.08, 0.4),
         ease: [0.22, 1, 0.36, 1],
       }}
+      className="h-full"
     >
       <div
         ref={cardRef}
@@ -206,7 +207,7 @@ export function PartnerCard({ partner, index = 0, displayMode = "image" }: Partn
             <div className="h-px bg-gradient-to-r from-[#e5e5e5] via-[#e5e5e5] to-transparent mb-3" />
 
             {/* Description */}
-            <p className="text-[13px] text-[#6B7280] leading-[1.65] line-clamp-3 mb-4">
+            <p className="text-[13px] text-[#6B7280] leading-[1.65] line-clamp-3 mb-4 min-h-[64px]">
               {partner.description}
             </p>
 
