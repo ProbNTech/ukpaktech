@@ -9,7 +9,6 @@ import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { PillButton } from "@/components/ui/PillButton";
-import { BackToTop } from "@/components/ui/BackToTop";
 import { Hero } from "@/components/Hero";
 import { LiteYouTube } from "@/components/LiteYouTube";
 import { ProductsIcon, MentorshipIcon, MeetingSpaceIcon, StructureIcon } from "@/components/ui/premium-icons";
@@ -366,8 +365,6 @@ export default function Home() {
         secondaryButtonText="Talk to the team"
         secondaryButtonLink="/contact"
       />
-
-      <BackToTop />
     </div>
   );
 }

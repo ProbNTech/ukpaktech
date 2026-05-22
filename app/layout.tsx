@@ -6,6 +6,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CookieConsent } from "@/components/CookieConsent";
+import { BackToTop } from "@/components/ui/BackToTop";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -126,6 +128,8 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <Footer />
         <CookieConsent />
+        <WhatsAppButton />
+        <BackToTop />
         <SpeedInsights />
       </body>
     </html>
