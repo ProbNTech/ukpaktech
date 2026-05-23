@@ -16,32 +16,30 @@ const HEADERS = [
   "Timestamp",
   // Organisation
   "Organisation Name",
+  "Employees",
   "Registration No.",
-  "Address",
   "Country",
   "City",
+  "Address",
+  "Postal Code",
   "Phone",
   "WhatsApp",
   "Website",
-  "Employees",
   "Core Products/Services",
+  "Organisation Profile",
   // Industry
   "Sectors",
   "Other Sector",
-  // Profile
-  "Organisation Profile",
   // Applicant
   "Contact Name",
   "Contact Job Title",
   "Contact Email",
+  "Contact Phone",
   "Contact Nationality",
   // Consents
   "Terms Accepted",
   "Membership Terms Accepted",
   "Arbitration Accepted",
-  // Added later — appended to preserve existing column alignment
-  "Contact Phone",
-  "Postal Code",
 ];
 
 export async function POST(req: NextRequest) {
@@ -73,32 +71,30 @@ export async function POST(req: NextRequest) {
       timestamp,
       // Organisation
       body.orgName?.trim() || "",
+      body.employees || "",
       body.registrationNo?.trim() || "",
-      body.address?.trim() || "",
       country,
       city,
+      body.address?.trim() || "",
+      body.postalCode?.trim() || "",
       body.orgPhone?.trim() || "",
       body.whatsapp?.trim() || "",
       body.website?.trim() || "",
-      body.employees || "",
       body.coreProducts?.trim() || "",
+      body.orgProfile?.trim() || "",
       // Industry
       Array.isArray(body.selectedSectors) ? body.selectedSectors.join(", ") : "",
       body.otherSector?.trim() || "",
-      // Profile
-      body.orgProfile?.trim() || "",
       // Applicant
       body.personName?.trim() || "",
       body.personJobTitle?.trim() || "",
       body.personEmail?.trim() || "",
+      body.personPhone?.trim() || "",
       body.personNationality?.trim() || "",
       // Consents
       body.termsAccepted ? "Yes" : "No",
       body.membershipTermsAccepted ? "Yes" : "No",
       body.arbitrationAccepted ? "Yes" : "No",
-      // Added later — appended to preserve existing column alignment
-      body.personPhone?.trim() || "",
-      body.postalCode?.trim() || "",
     ];
 
     await appendRow(SHEET_ID, TAB_NAME, HEADERS, values);
