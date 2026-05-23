@@ -1,6 +1,8 @@
 // Structured content for UPTECH Membership Terms and Conditions.
 // Source: original public/documents/UPTECH-Membership-Terms-and-Conditions.pdf (2 pages),
 // extracted via pdftotext -layout, then Council→Forum and email updated.
+// The "Fees and Payment" section was removed in line with the live terms page;
+// subsequent sections were renumbered accordingly.
 
 module.exports = {
   file: 'UPTECH-Membership-Terms-and-Conditions.pdf',
@@ -18,15 +20,7 @@ module.exports = {
       ],
     },
     {
-      n: '2', heading: 'Fees and Payment',
-      blocks: [
-        { type: 'sub', n: '2.1', heading: 'Payment', text: 'The Member agrees to pay the applicable membership fees as specified during the application process.' },
-        { type: 'sub', n: '2.2', heading: 'Non-Refundable', text: 'Membership fees are non-refundable, except where required by UK consumer protection law.' },
-        { type: 'sub', n: '2.3', heading: 'Late Payment', text: 'Failure to pay any fees on time may result in suspension or termination of membership privileges.' },
-      ],
-    },
-    {
-      n: '3', heading: 'Member Responsibilities',
+      n: '2', heading: 'Member Responsibilities',
       blocks: [
         { type: 'p', text: 'Members agree to:' },
         { type: 'bullet', text: 'Provide accurate and complete information during the application process.' },
@@ -35,54 +29,54 @@ module.exports = {
       ],
     },
     {
-      n: '4', heading: 'UPTECH Responsibilities',
+      n: '3', heading: 'UPTECH Responsibilities',
       blocks: [
         { type: 'p', text: 'UPTECH shall:' },
         { type: 'bullet', text: "Provide the services and benefits associated with the Member's chosen membership tier." },
-        { type: 'bullet', text: 'Notify Members of any changes to services, fees, or policies.' },
+        { type: 'bullet', text: 'Notify Members of any changes to services or policies.' },
         { type: 'bullet', text: 'Process personal data in accordance with the UK GDPR and the Data Protection Act 2018.' },
       ],
     },
     {
-      n: '5', heading: 'Termination',
+      n: '4', heading: 'Termination',
       blocks: [
         { type: 'lbullet', label: 'Termination by UPTECH', text: 'Membership may be terminated if the Member breaches these Terms, misuses services, or violates applicable law.' },
         { type: 'lbullet', label: 'Termination by Member', text: 'Members may terminate their membership by giving written notice to UPTECH.' },
-        { type: 'lbullet', label: 'Effect of Termination', text: 'Upon termination, access to services will cease, and any outstanding fees remain payable.' },
+        { type: 'lbullet', label: 'Effect of Termination', text: 'Upon termination, access to services will cease.' },
       ],
     },
     {
-      n: '6', heading: 'Confidentiality',
+      n: '5', heading: 'Confidentiality',
       blocks: [
         { type: 'p', text: 'Members must maintain the confidentiality of any proprietary or sensitive information received during the membership, except where disclosure is required by law.' },
       ],
     },
     {
-      n: '7', heading: 'Limitation of Liability',
+      n: '6', heading: 'Limitation of Liability',
       blocks: [
         { type: 'p', text: 'To the maximum extent permitted by law, UPTECH shall not be liable for any indirect, incidental, or consequential losses arising from or in connection with membership.' },
       ],
     },
     {
-      n: '8', heading: 'Governing Law and Jurisdiction',
+      n: '7', heading: 'Governing Law and Jurisdiction',
       blocks: [
         { type: 'p', text: 'These Terms shall be governed by and construed in accordance with the laws of England and Wales, and the courts of England and Wales shall have exclusive jurisdiction to resolve any disputes arising out of these Terms.' },
       ],
     },
     {
-      n: '9', heading: 'Amendments',
+      n: '8', heading: 'Amendments',
       blocks: [
         { type: 'p', text: 'UPTECH may update these Terms from time to time. Members will be notified of material changes, and continued use of services constitutes acceptance of the updated Terms.' },
       ],
     },
     {
-      n: '10', heading: 'Acceptance',
+      n: '9', heading: 'Acceptance',
       blocks: [
         { type: 'p', text: 'By submitting an application for membership or maintaining membership, the Member acknowledges that they have read, understood, and agreed to be bound by these Terms and Conditions.' },
       ],
     },
     {
-      n: '11', heading: 'Applicant Details',
+      n: '10', heading: 'Applicant Details',
       blocks: [
         { type: 'kicker', text: 'Company' },
         { type: 'field', label: 'Name of Company' },
@@ -106,7 +100,7 @@ module.exports = {
       ],
     },
     {
-      n: '12', heading: 'Acceptance & Signature',
+      n: '11', heading: 'Acceptance & Signature',
       blocks: [
         { type: 'p', text: 'By signing below, the applicant confirms they have read, understood and agreed to be bound by these Membership Terms and Conditions and accept all rights and obligations associated with UPTECH membership.' },
         { type: 'spacer', h: 12 },

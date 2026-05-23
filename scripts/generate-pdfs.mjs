@@ -617,7 +617,6 @@ async function generatePrivacyPolicy() {
   b.drawParagraph("We may collect:");
   b.drawBullet("Name, job title, and company name", { noBoldLead: true });
   b.drawBullet("Contact information (email, phone, address)", { noBoldLead: true });
-  b.drawBullet("Payment details for membership fees", { noBoldLead: true });
   b.drawBullet("Website usage data via cookies", { noBoldLead: true });
   b.drawBullet("Any other information you choose to provide", { noBoldLead: true });
 
