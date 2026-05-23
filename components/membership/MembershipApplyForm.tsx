@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   Send,
   CheckCircle2,
@@ -23,6 +23,8 @@ import {
   Mail,
   Briefcase,
   Flag,
+  RotateCcw,
+  X,
 } from "lucide-react";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -176,6 +178,56 @@ const initialFormData: FormData = {
   arbitrationAccepted: false,
 };
 
+/* ─── Draft persistence ─── */
+const DRAFT_STORAGE_KEY = "uptech:membershipDraft";
+const DRAFT_TTL_MS = 14 * 24 * 60 * 60 * 1000;
+const CONSENT_FIELDS: ReadonlyArray<keyof FormData> = [
+  "termsAccepted",
+  "membershipTermsAccepted",
+  "arbitrationAccepted",
+];
+
+type DraftPayload = {
+  savedAt: number;
+  formData: Record<string, string>;
+  selectedSectors: string[];
+};
+
+function loadDraft(): DraftPayload | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(DRAFT_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as DraftPayload;
+    if (!parsed || typeof parsed.savedAt !== "number") return null;
+    if (Date.now() - parsed.savedAt > DRAFT_TTL_MS) {
+      window.localStorage.removeItem(DRAFT_STORAGE_KEY);
+      return null;
+    }
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+function clearDraft() {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(DRAFT_STORAGE_KEY);
+  } catch {
+    // ignore
+  }
+}
+
+function hasMeaningfulContent(formData: FormData, selectedSectors: string[]): boolean {
+  if (selectedSectors.length > 0) return true;
+  for (const [key, val] of Object.entries(formData)) {
+    if (CONSENT_FIELDS.includes(key as keyof FormData)) continue;
+    if (typeof val === "string" && val.trim() !== "") return true;
+  }
+  return false;
+}
+
 /* ─── Numbered step header ─── */
 function StepHeader({
   index,
@@ -233,7 +285,63 @@ export default function MembershipApplyForm() {
   const [shake, setShake] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [restoredAt, setRestoredAt] = useState<number | null>(null);
+  const [hydrated, setHydrated] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
+
+  // Restore draft on mount (client only — consents are intentionally excluded so they must be re-confirmed)
+  useEffect(() => {
+    const draft = loadDraft();
+    if (draft) {
+      setFormData((prev) => {
+        const merged: FormData = { ...prev };
+        for (const key of Object.keys(initialFormData) as Array<keyof FormData>) {
+          if (CONSENT_FIELDS.includes(key)) continue;
+          const v = draft.formData?.[key as string];
+          if (typeof v === "string") {
+            (merged[key] as string) = v;
+          }
+        }
+        return merged;
+      });
+      setSelectedSectors(Array.isArray(draft.selectedSectors) ? draft.selectedSectors : []);
+      setRestoredAt(draft.savedAt);
+    }
+    setHydrated(true);
+  }, []);
+
+  // Debounced auto-save (skip until hydrated, while submitting, after success, or when empty)
+  useEffect(() => {
+    if (!hydrated || formSubmitted || submitting) return;
+    if (!hasMeaningfulContent(formData, selectedSectors)) return;
+
+    const t = setTimeout(() => {
+      try {
+        const persistable = Object.fromEntries(
+          Object.entries(formData).filter(([, v]) => typeof v === "string")
+        ) as Record<string, string>;
+        const payload: DraftPayload = {
+          savedAt: Date.now(),
+          formData: persistable,
+          selectedSectors,
+        };
+        window.localStorage.setItem(DRAFT_STORAGE_KEY, JSON.stringify(payload));
+      } catch {
+        // ignore (quota / private mode)
+      }
+    }, 600);
+
+    return () => clearTimeout(t);
+  }, [formData, selectedSectors, hydrated, formSubmitted, submitting]);
+
+  const handleStartFresh = () => {
+    setFormData(initialFormData);
+    setSelectedSectors([]);
+    setErrors({});
+    setSubmitError("");
+    clearDraft();
+    setRestoredAt(null);
+  };
 
   const updateField = (field: keyof FormData, value: string | boolean) => {
     setFormData((prev) => {
@@ -349,6 +457,8 @@ export default function MembershipApplyForm() {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error || "Submission failed");
       }
+      clearDraft();
+      setRestoredAt(null);
       setFormSubmitted(true);
       if (formRef.current) {
         const y = formRef.current.getBoundingClientRect().top + window.scrollY - 100;
@@ -496,6 +606,54 @@ export default function MembershipApplyForm() {
               color="blue"
             />
           </AnimatedSection>
+
+          <AnimatePresence>
+            {restoredAt !== null && (
+              <motion.div
+                key="draft-banner"
+                initial={{ opacity: 0, y: -8, height: 0 }}
+                animate={{ opacity: 1, y: 0, height: "auto" }}
+                exit={{ opacity: 0, y: -8, height: 0 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden"
+                role="status"
+              >
+                <div className="mb-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl bg-gradient-to-r from-[#EFF6FF] via-white to-[#F0F9FF] border border-[#2563EB]/20 shadow-[0_2px_12px_-2px_rgba(37,99,235,0.08)]">
+                  <div className="flex items-start gap-3 flex-1 min-w-0">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#1D4ED8] flex items-center justify-center flex-shrink-0 shadow-[0_4px_12px_rgba(37,99,235,0.25)]">
+                      <RotateCcw className="w-[18px] h-[18px] text-white" strokeWidth={2.25} />
+                    </div>
+                    <div className="flex-1 min-w-0 pt-0.5">
+                      <p className="text-[14.5px] font-semibold text-[#0F172A] leading-snug">
+                        We restored your saved draft.
+                      </p>
+                      <p className="text-[13px] text-[#475569] mt-1 leading-relaxed">
+                        Pick up where you left off. Consent checkboxes need to be re-confirmed before submitting.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 flex-shrink-0 sm:ml-2">
+                    <button
+                      type="button"
+                      onClick={handleStartFresh}
+                      className="px-3.5 py-2 text-[13px] font-semibold text-[#2563EB] bg-white border border-[#2563EB]/30 rounded-lg hover:bg-[#2563EB] hover:text-white hover:border-[#2563EB] hover:shadow-[0_4px_12px_rgba(37,99,235,0.25)] transition-all duration-200"
+                    >
+                      Start fresh
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setRestoredAt(null)}
+                      aria-label="Dismiss draft notice"
+                      className="w-9 h-9 rounded-lg flex items-center justify-center text-[#64748B] hover:text-[#0F172A] hover:bg-white transition-colors"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           <div ref={formRef}>
             <form onSubmit={handleSubmit} noValidate className="w-full">
               <div className="relative rounded-3xl border border-[#DBE6FE] p-6 sm:p-9 shadow-[0_20px_60px_-25px_rgba(15,23,42,0.18)] overflow-hidden bg-gradient-to-br from-[#F0F5FF] via-white to-[#E6EEFE]">
@@ -988,9 +1146,9 @@ export default function MembershipApplyForm() {
                           </span>
                           <span className="text-[13.5px] text-[#334155] leading-relaxed">
                             I confirm the above information is accurate and I agree to UPTECH&apos;s{" "}
-                            <Link href="/terms" className="text-[#2563EB] font-medium hover:underline">Terms &amp; Conditions</Link>,{" "}
-                            <Link href="/privacy" className="text-[#2563EB] font-medium hover:underline">Privacy Policy</Link>, and{" "}
-                            <Link href="/code-of-conduct" className="text-[#2563EB] font-medium hover:underline">Code of Conduct</Link>.
+                            <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] font-medium hover:underline">Terms &amp; Conditions</a>,{" "}
+                            <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] font-medium hover:underline">Privacy Policy</a>, and{" "}
+                            <a href="/code-of-conduct" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] font-medium hover:underline">Code of Conduct</a>.
                             <span className="text-[#C41E3A] font-semibold"> *</span>
                           </span>
                         </label>
