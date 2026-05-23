@@ -60,17 +60,25 @@ function escapeHtml(value: unknown): string {
     .replace(/'/g, "&#39;");
 }
 
+const EMPTY_PLACEHOLDER = "—";
+
+function displayValue(v: unknown): string {
+  if (v === undefined || v === null) return EMPTY_PLACEHOLDER;
+  const s = String(v).trim();
+  return s === "" ? EMPTY_PLACEHOLDER : s;
+}
+
 export function renderRowsHtml(rows: Array<[string, unknown]>): string {
   const items = rows
-    .filter(([, v]) => v !== undefined && v !== null && String(v).trim() !== "")
-    .map(
-      ([k, v]) =>
-        `<tr><td style="padding:6px 12px;border:1px solid #e5e7eb;background:#f9fafb;font-weight:600;vertical-align:top;white-space:nowrap;">${escapeHtml(
-          k
-        )}</td><td style="padding:6px 12px;border:1px solid #e5e7eb;">${escapeHtml(
-          v
-        )}</td></tr>`
-    )
+    .map(([k, v]) => {
+      const value = displayValue(v);
+      const isEmpty = value === EMPTY_PLACEHOLDER;
+      return `<tr><td style="padding:6px 12px;border:1px solid #e5e7eb;background:#f9fafb;font-weight:600;vertical-align:top;white-space:nowrap;">${escapeHtml(
+        k
+      )}</td><td style="padding:6px 12px;border:1px solid #e5e7eb;${
+        isEmpty ? "color:#9ca3af;" : ""
+      }">${escapeHtml(value)}</td></tr>`;
+    })
     .join("");
 
   return `<table style="border-collapse:collapse;font-family:system-ui,sans-serif;font-size:14px;color:#111827;">${items}</table>`;
@@ -78,7 +86,6 @@ export function renderRowsHtml(rows: Array<[string, unknown]>): string {
 
 export function renderRowsText(rows: Array<[string, unknown]>): string {
   return rows
-    .filter(([, v]) => v !== undefined && v !== null && String(v).trim() !== "")
-    .map(([k, v]) => `${k}: ${v}`)
+    .map(([k, v]) => `${k}: ${displayValue(v)}`)
     .join("\n");
 }
