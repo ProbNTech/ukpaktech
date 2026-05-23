@@ -440,7 +440,7 @@ export default function Home() {
       >
         <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
         <div className="relative text-center px-6 sm:px-10 lg:px-16 xl:px-20">
-          <SectionLabel label="Pakistan ecosystem" title="Pakistan-side institutional stakeholders" body="Public and industry bodies that shape Pakistan's technology, trade, and regulatory environment — the policy surface UPTECH engages with on Pakistan's side of the corridor." color="#60a5fa" align="center" light />
+          <SectionLabel label="Pakistan ecosystem" title="Pakistan's institutional organisations" body="Public and industry bodies that shape Pakistan's technology, trade, and regulatory environment." color="#60a5fa" align="center" light />
           <LogoCarousel columnCount={5} logos={sponsorCarouselLogos} />
         </div>
       </section>
