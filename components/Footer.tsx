@@ -52,16 +52,9 @@ export function Footer() {
                 </p>
 
                 {/* Registration */}
-                <div className="mb-7 p-4 rounded-lg bg-white/10 backdrop-blur-sm border-l-4 border-[#22C55E]">
-                  <p className="text-white font-semibold text-base leading-relaxed drop-shadow-md">
-                    Registered in England as UK&ndash;Pakistan Trade and Investment Board Ltd
-                  </p>
-                  <p className="text-white font-semibold text-base leading-relaxed mt-1 drop-shadow-md">
-                    Registeration No.{" "}
-                    <span className="text-[#22C55E] font-bold">15417151</span>
-                    {" "}&middot; T/A UK&ndash;Pakistan Tech Forum (UPTECH)
-                  </p>
-                </div>
+                <p className="text-white mb-7 leading-relaxed text-base drop-shadow-md">
+                  Registered in England as UK&ndash;Pakistan Trade and Investment Board Ltd. Registration No. 15417151 &middot; T/A UK&ndash;Pakistan Tech Forum (UPTECH).
+                </p>
 
                 {/* Follow Us */}
                 <h3 className="font-heading font-semibold text-white text-base uppercase tracking-wider mb-4 drop-shadow-md">

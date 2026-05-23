@@ -85,6 +85,7 @@ interface FormData {
   orgName: string;
   registrationNo: string;
   whatsapp: string;
+  postalCode: string;
   address: string;
   country: string;
   city: string;
@@ -109,6 +110,7 @@ const initialFormData: FormData = {
   orgName: "",
   registrationNo: "",
   whatsapp: "",
+  postalCode: "",
   address: "",
   country: "",
   city: "",
@@ -600,21 +602,41 @@ export default function MembershipApplyForm() {
                         </div>
                       </div>
 
-                      <div data-field="address">
-                        <label className="block text-sm font-semibold text-[#334155] mb-2">
-                          Registered Business Address <span className="text-[#C41E3A]">*</span>
-                        </label>
-                        <div className="relative">
-                          <InputIcon icon={MapPin} />
-                          <input
-                            type="text"
-                            value={formData.address}
-                            onChange={(e) => updateField("address", e.target.value)}
-                            placeholder="Street address"
-                            className={inputClass("address")}
-                          />
+                      <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
+                        <div className="sm:col-span-1">
+                          <label className="block text-sm font-semibold text-[#334155] mb-2">
+                            Postal Code
+                          </label>
+                          <div className="relative">
+                            <InputIcon icon={MapPin} />
+                            <input
+                              type="text"
+                              value={formData.postalCode}
+                              onChange={(e) => updateField("postalCode", e.target.value)}
+                              placeholder="e.g. SW1A 1AA"
+                              autoComplete="postal-code"
+                              className={inputClass("postalCode")}
+                            />
+                          </div>
                         </div>
-                        <FieldError field="address" />
+
+                        <div data-field="address" className="sm:col-span-3">
+                          <label className="block text-sm font-semibold text-[#334155] mb-2">
+                            Business Address <span className="text-[#C41E3A]">*</span>
+                          </label>
+                          <div className="relative">
+                            <InputIcon icon={MapPin} />
+                            <input
+                              type="text"
+                              value={formData.address}
+                              onChange={(e) => updateField("address", e.target.value)}
+                              placeholder="Street address"
+                              autoComplete="street-address"
+                              className={inputClass("address")}
+                            />
+                          </div>
+                          <FieldError field="address" />
+                        </div>
                       </div>
 
                       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">

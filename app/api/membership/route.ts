@@ -40,6 +40,7 @@ const HEADERS = [
   "Arbitration Accepted",
   // Added later — appended to preserve existing column alignment
   "Contact Phone",
+  "Postal Code",
 ];
 
 export async function POST(req: NextRequest) {
@@ -97,6 +98,7 @@ export async function POST(req: NextRequest) {
       body.arbitrationAccepted ? "Yes" : "No",
       // Added later — appended to preserve existing column alignment
       body.personPhone?.trim() || "",
+      body.postalCode?.trim() || "",
     ];
 
     await appendRow(SHEET_ID, TAB_NAME, HEADERS, values);
