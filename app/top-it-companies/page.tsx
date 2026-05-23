@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   description:
     "Browse top IT services, software development, cloud, cybersecurity, and data companies — ratings, reviews, services, and locations in one place.",
   alternates: { canonical: "/top-it-companies" },
+  // Directory pages are built but not live yet — keep them out of search
+  // engines until the real data source is connected and they are added to
+  // the navigation and sitemap.
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
   openGraph: {
     title: "Top IT Companies | UPTECH Directory",
     description:

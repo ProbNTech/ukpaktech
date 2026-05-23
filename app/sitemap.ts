@@ -36,9 +36,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/ecosystem/tech-market-overview/baltic-states`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/ecosystem/tech-market-overview/pakistan-it-scope`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/ecosystem/tech-market-overview/pakistan-talent`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE_URL}/top-ai-companies`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/top-it-companies`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE_URL}/it-companies`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.7 },
+    // Company directory pages exist but are intentionally NOT live yet —
+    // not linked from any nav and excluded from the sitemap. Add the
+    // /top-ai-companies, /top-it-companies, and /it-companies entries here
+    // when ready to launch.
     { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
     { url: `${BASE_URL}/terms`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
   ];

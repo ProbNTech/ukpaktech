@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   description:
     "Browse the full directory of IT, software, cloud, cybersecurity, and data companies. Filter by service, rating, and location to build a shortlist.",
   alternates: { canonical: "/it-companies" },
+  // Directory pages are built but not live yet — keep them out of search
+  // engines until the real data source is connected and they are added to
+  // the navigation and sitemap.
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
   openGraph: {
     title: "All IT Companies | UPTECH Directory",
     description:

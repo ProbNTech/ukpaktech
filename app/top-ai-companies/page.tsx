@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   description:
     "Discover leading AI development, automation, machine learning, and software companies. Compare ratings, services, and locations across the UK, Europe, and Pakistan.",
   alternates: { canonical: "/top-ai-companies" },
+  // Directory pages are built but not live yet — keep them out of search
+  // engines until the real data source is connected and they are added to
+  // the navigation and sitemap.
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
   openGraph: {
     title: "Top AI Companies | UPTECH Directory",
     description:
