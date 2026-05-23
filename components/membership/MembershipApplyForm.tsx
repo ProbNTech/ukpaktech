@@ -429,7 +429,7 @@ export default function MembershipApplyForm() {
               </h2>
               <p className="text-[#475569] text-base leading-relaxed mb-8 max-w-md mx-auto">
                 Thank you for your interest in joining UPTECH. Our membership team will review your
-                application and contact you within 5 business days regarding next steps and payment information.
+                application and contact you within 5 business days regarding next steps.
               </p>
               <Link
                 href="/"
@@ -603,23 +603,6 @@ export default function MembershipApplyForm() {
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
-                        <div className="sm:col-span-1">
-                          <label className="block text-sm font-semibold text-[#334155] mb-2">
-                            Postal Code
-                          </label>
-                          <div className="relative">
-                            <InputIcon icon={MapPin} />
-                            <input
-                              type="text"
-                              value={formData.postalCode}
-                              onChange={(e) => updateField("postalCode", e.target.value)}
-                              placeholder="e.g. SW1A 1AA"
-                              autoComplete="postal-code"
-                              className={inputClass("postalCode")}
-                            />
-                          </div>
-                        </div>
-
                         <div data-field="address" className="sm:col-span-3">
                           <label className="block text-sm font-semibold text-[#334155] mb-2">
                             Business Address <span className="text-[#C41E3A]">*</span>
@@ -636,6 +619,23 @@ export default function MembershipApplyForm() {
                             />
                           </div>
                           <FieldError field="address" />
+                        </div>
+
+                        <div className="sm:col-span-1">
+                          <label className="block text-sm font-semibold text-[#334155] mb-2">
+                            Postal Code
+                          </label>
+                          <div className="relative">
+                            <InputIcon icon={MapPin} />
+                            <input
+                              type="text"
+                              value={formData.postalCode}
+                              onChange={(e) => updateField("postalCode", e.target.value)}
+                              placeholder="e.g. SW1A 1AA"
+                              autoComplete="postal-code"
+                              className={inputClass("postalCode")}
+                            />
+                          </div>
                         </div>
                       </div>
 
@@ -902,7 +902,7 @@ export default function MembershipApplyForm() {
 
                     <div className="relative">
                       <p className="text-[#475569] mb-5 text-[14.5px] leading-relaxed text-center max-w-xl mx-auto">
-                        Membership is non-transferable. Payment details will be provided upon application approval.
+                        Membership is non-transferable.
                       </p>
 
                       <div className="flex flex-col gap-2.5 max-w-2xl mx-auto mb-6">
@@ -987,7 +987,7 @@ export default function MembershipApplyForm() {
                             I accept the{" "}
                             <a href="/membership/terms" target="_blank" rel="noopener noreferrer" className="text-[#2563EB] font-medium hover:underline">
                               Membership Terms &amp; Conditions
-                            </a>, including fee structure, non-transferability, and disciplinary procedure.
+                            </a>, including non-transferability and disciplinary procedure.
                             <span className="text-[#C41E3A] font-semibold"> *</span>
                           </span>
                         </label>

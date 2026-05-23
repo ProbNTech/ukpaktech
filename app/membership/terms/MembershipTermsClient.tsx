@@ -13,7 +13,6 @@ import {
   Users,
   Lock,
   Scale,
-  CreditCard,
   AlertTriangle,
   Globe2,
   RefreshCw,
@@ -54,19 +53,6 @@ const coreTerms = [
   },
   {
     number: "02",
-    title: "Fees & Payment",
-    icon: CreditCard,
-    color: "#22C55E",
-    items: [
-      "The Member agrees to pay the applicable membership fees as specified during the application process",
-      "Membership fees are non-refundable, except where required by UK consumer protection law",
-      "Failure to pay any fees on time may result in suspension or termination of membership privileges",
-      "Payment can be made as a one-time payment or monthly instalments for 12 months",
-      "Membership will only begin upon receipt of payment",
-    ],
-  },
-  {
-    number: "03",
     title: "Member Responsibilities",
     icon: ClipboardList,
     color: "#C41E3A",
@@ -79,27 +65,25 @@ const coreTerms = [
     ],
   },
   {
-    number: "04",
+    number: "03",
     title: "UPTECH Responsibilities",
     icon: Shield,
     color: "#2563EB",
     items: [
       "Provide the services and benefits associated with the Member's chosen membership tier",
-      "Notify Members of any changes to services, fees, or policies",
+      "Notify Members of any changes to services or policies",
       "Process personal data in accordance with the UK GDPR and the Data Protection Act 2018",
     ],
   },
   {
-    number: "05",
+    number: "04",
     title: "Termination",
     icon: XCircle,
     color: "#22C55E",
     items: [
       "UPTECH may terminate membership if the Member breaches these Terms, misuses services, or violates applicable law",
       "Members may terminate their membership by giving written notice to UPTECH",
-      "Upon termination, access to services will cease and any outstanding fees remain payable",
-      "You have the right to cancel within 14 days from registration without providing any reason (cooling-off period)",
-      "After the 14-day cancellation period, membership fees are non-refundable unless required by law",
+      "Upon termination, access to services will cease",
     ],
   },
 ];
@@ -181,19 +165,11 @@ const faqs = [
   },
   {
     q: "How do I apply for membership?",
-    a: "Complete the registration online, provide all required information, agree to the Terms & Conditions, and pay applicable membership fees. Once approved, you will receive confirmation and gain access to membership services.",
-  },
-  {
-    q: "Are membership fees refundable?",
-    a: "You have the right to cancel within 14 days from registration without providing any reason (cooling-off period). After the 14-day period, membership fees are non-refundable unless required by UK consumer protection law.",
+    a: "Complete the registration online, provide all required information, and agree to the Terms & Conditions. Once approved, you will receive confirmation and gain access to membership services.",
   },
   {
     q: "How long does membership last?",
-    a: "Membership is valid for a term of one year from the date of payment, unless terminated earlier. Membership will be automatically renewed at the end of the term, and you will be notified in advance.",
-  },
-  {
-    q: "Can I pay in instalments?",
-    a: "Yes. The membership fee can be paid as a one-time payment at enrolment, or in monthly instalments for 12 months. By selecting the instalment plan, you commit to completing all 12 payments.",
+    a: "Membership is valid for a term of one year from the date of registration, unless terminated earlier. Membership will be automatically renewed at the end of the term, and you will be notified in advance.",
   },
   {
     q: "What happens if I breach the Code of Conduct?",
@@ -201,7 +177,7 @@ const faqs = [
   },
   {
     q: "How can I terminate my membership?",
-    a: "You may terminate your membership at any time by giving written notice to UPTECH. Upon termination, access to services will cease, and any outstanding fees remain payable.",
+    a: "You may terminate your membership at any time by giving written notice to UPTECH. Upon termination, access to services will cease.",
   },
   {
     q: "Is the non-solicitation clause enforceable?",
@@ -284,8 +260,6 @@ export default function MembershipTermsClient() {
                   {[
                     "Membership is non-transferable",
                     "Annual term with automatic renewal",
-                    "14-day cooling-off period from registration",
-                    "Fees are non-refundable after cooling-off",
                     "Governed by the laws of England and Wales",
                     "GDPR and Data Protection Act 2018 compliant",
                     "Code of Conduct is binding on all members",
@@ -305,7 +279,7 @@ export default function MembershipTermsClient() {
       {/* ── Core Terms (Steps) ───────────────────────────────────── */}
       <Section variant="dark">
         <AnimatedSection>
-          <SectionHeader label="Core Terms" title="Membership Terms" subtitle="The fundamental terms governing your membership, fees, responsibilities, and termination rights." color="red" dark />
+          <SectionHeader label="Core Terms" title="Membership Terms" subtitle="The fundamental terms governing your membership, responsibilities, and termination rights." color="red" dark />
 
           <div className="space-y-6">
             {coreTerms.map((term, i) => {
@@ -314,7 +288,7 @@ export default function MembershipTermsClient() {
                 <div key={term.number} className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden hover:shadow-md hover:shadow-white/5 transition-shadow duration-300">
                   <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${term.color}, ${term.color}40)` }} />
                   <div className="p-7 lg:p-8">
-                    <div className="flex items-center gap-4 mb-5">
+                    <div className="flex flex-wrap items-center gap-4 mb-5">
                       <div className="w-12 h-12 rounded-full flex items-center justify-center text-base font-bold border-2" style={{ background: `linear-gradient(135deg, ${term.color}30, ${term.color}10)`, borderColor: `${term.color}60`, color: term.color }}>
                         {term.number}
                       </div>
@@ -421,74 +395,6 @@ export default function MembershipTermsClient() {
                 <p className="text-white/50 text-xs leading-relaxed">
                   <span className="font-semibold text-white/70">Right to Appeal:</span> Affected members retain the right to appeal the committee&apos;s decision within 7 days by submitting a written appeal. The Executive Committee will review the appeal, and the verdict shall be final and non-negotiable.
                 </p>
-              </div>
-            </div>
-          </div>
-        </AnimatedSection>
-      </Section>
-
-      {/* ── Fees & Payment Details ───────────────────────────────── */}
-      <Section variant="light">
-        <AnimatedSection>
-          <SectionHeader label="Fees" title="Payment Terms & Schedule" subtitle="Transparent pricing and payment options for UPTECH membership." color="red" />
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Payment Options */}
-            <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
-              <div className="h-1 w-full bg-gradient-to-r from-[#2563EB] to-[#2563EB]/40" />
-              <div className="p-7">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#2563EB10", border: "1px solid #2563EB20" }}>
-                    <CreditCard className="w-5 h-5 text-[#2563EB]" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Payment Options</h3>
-                </div>
-                <div className="h-px bg-[#D8D5CF] mb-5" />
-                <ul className="space-y-3">
-                  {[
-                    { label: "One-Time Payment", desc: "Full payment at the time of enrolment" },
-                    { label: "Monthly Instalments", desc: "12 monthly payments via direct debit or credit card" },
-                    { label: "Auto-Renewal", desc: "Membership automatically renewed at end of term with advance notice" },
-                    { label: "Secure Processing", desc: "All payments processed via PCI DSS-compliant payment gateway" },
-                  ].map((item) => (
-                    <li key={item.label} className="flex items-start gap-2.5">
-                      <BadgeCheck className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <div>
-                        <span className="font-semibold text-[#1C1F2E] text-sm">{item.label}</span>
-                        <span className="text-[#5A5F72] text-xs block">{item.desc}</span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Important Payment Notes */}
-            <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm overflow-hidden">
-              <div className="h-1 w-full bg-gradient-to-r from-[#C41E3A] to-[#C41E3A]/40" />
-              <div className="p-7">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "#C41E3A10", border: "1px solid #C41E3A20" }}>
-                    <AlertTriangle className="w-5 h-5 text-[#C41E3A]" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg">Important Notes</h3>
-                </div>
-                <div className="h-px bg-[#D8D5CF] mb-5" />
-                <ul className="space-y-3">
-                  {[
-                    "Membership fees are non-refundable after the 14-day cooling-off period",
-                    "By selecting instalments, you commit to completing all 12 payments",
-                    "Failed payments must be reprocessed within 3 days",
-                    "Membership may be terminated if payment is missed for more than 3 days",
-                    "Late payments may incur an interest charge of 2% per month",
-                    "Your membership will lapse if payment is not made within 3 days after expiry",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#C41E3A] mt-0.5 flex-shrink-0" strokeWidth={2} />
-                      <span className="text-[#5A5F72] text-sm leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
           </div>

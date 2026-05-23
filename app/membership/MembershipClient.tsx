@@ -44,7 +44,7 @@ const membershipBenefits = [
   { icon: DollarSign, title: "Funding & Investment Support", description: "Receive guidance and access to startup funding, Series A and B investment, and accelerator programs.", color: "#2563EB" },
   { icon: Users, title: "Talent & Employment Opportunities", description: "Leverage overseas contract employment programs to access global tech talent.", color: "#22C55E" },
   { icon: Lightbulb, title: "Thought Leadership", description: "Position your organisation as a leader in technology through speaking opportunities, published insights, and policy engagement.", color: "#C41E3A" },
-  { icon: Building2, title: "Business Incubation Centres", description: "Members have access to shared boardrooms, office space, and other resources in our London office. Additional fees may apply.", color: "#2563EB" },
+  { icon: Building2, title: "Business Incubation Centres", description: "Members have access to shared boardrooms, office space, and other resources in our London office.", color: "#2563EB" },
   { icon: Megaphone, title: "Sponsorships", description: "To increase exposure in both markets and demonstrate commitment to the bilateral relationship, UPTECH offers sponsorship opportunities exclusive to our member companies.", color: "#22C55E" },
   { icon: Handshake, title: "Business Matchmaking", description: "B2B meetings with international companies, partner introductions, collaboration opportunities with technology firms, and client acquisition support.", color: "#C41E3A" },
   { icon: CalendarDays, title: "Technology Events", description: "Participate in international technology conferences, business networking events, startup showcase programs, and innovation forums.", color: "#2563EB" },
@@ -288,7 +288,7 @@ export default function MembershipClient() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {[
-              { icon: Shield, title: "Membership Terms & Conditions", description: "Rules, obligations, fees, and policies governing your UPTECH membership.", href: "/documents/UPTECH-Membership-Terms-and-Conditions.pdf", webPage: "/membership/terms", color: "#2563EB", pages: "3 Pages" },
+              { icon: Shield, title: "Membership Terms & Conditions", description: "Rules, obligations, and policies governing your UPTECH membership.", href: "/documents/UPTECH-Membership-Terms-and-Conditions.pdf", webPage: "/membership/terms", color: "#2563EB", pages: "3 Pages" },
               { icon: Gavel, title: "Arbitration Framework Policy", description: "Dispute resolution framework under the Arbitration Act 1996 (UK) and LCIA Rules.", href: "/documents/UPTECH-Arbitration-Framework.pdf", webPage: "/arbitration/framework", color: "#2563EB", pages: "4 Pages" },
               { icon: Scale, title: "Code of Conduct", description: "Binding principles of integrity, professionalism, and ethical behaviour for all members.", href: "/documents/UPTECH-Code-of-Conduct.pdf", webPage: "/code-of-conduct", color: "#C41E3A", pages: "3 Pages" },
               { icon: ScrollText, title: "Sales Commission Agreement", description: "Terms for UPTECH promoting and selling your products/services in UK and European markets.", href: "/documents/UPTECH-Sales-Commission-Agreement.pdf", color: "#22C55E", pages: "5 Pages" },

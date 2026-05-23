@@ -4,7 +4,7 @@ import MembershipTermsClient from "./MembershipTermsClient";
 export const metadata: Metadata = {
   title: "Membership Terms & Conditions | UPTECH",
   description:
-    "The complete UPTECH Membership Terms & Conditions including eligibility, fees, member responsibilities, code of conduct, disciplinary procedure, and governing law.",
+    "The complete UPTECH Membership Terms & Conditions including eligibility, member responsibilities, code of conduct, disciplinary procedure, and governing law.",
 };
 
 export default function MembershipTermsPage() {

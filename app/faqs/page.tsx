@@ -36,10 +36,10 @@ const faqCategories = [
   {
     category: "Membership",
     faqs: [
-      { question: "What are the membership tiers?", answer: "We offer individual and corporate membership tiers, each with different levels of access to resources, events, programmes, and networking opportunities. Contact us for the latest membership structure and pricing." },
+      { question: "What are the membership tiers?", answer: "We offer individual and corporate membership tiers, each with different levels of access to resources, events, programmes, and networking opportunities. Contact us for the latest membership structure." },
       { question: "What benefits do members receive?", answer: "Members receive access to exclusive events, networking opportunities, business support services, mentorship programmes, funding guidance, trade delegations, and discounts on partner services." },
       { question: "How do I apply for membership?", answer: "You can apply for membership through our website. Complete the application form, and our team will review your application and get back to you within 5\u201310 business days." },
-      { question: "Can I cancel my membership?", answer: "Yes, you can cancel your membership at any time by contacting our membership team. Membership fees are non-refundable for the current billing period." },
+      { question: "Can I cancel my membership?", answer: "Yes, you can cancel your membership at any time by contacting our membership team." },
     ],
   },
   {
