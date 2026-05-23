@@ -72,6 +72,51 @@ function citiesFor(country: string): string[] {
   return [];
 }
 
+const hasCityList = (country: string) => country === "uk" || country === "pakistan";
+
+/* ─── All other countries (alphabetical, UK and Pakistan pinned separately) ─── */
+const otherCountries = [
+  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola",
+  "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria",
+  "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
+  "Belarus", "Belgium", "Belize", "Benin", "Bhutan",
+  "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei",
+  "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia",
+  "Cameroon", "Canada", "Central African Republic", "Chad", "Chile",
+  "China", "Colombia", "Comoros", "Congo (Brazzaville)", "Congo (Kinshasa)",
+  "Costa Rica", "Côte d'Ivoire", "Croatia", "Cuba", "Cyprus",
+  "Czechia", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
+  "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea",
+  "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland",
+  "France", "Gabon", "Gambia", "Georgia", "Germany",
+  "Ghana", "Greece", "Grenada", "Guatemala", "Guinea",
+  "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary",
+  "Iceland", "India", "Indonesia", "Iran", "Iraq",
+  "Ireland", "Israel", "Italy", "Jamaica", "Japan",
+  "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait",
+  "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho",
+  "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
+  "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali",
+  "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico",
+  "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro",
+  "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru",
+  "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger",
+  "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman",
+  "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay",
+  "Peru", "Philippines", "Poland", "Portugal", "Qatar",
+  "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia",
+  "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia",
+  "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore",
+  "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa",
+  "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan",
+  "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan",
+  "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo",
+  "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan",
+  "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United States",
+  "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela",
+  "Vietnam", "Yemen", "Zambia", "Zimbabwe",
+];
+
 /* ─── Shared styles ─── */
 const baseInputClass =
   "w-full pl-11 pr-4 py-3.5 rounded-xl bg-white border text-[#0F172A] text-[15px] placeholder:text-[#94A3B8] focus:outline-none focus:ring-4 focus:ring-[#2563EB]/15 hover:border-[#94A3B8] transition-all duration-200 shadow-sm";
@@ -230,9 +275,9 @@ export default function MembershipApplyForm() {
     if (!formData.orgName.trim()) newErrors.orgName = "Organisation name is required";
     if (!formData.address.trim()) newErrors.address = "Address is required";
     if (!formData.country) newErrors.country = "Please select a country";
-    if (formData.country === "other") {
+    else if (!hasCityList(formData.country)) {
       if (!formData.cityOther.trim()) newErrors.cityOther = "Please enter your city";
-    } else if (formData.country) {
+    } else {
       if (!formData.city) newErrors.city = "Please select a city";
       if (formData.city === "other" && !formData.cityOther.trim()) {
         newErrors.cityOther = "Please enter your city";
@@ -541,9 +586,13 @@ export default function MembershipApplyForm() {
                               className={selectClassFn("country")}
                             >
                               <option value="">Select country</option>
+                              <option value="" disabled>── Primary ──</option>
                               <option value="uk">United Kingdom</option>
                               <option value="pakistan">Pakistan</option>
-                              <option value="other">Other</option>
+                              <option value="" disabled>── All countries ──</option>
+                              {otherCountries.map((c) => (
+                                <option key={c} value={c}>{c}</option>
+                              ))}
                             </select>
                             <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B] pointer-events-none" />
                           </div>
@@ -554,7 +603,7 @@ export default function MembershipApplyForm() {
                           <label className="block text-sm font-semibold text-[#334155] mb-2">
                             City <span className="text-[#C41E3A]">*</span>
                           </label>
-                          {formData.country === "other" ? (
+                          {formData.country && !hasCityList(formData.country) ? (
                             <div className="relative">
                               <InputIcon icon={MapPin} />
                               <input
@@ -585,7 +634,7 @@ export default function MembershipApplyForm() {
                               <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B] pointer-events-none" />
                             </div>
                           )}
-                          {formData.country && formData.country !== "other" && formData.city === "other" && (
+                          {hasCityList(formData.country) && formData.city === "other" && (
                             <div className="relative mt-2">
                               <InputIcon icon={MapPin} />
                               <input

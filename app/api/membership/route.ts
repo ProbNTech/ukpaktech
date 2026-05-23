@@ -8,8 +8,9 @@ const TAB_NAME = "Memberships";
 const COUNTRY_LABELS: Record<string, string> = {
   uk: "United Kingdom",
   pakistan: "Pakistan",
-  other: "Other",
 };
+
+const hasCityList = (country: string) => country === "uk" || country === "pakistan";
 
 const HEADERS = [
   "Timestamp",
@@ -60,14 +61,13 @@ export async function POST(req: NextRequest) {
       ? COUNTRY_LABELS[body.country] || body.country
       : "";
 
-    // City: form sends `city` for UK/Pakistan list, `cityOther` when "other" is picked
-    // (either at country level or city level)
-    const city =
-      body.country === "other"
-        ? body.cityOther?.trim() || ""
-        : body.city === "other"
-        ? body.cityOther?.trim() || ""
-        : body.city?.trim() || "";
+    // City: UK/Pakistan use the `city` dropdown (with an "other" escape hatch → cityOther).
+    // Any other country uses the free-text `cityOther` input directly.
+    const city = !hasCityList(body.country)
+      ? body.cityOther?.trim() || ""
+      : body.city === "other"
+      ? body.cityOther?.trim() || ""
+      : body.city?.trim() || "";
 
     const values = [
       timestamp,
