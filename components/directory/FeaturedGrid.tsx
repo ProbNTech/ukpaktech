@@ -37,7 +37,13 @@ export function FeaturedGrid({
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+        <div
+          className={
+            companies.length === 1
+              ? "grid grid-cols-1 max-w-2xl"
+              : "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"
+          }
+        >
           {companies.map((c) => (
             <CompanyCard key={c.id} company={c} />
           ))}

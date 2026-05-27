@@ -1,9 +1,13 @@
 "use client";
 
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useRef } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "framer-motion";
+import { LazyVideo } from "@/components/LazyVideo";
+
+const BANNER_VIDEO_SRC = "/videos/banner.mp4";
+const BANNER_POSTER_SRC = "/videos/banner-poster.jpg";
 
 const FuturisticHeroBg = dynamic(
   () => import("@/components/ui/futuristic-hero-bg").then((m) => m.FuturisticHeroBg),
@@ -97,18 +101,6 @@ export function PageHero({
   const videoRef = useRef<HTMLVideoElement>(null);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    if (videoRef.current && videoSpeed !== 1) {
-      videoRef.current.playbackRate = videoSpeed;
-    }
-  }, [videoSpeed]);
-
-  useEffect(() => {
-    if (heroVideoRef.current && heroVideoSpeed !== 1) {
-      heroVideoRef.current.playbackRate = heroVideoSpeed;
-    }
-  }, [heroVideoSpeed]);
-
   return (
     <section className={`relative z-[2] w-full overflow-hidden bg-[#0B0F1A] ${className}`}>
       {/* Background image */}
@@ -126,16 +118,12 @@ export function PageHero({
 
       {/* Background video */}
       {video && (
-        <video
+        <LazyVideo
           ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={image}
-          className="absolute inset-0 w-full h-full object-cover z-[0]"
-          src={video}
+          src={BANNER_VIDEO_SRC}
+          poster={image || BANNER_POSTER_SRC}
+          playbackRate={videoSpeed}
+          className="absolute inset-0 w-full h-full z-[0]"
         />
       )}
 
@@ -165,19 +153,6 @@ export function PageHero({
 
       {/* Awards themed background */}
       {awardsBg && <AwardsHeroBg />}
-
-      {/* Subtle left-side gradient for text readability */}
-      <div
-        className="absolute inset-0 z-10 pointer-events-none"
-        style={{
-          background: lightOverlay
-            ? "linear-gradient(to right, rgba(5,10,20,0.45) 0%, rgba(5,10,20,0.22) 40%, rgba(5,10,20,0.08) 65%, rgba(5,10,20,0.02) 100%)"
-            : "linear-gradient(to right, rgba(5,10,20,0.98) 0%, rgba(5,10,20,0.95) 30%, rgba(5,10,20,0.6) 45%, rgba(5,10,20,0.15) 60%, rgba(5,10,20,0.02) 100%)",
-        }}
-      />
-
-      {/* Subtle noise overlay — non-repeating */}
-      <div className="absolute inset-0 z-[11] pointer-events-none opacity-[0.04] bg-gradient-to-br from-white/5 via-transparent to-white/5" />
 
       {/* Floating gradient orbs */}
       <motion.div
@@ -209,15 +184,12 @@ export function PageHero({
                 maskImage: "radial-gradient(ellipse 90% 80% at 68% 50%, black 30%, transparent 70%)",
               }}
             >
-              <video
+              <LazyVideo
                 ref={heroVideoRef}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                className="absolute inset-0 w-full h-full object-cover"
-                src={heroVideo}
+                src={BANNER_VIDEO_SRC}
+                poster={BANNER_POSTER_SRC}
+                playbackRate={heroVideoSpeed}
+                className="absolute inset-0 w-full h-full"
               />
               <div
                 className="absolute inset-0 mix-blend-multiply"
@@ -322,8 +294,20 @@ export function PageHero({
           align === "center" ? "justify-center" : ""
         }`}
       >
-        <div className={`w-full ${align === "center" ? "max-w-3xl text-center" : "max-w-[55%] max-lg:max-w-full"}`}>
+        <div className={`relative w-full ${align === "center" ? "max-w-3xl text-center" : "max-w-[55%] max-lg:max-w-full"}`}>
+          {/* Localized soft shade behind text — pure colour, no blur, video stays sharp */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -inset-x-6 -inset-y-6 sm:-inset-x-10 sm:-inset-y-8 rounded-[2.5rem]"
+            style={{
+              background:
+                align === "center"
+                  ? "radial-gradient(ellipse 80% 75% at 50% 50%, rgba(5,10,20,0.55) 0%, rgba(5,10,20,0.32) 45%, rgba(5,10,20,0.08) 78%, rgba(5,10,20,0) 100%)"
+                  : "radial-gradient(ellipse 75% 70% at 35% 50%, rgba(5,10,20,0.6) 0%, rgba(5,10,20,0.35) 45%, rgba(5,10,20,0.08) 78%, rgba(5,10,20,0) 100%)",
+            }}
+          />
           <motion.div
+            className="relative"
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}

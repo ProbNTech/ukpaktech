@@ -29,7 +29,7 @@ import { ContinuousCarousel } from "@/components/tech-market/CountryCarousel";
 import StatsCounter from "@/components/tech-market/StatsCounter";
 import MembershipSection, { WhatDrivesUs } from "@/components/tech-market/MembershipSection";
 import NewsCarousel from "@/components/NewsCarousel";
-const FeaturedPartnersCarousel = dynamic(() => import("@/components/FeaturedPartnersCarousel"), {
+const PakistanTopCompaniesShowcase = dynamic(() => import("@/components/PakistanTopCompaniesShowcase"), {
   loading: () => <div className="py-20 bg-white" aria-busy="true"><div className="px-6 sm:px-10 lg:px-16 xl:px-20"><div className="h-48 bg-[#f7f8fa] rounded-xl animate-pulse" /></div></div>,
 });
 const PartnerSolutionsSection = dynamic(() => import("@/components/PartnerSolutionsSection"), {
@@ -253,8 +253,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. FEATURED PARTNERS */}
-      <FeaturedPartnersCarousel />
+      {/* 6. PAKISTAN'S TOP AI & IT COMPANIES */}
+      <PakistanTopCompaniesShowcase />
 
       {/* 7. PARTNER SOLUTIONS */}
       <PartnerSolutionsSection />

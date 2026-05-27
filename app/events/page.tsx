@@ -153,7 +153,7 @@ export default function EventsPage() {
         label="Programme Calendar"
         title="Events & Engagements"
         subtitle="UPTECH flagship summits, key London and Pakistan tech events, and bilateral engagements connecting both nations' technology ecosystems."
-        heroVideo="/image/banners/events-video.mp4"
+        heroVideo="/videos/banner.mp4"
         heroVideoSpeed={2}
       />
 

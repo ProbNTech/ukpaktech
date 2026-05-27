@@ -71,8 +71,7 @@ export default function OverseasEmploymentPage() {
         title="Overseas Contract Employment Opportunities"
         subtitle="The UK-Pakistan Tech Forum facilitates skilled technology professionals with high-value overseas contract opportunities, helping both employers and talent thrive in global markets."
         image="/image/banners/services04.jpg"
-        // video="/image/banners/overseas-employment-video2.mp4"
-        // videoSpeed={2}
+        video="/videos/banner.mp4"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership">Get Connected</ShinyButton>

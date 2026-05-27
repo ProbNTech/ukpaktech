@@ -2,11 +2,13 @@
 
 import { Search, X, SlidersHorizontal } from "lucide-react";
 import type { SortKey } from "@/lib/companyService";
+import type { CompanyCategory } from "@/data/companies";
 
 export interface FilterState {
   search: string;
   country: string;
   service: string;
+  category: CompanyCategory | "";
   minRating: number;
   sort: SortKey;
 }
@@ -16,6 +18,8 @@ interface CompanyFiltersProps {
   onChange: (next: FilterState) => void;
   countryOptions: string[];
   serviceOptions: string[];
+  /** When provided, renders the Category select. */
+  categoryOptions?: CompanyCategory[];
   resultCount: number;
 }
 
@@ -37,14 +41,21 @@ export function CompanyFilters({
   onChange,
   countryOptions,
   serviceOptions,
+  categoryOptions,
   resultCount,
 }: CompanyFiltersProps) {
   const update = (patch: Partial<FilterState>) => onChange({ ...state, ...patch });
   const hasActive =
-    !!state.search || !!state.country || !!state.service || state.minRating > 0;
+    !!state.search ||
+    !!state.country ||
+    !!state.service ||
+    !!state.category ||
+    state.minRating > 0;
 
   const clearAll = () =>
-    onChange({ search: "", country: "", service: "", minRating: 0, sort: state.sort });
+    onChange({ search: "", country: "", service: "", category: "", minRating: 0, sort: state.sort });
+
+  const hasCategory = categoryOptions && categoryOptions.length > 0;
 
   return (
     <div className="rounded-2xl bg-white border border-[#E5E7EB] p-5 sm:p-6 shadow-[0_4px_20px_-12px_rgba(15,23,42,0.12)]">
@@ -55,9 +66,9 @@ export function CompanyFilters({
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3">
         {/* Search */}
-        <div className="relative lg:col-span-4">
+        <div className="relative sm:col-span-2 lg:col-span-4">
           <label htmlFor="directory-search" className="sr-only">
             Search companies
           </label>
@@ -71,6 +82,28 @@ export function CompanyFilters({
             className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
           />
         </div>
+
+        {/* Category (industry) — rendered only when caller provides options */}
+        {hasCategory && (
+          <div className="lg:col-span-2">
+            <label htmlFor="directory-category" className="sr-only">
+              Filter by category
+            </label>
+            <select
+              id="directory-category"
+              value={state.category}
+              onChange={(e) => update({ category: e.target.value as CompanyCategory | "" })}
+              className="w-full px-3 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
+            >
+              <option value="">All categories</option>
+              {categoryOptions!.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
 
         {/* Country */}
         <div className="lg:col-span-2">
@@ -112,24 +145,26 @@ export function CompanyFilters({
           </select>
         </div>
 
-        {/* Rating */}
-        <div className="lg:col-span-2">
-          <label htmlFor="directory-rating" className="sr-only">
-            Filter by minimum rating
-          </label>
-          <select
-            id="directory-rating"
-            value={state.minRating}
-            onChange={(e) => update({ minRating: Number(e.target.value) })}
-            className="w-full px-3 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
-          >
-            {RATING_OPTIONS.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
-        </div>
+        {/* Rating — omitted on directories that show Category instead */}
+        {!hasCategory && (
+          <div className="lg:col-span-2">
+            <label htmlFor="directory-rating" className="sr-only">
+              Filter by minimum rating
+            </label>
+            <select
+              id="directory-rating"
+              value={state.minRating}
+              onChange={(e) => update({ minRating: Number(e.target.value) })}
+              className="w-full px-3 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
+            >
+              {RATING_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
 
         {/* Sort */}
         <div className="lg:col-span-2">

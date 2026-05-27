@@ -10,6 +10,19 @@ export interface Member {
   technologies: string[];
   location: string;
   founded?: string;
+  /**
+   * Primary directory category, chosen to reflect what the company actually
+   * delivers. Drives the Category filter on /pakistan-top-companies.
+   */
+  category?:
+    | "AI & Automation"
+    | "Software Development"
+    | "SaaS Products"
+    | "Consulting"
+    | "Cybersecurity"
+    | "Cloud";
+  /** When true, the member is pinned in the Featured grid on /pakistan-top-companies. */
+  featured?: boolean;
 }
 
 export const members: Member[] = [
@@ -25,6 +38,8 @@ export const members: Member[] = [
     technologies: ["AI & Machine Learning", "Automation", "Custom Software"],
     location: "Faisalabad, Pakistan",
     founded: "2023",
+    category: "AI & Automation",
+    featured: true,
   },
   {
     name: "LetTech",
@@ -38,6 +53,7 @@ export const members: Member[] = [
     technologies: ["AI & Machine Learning", "Custom Software", "Automation"],
     location: "Peshawar, Pakistan",
     founded: "2025",
+    category: "SaaS Products",
   },
   {
     name: "Velvonix",
@@ -50,6 +66,8 @@ export const members: Member[] = [
     sectors: ["Artificial Intelligence", "FinTech", "HealthTech", "Digital Transformation"],
     technologies: ["AI & Machine Learning", "Cloud & DevOps", "Custom Software", "Mobile Development"],
     location: "Faisalabad, Pakistan",
+    category: "AI & Automation",
+    featured: true,
   },
   {
     name: "Aulysius",
@@ -62,6 +80,7 @@ export const members: Member[] = [
     sectors: ["Artificial Intelligence", "FinTech", "HealthTech", "EdTech", "Digital Transformation"],
     technologies: ["AI & Machine Learning", "Automation", "Data Analytics", "Custom Software"],
     location: "London, United Kingdom",
+    category: "Consulting",
   },
   {
     name: "Genetech Solutions",
@@ -74,6 +93,7 @@ export const members: Member[] = [
     sectors: ["Artificial Intelligence", "FinTech", "HealthTech", "EdTech", "E-Commerce", "Cybersecurity", "Digital Transformation"],
     technologies: ["AI & Machine Learning", "Cloud & DevOps", "Custom Software", "Mobile Development"],
     location: "Karachi, Pakistan",
+    category: "Software Development",
   },
 ];
 

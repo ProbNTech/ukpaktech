@@ -3,6 +3,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { LazyVideo } from "@/components/LazyVideo";
 
 import { Cpu, TrendingUp, GraduationCap, Users } from "lucide-react";
 
@@ -206,22 +207,13 @@ export default function MembershipSection() {
   return (
     <div ref={containerRef} className="relative w-full">
       <section className="relative w-full min-h-screen lg:min-h-[700px] overflow-hidden z-10">
-        {/* Background Video */}
-        <motion.video
+        {/* Background Video — lazy-loaded */}
+        <LazyVideo
           aria-hidden="true"
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/image/banners/banner15.jpg"
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-        >
-          <source src="/image/about/bgvideo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </motion.video>
+          src="/videos/banner.mp4"
+          poster="/videos/banner-poster.jpg"
+          className="absolute top-0 left-0 w-full h-full"
+        />
 
         {/* Overlay */}
         <motion.div

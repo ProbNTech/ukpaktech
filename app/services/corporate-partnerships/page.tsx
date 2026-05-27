@@ -168,7 +168,7 @@ export default function CorporatePartnershipsPage() {
         label="UPTECH Service"
         title="Corporate & Accelerator Partnerships"
         subtitle="The UK-Pakistan Tech Forum fosters strategic partnerships between technology startups, scale-ups, corporates, and accelerator programs across the UK and Pakistan. These collaborations help members access resources, mentorship, market opportunities, and industry expertise to accelerate growth and innovation."
-        video="/image/banners/corporate-partnerships-video.mp4"
+        video="/videos/banner.mp4"
         videoSpeed={2}
       >
         <div className="flex flex-wrap items-center gap-4">

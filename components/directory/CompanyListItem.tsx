@@ -42,11 +42,13 @@ export function CompanyListItem({ company, rank }: CompanyListItemProps) {
       </div>
 
       <div className="flex-1 min-w-0">
-        <RatingStars
-          rating={company.rating}
-          reviewCount={company.reviewCount}
-          size="md"
-        />
+        {typeof company.rating === "number" && (
+          <RatingStars
+            rating={company.rating}
+            reviewCount={company.reviewCount}
+            size="md"
+          />
+        )}
         <p className="mt-2 text-sm leading-relaxed text-[#475569] line-clamp-2">
           {company.description}
         </p>

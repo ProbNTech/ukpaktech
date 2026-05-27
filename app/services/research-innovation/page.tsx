@@ -191,7 +191,7 @@ export default function ResearchInnovationPage() {
         label="UPTECH Service"
         title="Research & Innovation Services"
         subtitle="UPTECH builds a strong technology bridge between Pakistan and Europe, enabling companies to collaborate, innovate, and grow in the global digital economy."
-        heroVideo="/image/banners/research-innovation-video.mp4"
+        heroVideo="/videos/banner.mp4"
         heroVideoSpeed={2}
       >
         <div className="flex flex-wrap items-center gap-4">

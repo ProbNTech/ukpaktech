@@ -85,7 +85,7 @@ export default function SkillDevelopmentCenterPage() {
         label="UPTECH Programs"
         title="Skill Development Centre"
         subtitle="Comprehensive training programs designed to build world-class tech capabilities and accelerate your career."
-        video="/image/Skill Development Center/3banner.mp4"
+        video="/videos/banner.mp4"
         videoSpeed={0.75}
         heroImage="/image/Skill Development Center/skill-dev-hero.jpg"
       >

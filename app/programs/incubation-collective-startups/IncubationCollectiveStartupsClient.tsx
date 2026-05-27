@@ -75,7 +75,7 @@ export default function IncubationCollectiveStartupsClient() {
         label="UPTECH Programs"
         title="Incubation & Startups"
         subtitle="Nurturing the next generation of tech startups and innovators through collaborative models and comprehensive support."
-        video="/image/Incubation and Collective Startups/3129957-uhd_3840_2160_25fps.mp4"
+        video="/videos/banner.mp4"
         videoSpeed={2}
       >
         <div className="flex flex-wrap items-center gap-4">

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p ${PORT:-3000}",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "extract:poster": "node scripts/extract-banner-poster.js"
   },
   "dependencies": {
     "@radix-ui/react-aspect-ratio": "^1.1.8",
@@ -47,6 +48,7 @@
     "autoprefixer": "^10.4.0",
     "dotenv": "^17.3.1",
     "eslint": "^9.0.0",
+    "ffmpeg-static": "^5.2.0",
     "eslint-config-next": "^16.0.0",
     "pdfkit": "^0.18.0",
     "playwright": "^1.59.1",

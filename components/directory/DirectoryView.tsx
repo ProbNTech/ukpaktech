@@ -7,6 +7,7 @@ import {
   sortCompanies,
   getCountryOptions,
   getServiceOptions,
+  getCategoryOptions,
 } from "@/lib/companyService";
 import { CompanyCard } from "./CompanyCard";
 import { CompanyListItem } from "./CompanyListItem";
@@ -23,12 +24,15 @@ interface DirectoryViewProps {
   initialSort?: FilterState["sort"];
   /** Optional fixed-position heading rendered above the filter bar. */
   heading?: string;
+  /** Show the Category dropdown (industry filter). */
+  showCategoryFilter?: boolean;
 }
 
 const DEFAULT_STATE: FilterState = {
   search: "",
   country: "",
   service: "",
+  category: "",
   minRating: 0,
   sort: "rating",
 };
@@ -39,18 +43,24 @@ export function DirectoryView({
   pageSize,
   initialSort = "rating",
   heading,
+  showCategoryFilter = false,
 }: DirectoryViewProps) {
   const [state, setState] = useState<FilterState>({ ...DEFAULT_STATE, sort: initialSort });
   const [page, setPage] = useState(1);
 
   const countryOptions = useMemo(() => getCountryOptions(companies), [companies]);
   const serviceOptions = useMemo(() => getServiceOptions(companies), [companies]);
+  const categoryOptions = useMemo(
+    () => (showCategoryFilter ? getCategoryOptions(companies) : undefined),
+    [companies, showCategoryFilter]
+  );
 
   const filtered = useMemo(() => {
     const result = filterCompanies(companies, {
       search: state.search,
       country: state.country,
       service: state.service,
+      category: state.category,
       minRating: state.minRating,
     });
     return sortCompanies(result, state.sort);
@@ -78,6 +88,7 @@ export function DirectoryView({
           onChange={handleStateChange}
           countryOptions={countryOptions}
           serviceOptions={serviceOptions}
+          categoryOptions={categoryOptions}
           resultCount={filtered.length}
         />
 

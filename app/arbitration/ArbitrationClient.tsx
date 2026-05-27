@@ -210,7 +210,7 @@ export default function ArbitrationClient() {
           </>
         }
         subtitle="Ensuring trust in cross-border technology collaboration. UPTECH provides an independent dispute resolution framework to facilitate the fair, efficient, and amicable settlement of disputes."
-        heroVideo="/image/banners/arbitration-video.mp4"
+        heroVideo="/videos/banner.mp4"
         heroVideoSpeed={2}
       >
         <div className="flex flex-wrap items-center gap-4">

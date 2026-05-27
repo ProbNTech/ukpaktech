@@ -85,7 +85,7 @@ export default function AITechProgramsPage() {
         label="UPTECH Programs"
         title="AI & Tech Programs"
         subtitle="Driving AI innovation and tech leadership between the UK and Pakistan through comprehensive training, certifications, and collaborative startup models."
-        video="/image/Ai and program/854323-hd_1920_1080_25fps.mp4"
+        video="/videos/banner.mp4"
         videoSpeed={2}
       >
         <div className="flex flex-wrap items-center gap-4">

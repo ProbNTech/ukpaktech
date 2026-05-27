@@ -71,7 +71,7 @@ export default function TradeDelegationsAndExhibitionsClient() {
         label="UPTECH Ecosystem"
         title="Trade Delegations & Exhibitions"
         subtitle="Facilitating cross-border trade delegations and technology exhibitions to strengthen UK–Pakistan partnerships."
-        video="/image/Trade%20Delegations%20and%20Exhibitions/12174926-uhd_3840_2160_30fps.mp4"
+        video="/videos/banner.mp4"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/events">View Events</ShinyButton>

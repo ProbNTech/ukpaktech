@@ -10,7 +10,21 @@
 // soon" and hides the Website button until real, verified URLs are added.
 // Never use example.com or other placeholder URLs in this file.
 
-export type CompanyCategory = "AI" | "IT" | "Software" | "Cloud" | "Cybersecurity" | "Data";
+export type CompanyCategory =
+  // Categories used by the mock-data directories (/top-ai-companies, /top-it-companies)
+  | "AI"
+  | "IT"
+  | "Software"
+  | "Cloud"
+  | "Cybersecurity"
+  | "Data"
+  // Categories used by real UPTECH members on /pakistan-top-companies — chosen
+  // to reflect what each company actually does (AI/automation, custom software,
+  // SaaS, project consulting), not the generic CompanyService bucket.
+  | "AI & Automation"
+  | "Software Development"
+  | "SaaS Products"
+  | "Consulting";
 
 export interface DirectoryCompany {
   /** Stable identifier from the source system. */
@@ -22,10 +36,10 @@ export interface DirectoryCompany {
   category: CompanyCategory;
   /** Free-form service tags shown on the card. */
   services: string[];
-  /** Average rating, 0–5, one decimal. */
-  rating: number;
-  /** Total review count from the source. */
-  reviewCount: number;
+  /** Average rating, 0–5, one decimal. Omitted for verified members without external review data. */
+  rating?: number;
+  /** Total review count from the source. Omitted for verified members without external review data. */
+  reviewCount?: number;
   /** "City, Country" — full readable string. */
   location: string;
   country: string;
@@ -41,7 +55,7 @@ export interface DirectoryCompany {
    */
   clutchProfileUrl?: string;
   /** Provenance label, shown on the card. */
-  source: "Clutch" | "Mock";
+  source: "Clutch" | "Mock" | "Member";
   /** Marked true when source has verified the listing. */
   verified: boolean;
 }

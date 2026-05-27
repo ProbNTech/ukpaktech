@@ -21,6 +21,7 @@ import {
   type CompanyCategory,
   type DirectoryCompany,
 } from "@/data/companies";
+import { pakistaniMemberCompanies, featuredMemberCompanies } from "@/lib/memberCompanies";
 
 export type SortKey = "rating" | "reviews" | "name";
 
@@ -28,14 +29,39 @@ export interface CompanyFilters {
   search?: string;
   country?: string;
   service?: string;
+  category?: CompanyCategory | "";
   minRating?: number;
 }
 
 const TOP_LIMIT = 12;
 
+/** AI + every IT-adjacent category. Used by /pakistan-top-companies. */
+export const PAKISTAN_TOP_CATEGORIES: CompanyCategory[] = ["AI", ...IT_CATEGORIES];
+
+/**
+ * Real verified UPTECH members based in Pakistan. Source is `data/members.ts`
+ * via the `lib/memberCompanies.ts` adapter. Adding a new member there
+ * automatically surfaces here.
+ */
+export async function getAllPakistanTopCompanies(): Promise<DirectoryCompany[]> {
+  return [...pakistaniMemberCompanies].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+/**
+ * Members editorially pinned via `featured: true` in data/members.ts.
+ * `limit` is honored but the curator's pick comes first — today only Prob N Tech.
+ */
+export async function getTopPakistanCompanies(limit = TOP_LIMIT): Promise<DirectoryCompany[]> {
+  return featuredMemberCompanies.slice(0, limit);
+}
+
 function byRatingThenReviews(a: DirectoryCompany, b: DirectoryCompany) {
-  if (b.rating !== a.rating) return b.rating - a.rating;
-  return b.reviewCount - a.reviewCount;
+  const ar = a.rating ?? -1;
+  const br = b.rating ?? -1;
+  if (br !== ar) return br - ar;
+  const arc = a.reviewCount ?? 0;
+  const brc = b.reviewCount ?? 0;
+  return brc - arc;
 }
 
 export async function getTopAICompanies(limit = TOP_LIMIT): Promise<DirectoryCompany[]> {
@@ -76,7 +102,10 @@ export function filterCompanies(
     }
     if (filters.country && c.country !== filters.country) return false;
     if (filters.service && !c.services.includes(filters.service)) return false;
-    if (typeof filters.minRating === "number" && c.rating < filters.minRating) return false;
+    if (filters.category && c.category !== filters.category) return false;
+    if (typeof filters.minRating === "number" && filters.minRating > 0) {
+      if (typeof c.rating !== "number" || c.rating < filters.minRating) return false;
+    }
     return true;
   });
 }
@@ -87,7 +116,7 @@ export function sortCompanies(list: DirectoryCompany[], key: SortKey): Directory
     case "rating":
       return copy.sort(byRatingThenReviews);
     case "reviews":
-      return copy.sort((a, b) => b.reviewCount - a.reviewCount);
+      return copy.sort((a, b) => (b.reviewCount ?? 0) - (a.reviewCount ?? 0));
     case "name":
       return copy.sort((a, b) => a.name.localeCompare(b.name));
   }
