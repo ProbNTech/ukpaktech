@@ -95,6 +95,44 @@ export const members: Member[] = [
     location: "Karachi, Pakistan",
     category: "Software Development",
   },
+  {
+    name: "TECH Pakistan",
+    slug: "tech-pakistan",
+    website: "",
+    description:
+      "Karachi-based IT services organisation working across multiple verticals, with a focus on FinTech and software development & SaaS.",
+    companyType: "Software & Services",
+    sectors: ["FinTech", "Digital Transformation"],
+    technologies: ["Custom Software"],
+    location: "Karachi, Pakistan",
+    category: "Software Development",
+  },
+  {
+    name: "AI Next Technologies",
+    slug: "ai-next-technologies",
+    logo: "/image/members/ai-next-technologies.png",
+    website: "https://ai-next.co",
+    description:
+      "Karachi-based team of AI experts delivering AI-powered automation and data-driven solutions, with a focus on banking and financial institutions, retail, healthcare, and insurance.",
+    companyType: "Software & Services",
+    sectors: ["Artificial Intelligence", "FinTech", "HealthTech", "E-Commerce", "Digital Transformation"],
+    technologies: ["AI & Machine Learning", "Automation", "Data Analytics", "Custom Software"],
+    location: "Karachi, Pakistan",
+    category: "AI & Automation",
+  },
+  {
+    name: "Call IT Studio",
+    slug: "call-it-studio",
+    logo: "/image/members/call-it-studio.png",
+    website: "https://callitweb-25c85.web.app",
+    description:
+      "Lahore-based full-service creative and digital agency providing branding, graphic design, social media management, content creation, digital marketing, SEO, website design and development, event management, and telemarketing.",
+    companyType: "Software & Services",
+    sectors: ["Digital Transformation", "E-Commerce"],
+    technologies: ["Custom Software", "Data Analytics"],
+    location: "Lahore, Pakistan",
+    category: "Software Development",
+  },
 ];
 
 /* ── Filter option lists ──────────────────────────────────────── */
