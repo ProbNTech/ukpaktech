@@ -136,7 +136,7 @@ export const members: Member[] = [
   {
     name: "ALGORYC",
     slug: "algoryc",
-    logo: "/image/members/algoryc.png",
+    logo: "/image/members/algoryc-dark.png",
     website: "https://www.algoryc.com",
     description:
       "Islamabad-based AI and full-stack software house building ML pipelines, NLP and computer-vision engines, cloud and automation solutions; operates as the AI subsidiary of Eastern Tech.",
@@ -145,18 +145,6 @@ export const members: Member[] = [
     technologies: ["AI & Machine Learning", "Cloud & DevOps", "Automation", "Custom Software"],
     location: "Islamabad, Pakistan",
     category: "AI & Automation",
-  },
-  {
-    name: "Agency 360 Advertisers",
-    slug: "agency-360-advertisers",
-    website: "https://agency360ads.com",
-    description:
-      "Rawalpindi-based digital advertising and branding agency running social-media marketing, creative design and data-driven campaigns to grow brands online.",
-    companyType: "Software & Services",
-    sectors: ["Digital Transformation", "E-Commerce"],
-    technologies: ["Data Analytics", "Custom Software"],
-    location: "Rawalpindi, Pakistan",
-    category: "Software Development",
   },
   {
     name: "Agility & Innovation",
@@ -226,6 +214,7 @@ export const members: Member[] = [
   {
     name: "Aibuz",
     slug: "aibuz",
+    logo: "/image/members/aibuz.png",
     website: "https://aibuz.org",
     description:
       "Karachi-based end-to-end ICT services and outsourcing provider covering hosting and domains, internet marketing, media production, enterprise services and IT outsourcing.",
@@ -277,7 +266,7 @@ export const members: Member[] = [
   {
     name: "AURA Concept Creator",
     slug: "aura-concept-creator",
-    logo: "/image/members/aura-concept-creator.png",
+    logo: "/image/members/aura-dark.png",
     website: "https://auraconceptcreator.com",
     description:
       "Karachi-based digital marketing and creative agency offering SEO, PPC, social-media management, content creation, design and video editing.",
@@ -329,6 +318,7 @@ export const members: Member[] = [
   {
     name: "Quantum Bytes Solutions",
     slug: "quantum-bytes-solutions",
+    logo: "/image/members/quantum-bytes.png",
     website: "https://q-bsolutions.com",
     description:
       "Faisalabad-based technology company delivering AI and machine learning, software development and SaaS, FinTech and digital-banking solutions, and cloud computing and infrastructure to help businesses build scalable digital systems.",
@@ -341,6 +331,7 @@ export const members: Member[] = [
   {
     name: "Arbob Tech Team",
     slug: "arbob-tech-team",
+    logo: "/image/members/arbobtech.png",
     website: "https://arbobtechteam.com",
     description:
       "Gilgit-based technology company specialising in software development, AI, cloud computing, web and mobile development, DevOps and digital marketing, with products including 8HR (HRMS) and 8POS (restaurant point-of-sale).",
