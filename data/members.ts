@@ -406,6 +406,56 @@ export const members: Member[] = [
     location: "Karachi, Pakistan",
     category: "Software Development",
   },
+  {
+    name: "Creamerz Soft",
+    slug: "creamerz-soft",
+    website: "https://www.creamerz.com",
+    description:
+      "Lahore-based full-stack web development house with 14+ years of experience and 100+ delivered projects, building high-performing websites and web applications across PHP (Laravel, Symfony, CodeIgniter), WordPress (custom themes, plugins and WooCommerce) and Node.js, React and RESTful APIs.",
+    companyType: "Software & Services",
+    sectors: ["FinTech", "E-Commerce", "HealthTech", "Digital Transformation"],
+    technologies: ["Custom Software", "Cloud & DevOps"],
+    location: "Lahore, Pakistan",
+    category: "Software Development",
+  },
+  {
+    name: "Corpela",
+    slug: "corpela",
+    logo: "/image/members/corpela.png",
+    website: "https://corpela.com",
+    description:
+      "Islamabad-based technology company building AI-powered SaaS products, custom software, enterprise platforms and digital transformation solutions, with its own ventures including Entellra (AI restaurant and hotel OS) and Cloudbase (retail and POS software).",
+    companyType: "SaaS / Platform",
+    sectors: ["Artificial Intelligence", "FinTech", "E-Commerce", "Digital Transformation"],
+    technologies: ["AI & Machine Learning", "Custom Software", "Cloud & DevOps", "Mobile Development"],
+    location: "Islamabad, Pakistan",
+    category: "AI & Automation",
+  },
+  {
+    name: "AVID Enterprise Consultant",
+    slug: "avid-enterprise-consultant",
+    website: "https://www.avideconsultant.com",
+    description:
+      "Lahore-based software engineering firm delivering high-performance web platforms, mobile app development and cloud infrastructure for the modern global economy.",
+    companyType: "Software & Services",
+    sectors: ["Artificial Intelligence", "EdTech", "E-Commerce", "Digital Transformation"],
+    technologies: ["Custom Software", "Mobile Development", "Cloud & DevOps", "Data Analytics"],
+    location: "Lahore, Pakistan",
+    category: "Software Development",
+  },
+  {
+    name: "Glosix Systems",
+    slug: "glosix-systems",
+    logo: "/image/members/glosix.png",
+    website: "https://glosixsystems.co.uk",
+    description:
+      "Lahore-based global IT staffing and technology services company offering IT staff augmentation, offshore development centres (ODC+) and end-to-end outsourcing, with capabilities across AI and data intelligence, cloud and managed infrastructure, cybersecurity and strategic IT consulting.",
+    companyType: "Consultancy",
+    sectors: ["Artificial Intelligence", "FinTech", "HealthTech", "Cybersecurity", "Digital Transformation"],
+    technologies: ["AI & Machine Learning", "Cloud & DevOps", "Custom Software", "Data Analytics"],
+    location: "Lahore, Pakistan",
+    category: "Consulting",
+  },
 ];
 
 /* ── Filter option lists ──────────────────────────────────────── */
