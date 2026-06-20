@@ -5,7 +5,7 @@ import Image from "next/image";
 import { X } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
-const galleryImages = [
+const defaultGalleryImages = [
   "/image/eventgallery/event-1.jpg",
   "/image/eventgallery/event-2.jpg",
   "/image/eventgallery/event-3.jpg",
@@ -18,7 +18,8 @@ const brandShadowClasses = [
   "shadow-[0_4px_20px_rgba(225,29,72,0.15)] group-hover:shadow-[0_10px_36px_rgba(225,29,72,0.22)]",
 ];
 
-export function EventGallery() {
+export function EventGallery({ images }: { images?: string[] }) {
+  const galleryImages = images && images.length > 0 ? images : defaultGalleryImages;
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const shouldReduceMotion = useReducedMotion();
 

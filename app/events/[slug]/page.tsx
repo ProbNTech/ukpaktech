@@ -51,6 +51,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { Button } from "@/components/Button";
 import { events, getEventBySlug, getRelatedEvents } from "@/data/events";
 import { EventDetailClient } from "./EventDetailClient";
+import { EventGallery } from "@/components/EventGallery";
 
 /* ------------------------------------------------------------------ */
 /*  Static params                                                       */
@@ -255,6 +256,14 @@ export default async function EventDetailPage({
                   ))}
                 </div>
               </AnimatedSection>
+
+              {/* Photo Gallery (optional) */}
+              {event.gallery && event.gallery.length > 0 && (
+                <AnimatedSection className="mb-16">
+                  <InlineHeading label="Highlights" title="Photo Gallery" />
+                  <EventGallery images={event.gallery} />
+                </AnimatedSection>
+              )}
 
               {/* Agenda (optional) */}
               {event.agenda && event.agenda.length > 0 && (

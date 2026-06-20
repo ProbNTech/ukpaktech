@@ -11,6 +11,8 @@ export interface Event {
   venue?: string;
   price?: string;
   image: string;
+  /** Optional photo gallery (e.g. for past events). Rendered as a lightbox grid. */
+  gallery?: string[];
   officialLink?: string;
   excerpt: string;
   body: string[];
@@ -973,6 +975,194 @@ export const events: Event[] = [
       "ai-summit-london-2026",
       "big-data-ldn-2026",
       "ai-world-congress-2026",
+    ],
+  },
+
+  /* ------------------------------------------------------------------ */
+  /*  Additional 2026 events (client update — June 2026)                 */
+  /* ------------------------------------------------------------------ */
+  {
+    slug: "ai4-2026",
+    title: "Ai4 2026",
+    category: "Europe",
+    tag: "Conference",
+    status: "upcoming",
+    date: "August 4–6, 2026",
+    dateISO: "2026-08-04",
+    location: "The Venetian, Las Vegas, USA",
+    venue: "The Venetian Resort, Las Vegas",
+    image: "/image/Events & Engagements/europe/ai4.jpg",
+    officialLink: "https://ai4.io/",
+    excerpt:
+      "The world's largest gathering of artificial intelligence leaders in industry — 12,000+ attendees, 1,000+ speakers and 400+ exhibitors across the AI value chain.",
+    body: [
+      "Ai4 is the world's largest artificial intelligence industry event, convening more than 12,000 business and technology leaders at The Venetian in Las Vegas. The 2026 edition brings together over 1,000 speakers and 400+ exhibitors across nearly one million square feet, spanning enterprise AI adoption, generative AI, machine learning operations, responsible AI, and applied AI across finance, healthcare, retail, and government.",
+      "The programme is structured around practical, outcome-focused content for executives and practitioners deploying AI at scale — covering everything from foundation models and agentic systems to data infrastructure, governance, and ROI measurement. Optional pre-conference training workshops run on August 3.",
+      "For UPTECH members, Ai4 offers unmatched exposure to the global AI ecosystem and direct access to enterprise buyers, investors, and technology partners. UPTECH can support member companies looking to exhibit, present, or build commercial relationships at the event as part of their international growth strategy.",
+    ],
+    relatedSlugs: [
+      "world-summit-ai-2026",
+      "ai-summit-london-2026",
+      "ai-world-congress-2026",
+    ],
+  },
+  {
+    slug: "conf3rence-2026",
+    title: "CONF3RENCE 2026",
+    category: "Europe",
+    tag: "Conference",
+    status: "upcoming",
+    date: "September 15–16, 2026",
+    dateISO: "2026-09-15",
+    location: "Signal Iduna Park, Dortmund, Germany",
+    venue: "Signal Iduna Park, Dortmund",
+    image: "/image/Events & Engagements/europe/conf3rence.jpg",
+    officialLink: "https://www.conf3rence.com/",
+    excerpt:
+      "Europe's vibrant hub for Web3, blockchain and emerging technology, hosted in the iconic Signal Iduna Park stadium in Dortmund.",
+    body: [
+      "CONF3RENCE transforms Dortmund's iconic Signal Iduna Park into one of Europe's most distinctive technology gatherings, focused on Web3, blockchain, digital assets, decentralised infrastructure, and the broader emerging-technology economy. The 2026 edition convenes founders, developers, investors, and enterprise innovators to explore how decentralised and AI-enabled technologies are reshaping business and society.",
+      "The two-day programme combines keynote stages, deep-dive technical sessions, and a busy exhibition and networking floor, attracting a pan-European audience of startups, scale-ups, and corporates evaluating blockchain and emerging-tech adoption.",
+      "For UPTECH members working in blockchain, Web3, fintech, and decentralised infrastructure, CONF3RENCE provides a strong platform to engage the European emerging-tech community and identify partnership and investment opportunities across the continent.",
+    ],
+    relatedSlugs: [
+      "gitex-ai-europe-2026",
+      "web-summit-2026",
+      "point-zero-forum-2026",
+    ],
+  },
+  {
+    slug: "warsaw-tech-week-2026",
+    title: "Warsaw Tech Week 2026",
+    category: "Europe",
+    tag: "Expo",
+    status: "upcoming",
+    date: "September 22–24, 2026",
+    dateISO: "2026-09-22",
+    location: "Warsaw, Poland",
+    venue: "Warsaw, Poland",
+    image: "/image/Events & Engagements/europe/warsaw_tech_week.jpg",
+    officialLink: "https://warsawtechweek.com/en/",
+    excerpt:
+      "Poland's international trade fair of technology and innovation, bringing together startups, investors and enterprises across Central and Eastern Europe.",
+    body: [
+      "Warsaw Tech Week (Tech Week Poland) is one of Central and Eastern Europe's largest international fairs for technology and innovation, held over three days in Warsaw. The event showcases AI, data, cloud, cybersecurity, IoT, and digital transformation, drawing a broad audience of startups, scale-ups, investors, and enterprise decision-makers from across the CEE region.",
+      "With an exhibition floor, conference stages, and structured networking, Warsaw Tech Week is a gateway to the fast-growing Polish and CEE technology markets — among the most dynamic in Europe for software engineering talent and digital adoption.",
+      "For UPTECH members, Warsaw Tech Week opens access to Central and Eastern European partners, customers, and talent ecosystems, complementing the UK–Pakistan corridor with new European growth opportunities.",
+    ],
+    relatedSlugs: [
+      "oslo-tech-show-2026",
+      "stockholm-tech-show-2026",
+      "web-summit-2026",
+    ],
+  },
+  {
+    slug: "ecommerce-expo-2026",
+    title: "eCommerce Expo 2026",
+    category: "London",
+    tag: "Expo",
+    status: "upcoming",
+    date: "September 23–24, 2026",
+    dateISO: "2026-09-23",
+    location: "ExCeL London",
+    venue: "ExCeL London",
+    image: "/image/Events & Engagements/europe/ecommerce_expo.png",
+    officialLink: "https://www.ecommerceexpo.co.uk/",
+    excerpt:
+      "The ultimate destination for every B2C and B2B business that operates and sells online — co-located with Technology for Marketing at ExCeL London.",
+    body: [
+      "eCommerce Expo is the UK's leading event for online retail and digital commerce, held at ExCeL London. It brings together retailers, brands, and B2B businesses with the platforms, payments, logistics, marketing, and AI technologies that power modern online selling, alongside a high-calibre conference programme led by senior commerce and marketing leaders.",
+      "Co-located with Technology for Marketing, the show offers a complete view of the customer journey — from acquisition and conversion to fulfilment and retention — making it a key date for any company building or scaling an online commerce proposition.",
+      "For UPTECH members in e-commerce, martech, payments, and retail technology, the expo is an ideal platform to meet UK retailers and brands, generate leads, and showcase solutions to a commercially focused audience.",
+    ],
+    relatedSlugs: [
+      "tech-for-marketing-2026",
+      "big-data-ldn-2026",
+      "london-tech-week-2026",
+    ],
+  },
+  {
+    slug: "international-cyber-expo-2026",
+    title: "International Cyber Expo 2026",
+    category: "London",
+    tag: "Expo",
+    status: "upcoming",
+    date: "September 29–30, 2026",
+    dateISO: "2026-09-29",
+    location: "Olympia London",
+    venue: "Olympia London",
+    image: "/image/Events & Engagements/europe/international_cyber_expo.png",
+    officialLink: "https://www.internationalcyberexpo.com/",
+    excerpt:
+      "Expert insights, innovative solutions and exclusive networking for cybersecurity and physical security professionals at Olympia London.",
+    body: [
+      "International Cyber Expo brings together the cyber and physical security communities at Olympia London for two days of expert-led content, live demonstrations, and high-level networking. The event covers the full security spectrum — from threat intelligence, identity, and cloud security to critical national infrastructure protection and converged cyber-physical resilience.",
+      "Its agenda is curated for CISOs, security leaders, and practitioners, combining a Global Stage, tech hubs, and an exhibition of leading and emerging security vendors, making it one of the UK's most important annual security gatherings.",
+      "For UPTECH members in cybersecurity, the expo provides direct access to UK enterprise and government security buyers, channel partners, and investors — a strong platform for market entry and growth in one of the UK's highest-priority technology sectors.",
+    ],
+    relatedSlugs: [
+      "cyber-security-expo-2026",
+      "infosecurity-europe-2026",
+      "international-security-expo-2026",
+    ],
+  },
+  {
+    slug: "tech-week-singapore-2026",
+    title: "Tech Week Singapore 2026",
+    category: "Europe",
+    tag: "Expo",
+    status: "upcoming",
+    date: "September 29–30, 2026",
+    dateISO: "2026-09-29",
+    location: "Sands Expo & Convention Centre, Singapore",
+    venue: "Sands Expo & Convention Centre, Singapore",
+    image: "/image/Events & Engagements/europe/tech_week_singapore.jpg",
+    officialLink: "https://www.singaporetechnologyweek.com/",
+    excerpt:
+      "Asia's leading technology event — 28,000+ attendees, 500+ innovations and 550+ speakers across AI, cloud, data and digital infrastructure.",
+    body: [
+      "Tech Week Singapore is one of Asia's largest technology events, held at the Sands Expo & Convention Centre and attracting more than 28,000 attendees, 500+ cutting-edge innovations, and 550+ speakers. It spans AI, cloud, data centres, big data, and digital infrastructure across co-located shows that together map the region's technology landscape.",
+      "As a gateway to the high-growth Asia-Pacific market, the event connects global vendors with enterprise buyers, investors, and government stakeholders from across Southeast Asia and beyond.",
+      "For UPTECH members with Asia-Pacific ambitions, Tech Week Singapore offers a single, efficient platform to engage the region's most important technology decision-makers and explore partnership, distribution, and investment opportunities.",
+    ],
+    relatedSlugs: [
+      "gitex-global-dubai-2026",
+      "world-summit-ai-2026",
+      "ai4-2026",
+    ],
+  },
+
+  /* ------------------------------------------------------------------ */
+  /*  UPTECH — Past Engagements (photo galleries)                        */
+  /* ------------------------------------------------------------------ */
+  {
+    slug: "london-tech-week-pakistan-networking-dinner-2026",
+    title: "London Tech Week — Pakistan Tech Networking Dinner",
+    category: "UPTECH",
+    tag: "Networking",
+    status: "past",
+    date: "June 2026",
+    dateISO: "2026-06-10",
+    location: "London, United Kingdom",
+    venue: "London, United Kingdom",
+    image: "/image/Events & Engagements/london-tech-week-dinner/dinner-1.jpg",
+    gallery: [
+      "/image/Events & Engagements/london-tech-week-dinner/dinner-1.jpg",
+      "/image/Events & Engagements/london-tech-week-dinner/dinner-2.jpg",
+      "/image/Events & Engagements/london-tech-week-dinner/dinner-3.jpg",
+      "/image/Events & Engagements/london-tech-week-dinner/dinner-4.jpg",
+    ],
+    officialLink: "https://www.pasha.org.pk/",
+    excerpt:
+      "During London Tech Week, UPTECH joined Pakistan's technology delegation for a networking dinner connecting UK and Pakistani tech leaders, founders and investors.",
+    body: [
+      "As part of London Tech Week, UPTECH joined Pakistan's visiting technology delegation for a networking dinner in London — an evening bringing together founders, executives, and investors from across the UK and Pakistani technology ecosystems.",
+      "The dinner was held alongside the Pakistan Software Houses Association (P@SHA) under the Tech Destination Pakistan banner, supported by the Ministry of IT & Telecommunication, as part of a wider programme positioning Pakistan's IT industry on the global stage during one of the world's premier technology weeks.",
+      "The evening created space for relaxed, high-trust conversations — the kind that turn into partnerships, market-entry plans, and investment links across the UK–Pakistan tech corridor. For UPTECH, convening UK and Pakistani technology leaders in moments like these is central to its mission of deepening trade and innovation ties between the two countries.",
+    ],
+    relatedSlugs: [
+      "london-tech-week-2026",
+      "ai-summit-london-2026",
     ],
   },
 ];
