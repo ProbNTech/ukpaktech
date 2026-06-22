@@ -7,9 +7,20 @@ import { ChevronDown } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { PillButton } from "@/components/ui/PillButton";
-import { featuredEvents } from "@/data/featured-events";
+import { events } from "@/data/events";
 
-const homepageEvents = featuredEvents.filter(e => new Date(e.dateISO).getMonth() !== 2);
+// Single source of truth: derive the home page list directly from the master
+// events data so it always stays in sync with the /events page.
+const homepageEvents = events.map((e) => ({
+  id: e.slug,
+  title: e.title,
+  date: e.date,
+  dateISO: e.dateISO,
+  shortDescription: e.excerpt,
+  image: e.image,
+  location: e.location,
+  tag: e.tag,
+}));
 
 function isEventUpcomingISO(dateISO: string): boolean {
   const today = new Date();
@@ -34,7 +45,7 @@ function HomeEventCard({ event }: { event: typeof homepageEvents[0] }) {
   const color = getTagColor(event.tag);
 
   return (
-    <Link href="/events" className="group flex flex-col gap-2 rounded-lg p-2 duration-75 hover:bg-[#E8E6E3]/60 active:bg-[#E8E6E3]">
+    <Link href={`/events/${event.id}`} className="group flex flex-col gap-2 rounded-lg p-2 duration-75 hover:bg-[#E8E6E3]/60 active:bg-[#E8E6E3]">
       <LazyImage
         src={event.image}
         fallback="/image/placeholder.webp"
@@ -143,19 +154,8 @@ export default function HomeEventsSection() {
       result = result.sort((a, b) => a.dateISO.localeCompare(b.dateISO));
     }
 
-    const isUK = (e: typeof result[0]) => {
-      const loc = e.location?.toLowerCase() ?? "";
-      return loc.includes("london") || loc.includes("westminster") || loc.includes("excel");
-    };
-    const isPK = (e: typeof result[0]) => {
-      const loc = e.location?.toLowerCase() ?? "";
-      return loc.includes("pakistan") || loc.includes("karachi") || loc.includes("islamabad") || loc.includes("lahore");
-    };
-    const ukEvents = result.filter(isUK);
-    const pkEvents = result.filter(isPK);
-    const otherEvents = result.filter(e => !isUK(e) && !isPK(e));
-    result = [...ukEvents, ...otherEvents, ...pkEvents];
-
+    // Mirror the /events page ordering (nearest/latest first) so the home
+    // section shows exactly the same events, just capped to the first 9.
     return result.slice(0, 9);
   }, [showPast, categoryFilter, monthFilter, sortOrder]);
 
