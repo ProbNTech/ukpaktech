@@ -53,7 +53,7 @@ export default function FeaturedEventShowcase() {
             <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-[#9fb4d8]">About The Event</p>
             <h2 id="featured-event-heading" className="mt-2 text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-[1.1] text-white">
               London Tech Week 2026
-              <span className="block text-[#e2342f] mt-1">UK–Pakistan Highlights</span>
+              <span className="block text-[#e2342f] mt-1">Highlights</span>
             </h2>
             <div className="mt-4 flex items-center gap-2" aria-hidden="true">
               <span className="h-[3px] w-8 rounded-full bg-[#C41E3A]" />
@@ -89,17 +89,17 @@ export default function FeaturedEventShowcase() {
             <div className="relative pl-5 sm:pl-6">
               <span className="absolute left-0 top-1 h-[80%] w-[3px] rounded-full bg-gradient-to-b from-[#C41E3A] to-transparent" aria-hidden="true" />
               <p className="text-base sm:text-lg font-semibold text-white">
-                A high-impact week that exceeded expectations.
+                An incredibly productive few days for the UK–Pakistan technology community.
               </p>
               <p className="mt-1 text-[#e2342f] text-sm font-bold uppercase tracking-wide">
-                Highlights from the corridor
+                Olympia London · June 8–12, 2026
               </p>
             </div>
             <dl className="mt-7 grid grid-cols-3 gap-4">
               {[
                 { value: "16+", label: "Pakistani companies" },
-                { value: "40+", label: "Curated meetings" },
-                { value: "1", label: "Tech corridor" },
+                { value: "#200", label: "Grand Hall pavilion" },
+                { value: "5", label: "Days at Olympia" },
               ].map((stat) => (
                 <div key={stat.label} className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-4 text-center">
                   <dt className="text-2xl font-bold text-white">{stat.value}</dt>
@@ -120,12 +120,12 @@ export default function FeaturedEventShowcase() {
         <div className="group overflow-hidden">
           <ul className="flex w-max gap-4 px-4 fes-marquee group-hover:[animation-play-state:paused]">
             {loop.map((src, i) => (
-              <li key={`${src}-${i}`} className="relative h-44 w-64 sm:h-52 sm:w-80 shrink-0 overflow-hidden rounded-xl border border-white/10 shadow-lg shadow-black/30">
+              <li key={`${src}-${i}`} className="relative h-60 w-80 sm:h-72 sm:w-[28rem] shrink-0 overflow-hidden rounded-xl border border-white/10 shadow-lg shadow-black/30">
                 <Image
                   src={src}
-                  alt="London Tech Week 2026 — UK–Pakistan highlights"
+                  alt="London Tech Week 2026 highlights"
                   fill
-                  sizes="320px"
+                  sizes="(min-width: 640px) 448px, 320px"
                   className="object-cover transition-transform duration-500 hover:scale-105"
                   aria-hidden={i >= strip.length}
                 />
@@ -149,7 +149,7 @@ export default function FeaturedEventShowcase() {
           }
         }
         .fes-marquee {
-          animation: fes-scroll 60s linear infinite;
+          animation: fes-scroll 110s linear infinite;
           will-change: transform;
         }
         @media (prefers-reduced-motion: reduce) {
