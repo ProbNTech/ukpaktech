@@ -36,6 +36,7 @@ const PartnerSolutionsSection = dynamic(() => import("@/components/PartnerSoluti
   loading: () => <div className="py-20 bg-gradient-to-b from-[#f0f7ff] via-[#e8f1fb] to-[#dfeaf7]" aria-busy="true"><div className="px-6 sm:px-10 lg:px-16 xl:px-20"><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{Array.from({ length: 3 }).map((_, i) => <div key={i} className="h-96 bg-white rounded-2xl animate-pulse" />)}</div></div></div>,
 });
 import HomeEventsSection from "@/components/events/HomeEventsSection";
+import FeaturedEventShowcase from "@/components/events/FeaturedEventShowcase";
 import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
 
 const homepageArticles = articles.slice(0, 15);
@@ -425,6 +426,9 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* 13.5 FEATURED EVENT SHOWCASE — scrolling gallery */}
+      <FeaturedEventShowcase />
 
       {/* 14. EVENTS */}
       <HomeEventsSection />
