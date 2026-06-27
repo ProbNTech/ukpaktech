@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 88" fill="none">
+  <defs>
+    <linearGradient id="avidGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="12" width="64" height="64" rx="18" fill="url(#avidGrad)"/>
+  <path d="M36 28 L50 60 H43.4 L40.6 53.2 H31.4 L28.6 60 H22 L36 28 Z M36 38.4 L33.4 47.6 H38.6 L36 38.4 Z" fill="#FFFFFF"/>
+  <text x="86" y="58" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="800" letter-spacing="-0.5">
+    <tspan fill="#1C1F2E">AVID</tspan><tspan fill="#2563EB">LABS</tspan>
+  </text>
+</svg>
