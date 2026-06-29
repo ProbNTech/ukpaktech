@@ -13,6 +13,8 @@ import {
   getAllPakistanTopCompanies,
   getTopPakistanCompanies,
 } from "@/lib/companyService";
+import { listMemberDirectory } from "@/lib/vendorService";
+import type { DirectoryCompany } from "@/data/companies";
 
 export const metadata: Metadata = {
   title: "Pakistan's Top AI & IT Companies",
@@ -27,12 +29,27 @@ export const metadata: Metadata = {
   },
 };
 
+// Reflect newly approved members within a minute.
+export const revalidate = 60;
+
 export default async function PakistanTopCompaniesPage() {
-  const [featured, all] = await Promise.all([
+  const [featured, staticAll, approvedMembers] = await Promise.all([
     // Pull every editorial-pinned company; the carousel handles 1 or N.
     getTopPakistanCompanies(20),
     getAllPakistanTopCompanies(),
+    // Approved members from the vendor DB (best-effort — the page still renders
+    // the curated roster if Supabase is unreachable).
+    listMemberDirectory().catch((err) => {
+      console.error("Member directory load failed:", err);
+      return [] as DirectoryCompany[];
+    }),
   ]);
+
+  // Merge curated + DB-driven members, de-duping by slug (curated wins).
+  const seen = new Set(staticAll.map((c) => c.slug));
+  const all = [...staticAll, ...approvedMembers.filter((c) => !seen.has(c.slug))].sort(
+    (a, b) => a.name.localeCompare(b.name)
+  );
 
   return (
     <>
