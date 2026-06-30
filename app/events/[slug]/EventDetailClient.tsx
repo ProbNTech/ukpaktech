@@ -129,7 +129,7 @@ export function EventDetailClient({ title, dateISO, category, tag, status }: Eve
 
         <div className="w-full h-px bg-white/20 mb-8" />
 
-        {/* Countdown — only for upcoming events with valid future date */}
+        {/* Countdown, only for upcoming events with valid future date */}
         {isUpcoming && timeLeft && (
           <motion.div
             initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}

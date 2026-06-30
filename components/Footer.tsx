@@ -147,7 +147,7 @@ export function Footer() {
                 </h3>
                 <FooterContactForm />
 
-                {/* Contact Us — glass card below the form */}
+                {/* Contact Us, glass card below the form */}
                 <div className="mt-8">
                   <h3 className="font-heading font-semibold text-white text-lg uppercase tracking-wider mb-4 drop-shadow-md">
                     Contact Us

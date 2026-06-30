@@ -35,7 +35,7 @@ export default function FeaturedEventShowcase() {
 
   return (
     <section
-      className="relative z-[1] overflow-hidden py-16 lg:py-24"
+      className="relative z-[1] overflow-hidden py-8 lg:py-12"
       style={{
         background:
           "radial-gradient(900px circle at 12% 0%, rgba(96,165,250,0.14), transparent 55%), radial-gradient(800px circle at 100% 100%, rgba(196,30,58,0.14), transparent 50%), #0a1430",
@@ -47,7 +47,7 @@ export default function FeaturedEventShowcase() {
       <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
         {/* Top: copy + headline */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          {/* Left column — about the event */}
+          {/* Left column, about the event */}
           <div className="relative pl-5 sm:pl-6">
             <span className="absolute left-0 top-1 h-[88%] w-[3px] rounded-full bg-gradient-to-b from-[#C41E3A] via-[#C41E3A] to-[#22C55E]" aria-hidden="true" />
             <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-[#9fb4d8]">About The Event</p>
@@ -84,7 +84,7 @@ export default function FeaturedEventShowcase() {
             </div>
           </div>
 
-          {/* Right column — impact line */}
+          {/* Right column, impact line */}
           <div className="relative lg:pl-8">
             <div className="relative pl-5 sm:pl-6">
               <span className="absolute left-0 top-1 h-[80%] w-[3px] rounded-full bg-gradient-to-b from-[#C41E3A] to-transparent" aria-hidden="true" />
@@ -111,7 +111,7 @@ export default function FeaturedEventShowcase() {
         </div>
       </div>
 
-      {/* Bottom: horizontal scrolling gallery — pauses on hover */}
+      {/* Bottom: horizontal scrolling gallery, pauses on hover */}
       <div className="relative mt-12 lg:mt-16">
         {/* edge fades */}
         <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 sm:w-28 bg-gradient-to-r from-[#0a1430] to-transparent" aria-hidden="true" />

@@ -49,7 +49,7 @@ export async function getAllPakistanTopCompanies(): Promise<DirectoryCompany[]> 
 
 /**
  * Members editorially pinned via `featured: true` in data/members.ts.
- * `limit` is honored but the curator's pick comes first — today only Prob N Tech.
+ * `limit` is honored but the curator's pick comes first, today only Prob N Tech.
  */
 export async function getTopPakistanCompanies(limit = TOP_LIMIT): Promise<DirectoryCompany[]> {
   return featuredMemberCompanies.slice(0, limit);

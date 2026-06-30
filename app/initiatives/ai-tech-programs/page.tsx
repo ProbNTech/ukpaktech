@@ -126,7 +126,7 @@ export default function AITechProgramsPage() {
         </AnimatedSection>
       </Section>
 
-      {/* CTA — TubesCursor */}
+      {/* CTA, TubesCursor */}
       <GlobalCTA
         label="Get Started"
         title="Ready to Transform Your Tech Career?"

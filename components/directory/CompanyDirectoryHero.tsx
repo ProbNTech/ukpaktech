@@ -34,7 +34,7 @@ export function CompanyDirectoryHero({
           backgroundSize: "22px 22px",
         }}
       />
-      <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20 py-16 lg:py-20">
+      <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20 py-8 lg:py-10">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-white border border-[#DBEAFE] px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-[#2563EB] shadow-sm">
             {eyebrow}

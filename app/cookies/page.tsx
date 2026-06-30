@@ -44,7 +44,7 @@ export default function CookiesPage() {
       />
 
       <div className="content-body">
-      <section className="relative bg-white py-10 overflow-hidden">
+      <section className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
@@ -72,7 +72,7 @@ export default function CookiesPage() {
         </div>
       </section>
 
-      <section className="relative py-10 overflow-hidden bg-white">
+      <section className="relative py-8 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
@@ -97,7 +97,7 @@ export default function CookiesPage() {
         </div>
       </section>
 
-      <section className="relative bg-white py-10 overflow-hidden">
+      <section className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
@@ -122,7 +122,7 @@ export default function CookiesPage() {
         </div>
       </section>
 
-      <section className="relative py-10 overflow-hidden bg-[#F5F4F2]">
+      <section className="relative py-8 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
@@ -147,7 +147,7 @@ export default function CookiesPage() {
         </div>
       </section>
 
-      <section className="relative bg-white py-10 overflow-hidden">
+      <section className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
@@ -169,7 +169,7 @@ export default function CookiesPage() {
         </div>
       </section>
 
-      <section className="relative bg-white py-10 overflow-hidden">
+      <section className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
@@ -194,7 +194,7 @@ export default function CookiesPage() {
         </div>
       </section>
 
-      <section className="relative py-10 overflow-hidden bg-[#F5F4F2]">
+      <section className="relative py-8 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
@@ -239,7 +239,7 @@ export default function CookiesPage() {
       </section>
       </div>
 
-      <section className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
+      <section className="relative overflow-hidden py-8" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">

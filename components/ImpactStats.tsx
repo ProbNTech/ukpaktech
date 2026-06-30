@@ -5,7 +5,7 @@ import { motion, useInView, useReducedMotion } from "framer-motion";
 import CountUp from "react-countup";
 import { LiquidCard, CardContent } from "@/components/ui/liquid-glass-card";
 
-/* ─── Stat data — sourced bilateral corridor figures ─── */
+/* ─── Stat data, sourced bilateral corridor figures ─── */
 const stats = [
   {
     label: "Pakistan IT export growth, YoY",

@@ -85,7 +85,7 @@ export default function BusinessNetworksPage() {
 
       {/* Stats Bar */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -116,7 +116,7 @@ export default function BusinessNetworksPage() {
       {/* Intro Section with Sidebar */}
       <section className="relative bg-white">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-3">
@@ -157,7 +157,7 @@ export default function BusinessNetworksPage() {
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Advantages" title="Why Choose Us" subtitle="Five reasons organisations trust UPTECH to build their international network." color="green" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -196,7 +196,7 @@ export default function BusinessNetworksPage() {
       {/* How It Works */}
       <section className="relative bg-white">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Process" title="How It Works" subtitle="A structured, results-driven approach to building your international network." color="blue" />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -246,7 +246,7 @@ export default function BusinessNetworksPage() {
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#22C55E]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
               <div>
@@ -293,7 +293,7 @@ export default function BusinessNetworksPage() {
       {/* Revenue Model */}
       <section className="relative bg-white">
         <div className="absolute top-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#C41E3A]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Revenue" title="Revenue Model" color="red" subtitle="How we sustain our network and deliver value to members and partners." />
             <div className="grid md:grid-cols-2 gap-6">
@@ -331,7 +331,7 @@ export default function BusinessNetworksPage() {
       {/* FAQ */}
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Common questions about UPTECH Business Networks." color="red" />
             <FAQSection faqs={faqs} />

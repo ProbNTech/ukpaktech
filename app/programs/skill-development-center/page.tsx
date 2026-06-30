@@ -113,7 +113,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-3">
@@ -163,7 +163,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Programs Grid ── */}
       <section className="relative bg-white" id="programs">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader label="Training Programs" title="Our Programs" subtitle="Comprehensive skill development initiatives designed to accelerate your tech career." color="green" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -203,7 +203,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Learning Pathway ── */}
       <section className="relative bg-[#E8E6E3]" id="pathway">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader label="Your Journey" title="Learning Pathway" subtitle="A structured journey from assessment to career launch." color="blue" />
             <div className="grid md:grid-cols-4 gap-6">
@@ -258,7 +258,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Flagship Tracks ── */}
       <section className="relative bg-white" id="tracks">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader label="Flagship Tracks" title="Intensive Training Tracks" subtitle="Intensive programs designed to build expertise in high-demand tech domains." color="red" />
             <div className="grid md:grid-cols-3 gap-6">
@@ -306,7 +306,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── Outcomes / Stats Bar ── */}
       <section className="bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader label="Results" title="Program Outcomes" subtitle="Measurable results that accelerate your career growth." color="blue" />
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -335,7 +335,7 @@ export default function SkillDevelopmentCenterPage() {
 
       {/* ── FAQ ── */}
       <section className="relative bg-[#E8E6E3]" id="faq">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Everything you need to know about our programs." color="blue" />
             <div>

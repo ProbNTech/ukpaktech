@@ -28,7 +28,7 @@ export function WhatsAppButton() {
       }`}
     >
       <div className="relative">
-        {/* Single clean halo — smooth, no overlap flicker */}
+        {/* Single clean halo, smooth, no overlap flicker */}
         <span className="pointer-events-none absolute inset-0 rounded-full bg-[#25D366] wa-pulse" />
 
         <motion.a

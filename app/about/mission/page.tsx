@@ -15,7 +15,7 @@ const missionPillars = [
   { icon: Users, title: "Inclusive Community", desc: "To be a place for anyone in the profession, representing all ages, career stages, demographics, and needs.", color: "#22C55E" },
   { icon: Globe2, title: "Global Collaboration", desc: "To collaborate with Networks and organizations representing professionals in countries around the world to unify and advance the profession globally.", color: "#2563EB" },
   { icon: Radio, title: "Timely Information", desc: "To provide relevant, consistent, and timely information to stakeholders.", color: "#C41E3A" },
-  { icon: Rocket, title: "Fuel Growth", desc: "Fuel business creation and expansion — address funding gaps for early-stage companies and increase opportunities for high-growth enterprises.", color: "#22C55E" },
+  { icon: Rocket, title: "Fuel Growth", desc: "Fuel business creation and expansion, address funding gaps for early-stage companies and increase opportunities for high-growth enterprises.", color: "#22C55E" },
   { icon: Database, title: "Information Management", desc: "Complete management of client information with easy access and updates for professionals, employers, trainers and businesses so they can benefit from the most accurate and timely information available.", color: "#2563EB" },
 ];
 

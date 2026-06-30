@@ -118,7 +118,7 @@ export default function FAQsPage() {
       />
 
       {/* Stats Bar */}
-      <section className="relative py-10 lg:py-14 bg-white">
+      <section className="relative py-8 lg:py-10 bg-white">
         <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -205,7 +205,7 @@ export default function FAQsPage() {
       </section>
 
       {/* FAQ Sections */}
-      <section className="py-12 lg:py-20 bg-[#f7f8fa]">
+      <section className="py-8 lg:py-10 bg-[#f7f8fa]">
         <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
           {filteredCategories.length > 0 ? (
             <div className="space-y-16">
@@ -252,7 +252,7 @@ export default function FAQsPage() {
               })}
             </div>
           ) : (
-            <div className="text-center py-20">
+            <div className="text-center py-10">
               <Search className="w-12 h-12 text-[#D1D5DB] mx-auto mb-4" />
               <p className="text-lg font-semibold text-[#1C1F2E] mb-2">No results found</p>
               <p className="text-sm text-[#5A5F72] mb-6">Try a different search term or browse all categories.</p>

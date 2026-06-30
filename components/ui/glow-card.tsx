@@ -11,7 +11,7 @@ interface GlowCardProps {
 }
 
 /**
- * GlowCard — wraps any card content with a premium glowing border effect.
+ * GlowCard, wraps any card content with a premium glowing border effect.
  *
  * Usage:
  *   <GlowCard>

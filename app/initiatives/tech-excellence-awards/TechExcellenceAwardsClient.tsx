@@ -105,7 +105,7 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── About Section ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
@@ -143,7 +143,7 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── Company Awards ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
               label="Proposed Award Categories"
@@ -191,7 +191,7 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── Professional Awards ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
               label="Proposed Award Categories"
@@ -239,7 +239,7 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── Nomination Process ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
               label="Nomination Process"
@@ -299,7 +299,7 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── Objectives ── */}
       <section className="relative bg-[#F5F4F2]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <div className="grid lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
@@ -335,7 +335,7 @@ export default function TechExcellenceAwardsClient() {
 
       {/* ── FAQ ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
               label="FAQ"

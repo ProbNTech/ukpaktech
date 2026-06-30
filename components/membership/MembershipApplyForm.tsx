@@ -289,7 +289,7 @@ export default function MembershipApplyForm() {
   const [hydrated, setHydrated] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
 
-  // Restore draft on mount (client only — consents are intentionally excluded so they must be re-confirmed)
+  // Restore draft on mount (client only, consents are intentionally excluded so they must be re-confirmed)
   useEffect(() => {
     const draft = loadDraft();
     if (draft) {
@@ -667,7 +667,7 @@ export default function MembershipApplyForm() {
                 <div className="relative space-y-9 mt-2">
                   <ErrorBanner />
 
-                  {/* SECTION 1 — Organisation */}
+                  {/* SECTION 1, Organisation */}
                   <motion.section {...sectionAnim}>
                     <StepHeader
                       index="01"
@@ -916,7 +916,7 @@ export default function MembershipApplyForm() {
                       <div>
                         <label className="block text-sm font-semibold text-[#334155] mb-2">
                           Organisation Profile{" "}
-                          <span className="text-[#64748B] font-normal">— used for the member directory, max 100 words</span>
+                          <span className="text-[#64748B] font-normal">used for the member directory, max 100 words</span>
                         </label>
                         <div className="relative">
                           <TextareaIcon icon={FileText} />
@@ -941,13 +941,13 @@ export default function MembershipApplyForm() {
                     </div>
                   </motion.section>
 
-{/* SECTION 2 — Industry Sectors */}
+{/* SECTION 2, Industry Sectors */}
                   <motion.section {...sectionAnim}>
                     <StepHeader
                       index="02"
                       icon={Layers}
                       title="Industry Focus"
-                      hint="— select all that apply"
+                      hint="select all that apply"
                       color="#22C55E"
                     />
 
@@ -1009,7 +1009,7 @@ export default function MembershipApplyForm() {
                     </div>
                   </motion.section>
 
-{/* SECTION 3 — Your Information */}
+{/* SECTION 3, Your Information */}
                   <motion.section {...sectionAnim}>
                     <StepHeader
                       index="03"
@@ -1098,7 +1098,7 @@ export default function MembershipApplyForm() {
                     </div>
                   </motion.section>
 
-{/* SECTION 4 — Terms & Submit */}
+{/* SECTION 4, Terms & Submit */}
                   <motion.section {...sectionAnim}>
                     <StepHeader
                       index="04"

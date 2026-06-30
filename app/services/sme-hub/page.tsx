@@ -101,7 +101,7 @@ export default function SMEHubPage() {
 
       {/* ── Stats Bar ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -132,7 +132,7 @@ export default function SMEHubPage() {
       {/* ── Intro Section ── */}
       <section className="relative bg-white">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#22C55E]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div>
               <SectionHeader label="Your one-stop shop" title="Comprehensive Support for Growing Technology SMEs" color="blue" />
@@ -148,7 +148,7 @@ export default function SMEHubPage() {
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Core Pillars" title="Four Pillars of Support" subtitle="Everything you need to grow, all in one place." color="green" />
             <div className="grid md:grid-cols-2 gap-6">
@@ -197,7 +197,7 @@ export default function SMEHubPage() {
       {/* ── Markets ── */}
       <section className="relative bg-white">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#C41E3A]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Markets" title="Where We Operate" subtitle="Helping tech SMEs grow across key global markets." color="blue" />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -231,7 +231,7 @@ export default function SMEHubPage() {
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Process" title="Your Growth Journey" subtitle="A structured pathway from onboarding to scaling your business internationally." color="red" />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -273,7 +273,7 @@ export default function SMEHubPage() {
       {/* ── Who Is This For ── */}
       <section className="relative bg-white">
         <div className="absolute top-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#22C55E]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="For You" title="Who Is This For" subtitle="SME Hub is built for technology companies at every growth stage." color="blue" />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -307,7 +307,7 @@ export default function SMEHubPage() {
       {/* ── FAQ ── */}
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Common questions about the SME Hub." color="red" />
             <FAQSection faqs={faqs} />

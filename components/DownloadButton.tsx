@@ -7,7 +7,7 @@ interface DownloadButtonProps {
   href: string;
   /** Button label text */
   children: React.ReactNode;
-  /** Downloaded file name (optional — defaults to the original filename) */
+  /** Downloaded file name (optional, defaults to the original filename) */
   filename?: string;
   /** Visual variant */
   variant?: "glass" | "solid";

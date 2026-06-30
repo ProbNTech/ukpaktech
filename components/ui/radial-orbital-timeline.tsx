@@ -20,7 +20,7 @@ interface RadialOrbitalTimelineProps {
   timelineData: TimelineItem[];
 }
 
-/* Short subtitle for each node — keyed by title */
+/* Short subtitle for each node, keyed by title */
 const nodeSubtitles: Record<string, string> = {
   "AI & Tech Programs": "Future-ready technology",
   "Services": "Digital transformation",
@@ -122,7 +122,7 @@ export default function RadialOrbitalTimeline({
     return getRelatedItems(activeNodeId).includes(itemId);
   };
 
-  /* Sparkling orbit balls — positions along orbit */
+  /* Sparkling orbit balls, positions along orbit */
   const sparkBalls = [
     { color: "#2563EB", size: 8, speed: 25, offset: 0 },
     { color: "#C41E3A", size: 7, speed: 32, offset: 120 },
@@ -162,7 +162,7 @@ export default function RadialOrbitalTimeline({
             </div>
           </div>
 
-          {/* Orbit track rings — more visible */}
+          {/* Orbit track rings, more visible */}
           <div className="absolute w-[540px] h-[540px] sm:w-[580px] sm:h-[580px] rounded-full border-2 border-[#D8D5CF]/40" style={{ boxShadow: "0 0 20px rgba(37,99,235,0.04), inset 0 0 20px rgba(37,99,235,0.02)" }} />
           <div className="absolute w-[555px] h-[555px] sm:w-[595px] sm:h-[595px] rounded-full border border-[#D8D5CF]/20" />
 
@@ -205,7 +205,7 @@ export default function RadialOrbitalTimeline({
             />
           ))}
 
-          {/* CTA: "Click to explore" — centered below orbits */}
+          {/* CTA: "Click to explore"centered below orbits */}
           {autoRotate && !activeNodeId && (
             <div className="absolute z-20 -bottom-4 sm:bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-3 pointer-events-none">
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-5 py-2.5 shadow-[0_2px_12px_rgba(0,0,0,0.08)] border border-[#D8D5CF]/60">
@@ -221,7 +221,7 @@ export default function RadialOrbitalTimeline({
             </div>
           )}
 
-          {/* Nodes — Card style with icon + title + subtitle */}
+          {/* Nodes, Card style with icon + title + subtitle */}
           {timelineData.map((item, index) => {
             const position = calculateNodePosition(index, timelineData.length);
             const isExpanded = expandedItems[item.id];

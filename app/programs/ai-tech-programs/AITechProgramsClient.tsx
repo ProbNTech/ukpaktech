@@ -119,7 +119,7 @@ export default function AITechProgramsPage() {
 
       {/* ── Programs Grid ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
               label="Our Programs"
@@ -164,7 +164,7 @@ export default function AITechProgramsPage() {
 
       {/* ── How It Works ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
               label="Process"
@@ -213,7 +213,7 @@ export default function AITechProgramsPage() {
 
       {/* ── Technology Focus Areas ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
               label="What We Do"

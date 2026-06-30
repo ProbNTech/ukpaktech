@@ -65,7 +65,7 @@ function ScreenshotSection({
 
 function HeroContent() {
   return (
-    <div className="text-white px-4 max-w-screen-xl mx-auto w-full flex flex-col lg:flex-row justify-between items-start lg:items-center py-16">
+    <div className="text-white px-4 max-w-screen-xl mx-auto w-full flex flex-col lg:flex-row justify-between items-start lg:items-center py-8">
       <div className="w-full lg:w-1/2 pr-0 lg:pr-8 mb-8 lg:mb-0">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight tracking-wide">
           We&apos;re Building
@@ -148,7 +148,7 @@ const HeroSection = () => {
 
       <div className="bg-black relative z-10" style={{ marginTop: "-10vh" }}>
         <ScreenshotSection screenshotRef={screenshotRef} />
-        <div className="container mx-auto px-4 py-16 text-white">
+        <div className="container mx-auto px-4 py-8 text-white">
           <h2 className="text-4xl font-bold text-center mb-8">
             Other Content Below
           </h2>

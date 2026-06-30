@@ -5,11 +5,11 @@ import { MemberDirectory } from "@/components/MemberDirectory";
 export const metadata: Metadata = {
   title: "Membership Directory",
   description:
-    "Browse the UPTECH membership directory — technology companies, investors, academic institutions, and professionals driving UK–Pakistan bilateral growth.",
+    "Browse the UPTECH membership directory, technology companies, investors, academic institutions, and professionals driving UK–Pakistan bilateral growth.",
   openGraph: {
     title: "Membership Directory | UPTECH",
     description:
-      "Browse the UPTECH membership directory — technology companies, investors, academic institutions, and professionals.",
+      "Browse the UPTECH membership directory, technology companies, investors, academic institutions, and professionals.",
   },
 };
 

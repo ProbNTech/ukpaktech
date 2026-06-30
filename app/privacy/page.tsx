@@ -68,7 +68,7 @@ export default function PrivacyPage() {
 
       <div className="content-body">
       {/* ── Introduction + Quick Nav ─────────────────────────────────── */}
-      <section id="introduction" className="relative bg-white py-10 overflow-hidden">
+      <section id="introduction" className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -130,7 +130,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── How Do We Collect Information ─────────────────────────────── */}
-      <section id="collection" className="relative py-10 overflow-hidden bg-white">
+      <section id="collection" className="relative py-8 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -239,7 +239,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── What Type of Information Is Collected ─────────────────────── */}
-      <section id="info-type" className="relative bg-white py-10 overflow-hidden">
+      <section id="info-type" className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -273,7 +273,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── How and Why Is Your Information Used ──────────────────────── */}
-      <section id="how-used" className="relative py-10 overflow-hidden bg-white">
+      <section id="how-used" className="relative py-8 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -312,7 +312,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── How Long Is Your Information Kept For ─────────────────────── */}
-      <section id="retention" className="relative py-10 overflow-hidden bg-[#F5F4F2]">
+      <section id="retention" className="relative py-8 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -350,7 +350,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Who Has Access to Your Information ────────────────────────── */}
-      <section id="access" className="relative bg-white py-10 overflow-hidden">
+      <section id="access" className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -391,7 +391,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Lawful Processing ────────────────────────────────────────── */}
-      <section id="lawful" className="relative py-10 overflow-hidden bg-white">
+      <section id="lawful" className="relative py-8 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -459,7 +459,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Marketing Communications & Building Profiles ──────────────── */}
-      <section id="marketing" className="relative bg-white py-10 overflow-hidden">
+      <section id="marketing" className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -508,7 +508,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Your Rights ──────────────────────────────────────────────── */}
-      <section id="rights" className="relative py-10 overflow-hidden bg-white">
+      <section id="rights" className="relative py-8 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -560,7 +560,7 @@ export default function PrivacyPage() {
       </section>
 
       {/* ── Keeping Your Information Safe & Security ──────────────────── */}
-      <section id="security" className="relative py-10 overflow-hidden bg-[#F5F4F2]">
+      <section id="security" className="relative py-8 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -600,8 +600,8 @@ export default function PrivacyPage() {
 
       </div>
 
-      {/* ── Contact CTA — Gradient dark section ──────────────────────── */}
-      <section id="contact" className="relative overflow-hidden py-12" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
+      {/* ── Contact CTA, Gradient dark section ──────────────────────── */}
+      <section id="contact" className="relative overflow-hidden py-8" style={{ background: "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)" }}>
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.05]" style={{ background: "radial-gradient(circle, #2563EB, transparent 50%)" }} />
 

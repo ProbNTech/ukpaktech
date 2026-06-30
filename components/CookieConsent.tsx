@@ -110,7 +110,7 @@ export function CookieConsent() {
             </Link>
           </p>
 
-          {/* Buttons — stacked on phone, side-by-side on tablet+ */}
+          {/* Buttons, stacked on phone, side-by-side on tablet+ */}
           <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
             <button
               onClick={accept}

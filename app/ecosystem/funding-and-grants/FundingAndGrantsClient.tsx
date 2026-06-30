@@ -132,7 +132,7 @@ const benefits = [
 
 const faqs = [
   { question: "What types of funding are available?", answer: "We offer pre-seed and seed investment, Series A/B growth capital facilitation, R&D grants, innovation grants, and bilateral project funding. The type of funding depends on your stage, sector, and project objectives." },
-  { question: "How long does the application process take?", answer: "Initial applications are reviewed within 2–4 weeks. The full process — including due diligence and funding decision — typically takes 6–12 weeks depending on the funding type and complexity of the proposal." },
+  { question: "How long does the application process take?", answer: "Initial applications are reviewed within 2–4 weeks. The full process, including due diligence and funding decision, typically takes 6–12 weeks depending on the funding type and complexity of the proposal." },
   { question: "Is funding available for non-tech companies?", answer: "Our primary focus is technology-focused companies and projects. However, companies in adjacent sectors that demonstrate significant technology innovation or digital transformation may also be eligible." },
   { question: "Can I apply for multiple funding streams?", answer: "Yes, you can apply for multiple funding streams simultaneously, provided you meet the eligibility criteria for each. Our team can advise on the most appropriate funding mix for your needs." },
   { question: "What are the reporting requirements?", answer: "Funded companies are required to provide quarterly progress reports, financial updates, and milestone tracking. We work collaboratively with funded companies to ensure success and accountability." },
@@ -168,7 +168,7 @@ export default function FundingAndGrantsClient() {
 
       {/* ── STATS BAR ─────────────────────────────────────────────── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => {
               const color = statColors[i % statColors.length];
@@ -201,7 +201,7 @@ export default function FundingAndGrantsClient() {
 
       {/* ── OVERVIEW ──────────────────────────────────────────────── */}
       <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
@@ -251,7 +251,7 @@ export default function FundingAndGrantsClient() {
 
       {/* ── OPPORTUNITIES ─────────────────────────────────────────── */}
       <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
@@ -309,7 +309,7 @@ export default function FundingAndGrantsClient() {
 
       {/* ── FUNDING STAGES ──────────────────────────────────────── */}
       <section className="relative bg-[#E8E6E3] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
@@ -382,7 +382,7 @@ export default function FundingAndGrantsClient() {
 
       {/* ── APPLICATION PROCESS ────────────────────────────────────── */}
       <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader

@@ -39,7 +39,7 @@ type NavLink = {
 type NavItem = NavGroup | NavLink;
 
 const navItems: NavItem[] = [
-  /* 1 — About */
+  /* 1, About */
   {
     kind: "group",
     label: "About",
@@ -47,7 +47,7 @@ const navItems: NavItem[] = [
     color: "#2563EB",
     editorial: {
       headline: "Built on partnership,\ndriven by purpose.",
-      body: "UPTECH is the strategic bridge between UK and Pakistan's technology ecosystems — forging alliances that create lasting impact.",
+      body: "UPTECH is the strategic bridge between UK and Pakistan's technology ecosystems, forging alliances that create lasting impact.",
       cta: { label: "Our story →", href: "/about" },
     },
     items: [
@@ -59,7 +59,7 @@ const navItems: NavItem[] = [
       { label: "Management Team", href: "/about/management-team", desc: "Board of directors, advisory forum, and executive leadership team.", icon: Users },
     ],
   },
-  /* 2 — What We Do */
+  /* 2, What We Do */
   {
     kind: "group",
     label: "What We Do",
@@ -79,7 +79,7 @@ const navItems: NavItem[] = [
       { label: "Trade Delegations", href: "/ecosystem/trade-delegations-and-exhibitions", desc: "Curated business missions, trade expos and pavilion programmes placing members on the world stage.", icon: Plane },
     ],
   },
-  /* 3 — Services */
+  /* 3, Services */
   {
     kind: "group",
     label: "Services",
@@ -87,7 +87,7 @@ const navItems: NavItem[] = [
     color: "#22C55E",
     editorial: {
       headline: "Grow faster.\nGo further.",
-      body: "From business networks to marketing support and legal infrastructure — everything your tech business needs to scale.",
+      body: "From business networks to marketing support and legal infrastructure, everything your tech business needs to scale.",
       cta: { label: "Explore services →", href: "/services" },
     },
     items: [
@@ -101,9 +101,9 @@ const navItems: NavItem[] = [
       { label: "Research & Innovation", href: "/services/research-innovation", desc: "Cost-effective research services from Pakistan supporting UK and European companies.", icon: Search },
     ],
   },
-  /* — Tech Markets (direct link, promoted from What We Do) */
+  /*, Tech Markets (direct link, promoted from What We Do) */
   { kind: "link", label: "Tech Markets", href: "/ecosystem/tech-market-overview" },
-  /* 4 — Products */
+  /* 4, Products */
   {
     kind: "group",
     label: "Products",
@@ -111,7 +111,7 @@ const navItems: NavItem[] = [
     color: "#2563EB",
     editorial: {
       headline: "Platforms that\nchange industries.",
-      body: "From AI talent matching to cross-border digital marketplaces — our products are creating new infrastructure for the digital economy.",
+      body: "From AI talent matching to cross-border digital marketplaces, our products are creating new infrastructure for the digital economy.",
       cta: { label: "View products →", href: "/products" },
     },
     items: [
@@ -120,7 +120,7 @@ const navItems: NavItem[] = [
       { label: "Trusted Partner Certification", href: "/initiatives/trusted-partner-certification", desc: "Certification programme recognising Pakistani technology companies that meet high standards for global collaboration.", icon: BadgeCheck },
     ],
   },
-  /* 5 — Funding */
+  /* 5, Funding */
   {
     kind: "group",
     label: "Funding",
@@ -128,7 +128,7 @@ const navItems: NavItem[] = [
     color: "#22C55E",
     editorial: {
       headline: "Fuelling growth\nat every stage.",
-      body: "From pre-seed grants to Series A & B investment — access the capital, networks, and strategic guidance your tech business needs to scale globally.",
+      body: "From pre-seed grants to Series A & B investment, access the capital, networks, and strategic guidance your tech business needs to scale globally.",
       cta: { label: "Explore funding →", href: "/ecosystem/funding-and-grants" },
     },
     items: [
@@ -137,7 +137,7 @@ const navItems: NavItem[] = [
       { label: "Series A & B Funding", href: "/ecosystem/series-funding", desc: "Growth-stage investment, cross-border expansion capital, and VC/PE partner introductions.", icon: TrendingUp },
     ],
   },
-  /* 6 — Membership */
+  /* 6, Membership */
   {
     kind: "group",
     label: "Membership",
@@ -151,11 +151,11 @@ const navItems: NavItem[] = [
     items: [
       { label: "Membership Overview", href: "/membership", desc: "Explore membership tiers, benefits, and how to join the UPTECH community.", icon: CreditCard },
       { label: "Apply for Membership", href: "/membership#apply", desc: "Complete the membership application form to join the UK–Pakistan Tech Forum.", icon: Send },
-      { label: "Pakistan's Top AI & IT Companies", href: "/pakistan-top-companies", desc: "Discover Pakistan's top AI & IT companies — search, sort A–Z, and filter by industry.", icon: FileText },
+      { label: "Pakistan's Top AI & IT Companies", href: "/pakistan-top-companies", desc: "Discover Pakistan's top AI & IT companies, search, sort A–Z, and filter by industry.", icon: FileText },
       { label: "London Meeting Space", href: "/meeting-space", desc: "Professional meeting and event facilities in central London for UPTECH members.", icon: MapPin },
     ],
   },
-  /* 7 — Arbitration */
+  /* 7, Arbitration */
   {
     kind: "group",
     label: "Arbitration",
@@ -171,15 +171,15 @@ const navItems: NavItem[] = [
       { label: "Framework Policy", href: "/arbitration/framework", desc: "Complete arbitration framework policy including legal basis, procedures, costs, digital platform, and FAQs.", icon: FileText },
     ],
   },
-  /* 8 — Job Portal (direct link) — hidden from public nav, page still accessible at /job-portal */
+  /* 8, Job Portal (direct link), hidden from public nav, page still accessible at /job-portal */
   // { kind: "link", label: "Job Portal", href: "/job-portal" },
-  /* 8 — Events (direct link) */
+  /* 8, Events (direct link) */
   { kind: "link", label: "Events", href: "/events" },
-  /* 9 — News & Updates (direct link) */
+  /* 9, News & Updates (direct link) */
   { kind: "link", label: "News & Updates", displayLabel: "News", href: "/news" },
-  /* 11 — FAQs (direct link) */
+  /* 11, FAQs (direct link) */
   { kind: "link", label: "FAQs", href: "/faqs" },
-  /* 12 — Contact Us (direct link) */
+  /* 12, Contact Us (direct link) */
   { kind: "link", label: "Contact Us", displayLabel: "Contact", href: "/contact" },
 ];
 
@@ -240,7 +240,7 @@ export function Header() {
       </a>
 
       {/* ═══════════════════════════════════════════════════════════
-          HEADER — white two-tier professional layout
+          HEADER, white two-tier professional layout
       ══════════════════════════════════════════════════════════════ */}
       <header
         role="banner"
@@ -258,7 +258,7 @@ export function Header() {
             <Link
               href="/"
               className="flex items-center gap-4 flex-shrink-0 group"
-              aria-label="UPTECH — Home"
+              aria-label="UPTECH, Home"
             >
               <Image
                 src="/logo.svg"
@@ -369,7 +369,7 @@ export function Header() {
         </div>
 
         {/* ═══════════════════════════════════════════════════════════
-            MEGA PANEL — three-column editorial dropdown
+            MEGA PANEL, three-column editorial dropdown
         ══════════════════════════════════════════════════════════════ */}
         <AnimatePresence>
           {activeGroup && (
@@ -385,7 +385,7 @@ export function Header() {
                 <div className="grid grid-cols-[200px_1fr_260px] gap-0 divide-x divide-[#E4E1DC]">
 
                   {/* ── LEFT: Section identity ──────────────────── */}
-                  <div className="py-10 pr-10 flex flex-col justify-between">
+                  <div className="py-8 pr-10 flex flex-col justify-between">
                     <div>
                       <p className="font-sans text-panel-eyebrow uppercase mb-3" style={{ color: activeGroup.color }}>
                         {activeGroup.tagline}
@@ -411,7 +411,7 @@ export function Header() {
                   </div>
 
                   {/* ── CENTRE: Items list ──────────────────────── */}
-                  <div className="py-10 px-10">
+                  <div className="py-8 px-10">
                     <p className="font-sans text-panel-eyebrow uppercase text-[#6B6B6B] mb-4 pb-3 border-b border-[#E4E1DC]">
                       Section index
                     </p>
@@ -458,7 +458,7 @@ export function Header() {
                   </div>
 
                   {/* ── RIGHT: Editorial feature panel ─────────── */}
-                  <div className="py-10 pl-10 flex flex-col justify-between">
+                  <div className="py-8 pl-10 flex flex-col justify-between">
                     <div>
                       <p className="font-sans text-panel-eyebrow uppercase text-[#6B6B6B] mb-4">
                         From the forum
@@ -495,7 +495,7 @@ export function Header() {
       </header>
 
       {/* ═══════════════════════════════════════════════════════════
-          MOBILE PANEL — slides in from left
+          MOBILE PANEL, slides in from left
       ══════════════════════════════════════════════════════════════ */}
       <AnimatePresence>
         {isMobileOpen && (

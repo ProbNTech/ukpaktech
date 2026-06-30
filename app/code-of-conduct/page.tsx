@@ -92,8 +92,8 @@ export default function CodeOfConductPage() {
       </PageHero>
 
       <div className="content-body">
-      {/* ── Summary + Quick Nav — Light section ──────────────────────── */}
-      <section className="relative bg-white py-10 overflow-hidden">
+      {/* ── Summary + Quick Nav, Light section ──────────────────────── */}
+      <section className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -155,8 +155,8 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      {/* ── 9 Principles — Light alt section ─────────────────────────── */}
-      <section id="principles" className="relative py-10 overflow-hidden bg-white">
+      {/* ── 9 Principles, Light alt section ─────────────────────────── */}
+      <section id="principles" className="relative py-8 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -203,8 +203,8 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      {/* ── WhatsApp Group Rules — Light section ─────────────────────── */}
-      <section id="whatsapp-rules" className="relative bg-white py-10 overflow-hidden">
+      {/* ── WhatsApp Group Rules, Light section ─────────────────────── */}
+      <section id="whatsapp-rules" className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -290,8 +290,8 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      {/* ── Disciplinary Procedure — Light alt section ───────────────── */}
-      <section id="disciplinary" className="relative py-10 overflow-hidden bg-[#F5F4F2]">
+      {/* ── Disciplinary Procedure, Light alt section ───────────────── */}
+      <section id="disciplinary" className="relative py-8 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -330,8 +330,8 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      {/* ── Reporting & Commitment — Light section ──────────────────── */}
-      <section className="relative bg-white py-10 overflow-hidden">
+      {/* ── Reporting & Commitment, Light section ──────────────────── */}
+      <section className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">

@@ -191,7 +191,7 @@ export default function MentorshipPage() {
       {/* ── Advantages ── */}
       <Section variant="light">
         <AnimatedSection>
-          <SectionHeader label="Benefits" title="Advantages of Being a Mentor" subtitle="Mentoring isn't just about giving — it's about growing together." color="red" />
+          <SectionHeader label="Benefits" title="Advantages of Being a Mentor" subtitle="Mentoring isn't just about giving, it's about growing together." color="red" />
 
           <div className="grid md:grid-cols-3 gap-6">
             {advantages.map((item, i) => {

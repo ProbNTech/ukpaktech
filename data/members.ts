@@ -47,7 +47,7 @@ export const members: Member[] = [
     logo: "/image/members/letTechLogo.png",
     website: "https://lettech.pk",
     description:
-      "Peshawar-based problem-first technology company building AI-powered SaaS products for Pakistan's most underserved industries — starting with LetPsyc, the country's first practitioner-focused mental health assessment platform.",
+      "Peshawar-based problem-first technology company building AI-powered SaaS products for Pakistan's most underserved industries, starting with LetPsyc, the country's first practitioner-focused mental health assessment platform.",
     companyType: "SaaS / Platform",
     sectors: ["Artificial Intelligence", "HealthTech", "EdTech"],
     technologies: ["AI & Machine Learning", "Custom Software", "Automation"],
@@ -2968,7 +2968,7 @@ export const members: Member[] = [
     logo: "/image/members/xpanair.png",
     website: "https://www.xpanair.com",
     description:
-      "London-based company building AI-powered infrastructure for international business expansion — a unified platform for market entry, compliance, operational setup, logistics and cross-border growth.",
+      "London-based company building AI-powered infrastructure for international business expansion, a unified platform for market entry, compliance, operational setup, logistics and cross-border growth.",
     companyType: "SaaS / Platform",
     sectors: ["Artificial Intelligence", "Digital Transformation"],
     technologies: ["AI & Machine Learning", "Automation", "Custom Software"],

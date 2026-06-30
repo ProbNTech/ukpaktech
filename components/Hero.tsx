@@ -69,7 +69,7 @@ export function Hero() {
 
   return (
     <section className="relative z-[2] w-full min-h-[420px] sm:min-h-[500px] lg:h-screen overflow-hidden bg-[#0B0F1A]">
-      {/* Single looping background video — lazy-mounted */}
+      {/* Single looping background video, lazy-mounted */}
       <LazyVideo
         ref={videoRef}
         src={BANNER_VIDEO}
@@ -83,7 +83,7 @@ export function Hero() {
       {/* Content wrapper */}
       <div className="relative z-20 flex items-center lg:h-screen px-6 sm:px-10 lg:px-16 xl:px-20 pt-14 sm:pt-16 lg:pt-0 pb-14 lg:pb-0">
         <div className="relative w-full max-w-full lg:max-w-[55%]">
-          {/* Localized soft shade behind text — pure colour, no blur, video stays sharp */}
+          {/* Localized soft shade behind text, pure colour, no blur, video stays sharp */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -inset-x-6 -inset-y-6 sm:-inset-x-10 sm:-inset-y-8 rounded-[2.5rem]"

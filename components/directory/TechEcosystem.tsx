@@ -30,7 +30,7 @@ function buildRows(companies: DirectoryCompany[]): Chip[][] {
   const rows: Chip[][] = [[], [], []];
   all.forEach((chip, i) => rows[i % 3].push(chip));
 
-  // Ensure each row has enough chips to fill width — duplicate within row if needed
+  // Ensure each row has enough chips to fill width, duplicate within row if needed
   return rows.map((r) => (r.length < 6 ? [...r, ...r, ...r] : r));
 }
 
@@ -79,7 +79,7 @@ export function TechEcosystem({ companies }: TechEcosystemProps) {
 
   return (
     <section
-      className="relative py-16 lg:py-20 overflow-hidden"
+      className="relative py-8 lg:py-10 overflow-hidden"
       aria-labelledby="ecosystem-heading"
       style={{
         background:

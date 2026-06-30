@@ -3,10 +3,10 @@
 import Link from "next/link";
 
 const items = [
-  { text: "UPTECH — The UK–Pakistan Tech Forum", href: "/about" },
+  { text: "UPTECH, The UK–Pakistan Tech Forum", href: "/about" },
   { text: "Services for UK companies and Pakistani companies", href: "/services" },
   { text: "Arbitration framework under the UK Arbitration Act 1996", href: "/arbitration/framework" },
-  { text: "Member code of conduct — published and binding", href: "/code-of-conduct" },
+  { text: "Member code of conduct, published and binding", href: "/code-of-conduct" },
   { text: "Trusted Partner Certification for member companies", href: "/initiatives/trusted-partner-certification" },
   { text: "Apply for UPTECH membership", href: "/membership#apply" },
 ];

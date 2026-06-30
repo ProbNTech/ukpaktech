@@ -38,7 +38,7 @@ const categoryMeta: Record<string, { icon: typeof Newspaper; color: string }> = 
   Awards: { icon: Award, color: "#C41E3A" },
 };
 
-/* SectionHeader removed — now using shared SectionHeader from @/components/SectionHeader */
+/* SectionHeader removed, now using shared SectionHeader from @/components/SectionHeader */
 
 export default function NewsPage() {
   const shouldReduceMotion = useReducedMotion();
@@ -117,7 +117,7 @@ export default function NewsPage() {
       </Section>
 
       {/* ══════════════════════════════════════════════════════════════
-           CATEGORY FILTERS — Futuristic Dark Glass Tabs
+           CATEGORY FILTERS, Futuristic Dark Glass Tabs
       ═══════════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-5 lg:py-7" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -227,7 +227,7 @@ export default function NewsPage() {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-20">
+              <div className="text-center py-10">
                 <div
                   className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6"
                   style={{
@@ -246,7 +246,7 @@ export default function NewsPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-           FEATURED TOPICS — Dark glassmorphism cards
+           FEATURED TOPICS, Dark glassmorphism cards
       ═══════════════════════════════════════════════════════════════ */}
       <section className="relative z-[1] py-5 lg:py-7" style={{ backgroundColor: "#E8E6E3" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -347,7 +347,7 @@ export default function NewsPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-           LATEST ARTICLES — Quick preview with dark banner
+           LATEST ARTICLES, Quick preview with dark banner
       ═══════════════════════════════════════════════════════════════ */}
       <section id="news-grid" className="relative z-[1] py-5 lg:py-7" style={{ backgroundColor: "#EEECEA" }}>
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -392,7 +392,7 @@ export default function NewsPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-           CTA — Animated tube cursor background
+           CTA, Animated tube cursor background
       ═══════════════════════════════════════════════════════════════ */}
       <GlobalCTA
         label="Stay Connected"

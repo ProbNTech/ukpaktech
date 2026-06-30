@@ -10,7 +10,7 @@ import { ChevronDown, FileText, Mail } from "lucide-react";
 import { DownloadButton } from "@/components/DownloadButton";
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   Terms & Conditions Data — Client's exact wording preserved verbatim
+   Terms & Conditions Data, Client's exact wording preserved verbatim
    ───────────────────────────────────────────────────────────────────────────── */
 
 const termsSections = [
@@ -228,7 +228,7 @@ const termsSections = [
   },
 ];
 
-/* Section accent colours — cycle through palette */
+/* Section accent colours, cycle through palette */
 const sectionAccents = [
   "#2563EB", "#22C55E", "#C41E3A", "#2563EB", "#22C55E",
   "#C41E3A", "#2563EB", "#22C55E", "#C41E3A", "#2563EB",
@@ -281,8 +281,8 @@ export default function TermsPage() {
       </PageHero>
 
       <div className="content-body">
-      {/* ── Background Notice — Light section ──────────────────────── */}
-      <section className="relative bg-white py-10 overflow-hidden">
+      {/* ── Background Notice, Light section ──────────────────────── */}
+      <section className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -323,8 +323,8 @@ export default function TermsPage() {
         </div>
       </section>
 
-      {/* ── Expand / Collapse Controls + Section Nav — Light alt ─── */}
-      <section className="relative py-10 overflow-hidden bg-white">
+      {/* ── Expand / Collapse Controls + Section Nav, Light alt ─── */}
+      <section className="relative py-8 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -396,7 +396,7 @@ export default function TermsPage() {
         </div>
       </section>
 
-      {/* ── Accordion Sections — Light background ────── */}
+      {/* ── Accordion Sections, Light background ────── */}
       <section className="relative overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
 
@@ -590,9 +590,9 @@ export default function TermsPage() {
 
       </div>
 
-      {/* ── CTA — Gradient dark section ──────────────────────────── */}
+      {/* ── CTA, Gradient dark section ──────────────────────────── */}
       <section
-        className="relative overflow-hidden py-12"
+        className="relative overflow-hidden py-8"
         style={{
           background:
             "linear-gradient(135deg, #0B0F1A 0%, #131942 50%, #0B0F1A 100%)",

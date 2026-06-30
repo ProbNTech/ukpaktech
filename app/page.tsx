@@ -30,10 +30,10 @@ import StatsCounter from "@/components/tech-market/StatsCounter";
 import MembershipSection, { WhatDrivesUs } from "@/components/tech-market/MembershipSection";
 import NewsCarousel from "@/components/NewsCarousel";
 const PakistanTopCompaniesShowcase = dynamic(() => import("@/components/PakistanTopCompaniesShowcase"), {
-  loading: () => <div className="py-20 bg-white" aria-busy="true"><div className="px-6 sm:px-10 lg:px-16 xl:px-20"><div className="h-48 bg-[#f7f8fa] rounded-xl animate-pulse" /></div></div>,
+  loading: () => <div className="py-10 bg-white" aria-busy="true"><div className="px-6 sm:px-10 lg:px-16 xl:px-20"><div className="h-48 bg-[#f7f8fa] rounded-xl animate-pulse" /></div></div>,
 });
 const PartnerSolutionsSection = dynamic(() => import("@/components/PartnerSolutionsSection"), {
-  loading: () => <div className="py-20 bg-gradient-to-b from-[#f0f7ff] via-[#e8f1fb] to-[#dfeaf7]" aria-busy="true"><div className="px-6 sm:px-10 lg:px-16 xl:px-20"><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{Array.from({ length: 3 }).map((_, i) => <div key={i} className="h-96 bg-white rounded-2xl animate-pulse" />)}</div></div></div>,
+  loading: () => <div className="py-10 bg-gradient-to-b from-[#f0f7ff] via-[#e8f1fb] to-[#dfeaf7]" aria-busy="true"><div className="px-6 sm:px-10 lg:px-16 xl:px-20"><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{Array.from({ length: 3 }).map((_, i) => <div key={i} className="h-96 bg-white rounded-2xl animate-pulse" />)}</div></div></div>,
 });
 import HomeEventsSection from "@/components/events/HomeEventsSection";
 import FeaturedEventShowcase from "@/components/events/FeaturedEventShowcase";
@@ -47,17 +47,17 @@ const sponsorCarouselLogos = sponsorLogos.map((logo, i) => ({
   src: logo.src,
 }));
 
-/* ─── Our Services — bilateral two-row grid ─── */
+/* ─── Our Services, bilateral two-row grid ─── */
 const ukServicesData = [
-  { id: 1, title: "Research & Innovation Delivery", content: "Engage Pakistan-based research and engineering teams for market research, R&D, data analytics, and regulatory work — typically at a fraction of UK cost.", image: "/image/icons/research.png", href: "/services/research-innovation", color: "#2563EB" },
-  { id: 2, title: "Remote Hiring & Technical Talent", content: "Hire Pakistani software engineers, AI specialists, and operations talent on contract or permanent terms — with compliance and payroll handled.", image: "/image/icons/hiring.png", href: "/services/overseas-employment", color: "#2563EB" },
+  { id: 1, title: "Research & Innovation Delivery", content: "Engage Pakistan-based research and engineering teams for market research, R&D, data analytics, and regulatory work, typically at a fraction of UK cost.", image: "/image/icons/research.png", href: "/services/research-innovation", color: "#2563EB" },
+  { id: 2, title: "Remote Hiring & Technical Talent", content: "Hire Pakistani software engineers, AI specialists, and operations talent on contract or permanent terms, with compliance and payroll handled.", image: "/image/icons/hiring.png", href: "/services/overseas-employment", color: "#2563EB" },
   { id: 3, title: "Pakistan Market Entry", content: "Enter Pakistan's 251M-person market through structured trade missions, exhibitions, partner introductions, and on-the-ground support.", image: "/image/icons/trade-delegations.png", href: "/ecosystem/trade-delegations-and-exhibitions", color: "#2563EB" },
-  { id: 4, title: "Verified Partner Sourcing", content: "Source vetted Pakistani technology partners through Trusted Partner Certification and the UPTECH member directory — reviewed against published criteria.", image: "/image/icons/leadership.png", href: "/initiatives/trusted-partner-certification", color: "#2563EB" },
+  { id: 4, title: "Verified Partner Sourcing", content: "Source vetted Pakistani technology partners through Trusted Partner Certification and the UPTECH member directory, reviewed against published criteria.", image: "/image/icons/leadership.png", href: "/initiatives/trusted-partner-certification", color: "#2563EB" },
 ];
 
 const pakistanServicesData = [
   { id: 5, title: "Marketing Presence", content: "Promote your products and services into UK, European, Middle East and African markets through UPTECH's digital marketing hub.", image: "/image/icons/seo.png", href: "/services/digital-marketing", color: "#22C55E" },
-  { id: 6, title: "Product Sales", content: "Reach UK buyers through TechMart Global and Trusted Partner Certification — verified profiles, B2B matchmaking, secure procurement.", image: "/image/icons/sale.png", href: "/products", color: "#22C55E" },
+  { id: 6, title: "Product Sales", content: "Reach UK buyers through TechMart Global and Trusted Partner Certification, verified profiles, B2B matchmaking, secure procurement.", image: "/image/icons/sale.png", href: "/products", color: "#22C55E" },
   { id: 7, title: "Remote Hiring", content: "Place engineers, contractors, and full teams into UK and European companies under compliant overseas employment frameworks.", image: "/image/icons/hired.png", href: "/services/overseas-employment", color: "#22C55E" },
   { id: 8, title: "Startup Funding", content: "Access UK and European angel and VC investors through pitch events, investor matchmaking, and the UPTECH funding network.", image: "/image/icons/startup.png", href: "/ecosystem/startup-funding", color: "#22C55E" },
 ];
@@ -71,7 +71,7 @@ export default function Home() {
 
       {/* 2. ABOUT */}
       <section
-        className="relative py-20 lg:py-28 overflow-hidden"
+        className="relative py-10 lg:py-16 overflow-hidden"
         style={{
           background:
             "radial-gradient(900px circle at 10% -10%, rgba(37,99,235,0.08), transparent 50%), radial-gradient(800px circle at 95% 110%, rgba(34,197,94,0.07), transparent 50%), #FFFFFF",
@@ -86,7 +86,7 @@ export default function Home() {
                 <SectionLabel label="About the Forum" title="A bilateral technology platform, headquartered in London." color="#2563EB" />
                 <div className="content-body">
                   <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-5">
-                    UPTECH is the UK–Pakistan Tech Forum. Our work is to make hiring, sourcing, market entry, and investment between UK and Pakistani technology companies workable in practice — through services, a member directory, and a published governance framework.
+                    UPTECH is the UK–Pakistan Tech Forum. Our work is to make hiring, sourcing, market entry, and investment between UK and Pakistani technology companies workable in practice, through services, a member directory, and a published governance framework.
                   </p>
                   <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed mb-8">
                     UPTECH acts as an introducer, intermediary, or contracting party depending on the engagement. The form differs by deal; the published standards do not.
@@ -113,10 +113,10 @@ export default function Home() {
       {/* 3. MEMBERSHIP */}
       <MembershipSection />
 
-      {/* 4. OUR SERVICES — bilateral two-row grid */}
+      {/* 4. OUR SERVICES, bilateral two-row grid */}
       <section
         id="services"
-        className="relative z-[1] py-20 lg:py-28 scroll-mt-24 overflow-hidden"
+        className="relative z-[1] py-10 lg:py-16 scroll-mt-24 overflow-hidden"
         style={{
           background:
             "radial-gradient(1100px circle at 0% 0%, rgba(34,197,94,0.07), transparent 55%), radial-gradient(1000px circle at 100% 100%, rgba(37,99,235,0.08), transparent 55%), radial-gradient(700px circle at 50% 50%, rgba(255,255,255,0.6), transparent 70%), #F8FAFC",
@@ -133,24 +133,24 @@ export default function Home() {
               align="center"
             />
 
-            {/* Row 1 — For Pakistani companies */}
+            {/* Row 1, For Pakistani companies */}
             <div id="for-pakistani-companies" className="scroll-mt-24">
               <WhatWeDoCards
                 items={pakistanServicesData}
                 eyebrow="Services"
                 audience="Pakistani companies"
-                context="Reaching UK and European markets — marketing, sales, hiring, and growth capital."
+                context="Reaching UK and European markets, marketing, sales, hiring, and growth capital."
                 accentColor="#22C55E"
               />
             </div>
 
-            {/* Row 2 — For UK companies */}
+            {/* Row 2, For UK companies */}
             <div id="for-uk-companies" className="mt-14 lg:mt-16 scroll-mt-24">
               <WhatWeDoCards
                 items={ukServicesData}
                 eyebrow="Services"
                 audience="UK companies"
-                context="Engaging Pakistan's technology base — research, hiring, market entry, and verified sourcing."
+                context="Engaging Pakistan's technology base, research, hiring, market entry, and verified sourcing."
                 accentColor="#2563EB"
               />
             </div>
@@ -160,7 +160,7 @@ export default function Home() {
 
       {/* 5. MORE FROM UPTECH */}
       <section
-        className="relative z-[1] py-20 lg:py-28 overflow-hidden"
+        className="relative z-[1] py-10 lg:py-16 overflow-hidden"
         style={{
           background:
             "radial-gradient(1100px circle at 0% 0%, rgba(37,99,235,0.22), transparent 50%), radial-gradient(900px circle at 100% 100%, rgba(34,197,94,0.15), transparent 50%), radial-gradient(700px circle at 50% 50%, rgba(99,102,241,0.08), transparent 70%), #0f1a3a",
@@ -173,10 +173,10 @@ export default function Home() {
             <SectionLabel label="Discover More" title="More from UPTECH" body="Platforms, meeting facilities, organisational structure, and member resources." color="#86efac" align="center" light />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { href: "/products", icon: ProductsIcon, color: "#2563EB", title: "Our Products", desc: "People AI, TechMart Global, and Trusted Partner Certification — the products that operate beneath the services." },
+                { href: "/products", icon: ProductsIcon, color: "#2563EB", title: "Our Products", desc: "People AI, TechMart Global, and Trusted Partner Certification, the products that operate beneath the services." },
                 { href: "/services/mentorship", icon: MentorshipIcon, color: "#22C55E", title: "Mentorship", desc: "One-to-one guidance from operators and investors active across the UK–Pakistan corridor." },
                 { href: "/meeting-space", icon: MeetingSpaceIcon, color: "#EAB308", title: "London Meeting Space", desc: "Boardrooms and meeting facilities in central London, available to members." },
-                { href: "/arbitration/framework", icon: StructureIcon, color: "#6366F1", title: "Governance & Arbitration", desc: "The published rulebook — Code of Conduct and dispute resolution under the UK Arbitration Act 1996." },
+                { href: "/arbitration/framework", icon: StructureIcon, color: "#6366F1", title: "Governance & Arbitration", desc: "The published rulebook, Code of Conduct and dispute resolution under the UK Arbitration Act 1996." },
               ].map((card, index) => {
                 const CardIcon = card.icon;
                 return (
@@ -263,9 +263,9 @@ export default function Home() {
       {/* 8. WHAT DRIVES US */}
       <WhatDrivesUs />
 
-      {/* 9. IMPACT STATS — Corridor Signals */}
+      {/* 9. IMPACT STATS, Corridor Signals */}
       <section
-        className="relative z-[1] py-20 lg:py-24 overflow-hidden"
+        className="relative z-[1] py-10 lg:py-12 overflow-hidden"
         style={{
           background:
             "radial-gradient(1000px circle at 100% 0%, rgba(96,165,250,0.20), transparent 50%), radial-gradient(900px circle at 0% 100%, rgba(34,197,94,0.13), transparent 50%), #0f1a3a",
@@ -275,15 +275,15 @@ export default function Home() {
         <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true" style={{ backgroundImage: "radial-gradient(circle, #fff 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }} />
         <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
           <AnimatedSection animation="blur-in">
-            <SectionLabel label="Corridor Signals" title="Where the corridor is, in numbers" body="Trade, talent demand, and market access figures that frame UPTECH's work — sourced from the State Bank of Pakistan, the UK Department for Business and Trade, and the Migration Advisory Committee." color="#60a5fa" align="center" light />
+            <SectionLabel label="Corridor Signals" title="Where the corridor is, in numbers" body="Trade, talent demand, and market access figures that frame UPTECH's work, sourced from the State Bank of Pakistan, the UK Department for Business and Trade, and the Migration Advisory Committee." color="#60a5fa" align="center" light />
             <ImpactStats />
           </AnimatedSection>
         </div>
       </section>
 
-      {/* 10. TECH MARKET OVERVIEW — Market Intelligence */}
+      {/* 10. TECH MARKET OVERVIEW, Market Intelligence */}
       <section
-        className="relative z-[1] py-20 lg:py-28 overflow-hidden"
+        className="relative z-[1] py-10 lg:py-16 overflow-hidden"
         style={{
           background:
             "radial-gradient(900px circle at 5% 0%, rgba(37,99,235,0.08), transparent 50%), radial-gradient(800px circle at 95% 100%, rgba(196,30,58,0.06), transparent 50%), radial-gradient(700px circle at 50% 50%, rgba(34,197,94,0.04), transparent 60%), #F8FAFC",
@@ -325,7 +325,7 @@ export default function Home() {
                   UPTECH publishes sector intelligence covering the UK, key European markets, and Pakistan. The same briefs are read by Pakistani exporters planning UK entry and by UK buyers planning Pakistan-side procurement and partnerships.
                 </p>
                 <p className="text-[#5A5F72] text-base sm:text-lg leading-relaxed">
-                  Country profiles cover the UK, Germany, France, the Netherlands, and Poland on the European side, alongside Pakistan-side sector data — market valuations, regulatory landscapes, and entry routes for members on either side of the corridor.
+                  Country profiles cover the UK, Germany, France, the Netherlands, and Poland on the European side, alongside Pakistan-side sector data, market valuations, regulatory landscapes, and entry routes for members on either side of the corridor.
                 </p>
               </div>
             </div>
@@ -359,7 +359,7 @@ export default function Home() {
 
       {/* 12. NEWS & INSIGHTS */}
       <section
-        className="relative z-[1] py-20 lg:py-28 overflow-hidden"
+        className="relative z-[1] py-10 lg:py-16 overflow-hidden"
         style={{
           background:
             "radial-gradient(1000px circle at 0% 0%, rgba(134,239,172,0.13), transparent 50%), radial-gradient(900px circle at 100% 100%, rgba(37,99,235,0.18), transparent 50%), #0f1a3a",
@@ -373,7 +373,7 @@ export default function Home() {
               <div className="lg:col-span-4 flex flex-col justify-center">
                 <SectionLabel label="Stay Informed" title="News & Insights" color="#86efac" light />
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                  Policy developments, deal announcements, and ecosystem updates relevant to the UK–Pakistan technology corridor — useful for members on either side.
+                  Policy developments, deal announcements, and ecosystem updates relevant to the UK–Pakistan technology corridor, useful for members on either side.
                 </p>
               </div>
               <div className="lg:col-span-8 w-full min-w-0">
@@ -390,7 +390,7 @@ export default function Home() {
 
       {/* 13. EVENT HIGHLIGHTS */}
       <section
-        className="relative z-[1] py-20 lg:py-24 overflow-hidden"
+        className="relative z-[1] py-10 lg:py-12 overflow-hidden"
         style={{
           background:
             "radial-gradient(800px circle at 90% 0%, rgba(37,99,235,0.07), transparent 50%), radial-gradient(700px circle at 10% 100%, rgba(196,30,58,0.05), transparent 50%), #FFFFFF",
@@ -403,9 +403,9 @@ export default function Home() {
             <SectionLabel label="Watch & Learn" title="Recent Event Highlights" body="Recordings from UPTECH-hosted and UPTECH-participating events on both sides of the corridor." color="#2563EB" align="center" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { id: "NnKZrypT_tE", title: "Indus AI Week — Digital Future" },
-                { id: "CyE9Mde6d_E", title: "Pakistan Business Summit — Davos 2026" },
-                { id: "K49VP4KJ2vk", title: "AI & Digital Collaboration — London" },
+                { id: "NnKZrypT_tE", title: "Indus AI Week, Digital Future" },
+                { id: "CyE9Mde6d_E", title: "Pakistan Business Summit, Davos 2026" },
+                { id: "K49VP4KJ2vk", title: "AI & Digital Collaboration, London" },
                 { id: "pXI-qz33PoA", title: "UK–Pakistan Business Summit 2025" },
               ].map((video, index) => (
                 <motion.div
@@ -427,7 +427,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 13.5 FEATURED EVENT SHOWCASE — scrolling gallery */}
+      {/* 13.5 FEATURED EVENT SHOWCASE, scrolling gallery */}
       <FeaturedEventShowcase />
 
       {/* 14. EVENTS */}
@@ -435,7 +435,7 @@ export default function Home() {
 
       {/* 15. PAKISTAN ECOSYSTEM NETWORK */}
       <section
-        className="relative z-[1] py-14 lg:py-20 overflow-hidden"
+        className="relative z-[1] py-8 lg:py-10 overflow-hidden"
         style={{
           background:
             "radial-gradient(1000px circle at 50% 0%, rgba(34,197,94,0.16), transparent 55%), radial-gradient(700px circle at 0% 100%, rgba(96,165,250,0.12), transparent 50%), radial-gradient(700px circle at 100% 100%, rgba(196,30,58,0.10), transparent 50%), #0f1a3a",

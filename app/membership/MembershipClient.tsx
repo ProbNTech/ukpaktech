@@ -561,7 +561,7 @@ export default function MembershipClient() {
             label="Why It Matters"
             title="Why Membership Matters"
             color="green"
-            subtitle="Membership with the Forum provides more than just networking — it's a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Our members gain practical support, strategic connections, and market insights that accelerate business success and cross-border collaboration. Join today. Connect, grow, and lead the future of UK-Pakistan technology."
+            subtitle="Membership with the Forum provides more than just networking, it's a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Our members gain practical support, strategic connections, and market insights that accelerate business success and cross-border collaboration. Join today. Connect, grow, and lead the future of UK-Pakistan technology."
           />
         </AnimatedSection>
       </Section>
@@ -570,7 +570,7 @@ export default function MembershipClient() {
       <GlobalCTA
         label="Join Today"
         title="Ready to Join UPTECH?"
-        subtitle="Membership with the Forum provides more than just networking — it's a gateway to growth, visibility, and influence in the UK–Pakistan technology corridor."
+        subtitle="Membership with the Forum provides more than just networking, it's a gateway to growth, visibility, and influence in the UK–Pakistan technology corridor."
         primaryButtonText="Apply for Membership"
         primaryButtonLink="/membership#apply"
         secondaryButtonText="Get in Touch"

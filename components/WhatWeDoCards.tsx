@@ -20,7 +20,7 @@ interface WhatWeDoCardsProps {
   items: WhatWeDoItem[];
   /** Eyebrow label above the row heading (e.g. "Services"). Optional. */
   eyebrow?: string;
-  /** The audience name displayed in the row heading — coloured in accent. */
+  /** The audience name displayed in the row heading, coloured in accent. */
   audience?: string;
   /** Single-line supporting copy beneath the heading. Optional. */
   context?: string;

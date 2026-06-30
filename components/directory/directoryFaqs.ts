@@ -14,7 +14,7 @@ export const directoryFaqs: FAQ[] = [
   {
     question: "Can companies update their profile?",
     answer:
-      "Profile fields shown here mirror the source provider. To correct or update a listing, companies should update their profile at the source — changes will flow through on the next sync cycle.",
+      "Profile fields shown here mirror the source provider. To correct or update a listing, companies should update their profile at the source, changes will flow through on the next sync cycle.",
   },
   {
     question: "Are these reviews verified?",

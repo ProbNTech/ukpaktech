@@ -159,7 +159,7 @@ export default function EventsPage() {
 
       {/* STATS BAR */}
       <section className="bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -186,7 +186,7 @@ export default function EventsPage() {
 
       {/* EVENTS GRID WITH FILTERS */}
       <section className="relative bg-white">
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-10 lg:py-14">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Programme"
@@ -305,7 +305,7 @@ export default function EventsPage() {
               <motion.div
                 initial={shouldReduceMotion ? {} : { opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="text-center py-20 rounded-xl border bg-white border-[#D8D5CF] shadow-sm"
+                className="text-center py-10 rounded-xl border bg-white border-[#D8D5CF] shadow-sm"
               >
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center bg-[#F5F4F2]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9A9EAF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

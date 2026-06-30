@@ -88,7 +88,7 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Stats Bar ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -118,7 +118,7 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
@@ -153,7 +153,7 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Focus Areas ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
               label="What We Incubate"
@@ -190,7 +190,7 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Incubation Pathway ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
               label="Our Model"
@@ -254,7 +254,7 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Collective Startup Approach ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-3">
@@ -304,7 +304,7 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Corporate & Accelerator Partnerships ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
               label="Partnerships"
@@ -377,7 +377,7 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Who Should Join ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
               label="Who It's For"
@@ -423,7 +423,7 @@ export default function IncubationCollectiveStartupsClient() {
 
       {/* ── Resources ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
               label="Support"

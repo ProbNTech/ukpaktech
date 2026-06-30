@@ -102,7 +102,7 @@ export default function JobPortalPage() {
 
       {/* ── Stats Bar ── */}
       <section className="bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -132,7 +132,7 @@ export default function JobPortalPage() {
 
       {/* ── Who It's For ── */}
       <section id="who-its-for" className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-16">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Who It's For"
@@ -224,7 +224,7 @@ export default function JobPortalPage() {
 
       {/* ── Portal Features ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-16">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Platform Features"
@@ -282,12 +282,12 @@ export default function JobPortalPage() {
 
       {/* ── How It Works ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-16">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Process"
               title="How It Works"
-              subtitle="A streamlined journey from registration to hire — connecting talent with opportunity in four simple steps."
+              subtitle="A streamlined journey from registration to hire, connecting talent with opportunity in four simple steps."
               color="red"
             />
 
@@ -363,7 +363,7 @@ export default function JobPortalPage() {
 
       {/* ── Key Sectors ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12 lg:py-16">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Industries"
@@ -414,11 +414,11 @@ export default function JobPortalPage() {
         </div>
       </section>
 
-      {/* ── CTA Section — TubesCursor ── */}
+      {/* ── CTA Section, TubesCursor ── */}
       <GlobalCTA
         label="The Future of Work"
         title="The Future of Cross-Border Tech Careers"
-        subtitle="Empowering technology talent and fostering cross-border collaboration — our Job Portal helps build the workforce of the future."
+        subtitle="Empowering technology talent and fostering cross-border collaboration, our Job Portal helps build the workforce of the future."
         primaryButtonText="Become a Member"
         primaryButtonLink="/membership"
         secondaryButtonText="Contact Us"

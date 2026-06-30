@@ -41,7 +41,7 @@ export default function LeadershipPage() {
               className="relative"
             >
               <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
-                <Image src="/image/ceo/khalil-choudhary-headshot.jpg" alt="Khalil Choudhary — President, UPTECH" fill className="object-cover" sizes="300px" />
+                <Image src="/image/ceo/khalil-choudhary-headshot.jpg" alt="Khalil Choudhary, President, UPTECH" fill className="object-cover" sizes="300px" />
               </div>
               <div className="absolute -bottom-3 -right-3 w-24 h-24 rounded-lg -z-10" style={{ background: `linear-gradient(135deg, ${brandColors[0]}20, ${brandColors[2]}20)` }} />
             </motion.div>
@@ -76,7 +76,7 @@ export default function LeadershipPage() {
               <div className="w-24 h-24 rounded-full overflow-hidden mb-5 ring-2 ring-[#C41E3A]/20 ring-offset-2">
                 <Image
                   src="/image/ceo/khalil-choudhary-portrait.jpg"
-                  alt="Khalil Choudhary — President, UPTECH"
+                  alt="Khalil Choudhary, President, UPTECH"
                   width={96}
                   height={96}
                   className="w-full h-full object-cover"
@@ -94,13 +94,13 @@ export default function LeadershipPage() {
                 When we founded the UK Pakistan Technology Forum, our vision was simple yet ambitious: to create a bridge between two nations rich in talent, innovation, and entrepreneurial spirit. Pakistan&apos;s technology sector is one of the fastest-growing in the world, and the United Kingdom remains a global hub for innovation and enterprise. Together, these two nations have extraordinary potential to shape the future of technology.
               </p>
               <p className="text-[#3D4152] text-base leading-relaxed mb-5">
-                UPTECH was built on the belief that collaboration, not competition, drives progress. We bring together technology professionals, entrepreneurs, investors, government leaders, and academics from both nations to forge partnerships that create lasting impact — not just for businesses, but for communities and future generations.
+                UPTECH was built on the belief that collaboration, not competition, drives progress. We bring together technology professionals, entrepreneurs, investors, government leaders, and academics from both nations to forge partnerships that create lasting impact, not just for businesses, but for communities and future generations.
               </p>
               <p className="text-[#3D4152] text-base leading-relaxed mb-5">
-                Our programmes span artificial intelligence, digital transformation, startup incubation, skill development, and bilateral trade facilitation. Through our work, we are not only building businesses — we are building a movement. A movement that champions Pakistan&apos;s soft image globally, nurtures the next generation of technology leaders, and creates pathways for prosperity in both nations.
+                Our programmes span artificial intelligence, digital transformation, startup incubation, skill development, and bilateral trade facilitation. Through our work, we are not only building businesses, we are building a movement. A movement that champions Pakistan&apos;s soft image globally, nurtures the next generation of technology leaders, and creates pathways for prosperity in both nations.
               </p>
               <p className="text-[#3D4152] text-base leading-relaxed">
-                I invite you to join us on this journey. Whether you are a seasoned technology professional, an emerging entrepreneur, an investor seeking opportunities, or a policy maker shaping the future — there is a place for you at UPTECH. Together, we can build something extraordinary.
+                I invite you to join us on this journey. Whether you are a seasoned technology professional, an emerging entrepreneur, an investor seeking opportunities, or a policy maker shaping the future, there is a place for you at UPTECH. Together, we can build something extraordinary.
               </p>
             </div>
           </div>

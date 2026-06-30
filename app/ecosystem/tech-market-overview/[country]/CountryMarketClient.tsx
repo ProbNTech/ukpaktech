@@ -57,7 +57,7 @@ export default function CountryMarketClient({
       {/* Key Highlights */}
       {country.highlights.length > 0 && (
         <section className="relative bg-white">
-          <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+          <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
   
               <AnimatedSection>
                 <SectionHeader
@@ -84,7 +84,7 @@ export default function CountryMarketClient({
 
       {/* Sector Data Table */}
       <section id="sectors" className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
 
             <AnimatedSection>
               <SectionHeader
@@ -103,7 +103,7 @@ export default function CountryMarketClient({
       {/* Detailed Sections */}
       {country.detailedSections && country.detailedSections.length > 0 && (
         <section className="relative bg-white">
-          <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+          <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
   
               <AnimatedSection>
                 <SectionHeader
@@ -132,7 +132,7 @@ export default function CountryMarketClient({
 
       {/* Growth Drivers & Market Strengths */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
 
             <div className="grid md:grid-cols-2 gap-8">
               <AnimatedSection>
@@ -181,7 +181,7 @@ export default function CountryMarketClient({
 
       {/* High-Demand Sectors */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
 
             <AnimatedSection>
               <SectionHeader
@@ -204,7 +204,7 @@ export default function CountryMarketClient({
 
       {/* Opportunities for Pakistani Companies */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
 
             <AnimatedSection>
               <SectionHeader
@@ -233,7 +233,7 @@ export default function CountryMarketClient({
 
       {/* Prev/Next Navigation */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-3 gap-4 items-stretch">
             {/* Previous */}
             {prevCountry ? (

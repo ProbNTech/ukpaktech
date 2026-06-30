@@ -58,7 +58,7 @@ export function PakistanCompaniesHero({
       }}
       aria-labelledby="pak-companies-hero-title"
     >
-      {/* ─── Layer 1 — fine dot grid ────────────────────── */}
+      {/* ─── Layer 1, fine dot grid ────────────────────── */}
       <div
         aria-hidden="true"
         className="absolute inset-0 opacity-[0.18] pointer-events-none"
@@ -73,7 +73,7 @@ export function PakistanCompaniesHero({
         }}
       />
 
-      {/* ─── Layer 2 — spotlight (large blurred ellipse) ── */}
+      {/* ─── Layer 2, spotlight (large blurred ellipse) ── */}
       <motion.div
         aria-hidden="true"
         className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[120%] h-[120%] pointer-events-none"
@@ -86,7 +86,7 @@ export function PakistanCompaniesHero({
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* ─── Layer 3 — aurora gradient blobs ──────────────── */}
+      {/* ─── Layer 3, aurora gradient blobs ──────────────── */}
       <motion.div
         aria-hidden="true"
         className="absolute -left-32 top-1/4 w-[520px] h-[520px] rounded-full pointer-events-none"
@@ -121,7 +121,7 @@ export function PakistanCompaniesHero({
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* ─── Layer 4 — animated beams (SVG paths) ──────────── */}
+      {/* ─── Layer 4, animated beams (SVG paths) ──────────── */}
       <svg
         aria-hidden="true"
         viewBox="0 0 1200 800"
@@ -176,7 +176,7 @@ export function PakistanCompaniesHero({
         />
       </svg>
 
-      {/* ─── Layer 5 — floating category chips (subtle, behind text) ── */}
+      {/* ─── Layer 5, floating category chips (subtle, behind text) ── */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden">
         {chipLayout.map((pos, i) => (
           <motion.span
@@ -201,8 +201,8 @@ export function PakistanCompaniesHero({
         ))}
       </div>
 
-      {/* ─── Layer 6 — content ─────────────────────────────── */}
-      <div className="relative z-10 px-6 sm:px-10 lg:px-16 xl:px-20 py-24 lg:py-32">
+      {/* ─── Layer 6, content ─────────────────────────────── */}
+      <div className="relative z-10 px-6 sm:px-10 lg:px-16 xl:px-20 py-10 lg:py-16">
         <div className="max-w-4xl mx-auto text-center">
           {/* Eyebrow pill */}
           <motion.div
@@ -315,7 +315,7 @@ export function PakistanCompaniesHero({
         </div>
       </div>
 
-      {/* UK + PK brand accent gradient — bottom edge */}
+      {/* UK + PK brand accent gradient, bottom edge */}
       <div
         className="absolute bottom-0 left-0 right-0 h-[3px]"
         aria-hidden="true"

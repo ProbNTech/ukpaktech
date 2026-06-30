@@ -57,7 +57,7 @@ const enquiryTypes = [
   { icon: Users, label: "Membership", desc: "Join UPTECH as an individual, startup, SME, or corporate member.", color: "#22C55E" },
   { icon: Megaphone, label: "Sponsorship", desc: "Sponsor events, programmes, and initiatives across the UK–Pakistan corridor.", color: "#C41E3A" },
   { icon: Calendar, label: "Events & Media", desc: "Event participation, press enquiries, and media partnerships.", color: "#2563EB" },
-  { icon: HelpCircle, label: "General Enquiry", desc: "Anything else — we're happy to help with your questions.", color: "#22C55E" },
+  { icon: HelpCircle, label: "General Enquiry", desc: "Anything else, we're happy to help with your questions.", color: "#22C55E" },
 ];
 
 /* ── What happens next steps ─────────────────────────────────────── */
@@ -76,7 +76,7 @@ export default function ContactPage() {
       <PageHero
         label="Contact Us"
         title="Get in Touch"
-        subtitle="Whether you're looking to partner, join, sponsor, or simply learn more — we'd love to hear from you."
+        subtitle="Whether you're looking to partner, join, sponsor, or simply learn more, we'd love to hear from you."
         image="/image/banners/banner54.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
@@ -86,7 +86,7 @@ export default function ContactPage() {
       </PageHero>
 
       {/* ── Contact Info Cards ─────────────────────────────────────────── */}
-      <section className="relative z-20 bg-white py-10">
+      <section className="relative z-20 bg-white py-8">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((item, i) => {
@@ -127,7 +127,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── Enquiry Types ─────────────────────────────────────────────── */}
-      <section id="enquiry-types" className="relative bg-[#E8E6E3] py-10 overflow-hidden">
+      <section id="enquiry-types" className="relative bg-[#E8E6E3] py-8 overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -173,7 +173,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── Form + Sidebar ────────────────────────────────────────────── */}
-      <section className="relative py-10 overflow-hidden bg-white">
+      <section className="relative py-8 overflow-hidden bg-white">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -280,7 +280,7 @@ export default function ContactPage() {
       <GlobalCTA
         label="Connect with Us"
         title="Let’s Build the Future Together"
-        subtitle="Whether you represent a startup, corporation, government body, or academic institution — UPTECH is your gateway to the UK–Pakistan technology partnership."
+        subtitle="Whether you represent a startup, corporation, government body, or academic institution, UPTECH is your gateway to the UK–Pakistan technology partnership."
         primaryButtonText="Apply for Membership"
         primaryButtonLink="/membership#apply"
         secondaryButtonText="About UPTECH"

@@ -22,7 +22,7 @@ export interface FloatingIconsBgProps {
   icons: IconProps[];
 }
 
-/* Each icon tracks the mouse directly from the event — no shared ref timing issues */
+/* Each icon tracks the mouse directly from the event, no shared ref timing issues */
 const Icon = ({
   iconData,
   index,

@@ -23,7 +23,7 @@ export function FAQSection({
 
   return (
     <section
-      className="py-16 lg:py-20"
+      className="py-8 lg:py-10"
       style={{
         background:
           "radial-gradient(900px circle at 100% 0%, rgba(37,99,235,0.06), transparent 55%), #F8FAFF",

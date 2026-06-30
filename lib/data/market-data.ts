@@ -422,12 +422,12 @@ export const countryData: Record<string, CountryMarketData> = {
       {
         title: "Artificial Intelligence",
         content:
-          "France's AI market was around USD 9.48 billion in 2024, with projections to grow to about USD 77.68 billion by 2032, at roughly 30.4% CAGR — one of the fastest AI growth rates in Europe. Government programs like \"AI for Humanity\" and France 2030 strongly support innovation.",
+          "France's AI market was around USD 9.48 billion in 2024, with projections to grow to about USD 77.68 billion by 2032, at roughly 30.4% CAGR, one of the fastest AI growth rates in Europe. Government programs like \"AI for Humanity\" and France 2030 strongly support innovation.",
       },
       {
         title: "Cybersecurity",
         content:
-          "Wider European cybersecurity forecasts show substantial growth — Europe from USD 76.2 billion in 2025 to USD 194.4 billion by 2033 at 12.4% CAGR. France's share is significant alongside the UK and Germany.",
+          "Wider European cybersecurity forecasts show substantial growth, Europe from USD 76.2 billion in 2025 to USD 194.4 billion by 2033 at 12.4% CAGR. France's share is significant alongside the UK and Germany.",
       },
     ],
   },
@@ -911,7 +911,7 @@ export const countryData: Record<string, CountryMarketData> = {
     bannerImage: "/image/banners/tech-overview-baltic-states.png",
     tagline: "Digital Leaders of Northern Europe",
     overview:
-      "The Baltic states — Estonia, Lithuania, and Latvia — are among Europe's most digitally advanced economies with strong IT export orientation.",
+      "The Baltic states, Estonia, Lithuania, and Latvia, are among Europe's most digitally advanced economies with strong IT export orientation.",
     highlights: [
       { label: "Estonia ICT", value: "€10B (2024)" },
       { label: "Lithuania IT", value: "€3.5B (2025)" },
