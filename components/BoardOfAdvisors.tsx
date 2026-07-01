@@ -52,6 +52,14 @@ const advisors = [
     accent: "#2563EB",
     delay: 0.15,
   },
+  {
+    name: "Dr. Shahroze Ahmed Khan",
+    role: "Member, Advisory Board",
+    bio: "Medical doctor and technology entrepreneur building AI solutions for healthcare, advancing digital health and UK–Pakistan innovation.",
+    photo: "/image/board/shahroze.png",
+    accent: "#2563EB",
+    delay: 0.15,
+  },
 ];
 
 const cardVariants = {
