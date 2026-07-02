@@ -13,6 +13,7 @@ import {
   Mail, MapPin, Clock, Globe2, Users, Briefcase,
   Handshake, HelpCircle, ArrowUpRight, Send,
   Megaphone, Calendar, Phone, Zap, Shield,
+  Facebook, Instagram, Linkedin, Twitter,
 } from "lucide-react";
 
 /* ── Contact info cards ──────────────────────────────────────────── */
@@ -253,12 +254,46 @@ export default function ContactPage() {
                   </a>
                 </motion.div>
 
-                {/* Membership CTA card */}
+                {/* Follow us card */}
                 <motion.div
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: 0.3 }}
+                  className="relative bg-white border border-[#D8D5CF] rounded-2xl p-7 overflow-hidden shadow-sm"
+                >
+                  <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-1">Follow Us</h3>
+                  <p className="text-base text-[#7A7E8F] mb-5">Stay connected on social media</p>
+                  <div className="flex gap-3">
+                    {[
+                      { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/people/UK-Pakistan-Tech-Forum/61589437029561/" },
+                      { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/uk-pakistan-tech-forum-uptech/" },
+                      { icon: Twitter, label: "X (Twitter)", href: "https://x.com/ukpaktech" },
+                      { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/ukpaktech/" },
+                    ].map((social) => {
+                      const Icon = social.icon;
+                      return (
+                        <a
+                          key={social.label}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={social.label}
+                          className="w-11 h-11 rounded-xl bg-[#F5F4F1] border border-[#D8D5CF] flex items-center justify-center text-[#475569] hover:text-white hover:bg-[#2563EB] hover:border-[#2563EB] transition-all duration-300"
+                        >
+                          <Icon className="w-5 h-5" strokeWidth={1.5} />
+                        </a>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+
+                {/* Membership CTA card */}
+                <motion.div
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
                   className="relative bg-[#2563EB]/5 border border-[#2563EB]/15 rounded-2xl p-7 overflow-hidden"
                 >
                   <div className="relative">

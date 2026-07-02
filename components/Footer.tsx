@@ -62,16 +62,18 @@ export function Footer() {
                 </h3>
                 <div className="flex gap-3">
                   {[
-                    { icon: Facebook, label: "Facebook", href: "#" },
-                    { icon: Linkedin, label: "LinkedIn", href: "#" },
-                    { icon: Twitter, label: "X (Twitter)", href: "#" },
-                    { icon: Instagram, label: "Instagram", href: "#" },
+                    { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/people/UK-Pakistan-Tech-Forum/61589437029561/" },
+                    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/uk-pakistan-tech-forum-uptech/" },
+                    { icon: Twitter, label: "X (Twitter)", href: "https://x.com/ukpaktech" },
+                    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/ukpaktech/" },
                   ].map((social) => {
                     const Icon = social.icon;
                     return (
                       <a
                         key={social.label}
                         href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-12 h-12 rounded-full bg-white/30 border-2 border-white flex items-center justify-center text-white hover:text-white hover:bg-[#22C55E]/60 hover:border-[#22C55E] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 transition-all duration-300 drop-shadow-lg"
                         aria-label={social.label}
                       >
