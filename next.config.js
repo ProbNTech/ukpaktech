@@ -29,6 +29,13 @@ const nextConfig = {
   redirects: async () => [
     { source: '/leadership', destination: '/about/management-team', permanent: true },
     { source: '/structure', destination: '/about/management-team', permanent: true },
+    // British-English URL migration: old American slugs → new British slugs (preserve SEO / inbound links)
+    { source: '/programs/ai-tech-programs', destination: '/programmes/ai-tech-programmes', permanent: true },
+    { source: '/programs/skill-development-center', destination: '/programmes/skill-development-centre', permanent: true },
+    { source: '/programs/incubation-collective-startups', destination: '/programmes/incubation-collective-startups', permanent: true },
+    // /initiatives/ai-tech-programs was a duplicate of the programmes page — consolidated to one canonical URL
+    { source: '/initiatives/ai-tech-programs', destination: '/programmes/ai-tech-programmes', permanent: true },
+    { source: '/initiatives/ai-tech-programmes', destination: '/programmes/ai-tech-programmes', permanent: true },
   ],
   headers: async () => [
     {

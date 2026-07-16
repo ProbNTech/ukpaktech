@@ -10,7 +10,7 @@ import { GlobalCTA } from "@/components/GlobalCTA";
 const categoryIcons: Record<string, typeof HelpCircle> = {
   General: HelpCircle,
   Membership: Users,
-  "Programs & Services": Briefcase,
+  "Programmes & Services": Briefcase,
   "Funding & Grants": Banknote,
   "Events & Networking": Calendar,
 };
@@ -18,7 +18,7 @@ const categoryIcons: Record<string, typeof HelpCircle> = {
 const categoryMeta: Record<string, { color: string; desc: string }> = {
   General: { color: "#2563EB", desc: "Learn about UPTECH, our mission, and how to get involved." },
   Membership: { color: "#22C55E", desc: "Tiers, benefits, application process, and cancellation policy." },
-  "Programs & Services": { color: "#C41E3A", desc: "Training, mentorship, incubation, and business support." },
+  "Programmes & Services": { color: "#C41E3A", desc: "Training, mentorship, incubation, and business support." },
   "Funding & Grants": { color: "#6366F1", desc: "Investment stages, eligibility criteria, and application timelines." },
   "Events & Networking": { color: "#EAB308", desc: "Conferences, sponsorship, speaking opportunities, and networking." },
 };
@@ -43,9 +43,9 @@ const faqCategories = [
     ],
   },
   {
-    category: "Programs & Services",
+    category: "Programmes & Services",
     faqs: [
-      { question: "What programmes does UPTECH offer?", answer: "We offer AI & Tech Programs, Skill Development Centre training, Incubation & Collective Startups support, mentorship, business networks, digital marketing hub services, overseas employment facilitation, and business support services." },
+      { question: "What programmes does UPTECH offer?", answer: "We offer AI & Tech Programmes, Skill Development Centre training, Incubation & Collective Startups support, mentorship, business networks, digital marketing hub services, overseas employment facilitation, and business support services." },
       { question: "Are programmes free for members?", answer: "Many core programmes are included in membership. Some premium services, specialised training, and intensive accelerator programmes may have additional fees. Members always receive preferential rates." },
       { question: "How do I apply for a programme?", answer: "Applications for specific programmes are accepted through our website or during open application windows. Check individual programme pages for current availability and application deadlines." },
       { question: "Can non-members access services?", answer: "Some events and resources are available to non-members. However, full access to programmes, mentorship, and business support services requires active membership." },

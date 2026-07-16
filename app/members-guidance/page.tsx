@@ -30,7 +30,7 @@ const guidanceSections = [
     icon: GraduationCap,
     title: "Participating in Programmes",
     accent: "border-[#22C55E]",
-    content: "UPTECH runs regular programmes including AI & Tech Programs, Skill Development, and Incubation. Programme applications are announced through our newsletter and events page. Members receive priority access and preferential rates for all programmes.",
+    content: "UPTECH runs regular programmes including AI & Tech Programmes, Skill Development, and Incubation. Programme applications are announced through our newsletter and events page. Members receive priority access and preferential rates for all programmes.",
   },
   {
     icon: Calendar,

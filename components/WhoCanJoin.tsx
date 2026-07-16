@@ -45,7 +45,7 @@ const categories = [
   {
     title: "Individual Industry Leaders",
     description:
-      "Founders, senior executives, investors, advisors, and recognized subject-matter experts.",
+      "Founders, senior executives, investors, advisors, and recognised subject-matter experts.",
     image: "/image/eventgallery/event-4.jpg",
   },
 ];

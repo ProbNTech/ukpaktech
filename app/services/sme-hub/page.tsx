@@ -23,7 +23,7 @@ const pillars = [
     icon: TrendingUp,
     title: "Generating Sales",
     description: "Get exclusive insights and expert tips to help your tech SME grow in private and public sector markets both in the UK, Europe, Middle East & African continents.",
-    features: ["Sales strategy workshops", "Lead generation tools", "Market access programs", "Procurement opportunities"],
+    features: ["Sales strategy workshops", "Lead generation tools", "Market access programmes", "Procurement opportunities"],
     color: "#2563EB",
   },
   {
@@ -37,7 +37,7 @@ const pillars = [
     icon: Users,
     title: "Talent",
     description: "Find support and insights for accessing the talent you need to scale your business.",
-    features: ["Talent matching services", "HR advisory support", "Skills development programs", "Remote team building"],
+    features: ["Talent matching services", "HR advisory support", "Skills development programmes", "Remote team building"],
     color: "#C41E3A",
   },
   {
@@ -59,7 +59,7 @@ const markets = [
 const growthSteps = [
   { number: "01", title: "Join & Onboard", description: "Become a member and complete your company profile. Our team schedules a strategy call to understand your needs.", outcome: "Personalised growth plan" },
   { number: "02", title: "Access Resources", description: "Unlock sales tools, finance guides, talent networks, and exclusive member offers tailored to your growth stage.", outcome: "Resources activated" },
-  { number: "03", title: "Connect & Grow", description: "Attend events, receive introductions, and participate in programs designed to accelerate your growth.", outcome: "Connections made" },
+  { number: "03", title: "Connect & Grow", description: "Attend events, receive introductions, and participate in programmes designed to accelerate your growth.", outcome: "Connections made" },
   { number: "04", title: "Scale & Expand", description: "Leverage your network, market insights, and support to scale into new markets and revenue streams.", outcome: "Revenue scaled" },
 ];
 
@@ -71,7 +71,7 @@ const whoIsThisFor = [
 ];
 
 const faqs = [
-  { question: "What size companies qualify for SME Hub?", answer: "The SME Hub is designed for technology companies with fewer than 250 employees. Whether you\u2019re a solo founder or a growing team, we have programs tailored to your stage." },
+  { question: "What size companies qualify for SME Hub?", answer: "The SME Hub is designed for technology companies with fewer than 250 employees. Whether you\u2019re a solo founder or a growing team, we have programmes tailored to your stage." },
   { question: "What markets can SME Hub help me enter?", answer: "Our primary focus is the UK, Europe, Middle East, and Africa. We provide market intelligence, regulatory guidance, and warm introductions to help you navigate each market effectively." },
   { question: "Are the resources included in membership?", answer: "Yes, core SME Hub resources are included in your UPTECH membership. Premium services like dedicated advisory, bespoke market research, and concierge introductions are available as add-ons." },
   { question: "How quickly can I expect results?", answer: "Most members see meaningful connections within the first 30 days. Sales pipeline impact typically materialises within 3\u20136 months, depending on your growth stage and market readiness." },

@@ -38,7 +38,7 @@ const advantages = [
     icon: Globe,
     title: "Access to a Global Community",
     color: "#22C55E",
-    description: "Join our diverse network spanning several countries and Tech industries. Connect with forward-thinking individuals and organizations worldwide, enabling potential collaboration, partnerships, or even new business opportunities.",
+    description: "Join our diverse network spanning several countries and Tech industries. Connect with forward-thinking individuals and organisations worldwide, enabling potential collaboration, partnerships, or even new business opportunities.",
     features: ["Cross-border mentor network", "Industry events and summits", "Peer learning opportunities"],
   },
 ];
@@ -48,7 +48,7 @@ const mentorRoles = [
     title: "Being an Advisor",
     icon: Target,
     color: "#2563EB",
-    description: "Work closely with startups on a weekly basis and will often form part of our Advisory Board for the duration of the program. All advisory mentors will get the opportunity time to meet participating teams face-to-face, play a role in selection, and then decide which startups they want to engage with.",
+    description: "Work closely with startups on a weekly basis and will often form part of our Advisory Board for the duration of the programme. All advisory mentors will get the opportunity time to meet participating teams face-to-face, play a role in selection, and then decide which startups they want to engage with.",
     commitment: "Weekly sessions throughout the programme",
     responsibilities: ["Weekly 1:1 sessions with founders", "Participate in startup selection", "Advisory Board membership", "Face-to-face team meetings"],
   },

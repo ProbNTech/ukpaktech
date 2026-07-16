@@ -315,14 +315,14 @@ export default function UKPakistanTechnologyPartnershipClient() {
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
-                label="Recognition Program"
+                label="Recognition Programme"
                 title="Recognising Excellence"
                 color="red"
                 subtitle="Celebrating Pakistan's contributions to the UK tech sector through prestigious recognition."
               />
             </div>
             <p className="text-[#3D4152] text-lg leading-relaxed mb-6">
-              Our recognition program celebrates exceptional achievements in technology innovation, cross-border collaboration, and leadership that strengthens the UK–Pakistan tech corridor.
+              Our recognition programme celebrates exceptional achievements in technology innovation, cross-border collaboration, and leadership that strengthens the UK–Pakistan tech corridor.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {recognitionItems.map((item, i) => (

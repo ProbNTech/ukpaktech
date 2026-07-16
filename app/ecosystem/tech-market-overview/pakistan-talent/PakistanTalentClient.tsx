@@ -237,7 +237,7 @@ export default function PakistanTalentClient() {
                 ))}
               </ul>
               <div className="flex flex-wrap gap-1.5">
-                {freelancing.specializations.map((spec) => (
+                {freelancing.specialisations.map((spec) => (
                   <span
                     key={spec}
                     className="text-xs px-2 py-0.5 rounded-full bg-[#f0fff4] text-[#22C55E] font-medium"

@@ -48,7 +48,7 @@ export function Footer() {
                   </span>
                 </Link>
                 <p className="text-white mb-7 leading-relaxed text-base drop-shadow-md">
-                  UPTECH is the leading platform bringing together people, companies, and organizations from the UK and Pakistan to unlock the transformative potential of digital technology. With a diverse membership spanning startups, SMEs, corporates, and research institutions, the Forum fosters a vibrant network for innovation, collaboration, and knowledge exchange across business, government, and stakeholders to create positive impact for society, the economy, and the wider world.
+                  UPTECH is the leading platform bringing together people, companies, and organisations from the UK and Pakistan to unlock the transformative potential of digital technology. With a diverse membership spanning startups, SMEs, corporates, and research institutions, the Forum fosters a vibrant network for innovation, collaboration, and knowledge exchange across business, government, and stakeholders to create positive impact for society, the economy, and the wider world.
                 </p>
 
                 {/* Registration */}

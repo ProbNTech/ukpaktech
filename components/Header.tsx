@@ -68,12 +68,12 @@ const navItems: NavItem[] = [
     editorial: {
       headline: "From classroom\nto cutting edge.",
       body: "Our programmes, initiatives, and partnerships equip individuals and organisations with the skills, networks and capital to compete on the global stage.",
-      cta: { label: "Explore programmes →", href: "/programs/ai-tech-programs" },
+      cta: { label: "Explore programmes →", href: "/programmes/ai-tech-programmes" },
     },
     items: [
-      { label: "AI & Tech Programs", href: "/programs/ai-tech-programs", desc: "Structured initiatives in artificial intelligence, cloud, cybersecurity and emerging technology.", icon: Cpu },
-      { label: "Skill Development Centre", href: "/programs/skill-development-center", desc: "Practical training pathways, certification tracks and mentorship for the modern tech workforce.", icon: GraduationCap },
-      { label: "Incubation & Startups", href: "/programs/incubation-collective-startups", desc: "Early-stage support, co-working access, investor introductions and go-to-market acceleration.", icon: Rocket },
+      { label: "AI & Tech Programmes", href: "/programmes/ai-tech-programmes", desc: "Structured initiatives in artificial intelligence, cloud, cybersecurity and emerging technology.", icon: Cpu },
+      { label: "Skill Development Centre", href: "/programmes/skill-development-centre", desc: "Practical training pathways, certification tracks and mentorship for the modern tech workforce.", icon: GraduationCap },
+      { label: "Incubation & Startups", href: "/programmes/incubation-collective-startups", desc: "Early-stage support, co-working access, investor introductions and go-to-market acceleration.", icon: Rocket },
       { label: "Tech Excellence Awards", href: "/initiatives/tech-excellence-awards", desc: "Annual recognition celebrating the individuals and organisations driving extraordinary innovation.", icon: Trophy },
       { label: "UK–Pakistan Partnership", href: "/ecosystem/uk-pakistan-technology-partnership", desc: "The bilateral framework underpinning joint ventures, policy dialogue and shared R&D investment.", icon: Handshake },
       { label: "Trade Delegations", href: "/ecosystem/trade-delegations-and-exhibitions", desc: "Curated business missions, trade expos and pavilion programmes placing members on the world stage.", icon: Plane },

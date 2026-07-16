@@ -34,7 +34,7 @@ const techFocusAreas = [
   { icon: Wheat, title: "Agriculture & AgriTech", desc: "Transforming Pakistan's agriculture sector through precision farming, drone technology, supply chain digitalisation, and climate-smart agriculture solutions.", color: "#C41E3A" },
 ];
 
-const programs = [
+const programmes = [
   {
     title: "IT/AI Services Company",
     description: "A collective entity providing AI and IT services, leveraging shared resources and expertise to deliver world-class solutions.",
@@ -68,9 +68,9 @@ const programs = [
 ];
 
 const steps = [
-  { number: "01", title: "Join the Program", description: "Become a member and access our comprehensive AI and tech programs.", color: "#2563EB" },
-  { number: "02", title: "Assessment & Placement", description: "Complete skill assessments and get matched with the right program track.", color: "#22C55E" },
-  { number: "03", title: "Training & Development", description: "Participate in certifications, training, and skill development programs.", color: "#C41E3A" },
+  { number: "01", title: "Join the Programme", description: "Become a member and access our comprehensive AI and tech programmes.", color: "#2563EB" },
+  { number: "02", title: "Assessment & Placement", description: "Complete skill assessments and get matched with the right programme track.", color: "#22C55E" },
+  { number: "03", title: "Training & Development", description: "Participate in certifications, training, and skill development programmes.", color: "#C41E3A" },
   { number: "04", title: "Collective Startup Formation", description: "Join or form collective startups leveraging shared resources, expertise, and collaborative models.", color: "#2563EB" },
   { number: "05", title: "Launch & Scale", description: "Launch your venture with ongoing support and cross-border market access.", color: "#C41E3A" },
 ];
@@ -82,8 +82,8 @@ export default function AITechProgramsPage() {
     <div className="bg-white content-body">
       {/* ── Hero Section ── */}
       <PageHero
-        label="UPTECH Programs"
-        title="AI & Tech Programs"
+        label="UPTECH Programmes"
+        title="AI & Tech Programmes"
         subtitle="Driving AI innovation and tech leadership between the UK and Pakistan through comprehensive training, certifications, and collaborative startup models."
         video="/videos/banner.mp4"
         videoSpeed={2}
@@ -103,11 +103,11 @@ export default function AITechProgramsPage() {
             <div>
               <SectionHeader
                 label="Our Vision"
-                title="UPTECH's AI and Tech Programs bridge the UK and Pakistan through cutting-edge AI services, collective company models, and innovative startup ecosystems."
+                title="UPTECH's AI and Tech Programmes bridge the UK and Pakistan through cutting-edge AI services, collective company models, and innovative startup ecosystems."
                 color="blue"
               />
               <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
-                Our programs are designed to accelerate technology adoption, build world-class AI capabilities, and create sustainable pathways for innovation across both nations through collective business models and collaborative startup ecosystems.
+                Our programmes are designed to accelerate technology adoption, build world-class AI capabilities, and create sustainable pathways for innovation across both nations through collective business models and collaborative startup ecosystems.
               </p>
               <p className="text-[#5A5F72] text-lg leading-relaxed">
                 Through strategic partnerships, shared resources, and innovative collective structures, we&apos;re building a future where UK and Pakistani tech talent drives global AI innovation and technology leadership.
@@ -117,20 +117,20 @@ export default function AITechProgramsPage() {
         </div>
       </section>
 
-      {/* ── Programs Grid ── */}
+      {/* ── Programmes Grid ── */}
       <section className="relative bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <SectionHeader
-              label="Our Programs"
-              title="Program Areas"
+              label="Our Programmes"
+              title="Programme Areas"
               color="green"
               subtitle="Comprehensive initiatives designed to accelerate AI and technology adoption across the UK–Pakistan corridor."
             />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {programs.map((program, i) => (
+              {programmes.map((programme, i) => (
                 <motion.div
-                  key={program.title}
+                  key={programme.title}
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
@@ -141,12 +141,12 @@ export default function AITechProgramsPage() {
                 >
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-2 group-hover:text-[#2563EB] transition-colors duration-200">
-                      {program.title}
+                      {programme.title}
                     </h3>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
-                    <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">{program.description}</p>
+                    <p className="text-[#7A7E8F] text-base leading-relaxed mb-4">{programme.description}</p>
                     <ul className="space-y-2">
-                      {program.features.map((feature) => (
+                      {programme.features.map((feature) => (
                         <li key={feature} className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 text-[#2563EB] mt-0.5 flex-shrink-0" strokeWidth={2} />
                           <span className="text-[#5A5F72] text-base">{feature}</span>

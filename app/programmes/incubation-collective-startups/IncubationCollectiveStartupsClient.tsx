@@ -72,7 +72,7 @@ export default function IncubationCollectiveStartupsClient() {
     <div className="bg-white content-body">
       {/* ── Hero Section ── */}
       <PageHero
-        label="UPTECH Programs"
+        label="UPTECH Programmes"
         title="Incubation & Startups"
         subtitle="Nurturing the next generation of tech startups and innovators through collaborative models and comprehensive support."
         video="/videos/banner.mp4"
@@ -135,7 +135,7 @@ export default function IncubationCollectiveStartupsClient() {
                 </p>
               </div>
               <div className="bg-white border border-[#D8D5CF] rounded-xl p-8 shadow-sm">
-                <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-5">Program Snapshot</h3>
+                <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-5">Programme Snapshot</h3>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
                 <ul className="space-y-3">
                   {["Mentorship & Operators Network", "Shared Infrastructure & Tooling", "Funding & Investor Connections", "UK–Pakistan Market Access"].map((item) => (
@@ -310,7 +310,7 @@ export default function IncubationCollectiveStartupsClient() {
               label="Partnerships"
               title="Corporate & Accelerator Partnerships"
               color="blue"
-              subtitle="Strategic partnerships between startups, scale-ups, corporates, and accelerator programs across the UK and Pakistan."
+              subtitle="Strategic partnerships between startups, scale-ups, corporates, and accelerator programmes across the UK and Pakistan."
             />
             <div className="grid md:grid-cols-3 gap-6">
               {[
@@ -331,8 +331,8 @@ export default function IncubationCollectiveStartupsClient() {
                 {
                   tag: "Accelerators",
                   title: "Partner With Us",
-                  desc: "Co-build acceleration programs with cross-border reach, shared deal flow, and access to the UK–Pakistan tech corridor.",
-                  items: ["Co-branded programs", "Shared deal flow", "Cross-border market access", "Investor network access"],
+                  desc: "Co-build acceleration programmes with cross-border reach, shared deal flow, and access to the UK–Pakistan tech corridor.",
+                  items: ["Co-branded programmes", "Shared deal flow", "Cross-border market access", "Investor network access"],
                   color: "#C41E3A",
                 },
               ].map((card, i) => (
@@ -383,7 +383,7 @@ export default function IncubationCollectiveStartupsClient() {
               label="Who It's For"
               title="Who Should Join"
               color="green"
-              subtitle="Our programs are designed for founders, startups, and partners at different stages of growth."
+              subtitle="Our programmes are designed for founders, startups, and partners at different stages of growth."
             />
             <div className="grid md:grid-cols-3 gap-6">
               {audiences.map((audience, i) => (
@@ -441,7 +441,7 @@ export default function IncubationCollectiveStartupsClient() {
                 </div>
               ))}
             </div>
-            <p className="text-base text-[#7A7E8F] mt-6">Metrics shown are indicative and updated as programs scale.</p>
+            <p className="text-base text-[#7A7E8F] mt-6">Metrics shown are indicative and updated as programmes scale.</p>
           </AnimatedSection>
         </div>
       </section>
@@ -450,7 +450,7 @@ export default function IncubationCollectiveStartupsClient() {
       <GlobalCTA
         label="Get Involved"
         title="Build, Scale, and Expand With UPTECH"
-        subtitle="Join our incubation program and become part of a collaborative ecosystem driving innovation across the UK and Pakistan."
+        subtitle="Join our incubation programme and become part of a collaborative ecosystem driving innovation across the UK and Pakistan."
         primaryButtonText="Apply for Incubation"
         primaryButtonLink="/membership#apply"
         secondaryButtonText="Partner With Us"

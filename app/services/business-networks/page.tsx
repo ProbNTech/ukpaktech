@@ -45,15 +45,15 @@ const targetMarket = [
   "Early-stage startups (Seed to Series A)",
   "Venture capital firms, angel investors, and family offices",
   "Accelerators, incubators, and innovation hubs",
-  "Corporate innovation and CSR programs",
+  "Corporate innovation and CSR programmes",
   "Government and development agencies supporting entrepreneurship",
 ];
 
 const revenueModel = [
-  "Event organization fees (B2B contracts)",
+  "Event organisation fees (B2B contracts)",
   "Sponsorship packages",
   "Ticketing and participation fees",
-  "Partnership retainers for recurring event programs",
+  "Partnership retainers for recurring event programmes",
 ];
 
 const faqs = [
@@ -122,7 +122,7 @@ export default function BusinessNetworksPage() {
               <div className="lg:col-span-3">
                 <SectionHeader label="Overview" title="The World's Largest Business Network" color="blue" />
                 <p className="text-[#5A5F72] text-lg leading-relaxed mb-4">
-                  Our specialists provide access to comprehensive and tailored advice covering both the UK and international markets. They build on a heritage of collaboration with the Enterprise Europe Network, the most extensive association of innovation and growth support organizations around the world. This advice ranges from sourcing and establishing connections with new collaborators and potential partners, to information on local regulations. To find partners via Enterprise Europe Network, please see the section &apos;Live global partnering opportunities&apos; below.
+                  Our specialists provide access to comprehensive and tailored advice covering both the UK and international markets. They build on a heritage of collaboration with the Enterprise Europe Network, the most extensive association of innovation and growth support organisations around the world. This advice ranges from sourcing and establishing connections with new collaborators and potential partners, to information on local regulations. To find partners via Enterprise Europe Network, please see the section &apos;Live global partnering opportunities&apos; below.
                 </p>
               </div>
               <div className="lg:col-span-2">

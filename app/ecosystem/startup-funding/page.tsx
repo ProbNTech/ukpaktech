@@ -185,7 +185,7 @@ export default function StartupFundingPage() {
       {/* ── For Startups ── */}
       <Section variant="alt">
         <AnimatedSection>
-          <SectionHeader label="For Startups" title="Startup Funding Events & Opportunities" subtitle="Connect with angel investors, venture capital firms, and corporate partners through our curated events and programs." color="blue" />
+          <SectionHeader label="For Startups" title="Startup Funding Events & Opportunities" subtitle="Connect with angel investors, venture capital firms, and corporate partners through our curated events and programmes." color="blue" />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {startupBenefits.map((item, i) => {
@@ -353,7 +353,7 @@ export default function StartupFundingPage() {
                 <ul className="space-y-5">
                   {[
                     { title: "Investment Networks", desc: "Connections to angel investors, VCs, and corporate partners.", color: "#2563EB" },
-                    { title: "Growth Capital", desc: "Access to funding programs and government-backed initiatives.", color: "#22C55E" },
+                    { title: "Growth Capital", desc: "Access to funding programmes and government-backed initiatives.", color: "#22C55E" },
                     { title: "Fundraising Support", desc: "Strategy guidance, pitch coaching, and valuation advisory.", color: "#C41E3A" },
                     { title: "Cross-Border Access", desc: "Investment opportunities spanning UK and Pakistan markets.", color: "#2563EB" },
                   ].map((item, i) => (
