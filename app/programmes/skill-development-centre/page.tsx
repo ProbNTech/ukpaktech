@@ -37,19 +37,19 @@ const heroFloatingIcons = [
 
 const trustItems = ["UK aligned curriculum", "Industry mentors", "Practical projects", "Career support", "Cross-border collaboration"];
 
-const programs = [
+const programmes = [
   { title: "AI & Tech Certifications", subtitle: "Industry-recognised vendor-aligned certification tracks", bullets: ["Vendor aligned tracks", "Hands on labs", "Final assessment and badge"] },
-  { title: "Sector Specific Skill Training", subtitle: "Specialised programs for key industries", bullets: ["Healthcare, fintech, logistics, public sector, manufacturing", "Use cases and toolkits", "Mini capstone per sector"] },
+  { title: "Sector Specific Skill Training", subtitle: "Specialised programmes for key industries", bullets: ["Healthcare, fintech, logistics, public sector, manufacturing", "Use cases and toolkits", "Mini capstone per sector"] },
   { title: "Student Tutoring Services", subtitle: "Personalised learning support for students", bullets: ["Fundamentals to advanced", "Code reviews and debugging help", "Weekly learning plans"] },
   { title: "Competitive Exam Support", subtitle: "Comprehensive preparation for exams and interviews", bullets: ["GRE, IELTS, tech interviews, CS fundamentals", "Mock tests and feedback", "Resource library"] },
-  { title: "Internship Programs", subtitle: "Real-world experience with leading companies", bullets: ["Partner placements", "Portfolio projects", "Reference ready mentorship"] },
+  { title: "Internship Programmes", subtitle: "Real-world experience with leading companies", bullets: ["Partner placements", "Portfolio projects", "Reference ready mentorship"] },
 ];
 
 const pathwaySteps = [
   { number: "01", title: "Assess", description: "Complete skill assessments and identify your learning goals and current proficiency level.", outcome: "Personalised learning roadmap", color: "#2563EB" },
-  { number: "02", title: "Train", description: "Participate in structured training programs with hands-on labs and expert mentorship.", outcome: "Industry-relevant skills", color: "#22C55E" },
+  { number: "02", title: "Train", description: "Participate in structured training programmes with hands-on labs and expert mentorship.", outcome: "Industry-relevant skills", color: "#22C55E" },
   { number: "03", title: "Build", description: "Create portfolio projects and capstone assignments that demonstrate your capabilities.", outcome: "Portfolio-ready projects", color: "#C41E3A" },
-  { number: "04", title: "Launch", description: "Access career support, internship placements, and job readiness programs.", outcome: "Career-ready profile", color: "#2563EB" },
+  { number: "04", title: "Launch", description: "Access career support, internship placements, and job readiness programmes.", outcome: "Career-ready profile", color: "#2563EB" },
 ];
 
 const tracks = [
@@ -66,12 +66,12 @@ const outcomes = [
 ];
 
 const faqs = [
-  { question: "Who is this program for?", answer: "Our programs are designed for students, professionals, and career changers looking to build or enhance their tech skills. Whether you're a beginner or looking to advance your career, we have tracks suited to your level." },
-  { question: "Do I need prior experience?", answer: "No prior experience is required for our beginner tracks. We offer programs for all skill levels, from fundamentals to advanced specialisation. Our assessment process helps match you with the right program." },
-  { question: "Are programs online or onsite?", answer: "We offer both online and hybrid learning options to accommodate different schedules and locations. Most programs include live sessions, recorded content, and hands-on labs accessible remotely." },
+  { question: "Who is this programme for?", answer: "Our programmes are designed for students, professionals, and career changers looking to build or enhance their tech skills. Whether you're a beginner or looking to advance your career, we have tracks suited to your level." },
+  { question: "Do I need prior experience?", answer: "No prior experience is required for our beginner tracks. We offer programmes for all skill levels, from fundamentals to advanced specialisation. Our assessment process helps match you with the right programme." },
+  { question: "Are programmes online or onsite?", answer: "We offer both online and hybrid learning options to accommodate different schedules and locations. Most programmes include live sessions, recorded content, and hands-on labs accessible remotely." },
   { question: "What is the value of certifications?", answer: "Our certifications are industry-recognised and aligned with vendor standards. They demonstrate practical skills and are valued by employers in both UK and Pakistani tech markets." },
-  { question: "How do I become eligible for internships?", answer: "Internship eligibility is based on program completion, performance in assessments, and portfolio quality. We work with partner organisations to match qualified candidates with relevant opportunities." },
-  { question: "What about pricing and scholarships?", answer: "We offer various pricing tiers and scholarship opportunities for eligible candidates. Please contact us through the portal or membership application to discuss options and financial support programs." },
+  { question: "How do I become eligible for internships?", answer: "Internship eligibility is based on programme completion, performance in assessments, and portfolio quality. We work with partner organisations to match qualified candidates with relevant opportunities." },
+  { question: "What about pricing and scholarships?", answer: "We offer various pricing tiers and scholarship opportunities for eligible candidates. Please contact us through the portal or membership application to discuss options and financial support programmes." },
 ];
 
 export default function SkillDevelopmentCenterPage() {
@@ -82,9 +82,9 @@ export default function SkillDevelopmentCenterPage() {
     <div className="bg-white content-body">
       {/* ── Hero Section ── */}
       <PageHero
-        label="UPTECH Programs"
+        label="UPTECH Programmes"
         title="Skill Development Centre"
-        subtitle="Comprehensive training programs designed to build world-class tech capabilities and accelerate your career."
+        subtitle="Comprehensive training programmes designed to build world-class tech capabilities and accelerate your career."
         video="/videos/banner.mp4"
         videoSpeed={0.75}
         heroImage="/image/Skill Development Center/skill-dev-hero.jpg"
@@ -123,15 +123,15 @@ export default function SkillDevelopmentCenterPage() {
                   color="blue"
                 />
                 <p className="text-[#5A5F72] text-lg leading-relaxed mb-5">
-                  Our Skill Development Center offers industry-recognised certifications, specialised training, and personalised mentorship to empower individuals and organisations with cutting-edge technology skills.
+                  Our Skill Development Centre offers industry-recognised certifications, specialised training, and personalised mentorship to empower individuals and organisations with cutting-edge technology skills.
                 </p>
                 <p className="text-[#5A5F72] text-lg leading-relaxed">
-                  Through strategic partnerships with leading tech companies and educational institutions, we deliver programs that bridge the skills gap and create pathways for career advancement.
+                  Through strategic partnerships with leading tech companies and educational institutions, we deliver programmes that bridge the skills gap and create pathways for career advancement.
                 </p>
               </div>
               <div className="lg:col-span-2">
                 <div className="rounded-2xl border border-[#D8D5CF] bg-white shadow-sm p-8 sticky top-8">
-                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-5">Program Highlights</h3>
+                  <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-5">Programme Highlights</h3>
                   <div className="h-px bg-[#D8D5CF] mb-5" />
                   <ul className="space-y-4">
                     {[
@@ -161,15 +161,15 @@ export default function SkillDevelopmentCenterPage() {
         </div>
       </section>
 
-      {/* ── Programs Grid ── */}
+      {/* ── Programmes Grid ── */}
       <section className="relative bg-white" id="programs">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
-            <SectionHeader label="Training Programs" title="Our Programs" subtitle="Comprehensive skill development initiatives designed to accelerate your tech career." color="green" />
+            <SectionHeader label="Training Programmes" title="Our Programmes" subtitle="Comprehensive skill development initiatives designed to accelerate your tech career." color="green" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {programs.map((program, i) => (
+              {programmes.map((programme, i) => (
                 <motion.div
-                  key={program.title}
+                  key={programme.title}
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
@@ -180,12 +180,12 @@ export default function SkillDevelopmentCenterPage() {
                 >
                   <div className="p-6 flex flex-col h-full">
                     <h3 className="font-heading font-bold text-[#1C1F2E] text-base mb-1 group-hover:text-[#22C55E] transition-colors duration-200">
-                      {program.title}
+                      {programme.title}
                     </h3>
-                    <p className="text-[#7A7E8F] text-base mb-3">{program.subtitle}</p>
+                    <p className="text-[#7A7E8F] text-base mb-3">{programme.subtitle}</p>
                     <div className="h-px bg-[#D8D5CF] mb-4" />
                     <ul className="space-y-2 flex-1">
-                      {program.bullets.map((bullet) => (
+                      {programme.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
                           <span className="text-[#5A5F72] text-base">{bullet}</span>
@@ -260,7 +260,7 @@ export default function SkillDevelopmentCenterPage() {
       <section className="relative bg-white" id="tracks">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
-            <SectionHeader label="Flagship Tracks" title="Intensive Training Tracks" subtitle="Intensive programs designed to build expertise in high-demand tech domains." color="red" />
+            <SectionHeader label="Flagship Tracks" title="Intensive Training Tracks" subtitle="Intensive programmes designed to build expertise in high-demand tech domains." color="red" />
             <div className="grid md:grid-cols-3 gap-6">
               {tracks.map((track, i) => (
                 <motion.div
@@ -308,7 +308,7 @@ export default function SkillDevelopmentCenterPage() {
       <section className="bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
-            <SectionHeader label="Results" title="Program Outcomes" subtitle="Measurable results that accelerate your career growth." color="blue" />
+            <SectionHeader label="Results" title="Programme Outcomes" subtitle="Measurable results that accelerate your career growth." color="blue" />
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {outcomes.map((outcome, i) => (
                 <motion.div
@@ -337,7 +337,7 @@ export default function SkillDevelopmentCenterPage() {
       <section className="relative bg-[#E8E6E3]" id="faq">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
-            <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Everything you need to know about our programs." color="blue" />
+            <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Everything you need to know about our programmes." color="blue" />
             <div>
               {faqs.map((faq, index) => (
                 <div
@@ -382,7 +382,7 @@ export default function SkillDevelopmentCenterPage() {
       <GlobalCTA
         label="Get Started"
         title="Ready to Transform Your Career?"
-        subtitle="Join UPTECH’s Skill Development Center and unlock your potential in the tech industry. Start your journey today with world-class training and mentorship."
+        subtitle="Join UPTECH’s Skill Development Centre and unlock your potential in the tech industry. Start your journey today with world-class training and mentorship."
         primaryButtonText="Apply for Training"
         primaryButtonLink="/membership#apply"
         secondaryButtonText="Partner with UPTECH"

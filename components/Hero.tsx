@@ -20,7 +20,7 @@ const slides = [
   {
     label: "INNOVATION",
     headline: "Connecting startups, investors & enterprises across borders",
-    cta: { text: "Discover programmes", href: "/programs/ai-tech-programs" },
+    cta: { text: "Discover programmes", href: "/programmes/ai-tech-programmes" },
     secondary: { text: "View initiatives", href: "/initiatives/people-ai" },
   },
   {

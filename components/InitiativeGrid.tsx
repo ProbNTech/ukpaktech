@@ -32,9 +32,9 @@ const initiatives = [
   },
   {
     icon: GraduationCap,
-    title: "AI and Tech Programs",
+    title: "AI and Tech Programmes",
     description: "Training, certifications, incubation, and collective startup models.",
-    href: "/initiatives/ai-tech-programs",
+    href: "/programmes/ai-tech-programmes",
     image: "/image/Initiatives/ai-tech-programs.jpg",
     fallbackGradient: "from-[#2563EB]/15 to-[#22C55E]/15",
     iconColor: "#2563EB",
