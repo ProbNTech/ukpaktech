@@ -38,9 +38,9 @@ export const events: Event[] = [
     image: "/image/Events & Engagements/nextgen.webp",
     officialLink: "https://alliancepakistan.org/event/nextgen-digital-summit/",
     excerpt:
-      "Organized with regulatory support to define Pakistan's roadmap for 5G readiness, smart cities, and digital governance.",
+      "Organised with regulatory support to define Pakistan's roadmap for 5G readiness, smart cities, and digital governance.",
     body: [
-      "The NextGen Digital Summit 2026 is Pakistan's premier platform for policymakers, regulators, and industry leaders to shape the nation's digital future. Organized with the direct involvement of Pakistan's telecommunications regulator and allied government bodies, the summit sets the strategic direction for the country's 5G readiness programme, full-fibre connectivity rollout, and smart city infrastructure development.",
+      "The NextGen Digital Summit 2026 is Pakistan's premier platform for policymakers, regulators, and industry leaders to shape the nation's digital future. Organised with the direct involvement of Pakistan's telecommunications regulator and allied government bodies, the summit sets the strategic direction for the country's 5G readiness programme, full-fibre connectivity rollout, and smart city infrastructure development.",
       "The two-day event in Karachi brings together ministers, senior regulators, global telecom executives, and technology innovators to deliberate on the policy, investment, and infrastructure requirements needed to make Pakistan's next-generation digital ambitions a reality. Key tracks include smart city planning for Karachi and Lahore, rural and peri-urban connectivity, cybersecurity governance for critical national infrastructure, and international best practices in digital economy development.",
       "For UK–Pakistan technology partners, the NextGen Digital Summit provides direct access to senior Pakistani government decision-makers overseeing the nation's most consequential technology investment programmes. UPTECH facilitates UK delegation participation and can introduce members to senior officials attending the summit.",
     ],
@@ -112,7 +112,7 @@ export const events: Event[] = [
     image: "/image/Events & Engagements/IDEAS2026.webp",
     officialLink: "https://ideaspakistan.gov.pk/",
     excerpt:
-      "Organized by the Ministry of Defence Production with a dedicated 'Cyber & Emerging Tech' pavilion covering AI, quantum computing, and cybersecurity.",
+      "Organised by the Ministry of Defence Production with a dedicated 'Cyber & Emerging Tech' pavilion covering AI, quantum computing, and cybersecurity.",
     body: [
       "IDEAS, the International Defence Exhibition & Seminar, is Pakistan's most internationally prominent defence and security technology event, held biennially at Karachi Expo Centre under the direct authority of the Ministry of Defence Production. The 2026 edition significantly expands its scope to feature a dedicated 'Cyber & Emerging Tech' track and pavilion, addressing AI, quantum computing, cybersecurity infrastructure, secure communications, and dual-use technology development.",
       "The Cyber & Emerging Tech track brings together cyber defence specialists, AI researchers, quantum technology developers, and critical infrastructure security professionals from Pakistan and internationally. The format combines exhibition of cutting-edge technologies with high-level conference sessions examining the commercial and geopolitical dimensions of emerging technology in defence, government, and critical national infrastructure contexts.",
@@ -272,7 +272,7 @@ export const events: Event[] = [
       "Unlocking Innovation in an Age of Intelligent Technologies, where emerging tech meets leadership, business, and responsibility.",
     body: [
       "EmTech Europe 2026 is a two-day conference in Athens bringing together global experts to explore how emerging technologies transition from breakthrough to real-world impact, with a focus on AI, synthetic biology, climate tech, and quantum computing, examining both opportunities and ethical implications.",
-      "The programme is structured around five thematic pillars: The State of Intelligence covering AI, robotics, quantum, and synthetic biology; From Breakthrough to Adoption exploring industry applications across shipping, healthcare, and finance; The Greek Moment highlighting Greece's role in ethical innovation; The Ethics of Scale addressing fairness, sustainability, and governance; and Tomorrow, Operationalized examining emerging horizons for leaders.",
+      "The programme is structured around five thematic pillars: The State of Intelligence covering AI, robotics, quantum, and synthetic biology; From Breakthrough to Adoption exploring industry applications across shipping, healthcare, and finance; The Greek Moment highlighting Greece's role in ethical innovation; The Ethics of Scale addressing fairness, sustainability, and governance; and Tomorrow, Operationalised examining emerging horizons for leaders.",
       "Notable speakers include Shakir Mohamed from Google DeepMind, Turing Award winner Joseph Sifakis, Kira Radinsky of Diagnostic Robotics, Paul Cheek from MIT, and Rohit Patel from Meta. For UPTECH delegates, EmTech Europe provides a high-level European forum for engaging with the intersection of policy, technology ethics, and industrial application.",
     ],
     relatedSlugs: [
@@ -322,7 +322,7 @@ export const events: Event[] = [
     body: [
       "The Oslo Tech Show is Norway's largest technology event, bringing together over 150 exhibitors under the banner 'Tech Dreams Become Reality'. The two-day event at Nova Spektrum features keynote presentations, free exhibitions, networking events, awards ceremonies, and hands-on demonstrations of AI and emerging technologies.",
       "The show covers six integrated expos: AI & Big Data, Cybersecurity & Cloud, Cloud Infrastructure, Data Centre Solutions, DevOps, and Mobile Technology including 5G, 6G, IoT, and FinTech. Admission is completely free, making it one of the most accessible major technology events in the Nordic region.",
-      "Notable speakers include Norway's first astronaut Jannicke Mikkelsen, Brigadier General Patrick Huston on FBI AI Task Force matters, Norway's Minister for Digitalization Karianne Oldernes Tung, and Yngvar Ugland, named Nordic AI Professional of the Year. The Oslo Tech Show provides UPTECH members with a gateway to the thriving Nordic technology ecosystem.",
+      "Notable speakers include Norway's first astronaut Jannicke Mikkelsen, Brigadier General Patrick Huston on FBI AI Task Force matters, Norway's Minister for Digitalisation Karianne Oldernes Tung, and Yngvar Ugland, named Nordic AI Professional of the Year. The Oslo Tech Show provides UPTECH members with a gateway to the thriving Nordic technology ecosystem.",
     ],
     relatedSlugs: [
       "stockholm-tech-show-2026",
@@ -739,13 +739,13 @@ export const events: Event[] = [
     date: "October 13–14, 2026",
     dateISO: "2026-10-13",
     location: "Rome, Italy",
-    venue: "La Nuvola Convention Center",
+    venue: "La Nuvola Convention Centre",
     image: "/image/Events & Engagements/europe/cybertech_europe.jpg",
     officialLink: "https://italy.cybertechconference.com/",
     excerpt:
       "An international cybersecurity conference and exhibition featuring cutting-edge solutions, senior government officials, and C-level executives.",
     body: [
-      "Cybertech Europe 2026 is an international cybersecurity conference and exhibition at La Nuvola Convention Center in Rome, featuring cutting-edge solutions from major technology companies and startups, with participation from senior government officials, C-level executives, and industry leaders across Europe.",
+      "Cybertech Europe 2026 is an international cybersecurity conference and exhibition at La Nuvola Convention Centre in Rome, featuring cutting-edge solutions from major technology companies and startups, with participation from senior government officials, C-level executives, and industry leaders across Europe.",
       "Notable speakers include Mike Pompeo, 70th US Secretary of State, Ivano Gabrielli, Director of the Italian Postal and Cybersecurity Police, Eva Chen, CEO of Trend Micro, Christiane Kirketerp de Viron, Acting Director for Cybersecurity at the European Commission, and Jonathan Fischbein, Global CISO of Check Point Software.",
       "Cybertech Europe's unique combination of government policy-level engagement and enterprise cybersecurity solutions makes it particularly relevant for UPTECH members seeking to understand the European cybersecurity regulatory landscape and build relationships with continental European security decision-makers.",
     ],
@@ -1220,7 +1220,7 @@ export const events: Event[] = [
       "UPTECH's highlights from London Tech Week 2026 at Olympia London, from the Pakistan Tech Destination Pavilion to visionary sessions on AI, data, and social impact.",
     body: [
       "London Tech Week 2026 at Olympia London delivered an incredibly productive few days for the UK–Pakistan technology community. A major highlight was the Pakistan Tech Destination Pavilion (Booth #200 in the Grand Hall), where over 16 visionary Pakistani technology companies showcased their work across software development, AI, and digital scaling, clear evidence of Pakistan's booming ecosystem cementing its place as a global IT powerhouse. Our thanks to the Pakistan Software Export Board (PSEB) team for convening such a strong national presence.",
-      "Across the week, sessions explored how technology and data can be applied ethically for real social impact. A standout was the session featuring Prince William's Homewards initiative, where major technology players including Salesforce, Bloomberg Philanthropies, and NatWest collaborated to launch the 'Homelessness Data Lab'demonstrating how predictive technology and data can help intervene before someone loses their home, rather than only reacting afterward.",
+      "Across the week, sessions explored how technology and data can be applied ethically for real social impact. A standout was the session featuring Prince William's Homewards initiative, where major technology players including Salesforce, Bloomberg Philanthropies, and NatWest collaborated to launch the 'Homelessness Data Lab'demonstrating how predictive technology and data can help intervene before someone loses their home, rather than only reacting afterwards.",
       "From AI showcases and networking to visionary policy discussions, London Tech Week 2026 reinforced the momentum behind the UK–Pakistan technology corridor. For UPTECH, convening and connecting UK and Pakistani founders, investors, and institutions at moments like these is central to its mission of deepening trade, talent, and innovation ties between the two countries.",
     ],
     relatedSlugs: [

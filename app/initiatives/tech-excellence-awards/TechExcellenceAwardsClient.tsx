@@ -55,13 +55,13 @@ const professionalAwards = [
 ];
 
 const nominationSteps = [
-  { number: "01", title: "Nominations", description: "Nominations through industry bodies, and partner organizations.", outcome: "Nominations received", color: "#2563EB" },
+  { number: "01", title: "Nominations", description: "Nominations through industry bodies, and partner organisations.", outcome: "Nominations received", color: "#2563EB" },
   { number: "02", title: "Committee Review", description: "Review by a joint committee comprising representatives and industry experts.", outcome: "Reviewed and scored", color: "#22C55E" },
   { number: "03", title: "Final Approval", description: "Final approval of awardees by joint committee.", outcome: "Awardees confirmed", color: "#C41E3A" },
 ];
 
 const objectives = [
-  "Recognize outstanding achievements in Pakistan\u2019s IT & digital services sector.",
+  "Recognise outstanding achievements in Pakistan\u2019s IT & digital services sector.",
   "Highlight success stories to international investors and partners",
   "Reinforce Pakistan\u2019s image as a competitive global technology destination",
   "Motivate continued excellence and export-led growth within the IT industry",

@@ -53,7 +53,7 @@ const sectors = [
 const faqs = [
   { question: "What types of contracts are available?", answer: "We facilitate fixed-term contracts (3\u201312 months), project-based engagements, and contract-to-hire arrangements. Contract terms are flexible and can be tailored to the needs of both employers and professionals." },
   { question: "How is compliance handled?", answer: "We manage all compliance aspects including work permits, tax obligations, employment law, and contractual agreements. Our legal team ensures all placements comply with UK and Pakistan employment regulations." },
-  { question: "What skill levels are available?", answer: "Our talent pool ranges from mid-level professionals with 3+ years of experience to senior specialists and technical leads with 10+ years. We also support graduate placements through our partnership programs." },
+  { question: "What skill levels are available?", answer: "Our talent pool ranges from mid-level professionals with 3+ years of experience to senior specialists and technical leads with 10+ years. We also support graduate placements through our partnership programmes." },
   { question: "How long does the matching process take?", answer: "Typical matching takes 2\u20134 weeks from requirement submission to candidate shortlist. For urgent requirements, we offer an expedited process that can deliver candidates within 5\u20137 business days." },
   { question: "What are the costs for employers?", answer: "Employer fees are based on the contract value and duration. UPTECH members receive preferential rates. Contact us for a detailed pricing structure tailored to your requirements." },
 ];

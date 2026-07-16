@@ -91,7 +91,7 @@ export default function AboutPage() {
               By uniting Pakistani IT professionals residing and working in the United Kingdom, we establish a dynamic platform for networking, knowledge-sharing, and collective advancement.
             </p>
             <p className="text-[#3D4152] leading-relaxed">
-              Through our diverse community, we aim to catalyze positive transformations in IT, shaping its future, and delivering significant contributions to both the country we reside in and the country we proudly belong to.
+              Through our diverse community, we aim to catalyse positive transformations in IT, shaping its future, and delivering significant contributions to both the country we reside in and the country we proudly belong to.
             </p>
           </AnimatedSection>
           <AnimatedSection>

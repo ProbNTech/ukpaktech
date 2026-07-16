@@ -10,10 +10,10 @@ import { Button } from "@/components/Button";
 import { Target, Award, Users, Globe2, Radio, Rocket, TrendingUp, Zap, Handshake, Briefcase, Database, GraduationCap, FlaskConical } from "lucide-react";
 
 const missionPillars = [
-  { icon: Target, title: "Apex Organization", desc: "To be the Apex organization for IT professionals in business, government, and people.", color: "#2563EB" },
+  { icon: Target, title: "Apex Organisation", desc: "To be the Apex organisation for IT professionals in business, government, and people.", color: "#2563EB" },
   { icon: Award, title: "Represent Professionals", desc: "To represent IT professionals in all aspects of their profession and increase the value of the profession.", color: "#C41E3A" },
   { icon: Users, title: "Inclusive Community", desc: "To be a place for anyone in the profession, representing all ages, career stages, demographics, and needs.", color: "#22C55E" },
-  { icon: Globe2, title: "Global Collaboration", desc: "To collaborate with Networks and organizations representing professionals in countries around the world to unify and advance the profession globally.", color: "#2563EB" },
+  { icon: Globe2, title: "Global Collaboration", desc: "To collaborate with Networks and organisations representing professionals in countries around the world to unify and advance the profession globally.", color: "#2563EB" },
   { icon: Radio, title: "Timely Information", desc: "To provide relevant, consistent, and timely information to stakeholders.", color: "#C41E3A" },
   { icon: Rocket, title: "Fuel Growth", desc: "Fuel business creation and expansion, address funding gaps for early-stage companies and increase opportunities for high-growth enterprises.", color: "#22C55E" },
   { icon: Database, title: "Information Management", desc: "Complete management of client information with easy access and updates for professionals, employers, trainers and businesses so they can benefit from the most accurate and timely information available.", color: "#2563EB" },
@@ -21,7 +21,7 @@ const missionPillars = [
 
 const strategicFocus = [
   { icon: TrendingUp, title: "Enhance Tech Adoption", desc: "Encourage the uptake of technology across Pakistani businesses to elevate productivity and competitiveness.", color: "#2563EB" },
-  { icon: Zap, title: "Incentivize Investment", desc: "Promote initiatives like R&D incentives, refining investor definitions, and broadening EIS/SEIS scope to stimulate business growth.", color: "#C41E3A" },
+  { icon: Zap, title: "Incentivise Investment", desc: "Promote initiatives like R&D incentives, refining investor definitions, and broadening EIS/SEIS scope to stimulate business growth.", color: "#C41E3A" },
   { icon: Handshake, title: "Connectivity", desc: "Bridging the gaps and providing lightning-fast connectivity across the nation.", color: "#22C55E" },
   { icon: Briefcase, title: "Technical Support", desc: "To become the industry benchmark by providing one-stop solutions for all technical support and related services.", color: "#2563EB" },
 ];

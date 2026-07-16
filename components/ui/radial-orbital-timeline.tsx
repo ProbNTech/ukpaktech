@@ -22,7 +22,7 @@ interface RadialOrbitalTimelineProps {
 
 /* Short subtitle for each node, keyed by title */
 const nodeSubtitles: Record<string, string> = {
-  "AI & Tech Programs": "Future-ready technology",
+  "AI & Tech Programmes": "Future-ready technology",
   "Services": "Digital transformation",
   "Skill Development": "Empowering talent",
   "UK–Pakistan Technology Partnership": "Cross-border innovation",

@@ -91,7 +91,7 @@ const verticals = [
       { icon: Database, text: "Data mining and analysis" },
       { icon: TrendingUp, text: "Predictive analytics" },
       { icon: LineChart, text: "Business performance analysis" },
-      { icon: PieChart, text: "Data visualization and reporting" },
+      { icon: PieChart, text: "Data visualisation and reporting" },
       { icon: Brain, text: "AI-driven analytics models" },
     ],
   },

@@ -308,7 +308,7 @@ export const members: Member[] = [
     logo: "/image/members/analytix-camp.png",
     website: "https://analytixcamp.com",
     description:
-      "Karachi-based online training platform offering certification courses in data analytics, Excel, Power BI, SQL, Python, financial modeling and AI.",
+      "Karachi-based online training platform offering certification courses in data analytics, Excel, Power BI, SQL, Python, financial modelling and AI.",
     companyType: "Academic & Research",
     sectors: ["Artificial Intelligence", "EdTech"],
     technologies: ["Data Analytics", "AI & Machine Learning"],
@@ -1220,7 +1220,7 @@ export const members: Member[] = [
     logo: "/image/members/aim-solutions.png",
     website: "https://www.aim-sol.com",
     description:
-      "Karachi-based software house developing workflow and business process automation systems that help organizations streamline their operations.",
+      "Karachi-based software house developing workflow and business process automation systems that help organisations streamline their operations.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation"],
     technologies: ["Custom Software", "Automation"],
@@ -1233,7 +1233,7 @@ export const members: Member[] = [
     logo: "/image/members/aan-associates.svg",
     website: "https://aanassociates.com",
     description:
-      "Islamabad-based public policy research and consulting firm delivering evidence-based analysis and advisory services to government and development organizations.",
+      "Islamabad-based public policy research and consulting firm delivering evidence-based analysis and advisory services to government and development organisations.",
     companyType: "Consultancy",
     sectors: ["Digital Transformation"],
     technologies: ["Data Analytics"],
@@ -1246,7 +1246,7 @@ export const members: Member[] = [
     logo: "/image/members/aurora-solutions.png",
     website: "https://www.aurorasolutions.io",
     description:
-      "Islamabad-based software house specializing in DevOps automation and cloud engineering that helps companies accelerate and streamline their delivery pipelines.",
+      "Islamabad-based software house specialising in DevOps automation and cloud engineering that helps companies accelerate and streamline their delivery pipelines.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation"],
     technologies: ["Cloud & DevOps", "Automation"],
@@ -1324,7 +1324,7 @@ export const members: Member[] = [
     logo: "/image/members/h3-technologies.png",
     website: "https://h3techs.com",
     description:
-      "Lahore-based software house building conversion-focused Shopify optimization plugins, store utilities, and targeted customer-retention software.",
+      "Lahore-based software house building conversion-focused Shopify optimisation plugins, store utilities, and targeted customer-retention software.",
     companyType: "Software & Services",
     sectors: ["E-Commerce", "Digital Transformation"],
     technologies: ["Custom Software", "Data Analytics"],
@@ -1337,7 +1337,7 @@ export const members: Member[] = [
     logo: "/image/members/hazel-soft.png",
     website: "https://hazelsoft.net",
     description:
-      "Islamabad-based software house providing agile web engineering, corporate content platforms, and cloud optimization architecture for enterprises.",
+      "Islamabad-based software house providing agile web engineering, corporate content platforms, and cloud optimisation architecture for enterprises.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation"],
     technologies: ["Custom Software", "Cloud & DevOps"],
@@ -1350,7 +1350,7 @@ export const members: Member[] = [
     logo: "/image/members/ibtidah-solutions.svg",
     website: "https://ibtidah.com",
     description:
-      "Lahore-based software house offering outsourced product development, startup scaling strategies, and specialized web engineering services.",
+      "Lahore-based software house offering outsourced product development, startup scaling strategies, and specialised web engineering services.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation"],
     technologies: ["Custom Software", "Mobile Development"],
@@ -1363,7 +1363,7 @@ export const members: Member[] = [
     logo: "/image/members/innov8-tech.png",
     website: "https://innov8technology.net",
     description:
-      "Islamabad-based IT firm specializing in enterprise systems integration, server automation, and core corporate IT infrastructure design.",
+      "Islamabad-based IT firm specialising in enterprise systems integration, server automation, and core corporate IT infrastructure design.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation"],
     technologies: ["Custom Software", "Automation", "Cloud & DevOps"],
@@ -1415,7 +1415,7 @@ export const members: Member[] = [
     logo: "/image/members/sybrid.png",
     website: "https://sybrid.com",
     description:
-      "Lahore-based firm operating multi-lingual customer service contact centers, secure cloud hosting solutions, and managed IT networks.",
+      "Lahore-based firm operating multi-lingual customer service contact centres, secure cloud hosting solutions, and managed IT networks.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation"],
     technologies: ["Cloud & DevOps", "Custom Software"],
@@ -1480,7 +1480,7 @@ export const members: Member[] = [
     logo: "/image/members/appic-solutions.png",
     website: "https://appicsol.com",
     description:
-      "Provider of custom enterprise ERP platforms and business optimization tools.",
+      "Provider of custom enterprise ERP platforms and business optimisation tools.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation"],
     technologies: ["Custom Software", "Cloud & DevOps"],
@@ -1582,7 +1582,7 @@ export const members: Member[] = [
     logo: "/image/members/brainbox-technologies.png",
     website: "https://brainboxtechnologies.com",
     description:
-      "Lahore-based provider of YouTube channel monetization, SEO, and conversion-focused web design.",
+      "Lahore-based provider of YouTube channel monetisation, SEO, and conversion-focused web design.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation", "E-Commerce"],
     technologies: ["Custom Software", "Data Analytics"],
@@ -1660,7 +1660,7 @@ export const members: Member[] = [
     logo: "/image/members/bravado-solutions.svg",
     website: "https://bravadosolutions.com/about-us",
     description:
-      "Islamabad-based consultancy for data optimization and cloud server migration.",
+      "Islamabad-based consultancy for data optimisation and cloud server migration.",
     companyType: "Consultancy",
     sectors: ["Digital Transformation"],
     technologies: ["Cloud & DevOps", "Data Analytics"],
@@ -1686,7 +1686,7 @@ export const members: Member[] = [
     logo: "/image/members/baritechsol.png",
     website: "https://baritechsol.com",
     description:
-      "Karachi-based consultancy for data optimization and cloud server migration.",
+      "Karachi-based consultancy for data optimisation and cloud server migration.",
     companyType: "Consultancy",
     sectors: ["Digital Transformation"],
     technologies: ["Cloud & DevOps", "Data Analytics"],
@@ -1777,7 +1777,7 @@ export const members: Member[] = [
     logo: "/image/members/cherrybyte-technologies.png",
     website: "https://thecherrybyte.com",
     description:
-      "Lahore-based developer of cross-platform mobile applications and enterprise systems modernization.",
+      "Lahore-based developer of cross-platform mobile applications and enterprise systems modernisation.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation"],
     technologies: ["Mobile Development", "Custom Software"],
@@ -1854,7 +1854,7 @@ export const members: Member[] = [
     slug: "cyber-nest",
     website: "https://www.cybernest.com",
     description:
-      "Lahore-based provider of dedicated software engineering squads and legacy system modernization.",
+      "Lahore-based provider of dedicated software engineering squads and legacy system modernisation.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation"],
     technologies: ["Custom Software", "Cloud & DevOps"],
@@ -1970,7 +1970,7 @@ export const members: Member[] = [
     slug: "cloud-venture",
     website: "https://www.royalcyber.com",
     description:
-      "Karachi-based provider of global IT infrastructure engineering and enterprise software modernization.",
+      "Karachi-based provider of global IT infrastructure engineering and enterprise software modernisation.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation"],
     technologies: ["Cloud & DevOps", "Custom Software"],
@@ -2007,7 +2007,7 @@ export const members: Member[] = [
     logo: "/image/members/cymax-technologies.svg",
     website: "https://cymaxtech.com",
     description:
-      "Islamabad-based firm specializing in AI modeling, SaaS platform engineering, and digital marketing operations.",
+      "Islamabad-based firm specialising in AI modelling, SaaS platform engineering, and digital marketing operations.",
     companyType: "Software & Services",
     sectors: ["Artificial Intelligence", "Digital Transformation"],
     technologies: ["AI & Machine Learning", "Custom Software", "Cloud & DevOps"],
@@ -2096,7 +2096,7 @@ export const members: Member[] = [
     logo: "/image/members/ciphers-lab.png",
     website: "https://cipherslab.com",
     description:
-      "Karachi-based firm delivering cybersecurity assessments, penetration testing, and digital defense solutions.",
+      "Karachi-based firm delivering cybersecurity assessments, penetration testing, and digital defence solutions.",
     companyType: "Software & Services",
     sectors: ["Cybersecurity", "Digital Transformation"],
     technologies: ["Custom Software", "Cloud & DevOps"],
@@ -2161,7 +2161,7 @@ export const members: Member[] = [
     logo: "/image/members/centigma-soft.png",
     website: "https://www.centigmasoft.com",
     description:
-      "Islamabad-based provider of custom software development, web applications, and digital optimization.",
+      "Islamabad-based provider of custom software development, web applications, and digital optimisation.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation"],
     technologies: ["Custom Software", "Cloud & DevOps"],
@@ -2237,7 +2237,7 @@ export const members: Member[] = [
     logo: "/image/members/dezital.png",
     website: "https://www.dezital.com",
     description:
-      "Lahore-based provider of digital transformation consulting, custom software engineering, and cloud optimization.",
+      "Lahore-based provider of digital transformation consulting, custom software engineering, and cloud optimisation.",
     companyType: "Consultancy",
     sectors: ["Digital Transformation"],
     technologies: ["Custom Software", "Cloud & DevOps"],
@@ -2339,7 +2339,7 @@ export const members: Member[] = [
     logo: "/image/members/digitrends.svg",
     website: "https://digitrends.co/contact-us",
     description:
-      "Karachi-based agency specializing in healthcare digital marketing, pharmaceutical tech, and creative web solutions.",
+      "Karachi-based agency specialising in healthcare digital marketing, pharmaceutical tech, and creative web solutions.",
     companyType: "Software & Services",
     sectors: ["HealthTech", "Digital Transformation"],
     technologies: ["Custom Software", "Data Analytics"],
@@ -2404,7 +2404,7 @@ export const members: Member[] = [
     logo: "/image/members/datum-brain.svg",
     website: "https://datumbrain.com",
     description:
-      "Lahore-based firm delivering artificial intelligence engineering, data modeling, and custom AI solutions.",
+      "Lahore-based firm delivering artificial intelligence engineering, data modelling, and custom AI solutions.",
     companyType: "Software & Services",
     sectors: ["Artificial Intelligence", "Digital Transformation"],
     technologies: ["AI & Machine Learning", "Data Analytics"],
@@ -2430,7 +2430,7 @@ export const members: Member[] = [
     logo: "/image/members/divedeepai.png",
     website: "https://divedeep.ai",
     description:
-      "Islamabad-based firm specializing in advanced artificial intelligence, machine learning pipelines, and data models.",
+      "Islamabad-based firm specialising in advanced artificial intelligence, machine learning pipelines, and data models.",
     companyType: "Software & Services",
     sectors: ["Artificial Intelligence", "Digital Transformation"],
     technologies: ["AI & Machine Learning", "Data Analytics"],
@@ -2607,7 +2607,7 @@ export const members: Member[] = [
     logo: "/image/members/epromoters.png",
     website: "https://epromoters.co",
     description:
-      "Faisalabad-based agency specializing in performance growth marketing and SEO optimization.",
+      "Faisalabad-based agency specialising in performance growth marketing and SEO optimisation.",
     companyType: "Software & Services",
     sectors: ["E-Commerce"],
     technologies: ["Data Analytics"],
@@ -2633,7 +2633,7 @@ export const members: Member[] = [
     logo: "/image/members/enlivenai.png",
     website: "https://www.enlivensai.com",
     description:
-      "Bahawalpur-based company providing AI modeling and automated data processing.",
+      "Bahawalpur-based company providing AI modelling and automated data processing.",
     companyType: "Software & Services",
     sectors: ["Artificial Intelligence"],
     technologies: ["AI & Machine Learning", "Data Analytics"],
@@ -2659,7 +2659,7 @@ export const members: Member[] = [
     logo: "/image/members/e2e-solution-providers.jpg",
     website: "https://e2esp.com",
     description:
-      "Lahore-based provider of mobile app development and cloud infrastructure optimization.",
+      "Lahore-based provider of mobile app development and cloud infrastructure optimisation.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation"],
     technologies: ["Mobile Development", "Cloud & DevOps"],
@@ -2839,7 +2839,7 @@ export const members: Member[] = [
     logo: "/image/members/grayphite.svg",
     website: "https://grayphite.com",
     description:
-      "San Jose-based agile web development, cloud optimization, and digital engineering company.",
+      "San Jose-based agile web development, cloud optimisation, and digital engineering company.",
     companyType: "Software & Services",
     sectors: ["Digital Transformation", "E-Commerce"],
     technologies: ["Custom Software", "Cloud & DevOps"],

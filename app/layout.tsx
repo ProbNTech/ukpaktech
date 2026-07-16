@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "tech innovation",
     "bilateral trade",
     "startup ecosystem",
-    "AI programs",
+    "AI programmes",
   ],
   authors: [{ name: "UK–Pakistan Tech Forum" }],
   openGraph: {

@@ -200,7 +200,7 @@ export const countryData: Record<string, CountryMarketData> = {
       },
       {
         title: "IT Consulting & Digital Transformation",
-        description: "Cloud migration, enterprise modernization, and digital strategy",
+        description: "Cloud migration, enterprise modernisation, and digital strategy",
       },
       {
         title: "Dedicated Offshore Development Teams",
@@ -211,7 +211,7 @@ export const countryData: Record<string, CountryMarketData> = {
       {
         title: "Artificial Intelligence",
         content:
-          "The UK AI market is worth about £21 billion (USD 28 billion) in 2025 and is expected to grow substantially through the 2030s, with projections suggesting significant expansion toward a potential £1 trillion scale by 2035 in broader AI economy value.",
+          "The UK AI market is worth about £21 billion (USD 28 billion) in 2025 and is expected to grow substantially through the 2030s, with projections suggesting significant expansion towards a potential £1 trillion scale by 2035 in broader AI economy value.",
       },
       {
         title: "Cybersecurity",
@@ -379,11 +379,11 @@ export const countryData: Record<string, CountryMarketData> = {
       },
     ],
     growthDrivers: [
-      'Government programs such as "AI for Humanity" and France 2030 strongly support innovation',
+      'Government programmes such as "AI for Humanity" and France 2030 strongly support innovation',
       "Major global investments in AI infrastructure (e.g., Microsoft's multibillion commitments)",
     ],
     marketStrengths: [
-      "Strong government-backed AI programs",
+      "Strong government-backed AI programmes",
       "Industrial & manufacturing digitalisation",
       "Growing startup ecosystem (Paris tech scene)",
       "AI research & academic collaboration",
@@ -406,7 +406,7 @@ export const countryData: Record<string, CountryMarketData> = {
       },
       {
         title: "ERP & Digital Process Automation",
-        description: "Enterprise automation and workflow optimization",
+        description: "Enterprise automation and workflow optimisation",
       },
       {
         title: "Custom Enterprise Software",
@@ -422,7 +422,7 @@ export const countryData: Record<string, CountryMarketData> = {
       {
         title: "Artificial Intelligence",
         content:
-          "France's AI market was around USD 9.48 billion in 2024, with projections to grow to about USD 77.68 billion by 2032, at roughly 30.4% CAGR, one of the fastest AI growth rates in Europe. Government programs like \"AI for Humanity\" and France 2030 strongly support innovation.",
+          "France's AI market was around USD 9.48 billion in 2024, with projections to grow to about USD 77.68 billion by 2032, at roughly 30.4% CAGR, one of the fastest AI growth rates in Europe. Government programmes like \"AI for Humanity\" and France 2030 strongly support innovation.",
       },
       {
         title: "Cybersecurity",
@@ -498,7 +498,7 @@ export const countryData: Record<string, CountryMarketData> = {
     marketStrengths: [
       "Rapid digital adoption across enterprises",
       "Growing infrastructure investment",
-      "EU-supported digitalization programs",
+      "EU-supported digitalisation programmes",
       "Amazon's multibillion-euro data centre commitments",
     ],
     highDemandSectors: [
@@ -535,7 +535,7 @@ export const countryData: Record<string, CountryMarketData> = {
       {
         title: "Cloud & Digital Transformation",
         content:
-          "Spain's digital transformation market was around USD 49.0 billion in 2026 and is expected to reach USD 110.2 billion by 2031 at 17.6% CAGR. Cloud & edge computing accounted for 25.6% share in 2025, signalling strong growth in infrastructure modernization.",
+          "Spain's digital transformation market was around USD 49.0 billion in 2026 and is expected to reach USD 110.2 billion by 2031 at 17.6% CAGR. Cloud & edge computing accounted for 25.6% share in 2025, signalling strong growth in infrastructure modernisation.",
       },
       {
         title: "AI Adoption",
@@ -613,7 +613,7 @@ export const countryData: Record<string, CountryMarketData> = {
         currentMarket: "$0.57 bn (2025)",
         forecast: "$8.51 bn by 2031 (56.9% CAGR)",
         opportunities:
-          "AI-optimized infrastructure, sovereign cloud, AI deployments",
+          "AI-optimised infrastructure, sovereign cloud, AI deployments",
       },
     ],
     growthDrivers: [
@@ -668,7 +668,7 @@ export const countryData: Record<string, CountryMarketData> = {
       {
         title: "Data Centre & AI Infrastructure",
         content:
-          "The Netherlands data centre market was valued at around USD 1.23 billion in 2024, projected to reach USD 3.39 billion by 2030 at 18.4% CAGR. The AI-optimized infrastructure market is expected to grow from USD 0.57 billion in 2025 to USD 8.51 billion by 2031 (56.9% CAGR).",
+          "The Netherlands data centre market was valued at around USD 1.23 billion in 2024, projected to reach USD 3.39 billion by 2030 at 18.4% CAGR. The AI-optimised infrastructure market is expected to grow from USD 0.57 billion in 2025 to USD 8.51 billion by 2031 (56.9% CAGR).",
       },
       {
         title: "Cloud Computing",
@@ -973,7 +973,7 @@ export const countryData: Record<string, CountryMarketData> = {
       },
       {
         title: "Cloud Solutions",
-        description: "Cloud architecture, migration, and optimization for SMEs and government",
+        description: "Cloud architecture, migration, and optimisation for SMEs and government",
       },
       {
         title: "Cybersecurity & Compliance",
@@ -1105,13 +1105,13 @@ export const pakistanITScope: PakistanScopeItem[] = [
     title: "Data Centre & IT Infrastructure Services",
     opportunities: [
       "AI-ready data centre solutions, edge computing integration",
-      "Infrastructure-as-a-Service (IaaS), virtualization, and cloud hosting",
+      "Infrastructure-as-a-Service (IaaS), virtualisation, and cloud hosting",
       "Network and IT infrastructure consulting",
     ],
     highDemandCountries: "Netherlands, Switzerland, Germany",
     marketGrowth: "Data centre investments: 15–26% CAGR in key EU hubs",
     whyPakistanFits: [
-      "Capacity to provide remote monitoring, virtualization, and system administration",
+      "Capacity to provide remote monitoring, virtualisation, and system administration",
       "Experience in setting up and maintaining cloud infrastructure for global clients",
     ],
   },
@@ -1141,7 +1141,7 @@ export const entryStrategies: EntryStrategy[] = [
       "e.g., UK-Pakistan Tech Forum to access local networks and introductions",
   },
   {
-    title: "Sector Specialization",
+    title: "Sector Specialisation",
     description:
       "Focus on AI, cloud, or cybersecurity to build credibility in specific verticals",
   },
@@ -1158,7 +1158,7 @@ export const entryStrategies: EntryStrategy[] = [
   {
     title: "Leverage EU Funding & Incubators",
     description:
-      "Collaborate with accelerators, innovation hubs, and government-supported programs",
+      "Collaborate with accelerators, innovation hubs, and government-supported programmes",
   },
 ];
 
@@ -1224,7 +1224,7 @@ export const pakistanTalentSections = {
     stats: [
       "70,000–75,000 IT graduates annually",
       "226,000 students enrolled in IT disciplines",
-      "Thousands more trained in AI, cloud, and cybersecurity through government programs",
+      "Thousands more trained in AI, cloud, and cybersecurity through government programmes",
     ],
   },
   freelancing: {
@@ -1233,7 +1233,7 @@ export const pakistanTalentSections = {
       "1 million freelancers working globally",
       "Ranked among top freelance markets worldwide",
     ],
-    specializations: [
+    specialisations: [
       "Software Development",
       "Web & Mobile Applications",
       "Digital Marketing",
@@ -1315,7 +1315,7 @@ export const countrySummary = [
     country: "France",
     slug: "france",
     opportunities: "AI / Deep Tech, Digital transformation consulting, Cloud & managed services",
-    keyDrivers: "Growing AI ecosystem (Paris hub); government incentives; digital modernization demand",
+    keyDrivers: "Growing AI ecosystem (Paris hub); government incentives; digital modernisation demand",
   },
   {
     country: "Netherlands",
@@ -1333,7 +1333,7 @@ export const countrySummary = [
     country: "Spain",
     slug: "spain",
     opportunities: "Cloud migration & hybrid IT, Digital transformation, AI-enabled analytics",
-    keyDrivers: "Rapid digital adoption; growing infrastructure investment; EU digitalization programs",
+    keyDrivers: "Rapid digital adoption; growing infrastructure investment; EU digitalisation programmes",
   },
   {
     country: "Poland",

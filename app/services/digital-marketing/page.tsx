@@ -44,7 +44,7 @@ const whyItMatters = [
 const faqs = [
   { question: "What types of products can be promoted?", answer: "We promote software products, digital platforms, SaaS solutions, technology services, and hardware products from our member companies. The product must be from a Forum member or partner organisation." },
   { question: "How much does it cost?", answer: "Core marketing services are included in UPTECH membership. Premium packages \u2014 including dedicated campaigns, event sponsorship, and bespoke content creation \u2014 are available as add-ons with transparent pricing." },
-  { question: "What channels do you use for promotion?", answer: "We use Forum email newsletters (10,000+ subscribers), social media channels, the UPTECH website, partner networks, and our events program including summits, exhibitions, and trade delegations." },
+  { question: "What channels do you use for promotion?", answer: "We use Forum email newsletters (10,000+ subscribers), social media channels, the UPTECH website, partner networks, and our events programme including summits, exhibitions, and trade delegations." },
   { question: "How do you measure campaign success?", answer: "We provide detailed analytics including impressions, click-through rates, lead generation, and ROI metrics. Monthly reports track campaign performance against agreed KPIs." },
 ];
 
