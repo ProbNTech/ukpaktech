@@ -24,12 +24,54 @@ const SERVICE_OPTIONS = [
   "ERP/CRM Development",
   "API Integrations",
 ];
+const INDUSTRY_OPTIONS = [
+  "Artificial Intelligence & Machine Learning",
+  "Software Development & SaaS",
+  "Cybersecurity",
+  "Cloud Computing & Infrastructure",
+  "FinTech & Digital Banking",
+  "HealthTech & BioTech",
+  "EdTech & E-Learning",
+  "E-Commerce & Retail Tech",
+  "Clean Technology & GreenTech",
+  "Telecommunications",
+  "Data Analytics & Big Data",
+  "IoT & Smart Systems",
+  "Blockchain & Web3",
+  "Consulting & Professional Services",
+  "Manufacturing & Industrial Tech",
+  "Logistics & Supply Chain Tech",
+  "Legal & Regulatory Tech",
+  "Real Estate & PropTech",
+  "Media & Creative Technology",
+  "Government & Public Sector",
+  "Academic & Research",
+  "Non-Profit & Social Enterprise",
+];
+const PAYMENT_TERMS_OPTIONS = ["Immediately", "30 days", "45 days"];
 
 const inputClass =
   "w-full px-4 py-3 rounded-xl bg-white border border-[#D8D5CF] text-[#0F172A] text-[15px] placeholder:text-[#94A3B8] focus:outline-none focus:ring-4 focus:ring-[#2563EB]/15 focus:border-[#2563EB] hover:border-[#94A3B8] transition-all duration-200 shadow-sm";
 const labelClass = "block text-sm font-semibold text-[#334155] mb-2";
 
 type Profile = Record<string, unknown>;
+
+const STEP_TITLES = [
+  "Company Information",
+  "Primary Contact Details (President, CTO, COO)",
+  "Operational Contact Details (Manager)",
+  "Industry Focus",
+  "Services Offered",
+  "Technical Expertise",
+  "Portfolio & Experience",
+  "Team & Capacity",
+  "Pricing & Engagement Model",
+  "Payment Terms",
+  "Compliance & Certifications",
+  "Operational Details",
+  "Additional Information",
+];
+const TOTAL_STEPS = STEP_TITLES.length;
 
 const STRING_FIELDS = [
   "website",
@@ -42,8 +84,14 @@ const STRING_FIELDS = [
   "year_established",
   "preferred_contact_method",
   "contact_job_title",
+  "operational_contact_name",
+  "operational_contact_job_title",
+  "operational_contact_email",
+  "operational_contact_phone",
+  "operational_contact_method",
   "short_description",
   "other_services",
+  "other_industries",
   "primary_stack",
   "secondary_stack",
   "specialised_skills",
@@ -55,6 +103,7 @@ const STRING_FIELDS = [
   "monthly_capacity",
   "hourly_rate",
   "min_project_size",
+  "payment_terms",
   "security_certs",
   "data_compliance",
   "insurance",
@@ -96,10 +145,13 @@ export function CompleteForm({ token }: { token: string }) {
   const [companyName, setCompanyName] = useState("");
   const [form, setForm] = useState<Record<string, string>>({});
   const [services, setServices] = useState<string[]>([]);
+  const [industries, setIndustries] = useState<string[]>([]);
   const [fixedPrice, setFixedPrice] = useState(false);
   const [retainer, setRetainer] = useState(false);
   const [logoUrl, setLogoUrl] = useState("");
   const [uploadingLogo, setUploadingLogo] = useState(false);
+
+  const [step, setStep] = useState(1);
 
   const [saving, setSaving] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -128,6 +180,7 @@ export function CompleteForm({ token }: { token: string }) {
         }
         setForm(next);
         setServices(Array.isArray(vendor.services) ? (vendor.services as string[]) : []);
+        setIndustries(Array.isArray(vendor.industries) ? (vendor.industries as string[]) : []);
         setFixedPrice(vendor.fixed_price === true);
         setRetainer(vendor.retainer === true);
         setLogoUrl(String(vendor.logo_url ?? ""));
@@ -145,6 +198,12 @@ export function CompleteForm({ token }: { token: string }) {
 
   function toggleService(s: string) {
     setServices((cur) =>
+      cur.includes(s) ? cur.filter((x) => x !== s) : [...cur, s]
+    );
+  }
+
+  function toggleIndustry(s: string) {
+    setIndustries((cur) =>
       cur.includes(s) ? cur.filter((x) => x !== s) : [...cur, s]
     );
   }
@@ -170,6 +229,7 @@ export function CompleteForm({ token }: { token: string }) {
   function buildProfile(): Profile {
     const profile: Profile = { ...form };
     profile.services = services;
+    profile.industries = industries;
     profile.fixed_price = fixedPrice;
     profile.retainer = retainer;
     profile.logo_url = logoUrl;
@@ -256,8 +316,27 @@ export function CompleteForm({ token }: { token: string }) {
         </p>
       </div>
 
-      {/* §1 Company Information */}
+      <div>
+        <div className="flex items-center justify-between text-sm mb-2">
+          <span className="font-semibold text-[#0F172A]">
+            Step {step} of {TOTAL_STEPS} — {STEP_TITLES[step - 1]}
+          </span>
+          <span className="text-[#94A3B8]">{Math.round((step / TOTAL_STEPS) * 100)}%</span>
+        </div>
+        <div className="h-1.5 rounded-full bg-[#E2E8F0] overflow-hidden">
+          <div
+            className="h-full bg-[#2563EB] transition-all duration-300"
+            style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
+          />
+        </div>
+      </div>
+
+      {step === 1 && (
       <SectionCard step={1} title="Company Information">
+        <div>
+          <label className={labelClass}>Company Name</label>
+          <input className={`${inputClass} bg-[#F8FAFC] cursor-not-allowed`} value={companyName} disabled readOnly />
+        </div>
         <div className="grid sm:grid-cols-2 gap-5">
           <div>
             <label className={labelClass}>Website</label>
@@ -306,9 +385,10 @@ export function CompleteForm({ token }: { token: string }) {
           </div>
         </div>
       </SectionCard>
+      )}
 
-      {/* §2 Primary Contact */}
-      <SectionCard step={2} title="Primary Contact">
+      {step === 2 && (
+      <SectionCard step={2} title="Primary Contact Details (President, CTO, COO)">
         <div className="grid sm:grid-cols-2 gap-5">
           <div>
             <label className={labelClass}>Full Name</label>
@@ -335,9 +415,57 @@ export function CompleteForm({ token }: { token: string }) {
           </div>
         </div>
       </SectionCard>
+      )}
 
-      {/* §3 Services */}
-      <SectionCard step={3} title="Services Offered">
+      {step === 3 && (
+      <SectionCard step={3} title="Operational Contact Details (Manager)">
+        <div className="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label className={labelClass}>Full Name</label>
+            <input className={inputClass} value={v("operational_contact_name")} onChange={(e) => set("operational_contact_name", e.target.value)} />
+          </div>
+          <div>
+            <label className={labelClass}>Job Title</label>
+            <input className={inputClass} value={v("operational_contact_job_title")} onChange={(e) => set("operational_contact_job_title", e.target.value)} placeholder="e.g. Operations Manager" />
+          </div>
+          <div>
+            <label className={labelClass}>Email</label>
+            <input type="email" className={inputClass} value={v("operational_contact_email")} onChange={(e) => set("operational_contact_email", e.target.value)} />
+          </div>
+          <div>
+            <label className={labelClass}>Phone</label>
+            <input className={inputClass} value={v("operational_contact_phone")} onChange={(e) => set("operational_contact_phone", e.target.value)} />
+          </div>
+          <div>
+            <label className={labelClass}>Preferred Communication Method</label>
+            <select className={inputClass} value={v("operational_contact_method")} onChange={(e) => set("operational_contact_method", e.target.value)}>
+              <option value="">Select…</option>
+              {CONTACT_METHODS.map((t) => <option key={t} value={t}>{t}</option>)}
+            </select>
+          </div>
+        </div>
+      </SectionCard>
+      )}
+
+      {step === 4 && (
+      <SectionCard step={4} title="Industry Focus">
+        <div className="grid sm:grid-cols-2 gap-3">
+          {INDUSTRY_OPTIONS.map((s) => (
+            <label key={s} className={`flex items-center gap-3 px-4 py-3 rounded-xl border cursor-pointer transition-colors ${industries.includes(s) ? "border-[#2563EB] bg-[#2563EB]/5" : "border-[#D8D5CF] bg-white hover:border-[#94A3B8]"}`}>
+              <input type="checkbox" checked={industries.includes(s)} onChange={() => toggleIndustry(s)} className="w-4 h-4 accent-[#2563EB]" />
+              <span className="text-sm text-[#334155]">{s}</span>
+            </label>
+          ))}
+        </div>
+        <div>
+          <label className={labelClass}>Any Others</label>
+          <input className={inputClass} value={v("other_industries")} onChange={(e) => set("other_industries", e.target.value)} placeholder="Anything not listed above" />
+        </div>
+      </SectionCard>
+      )}
+
+      {step === 5 && (
+      <SectionCard step={5} title="Services Offered">
         <div className="grid sm:grid-cols-2 gap-3">
           {SERVICE_OPTIONS.map((s) => (
             <label key={s} className={`flex items-center gap-3 px-4 py-3 rounded-xl border cursor-pointer transition-colors ${services.includes(s) ? "border-[#2563EB] bg-[#2563EB]/5" : "border-[#D8D5CF] bg-white hover:border-[#94A3B8]"}`}>
@@ -351,9 +479,10 @@ export function CompleteForm({ token }: { token: string }) {
           <input className={inputClass} value={v("other_services")} onChange={(e) => set("other_services", e.target.value)} placeholder="Anything not listed above" />
         </div>
       </SectionCard>
+      )}
 
-      {/* §4 Technical Expertise */}
-      <SectionCard step={4} title="Technical Expertise">
+      {step === 6 && (
+      <SectionCard step={6} title="Technical Expertise">
         <div>
           <label className={labelClass}>Primary Tech Stack</label>
           <input className={inputClass} value={v("primary_stack")} onChange={(e) => set("primary_stack", e.target.value)} placeholder="e.g. React, Node.js, PostgreSQL" />
@@ -367,9 +496,10 @@ export function CompleteForm({ token }: { token: string }) {
           <input className={inputClass} value={v("specialised_skills")} onChange={(e) => set("specialised_skills", e.target.value)} placeholder="AI, Blockchain, IoT, AR/VR, etc." />
         </div>
       </SectionCard>
+      )}
 
-      {/* §5 Portfolio & Experience */}
-      <SectionCard step={5} title="Portfolio & Experience">
+      {step === 7 && (
+      <SectionCard step={7} title="Portfolio & Experience">
         <div>
           <label className={labelClass}>Key Projects Delivered</label>
           <textarea className={inputClass} rows={3} value={v("key_projects")} onChange={(e) => set("key_projects", e.target.value)} />
@@ -383,9 +513,10 @@ export function CompleteForm({ token }: { token: string }) {
           <textarea className={inputClass} rows={2} value={v("portfolio_links")} onChange={(e) => set("portfolio_links", e.target.value)} placeholder="One URL per line" />
         </div>
       </SectionCard>
+      )}
 
-      {/* §6 Team & Capacity */}
-      <SectionCard step={6} title="Team & Capacity">
+      {step === 8 && (
+      <SectionCard step={8} title="Team & Capacity">
         <div className="grid sm:grid-cols-2 gap-5">
           <div>
             <label className={labelClass}>Total Technical Staff</label>
@@ -401,18 +532,13 @@ export function CompleteForm({ token }: { token: string }) {
           <input className={inputClass} value={v("team_structure")} onChange={(e) => set("team_structure", e.target.value)} placeholder="Developers, QA, PMs, Designers, DevOps…" />
         </div>
       </SectionCard>
+      )}
 
-      {/* §7 Pricing & Engagement */}
-      <SectionCard step={7} title="Pricing & Engagement Model">
-        <div className="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label className={labelClass}>Hourly Rate Range</label>
-            <input className={inputClass} value={v("hourly_rate")} onChange={(e) => set("hourly_rate", e.target.value)} placeholder="e.g. $25–$50/hr" />
-          </div>
-          <div>
-            <label className={labelClass}>Minimum Project Size</label>
-            <input className={inputClass} value={v("min_project_size")} onChange={(e) => set("min_project_size", e.target.value)} />
-          </div>
+      {step === 9 && (
+      <SectionCard step={9} title="Pricing & Engagement Model">
+        <div>
+          <label className={labelClass}>Hourly Rate Range</label>
+          <input className={inputClass} value={v("hourly_rate")} onChange={(e) => set("hourly_rate", e.target.value)} placeholder="e.g. $25–$50/hr" />
         </div>
         <div className="flex flex-wrap gap-4">
           <label className="flex items-center gap-2 text-sm text-[#334155]">
@@ -424,10 +550,31 @@ export function CompleteForm({ token }: { token: string }) {
             Offers retainer model
           </label>
         </div>
+        <div>
+          <label className={labelClass}>Minimum Project Size</label>
+          <input className={inputClass} value={v("min_project_size")} onChange={(e) => set("min_project_size", e.target.value)} />
+        </div>
       </SectionCard>
+      )}
 
-      {/* §8 Compliance & Certifications */}
-      <SectionCard step={8} title="Compliance & Certifications">
+      {step === 10 && (
+      <SectionCard step={10} title="Payment Terms">
+        <p className="text-sm text-[#64748B] -mt-2">
+          All payments will become due as per agreed milestone &amp; acceptance of work by client.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          {PAYMENT_TERMS_OPTIONS.map((t) => (
+            <label key={t} className={`flex items-center gap-2 px-4 py-3 rounded-xl border cursor-pointer transition-colors ${v("payment_terms") === t ? "border-[#2563EB] bg-[#2563EB]/5" : "border-[#D8D5CF] bg-white hover:border-[#94A3B8]"}`}>
+              <input type="radio" name="payment_terms" checked={v("payment_terms") === t} onChange={() => set("payment_terms", t)} className="w-4 h-4 accent-[#2563EB]" />
+              <span className="text-sm text-[#334155]">{t}</span>
+            </label>
+          ))}
+        </div>
+      </SectionCard>
+      )}
+
+      {step === 11 && (
+      <SectionCard step={11} title="Compliance & Certifications">
         <div>
           <label className={labelClass}>Security Certifications</label>
           <input className={inputClass} value={v("security_certs")} onChange={(e) => set("security_certs", e.target.value)} placeholder="ISO, SOC2, etc." />
@@ -441,30 +588,30 @@ export function CompleteForm({ token }: { token: string }) {
           <input className={inputClass} value={v("insurance")} onChange={(e) => set("insurance", e.target.value)} placeholder="Professional Liability, Cyber Insurance" />
         </div>
       </SectionCard>
+      )}
 
-      {/* §9 Operational Details */}
-      <SectionCard step={9} title="Operational Details">
-        <div className="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label className={labelClass}>Preferred PM Methodology</label>
-            <select className={inputClass} value={v("pm_methodology")} onChange={(e) => set("pm_methodology", e.target.value)}>
-              <option value="">Select…</option>
-              {PM_METHODOLOGIES.map((t) => <option key={t} value={t}>{t}</option>)}
-            </select>
-          </div>
-          <div>
-            <label className={labelClass}>Time Zone & Working Hours</label>
-            <input className={inputClass} value={v("timezone_hours")} onChange={(e) => set("timezone_hours", e.target.value)} placeholder="e.g. GMT+5, 9am–6pm" />
-          </div>
+      {step === 12 && (
+      <SectionCard step={12} title="Operational Details">
+        <div>
+          <label className={labelClass}>Preferred PM Methodology</label>
+          <select className={inputClass} value={v("pm_methodology")} onChange={(e) => set("pm_methodology", e.target.value)}>
+            <option value="">Select…</option>
+            {PM_METHODOLOGIES.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
         </div>
         <div>
           <label className={labelClass}>Tools Used</label>
           <input className={inputClass} value={v("tools_used")} onChange={(e) => set("tools_used", e.target.value)} placeholder="Jira, Asana, GitHub, Slack…" />
         </div>
+        <div>
+          <label className={labelClass}>Time Zone & Working Hours</label>
+          <input className={inputClass} value={v("timezone_hours")} onChange={(e) => set("timezone_hours", e.target.value)} placeholder="e.g. GMT+5, 9am–6pm" />
+        </div>
       </SectionCard>
+      )}
 
-      {/* §10 Additional Information */}
-      <SectionCard step={10} title="Additional Information">
+      {step === 13 && (
+      <SectionCard step={13} title="Additional Information">
         <div>
           <label className={labelClass}>Your Own Solutions (SaaS)</label>
           <textarea className={inputClass} rows={2} value={v("own_saas")} onChange={(e) => set("own_saas", e.target.value)} placeholder="List any SaaS products you own" />
@@ -474,6 +621,7 @@ export function CompleteForm({ token }: { token: string }) {
           <textarea className={inputClass} rows={3} value={v("client_notes")} onChange={(e) => set("client_notes", e.target.value)} />
         </div>
       </SectionCard>
+      )}
 
       {error && (
         <p className="text-sm text-red-600 bg-red-50 border border-red-100 rounded-lg px-4 py-3">
@@ -487,6 +635,14 @@ export function CompleteForm({ token }: { token: string }) {
       )}
 
       <div className="sticky bottom-4 flex flex-col sm:flex-row gap-3 bg-white/90 backdrop-blur rounded-2xl border border-[#E2E8F0] shadow-lg p-4">
+        {step > 1 && (
+          <button
+            onClick={() => setStep((s) => s - 1)}
+            className="flex-1 flex items-center justify-center gap-2 border border-[#D8D5CF] text-[#334155] font-semibold py-3 rounded-xl hover:border-[#94A3B8] transition-colors"
+          >
+            Back
+          </button>
+        )}
         <button
           onClick={() => persist(false)}
           disabled={saving || submitting}
@@ -495,14 +651,23 @@ export function CompleteForm({ token }: { token: string }) {
           {saving ? <Loader2 className="w-5 h-5 animate-spin" /> : null}
           Save draft
         </button>
-        <button
-          onClick={() => persist(true)}
-          disabled={saving || submitting}
-          className="flex-1 flex items-center justify-center gap-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold py-3 rounded-xl disabled:opacity-60 transition-colors"
-        >
-          {submitting ? <Loader2 className="w-5 h-5 animate-spin" /> : null}
-          Submit for review
-        </button>
+        {step < TOTAL_STEPS ? (
+          <button
+            onClick={() => setStep((s) => s + 1)}
+            className="flex-1 flex items-center justify-center gap-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold py-3 rounded-xl transition-colors"
+          >
+            Continue
+          </button>
+        ) : (
+          <button
+            onClick={() => persist(true)}
+            disabled={saving || submitting}
+            className="flex-1 flex items-center justify-center gap-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold py-3 rounded-xl disabled:opacity-60 transition-colors"
+          >
+            {submitting ? <Loader2 className="w-5 h-5 animate-spin" /> : null}
+            Submit for review
+          </button>
+        )}
       </div>
     </div>
   );
