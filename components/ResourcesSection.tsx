@@ -28,7 +28,7 @@ export function ResourcesSection() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-10">
       <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
         {/* Header with divider line */}
         <motion.div

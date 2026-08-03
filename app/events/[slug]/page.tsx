@@ -78,7 +78,7 @@ export async function generateMetadata({
 }
 
 /* ------------------------------------------------------------------ */
-/*  Section heading — inline pattern                                   */
+/*  Section heading, inline pattern                                   */
 /* ------------------------------------------------------------------ */
 function InlineHeading({ label, title }: { label: string; title: string }) {
   return (
@@ -123,7 +123,7 @@ export default async function EventDetailPage({
   return (
     <div>
       {/* ============================================================ */}
-      {/*  EVENT HERO (client — has countdown timer)                   */}
+      {/*  EVENT HERO (client, has countdown timer)                   */}
       {/* ============================================================ */}
       <EventDetailClient
         title={event.title}
@@ -136,12 +136,12 @@ export default async function EventDetailPage({
       {/* ============================================================ */}
       {/*  MAIN CONTENT                                                 */}
       {/* ============================================================ */}
-      <section className="bg-white py-16 lg:py-20">
+      <section className="bg-white py-8 lg:py-10">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-14">
 
             {/* -------------------------------------------------------- */}
-            {/*  LEFT — Social share sidebar                              */}
+            {/*  LEFT, Social share sidebar                              */}
             {/* -------------------------------------------------------- */}
             <div className="lg:w-12 shrink-0">
               <div className="lg:sticky lg:top-28">
@@ -168,7 +168,7 @@ export default async function EventDetailPage({
             </div>
 
             {/* -------------------------------------------------------- */}
-            {/*  RIGHT — Main editorial content                           */}
+            {/*  RIGHT, Main editorial content                           */}
             {/* -------------------------------------------------------- */}
             <div className="flex-1 min-w-0">
 

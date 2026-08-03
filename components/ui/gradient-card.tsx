@@ -27,7 +27,7 @@ export function GradientCard({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      {/* Skewed gradient panel — the hero visual */}
+      {/* Skewed gradient panel, the hero visual */}
       <div
         className="absolute -inset-1 rounded-2xl transition-all duration-500 group-hover/card:scale-105 group-hover/card:opacity-100 opacity-80"
         style={{

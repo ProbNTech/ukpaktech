@@ -50,7 +50,7 @@ const exploreItems = [
   { icon: Lightbulb, title: "Vision", desc: "A connected innovation ecosystem bridging UK and Pakistan's technology sectors.", href: "/about/vision", color: "#C41E3A" },
   { icon: Target, title: "Mission", desc: "Our strategic mission to transform Pakistan into a thriving global tech hub.", href: "/about/mission", color: "#22C55E" },
   { icon: CheckCircle2, title: "Objectives & Values", desc: "Core values, key activities, and broader impact goals driving our work.", href: "/about/objectives", color: "#2563EB" },
-  { icon: Award, title: "Leadership", desc: "Meet our President Khalil Choudhary — the leader of UPTECH.", href: "/about/founder", color: "#C41E3A" },
+  { icon: Award, title: "Leadership", desc: "Meet our President Khalil Choudhary, the leader of UPTECH.", href: "/about/founder", color: "#C41E3A" },
   { icon: Users, title: "Management Team", desc: "Board of directors, advisory forum, and executive leadership team.", href: "/about/management-team", color: "#22C55E" },
 ];
 
@@ -91,7 +91,7 @@ export default function AboutPage() {
               By uniting Pakistani IT professionals residing and working in the United Kingdom, we establish a dynamic platform for networking, knowledge-sharing, and collective advancement.
             </p>
             <p className="text-[#3D4152] leading-relaxed">
-              Through our diverse community, we aim to catalyze positive transformations in IT, shaping its future, and delivering significant contributions to both the country we reside in and the country we proudly belong to.
+              Through our diverse community, we aim to catalyse positive transformations in IT, shaping its future, and delivering significant contributions to both the country we reside in and the country we proudly belong to.
             </p>
           </AnimatedSection>
           <AnimatedSection>

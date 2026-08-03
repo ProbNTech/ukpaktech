@@ -17,11 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/initiatives`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/initiatives/people-ai`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/initiatives/techmart-global`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/initiatives/ai-tech-programs`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/initiatives/tech-excellence-awards`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/programs/ai-tech-programs`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/programs/skill-development-center`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE_URL}/programs/incubation-collective-startups`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/programmes/ai-tech-programmes`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/programmes/skill-development-centre`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE_URL}/programmes/incubation-collective-startups`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/ecosystem/uk-pakistan-technology-partnership`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/ecosystem/funding-and-grants`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE_URL}/ecosystem/trade-delegations-and-exhibitions`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
@@ -36,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/ecosystem/tech-market-overview/baltic-states`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/ecosystem/tech-market-overview/pakistan-it-scope`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE_URL}/ecosystem/tech-market-overview/pakistan-talent`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    // Company directory pages exist but are intentionally NOT live yet —
+    // Company directory pages exist but are intentionally NOT live yet, 
     // not linked from any nav and excluded from the sitemap. Add the
     // /top-ai-companies, /top-it-companies, and /it-companies entries here
     // when ready to launch.

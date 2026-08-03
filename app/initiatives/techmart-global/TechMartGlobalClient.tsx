@@ -91,7 +91,7 @@ const keyFeatures = [
   },
   {
     title: "Verified Partner Badge",
-    description: "Companies certified through the UPTECH Trusted Partner Certification program receive a Verified Partner badge on their listings, increasing credibility with international buyers and demonstrating they have passed UPTECH verification standards.",
+    description: "Companies certified through the UPTECH Trusted Partner Certification programme receive a Verified Partner badge on their listings, increasing credibility with international buyers and demonstrating they have passed UPTECH verification standards.",
     icon: BadgeCheck,
     color: "#C41E3A",
   },
@@ -624,7 +624,7 @@ export default function TechMartGlobalClient() {
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
                 <p className="text-[#5A5F72] text-base leading-relaxed mb-4">
-                  Companies certified through the UPTECH Trusted Partner Certification program receive a Verified Partner badge on their listings, increasing credibility with international buyers.
+                  Companies certified through the UPTECH Trusted Partner Certification programme receive a Verified Partner badge on their listings, increasing credibility with international buyers.
                 </p>
                 <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
                   The badge demonstrates that the company has passed UPTECH verification standards for professional experience, technical capability, and business integrity.

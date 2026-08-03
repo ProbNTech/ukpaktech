@@ -30,7 +30,7 @@ const pillars = [
   },
   {
     icon: Cpu,
-    title: "AI and Digital Transformation Programs",
+    title: "AI and Digital Transformation Programmes",
     description: "AI platforms, collective startups, and digital services accelerating tech-led transformation.",
     color: "#2563EB",
     number: "04",

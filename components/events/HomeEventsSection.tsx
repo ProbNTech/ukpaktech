@@ -164,7 +164,7 @@ export default function HomeEventsSection() {
 
   return (
     <section
-      className="relative z-[1] py-20 lg:py-28 overflow-hidden"
+      className="relative z-[1] py-10 lg:py-16 overflow-hidden"
       style={{
         background:
           "radial-gradient(900px circle at 0% 0%, rgba(37,99,235,0.07), transparent 50%), radial-gradient(800px circle at 100% 100%, rgba(34,197,94,0.06), transparent 50%), #F8FAFC",
@@ -271,7 +271,7 @@ export default function HomeEventsSection() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12 text-[#3D4152] mb-10" role="status" aria-live="polite">
+            <div className="text-center py-8 text-[#3D4152] mb-10" role="status" aria-live="polite">
               <p className="text-base">No events found for this filter.</p>
               <button
                 onClick={() => { setCategoryFilter("All"); setMonthFilter("All"); }}

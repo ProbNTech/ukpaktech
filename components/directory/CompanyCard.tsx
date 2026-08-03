@@ -24,7 +24,7 @@ export function CompanyCard({ company }: CompanyCardProps) {
         boxShadow: "0 6px 24px -16px rgba(15,23,42,0.18)",
       }}
     >
-      {/* Top accent strip — category colour */}
+      {/* Top accent strip, category colour */}
       <div
         aria-hidden="true"
         className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
@@ -66,7 +66,7 @@ export function CompanyCard({ company }: CompanyCardProps) {
             )}
           </div>
 
-          {/* Category chip — colour-coded */}
+          {/* Category chip, colour-coded */}
           <div className="mt-2 flex flex-wrap items-center gap-2">
             <span
               className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.12em]"

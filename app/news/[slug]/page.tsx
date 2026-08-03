@@ -88,7 +88,7 @@ export default async function ArticleDetailPage({ params }: Props) {
       </section>
 
       {/* ── Article body ─────────────────────────────────────────── */}
-      <section className="bg-white py-16 lg:py-20">
+      <section className="bg-white py-8 lg:py-10">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
             {/* Main content */}
@@ -182,7 +182,7 @@ export default async function ArticleDetailPage({ params }: Props) {
 
       {/* ── Related articles ─────────────────────────────────────── */}
       {related.length > 0 && (
-        <section className="bg-[#E8E6E3] py-16 lg:py-20">
+        <section className="bg-[#E8E6E3] py-8 lg:py-10">
           <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
             <div className="mb-10">
               <p className="text-base font-bold uppercase tracking-widest text-[#2563EB] mb-2">

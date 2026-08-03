@@ -141,7 +141,7 @@ export function ContactForm() {
             {/* Animated gradient top bar */}
             <div className="h-1.5 w-full bg-gradient-to-r from-[#22C55E] via-[#2563EB] to-[#22C55E] animate-[shimmer_3s_ease-in-out_infinite]" />
 
-            <div className="relative px-10 py-20 text-center">
+            <div className="relative px-10 py-10 text-center">
               {/* Animated checkmark */}
               <motion.div
                 initial={{ scale: 0, rotate: -180 }}
@@ -201,7 +201,7 @@ export function ContactForm() {
         className="relative bg-white rounded-2xl border border-[#D8D5CF] overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.06)]"
       >
         <div className="h-1.5 w-full bg-gradient-to-r from-[#C41E3A] via-[#E11D48] to-[#C41E3A]" />
-        <div className="px-10 py-16 text-center">
+        <div className="px-10 py-8 text-center">
           <div className="w-[72px] h-[72px] rounded-2xl bg-gradient-to-br from-[#C41E3A] to-[#E11D48] flex items-center justify-center mx-auto mb-6 shadow-[0_8px_32px_rgba(196,30,58,0.3)]">
             <AlertCircle className="w-9 h-9 text-white" strokeWidth={2} />
           </div>

@@ -42,7 +42,7 @@ export function FeaturedCompanySpotlight({
 
   return (
     <section
-      className="relative py-16 lg:py-24 bg-white overflow-hidden"
+      className="relative py-8 lg:py-12 bg-white overflow-hidden"
       aria-labelledby="featured-company-title"
     >
       <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20">
@@ -57,11 +57,11 @@ export function FeaturedCompanySpotlight({
               id="featured-company-title"
               className="mt-3 font-heading font-extrabold text-[#0F172A] text-2xl sm:text-3xl lg:text-4xl tracking-tight"
             >
-              Editorial picks — hand-selected by UPTECH
+              Editorial picks, hand-selected by UPTECH
             </h2>
           </div>
 
-          {/* Carousel controls — only when N > 1 */}
+          {/* Carousel controls, only when N > 1 */}
           {multi && (
             <div className="flex items-center gap-4">
               <span className="font-mono text-[13px] tracking-[0.25em] text-[#0F172A]">
@@ -113,7 +113,7 @@ export function FeaturedCompanySpotlight({
           ))}
         </Swiper>
 
-        {/* Progress bar + dots — only when N > 1 */}
+        {/* Progress bar + dots, only when N > 1 */}
         {multi && (
           <div className="mt-6 flex items-center gap-4">
             <div className="flex-1 h-[3px] rounded-full bg-[#E5E7EB] overflow-hidden">

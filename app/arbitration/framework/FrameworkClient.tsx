@@ -250,7 +250,7 @@ export default function FrameworkClient() {
             Framework Policy
           </>
         }
-        subtitle="Version 1.0 — A comprehensive framework for resolving disputes arising in technology agreements, SaaS platforms, digital assets, software development contracts, and intellectual property transactions."
+        subtitle="Version 1.0, A comprehensive framework for resolving disputes arising in technology agreements, SaaS platforms, digital assets, software development contracts, and intellectual property transactions."
         image="/image/banners/banner74.jpg"
         // particleNetwork
       >
@@ -360,7 +360,7 @@ export default function FrameworkClient() {
     {/* ── Arbitration Agreement ────────────────────────────────── */ }
     < Section variant = "light" >
       <AnimatedSection>
-        <SectionHeader label="Agreement" title="Arbitration Acceptance Agreement" subtitle="Under the Arbitration Act 1996 — United Kingdom. Every relevant contract must include an arbitration clause." color="green" />
+        <SectionHeader label="Agreement" title="Arbitration Acceptance Agreement" subtitle="Under the Arbitration Act 1996, United Kingdom. Every relevant contract must include an arbitration clause." color="green" />
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Agreement Overview */}
@@ -443,7 +443,7 @@ export default function FrameworkClient() {
       </AnimatedSection>
       </Section >
 
-    {/* ── Key Principles — DARK ────────────────────────────────── */ }
+    {/* ── Key Principles, DARK ────────────────────────────────── */ }
     < Section variant = "dark" >
       <AnimatedSection>
         <SectionHeader label="Principles" title="Key Principles" color="green" />

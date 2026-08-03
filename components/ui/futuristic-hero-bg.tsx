@@ -78,7 +78,7 @@ class SimplexNoise {
   }
 }
 
-/* ─── Particle colors — mostly bright white/cyan, few brand accents ─── */
+/* ─── Particle colors, mostly bright white/cyan, few brand accents ─── */
 const BRIGHT_WHITE = new THREE.Color(0xffffff);
 const BRIGHT_CYAN = new THREE.Color(0x00ffff);
 const LIGHT_BLUE = new THREE.Color(0xadd8e6);
@@ -142,7 +142,7 @@ export function FuturisticHeroBg() {
     const core = new THREE.Mesh(coreGeo, coreMat);
     artifact.add(core);
 
-    /* Nebula particles — bright white/cyan dominant, few colored accents */
+    /* Nebula particles, bright white/cyan dominant, few colored accents */
     const COUNT = 12000;
     const pos = new Float32Array(COUNT * 3);
     const col = new Float32Array(COUNT * 3);

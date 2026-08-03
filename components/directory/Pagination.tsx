@@ -8,7 +8,7 @@ interface PaginationProps {
   onPageChange: (page: number) => void;
 }
 
-/** Lightweight pagination — client-side over a filtered/sorted list. */
+/** Lightweight pagination, client-side over a filtered/sorted list. */
 export function Pagination({ page, totalPages, onPageChange }: PaginationProps) {
   if (totalPages <= 1) return null;
 

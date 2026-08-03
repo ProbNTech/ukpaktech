@@ -35,7 +35,7 @@ const scalingBenefits = [
     icon: Target,
     title: "Series A & B Investor Access",
     description:
-      "Access investors specializing in Series A and B funding across the UK and Europe.",
+      "Access investors specialising in Series A and B funding across the UK and Europe.",
     color: "#2563EB",
   },
   {
@@ -354,7 +354,7 @@ export default function SeriesFundingPage() {
                 <div className="h-px bg-[#D8D5CF] mb-6" />
                 <ul className="space-y-5">
                   {[
-                    { title: "VC & PE Networks", desc: "Direct access to venture capital and private equity firms specializing in growth-stage investment.", color: "#2563EB" },
+                    { title: "VC & PE Networks", desc: "Direct access to venture capital and private equity firms specialising in growth-stage investment.", color: "#2563EB" },
                     { title: "Cross-Border Funding", desc: "Investment networks spanning UK, Pakistan, Europe, and beyond.", color: "#22C55E" },
                     { title: "Strategic Guidance", desc: "Expert advisory on valuation, deal structuring, and investor engagement.", color: "#C41E3A" },
                     { title: "Market Expansion", desc: "Support for cross-border market entry alongside your funding round.", color: "#2563EB" },

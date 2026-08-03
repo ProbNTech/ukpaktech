@@ -21,7 +21,7 @@ export const partnerSolutions: PartnerSolution[] = [
     name: "Clinic Management System",
     tagline: "End-to-end clinic operations, digitised.",
     description:
-      "A complete software suite for clinics and small hospitals — appointment scheduling, patient records, billing, pharmacy, and reporting in one secure platform built for Pakistani and UK healthcare workflows.",
+      "A complete software suite for clinics and small hospitals, appointment scheduling, patient records, billing, pharmacy, and reporting in one secure platform built for Pakistani and UK healthcare workflows.",
     category: "HealthTech",
     image:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
@@ -38,7 +38,7 @@ export const partnerSolutions: PartnerSolution[] = [
     name: "LetPsyc",
     tagline: "Practitioner-focused mental health assessments.",
     description:
-      "Pakistan's first AI-assisted mental health assessment platform for psychologists and psychiatrists — structured intake, validated scales, and longitudinal patient tracking.",
+      "Pakistan's first AI-assisted mental health assessment platform for psychologists and psychiatrists, structured intake, validated scales, and longitudinal patient tracking.",
     category: "HealthTech",
     image:
       "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=80",
@@ -55,7 +55,7 @@ export const partnerSolutions: PartnerSolution[] = [
     name: "Velvonix Automation Suite",
     tagline: "AI workflows for operations teams.",
     description:
-      "Plug-and-play AI automation for finance, retail, and healthcare operations — invoice processing, document intake, and customer triage that ship in days, not quarters.",
+      "Plug-and-play AI automation for finance, retail, and healthcare operations, invoice processing, document intake, and customer triage that ship in days, not quarters.",
     category: "AI & Data",
     image:
       "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80",

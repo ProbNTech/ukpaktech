@@ -8,7 +8,7 @@ interface LiteYouTubeProps {
 }
 
 /**
- * Lightweight YouTube embed — shows a thumbnail + play button.
+ * Lightweight YouTube embed, shows a thumbnail + play button.
  * The real iframe loads only when the user clicks, saving ~500KB+ per embed.
  */
 export function LiteYouTube({ id, title }: LiteYouTubeProps) {

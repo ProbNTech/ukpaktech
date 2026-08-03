@@ -168,7 +168,7 @@ export function PageHero({
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Right-side hero video — blended into banner (same style as heroImage) */}
+      {/* Right-side hero video, blended into banner (same style as heroImage) */}
       {heroVideo && (
         <div className="absolute right-0 top-0 bottom-0 z-[8] hidden lg:block pointer-events-none" style={{ width: "58%" }}>
           <motion.div
@@ -208,10 +208,10 @@ export function PageHero({
         </div>
       )}
 
-      {/* Right-side hero image(s) — blended into banner */}
+      {/* Right-side hero image(s), blended into banner */}
       {heroImage && !heroVideo && (
         <div className="absolute right-0 top-0 bottom-0 z-[8] hidden lg:block pointer-events-none" style={{ width: "55%" }}>
-          {/* Primary image — front layer */}
+          {/* Primary image, front layer */}
           <motion.div
             className="absolute inset-0 z-[7]"
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 30 }}
@@ -245,7 +245,7 @@ export function PageHero({
             </div>
           </motion.div>
 
-          {/* Second image — back layer, offset lower-right */}
+          {/* Second image, back layer, offset lower-right */}
           {heroImage2 && (
             <motion.div
               className="absolute inset-0 z-[6]"
@@ -290,12 +290,12 @@ export function PageHero({
 
       {/* Content */}
       <div
-        className={`relative z-20 flex items-center min-h-[480px] md:min-h-[520px] lg:min-h-[560px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-20 ${
+        className={`relative z-20 flex items-center min-h-[480px] md:min-h-[520px] lg:min-h-[560px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 ${
           align === "center" ? "justify-center" : ""
         }`}
       >
         <div className={`relative w-full ${align === "center" ? "max-w-3xl text-center" : "max-w-[55%] max-lg:max-w-full"}`}>
-          {/* Localized soft shade behind text — pure colour, no blur, video stays sharp */}
+          {/* Localized soft shade behind text, pure colour, no blur, video stays sharp */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -inset-x-6 -inset-y-6 sm:-inset-x-10 sm:-inset-y-8 rounded-[2.5rem]"
@@ -325,7 +325,7 @@ export function PageHero({
               </motion.p>
             )}
 
-            {/* Title — word-by-word blur-in for strings */}
+            {/* Title, word-by-word blur-in for strings */}
             {typeof title === "string" ? (
               <h1
                 className={`font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-[2.6rem] xl:text-[3rem] text-white mb-5 sm:mb-6 ${threeBg ? "uppercase tracking-wider" : ""}`}

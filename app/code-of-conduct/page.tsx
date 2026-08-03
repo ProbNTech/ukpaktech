@@ -22,7 +22,7 @@ const navSections = [
 ];
 
 const principles = [
-  { icon: Shield, title: "Integrity", description: "Members will consistently demonstrate honesty and ethical behavior in all actions and decisions." },
+  { icon: Shield, title: "Integrity", description: "Members will consistently demonstrate honesty and ethical behaviour in all actions and decisions." },
   { icon: Users, title: "Respect and Equality", description: "Treat all members with dignity, equality, and cultural sensitivity, without discrimination based on any criteria." },
   { icon: Award, title: "Competence", description: "Members will accurately represent their skills and experience and continuously strive to maintain professional competence." },
   { icon: Heart, title: "Loyalty", description: "Act with unwavering loyalty towards the Forum and maintain confidentiality when entrusted with sensitive information." },
@@ -30,14 +30,14 @@ const principles = [
   { icon: Lightbulb, title: "Ethical Conduct", description: "Members will not pursue personal gain at the expense of the Forum and actively work to enhance its reputation." },
   { icon: Ban, title: "Non-discrimination", description: "Refrain from engaging in discriminatory practices in any professional activities." },
   { icon: GraduationCap, title: "Continuous Development", description: "Commit to lifelong learning, actively seeking opportunities to develop skills and knowledge, and encouraging fellow members to do the same." },
-  { icon: Briefcase, title: "Professionalism", description: "Adhere to recognized professional standards, offering services and advice diligently and responsibly within their areas of expertise." },
+  { icon: Briefcase, title: "Professionalism", description: "Adhere to recognised professional standards, offering services and advice diligently and responsibly within their areas of expertise." },
 ];
 
 const whatsappRules = [
   { number: "01", title: "No Personal Attacks", rule: "Refrain from personal attacks in group chats to maintain a respectful environment; violation may result in temporary or permanent BAN." },
   { number: "02", title: "Avoid Irrelevant Posts", rule: "Steer clear of posting irrelevant content or discussions." },
   { number: "03", title: "No Political or Religious Posts", rule: "Do not share political, religious, sectarian, or biased content." },
-  { number: "04", title: "No Unauthorized Adverts", rule: "Obtain prior approval from Management before sharing advertisements in the group." },
+  { number: "04", title: "No Unauthorised Adverts", rule: "Obtain prior approval from Management before sharing advertisements in the group." },
   { number: "05", title: "Notify Admins of Number Changes", rule: "Inform Group Admin or Management of any mobile number changes within 3 days to avoid temporary or permanent BAN." },
   { number: "06", title: "Stay Relevant", rule: "Keep discussions aligned with the group\u2019s objectives to ensure focused communication." },
   { number: "07", title: "Post Curfew", rule: "Refrain from posting after 11:00 PM unless urgent matters arise." },
@@ -92,8 +92,8 @@ export default function CodeOfConductPage() {
       </PageHero>
 
       <div className="content-body">
-      {/* ── Summary + Quick Nav — Light section ──────────────────────── */}
-      <section className="relative bg-white py-10 overflow-hidden">
+      {/* ── Summary + Quick Nav, Light section ──────────────────────── */}
+      <section className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -111,10 +111,10 @@ export default function CodeOfConductPage() {
                   All members are required to give an undertaking to the effect that they would abide by the UPTECH Code of Conduct. The Code of Conduct will also specify the procedure for the action to be taken against concerned members for any breach of this Code. The following is the Code of Conduct prepared by the Executive Committee and adopted after approval by balloting by the Voting Members of UPTECH.
                 </p>
                 <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
-                  UK-Pakistan Tech Forum Code of Conduct is issued under the authority of the Constitution of the UK-Pakistan Tech Forum and is binding on all members of the Organization. {"\u201C"}UK-Pakistani Tech Forum is hereby also mentioned as UPTECH{"\u201D"}
+                  UK-Pakistan Tech Forum Code of Conduct is issued under the authority of the Constitution of the UK-Pakistan Tech Forum and is binding on all members of the Organisation. {"\u201C"}UK-Pakistani Tech Forum is hereby also mentioned as UPTECH{"\u201D"}
                 </p>
                 <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
-                  The Code of Conduct for UK-Pakistan Tech Forum is a foundational document established under the authority of our organization{"\u2019"}s Constitution. It outlines the principles and standards that all members are expected to uphold in their professional and personal conduct.
+                  The Code of Conduct for UK-Pakistan Tech Forum is a foundational document established under the authority of our organisation{"\u2019"}s Constitution. It outlines the principles and standards that all members are expected to uphold in their professional and personal conduct.
                 </p>
                 <p className="text-[#5A5F72] text-base leading-relaxed mb-5">
                   As a binding document, adherence to this Code is mandatory for all members, ensuring consistency, integrity, and professionalism in our collective endeavors. By adhering to these ethical and behavioral guidelines, we demonstrate our commitment to excellence, integrity, and mutual respect within our community and in our interactions with others. {"\u201C"}UK-Pakistani Tech Forum is hereby also mentioned as UPTECH{"\u201D"}
@@ -155,8 +155,8 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      {/* ── 9 Principles — Light alt section ─────────────────────────── */}
-      <section id="principles" className="relative py-10 overflow-hidden bg-white">
+      {/* ── 9 Principles, Light alt section ─────────────────────────── */}
+      <section id="principles" className="relative py-8 overflow-hidden bg-white">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -203,8 +203,8 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      {/* ── WhatsApp Group Rules — Light section ─────────────────────── */}
-      <section id="whatsapp-rules" className="relative bg-white py-10 overflow-hidden">
+      {/* ── WhatsApp Group Rules, Light section ─────────────────────── */}
+      <section id="whatsapp-rules" className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#22C55E]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -290,8 +290,8 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      {/* ── Disciplinary Procedure — Light alt section ───────────────── */}
-      <section id="disciplinary" className="relative py-10 overflow-hidden bg-[#F5F4F2]">
+      {/* ── Disciplinary Procedure, Light alt section ───────────────── */}
+      <section id="disciplinary" className="relative py-8 overflow-hidden bg-[#F5F4F2]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C41E3A]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -330,8 +330,8 @@ export default function CodeOfConductPage() {
         </div>
       </section>
 
-      {/* ── Reporting & Commitment — Light section ──────────────────── */}
-      <section className="relative bg-white py-10 overflow-hidden">
+      {/* ── Reporting & Commitment, Light section ──────────────────── */}
+      <section className="relative bg-white py-8 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/20 to-transparent" />
 
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">

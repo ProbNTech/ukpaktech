@@ -8,25 +8,25 @@ import type { FeatureCollection, Feature, Geometry } from "geojson";
 
 /* ISO 3166-1 numeric codes for highlighted countries */
 const HIGHLIGHT_CODES: Record<string, string> = {
-  "826": "#2563EB", // UK  — Blue
-  "586": "#22C55E", // Pakistan — Green
-  "840": "#E11D48", // USA — Rose
-  "276": "#F59E0B", // Germany — Amber
-  "784": "#8B5CF6", // UAE — Purple
-  "682": "#06B6D4", // Saudi Arabia — Cyan
-  "792": "#EC4899", // Turkey — Pink
-  "156": "#EF4444", // China — Red
-  "458": "#14B8A6", // Malaysia — Teal
-  "124": "#F97316", // Canada — Orange
-  "208": "#60A5FA", // Denmark — Light Blue
-  "250": "#A78BFA", // France — Light Purple
-  "528": "#FB923C", // Netherlands — Light Orange
-  "372": "#34D399", // Ireland — Emerald
-  "578": "#38BDF8", // Norway — Sky
-  "752": "#FBBF24", // Sweden — Yellow
-  "56":  "#C084FC", // Belgium — Violet
-  "76":  "#4ADE80", // Brazil — Light Green
-  "484": "#2DD4BF", // Mexico — Teal
+  "826": "#2563EB", // UK, Blue
+  "586": "#22C55E", // Pakistan, Green
+  "840": "#E11D48", // USA, Rose
+  "276": "#F59E0B", // Germany, Amber
+  "784": "#8B5CF6", // UAE, Purple
+  "682": "#06B6D4", // Saudi Arabia, Cyan
+  "792": "#EC4899", // Turkey, Pink
+  "156": "#EF4444", // China, Red
+  "458": "#14B8A6", // Malaysia, Teal
+  "124": "#F97316", // Canada, Orange
+  "208": "#60A5FA", // Denmark, Light Blue
+  "250": "#A78BFA", // France, Light Purple
+  "528": "#FB923C", // Netherlands, Light Orange
+  "372": "#34D399", // Ireland, Emerald
+  "578": "#38BDF8", // Norway, Sky
+  "752": "#FBBF24", // Sweden, Yellow
+  "56":  "#C084FC", // Belgium, Violet
+  "76":  "#4ADE80", // Brazil, Light Green
+  "484": "#2DD4BF", // Mexico, Teal
 };
 
 /* Approx centroids for each country */
@@ -52,7 +52,7 @@ const COUNTRY_CENTERS: Record<string, [number, number]> = {
   MX: [-102, 23],
 };
 
-/* Network connections — pairs of country keys */
+/* Network connections, pairs of country keys */
 const CONNECTIONS: [string, string][] = [
   // Primary corridor
   ["UK", "PK"],
@@ -166,7 +166,7 @@ export function WireframeDottedGlobe({ size = 500, className = "" }: GlobeProps)
 
       ctx.clearRect(0, 0, s, s);
 
-      /* Globe background — dark sphere */
+      /* Globe background, dark sphere */
       ctx.beginPath();
       ctx.arc(s / 2, s / 2, s / 2 - 20, 0, Math.PI * 2);
       ctx.fillStyle = "rgba(11, 15, 26, 0.4)";
@@ -187,7 +187,7 @@ export function WireframeDottedGlobe({ size = 500, className = "" }: GlobeProps)
       ctx.stroke();
 
       if (countries) {
-        /* Regular countries — subtle fill + border */
+        /* Regular countries, subtle fill + border */
         for (const f of countries.features) {
           const id = String((f as Feature & { id?: string | number }).id ?? "");
           const highlightColor = HIGHLIGHT_CODES[id];
@@ -203,7 +203,7 @@ export function WireframeDottedGlobe({ size = 500, className = "" }: GlobeProps)
           }
         }
 
-        /* Highlighted countries — UK and Pakistan with glow */
+        /* Highlighted countries, UK and Pakistan with glow */
         for (const f of countries.features) {
           const id = String((f as Feature & { id?: string | number }).id ?? "");
           const highlightColor = HIGHLIGHT_CODES[id];

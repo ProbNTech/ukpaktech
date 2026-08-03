@@ -33,7 +33,7 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 const stats = [
   { value: "50+", label: "Corporate Partners", color: "#2563EB" },
   { value: "120+", label: "Startups Accelerated", color: "#22C55E" },
-  { value: "30+", label: "Accelerator Programs", color: "#C41E3A" },
+  { value: "30+", label: "Accelerator Programmes", color: "#C41E3A" },
   { value: "£40M+", label: "Investment Facilitated", color: "#2563EB" },
 ];
 
@@ -167,7 +167,7 @@ export default function CorporatePartnershipsPage() {
       <PageHero
         label="UPTECH Service"
         title="Corporate & Accelerator Partnerships"
-        subtitle="The UK-Pakistan Tech Forum fosters strategic partnerships between technology startups, scale-ups, corporates, and accelerator programs across the UK and Pakistan. These collaborations help members access resources, mentorship, market opportunities, and industry expertise to accelerate growth and innovation."
+        subtitle="The UK-Pakistan Tech Forum fosters strategic partnerships between technology startups, scale-ups, corporates, and accelerator programmes across the UK and Pakistan. These collaborations help members access resources, mentorship, market opportunities, and industry expertise to accelerate growth and innovation."
         video="/videos/banner.mp4"
         videoSpeed={2}
       >
@@ -181,7 +181,7 @@ export default function CorporatePartnershipsPage() {
           STATS BAR
           ================================================================ */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -221,7 +221,7 @@ export default function CorporatePartnershipsPage() {
           }}
         />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[150px] pointer-events-none" />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start mb-10">
               <div className="lg:col-span-3">
@@ -299,7 +299,7 @@ export default function CorporatePartnershipsPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader label="For Startups" title="Elevate Your Startup with the Backing of Our Team" subtitle="Elevate your startup with the backing of our team and partners. We're co-pilots on your entrepreneurial journey." color="green" />
 
@@ -323,7 +323,7 @@ export default function CorporatePartnershipsPage() {
                     </div>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
                     <p className="text-[#5A5F72] text-base leading-relaxed">
-                      We invest capital together with a program of hands-on operational support to help you scale faster. During the program, you&apos;ll be given the opportunity to pitch at our flagship investor day, along with warm introductions to our network of top tier funds.
+                      We invest capital together with a programme of hands-on operational support to help you scale faster. During the programme, you&apos;ll be given the opportunity to pitch at our flagship investor day, along with warm introductions to our network of top tier funds.
                     </p>
                   </div>
                 </div>
@@ -347,7 +347,7 @@ export default function CorporatePartnershipsPage() {
                     </div>
                     <div className="h-px bg-[#D8D5CF] mb-3" />
                     <p className="text-[#5A5F72] text-base leading-relaxed">
-                      Receive six months of dedicated 1:1 support from a team of experienced experts across all operational areas — from strategy, product and data science to fundraising, marketing and operations.
+                      Receive six months of dedicated 1:1 support from a team of experienced experts across all operational areas, from strategy, product and data science to fundraising, marketing and operations.
                     </p>
                   </div>
                 </div>
@@ -433,7 +433,7 @@ export default function CorporatePartnershipsPage() {
             backgroundSize: "40px 40px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader label="Accelerators" title="Designed to Help Ambitious Founders Scale Beyond Limits" subtitle="Accelerators are designed with one goal in mind to help ambitious founders scale beyond limits." color="red" />
 
@@ -518,7 +518,7 @@ export default function CorporatePartnershipsPage() {
           }}
         />
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[150px] pointer-events-none" />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-3">
@@ -596,9 +596,9 @@ export default function CorporatePartnershipsPage() {
             backgroundSize: "80px 80px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
-            <SectionHeader label="For Partners" title="Learn, Engage, Work with the Tech of Tomorrow, Today" subtitle="Our goal is to foster an inclusive ecosystem where everyone can partake in and reap the rewards from entrepreneurial successes. By forging impactful connections between innovative startups and corporates, as well as global organizations, we are deeply committed to sparking progress and addressing the world's most pressing challenges. By becoming an integral part of this vibrant ecosystem, corporate clients and partners gain invaluable insights from accomplished entrepreneurs and early-stage startups, empowering them with the knowledge to propel their own innovation journey forward." color="red" />
+            <SectionHeader label="For Partners" title="Learn, Engage, Work with the Tech of Tomorrow, Today" subtitle="Our goal is to foster an inclusive ecosystem where everyone can partake in and reap the rewards from entrepreneurial successes. By forging impactful connections between innovative startups and corporates, as well as global organisations, we are deeply committed to sparking progress and addressing the world's most pressing challenges. By becoming an integral part of this vibrant ecosystem, corporate clients and partners gain invaluable insights from accomplished entrepreneurs and early-stage startups, empowering them with the knowledge to propel their own innovation journey forward." color="red" />
 
             <div className="grid md:grid-cols-3 gap-6">
               {partnerOfferings.map((item, i) => {
@@ -642,7 +642,7 @@ export default function CorporatePartnershipsPage() {
 
       {/* ── Partnership Documents ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader label="Documents" title="Partnership Documents" color="blue" subtitle="Interested in formalising a partnership with UPTECH? Review our Memorandum of Understanding template." />
             <motion.a
@@ -660,7 +660,7 @@ export default function CorporatePartnershipsPage() {
                 </div>
                 <div>
                   <h3 className="font-heading font-bold text-lg text-[#1C1F2E] mb-2 group-hover:text-[#2563EB] transition-colors duration-200">Memorandum of Understanding (MoU)</h3>
-                  <p className="text-base text-[#5A5F72] leading-relaxed mb-3">A non-binding framework for cooperation between UPTECH and trade organisations, associations, and NGOs — covering joint events, mutual promotion, networking, and collaborative initiatives.</p>
+                  <p className="text-base text-[#5A5F72] leading-relaxed mb-3">A non-binding framework for cooperation between UPTECH and trade organisations, associations, and NGOs, covering joint events, mutual promotion, networking, and collaborative initiatives.</p>
                   <span className="inline-flex items-center gap-2 text-base font-semibold text-[#2563EB]">
                     Download MoU Template <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                   </span>
@@ -689,7 +689,7 @@ export default function CorporatePartnershipsPage() {
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="text-center max-w-3xl mx-auto">
               <motion.div

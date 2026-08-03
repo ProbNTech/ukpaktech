@@ -18,7 +18,7 @@ export function FeaturedGrid({
 
   return (
     <section
-      className="py-16 lg:py-20 bg-white"
+      className="py-8 lg:py-10 bg-white"
       aria-labelledby="featured-companies-title"
     >
       <div className="px-6 sm:px-10 lg:px-16 xl:px-20">

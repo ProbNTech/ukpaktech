@@ -270,7 +270,7 @@ export default function MembershipApplyForm() {
   const [hydrated, setHydrated] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
 
-  // Restore draft on mount (client only — consents are intentionally excluded so they must be re-confirmed)
+  // Restore draft on mount (client only, consents are intentionally excluded so they must be re-confirmed)
   useEffect(() => {
     const draft = loadDraft();
     if (draft) {

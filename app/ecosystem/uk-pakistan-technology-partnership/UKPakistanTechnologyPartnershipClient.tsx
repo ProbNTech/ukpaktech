@@ -68,7 +68,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
   return (
     <div className="bg-white content-body">
-      {/* ── Hero Section — split layout with globe ── */}
+      {/* ── Hero Section, split layout with globe ── */}
       <section className="relative z-[2] w-full overflow-hidden bg-[#0B0F1A]">
         {/* Subtle left-side gradient */}
         <div
@@ -96,8 +96,8 @@ export default function UKPakistanTechnologyPartnershipClient() {
         />
 
         {/* Content: text left, globe right */}
-        <div className="relative z-20 flex flex-col lg:flex-row items-center min-h-[420px] lg:min-h-[560px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-20 gap-8 lg:gap-0">
-          {/* Left — text */}
+        <div className="relative z-20 flex flex-col lg:flex-row items-center min-h-[420px] lg:min-h-[560px] px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 gap-8 lg:gap-0">
+          {/* Left, text */}
           <div className="w-full lg:w-[55%]">
             <motion.div
               initial={{ opacity: 0 }}
@@ -156,7 +156,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
             </motion.div>
           </div>
 
-          {/* Right — interactive globe */}
+          {/* Right, interactive globe */}
           <div className="w-full lg:w-[50%] flex items-center justify-center lg:-mr-8 xl:-mr-12">
             <motion.div
               className="w-full max-w-[600px] xl:max-w-[680px] aspect-square"
@@ -175,7 +175,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── Intro Section ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
@@ -226,7 +226,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── Who We Connect ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
@@ -265,7 +265,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── CEO at Conference ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
               <div className="group relative rounded-2xl border border-[#D8D5CF]/60 p-px hover:shadow-xl transition-all duration-300">
@@ -311,18 +311,18 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── Recognition ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
-                label="Recognition Program"
+                label="Recognition Programme"
                 title="Recognising Excellence"
                 color="red"
                 subtitle="Celebrating Pakistan's contributions to the UK tech sector through prestigious recognition."
               />
             </div>
             <p className="text-[#3D4152] text-lg leading-relaxed mb-6">
-              Our recognition program celebrates exceptional achievements in technology innovation, cross-border collaboration, and leadership that strengthens the UK–Pakistan tech corridor.
+              Our recognition programme celebrates exceptional achievements in technology innovation, cross-border collaboration, and leadership that strengthens the UK–Pakistan tech corridor.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {recognitionItems.map((item, i) => (
@@ -352,7 +352,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── Unlock Opportunities ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
@@ -391,7 +391,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── Membership & Attendees ── */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
@@ -433,7 +433,7 @@ export default function UKPakistanTechnologyPartnershipClient() {
 
       {/* ── Partners (hidden until real logos are available) ── */}
       {/* <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader

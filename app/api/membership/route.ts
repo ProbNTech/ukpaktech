@@ -119,7 +119,7 @@ export async function POST(req: NextRequest) {
     try {
       const rows: Array<[string, unknown]> = HEADERS.map((h, i) => [h, values[i]]);
       await sendAlert({
-        subject: `New membership application — ${body.orgName?.trim() || "(unknown org)"}`,
+        subject: `New membership application, ${body.orgName?.trim() || "(unknown org)"}`,
         text: renderRowsText(rows),
         html: `<p style="font-family:system-ui,sans-serif;font-size:14px;">New membership application submitted via the UPTECH website. Review &amp; approve it in the portfolio admin to invite them to complete their full profile.</p>${renderRowsHtml(
           rows

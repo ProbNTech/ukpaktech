@@ -115,7 +115,7 @@ const sections = [
           {[
             "Provide complete and accurate job information, including title, description, qualifications, salary, location, and contact details.",
             "Ensure all materials comply with applicable laws and regulations.",
-            "Respond promptly to candidate inquiries and Forum requests for clarification.",
+            "Respond promptly to candidate enquiries and Forum requests for clarification.",
           ].map((item) => (
             <li key={item} className="flex items-start gap-3">
               <CheckCircle2 className="w-4 h-4 text-[#22C55E] mt-0.5 flex-shrink-0" strokeWidth={2} />
