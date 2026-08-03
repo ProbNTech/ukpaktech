@@ -205,7 +205,7 @@ export default function PortfolioAdminPage() {
                   )}
                   {tab === "invited" && (
                     <span className="text-xs text-amber-600 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-lg self-center">
-                      Listed as member — awaiting profile
+                      Not listed yet — awaiting profile
                     </span>
                   )}
                   {tab === "portfolio_pending" && (

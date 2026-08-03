@@ -5,7 +5,6 @@ import {
   SERVICE_OPTIONS,
   type ProfileInput,
 } from "@/lib/vendorService";
-import { mirrorVendorToSheet } from "@/lib/vendorSheets";
 import { sendAlert } from "@/lib/mailer";
 
 export const runtime = "nodejs";
@@ -111,11 +110,9 @@ export async function PATCH(req: NextRequest) {
       } catch (mailErr) {
         console.error("Portfolio submitted alert failed:", mailErr);
       }
-      try {
-        await mirrorVendorToSheet(vendor, "Portfolio submitted");
-      } catch (sheetErr) {
-        console.error("Vendor Sheets mirror failed:", sheetErr);
-      }
+      // No Sheets mirror here — the vendor isn't listed on the site yet.
+      // The sheet row is written only when the portfolio admin approves and
+      // lists it, at the exact moment it goes live on /portfolio.
     }
 
     return NextResponse.json({ success: true, status: vendor.status });

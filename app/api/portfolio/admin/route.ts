@@ -93,11 +93,9 @@ ${completeUrl}
         }
       }
 
-      try {
-        await mirrorVendorToSheet(vendor, "Approved & Invited");
-      } catch (sheetErr) {
-        console.error("Approve Sheets mirror failed:", sheetErr);
-      }
+      // No Sheets mirror here — the vendor isn't listed on the site yet.
+      // The sheet row is written only in the "approve-portfolio" branch below,
+      // at the exact moment the vendor goes live on /portfolio.
 
       return NextResponse.json({ success: true, status: vendor.status });
     }

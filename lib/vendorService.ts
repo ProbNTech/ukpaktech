@@ -41,7 +41,7 @@ export type VendorStatus =
   | "listed"; // portfolio approved, live on the portfolio page
 
 /** Statuses that count as an approved member (shown on the members directory). */
-export const MEMBER_STATUSES: VendorStatus[] = ["invited", "portfolio_pending", "listed"];
+export const MEMBER_STATUSES: VendorStatus[] = ["listed"];
 
 /* ─────────────────────────────────────────────────────────────
    Vendor record shape (mirrors the `vendors` table)

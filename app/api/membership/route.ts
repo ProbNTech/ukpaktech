@@ -106,7 +106,7 @@ export async function POST(req: NextRequest) {
       body.arbitrationAccepted ? "Yes" : "No",
     ];
 
-    // ── Mirror to Google Sheets ──
+    // ── Mirror to Google Sheets (raw submission log — every request, approved or not) ──
     if (SHEET_ID) {
       try {
         await appendRow(SHEET_ID, TAB_NAME, HEADERS, values);
