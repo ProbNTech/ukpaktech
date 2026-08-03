@@ -41,13 +41,13 @@ const membershipBenefits = [
   { icon: Globe, title: "Industry Access", description: "Engage with key decision-makers, regulators, and thought leaders across the UK, Europe and Pakistan.", color: "#2563EB" },
   { icon: Network, title: "Networking & Collaboration", description: "Connect with startups, scale-ups, corporates, and accelerators.", color: "#22C55E" },
   { icon: Eye, title: "Market Visibility", description: "Promote your products, services, and solutions through Forum channels, digital campaigns, and cross-border events.", color: "#C41E3A" },
-  { icon: DollarSign, title: "Funding & Investment Support", description: "Receive guidance and access to startup funding, Series A and B investment, and accelerator programs.", color: "#2563EB" },
-  { icon: Users, title: "Talent & Employment Opportunities", description: "Leverage overseas contract employment programs to access global tech talent.", color: "#22C55E" },
+  { icon: DollarSign, title: "Funding & Investment Support", description: "Receive guidance and access to startup funding, Series A and B investment, and accelerator programmes.", color: "#2563EB" },
+  { icon: Users, title: "Talent & Employment Opportunities", description: "Leverage overseas contract employment programmes to access global tech talent.", color: "#22C55E" },
   { icon: Lightbulb, title: "Thought Leadership", description: "Position your organisation as a leader in technology through speaking opportunities, published insights, and policy engagement.", color: "#C41E3A" },
   { icon: Building2, title: "Business Incubation Centres", description: "Members have access to shared boardrooms, office space, and other resources in our London office.", color: "#2563EB" },
   { icon: Megaphone, title: "Sponsorships", description: "To increase exposure in both markets and demonstrate commitment to the bilateral relationship, UPTECH offers sponsorship opportunities exclusive to our member companies.", color: "#22C55E" },
   { icon: Handshake, title: "Business Matchmaking", description: "B2B meetings with international companies, partner introductions, collaboration opportunities with technology firms, and client acquisition support.", color: "#C41E3A" },
-  { icon: CalendarDays, title: "Technology Events", description: "Participate in international technology conferences, business networking events, startup showcase programs, and innovation forums.", color: "#2563EB" },
+  { icon: CalendarDays, title: "Technology Events", description: "Participate in international technology conferences, business networking events, startup showcase programmes, and innovation forums.", color: "#2563EB" },
   { icon: BarChart3, title: "Research & Market Intelligence", description: "Access IT market reports, technology trends and opportunities, and sector-specific research insights covering key European technology markets.", color: "#22C55E" },
   { icon: GraduationCap, title: "Talent & Collaboration", description: "Collaborate with universities, research institutions, innovation hubs, and technology accelerators to support innovation and knowledge exchange.", color: "#C41E3A" },
 ];
@@ -76,7 +76,7 @@ const europeanMarkets = [
 const whoCanBecomeMembers = [
   "IT companies and software firms",
   "Technology startups",
-  "Research organizations",
+  "Research organisations",
   "Digital service providers",
   "IT professionals and consultants",
   "IT Professionals with computer and related education",
@@ -89,7 +89,7 @@ const whoCanBecomeMembers = [
 const whoShouldJoin = [
   { image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=85&auto=format&fit=crop", title: "Startups & Scale-ups", description: "Access funding, mentorship, market entry support, and collaboration opportunities.", color: "#2563EB" },
   { image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=85&auto=format&fit=crop", title: "SMEs & Technology Firms", description: "Grow your network, promote solutions, and explore cross-border opportunities.", color: "#22C55E" },
-  { image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=85&auto=format&fit=crop", title: "Corporates & Investors", description: "Discover high-potential startups, engage in partnerships, and participate in innovation programs.", color: "#C41E3A" },
+  { image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=85&auto=format&fit=crop", title: "Corporates & Investors", description: "Discover high-potential startups, engage in partnerships, and participate in innovation programmes.", color: "#C41E3A" },
 ];
 
 const membershipTiers = [
@@ -125,8 +125,8 @@ const membershipTiers = [
     highlight: false,
     description: "For growing technology businesses",
     features: [
-      "Full access to industry forums, funding opportunities, overseas contract programs, and marketing support",
-      "Inclusion in cross-border collaborations and accelerator programs",
+      "Full access to industry forums, funding opportunities, overseas contract programmes, and marketing support",
+      "Inclusion in cross-border collaborations and accelerator programmes",
     ],
   },
   {
@@ -134,8 +134,8 @@ const membershipTiers = [
     highlight: false,
     description: "Designed for early-stage technology companies",
     features: [
-      "Access to funding programs, SME Connect, and digital promotion channels",
-      "Participation in networking events and mentorship programs",
+      "Access to funding programmes, SME Connect, and digital promotion channels",
+      "Participation in networking events and mentorship programmes",
     ],
   },
   {
@@ -208,7 +208,7 @@ export default function MembershipClient() {
           <AnimatedSection>
             <SectionHeader label="About UPTECH Membership" title="Why UPTECH?" color="blue" />
             <p className="text-[#3D4152] leading-relaxed mb-8">
-              UPTECH is a non-governmental, results-focused business forum that is committed to your organization&#39;s bilateral success in Technology, business, trade, and investment. We offer a range of both universal as well as custom-built services to our UK and Pakistani corporate members, including on-the-ground UK market support for Pakistani businesses; policy guidelines and regulatory analysis; and one-stop-shop Business Incubation Centre packages.
+              UPTECH is a non-governmental, results-focused business forum that is committed to your organisation&#39;s bilateral success in Technology, business, trade, and investment. We offer a range of both universal as well as custom-built services to our UK and Pakistani corporate members, including on-the-ground UK market support for Pakistani businesses; policy guidelines and regulatory analysis; and one-stop-shop Business Incubation Centre packages.
             </p>
 
             <h3 className="font-heading font-bold text-2xl text-[#1C1F2E] mb-5">
@@ -506,7 +506,7 @@ export default function MembershipClient() {
                 </div>
                 <div className="h-px bg-[#D8D5CF] mb-5" />
                 <p className="text-base text-[#5A5F72] leading-relaxed mb-5">
-                  Launching and maintaining momentum in UK/Europe is key for organizations investing in these regions. UPTECH offers practical solutions for Pakistani organizations entering UK/European that are designed to meet your needs.
+                  Launching and maintaining momentum in UK/Europe is key for organisations investing in these regions. UPTECH offers practical solutions for Pakistani organisations entering UK/European that are designed to meet your needs.
                 </p>
                 <ul className="space-y-3">
                   {pakistanToUkServices.map((service, idx) => (
@@ -561,7 +561,7 @@ export default function MembershipClient() {
             label="Why It Matters"
             title="Why Membership Matters"
             color="green"
-            subtitle="Membership with the Forum provides more than just networking — it's a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Our members gain practical support, strategic connections, and market insights that accelerate business success and cross-border collaboration. Join today. Connect, grow, and lead the future of UK-Pakistan technology."
+            subtitle="Membership with the Forum provides more than just networking, it's a gateway to growth, visibility, and influence in the UK-Pakistan technology corridor. Our members gain practical support, strategic connections, and market insights that accelerate business success and cross-border collaboration. Join today. Connect, grow, and lead the future of UK-Pakistan technology."
           />
         </AnimatedSection>
       </Section>
@@ -570,7 +570,7 @@ export default function MembershipClient() {
       <GlobalCTA
         label="Join Today"
         title="Ready to Join UPTECH?"
-        subtitle="Membership with the Forum provides more than just networking — it's a gateway to growth, visibility, and influence in the UK–Pakistan technology corridor."
+        subtitle="Membership with the Forum provides more than just networking, it's a gateway to growth, visibility, and influence in the UK–Pakistan technology corridor."
         primaryButtonText="Apply for Membership"
         primaryButtonLink="/membership#apply"
         secondaryButtonText="Get in Touch"

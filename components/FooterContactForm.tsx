@@ -144,7 +144,7 @@ export function FooterContactForm() {
       {state === "success" && (
         <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#22C55E]/20 border border-[#22C55E]/40 text-sm text-white">
           <CheckCircle2 className="w-4 h-4 text-[#22C55E] flex-shrink-0" />
-          <span>Thanks — we&apos;ll be in touch.</span>
+          <span>Thanks, we&apos;ll be in touch.</span>
         </div>
       )}
 

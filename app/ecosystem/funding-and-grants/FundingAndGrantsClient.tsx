@@ -65,7 +65,7 @@ const opportunities = [
   { title: "Bilateral Projects", description: "Grants for collaborative projects between UK and Pakistan organisations.", icon: Globe2, color: "#C41E3A" },
   { title: "Research & Development", description: "Support for R&D initiatives in emerging technologies and digital transformation.", icon: Cpu, color: "#2563EB" },
   { title: "Enterprise Partnerships", description: "Funding opportunities for established companies expanding cross-border operations.", icon: Building2, color: "#22C55E" },
-  { title: "Skills Development", description: "Grants for programs that enhance technology skills and workforce capabilities.", icon: GraduationCap, color: "#C41E3A" },
+  { title: "Skills Development", description: "Grants for programmes that enhance technology skills and workforce capabilities.", icon: GraduationCap, color: "#C41E3A" },
 ];
 
 const fundingGrantsIntro = {
@@ -101,7 +101,7 @@ const fundingStages = [
   {
     stage: "R&D",
     title: "Research & Development Incentives",
-    description: "At UK-Pakistan Tech Forum (UPTECH), we highly value the current R&D tax incentive, recognizing the pivotal role that research and development play in driving technological advancements. With the launch of this initiative in Pakistan, we aim to further bolster the tech sector by making the R&D tax incentive more transparent and accessible, for digital literacy, healthcare sector, energy solutions and infusion technologies. We appreciate ongoing efforts to clarify the application of these incentives and are committed to collaborating closely with experts in the field to provide clearer guidance. Our goal is to ensure that the intent and application of this incentive are well understood and effectively implemented by both industry leaders and administrators. Through this initiative, we are paving the way for a robust, innovation-driven future in Pakistan.",
+    description: "At UK-Pakistan Tech Forum (UPTECH), we highly value the current R&D tax incentive, recognising the pivotal role that research and development play in driving technological advancements. With the launch of this initiative in Pakistan, we aim to further bolster the tech sector by making the R&D tax incentive more transparent and accessible, for digital literacy, healthcare sector, energy solutions and infusion technologies. We appreciate ongoing efforts to clarify the application of these incentives and are committed to collaborating closely with experts in the field to provide clearer guidance. Our goal is to ensure that the intent and application of this incentive are well understood and effectively implemented by both industry leaders and administrators. Through this initiative, we are paving the way for a robust, innovation-driven future in Pakistan.",
     features: ["Digital literacy R&D incentives", "Healthcare sector innovation support", "Energy solutions R&D programmes", "Infusion technologies advancement"],
     icon: Cpu,
     color: "#2563EB",
@@ -132,7 +132,7 @@ const benefits = [
 
 const faqs = [
   { question: "What types of funding are available?", answer: "We offer pre-seed and seed investment, Series A/B growth capital facilitation, R&D grants, innovation grants, and bilateral project funding. The type of funding depends on your stage, sector, and project objectives." },
-  { question: "How long does the application process take?", answer: "Initial applications are reviewed within 2–4 weeks. The full process — including due diligence and funding decision — typically takes 6–12 weeks depending on the funding type and complexity of the proposal." },
+  { question: "How long does the application process take?", answer: "Initial applications are reviewed within 2–4 weeks. The full process, including due diligence and funding decision, typically takes 6–12 weeks depending on the funding type and complexity of the proposal." },
   { question: "Is funding available for non-tech companies?", answer: "Our primary focus is technology-focused companies and projects. However, companies in adjacent sectors that demonstrate significant technology innovation or digital transformation may also be eligible." },
   { question: "Can I apply for multiple funding streams?", answer: "Yes, you can apply for multiple funding streams simultaneously, provided you meet the eligibility criteria for each. Our team can advise on the most appropriate funding mix for your needs." },
   { question: "What are the reporting requirements?", answer: "Funded companies are required to provide quarterly progress reports, financial updates, and milestone tracking. We work collaboratively with funded companies to ensure success and accountability." },
@@ -168,7 +168,7 @@ export default function FundingAndGrantsClient() {
 
       {/* ── STATS BAR ─────────────────────────────────────────────── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => {
               const color = statColors[i % statColors.length];
@@ -201,17 +201,17 @@ export default function FundingAndGrantsClient() {
 
       {/* ── OVERVIEW ──────────────────────────────────────────────── */}
       <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
                 label="Overview"
-                title="Funding Programs Designed for the UK–Pakistan Tech Corridor"
+                title="Funding Programmes Designed for the UK–Pakistan Tech Corridor"
                 color="blue"
                 subtitle="UPTECH provides access to funding opportunities and grants designed to support technology innovation, startup growth, and cross-border collaboration between the UK and Pakistan."
               />
               <p className="text-[#5A5F72] text-lg leading-relaxed">
-                Our funding programs enable entrepreneurs, researchers, and organisations to turn innovative ideas into reality. Whether you&apos;re a startup seeking seed funding, a researcher looking for grant support, or an enterprise exploring partnership opportunities, we connect you with the right funding sources and resources.
+                Our funding programmes enable entrepreneurs, researchers, and organisations to turn innovative ideas into reality. Whether you&apos;re a startup seeking seed funding, a researcher looking for grant support, or an enterprise exploring partnership opportunities, we connect you with the right funding sources and resources.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
@@ -251,14 +251,14 @@ export default function FundingAndGrantsClient() {
 
       {/* ── OPPORTUNITIES ─────────────────────────────────────────── */}
       <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
                 label="Funding"
                 title="Available Opportunities"
                 color="green"
-                subtitle="Explore our range of funding programs designed to support technology innovation and cross-border collaboration."
+                subtitle="Explore our range of funding programmes designed to support technology innovation and cross-border collaboration."
               />
             </div>
 
@@ -309,7 +309,7 @@ export default function FundingAndGrantsClient() {
 
       {/* ── FUNDING STAGES ──────────────────────────────────────── */}
       <section className="relative bg-[#E8E6E3] overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
@@ -382,7 +382,7 @@ export default function FundingAndGrantsClient() {
 
       {/* ── APPLICATION PROCESS ────────────────────────────────────── */}
       <section className="relative bg-white overflow-hidden">
-        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div className="mb-8">
               <SectionHeader
@@ -544,7 +544,7 @@ export default function FundingAndGrantsClient() {
       <GlobalCTA
         label="Apply Now"
         title="Ready to Secure Funding for Your Innovation?"
-        subtitle="Explore funding opportunities and take your technology innovation to the next level with UPTECH funding and grants programs."
+        subtitle="Explore funding opportunities and take your technology innovation to the next level with UPTECH funding and grants programmes."
         primaryButtonText="Apply for Membership"
         primaryButtonLink="/membership#apply"
         secondaryButtonText="Contact Us"

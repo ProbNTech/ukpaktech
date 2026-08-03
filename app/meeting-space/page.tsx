@@ -145,7 +145,7 @@ export default function MeetingSpacePage() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <PageHero
         label="Meeting Space"
-        title="London Meeting Space Access — An Exclusive Member Privilege"
+        title="London Meeting Space Access, An Exclusive Member Privilege"
         subtitle="The UK-Pakistan Tech Forum offers members access to professional meeting facilities in Central London, enabling high-level engagement within a credible and strategic business environment. This benefit supports our mission to strengthen bilateral Tech collaboration and provides members with the infrastructure required to conduct business effectively in the United Kingdom."
         image="/image/banners/banner77.jpg"
       >
@@ -157,7 +157,7 @@ export default function MeetingSpacePage() {
 
       {/* ── Stats Bar ──────────────────────────────────────────────── */}
       <section className="bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -185,9 +185,9 @@ export default function MeetingSpacePage() {
         </div>
       </section>
 
-      {/* ── Uses Section — What members can use facilities for ──────── */}
+      {/* ── Uses Section, What members can use facilities for ──────── */}
       <section
-        className="relative py-10 overflow-hidden"
+        className="relative py-8 overflow-hidden"
         style={{ backgroundColor: "#EEECEA" }}
       >
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -235,7 +235,7 @@ export default function MeetingSpacePage() {
               </motion.div>
             </div>
 
-            {/* Access & Reservations — full-width info cards */}
+            {/* Access & Reservations, full-width info cards */}
             <div className="grid sm:grid-cols-2 gap-6">
               {bookingChecklist.map((item, i) => {
                 const Icon = item.icon;
@@ -268,7 +268,7 @@ export default function MeetingSpacePage() {
       </section>
 
       {/* ── Facilities ─────────────────────────────────────────────── */}
-      <section className="relative py-10 overflow-hidden bg-white">
+      <section className="relative py-8 overflow-hidden bg-white">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Our Facilities" title="Facilities & Amenities" subtitle="Our London meeting spaces provide a professional and secure environment equipped with:" color="blue" />
@@ -308,7 +308,7 @@ export default function MeetingSpacePage() {
 
       {/* ── Supporting Bilateral Collaboration ─────────────────────── */}
       <section
-        className="relative py-10 overflow-hidden"
+        className="relative py-8 overflow-hidden"
         style={{ backgroundColor: "#EEECEA" }}
       >
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -369,8 +369,8 @@ export default function MeetingSpacePage() {
         </div>
       </section>
 
-      {/* ── Membership Tier Benefits Table — Styled Grid ────────────── */}
-      <section className="relative py-10 overflow-hidden bg-white">
+      {/* ── Membership Tier Benefits Table, Styled Grid ────────────── */}
+      <section className="relative py-8 overflow-hidden bg-white">
         {/* Top accent line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2563EB]/30 to-transparent" />
         {/* Grid pattern */}
@@ -549,7 +549,7 @@ export default function MeetingSpacePage() {
 
       {/* ── Meeting Space Terms ────────────────────────────────────── */}
       <section
-        className="relative py-10 overflow-hidden"
+        className="relative py-8 overflow-hidden"
         style={{ backgroundColor: "#EEECEA" }}
       >
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
@@ -580,7 +580,7 @@ export default function MeetingSpacePage() {
       </section>
 
       {/* ── Optional Add-On Services (Member Rates) ────────────────── */}
-      <section className="relative py-10 overflow-hidden bg-white">
+      <section className="relative py-8 overflow-hidden bg-white">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader label="Member Rates" title="Optional Add-On Services" color="green" />
@@ -619,7 +619,7 @@ export default function MeetingSpacePage() {
         </div>
       </section>
 
-      {/* ── CTA — TubesCursor ─────────────────────────────────────── */}
+      {/* ── CTA, TubesCursor ─────────────────────────────────────── */}
       <GlobalCTA
         label="Access & Reservations"
         title="Reserve Your Meeting Space"

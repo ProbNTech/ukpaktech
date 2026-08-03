@@ -207,7 +207,7 @@ export default function MembershipSection() {
   return (
     <div ref={containerRef} className="relative w-full">
       <section className="relative w-full min-h-screen lg:min-h-[700px] overflow-hidden z-10">
-        {/* Background Video — lazy-loaded */}
+        {/* Background Video, lazy-loaded */}
         <LazyVideo
           aria-hidden="true"
           src="/videos/banner.mp4"
@@ -239,7 +239,7 @@ export default function MembershipSection() {
                   Who can join?
                 </h2>
                 <p className="mt-5 text-white text-base sm:text-lg lg:text-xl bg-black/20 px-4 py-3 rounded-md max-w-3xl leading-relaxed">
-                  Membership is open to organisations and individuals on both sides of the corridor — UK and Pakistani technology firms, investors, academic bodies, and tech professionals.
+                  Membership is open to organisations and individuals on both sides of the corridor, UK and Pakistani technology firms, investors, academic bodies, and tech professionals.
                 </p>
               </div>
             </div>
@@ -312,11 +312,11 @@ export default function MembershipSection() {
   );
 }
 
-/* ───────────── WHAT DRIVES US — Separate exported component ───────────── */
+/* ───────────── WHAT DRIVES US, Separate exported component ───────────── */
 export function WhatDrivesUs() {
   return (
     <section
-      className="relative z-[1] py-20 lg:py-28 overflow-hidden"
+      className="relative z-[1] py-10 lg:py-16 overflow-hidden"
       style={{
         background:
           "radial-gradient(900px circle at 95% 0%, rgba(196,30,58,0.07), transparent 50%), radial-gradient(800px circle at 5% 100%, rgba(37,99,235,0.06), transparent 50%), #FFFFFF",
@@ -336,7 +336,7 @@ export function WhatDrivesUs() {
                 What Drives Us
               </h2>
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-[#5A5F72]">
-                Three operating pillars sit beneath UPTECH&apos;s work — policy and regulation, innovation partnerships, and market development between the UK and Pakistan.
+                Three operating pillars sit beneath UPTECH&apos;s work, policy and regulation, innovation partnerships, and market development between the UK and Pakistan.
               </p>
             </div>
 
@@ -346,17 +346,17 @@ export function WhatDrivesUs() {
                 {
                   icon: PolicyIcon,
                   title: "Policy & Regulation",
-                  desc: "UPTECH engages with UK and Pakistani policy stakeholders on digital trade, data protection, and the bilateral framework conditions that make cross-border technology business workable — including representation alongside the UK–Pakistan Trade Dialogue agenda.",
+                  desc: "UPTECH engages with UK and Pakistani policy stakeholders on digital trade, data protection, and the bilateral framework conditions that make cross-border technology business workable, including representation alongside the UK–Pakistan Trade Dialogue agenda.",
                 },
                 {
                   icon: InnovationIcon,
                   title: "Innovation Partnerships",
-                  desc: "We convene research partnerships and joint programmes across AI, cloud, cybersecurity, fintech, and clean technology — pairing UK demand and standards with Pakistan's research base, including HEC-recognised university partnerships.",
+                  desc: "We convene research partnerships and joint programmes across AI, cloud, cybersecurity, fintech, and clean technology, pairing UK demand and standards with Pakistan's research base, including HEC-recognised university partnerships.",
                 },
                 {
                   icon: MarketsIcon,
                   title: "Market Development",
-                  desc: "We help members on either side enter the other market — UK companies into Pakistan's 251M-person economy, and Pakistani firms into UK and European procurement, health, and financial services pipelines.",
+                  desc: "We help members on either side enter the other market, UK companies into Pakistan's 251M-person economy, and Pakistani firms into UK and European procurement, health, and financial services pipelines.",
                 },
               ].map((card) => {
                 const CardIcon = card.icon;

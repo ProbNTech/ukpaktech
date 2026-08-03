@@ -7,7 +7,7 @@ interface DirectorySEOContentProps {
 export function DirectorySEOContent({ subject }: DirectorySEOContentProps) {
   return (
     <section
-      className="py-16 lg:py-20 bg-white"
+      className="py-8 lg:py-10 bg-white"
       aria-labelledby="directory-seo-title"
     >
       <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
@@ -20,7 +20,7 @@ export function DirectorySEOContent({ subject }: DirectorySEOContentProps) {
           </h2>
           <p className="mt-3 text-base text-[#475569] leading-relaxed">
             A working reference for buyers, partners, and recruiters comparing
-            {" "}{subject.toLowerCase()} across the UK, Europe, and Pakistan — designed to
+            {" "}{subject.toLowerCase()} across the UK, Europe, and Pakistan, designed to
             make shortlisting and outreach faster.
           </p>
         </div>
@@ -35,7 +35,7 @@ export function DirectorySEOContent({ subject }: DirectorySEOContentProps) {
             </h3>
             <p className="text-sm text-[#475569] leading-relaxed">
               Listings are ordered primarily by aggregate rating, then by verified
-              review count — so consistently well-rated firms with meaningful
+              review count, so consistently well-rated firms with meaningful
               evidence base appear first. Verification status is shown on each card.
             </p>
           </article>
@@ -48,8 +48,8 @@ export function DirectorySEOContent({ subject }: DirectorySEOContentProps) {
               Why use this directory
             </h3>
             <p className="text-sm text-[#475569] leading-relaxed">
-              Compare {subject.toLowerCase()} side-by-side — services, location, rating,
-              and review volume — without bouncing between tabs. Useful when
+              Compare {subject.toLowerCase()} side-by-side, services, location, rating,
+              and review volume, without bouncing between tabs. Useful when
               building a shortlist for procurement, partnerships, or hiring.
             </p>
           </article>

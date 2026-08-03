@@ -129,7 +129,7 @@ export default function TechMarketOverviewClient() {
 
       {/* Intro Section */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="About UPTECH"
@@ -164,7 +164,7 @@ export default function TechMarketOverviewClient() {
 
       {/* Europe-Wide Market Data */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Market Segments"
@@ -181,7 +181,7 @@ export default function TechMarketOverviewClient() {
 
       {/* Interactive Map + Country Cards */}
       <section id="countries" className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Country Markets"
@@ -207,7 +207,7 @@ export default function TechMarketOverviewClient() {
 
       {/* Country Summary Table */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="At a Glance"
@@ -277,7 +277,7 @@ export default function TechMarketOverviewClient() {
 
       {/* Pakistan IT Scope Link */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Pakistan's IT Scope"
@@ -309,7 +309,7 @@ export default function TechMarketOverviewClient() {
 
       {/* Pakistan Talent Stats */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Pakistan IT Advantage"

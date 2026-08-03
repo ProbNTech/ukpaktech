@@ -52,6 +52,14 @@ const advisors = [
     accent: "#2563EB",
     delay: 0.15,
   },
+  {
+    name: "Dr. Shahroze Ahmed Khan",
+    role: "Member, Advisory Board",
+    bio: "Medical doctor and technology entrepreneur building AI solutions for healthcare, advancing digital health and UK–Pakistan innovation.",
+    photo: "/image/board/shahroze.png",
+    accent: "#2563EB",
+    delay: 0.15,
+  },
 ];
 
 const cardVariants = {
@@ -82,7 +90,7 @@ export default function BoardOfAdvisors() {
 
   return (
     <section
-      className="relative py-20 lg:py-28 overflow-hidden"
+      className="relative py-10 lg:py-16 overflow-hidden"
       style={{
         background:
           "radial-gradient(1000px circle at 50% 0%, rgba(37,99,235,0.07), transparent 50%), radial-gradient(800px circle at 10% 100%, rgba(99,102,241,0.05), transparent 50%), radial-gradient(700px circle at 90% 100%, rgba(34,197,94,0.04), transparent 50%), #FFFFFF",
@@ -125,7 +133,7 @@ export default function BoardOfAdvisors() {
           </p>
         </motion.div>
 
-        {/* ── Cards — 3-column horizontal layout ── */}
+        {/* ── Cards, 3-column horizontal layout ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {advisors.map((advisor) => (
             <motion.div
@@ -161,7 +169,7 @@ export default function BoardOfAdvisors() {
 }
 
 /* ────────────────────────────────────────────────────
-   Advisor Card — tall, elegant card with glass effect
+   Advisor Card, tall, elegant card with glass effect
 ──────────────────────────────────────────────────── */
 function AdvisorCard({
   advisor,
@@ -170,7 +178,7 @@ function AdvisorCard({
 }) {
   return (
     <div className="group relative flex flex-col items-center text-center rounded-xl overflow-hidden h-full">
-      {/* Card background — white with subtle border */}
+      {/* Card background, white with subtle border */}
       <div
         className="absolute inset-0 rounded-xl transition-all duration-500 bg-[#f7f8fa] border border-[#E5E7EB] group-hover:shadow-xl group-hover:border-[#2563EB]/20"
       />

@@ -44,7 +44,7 @@ const whyItMatters = [
 const faqs = [
   { question: "What types of products can be promoted?", answer: "We promote software products, digital platforms, SaaS solutions, technology services, and hardware products from our member companies. The product must be from a Forum member or partner organisation." },
   { question: "How much does it cost?", answer: "Core marketing services are included in UPTECH membership. Premium packages \u2014 including dedicated campaigns, event sponsorship, and bespoke content creation \u2014 are available as add-ons with transparent pricing." },
-  { question: "What channels do you use for promotion?", answer: "We use Forum email newsletters (10,000+ subscribers), social media channels, the UPTECH website, partner networks, and our events program including summits, exhibitions, and trade delegations." },
+  { question: "What channels do you use for promotion?", answer: "We use Forum email newsletters (10,000+ subscribers), social media channels, the UPTECH website, partner networks, and our events programme including summits, exhibitions, and trade delegations." },
   { question: "How do you measure campaign success?", answer: "We provide detailed analytics including impressions, click-through rates, lead generation, and ROI metrics. Monthly reports track campaign performance against agreed KPIs." },
 ];
 
@@ -70,7 +70,7 @@ export default function DigitalMarketingPage() {
 
       {/* ── Stats Bar ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -101,7 +101,7 @@ export default function DigitalMarketingPage() {
       {/* ── Intro Section ── */}
       <section className="relative bg-white">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#C41E3A]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div>
               <SectionHeader label="Capabilities" title="Practical, Results-Driven Marketing for Technology Companies" color="blue" />
@@ -120,7 +120,7 @@ export default function DigitalMarketingPage() {
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Services" title="What We Offer" subtitle="Five core marketing services tailored for tech SMEs, scale-ups, and established firms." color="green" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -159,9 +159,9 @@ export default function DigitalMarketingPage() {
       {/* ── How It Works ── */}
       <section className="relative bg-white">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
-            <SectionHeader label="Process" title="How It Works" subtitle="From onboarding to measurable growth — a clear four-step process." color="blue" />
+            <SectionHeader label="Process" title="How It Works" subtitle="From onboarding to measurable growth, a clear four-step process." color="blue" />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {steps.map((step, i) => (
                 <motion.div
@@ -199,7 +199,7 @@ export default function DigitalMarketingPage() {
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#C41E3A]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Impact" title="Why It Matters" subtitle="The UK and Pakistan technology sectors present significant opportunities for collaboration, outsourcing, innovation partnerships, and product expansion. The Digital Product Marketing Hub helps members:" color="red" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -237,7 +237,7 @@ export default function DigitalMarketingPage() {
       {/* ── FAQ ── */}
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Common questions about the Digital Product Marketing Hub." color="red" />
             <FAQSection faqs={faqs} />

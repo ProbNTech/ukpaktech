@@ -42,7 +42,7 @@ export function DirectoryStats({ companies }: DirectoryStatsProps) {
         }}
       />
 
-      <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20 py-14 lg:py-16">
+      <div className="relative px-6 sm:px-10 lg:px-16 xl:px-20 py-8 lg:py-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {stats.map((s, i) => {
             const Icon = s.icon;

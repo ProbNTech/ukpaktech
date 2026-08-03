@@ -19,12 +19,12 @@ import type { DirectoryCompany } from "@/data/companies";
 export const metadata: Metadata = {
   title: "Pakistan's Top AI & IT Companies",
   description:
-    "Discover Pakistan's top AI & IT companies — software, cloud, cybersecurity, data, and AI specialists. Filter A–Z, search, or browse by industry to shortlist faster.",
+    "Discover Pakistan's top AI & IT companies, software, cloud, cybersecurity, data, and AI specialists. Filter A–Z, search, or browse by industry to shortlist faster.",
   alternates: { canonical: "/pakistan-top-companies" },
   openGraph: {
     title: "Pakistan's Top AI & IT Companies | UPTECH",
     description:
-      "A curated directory of Pakistan's top AI and IT companies — with services, locations, and category filters.",
+      "A curated directory of Pakistan's top AI and IT companies, with services, locations, and category filters.",
     url: "/pakistan-top-companies",
   },
 };

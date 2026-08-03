@@ -115,7 +115,7 @@ export default function HeroSection({
   ] as const;
 
   return (
-    <section className={cn("w-full overflow-hidden bg-background py-12 sm:py-24", className)}>
+    <section className={cn("w-full overflow-hidden bg-background py-8 sm:py-10", className)}>
       <div className="container mx-auto grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
         <motion.div
           className="flex flex-col items-center text-center lg:items-start lg:text-left"

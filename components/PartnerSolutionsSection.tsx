@@ -38,7 +38,7 @@ function getDomain(url: string): string {
 }
 
 /* ───────────────────────── Branded product placeholder ─────────────────────────
-   Mock-UI "product preview" tile — used when no real screenshot exists yet.
+   Mock-UI "product preview" tile, used when no real screenshot exists yet.
    Renders a fake app window (title bar, sidebar, content blocks) tinted to the
    member's category colour, with the partner logo set inside the mock window.   */
 
@@ -243,7 +243,7 @@ function SolutionCard({
           </Link>
         </div>
 
-        {/* Category chip — top right of header */}
+        {/* Category chip, top right of header */}
         <span
           className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[9.5px] font-bold uppercase tracking-widest shrink-0"
           style={{
@@ -325,7 +325,7 @@ export default function PartnerSolutionsSection() {
 
   return (
     <section
-      className="relative z-[1] py-20 lg:py-28 bg-gradient-to-b from-[#f0f7ff] via-[#e8f1fb] to-[#dfeaf7] overflow-hidden"
+      className="relative z-[1] py-10 lg:py-16 bg-gradient-to-b from-[#f0f7ff] via-[#e8f1fb] to-[#dfeaf7] overflow-hidden"
       aria-labelledby="partner-solutions-heading"
     >
       <div
@@ -347,7 +347,7 @@ export default function PartnerSolutionsSection() {
             color="green"
           />
 
-          {/* Equal-weight grid — every member gets the same canvas */}
+          {/* Equal-weight grid, every member gets the same canvas */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7 mt-2">
             {homepageSolutions.map((solution, i) => (
               <SolutionCard key={solution.slug} solution={solution} index={i} />

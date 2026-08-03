@@ -60,7 +60,7 @@ export function memberToDirectoryCompany(m: Member): DirectoryCompany {
     websiteUrl: m.website,
     source: "Member",
     verified: true,
-    // rating / reviewCount intentionally omitted — verified members aren't
+    // rating / reviewCount intentionally omitted, verified members aren't
     // graded by external review counts.
   };
 }
@@ -70,7 +70,7 @@ export const memberCompanies: DirectoryCompany[] = members.map(memberToDirectory
 
 /**
  * Drives /pakistan-top-companies and the homepage showcase. Includes every
- * verified UPTECH member — including UK-based ones like Aulysius — because the
+ * verified UPTECH member, including UK-based ones like Aulysius, because the
  * page positions UPTECH's whole roster as part of Pakistan's tech corridor.
  */
 export const pakistaniMemberCompanies: DirectoryCompany[] = memberCompanies;

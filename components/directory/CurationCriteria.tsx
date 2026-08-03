@@ -7,7 +7,7 @@ const CRITERIA = [
   {
     icon: CheckCircle2,
     title: "Manually vetted",
-    body: "Every member is reviewed by the UPTECH team before listing — no auto-scraped profiles.",
+    body: "Every member is reviewed by the UPTECH team before listing, no auto-scraped profiles.",
     color: "#1F4FD8",
   },
   {
@@ -19,7 +19,7 @@ const CRITERIA = [
   {
     icon: Handshake,
     title: "UK ↔ Pakistan corridor",
-    body: "Active across both markets — staff, clients, partners, or investment flows.",
+    body: "Active across both markets, staff, clients, partners, or investment flows.",
     color: "#C41E3A",
   },
   {
@@ -33,7 +33,7 @@ const CRITERIA = [
 export function CurationCriteria() {
   return (
     <section
-      className="relative py-14 lg:py-16 bg-[#F8FAFF] border-y border-[#E2E8F0]"
+      className="relative py-8 lg:py-10 bg-[#F8FAFF] border-y border-[#E2E8F0]"
       aria-labelledby="curation-heading"
     >
       <div className="px-6 sm:px-10 lg:px-16 xl:px-20">

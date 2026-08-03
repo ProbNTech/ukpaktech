@@ -16,7 +16,7 @@ const audiences = [
   { icon: Code, label: "IT and AI Professionals", brandColor: "#2563EB", description: "Tech experts driving innovation" },
   { icon: Rocket, label: "Startups and Founders", brandColor: "#22C55E", description: "Entrepreneurs building the future" },
   { icon: DollarSign, label: "Investors and Partners", brandColor: "#2563EB", description: "Capital and strategic alliances" },
-  { icon: Building2, label: "Enterprises and Service Providers", brandColor: "#2563EB", description: "Leading organizations and solutions" },
+  { icon: Building2, label: "Enterprises and Service Providers", brandColor: "#2563EB", description: "Leading organisations and solutions" },
   { icon: GraduationCap, label: "Students and Researchers", brandColor: "#22C55E", description: "Next generation of innovators" },
   { icon: Landmark, label: "Government and Institutions", brandColor: "#2563EB", description: "Policy makers and public sector" },
 ];

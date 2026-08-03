@@ -17,7 +17,7 @@ import { Pagination } from "./Pagination";
 
 interface DirectoryViewProps {
   companies: DirectoryCompany[];
-  /** "grid" — premium card grid. "list" — directory-style rows. */
+  /** "grid"premium card grid. "list"directory-style rows. */
   layout?: "grid" | "list";
   /** When set, paginate the results client-side. */
   pageSize?: number;
@@ -75,7 +75,7 @@ export function DirectoryView({
   const visible = pageSize ? filtered.slice((page - 1) * pageSize, page * pageSize) : filtered;
 
   return (
-    <section className="py-12 lg:py-16 bg-[#F8FAFF]" aria-label="Company directory listings">
+    <section className="py-8 lg:py-10 bg-[#F8FAFF]" aria-label="Company directory listings">
       <div className="px-6 sm:px-10 lg:px-16 xl:px-20">
         {heading && (
           <h2 className="font-heading font-extrabold text-[#0F172A] text-2xl sm:text-3xl tracking-tight mb-6">

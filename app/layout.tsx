@@ -27,11 +27,11 @@ const BASE_URL = "https://www.ukpaktech.org.uk";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "UPTECH — UK–Pakistan Tech Forum",
+    default: "UPTECH, UK–Pakistan Tech Forum",
     template: "%s | UPTECH",
   },
   description:
-    "UPTECH connects UK and Pakistani technology companies for hiring, sourcing, market entry, and capital — under a published code of conduct and an arbitration framework governed by the UK Arbitration Act 1996.",
+    "UPTECH connects UK and Pakistani technology companies for hiring, sourcing, market entry, and capital, under a published code of conduct and an arbitration framework governed by the UK Arbitration Act 1996.",
   keywords: [
     "UK Pakistan",
     "technology forum",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "tech innovation",
     "bilateral trade",
     "startup ecosystem",
-    "AI programs",
+    "AI programmes",
   ],
   authors: [{ name: "UK–Pakistan Tech Forum" }],
   openGraph: {
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: BASE_URL,
     siteName: "UK–Pakistan Tech Forum",
-    title: "UPTECH — UK–Pakistan Tech Forum",
+    title: "UPTECH, UK–Pakistan Tech Forum",
     description:
-      "Hiring, sourcing, market entry, and capital between UK and Pakistani technology companies — governed by a published code of conduct and the UK Arbitration Act 1996.",
+      "Hiring, sourcing, market entry, and capital between UK and Pakistani technology companies, governed by a published code of conduct and the UK Arbitration Act 1996.",
     images: [
       {
         url: "/og-image.png",
@@ -62,9 +62,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "UPTECH — UK–Pakistan Tech Forum",
+    title: "UPTECH, UK–Pakistan Tech Forum",
     description:
-      "Hiring, sourcing, market entry, and capital between UK and Pakistani technology companies — governed by a published code of conduct and the UK Arbitration Act 1996.",
+      "Hiring, sourcing, market entry, and capital between UK and Pakistani technology companies, governed by a published code of conduct and the UK Arbitration Act 1996.",
     images: ["/og-image.png"],
   },
   robots: {

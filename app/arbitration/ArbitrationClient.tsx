@@ -536,7 +536,7 @@ export default function ArbitrationClient() {
         </AnimatedSection>
       </Section>
 
-      {/* ── Principles — DARK SECTION ────────────────────────────── */}
+      {/* ── Principles, DARK SECTION ────────────────────────────── */}
       <Section variant="dark">
         <AnimatedSection>
           <SectionHeader
@@ -659,7 +659,7 @@ export default function ArbitrationClient() {
               },
               {
                 title: "New York Convention",
-                subtitle: "1958 — International Enforceability",
+                subtitle: "1958, International Enforceability",
                 description: "Ensures that arbitration awards are binding, final, and enforceable in the UK and internationally across 170+ countries.",
                 color: "#C41E3A",
                 icon: Globe2,

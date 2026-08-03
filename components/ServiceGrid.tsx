@@ -53,7 +53,7 @@ const services = [
     icon: Search,
     title: "Research & Innovation",
     description:
-      "Cost-effective research services from Pakistan — technology research, data analytics, academic support, and more.",
+      "Cost-effective research services from Pakistan, technology research, data analytics, academic support, and more.",
     href: "/services/research-innovation",
   },
 ];

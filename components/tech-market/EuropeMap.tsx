@@ -269,7 +269,7 @@ export function EuropeMap() {
         }}
       />
 
-      {/* Ambient glow zones — brighter fills */}
+      {/* Ambient glow zones, brighter fills */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute w-[600px] h-[600px] rounded-full" style={{ top: "5%", left: "5%", background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 60%)" }} />
         <div className="absolute w-[500px] h-[500px] rounded-full" style={{ bottom: "-5%", right: "15%", background: "radial-gradient(circle, rgba(139,92,246,0.07) 0%, transparent 60%)" }} />
@@ -304,7 +304,7 @@ export function EuropeMap() {
             </feMerge>
           </filter>
 
-          {/* Traveling dot — animated circle */}
+          {/* Traveling dot, animated circle */}
           <circle id="travelDot" r="3" fill="white" />
         </defs>
 
@@ -313,7 +313,7 @@ export function EuropeMap() {
           const isActive = hoveredSlug === line.from || hoveredSlug === line.to;
           return (
             <g key={`conn-${i}`}>
-              {/* Main line — always visible */}
+              {/* Main line, always visible */}
               <line
                 x1={line.x1} y1={line.y1}
                 x2={line.x2} y2={line.y2}
@@ -447,7 +447,7 @@ export function EuropeMap() {
         );
       })}
 
-      {/* Title overlay — top left */}
+      {/* Title overlay, top left */}
       <div className="absolute top-5 left-6 z-20 pointer-events-none">
         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
           European Tech Markets
@@ -465,7 +465,7 @@ export function EuropeMap() {
         </span>
       </div>
 
-      {/* Legend — bottom right */}
+      {/* Legend, bottom right */}
       <div className="absolute bottom-4 right-5 z-20 hidden sm:flex items-center gap-5 pointer-events-none">
         <div className="flex items-center gap-1.5">
           <div className="w-8 h-[1.5px] bg-gradient-to-r from-[#3B82F6]/60 to-[#22C55E]/60" />

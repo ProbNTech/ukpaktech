@@ -13,14 +13,14 @@ export const metadata: Metadata = {
   description:
     "Discover leading AI development, automation, machine learning, and software companies. Compare ratings, services, and locations across the UK, Europe, and Pakistan.",
   alternates: { canonical: "/top-ai-companies" },
-  // Directory pages are built but not live yet — keep them out of search
+  // Directory pages are built but not live yet, keep them out of search
   // engines until the real data source is connected and they are added to
   // the navigation and sitemap.
   robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
   openGraph: {
     title: "Top AI Companies | UPTECH Directory",
     description:
-      "A curated directory of top AI development, automation, and machine learning companies — with ratings, reviews, and service breakdowns.",
+      "A curated directory of top AI development, automation, and machine learning companies, with ratings, reviews, and service breakdowns.",
     url: "/top-ai-companies",
   },
 };
@@ -36,7 +36,7 @@ export default async function TopAICompaniesPage() {
       <CompanyDirectoryHero
         eyebrow="AI Companies"
         title="Top AI Companies"
-        subtitle="Discover leading AI development, automation, machine learning, and software companies — with verified ratings, services, and locations to help you shortlist faster."
+        subtitle="Discover leading AI development, automation, machine learning, and software companies, with verified ratings, services, and locations to help you shortlist faster."
       />
 
       <DirectoryStats companies={all} />

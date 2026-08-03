@@ -108,7 +108,7 @@ export function ParticleNetworkBg() {
         // blink: oscillate between blinkMin and 1
         const blink = p.blinkMin + (1 - p.blinkMin) * ((Math.sin(p.blinkPhase) + 1) / 2);
 
-        // Outer glow — scales with blink
+        // Outer glow, scales with blink
         const glowRadius = p.radius * 8 * blink;
         ctx.beginPath();
         ctx.arc(p.x, p.y, glowRadius, 0, Math.PI * 2);
@@ -119,7 +119,7 @@ export function ParticleNetworkBg() {
         ctx.fillStyle = glow;
         ctx.fill();
 
-        // Core dot — blink affects opacity and size
+        // Core dot, blink affects opacity and size
         const coreRadius = p.radius * (0.6 + 0.4 * blink);
         ctx.beginPath();
         ctx.arc(p.x, p.y, coreRadius, 0, Math.PI * 2);

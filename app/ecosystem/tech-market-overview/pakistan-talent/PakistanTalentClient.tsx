@@ -91,7 +91,7 @@ export default function PakistanTalentClient() {
             Advantage
           </>
         }
-        subtitle="A leading hub of skilled tech professionals — young, cost-effective, and globally competitive."
+        subtitle="A leading hub of skilled tech professionals, young, cost-effective, and globally competitive."
         particleNetwork
       >
         <div className="flex flex-wrap items-center gap-4">
@@ -107,7 +107,7 @@ export default function PakistanTalentClient() {
         id="stats"
         className="relative bg-white"
       >
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="By the Numbers"
@@ -172,7 +172,7 @@ export default function PakistanTalentClient() {
 
       {/* IT Workforce */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Workforce"
@@ -203,7 +203,7 @@ export default function PakistanTalentClient() {
 
       {/* Education + Freelancing + Ecosystem */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <div className="grid md:grid-cols-3 gap-6">
           <AnimatedSection>
             <div className="bg-white rounded-xl border border-[#e2e0dc] p-6 h-full">
@@ -237,7 +237,7 @@ export default function PakistanTalentClient() {
                 ))}
               </ul>
               <div className="flex flex-wrap gap-1.5">
-                {freelancing.specializations.map((spec) => (
+                {freelancing.specialisations.map((spec) => (
                   <span
                     key={spec}
                     className="text-xs px-2 py-0.5 rounded-full bg-[#f0fff4] text-[#22C55E] font-medium"
@@ -282,7 +282,7 @@ export default function PakistanTalentClient() {
 
       {/* Cost Advantage */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Cost Advantage"
@@ -303,14 +303,14 @@ export default function PakistanTalentClient() {
                 delay={0}
               />
               <ComparisonBar
-                label={`Pakistan — ${costAdvantage.comparisons[0].role}`}
+                label={`Pakistan, ${costAdvantage.comparisons[0].role}`}
                 value={45}
                 color="#22C55E"
                 suffix="% of EU cost"
                 delay={0.15}
               />
               <ComparisonBar
-                label={`Pakistan — ${costAdvantage.comparisons[1].role}`}
+                label={`Pakistan, ${costAdvantage.comparisons[1].role}`}
                 value={55}
                 color="#22C55E"
                 suffix="% of EU cost"
@@ -323,7 +323,7 @@ export default function PakistanTalentClient() {
 
       {/* Export Growth */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Growth Trajectory"
@@ -348,7 +348,7 @@ export default function PakistanTalentClient() {
 
       {/* Strategic Opportunity / Collaboration Areas */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Why Partner"
@@ -374,7 +374,7 @@ export default function PakistanTalentClient() {
 
       {/* Government Support */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <SectionHeader
               label="Government & Industry"
@@ -406,7 +406,7 @@ export default function PakistanTalentClient() {
 
       {/* Link to IT Scope */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
             <AnimatedSection>
               <Link
                 href="/ecosystem/tech-market-overview/pakistan-it-scope"

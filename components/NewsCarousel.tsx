@@ -46,7 +46,7 @@ export default function NewsCarousel({ articles, light = false, cta }: NewsCarou
         ))}
       </Swiper>
 
-      {/* Toolbar — CTA + prev/next arrows grouped right */}
+      {/* Toolbar, CTA + prev/next arrows grouped right */}
       <div className="flex items-center justify-end gap-4 mt-8">
         {cta && <div className="shrink-0">{cta}</div>}
 

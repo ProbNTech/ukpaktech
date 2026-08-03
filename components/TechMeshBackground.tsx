@@ -1,10 +1,10 @@
 /**
- * TechMeshBackground — constellation / connected-node network backdrop.
+ * TechMeshBackground, constellation / connected-node network backdrop.
  *
- * Inspired by worldscienceforum.org — scattered nodes connected by thin
+ * Inspired by worldscienceforum.org, scattered nodes connected by thin
  * lines, concentrated on page edges, fading toward the centre.
  *
- * Fixed position, z-0, fully static SVG — no JS runtime cost.
+ * Fixed position, z-0, fully static SVG, no JS runtime cost.
  */
 
 interface TechMeshBackgroundProps {
@@ -16,7 +16,7 @@ interface TechMeshBackgroundProps {
 type CKey = "b" | "r" | "g" | "c";
 type Node = [number, number, number, CKey];
 
-// Left cluster (blue/cyan) — concentrated on x: 0–30%
+// Left cluster (blue/cyan), concentrated on x: 0–30%
 const leftNodes: Node[] = [
   // Large feature nodes
   [4, 12, 8, "c"],   [12, 30, 7, "b"],  [6, 50, 9, "c"],
@@ -34,7 +34,7 @@ const leftNodes: Node[] = [
   [1, 60, 3, "c"],   [25, 45, 3, "b"],
 ];
 
-// Right cluster (red/pink) — concentrated on x: 70–100%
+// Right cluster (red/pink), concentrated on x: 70–100%
 const rightNodes: Node[] = [
   // Large feature nodes
   [92, 15, 8, "r"],  [85, 40, 7, "r"],   [95, 55, 9, "r"],
@@ -52,7 +52,7 @@ const rightNodes: Node[] = [
   [99, 70, 3, "r"],  [74, 52, 3, "r"],
 ];
 
-// Green accents — scattered more broadly
+// Green accents, scattered more broadly
 const greenNodes: Node[] = [
   [30, 15, 4, "g"],  [38, 35, 3, "g"],  [45, 55, 4, "g"],
   [32, 72, 3, "g"],  [62, 18, 3, "g"],  [55, 42, 4, "g"],
@@ -107,7 +107,7 @@ export function TechMeshBackground({
       aria-hidden="true"
     >
       {/* ── Bold radial glows behind clusters ─────────────────────── */}
-      {/* Left blue glow — large, prominent */}
+      {/* Left blue glow, large, prominent */}
       <div
         className="absolute -left-[5%] top-0 h-[70%] w-[45%] rounded-full"
         style={{
@@ -120,7 +120,7 @@ export function TechMeshBackground({
           background: `radial-gradient(ellipse at 20% 60%, ${cyan}30 0%, ${cyan}15 35%, transparent 65%)`,
         }}
       />
-      {/* Right red/pink glow — large, prominent */}
+      {/* Right red/pink glow, large, prominent */}
       <div
         className="absolute -right-[5%] top-[5%] h-[65%] w-[45%] rounded-full"
         style={{
@@ -149,7 +149,7 @@ export function TechMeshBackground({
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          {/* Fade masks — strongest at edges, fading toward center */}
+          {/* Fade masks, strongest at edges, fading toward center */}
           <linearGradient id="tmb-fade-left" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="white" stopOpacity="1" />
             <stop offset="40%" stopColor="white" stopOpacity="0.8" />
@@ -278,7 +278,7 @@ export function TechMeshBackground({
           })}
         </g>
 
-        {/* ── Green accent nodes (no mask — full spread) ───────────── */}
+        {/* ── Green accent nodes (no mask, full spread) ───────────── */}
         {greenNodes.map(([x, y, r], idx) => (
           <g key={`gn-${idx}`}>
             <circle

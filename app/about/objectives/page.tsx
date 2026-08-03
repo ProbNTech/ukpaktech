@@ -22,7 +22,7 @@ const additionalObjectives = [
   "Host annual International and local conferences to advance UPTECH Mission",
   "Provide networking opportunities for Tech professionals and businesses",
   "Participate in humanitarian projects, Promote UK-Pakistan relationship",
-  "Recognize outstanding engineers, students and entrepreneurs",
+  "Recognise outstanding engineers, students and entrepreneurs",
   "Provide career guidance and mentoring to UK members and students in Pakistan",
   "Provide scholarships to outstanding students in Pakistan",
 ];
@@ -55,7 +55,7 @@ export default function ObjectivesPage() {
               <ul className="space-y-3">
                 {[
                   "Pursuit of excellence in the IT profession",
-                  "Commitment to traditional Pakistan values — ownership of responsibility and duty to the profession, fellow professionals, family and humanity",
+                  "Commitment to traditional Pakistan values, ownership of responsibility and duty to the profession, fellow professionals, family and humanity",
                   "Commitment to serve the community",
                   "Mutual respect and responsibility",
                   "Practice of highest ethics",
@@ -75,17 +75,17 @@ export default function ObjectivesPage() {
               <ul className="space-y-3">
                 {[
                   "Career Counseling & Leadership Development",
-                  "Cultural Events & Charity Programs",
+                  "Cultural Events & Charity Programmes",
                   "Monthly Networking Mixer & Lecture Series",
                   "Quarterly Cultural Events",
-                  "Annual Gala Dinner & Award Program",
+                  "Annual Gala Dinner & Award Programme",
                   "Interacting with Policy Makers on issues pertaining to Pakistan IT Professionals",
-                  "Professional Development & Skill Growth — Enable network members to participate in Tech development, management, maintenance, and support. Create income opportunities through revenue sharing, royalties, and the Innovative Collective Startup Model.",
-                  "Collective Startups & AI Platform Development — Develop AI-driven Tech platforms, systems, and tools for organizations, sector-specific collectives, and governments. Ensure access to AI Tech and support services across all economic sectors.",
-                  "IT/AI Pakistani Services Companies — Establish Pakistani professional-owned IT/AI services companies in every country. Provide stable jobs and income opportunities for IT professionals and Tech service providers.",
-                  "Local Community IT Support & Co-working Spaces — Develop Tech Centers with co-working spaces. Facilitate IT support services to local communities through UPTECH.",
-                  "STEM Careers Promotion — Promote careers in Science, Technology, Engineering and Mathematics to inspire the next generation of tech leaders.",
-                  "Mentorship Programs & Knowledge Sharing",
+                  "Professional Development & Skill Growth, Enable network members to participate in Tech development, management, maintenance, and support. Create income opportunities through revenue sharing, royalties, and the Innovative Collective Startup Model.",
+                  "Collective Startups & AI Platform Development, Develop AI-driven Tech platforms, systems, and tools for organisations, sector-specific collectives, and governments. Ensure access to AI Tech and support services across all economic sectors.",
+                  "IT/AI Pakistani Services Companies, Establish Pakistani professional-owned IT/AI services companies in every country. Provide stable jobs and income opportunities for IT professionals and Tech service providers.",
+                  "Local Community IT Support & Co-working Spaces, Develop Tech Centers with co-working spaces. Facilitate IT support services to local communities through UPTECH.",
+                  "STEM Careers Promotion, Promote careers in Science, Technology, Engineering and Mathematics to inspire the next generation of tech leaders.",
+                  "Mentorship Programmes & Knowledge Sharing",
                   "Conferences & Seminars on latest tech trends",
                 ].map((act) => (
                   <li key={act} className="flex items-start gap-3">
@@ -116,7 +116,7 @@ export default function ObjectivesPage() {
                 <Cpu className="w-5 h-5 text-[#C41E3A]" strokeWidth={1.5} />
               </div>
               <h3 className="font-heading font-bold text-white text-base mb-2">Collective Startups</h3>
-              <p className="text-white/70 text-base leading-relaxed">Develop AI-driven Tech platforms, systems, and tools for organizations, sector-specific collectives, and governments. Ensure access to AI Tech and support services across all economic sectors.</p>
+              <p className="text-white/70 text-base leading-relaxed">Develop AI-driven Tech platforms, systems, and tools for organisations, sector-specific collectives, and governments. Ensure access to AI Tech and support services across all economic sectors.</p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ background: "#22C55E15", border: "1px solid #22C55E30" }}>

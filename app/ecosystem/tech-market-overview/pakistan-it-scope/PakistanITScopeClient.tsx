@@ -40,7 +40,7 @@ export default function PakistanITScopeClient() {
 
       {/* Sector Tabs */}
       <section id="sectors" className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
             <AnimatedSection>
               <SectionHeader
                 label="Key Sectors"
@@ -57,7 +57,7 @@ export default function PakistanITScopeClient() {
 
       {/* Entry Strategies */}
       <section className="relative bg-[#E8E6E3]">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
             <AnimatedSection>
               <SectionHeader
                 label="How to Enter"
@@ -90,7 +90,7 @@ export default function PakistanITScopeClient() {
 
       {/* Link to Talent Page */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
             <AnimatedSection>
               <Link
                 href="/ecosystem/tech-market-overview/pakistan-talent"

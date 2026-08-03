@@ -1,4 +1,4 @@
-// Directory companies — mock data layer.
+// Directory companies, mock data layer.
 //
 // This module is the single source of truth for the directory pages today.
 // The data shape mirrors what a Clutch-style provider would return so the
@@ -6,7 +6,7 @@
 // database without changing page/component code.
 //
 // All entries here are fictional placeholders. `websiteUrl` and
-// `clutchProfileUrl` are intentionally OMITTED — UI shows "Profile coming
+// `clutchProfileUrl` are intentionally OMITTED, UI shows "Profile coming
 // soon" and hides the Website button until real, verified URLs are added.
 // Never use example.com or other placeholder URLs in this file.
 
@@ -18,7 +18,7 @@ export type CompanyCategory =
   | "Cloud"
   | "Cybersecurity"
   | "Data"
-  // Categories used by real UPTECH members on /pakistan-top-companies — chosen
+  // Categories used by real UPTECH members on /pakistan-top-companies, chosen
   // to reflect what each company actually does (AI/automation, custom software,
   // SaaS, project consulting), not the generic CompanyService bucket.
   | "AI & Automation"
@@ -32,7 +32,7 @@ export interface DirectoryCompany {
   /** URL-friendly identifier. */
   slug: string;
   name: string;
-  /** Primary category bucket — drives which directory the company appears in. */
+  /** Primary category bucket, drives which directory the company appears in. */
   category: CompanyCategory;
   /** Free-form service tags shown on the card. */
   services: string[];
@@ -40,13 +40,13 @@ export interface DirectoryCompany {
   rating?: number;
   /** Total review count from the source. Omitted for verified members without external review data. */
   reviewCount?: number;
-  /** "City, Country" — full readable string. */
+  /** "City, Country"full readable string. */
   location: string;
   country: string;
   description: string;
   /** Optional hosted logo. When absent the card renders initials. */
   logoUrl?: string;
-  /** Optional company website — only set when a real, verified URL is known. */
+  /** Optional company website, only set when a real, verified URL is known. */
   websiteUrl?: string;
   /**
    * Optional public Clutch profile URL (or equivalent source profile).
@@ -62,7 +62,7 @@ export interface DirectoryCompany {
 
 /**
  * 16 placeholder companies covering AI and IT/Software/Cloud/Cybersecurity.
- * Logos and URLs are intentionally omitted — cards render initials and a
+ * Logos and URLs are intentionally omitted, cards render initials and a
  * "Profile coming soon" label. Replace with API data via
  * `lib/companyService.ts` when a real source is wired up.
  */
@@ -138,7 +138,7 @@ export const companies: DirectoryCompany[] = [
     location: "Edinburgh, United Kingdom",
     country: "United Kingdom",
     description:
-      "Modern data stack specialists — Snowflake, dbt, and reverse-ETL pipelines paired with executive-ready analytics.",
+      "Modern data stack specialists, Snowflake, dbt, and reverse-ETL pipelines paired with executive-ready analytics.",
     source: "Mock",
     verified: true,
   },
@@ -183,7 +183,7 @@ export const companies: DirectoryCompany[] = [
     location: "Birmingham, United Kingdom",
     country: "United Kingdom",
     description:
-      "Offensive and defensive security firm — pen tests, managed SOC, and ISO 27001/SOC 2 readiness for scale-ups.",
+      "Offensive and defensive security firm, pen tests, managed SOC, and ISO 27001/SOC 2 readiness for scale-ups.",
     source: "Mock",
     verified: true,
   },
@@ -198,7 +198,7 @@ export const companies: DirectoryCompany[] = [
     location: "Bristol, United Kingdom",
     country: "United Kingdom",
     description:
-      "Managed IT and Microsoft 365 partner for UK SMBs — 24/7 service desk, device management, and modern workplace rollouts.",
+      "Managed IT and Microsoft 365 partner for UK SMBs, 24/7 service desk, device management, and modern workplace rollouts.",
     source: "Mock",
     verified: false,
   },
@@ -213,7 +213,7 @@ export const companies: DirectoryCompany[] = [
     location: "Karachi, Pakistan",
     country: "Pakistan",
     description:
-      "Full-stack product team building React and Node.js platforms for UK and EU clients — design, build, and ongoing iteration.",
+      "Full-stack product team building React and Node.js platforms for UK and EU clients, design, build, and ongoing iteration.",
     source: "Mock",
     verified: false,
   },
@@ -243,7 +243,7 @@ export const companies: DirectoryCompany[] = [
     location: "Amsterdam, Netherlands",
     country: "Netherlands",
     description:
-      "Boutique AI strategy and engineering firm — model selection, fine-tuning, and MLOps for enterprise rollouts.",
+      "Boutique AI strategy and engineering firm, model selection, fine-tuning, and MLOps for enterprise rollouts.",
     source: "Mock",
     verified: true,
   },

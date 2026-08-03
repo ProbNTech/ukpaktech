@@ -10,7 +10,7 @@ interface IndustriesSpotlightProps {
   companies: DirectoryCompany[];
 }
 
-/** Order matters — drives card display order. */
+/** Order matters, drives card display order. */
 const INDUSTRY_ORDER: CompanyCategory[] = [
   "AI & Automation",
   "SaaS Products",
@@ -29,7 +29,7 @@ export function IndustriesSpotlight({ companies }: IndustriesSpotlightProps) {
 
   return (
     <section
-      className="relative py-16 lg:py-24 bg-white overflow-hidden"
+      className="relative py-8 lg:py-12 bg-white overflow-hidden"
       aria-labelledby="industries-heading"
     >
       {/* Soft brand wash */}
@@ -54,7 +54,7 @@ export function IndustriesSpotlight({ companies }: IndustriesSpotlightProps) {
             Built across four core specialisms
           </h2>
           <p className="mt-3 text-base text-[#475569] leading-relaxed">
-            Every member is grouped by what they actually deliver — not generic
+            Every member is grouped by what they actually deliver, not generic
             labels. Click a category in the directory to filter on it.
           </p>
         </div>

@@ -79,7 +79,7 @@ export function SkillDevHeroIllustration() {
           <ellipse cx="260" cy="320" rx="22" ry="2.5" fill="#2563EB" opacity="0.25" />
         </motion.g>
 
-        {/* ── Lightbulb icon (top-left) — no boundary ── */}
+        {/* ── Lightbulb icon (top-left), no boundary ── */}
         <motion.g {...float(0.5, 3.5)}>
           {/* Soft glow */}
           <motion.circle cx="55" cy="80" r="20" fill="#22C55E" opacity="0.12" filter="url(#softBlur)" {...glow(0)} />
@@ -100,7 +100,7 @@ export function SkillDevHeroIllustration() {
           </motion.g>
         </motion.g>
 
-        {/* ── Graduation cap (top-right) — no boundary ── */}
+        {/* ── Graduation cap (top-right), no boundary ── */}
         <motion.g {...float(1, 3.2)}>
           <motion.circle cx="440" cy="55" r="18" fill="#2563EB" opacity="0.1" filter="url(#softBlur)" {...glow(0.5)} />
           {/* Cap diamond */}
@@ -114,7 +114,7 @@ export function SkillDevHeroIllustration() {
           <path d="M424 56 L424 70 Q440 80 456 70 L456 56" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" />
         </motion.g>
 
-        {/* ── Gear/cog icon (right) — no boundary ── */}
+        {/* ── Gear/cog icon (right), no boundary ── */}
         <motion.g {...float(1.5, 2.8)}>
           <motion.circle cx="478" cy="210" r="16" fill="#C41E3A" opacity="0.1" filter="url(#softBlur)" {...glow(1)} />
           <motion.g
@@ -142,7 +142,7 @@ export function SkillDevHeroIllustration() {
           </motion.g>
         </motion.g>
 
-        {/* ── Code brackets icon (left) — no boundary ── */}
+        {/* ── Code brackets icon (left), no boundary ── */}
         <motion.g {...float(0.8, 3)}>
           <motion.circle cx="28" cy="265" r="16" fill="#2563EB" opacity="0.1" filter="url(#softBlur)" {...glow(0.3)} />
           {/* Left bracket */}
@@ -153,7 +153,7 @@ export function SkillDevHeroIllustration() {
           <line x1="34" y1="242" x2="24" y2="288" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round" opacity="0.7" />
         </motion.g>
 
-        {/* ── Trophy/award icon (bottom-right) — no boundary ── */}
+        {/* ── Trophy/award icon (bottom-right), no boundary ── */}
         <motion.g {...float(2, 3.4)}>
           <motion.circle cx="468" cy="358" r="16" fill="#22C55E" opacity="0.1" filter="url(#softBlur)" {...glow(1)} />
           {/* Cup body */}
@@ -174,7 +174,7 @@ export function SkillDevHeroIllustration() {
           />
         </motion.g>
 
-        {/* ── Wi-Fi / connectivity icon (bottom-left) — no boundary ── */}
+        {/* ── Wi-Fi / connectivity icon (bottom-left), no boundary ── */}
         <motion.g {...float(1.2, 3.6)}>
           <motion.circle cx="78" cy="390" r="14" fill="#C41E3A" opacity="0.1" filter="url(#softBlur)" {...glow(0.8)} />
           <motion.g {...glow(0.8)}>
@@ -185,7 +185,7 @@ export function SkillDevHeroIllustration() {
           </motion.g>
         </motion.g>
 
-        {/* ── Rocket icon (top-center) — no boundary ── */}
+        {/* ── Rocket icon (top-center), no boundary ── */}
         <motion.g {...float(0.3, 3.3)}>
           <motion.circle cx="240" cy="40" r="14" fill="#C41E3A" opacity="0.08" filter="url(#softBlur)" {...glow(0.6)} />
           {/* Rocket body */}

@@ -53,7 +53,7 @@ const sectors = [
 const faqs = [
   { question: "What types of contracts are available?", answer: "We facilitate fixed-term contracts (3\u201312 months), project-based engagements, and contract-to-hire arrangements. Contract terms are flexible and can be tailored to the needs of both employers and professionals." },
   { question: "How is compliance handled?", answer: "We manage all compliance aspects including work permits, tax obligations, employment law, and contractual agreements. Our legal team ensures all placements comply with UK and Pakistan employment regulations." },
-  { question: "What skill levels are available?", answer: "Our talent pool ranges from mid-level professionals with 3+ years of experience to senior specialists and technical leads with 10+ years. We also support graduate placements through our partnership programs." },
+  { question: "What skill levels are available?", answer: "Our talent pool ranges from mid-level professionals with 3+ years of experience to senior specialists and technical leads with 10+ years. We also support graduate placements through our partnership programmes." },
   { question: "How long does the matching process take?", answer: "Typical matching takes 2\u20134 weeks from requirement submission to candidate shortlist. For urgent requirements, we offer an expedited process that can deliver candidates within 5\u20137 business days." },
   { question: "What are the costs for employers?", answer: "Employer fees are based on the contract value and duration. UPTECH members receive preferential rates. Contact us for a detailed pricing structure tailored to your requirements." },
 ];
@@ -81,7 +81,7 @@ export default function OverseasEmploymentPage() {
 
       {/* ── Stats Bar ── */}
       <section className="relative bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
               <motion.div
@@ -112,7 +112,7 @@ export default function OverseasEmploymentPage() {
       {/* ── Intro Section ── */}
       <section className="relative bg-white">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10">
           <AnimatedSection>
             <div>
               <SectionHeader label="Overview" title="Our Focus" color="blue" />
@@ -131,7 +131,7 @@ export default function OverseasEmploymentPage() {
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#22C55E]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <div className="grid lg:grid-cols-2 gap-6">
               {/* Employers */}
@@ -217,7 +217,7 @@ export default function OverseasEmploymentPage() {
       {/* ── How It Works ── */}
       <section className="relative bg-white">
         <div className="absolute top-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Process" title="How It Works" subtitle="A structured, compliant process from registration to placement." color="blue" />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -257,7 +257,7 @@ export default function OverseasEmploymentPage() {
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
         <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full blur-[120px] opacity-5 bg-[#2563EB]" />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="Sectors" title="Technology Sectors We Cover" subtitle="Our talent pool spans the full spectrum of modern technology disciplines." color="green" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -296,7 +296,7 @@ export default function OverseasEmploymentPage() {
       {/* ── FAQ ── */}
       <section className="relative bg-white">
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23000000' stroke-width='0.5'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-14 lg:py-20 relative z-10">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8 lg:py-10 relative z-10">
           <AnimatedSection>
             <SectionHeader label="FAQ" title="Frequently Asked Questions" subtitle="Common questions about overseas contract employment." color="red" />
             <FAQSection faqs={faqs} />

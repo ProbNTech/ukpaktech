@@ -15,30 +15,30 @@
     --color-5: 90 100% 63%;
 
     /* ─── Editorial palette (inspired by ukproptech.com) ─── */
-    /* Warm off-white backgrounds — the signature look */
+    /* Warm off-white backgrounds, the signature look */
     --bg-default: #FFFFFF;
     --bg-alt: #FFFFFF;
     --bg-white: #FFFFFF;
 
-    /* Dark navy text — almost black, editorial weight */
+    /* Dark navy text, almost black, editorial weight */
     --text-primary: #1C1F2E;
     --text-secondary: #3D4152;
     --text-muted: #7A7E8F;
     --text-on-dark: #FFFFFF;
 
-    /* Divider / rule color — used in section header lines */
+    /* Divider / rule color, used in section header lines */
     --rule-color: #C5C2BE;
     --border-default: #D8D5D0;
     --border-subtle: #E4E1DC;
 
-    /* Brand colors — blue primary, green accent */
+    /* Brand colors, blue primary, green accent */
     --primary: #2563EB;
     --primary-hover: #1D4ED8;
     --primary-foreground: #FFFFFF;
     --accent-green: #22C55E;
     --accent-green-hover: #16A34A;
 
-    /* Editorial accent — warm orange-red for labels */
+    /* Editorial accent, warm orange-red for labels */
     --accent-label: #2563EB;
 
     /* Dark section background */
@@ -48,7 +48,7 @@
     /* Layout */
     --container-width: 1200px;
 
-    /* Radius — more restrained, editorial feel */
+    /* Radius, more restrained, editorial feel */
     --radius-sm: 4px;
     --radius-md: 6px;
     --radius-lg: 8px;
@@ -57,7 +57,7 @@
     --radius-card: 8px;
     --radius-pill: 9999px;
 
-    /* Shadows — very subtle for editorial look */
+    /* Shadows, very subtle for editorial look */
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
     --shadow-lg: 0 8px 24px rgba(0,0,0,0.10);
@@ -276,7 +276,7 @@
     transition: background-color 0.4s ease, color 0.4s ease;
   }
 
-  /* Long-form content justification — About, Terms, GDPR, Code of Conduct, FAQs, Privacy, etc. */
+  /* Long-form content justification, About, Terms, GDPR, Code of Conduct, FAQs, Privacy, etc. */
   .content-body p {
     text-align: justify;
   }
@@ -591,7 +591,7 @@
   animation: slide-up 0.4s ease-out forwards;
 }
 
-/* WhatsApp floating button — smooth single-ring pulse */
+/* WhatsApp floating button, smooth single-ring pulse */
 @keyframes wa-pulse {
   0% {
     transform: scale(1);

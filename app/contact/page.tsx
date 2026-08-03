@@ -13,6 +13,7 @@ import {
   Mail, MapPin, Clock, Globe2, Users, Briefcase,
   Handshake, HelpCircle, ArrowUpRight, Send,
   Megaphone, Calendar, Phone, Zap, Shield,
+  Facebook, Instagram, Linkedin, Twitter,
 } from "lucide-react";
 
 /* ── Contact info cards ──────────────────────────────────────────── */
@@ -57,7 +58,7 @@ const enquiryTypes = [
   { icon: Users, label: "Membership", desc: "Join UPTECH as an individual, startup, SME, or corporate member.", color: "#22C55E" },
   { icon: Megaphone, label: "Sponsorship", desc: "Sponsor events, programmes, and initiatives across the UK–Pakistan corridor.", color: "#C41E3A" },
   { icon: Calendar, label: "Events & Media", desc: "Event participation, press enquiries, and media partnerships.", color: "#2563EB" },
-  { icon: HelpCircle, label: "General Enquiry", desc: "Anything else — we're happy to help with your questions.", color: "#22C55E" },
+  { icon: HelpCircle, label: "General Enquiry", desc: "Anything else, we're happy to help with your questions.", color: "#22C55E" },
 ];
 
 /* ── What happens next steps ─────────────────────────────────────── */
@@ -76,7 +77,7 @@ export default function ContactPage() {
       <PageHero
         label="Contact Us"
         title="Get in Touch"
-        subtitle="Whether you're looking to partner, join, sponsor, or simply learn more — we'd love to hear from you."
+        subtitle="Whether you're looking to partner, join, sponsor, or simply learn more, we'd love to hear from you."
         image="/image/banners/banner54.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
@@ -86,7 +87,7 @@ export default function ContactPage() {
       </PageHero>
 
       {/* ── Contact Info Cards ─────────────────────────────────────────── */}
-      <section className="relative z-20 bg-white py-10">
+      <section className="relative z-20 bg-white py-8">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((item, i) => {
@@ -127,7 +128,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── Enquiry Types ─────────────────────────────────────────────── */}
-      <section id="enquiry-types" className="relative bg-[#E8E6E3] py-10 overflow-hidden">
+      <section id="enquiry-types" className="relative bg-[#E8E6E3] py-8 overflow-hidden">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -173,7 +174,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── Form + Sidebar ────────────────────────────────────────────── */}
-      <section className="relative py-10 overflow-hidden bg-white">
+      <section className="relative py-8 overflow-hidden bg-white">
         <div className="relative px-8 sm:px-12 lg:px-16 xl:px-20">
           <AnimatedSection>
             <SectionHeader
@@ -253,12 +254,46 @@ export default function ContactPage() {
                   </a>
                 </motion.div>
 
-                {/* Membership CTA card */}
+                {/* Follow us card */}
                 <motion.div
                   initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: 0.3 }}
+                  className="relative bg-white border border-[#D8D5CF] rounded-2xl p-7 overflow-hidden shadow-sm"
+                >
+                  <h3 className="font-heading font-bold text-base text-[#1C1F2E] mb-1">Follow Us</h3>
+                  <p className="text-base text-[#7A7E8F] mb-5">Stay connected on social media</p>
+                  <div className="flex gap-3">
+                    {[
+                      { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/people/UK-Pakistan-Tech-Forum/61589437029561/" },
+                      { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/uk-pakistan-tech-forum-uptech/" },
+                      { icon: Twitter, label: "X (Twitter)", href: "https://x.com/ukpaktech" },
+                      { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/ukpaktech/" },
+                    ].map((social) => {
+                      const Icon = social.icon;
+                      return (
+                        <a
+                          key={social.label}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={social.label}
+                          className="w-11 h-11 rounded-xl bg-[#F5F4F1] border border-[#D8D5CF] flex items-center justify-center text-[#475569] hover:text-white hover:bg-[#2563EB] hover:border-[#2563EB] transition-all duration-300"
+                        >
+                          <Icon className="w-5 h-5" strokeWidth={1.5} />
+                        </a>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+
+                {/* Membership CTA card */}
+                <motion.div
+                  initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
                   className="relative bg-[#2563EB]/5 border border-[#2563EB]/15 rounded-2xl p-7 overflow-hidden"
                 >
                   <div className="relative">
@@ -280,7 +315,7 @@ export default function ContactPage() {
       <GlobalCTA
         label="Connect with Us"
         title="Let’s Build the Future Together"
-        subtitle="Whether you represent a startup, corporation, government body, or academic institution — UPTECH is your gateway to the UK–Pakistan technology partnership."
+        subtitle="Whether you represent a startup, corporation, government body, or academic institution, UPTECH is your gateway to the UK–Pakistan technology partnership."
         primaryButtonText="Apply for Membership"
         primaryButtonLink="/membership#apply"
         secondaryButtonText="About UPTECH"

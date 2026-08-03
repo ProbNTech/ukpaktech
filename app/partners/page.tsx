@@ -68,7 +68,7 @@ export default function PartnersPage() {
             transition={{ duration: 0.4, delay: 0.2 }}
           >
             Trusted organisations and innovators across the UK–Pakistan technology
-            corridor — showcasing services, solutions, and expertise.
+            corridor, showcasing services, solutions, and expertise.
           </motion.p>
 
           {/* Stats */}
@@ -96,7 +96,7 @@ export default function PartnersPage() {
       </section>
 
       {/* ═══ Filters + Grid ═══ */}
-      <section className="py-10 lg:py-14 bg-white">
+      <section className="py-8 lg:py-10 bg-white">
         <div className="px-8 sm:px-12 lg:px-16 xl:px-20">
           {/* Filter bar */}
           <div className="sticky top-20 z-30 mb-10 -mx-2 px-2 py-3 bg-white/80 backdrop-blur-md">
@@ -151,7 +151,7 @@ export default function PartnersPage() {
           </AnimatePresence>
 
           {filtered.length === 0 && (
-            <div className="text-center py-20 rounded-2xl border border-[#E5E7EB] mt-4">
+            <div className="text-center py-10 rounded-2xl border border-[#E5E7EB] mt-4">
               <p className="text-lg text-[#9CA3AF]">No partners found in this category.</p>
             </div>
           )}

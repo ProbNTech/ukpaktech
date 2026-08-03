@@ -83,7 +83,7 @@ export function CompanyFilters({
           />
         </div>
 
-        {/* Category (industry) — rendered only when caller provides options */}
+        {/* Category (industry), rendered only when caller provides options */}
         {hasCategory && (
           <div className="lg:col-span-2">
             <label htmlFor="directory-category" className="sr-only">
@@ -145,7 +145,7 @@ export function CompanyFilters({
           </select>
         </div>
 
-        {/* Rating — omitted on directories that show Category instead */}
+        {/* Rating, omitted on directories that show Category instead */}
         {!hasCategory && (
           <div className="lg:col-span-2">
             <label htmlFor="directory-rating" className="sr-only">

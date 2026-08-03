@@ -341,7 +341,7 @@ export default function MembershipTermsClient() {
         </AnimatedSection>
       </Section>
 
-      {/* ── Disciplinary Procedure — DARK ────────────────────────── */}
+      {/* ── Disciplinary Procedure, DARK ────────────────────────── */}
       <Section variant="dark">
         <AnimatedSection>
           <SectionHeader label="Enforcement" title="Disciplinary Procedure" color="green" dark />
@@ -401,7 +401,7 @@ export default function MembershipTermsClient() {
         </AnimatedSection>
       </Section>
 
-      {/* ── Legal Protections — DARK ─────────────────────────────── */}
+      {/* ── Legal Protections, DARK ─────────────────────────────── */}
       <Section variant="dark">
         <AnimatedSection>
           <SectionHeader label="Legal" title="Legal Protections & Compliance" subtitle="Your rights and our legal obligations under UK law." color="green" dark />
@@ -483,7 +483,7 @@ export default function MembershipTermsClient() {
         </AnimatedSection>
       </Section>
 
-      {/* ── FAQs — DARK ──────────────────────────────────────────── */}
+      {/* ── FAQs, DARK ──────────────────────────────────────────── */}
       <Section variant="dark">
         <AnimatedSection>
           <SectionHeader label="FAQs" title="Frequently Asked Questions" color="red" dark />

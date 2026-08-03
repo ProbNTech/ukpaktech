@@ -10,7 +10,7 @@ import { GlobalCTA } from "@/components/GlobalCTA";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore UPTECH's comprehensive services — business networks, SME support, digital marketing, overseas employment, mentorship, and business support.",
+    "Explore UPTECH's comprehensive services, business networks, SME support, digital marketing, overseas employment, mentorship, and business support.",
   openGraph: {
     title: "Services | UPTECH",
     description:
@@ -29,7 +29,7 @@ export default function ServicesPage() {
 
       {/* Stats Bar */}
       <section className="bg-white">
-        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-12">
+        <div className="px-8 sm:px-12 lg:px-16 xl:px-20 py-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { value: "6", label: "Core Services", color: "#2563EB" },
@@ -61,7 +61,7 @@ export default function ServicesPage() {
               End-to-End Support for the UK–Pakistan Tech Ecosystem
             </h2>
             <p className="text-[#3D4152] text-base leading-relaxed mb-5">
-              UPTECH provides a comprehensive suite of services designed to support technology companies, startups, and professionals at every stage of their journey. From business networks and mentorship to investment support and overseas employment — we deliver the infrastructure, connections, and expertise that drive cross-border growth.
+              UPTECH provides a comprehensive suite of services designed to support technology companies, startups, and professionals at every stage of their journey. From business networks and mentorship to investment support and overseas employment, we deliver the infrastructure, connections, and expertise that drive cross-border growth.
             </p>
             <p className="text-[#3D4152] text-base leading-relaxed">
               Each service is delivered directly by UPTECH or through our vetted partner network, ensuring quality, compliance, and real results.
