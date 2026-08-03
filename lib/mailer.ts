@@ -31,19 +31,21 @@ export type AlertEmail = {
   text: string;
   html?: string;
   replyTo?: string;
+  /** Override the default ALERT_TO recipient (e.g. emailing a registrant). */
+  to?: string;
 };
 
-export async function sendAlert({ subject, text, html, replyTo }: AlertEmail) {
+export async function sendAlert({ subject, text, html, replyTo, to }: AlertEmail) {
   const from = process.env.SMTP_FROM || process.env.SMTP_USER;
-  const to = process.env.ALERT_TO;
+  const recipient = to || process.env.ALERT_TO;
 
-  if (!to) throw new Error("Missing ALERT_TO env var");
+  if (!recipient) throw new Error("Missing recipient (set ALERT_TO or pass `to`)");
 
   const transporter = getTransporter();
 
   await transporter.sendMail({
     from,
-    to,
+    to: recipient,
     replyTo,
     subject,
     text,

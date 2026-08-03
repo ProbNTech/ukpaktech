@@ -1,3 +1,7 @@
+const supabaseHostname = process.env.SUPABASE_URL
+  ? new URL(process.env.SUPABASE_URL).hostname
+  : undefined;
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -6,6 +10,7 @@ const nextConfig = {
   images: {
     unoptimized: false,
     formats: ['image/webp', 'image/avif'],
+    qualities: [75, 85, 90],
     remotePatterns: [
       {
         protocol: 'https',
@@ -19,6 +24,15 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'profit.pakistantoday.com.pk',
       },
+      ...(supabaseHostname
+        ? [
+            {
+              protocol: 'https',
+              hostname: supabaseHostname,
+              pathname: '/storage/v1/object/public/vendor-logos/**',
+            },
+          ]
+        : []),
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],

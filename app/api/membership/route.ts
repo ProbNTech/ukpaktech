@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { appendRow } from "@/lib/google-sheets";
 import { renderRowsHtml, renderRowsText, sendAlert } from "@/lib/mailer";
+import { createMembershipApplication } from "@/lib/vendorService";
 
-const SHEET_ID = process.env.SUBMISSIONS_SHEET_ID!;
+export const runtime = "nodejs";
+
+const SHEET_ID = process.env.SUBMISSIONS_SHEET_ID;
 const TAB_NAME = "Memberships";
 
 const COUNTRY_LABELS: Record<string, string> = {
@@ -14,28 +17,18 @@ const hasCityList = (country: string) => country === "uk" || country === "pakist
 
 const HEADERS = [
   "Timestamp",
-  // Organisation
   "Organisation Name",
-  "Employees",
-  "Registration No.",
+  "Company Type",
   "Country",
   "City",
-  "Address",
-  "Postal Code",
-  "Phone",
-  "WhatsApp",
   "Website",
-  "Core Products/Services",
-  "Organisation Profile",
-  // Industry
-  "Sectors",
-  "Other Sector",
+  "Short Description",
+  "Services",
+  "Logo URL",
   // Applicant
   "Contact Name",
-  "Contact Job Title",
   "Contact Email",
   "Contact Phone",
-  "Contact Nationality",
   // Consents
   "Terms Accepted",
   "Membership Terms Accepted",
@@ -67,45 +60,68 @@ export async function POST(req: NextRequest) {
       ? body.cityOther?.trim() || ""
       : body.city?.trim() || "";
 
+    const services: string[] = Array.isArray(body.services)
+      ? body.services.filter((s: unknown) => typeof s === "string" && s.trim())
+      : [];
+
+    // ── Persist as a pending membership application in Supabase ──
+    try {
+      await createMembershipApplication({
+        company_name: body.orgName.trim(),
+        website: body.website?.trim() || undefined,
+        country: country || undefined,
+        city: city || undefined,
+        company_type: body.companyType?.trim() || undefined,
+        short_description: body.shortDescription?.trim() || undefined,
+        services: services.length ? services : undefined,
+        logo_url: body.logoUrl?.trim() || undefined,
+        contact_name: body.personName?.trim() || undefined,
+        contact_email: body.personEmail?.trim() || undefined,
+        contact_phone: body.personPhone?.trim() || undefined,
+        terms_accepted: !!body.termsAccepted,
+        membership_terms_accepted: !!body.membershipTermsAccepted,
+        arbitration_accepted: !!body.arbitrationAccepted,
+      });
+    } catch (dbErr) {
+      // Don't lose the application if Supabase isn't reachable — Sheets + email
+      // below still capture it. Log loudly so it can be reconciled.
+      console.error("Membership Supabase insert failed:", dbErr);
+    }
+
     const values = [
       timestamp,
-      // Organisation
       body.orgName?.trim() || "",
-      body.employees || "",
-      body.registrationNo?.trim() || "",
+      body.companyType?.trim() || "",
       country,
       city,
-      body.address?.trim() || "",
-      body.postalCode?.trim() || "",
-      body.orgPhone?.trim() || "",
-      body.whatsapp?.trim() || "",
       body.website?.trim() || "",
-      body.coreProducts?.trim() || "",
-      body.orgProfile?.trim() || "",
-      // Industry
-      Array.isArray(body.selectedSectors) ? body.selectedSectors.join(", ") : "",
-      body.otherSector?.trim() || "",
-      // Applicant
+      body.shortDescription?.trim() || "",
+      services.join(", "),
+      body.logoUrl?.trim() || "",
       body.personName?.trim() || "",
-      body.personJobTitle?.trim() || "",
       body.personEmail?.trim() || "",
       body.personPhone?.trim() || "",
-      body.personNationality?.trim() || "",
-      // Consents
       body.termsAccepted ? "Yes" : "No",
       body.membershipTermsAccepted ? "Yes" : "No",
       body.arbitrationAccepted ? "Yes" : "No",
     ];
 
-    await appendRow(SHEET_ID, TAB_NAME, HEADERS, values);
+    // ── Mirror to Google Sheets (raw submission log — every request, approved or not) ──
+    if (SHEET_ID) {
+      try {
+        await appendRow(SHEET_ID, TAB_NAME, HEADERS, values);
+      } catch (sheetErr) {
+        console.error("Membership Sheets append failed:", sheetErr);
+      }
+    }
 
+    // ── Alert the membership team ──
     try {
       const rows: Array<[string, unknown]> = HEADERS.map((h, i) => [h, values[i]]);
-
       await sendAlert({
         subject: `New membership application, ${body.orgName?.trim() || "(unknown org)"}`,
         text: renderRowsText(rows),
-        html: `<p style="font-family:system-ui,sans-serif;font-size:14px;">New membership application submitted via the UPTECH website.</p>${renderRowsHtml(
+        html: `<p style="font-family:system-ui,sans-serif;font-size:14px;">New membership application submitted via the UPTECH website. Review &amp; approve it in the portfolio admin to invite them to complete their full profile.</p>${renderRowsHtml(
           rows
         )}`,
         replyTo: body.personEmail?.trim() || undefined,

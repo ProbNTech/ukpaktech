@@ -10,51 +10,42 @@ import {
   ArrowRight,
   AlertCircle,
   Building2,
-  Layers,
   UserRound,
   ShieldCheck,
-  Users,
-  FileText,
   Globe,
   MapPin,
   Phone,
-  MessageCircle,
-  Package,
   Mail,
-  Briefcase,
-  Flag,
   RotateCcw,
   X,
+  Upload,
+  Loader2,
+  FileText,
+  Layers,
 } from "lucide-react";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
-/* ─── Industry sectors ─── */
-const sectors = [
-  "Artificial Intelligence & Machine Learning",
-  "Software Development & SaaS",
+/* ─── Option lists (mirror lib/vendorService.ts) ─── */
+const COMPANY_TYPES = ["Software House", "Agency", "Consultancy", "Outsourcing", "Other"];
+const SERVICE_OPTIONS = [
+  "Software Development - Web",
+  "Software Development - Mobile",
+  "Software Development - SaaS",
+  "UI/UX Design",
+  "Cloud Services - AWS",
+  "Cloud Services - Azure",
+  "Cloud Services - GCP",
+  "DevOps",
+  "AI & Machine Learning",
   "Cybersecurity",
-  "Cloud Computing & Infrastructure",
-  "FinTech & Digital Banking",
-  "HealthTech & BioTech",
-  "EdTech & E-Learning",
-  "E-Commerce & Retail Tech",
-  "Clean Technology & GreenTech",
-  "Telecommunications",
-  "Data Analytics & Big Data",
-  "IoT & Smart Systems",
-  "Blockchain & Web3",
-  "Consulting & Professional Services",
-  "Manufacturing & Industrial Tech",
-  "Logistics & Supply Chain Tech",
-  "Legal & Regulatory Tech",
-  "Real Estate & PropTech",
-  "Media & Creative Technology",
-  "Government & Public Sector",
-  "Academic & Research",
-  "Non-Profit & Social Enterprise",
+  "QA & Testing",
+  "ERP/CRM Development",
+  "API Integrations",
 ];
+
+const DESCRIPTION_MAX = 220;
 
 /* ─── City lists per country ─── */
 const ukCities = [
@@ -124,30 +115,20 @@ const baseInputClass =
   "w-full pl-11 pr-4 py-3.5 rounded-xl bg-white border text-[#0F172A] text-[15px] placeholder:text-[#94A3B8] focus:outline-none focus:ring-4 focus:ring-[#2563EB]/15 hover:border-[#94A3B8] transition-all duration-200 shadow-sm";
 const baseSelectClass =
   "w-full pl-11 pr-10 py-3.5 rounded-xl bg-white border text-[#0F172A] text-[15px] focus:outline-none focus:ring-4 focus:ring-[#2563EB]/15 hover:border-[#94A3B8] transition-all duration-200 appearance-none cursor-pointer shadow-sm";
-const baseTextareaClass =
-  "w-full pl-11 pr-4 py-3.5 rounded-xl bg-white border text-[#0F172A] text-[15px] placeholder:text-[#94A3B8] focus:outline-none focus:ring-4 focus:ring-[#2563EB]/15 hover:border-[#94A3B8] transition-all duration-200 shadow-sm";
 
 /* ─── Form data type ─── */
 interface FormData {
   orgName: string;
-  registrationNo: string;
-  whatsapp: string;
-  postalCode: string;
-  address: string;
+  companyType: string;
+  companyTypeOther: string;
   country: string;
   city: string;
   cityOther: string;
-  orgPhone: string;
   website: string;
-  employees: string;
-  coreProducts: string;
-  otherSector: string;
-  orgProfile: string;
+  shortDescription: string;
   personName: string;
-  personJobTitle: string;
   personEmail: string;
   personPhone: string;
-  personNationality: string;
   termsAccepted: boolean;
   membershipTermsAccepted: boolean;
   arbitrationAccepted: boolean;
@@ -155,24 +136,16 @@ interface FormData {
 
 const initialFormData: FormData = {
   orgName: "",
-  registrationNo: "",
-  whatsapp: "",
-  postalCode: "",
-  address: "",
+  companyType: "",
+  companyTypeOther: "",
   country: "",
   city: "",
   cityOther: "",
-  orgPhone: "",
   website: "",
-  employees: "",
-  coreProducts: "",
-  otherSector: "",
-  orgProfile: "",
+  shortDescription: "",
   personName: "",
-  personJobTitle: "",
   personEmail: "",
   personPhone: "",
-  personNationality: "",
   termsAccepted: false,
   membershipTermsAccepted: false,
   arbitrationAccepted: false,
@@ -190,7 +163,8 @@ const CONSENT_FIELDS: ReadonlyArray<keyof FormData> = [
 type DraftPayload = {
   savedAt: number;
   formData: Record<string, string>;
-  selectedSectors: string[];
+  services: string[];
+  logoUrl: string;
 };
 
 function loadDraft(): DraftPayload | null {
@@ -219,8 +193,12 @@ function clearDraft() {
   }
 }
 
-function hasMeaningfulContent(formData: FormData, selectedSectors: string[]): boolean {
-  if (selectedSectors.length > 0) return true;
+function hasMeaningfulContent(
+  formData: FormData,
+  services: string[],
+  logoUrl: string
+): boolean {
+  if (services.length > 0 || logoUrl) return true;
   for (const [key, val] of Object.entries(formData)) {
     if (CONSENT_FIELDS.includes(key as keyof FormData)) continue;
     if (typeof val === "string" && val.trim() !== "") return true;
@@ -279,7 +257,10 @@ function StepHeader({
 export default function MembershipApplyForm() {
   const shouldReduceMotion = useReducedMotion();
   const [formData, setFormData] = useState<FormData>(initialFormData);
-  const [selectedSectors, setSelectedSectors] = useState<string[]>([]);
+  const [services, setServices] = useState<string[]>([]);
+  const [serviceInput, setServiceInput] = useState("");
+  const [logoUrl, setLogoUrl] = useState("");
+  const [uploadingLogo, setUploadingLogo] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [shake, setShake] = useState(false);
@@ -304,7 +285,8 @@ export default function MembershipApplyForm() {
         }
         return merged;
       });
-      setSelectedSectors(Array.isArray(draft.selectedSectors) ? draft.selectedSectors : []);
+      setServices(Array.isArray(draft.services) ? draft.services : []);
+      setLogoUrl(typeof draft.logoUrl === "string" ? draft.logoUrl : "");
       setRestoredAt(draft.savedAt);
     }
     setHydrated(true);
@@ -313,7 +295,7 @@ export default function MembershipApplyForm() {
   // Debounced auto-save (skip until hydrated, while submitting, after success, or when empty)
   useEffect(() => {
     if (!hydrated || formSubmitted || submitting) return;
-    if (!hasMeaningfulContent(formData, selectedSectors)) return;
+    if (!hasMeaningfulContent(formData, services, logoUrl)) return;
 
     const t = setTimeout(() => {
       try {
@@ -323,7 +305,8 @@ export default function MembershipApplyForm() {
         const payload: DraftPayload = {
           savedAt: Date.now(),
           formData: persistable,
-          selectedSectors,
+          services,
+          logoUrl,
         };
         window.localStorage.setItem(DRAFT_STORAGE_KEY, JSON.stringify(payload));
       } catch {
@@ -332,11 +315,13 @@ export default function MembershipApplyForm() {
     }, 600);
 
     return () => clearTimeout(t);
-  }, [formData, selectedSectors, hydrated, formSubmitted, submitting]);
+  }, [formData, services, logoUrl, hydrated, formSubmitted, submitting]);
 
   const handleStartFresh = () => {
     setFormData(initialFormData);
-    setSelectedSectors([]);
+    setServices([]);
+    setServiceInput("");
+    setLogoUrl("");
     setErrors({});
     setSubmitError("");
     clearDraft();
@@ -350,6 +335,9 @@ export default function MembershipApplyForm() {
         next.city = "";
         next.cityOther = "";
       }
+      if (field === "companyType" && value !== "Other") {
+        next.companyTypeOther = "";
+      }
       return next;
     });
     if (errors[field as string]) {
@@ -361,18 +349,51 @@ export default function MembershipApplyForm() {
     }
   };
 
-  const toggleSector = (sector: string) => {
-    setSelectedSectors((prev) =>
-      prev.includes(sector) ? prev.filter((s) => s !== sector) : [...prev, sector]
-    );
-    if (errors.sectors) {
+  const clearServiceError = () => {
+    if (errors.services) {
       setErrors((prev) => {
         const next = { ...prev };
-        delete next.sectors;
+        delete next.services;
         return next;
       });
     }
   };
+
+  const addService = (raw: string) => {
+    const val = raw.trim();
+    if (!val) return;
+    setServices((cur) =>
+      cur.some((x) => x.toLowerCase() === val.toLowerCase()) ? cur : [...cur, val]
+    );
+    setServiceInput("");
+    clearServiceError();
+  };
+
+  const removeService = (s: string) => {
+    setServices((cur) => cur.filter((x) => x !== s));
+  };
+
+  async function uploadLogo(file: File) {
+    setUploadingLogo(true);
+    setSubmitError("");
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      const res = await fetch("/api/membership/logo", { method: "POST", body: fd });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Upload failed.");
+      setLogoUrl(data.url);
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next.logoUrl;
+        return next;
+      });
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Logo upload failed.");
+    } finally {
+      setUploadingLogo(false);
+    }
+  }
 
   const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const isValidPhone = (phone: string) => /^[+]?[\d\s()-]{7,}$/.test(phone);
@@ -381,7 +402,10 @@ export default function MembershipApplyForm() {
     const newErrors: Record<string, string> = {};
 
     if (!formData.orgName.trim()) newErrors.orgName = "Organisation name is required";
-    if (!formData.address.trim()) newErrors.address = "Address is required";
+    if (!formData.companyType) newErrors.companyType = "Please select a company type";
+    else if (formData.companyType === "Other" && !formData.companyTypeOther.trim()) {
+      newErrors.companyTypeOther = "Please specify your company type";
+    }
     if (!formData.country) newErrors.country = "Please select a country";
     else if (!hasCityList(formData.country)) {
       if (!formData.cityOther.trim()) newErrors.cityOther = "Please enter your city";
@@ -391,19 +415,18 @@ export default function MembershipApplyForm() {
         newErrors.cityOther = "Please enter your city";
       }
     }
-    if (!formData.orgPhone.trim()) newErrors.orgPhone = "Phone number is required";
-    else if (!isValidPhone(formData.orgPhone)) newErrors.orgPhone = "Please enter a valid phone number";
-    if (!formData.coreProducts.trim()) newErrors.coreProducts = "Please describe your core products/services";
     if (formData.website && !/^https?:\/\/.+/.test(formData.website)) {
       newErrors.website = "Please enter a valid URL (starting with http:// or https://)";
     }
-
-    if (selectedSectors.length === 0 && !formData.otherSector.trim()) {
-      newErrors.sectors = "Please select at least one sector or specify other";
+    if (!formData.shortDescription.trim()) {
+      newErrors.shortDescription = "A short description is required";
+    } else if (formData.shortDescription.trim().length > DESCRIPTION_MAX) {
+      newErrors.shortDescription = `Please keep it under ${DESCRIPTION_MAX} characters`;
     }
+    if (services.length === 0) newErrors.services = "Select at least one service";
+    if (!logoUrl) newErrors.logoUrl = "Please upload your company logo";
 
     if (!formData.personName.trim()) newErrors.personName = "Name is required";
-    if (!formData.personJobTitle.trim()) newErrors.personJobTitle = "Job title is required";
     if (!formData.personEmail.trim()) newErrors.personEmail = "Email is required";
     else if (!isValidEmail(formData.personEmail)) newErrors.personEmail = "Please enter a valid email address";
     if (!formData.personPhone.trim()) newErrors.personPhone = "Phone number is required";
@@ -446,7 +469,12 @@ export default function MembershipApplyForm() {
     try {
       const payload = {
         ...formData,
-        selectedSectors,
+        companyType:
+          formData.companyType === "Other"
+            ? formData.companyTypeOther.trim()
+            : formData.companyType,
+        services,
+        logoUrl,
       };
       const res = await fetch("/api/membership", {
         method: "POST",
@@ -485,23 +513,9 @@ export default function MembershipApplyForm() {
         : "border-[#E2E8F0] focus:border-[#2563EB]"
     }`;
 
-  const textareaClass = (field: string) =>
-    `${baseTextareaClass} ${
-      errors[field]
-        ? "border-[#C41E3A] bg-[#FEF2F4] focus:ring-[#C41E3A]/15"
-        : "border-[#E2E8F0] focus:border-[#2563EB]"
-    }`;
-
   const InputIcon = ({ icon: Icon }: { icon: React.ComponentType<{ className?: string; strokeWidth?: number }> }) => (
     <Icon
       className="absolute left-3.5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-[#94A3B8] pointer-events-none"
-      strokeWidth={1.75}
-    />
-  );
-
-  const TextareaIcon = ({ icon: Icon }: { icon: React.ComponentType<{ className?: string; strokeWidth?: number }> }) => (
-    <Icon
-      className="absolute left-3.5 top-4 w-[18px] h-[18px] text-[#94A3B8] pointer-events-none"
       strokeWidth={1.75}
     />
   );
@@ -555,6 +569,7 @@ export default function MembershipApplyForm() {
       };
 
   const cityOptions = citiesFor(formData.country);
+  const descriptionLength = formData.shortDescription.trim().length;
 
   return (
     <section id="apply" className="scroll-mt-24">
@@ -602,7 +617,7 @@ export default function MembershipApplyForm() {
             <SectionHeader
               label="Membership Application"
               title="Apply for Membership"
-              subtitle="Tell us about your organisation. UPTECH will review your application and respond within 5 business days."
+              subtitle="A few quick details to get your company listed in the UPTECH directory. You can complete a full capability profile after approval."
               color="blue"
             />
           </AnimatedSection>
@@ -667,71 +682,74 @@ export default function MembershipApplyForm() {
                 <div className="relative space-y-9 mt-2">
                   <ErrorBanner />
 
-                  {/* SECTION 1, Organisation */}
+                  {/* SECTION 1 — Company (everything the directory card shows) */}
                   <motion.section {...sectionAnim}>
                     <StepHeader
                       index="01"
                       icon={Building2}
-                      title="Organisation Details"
+                      title="Company Details"
+                      hint="shown on your directory card"
                       color="#2563EB"
                     />
 
                     <div className="space-y-5">
-                      <div data-field="orgName">
-                        <label className="block text-sm font-semibold text-[#334155] mb-2">
-                          Organisation Name <span className="text-[#C41E3A]">*</span>
-                        </label>
-                        <div className="relative">
-                          <InputIcon icon={Building2} />
-                          <input
-                            type="text"
-                            value={formData.orgName}
-                            onChange={(e) => updateField("orgName", e.target.value)}
-                            placeholder="Enter your organisation name"
-                            className={inputClass("orgName")}
-                          />
-                        </div>
-                        <FieldError field="orgName" />
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                        <div>
-                          <label className="block text-sm font-semibold text-[#334155] mb-2">Number of Employees</label>
-                          <div className="relative">
-                            <InputIcon icon={Users} />
-                            <select
-                              value={formData.employees}
-                              onChange={(e) => updateField("employees", e.target.value)}
-                              className={selectClassFn("employees")}
-                            >
-                              <option value="">Select range</option>
-                              <option value="1-10">1 – 10</option>
-                              <option value="11-50">11 – 50</option>
-                              <option value="51-200">51 – 200</option>
-                              <option value="201-500">201 – 500</option>
-                              <option value="501-1000">501 – 1,000</option>
-                              <option value="over-1000">Over 1,000</option>
-                            </select>
-                            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B] pointer-events-none" />
-                          </div>
-                        </div>
-
-                        <div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div data-field="orgName">
                           <label className="block text-sm font-semibold text-[#334155] mb-2">
-                            Registration No.
+                            Company Name <span className="text-[#C41E3A]">*</span>
                           </label>
                           <div className="relative">
-                            <InputIcon icon={FileText} />
+                            <InputIcon icon={Building2} />
                             <input
                               type="text"
-                              value={formData.registrationNo}
-                              onChange={(e) => updateField("registrationNo", e.target.value)}
-                              placeholder="Company reg. number"
-                              className={inputClass("registrationNo")}
+                              value={formData.orgName}
+                              onChange={(e) => updateField("orgName", e.target.value)}
+                              placeholder="Enter your company name"
+                              className={inputClass("orgName")}
                             />
                           </div>
+                          <FieldError field="orgName" />
                         </div>
 
+                        <div data-field="companyType">
+                          <label className="block text-sm font-semibold text-[#334155] mb-2">
+                            Company Type <span className="text-[#C41E3A]">*</span>
+                          </label>
+                          <div className="flex flex-col sm:flex-row gap-2">
+                            <div className="relative flex-1">
+                              <InputIcon icon={Layers} />
+                              <select
+                                value={formData.companyType}
+                                onChange={(e) => updateField("companyType", e.target.value)}
+                                className={selectClassFn("companyType")}
+                              >
+                                <option value="">Select type</option>
+                                {COMPANY_TYPES.map((t) => (
+                                  <option key={t} value={t}>{t}</option>
+                                ))}
+                              </select>
+                              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B] pointer-events-none" />
+                            </div>
+                            {formData.companyType === "Other" && (
+                              <div data-field="companyTypeOther" className="relative flex-1">
+                                <InputIcon icon={Layers} />
+                                <input
+                                  type="text"
+                                  value={formData.companyTypeOther}
+                                  onChange={(e) => updateField("companyTypeOther", e.target.value)}
+                                  placeholder="Enter your company type"
+                                  className={inputClass("companyTypeOther")}
+                                  autoFocus
+                                />
+                              </div>
+                            )}
+                          </div>
+                          <FieldError field="companyType" />
+                          {formData.companyType === "Other" && <FieldError field="companyTypeOther" />}
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                         <div data-field="country">
                           <label className="block text-sm font-semibold text-[#334155] mb-2">
                             Country <span className="text-[#C41E3A]">*</span>
@@ -807,78 +825,6 @@ export default function MembershipApplyForm() {
                           <FieldError field="city" />
                           <FieldError field="cityOther" />
                         </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
-                        <div data-field="address" className="sm:col-span-3">
-                          <label className="block text-sm font-semibold text-[#334155] mb-2">
-                            Business Address <span className="text-[#C41E3A]">*</span>
-                          </label>
-                          <div className="relative">
-                            <InputIcon icon={MapPin} />
-                            <input
-                              type="text"
-                              value={formData.address}
-                              onChange={(e) => updateField("address", e.target.value)}
-                              placeholder="Street address"
-                              autoComplete="street-address"
-                              className={inputClass("address")}
-                            />
-                          </div>
-                          <FieldError field="address" />
-                        </div>
-
-                        <div className="sm:col-span-1">
-                          <label className="block text-sm font-semibold text-[#334155] mb-2">
-                            Postal Code
-                          </label>
-                          <div className="relative">
-                            <InputIcon icon={MapPin} />
-                            <input
-                              type="text"
-                              value={formData.postalCode}
-                              onChange={(e) => updateField("postalCode", e.target.value)}
-                              placeholder="e.g. SW1A 1AA"
-                              autoComplete="postal-code"
-                              className={inputClass("postalCode")}
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                        <div data-field="orgPhone">
-                          <label className="block text-sm font-semibold text-[#334155] mb-2">
-                            Mobile / Phone Number <span className="text-[#C41E3A]">*</span>
-                          </label>
-                          <div className="relative">
-                            <InputIcon icon={Phone} />
-                            <input
-                              type="tel"
-                              value={formData.orgPhone}
-                              onChange={(e) => updateField("orgPhone", e.target.value)}
-                              placeholder="+44 20 XXXX XXXX"
-                              className={inputClass("orgPhone")}
-                            />
-                          </div>
-                          <FieldError field="orgPhone" />
-                        </div>
-
-                        <div>
-                          <label className="block text-sm font-semibold text-[#334155] mb-2">
-                            WhatsApp
-                          </label>
-                          <div className="relative">
-                            <InputIcon icon={MessageCircle} />
-                            <input
-                              type="tel"
-                              value={formData.whatsapp}
-                              onChange={(e) => updateField("whatsapp", e.target.value)}
-                              placeholder="+92 3XX XXXXXXX"
-                              className={inputClass("whatsapp")}
-                            />
-                          </div>
-                        </div>
 
                         <div data-field="website">
                           <label className="block text-sm font-semibold text-[#334155] mb-2">Website</label>
@@ -896,120 +842,148 @@ export default function MembershipApplyForm() {
                         </div>
                       </div>
 
-                      <div data-field="coreProducts">
-                        <label className="block text-sm font-semibold text-[#334155] mb-2">
-                          Core Products / Services <span className="text-[#C41E3A]">*</span>
+                      <div data-field="shortDescription">
+                        <label className="flex items-center justify-between text-sm font-semibold text-[#334155] mb-2">
+                          <span>
+                            Short Description <span className="text-[#C41E3A]">*</span>
+                          </span>
+                          <span className={`text-xs font-normal ${descriptionLength > DESCRIPTION_MAX ? "text-[#C41E3A]" : "text-[#94A3B8]"}`}>
+                            {descriptionLength}/{DESCRIPTION_MAX}
+                          </span>
                         </label>
                         <div className="relative">
-                          <TextareaIcon icon={Package} />
+                          <FileText className="absolute left-3.5 top-4 w-[18px] h-[18px] text-[#94A3B8] pointer-events-none" strokeWidth={1.75} />
                           <textarea
+                            value={formData.shortDescription}
+                            onChange={(e) => updateField("shortDescription", e.target.value)}
                             rows={3}
-                            value={formData.coreProducts}
-                            onChange={(e) => updateField("coreProducts", e.target.value)}
-                            placeholder="Describe your core products and services"
-                            className={`${textareaClass("coreProducts")} resize-none`}
+                            maxLength={DESCRIPTION_MAX + 40}
+                            placeholder="One or two sentences about what your company does — this appears on your directory card."
+                            className={`${inputClass("shortDescription")} pt-3.5 resize-none`}
                           />
                         </div>
-                        <FieldError field="coreProducts" />
+                        <FieldError field="shortDescription" />
                       </div>
 
-                      <div>
+                      {/* Logo */}
+                      <div data-field="logoUrl">
                         <label className="block text-sm font-semibold text-[#334155] mb-2">
-                          Organisation Profile{" "}
-                          <span className="text-[#64748B] font-normal">used for the member directory, max 100 words</span>
+                          Company Logo <span className="text-[#C41E3A]">*</span>
                         </label>
-                        <div className="relative">
-                          <TextareaIcon icon={FileText} />
-                          <textarea
-                            rows={4}
-                            maxLength={800}
-                            value={formData.orgProfile}
-                            onChange={(e) => updateField("orgProfile", e.target.value)}
-                            placeholder="Provide a brief description of your organisation, its mission, and key activities..."
-                            className={`${textareaClass("orgProfile")} resize-none`}
-                          />
+                        <div className="flex items-center gap-4 flex-wrap">
+                          {logoUrl ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={logoUrl}
+                              alt="Logo preview"
+                              className="w-16 h-16 object-contain rounded-xl border border-[#E2E8F0] bg-white p-1"
+                            />
+                          ) : (
+                            <div className="w-16 h-16 rounded-xl border border-dashed border-[#CBD5E1] bg-white flex items-center justify-center">
+                              <Building2 className="w-6 h-6 text-[#CBD5E1]" />
+                            </div>
+                          )}
+                          <label className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#D8D5CF] bg-white text-sm font-medium text-[#334155] hover:border-[#2563EB] cursor-pointer transition-colors">
+                            {uploadingLogo ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
+                            {uploadingLogo ? "Uploading…" : logoUrl ? "Replace logo" : "Upload logo"}
+                            <input
+                              type="file"
+                              accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                              className="hidden"
+                              onChange={(e) => {
+                                const f = e.target.files?.[0];
+                                if (f) uploadLogo(f);
+                                e.target.value = "";
+                              }}
+                            />
+                          </label>
+                          <span className="text-xs text-[#94A3B8]">PNG, JPG, WEBP or SVG · max 2MB</span>
                         </div>
-                        <p className="text-[13px] text-[#64748B] mt-2.5 leading-relaxed">
-                          UPTECH reserves the right to edit profiles that exceed 100 words.
-                          Please send your high-resolution logo to{" "}
-                          <a href="mailto:info@ukpaktech.org.uk" className="text-[#2563EB] font-medium hover:underline">
-                            info@ukpaktech.org.uk
-                          </a>{" "}
-                          if you would like to be listed on the member directory.
-                        </p>
+                        <FieldError field="logoUrl" />
                       </div>
                     </div>
                   </motion.section>
 
-{/* SECTION 2, Industry Sectors */}
+                  {/* SECTION 2 — Services (the card tags) */}
                   <motion.section {...sectionAnim}>
                     <StepHeader
                       index="02"
                       icon={Layers}
-                      title="Industry Focus"
-                      hint="select all that apply"
-                      color="#22C55E"
+                      title="Services"
+                      hint="shown as tags on your card"
+                      color="#22A06B"
                     />
-
-                    <div
-                      data-field="sectors"
-                      className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 ${
-                        errors.sectors ? "ring-2 ring-[#C41E3A]/25 rounded-xl p-2" : ""
-                      }`}
-                    >
-                      {sectors.map((sector) => {
-                        const active = selectedSectors.includes(sector);
-                        return (
-                          <label
-                            key={sector}
-                            className={`
-                              group flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg border cursor-pointer transition-all duration-200 text-[13px] font-medium
-                              ${active
-                                ? "bg-[#EFF6FF] border-[#2563EB] text-[#1D4ED8] shadow-[0_2px_8px_rgba(37,99,235,0.12)]"
-                                : "bg-white border-[#E2E8F0] text-[#475569] hover:border-[#2563EB]/40 hover:bg-[#F8FAFC] hover:text-[#0F172A]"
-                              }
-                            `}
-                          >
-                            <input
-                              type="checkbox"
-                              checked={active}
-                              onChange={() => toggleSector(sector)}
-                              className="sr-only"
-                            />
+                    <div data-field="services">
+                      {/* Selected services (removable chips) */}
+                      {services.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mb-3">
+                          {services.map((s) => (
                             <span
-                              className={`
-                                w-4 h-4 rounded flex-shrink-0 border-2 flex items-center justify-center transition-all duration-200
-                                ${active ? "bg-[#2563EB] border-[#2563EB]" : "border-[#CBD5E1] group-hover:border-[#94A3B8]"}
-                              `}
+                              key={s}
+                              className="inline-flex items-center gap-1.5 text-[13px] font-medium px-3 py-1.5 rounded-full bg-[#2563EB]/10 text-[#1D4ED8] border border-[#2563EB]/20"
                             >
-                              {active && (
-                                <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                </svg>
-                              )}
+                              {s}
+                              <button
+                                type="button"
+                                onClick={() => removeService(s)}
+                                aria-label={`Remove ${s}`}
+                                className="text-[#1D4ED8]/70 hover:text-[#C41E3A] transition-colors"
+                              >
+                                <X className="w-3.5 h-3.5" />
+                              </button>
                             </span>
-                            <span className="leading-tight">{sector}</span>
-                          </label>
-                        );
-                      })}
-                    </div>
-                    <FieldError field="sectors" />
-                    <div className="mt-5 max-w-xl">
-                      <label className="block text-sm font-semibold text-[#334155] mb-2">Other (please specify)</label>
-                      <div className="relative">
-                        <InputIcon icon={Layers} />
-                        <input
-                          type="text"
-                          value={formData.otherSector}
-                          onChange={(e) => updateField("otherSector", e.target.value)}
-                          placeholder="Enter other sectors"
-                          className={inputClass("otherSector")}
-                        />
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Type-or-pick input */}
+                      <div className="flex gap-2">
+                        <div className="relative flex-1">
+                          <InputIcon icon={Layers} />
+                          <input
+                            type="text"
+                            value={serviceInput}
+                            onChange={(e) => setServiceInput(e.target.value)}
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter") {
+                                e.preventDefault();
+                                addService(serviceInput);
+                              }
+                            }}
+                            placeholder="Type a service and press Enter, or pick from below…"
+                            className={inputClass("services")}
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => addService(serviceInput)}
+                          disabled={!serviceInput.trim()}
+                          className="px-5 rounded-xl bg-[#2563EB] text-white text-sm font-semibold hover:bg-[#1D4ED8] disabled:bg-[#E2E8F0] disabled:text-[#94A3B8] transition-colors shadow-sm"
+                        >
+                          Add
+                        </button>
                       </div>
+
+                      {/* Quick-pick suggestions (not yet selected) */}
+                      {SERVICE_OPTIONS.some((s) => !services.includes(s)) && (
+                        <div className="flex flex-wrap gap-2 mt-3">
+                          {SERVICE_OPTIONS.filter((s) => !services.includes(s)).map((s) => (
+                            <button
+                              type="button"
+                              key={s}
+                              onClick={() => addService(s)}
+                              className="text-[13px] px-3 py-1.5 rounded-full border border-[#E2E8F0] bg-white text-[#475569] hover:border-[#2563EB] hover:text-[#2563EB] transition-colors"
+                            >
+                              + {s}
+                            </button>
+                          ))}
+                        </div>
+                      )}
                     </div>
+                    <FieldError field="services" />
                   </motion.section>
 
-{/* SECTION 3, Your Information */}
+                  {/* SECTION 3 — Your Information */}
                   <motion.section {...sectionAnim}>
                     <StepHeader
                       index="03"
@@ -1033,22 +1007,6 @@ export default function MembershipApplyForm() {
                           />
                         </div>
                         <FieldError field="personName" />
-                      </div>
-                      <div data-field="personJobTitle">
-                        <label className="block text-sm font-semibold text-[#334155] mb-2">
-                          Job Title <span className="text-[#C41E3A]">*</span>
-                        </label>
-                        <div className="relative">
-                          <InputIcon icon={Briefcase} />
-                          <input
-                            type="text"
-                            value={formData.personJobTitle}
-                            onChange={(e) => updateField("personJobTitle", e.target.value)}
-                            placeholder="e.g. CEO, Managing Director"
-                            className={inputClass("personJobTitle")}
-                          />
-                        </div>
-                        <FieldError field="personJobTitle" />
                       </div>
                       <div data-field="personEmail">
                         <label className="block text-sm font-semibold text-[#334155] mb-2">
@@ -1082,23 +1040,10 @@ export default function MembershipApplyForm() {
                         </div>
                         <FieldError field="personPhone" />
                       </div>
-                      <div>
-                        <label className="block text-sm font-semibold text-[#334155] mb-2">Nationality</label>
-                        <div className="relative">
-                          <InputIcon icon={Flag} />
-                          <input
-                            type="text"
-                            value={formData.personNationality}
-                            onChange={(e) => updateField("personNationality", e.target.value)}
-                            placeholder="e.g. British, Pakistani"
-                            className={inputClass("personNationality")}
-                          />
-                        </div>
-                      </div>
                     </div>
                   </motion.section>
 
-{/* SECTION 4, Terms & Submit */}
+                  {/* SECTION 4 — Terms & Submit */}
                   <motion.section {...sectionAnim}>
                     <StepHeader
                       index="04"
@@ -1270,6 +1215,7 @@ export default function MembershipApplyForm() {
                           type="submit"
                           disabled={
                             submitting ||
+                            uploadingLogo ||
                             !formData.termsAccepted ||
                             !formData.membershipTermsAccepted ||
                             !formData.arbitrationAccepted
@@ -1278,7 +1224,7 @@ export default function MembershipApplyForm() {
                           transition={{ duration: 0.5 }}
                           className={`
                             group relative inline-flex items-center gap-3 px-10 py-4 font-bold text-[15px] rounded-xl transition-all duration-300 overflow-hidden
-                            ${submitting || !formData.termsAccepted || !formData.membershipTermsAccepted || !formData.arbitrationAccepted
+                            ${submitting || uploadingLogo || !formData.termsAccepted || !formData.membershipTermsAccepted || !formData.arbitrationAccepted
                               ? "bg-[#E2E8F0] text-[#94A3B8] cursor-not-allowed shadow-none"
                               : "bg-gradient-to-r from-[#2563EB] via-[#1D4ED8] to-[#2563EB] text-white hover:shadow-[0_12px_36px_rgba(37,99,235,0.4)] hover:-translate-y-0.5 shadow-[0_8px_24px_rgba(37,99,235,0.28)]"
                             }
