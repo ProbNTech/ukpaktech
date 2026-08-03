@@ -1,13 +1,15 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Loader2, Check, X, Building2, RefreshCw, Eye } from "lucide-react";
+import { Loader2, Check, X, Building2, RefreshCw, Eye, Plus, Pencil, Undo2, Trash2 } from "lucide-react";
+import { VendorFormModal } from "@/components/portfolio/VendorFormModal";
 
 const STATUS_TABS = [
   { key: "pending", label: "Membership requests" },
   { key: "invited", label: "Members (profile pending)" },
   { key: "portfolio_pending", label: "Portfolio review" },
   { key: "listed", label: "Listed" },
+  { key: "trash", label: "Trash" },
 ] as const;
 
 interface VendorRow {
@@ -27,6 +29,7 @@ interface VendorRow {
   key_projects?: string;
   team_structure?: string;
   updated_at?: string;
+  deleted_at?: string | null;
   [k: string]: unknown;
 }
 
@@ -41,6 +44,7 @@ export default function PortfolioAdminPage() {
   const [error, setError] = useState("");
   const [expanded, setExpanded] = useState<string | null>(null);
   const [acting, setActing] = useState<string | null>(null);
+  const [modal, setModal] = useState<{ mode: "create" | "edit"; vendor?: VendorRow | null } | null>(null);
 
   useEffect(() => {
     const saved = typeof window !== "undefined" ? localStorage.getItem(KEY_STORAGE) : null;
@@ -83,7 +87,7 @@ export default function PortfolioAdminPage() {
 
   async function act(
     id: string,
-    action: "approve" | "approve-portfolio" | "reject" | "unlist"
+    action: "approve" | "approve-portfolio" | "reject" | "unlist" | "restore" | "permanent-delete"
   ) {
     setActing(id);
     try {
@@ -104,13 +108,13 @@ export default function PortfolioAdminPage() {
 
   if (!authed) {
     return (
-      <div className="min-h-[60vh] flex items-center justify-center px-4">
+      <div className="min-h-screen bg-[#0F172A] flex items-center justify-center px-4">
         <form
           onSubmit={(e) => {
             e.preventDefault();
             setAuthed(true);
           }}
-          className="w-full max-w-sm bg-white rounded-2xl border border-[#E2E8F0] shadow-sm p-8 space-y-5"
+          className="w-full max-w-sm bg-white rounded-2xl border border-[#E2E8F0] shadow-xl p-8 space-y-5"
         >
           <h1 className="font-heading font-bold text-xl text-[#0F172A]">Portfolio Admin</h1>
           <input
@@ -130,173 +134,226 @@ export default function PortfolioAdminPage() {
     );
   }
 
+  const isTrash = tab === "trash";
+
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12">
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="font-heading font-bold text-2xl text-[#0F172A]">
-          Portfolio Admin
-        </h1>
-        <button
-          onClick={() => load(adminKey, tab)}
-          className="inline-flex items-center gap-2 text-sm text-[#64748B] hover:text-[#2563EB]"
-        >
-          <RefreshCw className="w-4 h-4" /> Refresh
-        </button>
-      </div>
-
-      <div className="flex flex-wrap gap-2 mb-8 border-b border-[#E2E8F0]">
-        {STATUS_TABS.map((t) => (
+    <div className="min-h-screen bg-[#F1F5F9]">
+      <div className="sticky top-0 z-20 bg-[#0F172A] text-white px-6 py-4 flex items-center justify-between shadow-md">
+        <h1 className="font-heading font-bold text-xl">Portfolio Admin</h1>
+        <div className="flex items-center gap-4">
           <button
-            key={t.key}
-            onClick={() => setTab(t.key)}
-            className={`px-4 py-2.5 text-sm font-medium border-b-2 -mb-px transition-colors ${
-              tab === t.key
-                ? "border-[#2563EB] text-[#2563EB]"
-                : "border-transparent text-[#64748B] hover:text-[#0F172A]"
-            }`}
+            onClick={() => setModal({ mode: "create" })}
+            className="inline-flex items-center gap-1.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-medium px-3 py-2 rounded-lg transition-colors"
           >
-            {t.label}
+            <Plus className="w-4 h-4" /> Add New
           </button>
-        ))}
+          <button
+            onClick={() => load(adminKey, tab)}
+            className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white"
+          >
+            <RefreshCw className="w-4 h-4" /> Refresh
+          </button>
+        </div>
       </div>
 
-      {error && <p className="text-sm text-red-600 mb-4">{error}</p>}
-
-      {loading ? (
-        <div className="text-center py-20 text-[#64748B]">
-          <Loader2 className="w-7 h-7 animate-spin mx-auto mb-3 text-[#2563EB]" /> Loading…
-        </div>
-      ) : vendors.length === 0 ? (
-        <div className="text-center py-20 text-[#64748B]">Nothing here.</div>
-      ) : (
-        <div className="space-y-4">
-          {vendors.map((v) => (
-            <div key={v.id} className="bg-white rounded-2xl border border-[#E2E8F0] shadow-sm overflow-hidden">
-              <div className="flex items-center gap-4 p-5">
-                {v.logo_url ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={String(v.logo_url)} alt="" className="w-12 h-12 object-contain rounded-lg border border-[#F1F5F9]" />
-                ) : (
-                  <div className="w-12 h-12 rounded-lg bg-[#F1F5F9] flex items-center justify-center">
-                    <Building2 className="w-5 h-5 text-[#94A3B8]" />
-                  </div>
-                )}
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-[#0F172A] truncate">{v.company_name}</h3>
-                  <p className="text-sm text-[#64748B] truncate">
-                    {v.company_type} · {v.contact_email}
-                  </p>
-                </div>
-                <button
-                  onClick={() => setExpanded(expanded === v.id ? null : v.id)}
-                  className="inline-flex items-center gap-1.5 text-sm text-[#64748B] hover:text-[#2563EB] px-3 py-2"
-                >
-                  <Eye className="w-4 h-4" /> {expanded === v.id ? "Hide" : "View"}
-                </button>
-                <div className="flex flex-wrap gap-2">
-                  {tab === "pending" && (
-                    <button
-                      disabled={acting === v.id}
-                      onClick={() => act(v.id, "approve")}
-                      className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-3 py-2 rounded-lg disabled:opacity-60"
-                    >
-                      <Check className="w-4 h-4" /> Approve &amp; invite
-                    </button>
-                  )}
-                  {tab === "invited" && (
-                    <span className="text-xs text-amber-600 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-lg self-center">
-                      Not listed yet — awaiting profile
-                    </span>
-                  )}
-                  {tab === "portfolio_pending" && (
-                    <button
-                      disabled={acting === v.id}
-                      onClick={() => act(v.id, "approve-portfolio")}
-                      className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-3 py-2 rounded-lg disabled:opacity-60"
-                    >
-                      <Check className="w-4 h-4" /> Approve &amp; list
-                    </button>
-                  )}
-                  {tab === "listed" && (
-                    <button
-                      disabled={acting === v.id}
-                      onClick={() => act(v.id, "unlist")}
-                      className="inline-flex items-center gap-1.5 bg-white border border-amber-200 text-amber-700 hover:bg-amber-50 text-sm font-medium px-3 py-2 rounded-lg disabled:opacity-60"
-                    >
-                      Unlist
-                    </button>
-                  )}
-                  <button
-                    disabled={acting === v.id}
-                    onClick={() => {
-                      if (
-                        window.confirm(
-                          `Permanently delete ${v.company_name} and its logo? This cannot be undone.`
-                        )
-                      )
-                        act(v.id, "reject");
-                    }}
-                    className="inline-flex items-center gap-1.5 bg-white border border-red-200 text-red-600 hover:bg-red-50 text-sm font-medium px-3 py-2 rounded-lg disabled:opacity-60"
-                  >
-                    <X className="w-4 h-4" /> Reject &amp; delete
-                  </button>
-                </div>
-              </div>
-
-              {expanded === v.id && (
-                <div className="border-t border-[#E2E8F0] bg-[#F8FAFC] p-5 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
-                  {[
-                    ["Website", v.website],
-                    ["Contact", v.contact_name],
-                    ["Job Title", v.contact_job_title],
-                    ["Email", v.contact_email],
-                    ["Phone", v.contact_phone],
-                    ["Org Phone", v.org_phone],
-                    ["Country", v.country],
-                    ["City", v.city],
-                    ["Company Size", v.company_size],
-                    ["Reg No.", v.registration_no],
-                    ["Address", v.business_address],
-                    ["Consents", [
-                      v.terms_accepted && "Terms",
-                      v.membership_terms_accepted && "Membership",
-                      v.arbitration_accepted && "Arbitration",
-                    ].filter(Boolean).join(", ")],
-                    ["Description", v.short_description],
-                    ["Operational Contact", [v.operational_contact_name, v.operational_contact_job_title].filter(Boolean).join(" — ")],
-                    ["Operational Contact Email", v.operational_contact_email],
-                    ["Operational Contact Phone", v.operational_contact_phone],
-                    ["Operational Contact Method", v.operational_contact_method],
-                    ["Industry Focus", [...(Array.isArray(v.industries) ? v.industries : []), v.other_industries].filter(Boolean).join(", ")],
-                    ["Services", (v.services ?? []).join(", ")],
-                    ["Primary Stack", v.primary_stack],
-                    ["Industries Served", v.industries_served],
-                    ["Key Projects", v.key_projects],
-                    ["Team", v.team_structure],
-                    ["Payment Terms", v.payment_terms],
-                  ]
-                    .filter(([, val]) => val)
-                    .map(([label, val]) => (
-                      <div key={String(label)}>
-                        <span className="font-semibold text-[#64748B]">{String(label)}: </span>
-                        <span className="text-[#0F172A]">{String(val)}</span>
-                      </div>
-                    ))}
-                  {v.slug && (
-                    <a
-                      href={`/portfolio/${v.slug}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-[#2563EB] font-medium hover:underline col-span-full"
-                    >
-                      Open public profile →
-                    </a>
-                  )}
-                </div>
-              )}
-            </div>
+      <div className="max-w-6xl mx-auto px-6 py-8">
+        <div className="flex flex-wrap gap-2 mb-8 border-b border-[#E2E8F0]">
+          {STATUS_TABS.map((t) => (
+            <button
+              key={t.key}
+              onClick={() => setTab(t.key)}
+              className={`px-4 py-2.5 text-sm font-medium border-b-2 -mb-px transition-colors ${
+                tab === t.key
+                  ? "border-[#2563EB] text-[#2563EB]"
+                  : "border-transparent text-[#64748B] hover:text-[#0F172A]"
+              }`}
+            >
+              {t.label}
+            </button>
           ))}
         </div>
+
+        {error && <p className="text-sm text-red-600 mb-4">{error}</p>}
+
+        {loading ? (
+          <div className="text-center py-20 text-[#64748B]">
+            <Loader2 className="w-7 h-7 animate-spin mx-auto mb-3 text-[#2563EB]" /> Loading…
+          </div>
+        ) : vendors.length === 0 ? (
+          <div className="text-center py-20 text-[#64748B]">Nothing here.</div>
+        ) : (
+          <div className="space-y-4">
+            {vendors.map((v) => (
+              <div key={v.id} className="bg-white rounded-2xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+                <div className="flex items-center gap-4 p-5">
+                  {v.logo_url ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={String(v.logo_url)} alt="" className="w-12 h-12 object-contain rounded-lg border border-[#F1F5F9]" />
+                  ) : (
+                    <div className="w-12 h-12 rounded-lg bg-[#F1F5F9] flex items-center justify-center">
+                      <Building2 className="w-5 h-5 text-[#94A3B8]" />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-[#0F172A] truncate">{v.company_name}</h3>
+                    <p className="text-sm text-[#64748B] truncate">
+                      {v.company_type} · {v.contact_email}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setExpanded(expanded === v.id ? null : v.id)}
+                    className="inline-flex items-center gap-1.5 text-sm text-[#64748B] hover:text-[#2563EB] px-3 py-2"
+                  >
+                    <Eye className="w-4 h-4" /> {expanded === v.id ? "Hide" : "View"}
+                  </button>
+                  <div className="flex flex-wrap gap-2">
+                    {!isTrash && (
+                      <button
+                        onClick={() => setModal({ mode: "edit", vendor: v })}
+                        className="inline-flex items-center gap-1.5 bg-white border border-[#D8D5CF] text-[#334155] hover:border-[#2563EB] hover:text-[#2563EB] text-sm font-medium px-3 py-2 rounded-lg transition-colors"
+                      >
+                        <Pencil className="w-4 h-4" /> Edit
+                      </button>
+                    )}
+                    {tab === "pending" && (
+                      <button
+                        disabled={acting === v.id}
+                        onClick={() => act(v.id, "approve")}
+                        className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-3 py-2 rounded-lg disabled:opacity-60"
+                      >
+                        <Check className="w-4 h-4" /> Approve &amp; invite
+                      </button>
+                    )}
+                    {tab === "invited" && (
+                      <span className="text-xs text-amber-600 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-lg self-center">
+                        Not listed yet — awaiting profile
+                      </span>
+                    )}
+                    {tab === "portfolio_pending" && (
+                      <button
+                        disabled={acting === v.id}
+                        onClick={() => act(v.id, "approve-portfolio")}
+                        className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-3 py-2 rounded-lg disabled:opacity-60"
+                      >
+                        <Check className="w-4 h-4" /> Approve &amp; list
+                      </button>
+                    )}
+                    {tab === "listed" && (
+                      <button
+                        disabled={acting === v.id}
+                        onClick={() => act(v.id, "unlist")}
+                        className="inline-flex items-center gap-1.5 bg-white border border-amber-200 text-amber-700 hover:bg-amber-50 text-sm font-medium px-3 py-2 rounded-lg disabled:opacity-60"
+                      >
+                        Unlist
+                      </button>
+                    )}
+                    {isTrash ? (
+                      <>
+                        <button
+                          disabled={acting === v.id}
+                          onClick={() => act(v.id, "restore")}
+                          className="inline-flex items-center gap-1.5 bg-white border border-emerald-200 text-emerald-700 hover:bg-emerald-50 text-sm font-medium px-3 py-2 rounded-lg disabled:opacity-60"
+                        >
+                          <Undo2 className="w-4 h-4" /> Restore
+                        </button>
+                        <button
+                          disabled={acting === v.id}
+                          onClick={() => {
+                            if (
+                              window.confirm(
+                                `Permanently delete ${v.company_name} and its logo? This cannot be undone.`
+                              )
+                            )
+                              act(v.id, "permanent-delete");
+                          }}
+                          className="inline-flex items-center gap-1.5 bg-white border border-red-200 text-red-600 hover:bg-red-50 text-sm font-medium px-3 py-2 rounded-lg disabled:opacity-60"
+                        >
+                          <Trash2 className="w-4 h-4" /> Delete Permanently
+                        </button>
+                      </>
+                    ) : (
+                      <button
+                        disabled={acting === v.id}
+                        onClick={() => {
+                          if (window.confirm(`Move ${v.company_name} to Trash?`)) act(v.id, "reject");
+                        }}
+                        className="inline-flex items-center gap-1.5 bg-white border border-red-200 text-red-600 hover:bg-red-50 text-sm font-medium px-3 py-2 rounded-lg disabled:opacity-60"
+                      >
+                        <X className="w-4 h-4" /> Reject &amp; delete
+                      </button>
+                    )}
+                  </div>
+                </div>
+
+                {expanded === v.id && (
+                  <div className="border-t border-[#E2E8F0] bg-[#F8FAFC] p-5 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
+                    {[
+                      ["Website", v.website],
+                      ["Contact", v.contact_name],
+                      ["Job Title", v.contact_job_title],
+                      ["Email", v.contact_email],
+                      ["Phone", v.contact_phone],
+                      ["Org Phone", v.org_phone],
+                      ["Country", v.country],
+                      ["City", v.city],
+                      ["Company Size", v.company_size],
+                      ["Reg No.", v.registration_no],
+                      ["Address", v.business_address],
+                      ["Consents", [
+                        v.terms_accepted && "Terms",
+                        v.membership_terms_accepted && "Membership",
+                        v.arbitration_accepted && "Arbitration",
+                      ].filter(Boolean).join(", ")],
+                      ["Description", v.short_description],
+                      ["Operational Contact", [v.operational_contact_name, v.operational_contact_job_title].filter(Boolean).join(" — ")],
+                      ["Operational Contact Email", v.operational_contact_email],
+                      ["Operational Contact Phone", v.operational_contact_phone],
+                      ["Operational Contact Method", v.operational_contact_method],
+                      ["Industry Focus", [...(Array.isArray(v.industries) ? v.industries : []), v.other_industries].filter(Boolean).join(", ")],
+                      ["Services", (v.services ?? []).join(", ")],
+                      ["Primary Stack", v.primary_stack],
+                      ["Industries Served", v.industries_served],
+                      ["Key Projects", v.key_projects],
+                      ["Team", v.team_structure],
+                      ["Payment Terms", v.payment_terms],
+                      ["Trashed At", v.deleted_at],
+                    ]
+                      .filter(([, val]) => val)
+                      .map(([label, val]) => (
+                        <div key={String(label)}>
+                          <span className="font-semibold text-[#64748B]">{String(label)}: </span>
+                          <span className="text-[#0F172A]">{String(val)}</span>
+                        </div>
+                      ))}
+                    {v.slug && (
+                      <a
+                        href={`/portfolio/${v.slug}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-[#2563EB] font-medium hover:underline col-span-full"
+                      >
+                        Open public profile →
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {modal && (
+        <VendorFormModal
+          mode={modal.mode}
+          vendor={modal.vendor}
+          adminKey={adminKey}
+          onClose={() => setModal(null)}
+          onSaved={() => {
+            setModal(null);
+            load(adminKey, tab);
+          }}
+        />
       )}
     </div>
   );
