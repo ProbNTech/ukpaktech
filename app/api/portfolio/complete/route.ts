@@ -3,6 +3,7 @@ import {
   getVendorByToken,
   saveProfile,
   SERVICE_OPTIONS,
+  INDUSTRY_OPTIONS,
   type ProfileInput,
 } from "@/lib/vendorService";
 import { sendAlert } from "@/lib/mailer";
@@ -37,6 +38,13 @@ function sanitizeServices(value: unknown): string[] | undefined {
     .filter((v) => (SERVICE_OPTIONS as readonly string[]).includes(v));
 }
 
+function sanitizeIndustries(value: unknown): string[] | undefined {
+  if (!Array.isArray(value)) return undefined;
+  return value
+    .filter((v): v is string => typeof v === "string")
+    .filter((v) => (INDUSTRY_OPTIONS as readonly string[]).includes(v));
+}
+
 /** PATCH /api/portfolio/complete → save draft or submit for review. */
 export async function PATCH(req: NextRequest) {
   try {
@@ -63,7 +71,13 @@ export async function PATCH(req: NextRequest) {
       "year_established",
       "preferred_contact_method",
       "contact_job_title",
+      "operational_contact_name",
+      "operational_contact_job_title",
+      "operational_contact_email",
+      "operational_contact_phone",
+      "operational_contact_method",
       "other_services",
+      "other_industries",
       "primary_stack",
       "secondary_stack",
       "specialised_skills",
@@ -75,6 +89,7 @@ export async function PATCH(req: NextRequest) {
       "monthly_capacity",
       "hourly_rate",
       "min_project_size",
+      "payment_terms",
       "security_certs",
       "data_compliance",
       "insurance",
@@ -92,6 +107,8 @@ export async function PATCH(req: NextRequest) {
     }
     const services = sanitizeServices(profile.services);
     if (services) input.services = services;
+    const industries = sanitizeIndustries(profile.industries);
+    if (industries) input.industries = industries;
     if ("fixed_price" in profile) input.fixed_price = profile.fixed_price === true;
     if ("retainer" in profile) input.retainer = profile.retainer === true;
 

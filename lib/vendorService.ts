@@ -34,6 +34,35 @@ export const COMPANY_SIZES = ["1-10", "11-50", "51-200", "201-500", "500+"] as c
 export const CONTACT_METHODS = ["Email", "Phone", "WhatsApp", "Teams", "Slack"] as const;
 export const PM_METHODOLOGIES = ["Agile", "Scrum", "Kanban", "Hybrid"] as const;
 
+/** Industry Focus checklist — mirrors the client's capability form Section 4. */
+export const INDUSTRY_OPTIONS = [
+  "Artificial Intelligence & Machine Learning",
+  "Software Development & SaaS",
+  "Cybersecurity",
+  "Cloud Computing & Infrastructure",
+  "FinTech & Digital Banking",
+  "HealthTech & BioTech",
+  "EdTech & E-Learning",
+  "E-Commerce & Retail Tech",
+  "Clean Technology & GreenTech",
+  "Telecommunications",
+  "Data Analytics & Big Data",
+  "IoT & Smart Systems",
+  "Blockchain & Web3",
+  "Consulting & Professional Services",
+  "Manufacturing & Industrial Tech",
+  "Logistics & Supply Chain Tech",
+  "Legal & Regulatory Tech",
+  "Real Estate & PropTech",
+  "Media & Creative Technology",
+  "Government & Public Sector",
+  "Academic & Research",
+  "Non-Profit & Social Enterprise",
+] as const;
+
+/** Payment Terms — mirrors the client's capability form Section 10. */
+export const PAYMENT_TERMS_OPTIONS = ["Immediately", "30 days", "45 days"] as const;
+
 export type VendorStatus =
   | "pending" // membership submitted, awaiting membership review
   | "invited" // membership approved (listed as a member), magic link sent
@@ -70,6 +99,13 @@ export interface Vendor {
   contact_phone: string | null;
   contact_nationality: string | null;
 
+  // Operational contact (manager) — collected on the capability profile
+  operational_contact_name: string | null;
+  operational_contact_job_title: string | null;
+  operational_contact_email: string | null;
+  operational_contact_phone: string | null;
+  operational_contact_method: string | null;
+
   terms_accepted: boolean | null;
   membership_terms_accepted: boolean | null;
   arbitration_accepted: boolean | null;
@@ -81,6 +117,8 @@ export interface Vendor {
 
   services: string[] | null;
   other_services: string | null;
+  industries: string[] | null;
+  other_industries: string | null;
   primary_stack: string | null;
   secondary_stack: string | null;
   specialised_skills: string | null;
@@ -96,6 +134,7 @@ export interface Vendor {
   fixed_price: boolean | null;
   retainer: boolean | null;
   min_project_size: string | null;
+  payment_terms: string | null;
   security_certs: string | null;
   data_compliance: string | null;
   insurance: string | null;
@@ -131,6 +170,8 @@ export type PublicVendor = Pick<
   | "short_description"
   | "services"
   | "other_services"
+  | "industries"
+  | "other_industries"
   | "primary_stack"
   | "secondary_stack"
   | "specialised_skills"
@@ -301,8 +342,15 @@ export type ProfileInput = Partial<
     | "contact_email"
     | "contact_phone"
     | "preferred_contact_method"
+    | "operational_contact_name"
+    | "operational_contact_job_title"
+    | "operational_contact_email"
+    | "operational_contact_phone"
+    | "operational_contact_method"
     | "services"
     | "other_services"
+    | "industries"
+    | "other_industries"
     | "primary_stack"
     | "secondary_stack"
     | "specialised_skills"
@@ -316,6 +364,7 @@ export type ProfileInput = Partial<
     | "fixed_price"
     | "retainer"
     | "min_project_size"
+    | "payment_terms"
     | "security_certs"
     | "data_compliance"
     | "insurance"
@@ -342,8 +391,15 @@ const PROFILE_FIELDS: (keyof ProfileInput)[] = [
   "contact_email",
   "contact_phone",
   "preferred_contact_method",
+  "operational_contact_name",
+  "operational_contact_job_title",
+  "operational_contact_email",
+  "operational_contact_phone",
+  "operational_contact_method",
   "services",
   "other_services",
+  "industries",
+  "other_industries",
   "primary_stack",
   "secondary_stack",
   "specialised_skills",
@@ -357,6 +413,7 @@ const PROFILE_FIELDS: (keyof ProfileInput)[] = [
   "fixed_price",
   "retainer",
   "min_project_size",
+  "payment_terms",
   "security_certs",
   "data_compliance",
   "insurance",

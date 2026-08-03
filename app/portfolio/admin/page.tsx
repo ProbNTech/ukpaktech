@@ -263,11 +263,17 @@ export default function PortfolioAdminPage() {
                       v.arbitration_accepted && "Arbitration",
                     ].filter(Boolean).join(", ")],
                     ["Description", v.short_description],
+                    ["Operational Contact", [v.operational_contact_name, v.operational_contact_job_title].filter(Boolean).join(" — ")],
+                    ["Operational Contact Email", v.operational_contact_email],
+                    ["Operational Contact Phone", v.operational_contact_phone],
+                    ["Operational Contact Method", v.operational_contact_method],
+                    ["Industry Focus", [...(Array.isArray(v.industries) ? v.industries : []), v.other_industries].filter(Boolean).join(", ")],
                     ["Services", (v.services ?? []).join(", ")],
                     ["Primary Stack", v.primary_stack],
-                    ["Industries", v.industries_served],
+                    ["Industries Served", v.industries_served],
                     ["Key Projects", v.key_projects],
                     ["Team", v.team_structure],
+                    ["Payment Terms", v.payment_terms],
                   ]
                     .filter(([, val]) => val)
                     .map(([label, val]) => (
