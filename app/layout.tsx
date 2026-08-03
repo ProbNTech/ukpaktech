@@ -2,12 +2,8 @@
 import type { Metadata } from "next";
 import { Lato, Montserrat } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { CookieConsent } from "@/components/CookieConsent";
-import { BackToTop } from "@/components/ui/BackToTop";
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { SiteChrome } from "@/components/SiteChrome";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -124,12 +120,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <CookieConsent />
-        <WhatsAppButton />
-        <BackToTop />
+        <SiteChrome>{children}</SiteChrome>
         <SpeedInsights />
       </body>
     </html>

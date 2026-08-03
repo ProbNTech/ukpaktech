@@ -152,6 +152,7 @@ export interface Vendor {
   updated_at: string;
   invited_at: string | null;
   approved_at: string | null;
+  deleted_at: string | null;
 }
 
 /** Public-facing fields exposed on the portfolio (no PII / tokens). */
@@ -310,6 +311,7 @@ export async function getVendorByToken(token: string): Promise<Vendor | null> {
   if (!data) return null;
 
   const vendor = data as Vendor;
+  if (vendor.deleted_at) return null; // trashed — link no longer valid
   // Approved members may use the link to fill in / edit their profile — whether
   // they haven't started (invited), are awaiting review (portfolio_pending), or
   // are already live and editing (listed).
@@ -468,11 +470,35 @@ export async function listVendorsByStatus(status?: VendorStatus): Promise<Vendor
   let query = supabase
     .from("vendors")
     .select("*")
+    .is("deleted_at", null)
     .order("updated_at", { ascending: false });
   if (status) query = query.eq("status", status);
   const { data, error } = await query;
   if (error) throw new Error(error.message);
   return (data ?? []) as Vendor[];
+}
+
+/** Rows currently in the trash (soft-deleted), most recently trashed first. */
+export async function listTrashedVendors(): Promise<Vendor[]> {
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
+    .from("vendors")
+    .select("*")
+    .not("deleted_at", "is", null)
+    .order("deleted_at", { ascending: false });
+  if (error) throw new Error(error.message);
+  return (data ?? []) as Vendor[];
+}
+
+export async function getVendorById(id: string): Promise<Vendor | null> {
+  const supabase = getSupabaseAdmin();
+  const { data, error } = await supabase
+    .from("vendors")
+    .select("*")
+    .eq("id", id)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
+  return (data as Vendor) ?? null;
 }
 
 export async function setVendorStatus(id: string, status: VendorStatus): Promise<void> {
@@ -511,10 +537,34 @@ function storagePathFromPublicUrl(url: string | null): string | null {
 }
 
 /**
- * Hard-delete a vendor (used on rejection) — removes the row and its uploaded
- * logo so nothing is left orphaned in storage.
+ * Soft-delete a vendor (used on rejection) — moves it to the Trash tab rather
+ * than destroying it. Excluded from every normal query until restored or
+ * permanently deleted.
  */
-export async function deleteVendor(id: string): Promise<void> {
+export async function trashVendor(id: string): Promise<void> {
+  const supabase = getSupabaseAdmin();
+  const { error } = await supabase
+    .from("vendors")
+    .update({ deleted_at: new Date().toISOString(), updated_at: new Date().toISOString() })
+    .eq("id", id);
+  if (error) throw new Error(`Failed to move vendor to trash: ${error.message}`);
+}
+
+/** Restore a trashed vendor back to normal visibility, unchanged otherwise. */
+export async function restoreVendor(id: string): Promise<void> {
+  const supabase = getSupabaseAdmin();
+  const { error } = await supabase
+    .from("vendors")
+    .update({ deleted_at: null, updated_at: new Date().toISOString() })
+    .eq("id", id);
+  if (error) throw new Error(`Failed to restore vendor: ${error.message}`);
+}
+
+/**
+ * Permanently delete a vendor (used from the Trash tab only) — removes the
+ * row and its uploaded logo so nothing is left orphaned in storage.
+ */
+export async function permanentlyDeleteVendor(id: string): Promise<void> {
   const supabase = getSupabaseAdmin();
 
   const { data } = await supabase
@@ -533,6 +583,108 @@ export async function deleteVendor(id: string): Promise<void> {
   if (error) throw new Error(`Failed to delete vendor: ${error.message}`);
 }
 
+/** Fields an admin may set directly via the dashboard (full CRUD — excludes system-managed columns). */
+const ADMIN_EDITABLE_FIELDS: (keyof Vendor)[] = [
+  "status",
+  "slug",
+  "company_name",
+  "website",
+  "company_size",
+  "registration_no",
+  "country",
+  "city",
+  "business_address",
+  "postal_code",
+  "org_phone",
+  "whatsapp",
+  "short_description",
+  "contact_name",
+  "contact_job_title",
+  "contact_email",
+  "contact_phone",
+  "contact_nationality",
+  "operational_contact_name",
+  "operational_contact_job_title",
+  "operational_contact_email",
+  "operational_contact_phone",
+  "operational_contact_method",
+  "terms_accepted",
+  "membership_terms_accepted",
+  "arbitration_accepted",
+  "company_type",
+  "year_established",
+  "preferred_contact_method",
+  "services",
+  "other_services",
+  "industries",
+  "other_industries",
+  "primary_stack",
+  "secondary_stack",
+  "specialised_skills",
+  "key_projects",
+  "industries_served",
+  "portfolio_links",
+  "total_tech_staff",
+  "team_structure",
+  "monthly_capacity",
+  "hourly_rate",
+  "fixed_price",
+  "retainer",
+  "min_project_size",
+  "payment_terms",
+  "security_certs",
+  "data_compliance",
+  "insurance",
+  "pm_methodology",
+  "tools_used",
+  "timezone_hours",
+  "own_saas",
+  "client_notes",
+  "logo_url",
+];
+
+export type AdminVendorInput = Partial<Pick<Vendor, (typeof ADMIN_EDITABLE_FIELDS)[number]>>;
+
+/** Admin dashboard edit — full CRUD, not gated by a magic-link token. */
+export async function updateVendorByAdmin(id: string, input: AdminVendorInput): Promise<Vendor> {
+  const supabase = getSupabaseAdmin();
+  const patch: Record<string, unknown> = { updated_at: new Date().toISOString() };
+  for (const field of ADMIN_EDITABLE_FIELDS) {
+    if (field in input && input[field] !== undefined) patch[field] = input[field];
+  }
+  const { data, error } = await supabase
+    .from("vendors")
+    .update(patch)
+    .eq("id", id)
+    .select("*")
+    .single();
+  if (error) throw new Error(`Failed to update vendor: ${error.message}`);
+  return data as Vendor;
+}
+
+/** Admin dashboard create — adds an entry directly, bypassing the applicant flow. */
+export async function createVendorByAdmin(input: AdminVendorInput): Promise<Vendor> {
+  const supabase = getSupabaseAdmin();
+  const companyName = String(input.company_name ?? "").trim();
+  if (!companyName) throw new Error("Company name is required.");
+
+  const slug = input.slug?.trim() || (await uniqueSlug(slugify(companyName)));
+  const patch: Record<string, unknown> = { status: input.status ?? "listed", slug };
+  for (const field of ADMIN_EDITABLE_FIELDS) {
+    if (field === "slug" || field === "status") continue;
+    if (field in input && input[field] !== undefined) patch[field] = input[field];
+  }
+  patch.company_name = companyName;
+
+  const { data, error } = await supabase
+    .from("vendors")
+    .insert(patch)
+    .select("*")
+    .single();
+  if (error) throw new Error(`Failed to create vendor: ${error.message}`);
+  return data as Vendor;
+}
+
 /* ─────────────────────────────────────────────────────────────
    Public portfolio reads
    ───────────────────────────────────────────────────────────── */
@@ -546,6 +698,7 @@ export async function listPublicVendors(): Promise<PublicVendor[]> {
     .from("vendors")
     .select(PUBLIC_COLUMNS)
     .eq("status", "listed")
+    .is("deleted_at", null)
     .order("company_name", { ascending: true });
   if (error) throw new Error(error.message);
   return (data ?? []) as PublicVendor[];
@@ -558,6 +711,7 @@ export async function getPublicVendorBySlug(slug: string): Promise<PublicVendor 
     .select(PUBLIC_COLUMNS)
     .eq("slug", slug)
     .eq("status", "listed")
+    .is("deleted_at", null)
     .maybeSingle();
   if (error) throw new Error(error.message);
   return (data as PublicVendor) ?? null;
@@ -603,6 +757,7 @@ export async function listMemberDirectory(): Promise<DirectoryCompany[]> {
     .from("vendors")
     .select(PUBLIC_COLUMNS)
     .in("status", MEMBER_STATUSES)
+    .is("deleted_at", null)
     .order("company_name", { ascending: true });
   if (error) throw new Error(error.message);
   return ((data ?? []) as PublicVendor[]).map(vendorToDirectoryCompany);

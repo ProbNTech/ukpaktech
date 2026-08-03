@@ -1,11 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
   listVendorsByStatus,
+  listTrashedVendors,
   setVendorStatus,
   approveAndInvite,
   approvePortfolio,
-  deleteVendor,
+  trashVendor,
+  restoreVendor,
+  permanentlyDeleteVendor,
+  updateVendorByAdmin,
+  createVendorByAdmin,
   type VendorStatus,
+  type AdminVendorInput,
 } from "@/lib/vendorService";
 import { mirrorVendorToSheet } from "@/lib/vendorSheets";
 import { sendAlert } from "@/lib/mailer";
@@ -28,19 +34,22 @@ function baseUrl(req: NextRequest): string {
 
 const STATUSES: VendorStatus[] = ["pending", "invited", "portfolio_pending", "listed"];
 
-/** GET /api/portfolio/admin?status=pending → list vendors (full records). */
+/** GET /api/portfolio/admin?status=pending|invited|portfolio_pending|listed|trash → list vendors (full records). */
 export async function GET(req: NextRequest) {
   if (!authorized(req))
     return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
 
   const statusParam = req.nextUrl.searchParams.get("status") || undefined;
-  const status =
-    statusParam && STATUSES.includes(statusParam as VendorStatus)
-      ? (statusParam as VendorStatus)
-      : undefined;
 
   try {
-    const vendors = await listVendorsByStatus(status);
+    const vendors =
+      statusParam === "trash"
+        ? await listTrashedVendors()
+        : await listVendorsByStatus(
+            statusParam && STATUSES.includes(statusParam as VendorStatus)
+              ? (statusParam as VendorStatus)
+              : undefined
+          );
     const safe = vendors.map(({ complete_token, token_expires_at, ...v }) => {
       void complete_token;
       void token_expires_at;
@@ -53,16 +62,29 @@ export async function GET(req: NextRequest) {
   }
 }
 
-/** POST /api/portfolio/admin { id, action: 'approve' | 'reject' | 'unlist' } */
+/** POST /api/portfolio/admin { id, action } — approve/reject/unlist/restore/permanent-delete/update/create */
 export async function POST(req: NextRequest) {
   if (!authorized(req))
     return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
 
   try {
     const body = await req.json();
-    const id = String(body.id ?? "");
     const action = String(body.action ?? "");
+
+    // ── Create a new vendor entry directly from the dashboard ──
+    if (action === "create") {
+      const vendor = await createVendorByAdmin((body.vendor ?? {}) as AdminVendorInput);
+      return NextResponse.json({ success: true, vendor });
+    }
+
+    const id = String(body.id ?? "");
     if (!id) return NextResponse.json({ error: "Missing id." }, { status: 400 });
+
+    // ── Edit any field on an existing entry ──
+    if (action === "update") {
+      const vendor = await updateVendorByAdmin(id, (body.vendor ?? {}) as AdminVendorInput);
+      return NextResponse.json({ success: true, vendor });
+    }
 
     // ── Approve a pending membership → issue magic link to complete profile ──
     if (action === "approve") {
@@ -134,9 +156,21 @@ ${profileUrl}
       return NextResponse.json({ success: true, status: vendor.status });
     }
 
-    // ── Reject (membership or portfolio) → hard-delete the row + logo ──
+    // ── Reject (membership or portfolio) → move to Trash (soft-delete) ──
     if (action === "reject") {
-      await deleteVendor(id);
+      await trashVendor(id);
+      return NextResponse.json({ success: true, trashed: true });
+    }
+
+    // ── Restore a trashed entry back to normal visibility ──
+    if (action === "restore") {
+      await restoreVendor(id);
+      return NextResponse.json({ success: true, restored: true });
+    }
+
+    // ── Permanently delete — Trash tab only, cannot be undone ──
+    if (action === "permanent-delete") {
+      await permanentlyDeleteVendor(id);
       return NextResponse.json({ success: true, deleted: true });
     }
 
@@ -149,6 +183,7 @@ ${profileUrl}
     return NextResponse.json({ error: "Unknown action." }, { status: 400 });
   } catch (error) {
     console.error("Admin action error:", error);
-    return NextResponse.json({ error: "Action failed." }, { status: 500 });
+    const message = error instanceof Error ? error.message : "Action failed.";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
