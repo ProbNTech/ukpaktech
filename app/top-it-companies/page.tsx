@@ -6,7 +6,8 @@ import { DirectoryView } from "@/components/directory/DirectoryView";
 import { DirectorySEOContent } from "@/components/directory/DirectorySEOContent";
 import { FAQSection } from "@/components/directory/FAQSection";
 import { directoryFaqs } from "@/components/directory/directoryFaqs";
-import { getAllITCompanies, getTopITCompanies } from "@/lib/companyService";
+import { getAllITCompanies, getTopITCompanies, searchITCompanies } from "@/lib/companyService";
+import { getCountryOptions, getServiceOptions } from "@/lib/companyFilters";
 
 export const metadata: Metadata = {
   title: "Top IT Companies",
@@ -25,10 +26,14 @@ export const metadata: Metadata = {
   },
 };
 
+// Reflect admin list/unlist/delete actions within a few minutes.
+export const revalidate = 300;
+
 export default async function TopITCompaniesPage() {
-  const [featured, all] = await Promise.all([
+  const [featured, all, page1] = await Promise.all([
     getTopITCompanies(6),
     getAllITCompanies(),
+    searchITCompanies({ page: 1, pageSize: 30 }),
   ]);
 
   return (
@@ -49,7 +54,11 @@ export default async function TopITCompaniesPage() {
       />
 
       <DirectoryView
-        companies={all}
+        directory="it"
+        initialCompanies={page1.companies}
+        initialTotal={page1.total}
+        countryOptions={getCountryOptions(all)}
+        serviceOptions={getServiceOptions(all)}
         layout="grid"
         heading="All IT companies"
         initialSort="rating"

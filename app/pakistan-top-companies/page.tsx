@@ -12,8 +12,9 @@ import { directoryFaqs } from "@/components/directory/directoryFaqs";
 import {
   getAllPakistanTopCompanies,
   getTopPakistanCompanies,
+  searchPakistanCompanies,
 } from "@/lib/companyService";
-import { listMemberDirectory } from "@/lib/vendorService";
+import { getCountryOptions, getServiceOptions, getCategoryOptions } from "@/lib/companyFilters";
 import type { DirectoryCompany } from "@/data/companies";
 
 export const metadata: Metadata = {
@@ -33,23 +34,21 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 export default async function PakistanTopCompaniesPage() {
-  const [featured, staticAll, approvedMembers] = await Promise.all([
+  const [featured, all, page1] = await Promise.all([
     // Pull every editorial-pinned company; the carousel handles 1 or N.
     getTopPakistanCompanies(20),
-    getAllPakistanTopCompanies(),
-    // Approved members from the vendor DB (best-effort — the page still renders
-    // the curated roster if Supabase is unreachable).
-    listMemberDirectory().catch((err) => {
+    // Best-effort — the page still renders (empty) if Supabase is briefly unreachable.
+    getAllPakistanTopCompanies().catch((err) => {
       console.error("Member directory load failed:", err);
       return [] as DirectoryCompany[];
     }),
+    searchPakistanCompanies({ page: 1, pageSize: 30, sort: "name" }).catch((err) => {
+      console.error("Member directory search failed:", err);
+      return { companies: [] as DirectoryCompany[], total: 0, page: 1, pageSize: 30 };
+    }),
   ]);
 
-  // Merge curated + DB-driven members, de-duping by slug (curated wins).
-  const seen = new Set(staticAll.map((c) => c.slug));
-  const all = [...staticAll, ...approvedMembers.filter((c) => !seen.has(c.slug))].sort(
-    (a, b) => a.name.localeCompare(b.name)
-  );
+  const countryCount = new Set(all.map((c) => c.country).filter(Boolean)).size;
 
   return (
     <>
@@ -57,6 +56,8 @@ export default async function PakistanTopCompaniesPage() {
         eyebrow="Pakistan's Top Companies"
         title="Pakistan's Top AI & IT Companies"
         subtitle="A curated showcase of AI, software, cloud, and consulting specialists driving Pakistan's technology sector and the UK–Pakistan corridor. Search by name, filter by industry, or browse alphabetically to find the right partner."
+        companyCount={all.length}
+        countryCount={countryCount}
       />
 
       <DirectoryStats companies={all} />
@@ -71,7 +72,12 @@ export default async function PakistanTopCompaniesPage() {
 
       <div id="all-companies">
         <DirectoryView
-          companies={all}
+          directory="pakistan"
+          initialCompanies={page1.companies}
+          initialTotal={page1.total}
+          countryOptions={getCountryOptions(all)}
+          serviceOptions={getServiceOptions(all)}
+          categoryOptions={getCategoryOptions(all)}
           layout="grid"
           heading="All companies"
           initialSort="name"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { MemberDirectory } from "@/components/MemberDirectory";
+import { listMemberVendors } from "@/lib/vendorService";
 
 export const metadata: Metadata = {
   title: "Membership Directory",
@@ -13,7 +14,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function MembershipDirectoryPage() {
+// Reflect admin list/unlist/delete actions within a few minutes.
+export const revalidate = 300;
+
+export default async function MembershipDirectoryPage() {
+  const vendors = await listMemberVendors().catch((err) => {
+    console.error("Member vendors load failed:", err);
+    return [];
+  });
+
   return (
     <>
       <PageHero
@@ -22,7 +31,7 @@ export default function MembershipDirectoryPage() {
         image="/image/banners/banner100.png"
       />
 
-      <MemberDirectory />
+      <MemberDirectory vendors={vendors} />
     </>
   );
 }

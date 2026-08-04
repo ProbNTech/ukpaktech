@@ -1,4 +1,5 @@
 import { randomBytes } from "crypto";
+import { revalidateTag, unstable_cache } from "next/cache";
 import { getSupabaseAdmin, VENDOR_LOGO_BUCKET } from "@/lib/supabase";
 import type { CompanyCategory, DirectoryCompany } from "@/data/companies";
 
@@ -146,6 +147,20 @@ export interface Vendor {
 
   logo_url: string | null;
 
+  // Directory display fields (unify data/companies.ts + data/members.ts into
+  // this table — see supabase/migrations/0004_directory_fields.sql). `source`
+  // distinguishes migrated mock/curated rows from ordinary applicant-pipeline
+  // vendors; `category`/`rating`/`review_count`/`clutch_profile_url` are only
+  // ever populated for migrated mock rows.
+  category: CompanyCategory | null;
+  rating: number | null;
+  review_count: number | null;
+  clutch_profile_url: string | null;
+  source: "Member" | "Mock" | "Clutch";
+  verified: boolean;
+  featured: boolean;
+  logo_scale: number | null;
+
   complete_token: string | null;
   token_expires_at: string | null;
   created_at: string;
@@ -184,6 +199,14 @@ export type PublicVendor = Pick<
   | "tools_used"
   | "own_saas"
   | "logo_url"
+  | "category"
+  | "rating"
+  | "review_count"
+  | "clutch_profile_url"
+  | "source"
+  | "verified"
+  | "featured"
+  | "logo_scale"
 >;
 
 const TOKEN_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days to finish the profile
@@ -291,6 +314,7 @@ export async function approveAndInvite(
     .single();
 
   if (error) throw new Error(`Failed to approve: ${error.message}`);
+  revalidateTag(DIRECTORY_CACHE_TAG, "max");
   return { vendor: data as Vendor, token };
 }
 
@@ -508,6 +532,7 @@ export async function setVendorStatus(id: string, status: VendorStatus): Promise
     .update({ status, updated_at: new Date().toISOString() })
     .eq("id", id);
   if (error) throw new Error(error.message);
+  revalidateTag(DIRECTORY_CACHE_TAG, "max");
 }
 
 /** Final gate — approve a submitted portfolio so it goes live on the portfolio. */
@@ -524,6 +549,7 @@ export async function approvePortfolio(id: string): Promise<Vendor> {
     .select("*")
     .single();
   if (error) throw new Error(`Failed to approve portfolio: ${error.message}`);
+  revalidateTag(DIRECTORY_CACHE_TAG, "max");
   return data as Vendor;
 }
 
@@ -548,6 +574,7 @@ export async function trashVendor(id: string): Promise<void> {
     .update({ deleted_at: new Date().toISOString(), updated_at: new Date().toISOString() })
     .eq("id", id);
   if (error) throw new Error(`Failed to move vendor to trash: ${error.message}`);
+  revalidateTag(DIRECTORY_CACHE_TAG, "max");
 }
 
 /** Restore a trashed vendor back to normal visibility, unchanged otherwise. */
@@ -558,6 +585,7 @@ export async function restoreVendor(id: string): Promise<void> {
     .update({ deleted_at: null, updated_at: new Date().toISOString() })
     .eq("id", id);
   if (error) throw new Error(`Failed to restore vendor: ${error.message}`);
+  revalidateTag(DIRECTORY_CACHE_TAG, "max");
 }
 
 /**
@@ -581,6 +609,7 @@ export async function permanentlyDeleteVendor(id: string): Promise<void> {
 
   const { error } = await supabase.from("vendors").delete().eq("id", id);
   if (error) throw new Error(`Failed to delete vendor: ${error.message}`);
+  revalidateTag(DIRECTORY_CACHE_TAG, "max");
 }
 
 /** Fields an admin may set directly via the dashboard (full CRUD — excludes system-managed columns). */
@@ -659,6 +688,7 @@ export async function updateVendorByAdmin(id: string, input: AdminVendorInput): 
     .select("*")
     .single();
   if (error) throw new Error(`Failed to update vendor: ${error.message}`);
+  revalidateTag(DIRECTORY_CACHE_TAG, "max");
   return data as Vendor;
 }
 
@@ -682,6 +712,7 @@ export async function createVendorByAdmin(input: AdminVendorInput): Promise<Vend
     .select("*")
     .single();
   if (error) throw new Error(`Failed to create vendor: ${error.message}`);
+  revalidateTag(DIRECTORY_CACHE_TAG, "max");
   return data as Vendor;
 }
 
@@ -690,7 +721,7 @@ export async function createVendorByAdmin(input: AdminVendorInput): Promise<Vend
    ───────────────────────────────────────────────────────────── */
 
 const PUBLIC_COLUMNS =
-  "id, slug, company_name, website, company_type, company_size, year_established, country, city, business_address, short_description, services, other_services, primary_stack, secondary_stack, specialised_skills, key_projects, industries_served, portfolio_links, team_structure, pm_methodology, tools_used, own_saas, logo_url";
+  "id, slug, company_name, website, company_type, company_size, year_established, country, city, business_address, short_description, services, other_services, primary_stack, secondary_stack, specialised_skills, key_projects, industries_served, portfolio_links, team_structure, pm_methodology, tools_used, own_saas, logo_url, category, rating, review_count, clutch_profile_url, source, verified, featured, logo_scale";
 
 export async function listPublicVendors(): Promise<PublicVendor[]> {
   const supabase = getSupabaseAdmin();
@@ -718,10 +749,11 @@ export async function getPublicVendorBySlug(slug: string): Promise<PublicVendor 
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Members directory feed (approved members → /pakistan-top-companies)
+   Directory feeds (/pakistan-top-companies, /top-it-companies,
+   /top-ai-companies, /it-companies, /membership/directory)
    ───────────────────────────────────────────────────────────── */
 
-/** Best-effort category bucket from the (free-text) company type + services. */
+/** Fallback category bucket from free-text fields, used only when a row has no stored `category`. */
 function vendorCategory(v: PublicVendor): CompanyCategory {
   const hay = `${v.company_type ?? ""} ${(v.services ?? []).join(" ")}`.toLowerCase();
   if (/cyber|security/.test(hay)) return "Cybersecurity";
@@ -738,27 +770,183 @@ export function vendorToDirectoryCompany(v: PublicVendor): DirectoryCompany {
     id: `vendor-${v.slug}`,
     slug: v.slug,
     name: v.company_name,
-    category: vendorCategory(v),
+    category: v.category ?? vendorCategory(v),
     services: v.services ?? [],
+    rating: v.rating ?? undefined,
+    reviewCount: v.review_count ?? undefined,
     location: location || (v.country ?? ""),
     country: v.country ?? "",
     description: v.short_description || v.industries_served || "",
     logoUrl: v.logo_url ?? undefined,
     websiteUrl: v.website ?? undefined,
-    source: "Member",
-    verified: true,
+    clutchProfileUrl: v.clutch_profile_url ?? undefined,
+    source: v.source,
+    verified: v.verified,
   };
 }
 
+const DIRECTORY_CACHE_TAG = "vendors";
+
 /** Approved members (membership-approved and beyond) as directory companies. */
-export async function listMemberDirectory(): Promise<DirectoryCompany[]> {
-  const supabase = getSupabaseAdmin();
-  const { data, error } = await supabase
-    .from("vendors")
-    .select(PUBLIC_COLUMNS)
-    .in("status", MEMBER_STATUSES)
-    .is("deleted_at", null)
-    .order("company_name", { ascending: true });
-  if (error) throw new Error(error.message);
-  return ((data ?? []) as PublicVendor[]).map(vendorToDirectoryCompany);
+export const listMemberDirectory = unstable_cache(
+  async (): Promise<DirectoryCompany[]> => {
+    const supabase = getSupabaseAdmin();
+    const { data, error } = await supabase
+      .from("vendors")
+      .select(PUBLIC_COLUMNS)
+      .in("status", MEMBER_STATUSES)
+      .eq("source", "Member")
+      .is("deleted_at", null)
+      .order("company_name", { ascending: true });
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as PublicVendor[]).map(vendorToDirectoryCompany);
+  },
+  ["member-directory-companies"],
+  { tags: [DIRECTORY_CACHE_TAG], revalidate: 300 }
+);
+
+/** Members editorially pinned as featured, most recently approved first. */
+export const listFeaturedMemberDirectory = unstable_cache(
+  async (limit: number): Promise<DirectoryCompany[]> => {
+    const supabase = getSupabaseAdmin();
+    const { data, error } = await supabase
+      .from("vendors")
+      .select(PUBLIC_COLUMNS)
+      .in("status", MEMBER_STATUSES)
+      .eq("source", "Member")
+      .eq("featured", true)
+      .is("deleted_at", null)
+      .order("company_name", { ascending: true })
+      .limit(limit);
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as PublicVendor[]).map(vendorToDirectoryCompany);
+  },
+  ["featured-member-directory-companies"],
+  { tags: [DIRECTORY_CACHE_TAG], revalidate: 300 }
+);
+
+/** Migrated mock/placeholder companies (source='Mock') for the demo directory pages. */
+export const listMockDirectoryCompanies = unstable_cache(
+  async (categories?: CompanyCategory[]): Promise<DirectoryCompany[]> => {
+    const supabase = getSupabaseAdmin();
+    let query = supabase
+      .from("vendors")
+      .select(PUBLIC_COLUMNS)
+      .eq("status", "listed")
+      .eq("source", "Mock")
+      .is("deleted_at", null);
+    if (categories && categories.length > 0) query = query.in("category", categories);
+    const { data, error } = await query;
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as PublicVendor[]).map(vendorToDirectoryCompany);
+  },
+  ["mock-directory-companies"],
+  { tags: [DIRECTORY_CACHE_TAG], revalidate: 300 }
+);
+
+export interface DirectorySearchParams {
+  source: "Member" | "Mock";
+  /** Restricts to this set of categories (e.g. IT_CATEGORIES, or ["AI"]). Omit for no restriction. */
+  categories?: CompanyCategory[];
+  /** Further narrows to one category (the UI's Category dropdown). */
+  category?: CompanyCategory | "";
+  search?: string;
+  country?: string;
+  service?: string;
+  minRating?: number;
+  sort?: "rating" | "reviews" | "name";
+  /** 1-based. */
+  page?: number;
+  pageSize?: number;
 }
+
+export interface DirectorySearchResult {
+  companies: DirectoryCompany[];
+  total: number;
+  page: number;
+  pageSize: number;
+}
+
+/**
+ * Paginated, server-side filtered directory search — backs the "30 at a
+ * time, search across every record" browsing UI. Not wrapped in
+ * unstable_cache: query shape varies per search/filter/page, so caching here
+ * would mostly just grow the cache without much reuse; a single indexed
+ * range query is cheap enough to run per request.
+ */
+export async function searchDirectoryCompanies(
+  params: DirectorySearchParams
+): Promise<DirectorySearchResult> {
+  const {
+    source,
+    categories,
+    category,
+    search,
+    country,
+    service,
+    minRating,
+    sort = "rating",
+    page = 1,
+    pageSize = 30,
+  } = params;
+
+  const supabase = getSupabaseAdmin();
+  let query = supabase
+    .from("vendors")
+    .select(PUBLIC_COLUMNS, { count: "exact" })
+    .eq("status", "listed")
+    .eq("source", source)
+    .is("deleted_at", null);
+
+  if (categories && categories.length > 0) query = query.in("category", categories);
+  if (category) query = query.eq("category", category);
+  if (country) query = query.eq("country", country);
+  if (service) query = query.contains("services", [service]);
+  if (typeof minRating === "number" && minRating > 0) query = query.gte("rating", minRating);
+
+  const q = search?.trim().replace(/[,()]/g, "");
+  if (q) {
+    query = query.or(
+      `company_name.ilike.%${q}%,short_description.ilike.%${q}%,city.ilike.%${q}%,country.ilike.%${q}%`
+    );
+  }
+
+  if (sort === "name") {
+    query = query.order("company_name", { ascending: true });
+  } else if (sort === "reviews") {
+    query = query.order("review_count", { ascending: false, nullsFirst: false });
+  } else {
+    query = query
+      .order("rating", { ascending: false, nullsFirst: false })
+      .order("review_count", { ascending: false, nullsFirst: false });
+  }
+
+  const from = (page - 1) * pageSize;
+  const { data, error, count } = await query.range(from, from + pageSize - 1);
+  if (error) throw new Error(error.message);
+
+  return {
+    companies: ((data ?? []) as PublicVendor[]).map(vendorToDirectoryCompany),
+    total: count ?? 0,
+    page,
+    pageSize,
+  };
+}
+
+/** Raw member vendor rows (used by /membership/directory, which needs distinct industries/services facets). */
+export const listMemberVendors = unstable_cache(
+  async (): Promise<PublicVendor[]> => {
+    const supabase = getSupabaseAdmin();
+    const { data, error } = await supabase
+      .from("vendors")
+      .select(PUBLIC_COLUMNS)
+      .in("status", MEMBER_STATUSES)
+      .eq("source", "Member")
+      .is("deleted_at", null)
+      .order("company_name", { ascending: true });
+    if (error) throw new Error(error.message);
+    return (data ?? []) as PublicVendor[];
+  },
+  ["member-vendors"],
+  { tags: [DIRECTORY_CACHE_TAG], revalidate: 300 }
+);
