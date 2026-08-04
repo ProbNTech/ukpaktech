@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -7,14 +8,29 @@ import { ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CompanyCard } from "@/components/directory/CompanyCard";
-import { pakistaniMemberCompanies } from "@/lib/memberCompanies";
+import type { DirectoryCompany } from "@/data/companies";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
-const showcase = [...pakistaniMemberCompanies].sort((a, b) => a.name.localeCompare(b.name));
-
 export default function PakistanTopCompaniesShowcase() {
+  const [showcase, setShowcase] = useState<DirectoryCompany[]>([]);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/directory/pakistan-top-companies")
+      .then((res) => res.json())
+      .then((data: { companies: DirectoryCompany[] }) => {
+        if (cancelled) return;
+        const sorted = [...(data.companies ?? [])].sort((a, b) => a.name.localeCompare(b.name));
+        setShowcase(sorted);
+      })
+      .catch((err) => console.error("Pakistan top companies load failed:", err));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   if (showcase.length === 0) return null;
 
   return (

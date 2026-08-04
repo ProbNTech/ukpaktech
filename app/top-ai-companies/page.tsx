@@ -6,7 +6,8 @@ import { DirectoryView } from "@/components/directory/DirectoryView";
 import { DirectorySEOContent } from "@/components/directory/DirectorySEOContent";
 import { FAQSection } from "@/components/directory/FAQSection";
 import { directoryFaqs } from "@/components/directory/directoryFaqs";
-import { getAllAICompanies, getTopAICompanies } from "@/lib/companyService";
+import { getAllAICompanies, getTopAICompanies, searchAICompanies } from "@/lib/companyService";
+import { getCountryOptions, getServiceOptions } from "@/lib/companyFilters";
 
 export const metadata: Metadata = {
   title: "Top AI Companies",
@@ -25,10 +26,14 @@ export const metadata: Metadata = {
   },
 };
 
+// Reflect admin list/unlist/delete actions within a few minutes.
+export const revalidate = 300;
+
 export default async function TopAICompaniesPage() {
-  const [featured, all] = await Promise.all([
+  const [featured, all, page1] = await Promise.all([
     getTopAICompanies(6),
     getAllAICompanies(),
+    searchAICompanies({ page: 1, pageSize: 30 }),
   ]);
 
   return (
@@ -49,7 +54,11 @@ export default async function TopAICompaniesPage() {
       />
 
       <DirectoryView
-        companies={all}
+        directory="ai"
+        initialCompanies={page1.companies}
+        initialTotal={page1.total}
+        countryOptions={getCountryOptions(all)}
+        serviceOptions={getServiceOptions(all)}
         layout="grid"
         heading="All AI companies"
         initialSort="rating"

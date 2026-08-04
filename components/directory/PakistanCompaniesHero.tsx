@@ -2,12 +2,13 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Sparkles, ShieldCheck, ArrowDown } from "lucide-react";
-import { memberCompanies } from "@/lib/memberCompanies";
 
 interface PakistanCompaniesHeroProps {
   eyebrow?: string;
   title: string;
   subtitle: string;
+  companyCount: number;
+  countryCount: number;
 }
 
 const CHIPS = [
@@ -41,10 +42,12 @@ export function PakistanCompaniesHero({
   eyebrow = "Pakistan's Top Companies",
   title,
   subtitle,
+  companyCount,
+  countryCount,
 }: PakistanCompaniesHeroProps) {
   const reduce = useReducedMotion();
-  const count = memberCompanies.length;
-  const locations = new Set(memberCompanies.map((c) => c.country)).size;
+  const count = companyCount;
+  const locations = countryCount;
 
   const words = title.split(" ");
   const lastWordStart = words.length > 2 ? words.length - 2 : 0;

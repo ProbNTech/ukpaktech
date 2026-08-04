@@ -1,7 +1,7 @@
 "use client";
 
-import { Search, X, SlidersHorizontal } from "lucide-react";
-import type { SortKey } from "@/lib/companyService";
+import { ChevronDown, Search, X, SlidersHorizontal } from "lucide-react";
+import type { SortKey } from "@/lib/companyFilters";
 import type { CompanyCategory } from "@/data/companies";
 
 export interface FilterState {
@@ -85,7 +85,7 @@ export function CompanyFilters({
 
         {/* Category (industry), rendered only when caller provides options */}
         {hasCategory && (
-          <div className="lg:col-span-2">
+          <div className="relative lg:col-span-2">
             <label htmlFor="directory-category" className="sr-only">
               Filter by category
             </label>
@@ -93,7 +93,7 @@ export function CompanyFilters({
               id="directory-category"
               value={state.category}
               onChange={(e) => update({ category: e.target.value as CompanyCategory | "" })}
-              className="w-full px-3 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
+              className="w-full appearance-none pl-3 pr-9 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
             >
               <option value="">All categories</option>
               {categoryOptions!.map((c) => (
@@ -102,11 +102,12 @@ export function CompanyFilters({
                 </option>
               ))}
             </select>
+            <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
           </div>
         )}
 
         {/* Country */}
-        <div className="lg:col-span-2">
+        <div className="relative lg:col-span-2">
           <label htmlFor="directory-country" className="sr-only">
             Filter by location
           </label>
@@ -114,7 +115,7 @@ export function CompanyFilters({
             id="directory-country"
             value={state.country}
             onChange={(e) => update({ country: e.target.value })}
-            className="w-full px-3 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
+            className="w-full appearance-none pl-3 pr-9 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
           >
             <option value="">All locations</option>
             {countryOptions.map((c) => (
@@ -123,10 +124,11 @@ export function CompanyFilters({
               </option>
             ))}
           </select>
+          <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
         </div>
 
         {/* Service */}
-        <div className="lg:col-span-2">
+        <div className="relative lg:col-span-2">
           <label htmlFor="directory-service" className="sr-only">
             Filter by service
           </label>
@@ -134,7 +136,7 @@ export function CompanyFilters({
             id="directory-service"
             value={state.service}
             onChange={(e) => update({ service: e.target.value })}
-            className="w-full px-3 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
+            className="w-full appearance-none pl-3 pr-9 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
           >
             <option value="">All services</option>
             {serviceOptions.map((s) => (
@@ -143,11 +145,12 @@ export function CompanyFilters({
               </option>
             ))}
           </select>
+          <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
         </div>
 
         {/* Rating, omitted on directories that show Category instead */}
         {!hasCategory && (
-          <div className="lg:col-span-2">
+          <div className="relative lg:col-span-2">
             <label htmlFor="directory-rating" className="sr-only">
               Filter by minimum rating
             </label>
@@ -155,7 +158,7 @@ export function CompanyFilters({
               id="directory-rating"
               value={state.minRating}
               onChange={(e) => update({ minRating: Number(e.target.value) })}
-              className="w-full px-3 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
+              className="w-full appearance-none pl-3 pr-9 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
             >
               {RATING_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
@@ -163,11 +166,12 @@ export function CompanyFilters({
                 </option>
               ))}
             </select>
+            <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
           </div>
         )}
 
         {/* Sort */}
-        <div className="lg:col-span-2">
+        <div className="relative lg:col-span-2">
           <label htmlFor="directory-sort" className="sr-only">
             Sort companies
           </label>
@@ -175,7 +179,7 @@ export function CompanyFilters({
             id="directory-sort"
             value={state.sort}
             onChange={(e) => update({ sort: e.target.value as SortKey })}
-            className="w-full px-3 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
+            className="w-full appearance-none pl-3 pr-9 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 transition-all"
           >
             {SORT_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -183,6 +187,7 @@ export function CompanyFilters({
               </option>
             ))}
           </select>
+          <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
         </div>
       </div>
 

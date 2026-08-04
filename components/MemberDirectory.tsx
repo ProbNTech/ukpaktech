@@ -4,13 +4,19 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Search, ChevronDown, ExternalLink, X, Building2 } from "lucide-react";
-import {
-  members,
-  companyTypes,
-  sectorOptions,
-  technologyOptions,
-  type Member,
-} from "@/data/members";
+import type { PublicVendor } from "@/lib/vendorService";
+
+interface MemberDirectoryProps {
+  vendors: PublicVendor[];
+}
+
+function uniqueSorted(values: (string | null | undefined)[]): string[] {
+  return Array.from(new Set(values.filter((v): v is string => Boolean(v)))).sort();
+}
+
+function memberLocation(v: PublicVendor): string {
+  return [v.city, v.country].filter(Boolean).join(", ");
+}
 
 /* ── Dropdown filter ───────────────────────────────────────────── */
 
@@ -74,26 +80,27 @@ function FilterDropdown({
 
 /* ── Member card ───────────────────────────────────────────────── */
 
-function MemberCard({ member }: { member: Member }) {
+function MemberCard({ member }: { member: PublicVendor }) {
   const [imgError, setImgError] = useState(false);
+  const location = memberLocation(member);
 
   return (
     <a
-      href={member.website}
+      href={member.website ?? undefined}
       target="_blank"
       rel="noopener noreferrer"
       className="group block bg-white border border-[#D8D5CF] rounded-lg overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
     >
       {/* Logo area */}
       <div className="h-44 bg-[#F8FAFC] flex items-center justify-center px-8 py-8 border-b border-[#EEECEA]">
-        {member.logo && !imgError ? (
+        {member.logo_url && !imgError ? (
           <Image
-            src={member.logo}
-            alt={member.name}
+            src={member.logo_url}
+            alt={member.company_name}
             width={320}
             height={160}
             className="w-full h-full object-contain"
-            style={member.logoScale ? { transform: `scale(${member.logoScale})` } : undefined}
+            style={member.logo_scale ? { transform: `scale(${member.logo_scale})` } : undefined}
             onError={() => setImgError(true)}
           />
         ) : (
@@ -104,21 +111,21 @@ function MemberCard({ member }: { member: Member }) {
       {/* Content */}
       <div className="p-5">
         <h3 className="font-heading font-bold text-[#1C1F2E] text-lg mb-1 group-hover:text-[#2563EB] transition-colors">
-          {member.name}
+          {member.company_name}
         </h3>
 
         <div className="flex flex-wrap gap-1.5 mb-3">
           <span className="inline-block px-2 py-0.5 rounded-full bg-[#2563EB]/8 text-[#2563EB] text-base font-semibold uppercase tracking-wide">
-            {member.companyType}
+            {member.company_type}
           </span>
         </div>
 
         <p className="text-base text-[#4B5563] leading-relaxed mb-4 line-clamp-3">
-          {member.description}
+          {member.short_description}
         </p>
 
-        {member.location && (
-          <p className="text-base text-[#6B7280] mb-4">{member.location}</p>
+        {location && (
+          <p className="text-base text-[#6B7280] mb-4">{location}</p>
         )}
 
         <span className="inline-flex items-center gap-1.5 text-base font-semibold text-[#2563EB] group-hover:text-[#1D4ED8] transition-colors">
@@ -132,27 +139,39 @@ function MemberCard({ member }: { member: Member }) {
 
 /* ── Main directory ────────────────────────────────────────────── */
 
-export function MemberDirectory() {
+export function MemberDirectory({ vendors }: MemberDirectoryProps) {
   const [search, setSearch] = useState("");
   const [companyType, setCompanyType] = useState("");
   const [sector, setSector] = useState("");
   const [technology, setTechnology] = useState("");
 
+  const companyTypes = useMemo(() => uniqueSorted(vendors.map((v) => v.company_type)), [vendors]);
+  const sectorOptions = useMemo(
+    () => uniqueSorted(vendors.flatMap((v) => v.industries ?? [])),
+    [vendors]
+  );
+  const technologyOptions = useMemo(
+    () => uniqueSorted(vendors.flatMap((v) => v.services ?? [])),
+    [vendors]
+  );
+
   const activeFilterCount = [companyType, sector, technology].filter(Boolean).length;
 
   const filtered = useMemo(() => {
-    return members.filter((m) => {
+    return vendors.filter((m) => {
+      const sectors = m.industries ?? [];
+      const technologies = m.services ?? [];
       if (search) {
         const q = search.toLowerCase();
-        const haystack = `${m.name} ${m.description} ${m.companyType} ${m.sectors.join(" ")} ${m.technologies.join(" ")} ${m.location}`.toLowerCase();
+        const haystack = `${m.company_name} ${m.short_description ?? ""} ${m.company_type ?? ""} ${sectors.join(" ")} ${technologies.join(" ")} ${memberLocation(m)}`.toLowerCase();
         if (!haystack.includes(q)) return false;
       }
-      if (companyType && m.companyType !== companyType) return false;
-      if (sector && !m.sectors.includes(sector)) return false;
-      if (technology && !m.technologies.includes(technology)) return false;
+      if (companyType && m.company_type !== companyType) return false;
+      if (sector && !sectors.includes(sector)) return false;
+      if (technology && !technologies.includes(technology)) return false;
       return true;
     });
-  }, [search, companyType, sector, technology]);
+  }, [vendors, search, companyType, sector, technology]);
 
   const clearFilters = () => {
     setSearch("");

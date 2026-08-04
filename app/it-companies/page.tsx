@@ -5,7 +5,8 @@ import { DirectoryView } from "@/components/directory/DirectoryView";
 import { DirectorySEOContent } from "@/components/directory/DirectorySEOContent";
 import { FAQSection } from "@/components/directory/FAQSection";
 import { directoryFaqs } from "@/components/directory/directoryFaqs";
-import { getAllITCompanies } from "@/lib/companyService";
+import { getAllITCompanies, searchITCompanies } from "@/lib/companyService";
+import { getCountryOptions, getServiceOptions } from "@/lib/companyFilters";
 
 export const metadata: Metadata = {
   title: "All IT Companies",
@@ -24,8 +25,14 @@ export const metadata: Metadata = {
   },
 };
 
+// Reflect admin list/unlist/delete actions within a few minutes.
+export const revalidate = 300;
+
 export default async function AllITCompaniesPage() {
-  const companies = await getAllITCompanies();
+  const [companies, page1] = await Promise.all([
+    getAllITCompanies(),
+    searchITCompanies({ page: 1, pageSize: 30, sort: "rating" }),
+  ]);
 
   return (
     <>
@@ -38,9 +45,13 @@ export default async function AllITCompaniesPage() {
       <DirectoryStats companies={companies} />
 
       <DirectoryView
-        companies={companies}
+        directory="it"
+        initialCompanies={page1.companies}
+        initialTotal={page1.total}
+        countryOptions={getCountryOptions(companies)}
+        serviceOptions={getServiceOptions(companies)}
         layout="list"
-        pageSize={8}
+        pageSize={30}
         heading="Browse all companies"
         initialSort="rating"
       />
