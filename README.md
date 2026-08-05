@@ -14,7 +14,7 @@ Official website for the UK–Pakistan Tech Forum built with Next.js 16, TypeScr
 ```bash
 npm install
 ```
-
+ 
 ### Development
 
 ```bash
