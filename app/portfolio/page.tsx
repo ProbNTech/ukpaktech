@@ -16,8 +16,9 @@ export const metadata: Metadata = {
   },
 };
 
-// Always reflect the latest approved listings.
-export const revalidate = 60;
+// Render per-request instead of prerendering at build time — this page reads
+// live from Supabase, which isn't reachable during `next build` on Hostinger.
+export const dynamic = "force-dynamic";
 
 export default async function PortfolioPage() {
   let vendors: PublicVendor[] = [];

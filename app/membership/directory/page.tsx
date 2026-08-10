@@ -14,8 +14,9 @@ export const metadata: Metadata = {
   },
 };
 
-// Reflect admin list/unlist/delete actions within a few minutes.
-export const revalidate = 300;
+// Render per-request instead of prerendering at build time — this page reads
+// live from Supabase, which isn't reachable during `next build` on Hostinger.
+export const dynamic = "force-dynamic";
 
 export default async function MembershipDirectoryPage() {
   const vendors = await listMemberVendors().catch((err) => {
