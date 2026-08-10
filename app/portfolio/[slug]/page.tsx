@@ -5,7 +5,9 @@ import { Building2, Globe, ArrowLeft, Check } from "lucide-react";
 import { Section } from "@/components/Section";
 import { getPublicVendorBySlug, type PublicVendor } from "@/lib/vendorService";
 
-export const revalidate = 60;
+// Render per-request instead of prerendering at build time — this page reads
+// live from Supabase, which isn't reachable during `next build` on Hostinger.
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,

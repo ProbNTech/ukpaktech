@@ -30,8 +30,9 @@ export const metadata: Metadata = {
   },
 };
 
-// Reflect newly approved members within a minute.
-export const revalidate = 60;
+// Render per-request instead of prerendering at build time — this page reads
+// live from Supabase, which isn't reachable during `next build` on Hostinger.
+export const dynamic = "force-dynamic";
 
 export default async function PakistanTopCompaniesPage() {
   const [featured, all, page1] = await Promise.all([
