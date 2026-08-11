@@ -6,8 +6,13 @@ import { DirectoryView } from "@/components/directory/DirectoryView";
 import { DirectorySEOContent } from "@/components/directory/DirectorySEOContent";
 import { FAQSection } from "@/components/directory/FAQSection";
 import { directoryFaqs } from "@/components/directory/directoryFaqs";
-import { getAllAICompanies, getTopAICompanies, searchAICompanies } from "@/lib/companyService";
+import {
+  getAllAICompanies,
+  getTopAICompanies,
+  getDefaultAICompaniesPage,
+} from "@/lib/companyService";
 import { getCountryOptions, getServiceOptions } from "@/lib/companyFilters";
+import type { DirectoryCompany } from "@/data/companies";
 
 export const metadata: Metadata = {
   title: "Top AI Companies",
@@ -31,10 +36,20 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function TopAICompaniesPage() {
+  // Best-effort — the page still renders (empty) if Supabase is briefly unreachable.
   const [featured, all, page1] = await Promise.all([
-    getTopAICompanies(6),
-    getAllAICompanies(),
-    searchAICompanies({ page: 1, pageSize: 30 }),
+    getTopAICompanies(6).catch((err) => {
+      console.error("Top AI companies load failed:", err);
+      return [] as DirectoryCompany[];
+    }),
+    getAllAICompanies().catch((err) => {
+      console.error("AI companies load failed:", err);
+      return [] as DirectoryCompany[];
+    }),
+    getDefaultAICompaniesPage().catch((err) => {
+      console.error("AI companies search failed:", err);
+      return { companies: [] as DirectoryCompany[], total: 0, page: 1, pageSize: 30 };
+    }),
   ]);
 
   return (

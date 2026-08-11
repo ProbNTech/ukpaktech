@@ -12,7 +12,7 @@ import { directoryFaqs } from "@/components/directory/directoryFaqs";
 import {
   getAllPakistanTopCompanies,
   getTopPakistanCompanies,
-  searchPakistanCompanies,
+  getDefaultPakistanCompaniesPage,
 } from "@/lib/companyService";
 import { getCountryOptions, getServiceOptions, getCategoryOptions } from "@/lib/companyFilters";
 import type { DirectoryCompany } from "@/data/companies";
@@ -35,15 +35,18 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function PakistanTopCompaniesPage() {
+  // Best-effort — the page still renders (empty) if Supabase is briefly unreachable.
   const [featured, all, page1] = await Promise.all([
     // Pull every editorial-pinned company; the carousel handles 1 or N.
-    getTopPakistanCompanies(20),
-    // Best-effort — the page still renders (empty) if Supabase is briefly unreachable.
+    getTopPakistanCompanies(20).catch((err) => {
+      console.error("Featured member load failed:", err);
+      return [] as DirectoryCompany[];
+    }),
     getAllPakistanTopCompanies().catch((err) => {
       console.error("Member directory load failed:", err);
       return [] as DirectoryCompany[];
     }),
-    searchPakistanCompanies({ page: 1, pageSize: 30, sort: "name" }).catch((err) => {
+    getDefaultPakistanCompaniesPage().catch((err) => {
       console.error("Member directory search failed:", err);
       return { companies: [] as DirectoryCompany[], total: 0, page: 1, pageSize: 30 };
     }),

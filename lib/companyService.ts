@@ -11,9 +11,11 @@ import { IT_CATEGORIES, type CompanyCategory, type DirectoryCompany } from "@/da
 import { byRatingThenReviews, type SortKey } from "@/lib/companyFilters";
 import {
   listMemberDirectory,
+  listMemberDirectoryLimited,
   listFeaturedMemberDirectory,
   listMockDirectoryCompanies,
   searchDirectoryCompanies,
+  searchDirectoryCompaniesCached,
   type DirectorySearchResult,
 } from "@/lib/vendorService";
 
@@ -36,6 +38,11 @@ export const PAKISTAN_TOP_CATEGORIES: CompanyCategory[] = ["AI", ...IT_CATEGORIE
 /** Real verified UPTECH members (Supabase `vendors`, source='Member'). */
 export async function getAllPakistanTopCompanies(): Promise<DirectoryCompany[]> {
   return listMemberDirectory();
+}
+
+/** Real verified UPTECH members, capped at `limit`. Backs the homepage showcase carousel. */
+export async function getPakistanTopCompaniesShowcase(limit = 10): Promise<DirectoryCompany[]> {
+  return listMemberDirectoryLimited(limit);
 }
 
 /** Members editorially pinned via the `featured` column, up to `limit`. */
@@ -82,4 +89,41 @@ export async function searchPakistanCompanies(
   opts: DirectorySearchOptions = {}
 ): Promise<DirectorySearchResult> {
   return searchDirectoryCompanies({ source: "Member", ...opts });
+}
+
+/**
+ * Cached first-page default view (no user search/filter applied) for each
+ * directory's initial server render — every visitor hits one of these three
+ * exact queries before touching a filter, so caching avoids a live Supabase
+ * round trip on every page view. Only used by the page components' initial
+ * fetch; /api/directory/search keeps calling the uncached functions above
+ * for user-driven queries.
+ */
+export async function getDefaultITCompaniesPage(): Promise<DirectorySearchResult> {
+  return searchDirectoryCompaniesCached({
+    source: "Mock",
+    categories: IT_CATEGORIES,
+    page: 1,
+    pageSize: 30,
+    sort: "rating",
+  });
+}
+
+export async function getDefaultAICompaniesPage(): Promise<DirectorySearchResult> {
+  return searchDirectoryCompaniesCached({
+    source: "Mock",
+    categories: ["AI"],
+    page: 1,
+    pageSize: 30,
+    sort: "rating",
+  });
+}
+
+export async function getDefaultPakistanCompaniesPage(): Promise<DirectorySearchResult> {
+  return searchDirectoryCompaniesCached({
+    source: "Member",
+    page: 1,
+    pageSize: 30,
+    sort: "name",
+  });
 }

@@ -6,8 +6,13 @@ import { DirectoryView } from "@/components/directory/DirectoryView";
 import { DirectorySEOContent } from "@/components/directory/DirectorySEOContent";
 import { FAQSection } from "@/components/directory/FAQSection";
 import { directoryFaqs } from "@/components/directory/directoryFaqs";
-import { getAllITCompanies, getTopITCompanies, searchITCompanies } from "@/lib/companyService";
+import {
+  getAllITCompanies,
+  getTopITCompanies,
+  getDefaultITCompaniesPage,
+} from "@/lib/companyService";
 import { getCountryOptions, getServiceOptions } from "@/lib/companyFilters";
+import type { DirectoryCompany } from "@/data/companies";
 
 export const metadata: Metadata = {
   title: "Top IT Companies",
@@ -31,10 +36,20 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function TopITCompaniesPage() {
+  // Best-effort — the page still renders (empty) if Supabase is briefly unreachable.
   const [featured, all, page1] = await Promise.all([
-    getTopITCompanies(6),
-    getAllITCompanies(),
-    searchITCompanies({ page: 1, pageSize: 30 }),
+    getTopITCompanies(6).catch((err) => {
+      console.error("Top IT companies load failed:", err);
+      return [] as DirectoryCompany[];
+    }),
+    getAllITCompanies().catch((err) => {
+      console.error("IT companies load failed:", err);
+      return [] as DirectoryCompany[];
+    }),
+    getDefaultITCompaniesPage().catch((err) => {
+      console.error("IT companies search failed:", err);
+      return { companies: [] as DirectoryCompany[], total: 0, page: 1, pageSize: 30 };
+    }),
   ]);
 
   return (

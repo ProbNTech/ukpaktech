@@ -5,8 +5,9 @@ import { DirectoryView } from "@/components/directory/DirectoryView";
 import { DirectorySEOContent } from "@/components/directory/DirectorySEOContent";
 import { FAQSection } from "@/components/directory/FAQSection";
 import { directoryFaqs } from "@/components/directory/directoryFaqs";
-import { getAllITCompanies, searchITCompanies } from "@/lib/companyService";
+import { getAllITCompanies, getDefaultITCompaniesPage } from "@/lib/companyService";
 import { getCountryOptions, getServiceOptions } from "@/lib/companyFilters";
+import type { DirectoryCompany } from "@/data/companies";
 
 export const metadata: Metadata = {
   title: "All IT Companies",
@@ -30,9 +31,16 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function AllITCompaniesPage() {
+  // Best-effort — the page still renders (empty) if Supabase is briefly unreachable.
   const [companies, page1] = await Promise.all([
-    getAllITCompanies(),
-    searchITCompanies({ page: 1, pageSize: 30, sort: "rating" }),
+    getAllITCompanies().catch((err) => {
+      console.error("IT companies load failed:", err);
+      return [] as DirectoryCompany[];
+    }),
+    getDefaultITCompaniesPage().catch((err) => {
+      console.error("IT companies search failed:", err);
+      return { companies: [] as DirectoryCompany[], total: 0, page: 1, pageSize: 30 };
+    }),
   ]);
 
   return (
