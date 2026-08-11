@@ -489,29 +489,65 @@ export async function saveProfile(
    Admin — review & moderation
    ───────────────────────────────────────────────────────────── */
 
-export async function listVendorsByStatus(status?: VendorStatus): Promise<Vendor[]> {
+export interface VendorPage {
+  vendors: Vendor[];
+  total: number;
+}
+
+export async function listVendorsByStatus(
+  status?: VendorStatus,
+  page = 1,
+  pageSize = 30
+): Promise<VendorPage> {
   const supabase = getSupabaseAdmin();
   let query = supabase
     .from("vendors")
-    .select("*")
+    .select("*", { count: "exact" })
     .is("deleted_at", null)
     .order("updated_at", { ascending: false });
   if (status) query = query.eq("status", status);
-  const { data, error } = await query;
+  const from = (page - 1) * pageSize;
+  const { data, error, count } = await query.range(from, from + pageSize - 1);
   if (error) throw new Error(error.message);
-  return (data ?? []) as Vendor[];
+  return { vendors: (data ?? []) as Vendor[], total: count ?? 0 };
 }
 
 /** Rows currently in the trash (soft-deleted), most recently trashed first. */
-export async function listTrashedVendors(): Promise<Vendor[]> {
+export async function listTrashedVendors(page = 1, pageSize = 30): Promise<VendorPage> {
   const supabase = getSupabaseAdmin();
-  const { data, error } = await supabase
+  const from = (page - 1) * pageSize;
+  const { data, error, count } = await supabase
     .from("vendors")
-    .select("*")
+    .select("*", { count: "exact" })
     .not("deleted_at", "is", null)
-    .order("deleted_at", { ascending: false });
+    .order("deleted_at", { ascending: false })
+    .range(from, from + pageSize - 1);
   if (error) throw new Error(error.message);
-  return (data ?? []) as Vendor[];
+  return { vendors: (data ?? []) as Vendor[], total: count ?? 0 };
+}
+
+/** Row counts per status tab (including trash), for the admin dashboard's nav badges/stat cards. */
+export async function getVendorStatusCounts(): Promise<Record<string, number>> {
+  const supabase = getSupabaseAdmin();
+  const statuses: VendorStatus[] = ["pending", "invited", "portfolio_pending", "listed"];
+  const [statusCounts, trash] = await Promise.all([
+    Promise.all(
+      statuses.map(async (status) => {
+        const { count, error } = await supabase
+          .from("vendors")
+          .select("id", { count: "exact", head: true })
+          .eq("status", status)
+          .is("deleted_at", null);
+        if (error) throw new Error(error.message);
+        return [status, count ?? 0] as const;
+      })
+    ),
+    supabase.from("vendors").select("id", { count: "exact", head: true }).not("deleted_at", "is", null),
+  ]);
+  if (trash.error) throw new Error(trash.error.message);
+  const counts: Record<string, number> = Object.fromEntries(statusCounts);
+  counts.trash = trash.count ?? 0;
+  return counts;
 }
 
 export async function getVendorById(id: string): Promise<Vendor | null> {
@@ -787,6 +823,12 @@ export function vendorToDirectoryCompany(v: PublicVendor): DirectoryCompany {
 
 const DIRECTORY_CACHE_TAG = "vendors";
 
+// No time-based revalidate on any of these — they're cached indefinitely and
+// only refetch when an admin mutation (list/unlist/approve/edit/delete) calls
+// revalidateTag(DIRECTORY_CACHE_TAG, "max"), which every mutation below
+// already does. A visitor only ever triggers a Supabase read on the very
+// first request after data actually changed, not on a timer.
+
 /** Approved members (membership-approved and beyond) as directory companies. */
 export const listMemberDirectory = unstable_cache(
   async (): Promise<DirectoryCompany[]> => {
@@ -802,7 +844,7 @@ export const listMemberDirectory = unstable_cache(
     return ((data ?? []) as PublicVendor[]).map(vendorToDirectoryCompany);
   },
   ["member-directory-companies"],
-  { tags: [DIRECTORY_CACHE_TAG], revalidate: 300 }
+  { tags: [DIRECTORY_CACHE_TAG], revalidate: false }
 );
 
 /** Members editorially pinned as featured, most recently approved first. */
@@ -822,7 +864,26 @@ export const listFeaturedMemberDirectory = unstable_cache(
     return ((data ?? []) as PublicVendor[]).map(vendorToDirectoryCompany);
   },
   ["featured-member-directory-companies"],
-  { tags: [DIRECTORY_CACHE_TAG], revalidate: 300 }
+  { tags: [DIRECTORY_CACHE_TAG], revalidate: false }
+);
+
+/** Approved members, capped at `limit` — backs the homepage showcase, which only ever renders a handful. */
+export const listMemberDirectoryLimited = unstable_cache(
+  async (limit: number): Promise<DirectoryCompany[]> => {
+    const supabase = getSupabaseAdmin();
+    const { data, error } = await supabase
+      .from("vendors")
+      .select(PUBLIC_COLUMNS)
+      .in("status", MEMBER_STATUSES)
+      .eq("source", "Member")
+      .is("deleted_at", null)
+      .order("company_name", { ascending: true })
+      .limit(limit);
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as PublicVendor[]).map(vendorToDirectoryCompany);
+  },
+  ["member-directory-companies-limited"],
+  { tags: [DIRECTORY_CACHE_TAG], revalidate: false }
 );
 
 /** Migrated mock/placeholder companies (source='Mock') for the demo directory pages. */
@@ -841,7 +902,7 @@ export const listMockDirectoryCompanies = unstable_cache(
     return ((data ?? []) as PublicVendor[]).map(vendorToDirectoryCompany);
   },
   ["mock-directory-companies"],
-  { tags: [DIRECTORY_CACHE_TAG], revalidate: 300 }
+  { tags: [DIRECTORY_CACHE_TAG], revalidate: false }
 );
 
 export interface DirectorySearchParams {
@@ -933,6 +994,20 @@ export async function searchDirectoryCompanies(
   };
 }
 
+/**
+ * Cached wrapper for the fixed "default view" query every directory page's
+ * initial server render uses, before any user search/filter/pagination is
+ * applied. Unlike searchDirectoryCompanies above, this is safe to cache: only
+ * a handful of callers ever invoke it, each with the same literal params, so
+ * the key space stays bounded (contrast with /api/directory/search, which
+ * takes arbitrary user-typed queries and deliberately stays uncached).
+ */
+export const searchDirectoryCompaniesCached = unstable_cache(
+  searchDirectoryCompanies,
+  ["directory-default-search"],
+  { tags: [DIRECTORY_CACHE_TAG], revalidate: false }
+);
+
 /** Raw member vendor rows (used by /membership/directory, which needs distinct industries/services facets). */
 export const listMemberVendors = unstable_cache(
   async (): Promise<PublicVendor[]> => {
@@ -948,5 +1023,5 @@ export const listMemberVendors = unstable_cache(
     return (data ?? []) as PublicVendor[];
   },
   ["member-vendors"],
-  { tags: [DIRECTORY_CACHE_TAG], revalidate: 300 }
+  { tags: [DIRECTORY_CACHE_TAG], revalidate: false }
 );

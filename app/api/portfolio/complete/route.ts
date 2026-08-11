@@ -119,9 +119,9 @@ export async function PATCH(req: NextRequest) {
       // An admin approves it in the portfolio admin to list it publicly.
       try {
         await sendAlert({
-          subject: `Portfolio submitted for review — ${vendor.company_name}`,
-          text: `${vendor.company_name} submitted their full capability profile. Review & approve it in the portfolio admin (Portfolio review tab) to list them on /portfolio/${vendor.slug}.`,
-          html: `<p style="font-family:system-ui,sans-serif;font-size:14px;"><strong>${vendor.company_name}</strong> submitted their full capability profile for review. Approve it in the portfolio admin (<em>Portfolio review</em> tab) to list them publicly at <a href="/portfolio/${vendor.slug}">/portfolio/${vendor.slug}</a>.</p>`,
+          subject: `Portfolio submitted for review: ${vendor.company_name}`,
+          text: `${vendor.company_name} has submitted their full capability profile for review.\n\nPlease review and approve it in the portfolio admin (Portfolio review tab) to list them at /portfolio/${vendor.slug}.`,
+          html: `<p style="font-family:system-ui,sans-serif;font-size:14px;"><strong>${vendor.company_name}</strong> has submitted their full capability profile for review. Please review and approve it in the portfolio admin (<em>Portfolio review</em> tab) to list them publicly at <a href="/portfolio/${vendor.slug}">/portfolio/${vendor.slug}</a>.</p>`,
           replyTo: vendor.contact_email ?? undefined,
         });
       } catch (mailErr) {

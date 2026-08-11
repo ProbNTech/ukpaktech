@@ -9,6 +9,13 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
  */
 let cached: SupabaseClient | null = null;
 
+// Node's default fetch has no request timeout — a stalled connection to
+// Supabase can hang for minutes, holding the request open. On resource-capped
+// hosting that pileup exhausts the app's connection/memory ceiling and takes
+// down every other page (including fully static ones) with it. Fail fast
+// instead so a Supabase outage degrades only the pages that need it.
+const FETCH_TIMEOUT_MS = 8000;
+
 export function getSupabaseAdmin(): SupabaseClient {
   if (cached) return cached;
 
@@ -23,6 +30,10 @@ export function getSupabaseAdmin(): SupabaseClient {
 
   cached = createClient(url, serviceKey, {
     auth: { persistSession: false, autoRefreshToken: false },
+    global: {
+      fetch: (input, init) =>
+        fetch(input, { ...init, signal: init?.signal ?? AbortSignal.timeout(FETCH_TIMEOUT_MS) }),
+    },
   });
 
   return cached;

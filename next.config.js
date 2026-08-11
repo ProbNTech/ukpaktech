@@ -9,7 +9,10 @@ const nextConfig = {
   compress: true,
   images: {
     unoptimized: false,
-    formats: ['image/webp', 'image/avif'],
+    // AVIF encoding is markedly more CPU-expensive for Sharp to produce than
+    // WebP, across every image on every one of this site's ~140 pages. On a
+    // resource-capped host that adds up; WebP alone still compresses well.
+    formats: ['image/webp'],
     qualities: [75, 85, 90],
     remotePatterns: [
       {
