@@ -87,7 +87,7 @@ export default function SkillDevelopmentCenterPage() {
         subtitle="Comprehensive training programmes designed to build world-class tech capabilities and accelerate your career."
         video="/videos/banner.mp4"
         videoSpeed={0.75}
-        heroImage="/image/Skill Development Center/skill-dev-hero.jpg"
+        heroImage="/image/skill-development-center/skill-dev-hero.jpg"
       >
         <div className="flex flex-wrap items-center gap-4">
           <ShinyButton href="/membership#apply">Apply for Training</ShinyButton>
