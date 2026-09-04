@@ -417,7 +417,7 @@ export default function ManagementTeamPage() {
       <GovernanceSection
         id="governance-structure" variant="alt" title="Governance Structure"
         desc="A comprehensive framework ensuring accountability, transparency, and ethical decision-making across all UPTECH operations."
-        image="/image/Leadership%20Governance/Governance_Structure.webp" imageAlt="UPTECH Governance Structure" imageLeft={false}
+        image="/image/leadership-governance/Governance_Structure.webp" imageAlt="UPTECH Governance Structure" imageLeft={false}
         responsibilities={["Establish and maintain ethical standards", "Oversee strategic direction and planning", "Ensure legal and regulatory compliance", "Provide transparent reporting", "Manage conflicts of interest", "Facilitate stakeholder engagement"]}
         colorIdx={0}
       />
@@ -431,7 +431,7 @@ export default function ManagementTeamPage() {
       <GovernanceSection
         id="advisory-forum" variant="alt" title="Advisory Forum"
         desc="Expert guidance and strategic counsel from distinguished leaders across technology, business, and policy."
-        image="/image/Leadership%20Governance/Advisory_Council.webp" imageAlt="UPTECH Advisory Forum" imageLeft={false}
+        image="/image/leadership-governance/Advisory_Council.webp" imageAlt="UPTECH Advisory Forum" imageLeft={false}
         responsibilities={["Provide expert guidance on technology trends", "Offer strategic counsel on programme development", "Facilitate connections with key stakeholders", "Review and provide feedback on initiatives", "Serve as ambassadors for UPTECH's mission", "Contribute to thought leadership"]}
         colorIdx={2}
       />
